@@ -1,100 +1,98 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — PALACE D23 CONSUMER QA + D31 CURRENT-MAIN PREFLIGHT**
+Status: **ACTIVE — D31 SEASONAL TARGET CURRENT-MAIN ASSEMBLY**
 Owner: Chat 2 / sole full-CI integration lane
 
-## Priority A — Palace D23 consumer
+## Gate cleared
 
-### #1133 diagnosis — TEST-ONLY REPAIR REQUIRED
+Palace D23 consumer:
+- PR #269 merged;
+- merge SHA: `6d021eedb6f8ffec2188490564dcc6390e89f056`;
+- branch full CI #1135: SUCCESS;
+- exact-main CI #1136: SUCCESS.
 
-Focused workflow #1133 completed FAILURE on QA head:
-`0ea782b4439167350add1ec6cef798d6d92aa124`.
-
-The only failure class:
-- 12 × TypeScript `TS7006` implicit-any errors in
-  `tests/palace-d23-consumer-integration-v8.test.ts`,
-  around lines 187–219;
-- affected callback parameters: `event`, `condition`, `variant`, `choice`, `effect`.
-
-Everything else passed:
-- validate: 82 packs / 329 events / 39 actions / 22 endings;
-- build PASS;
-- Palace consumer: 12/12;
-- shared D21-D24: 35/35;
-- creation/migration: 16/16;
-- New Start+ UI: 43/43;
-- School D20: 21/21;
-- seasonal + Assassin + Prostitute: 51/51.
-
-Therefore:
-1. repair **only test typing/helpers**;
-2. no production/content/runtime semantic changes;
-3. run typecheck locally/focused first;
-4. after local green, push one new QA head;
-5. allow one focused rerun;
-6. no rerun unchanged head.
-
-
-Current focused QA PR:
-#268 `Chat 2 QA: focused Palace D23 consumer integration`
-
-QA branch:
-`chat2/qa-palace-d23-consumer-20261003-v1`
-
-Exact feature candidate parent:
-`ef6eec1cbac89e2e7cc30392f6058222d2022b78`
-
-QA head:
-`0ea782b4439167350add1ec6cef798d6d92aa124`
-
-Frozen producer authority:
-`9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd`
-
-Focused workflow #1133 is currently queued. Do not mutate production merely to provoke the runner.
-
-Critical preservation:
-- do **not** copy frozen producer `engine.ts` wholesale;
-- current-main removal of `ensurePalaceUnlock(s.meta)` must survive;
-- legitimate engine delta is only import + one `markPalaceCreationQualification(s)` hook after creation/package freeze;
-- no permanent `meta.unlocks['palace']`;
-- D23 remains permanent ordinary 10/10 + active 10/10 -> deterministic Day-1 invitation.
-
-If #1133 succeeds:
-1. close QA PR #268 unmerged;
-2. publish exact production candidate without QA workflow files to a fresh assembly branch;
-3. open real current-main assembly PR;
-4. run exactly one full CI on that exact assembly head;
-5. freeze SHA and report `READY_FOR_LEADER_MERGE`.
-
-If #1133 fails:
-- mine the complete failure set;
-- distinguish test/fixture drift from product defect;
-- no rerun unchanged head.
-
-## Priority B — while #1133 is queued: D31 integration preflight
-
-Use a separate docs-only branch:
-`chat2/preflight-d31-current-main-20261003-v1`.
+D31 preflight is frozen:
+`chat2/preflight-d31-current-main-20261003-v1@b1877c2b8162dd90f8b3b4424b33c3c5808f5b34`
 
 Frozen D31 producer:
-`chat3/seasonal-negative-target-map-implementation-v6@79ff36c66947a1f1273ab0bde7a3c7f1b797a2a7`.
+`chat3/seasonal-negative-target-map-implementation-v6@79ff36c66947a1f1273ab0bde7a3c7f1b797a2a7`
 
-Prepare a current-main reconstruction ledger only:
-- exact producer dependency base;
-- exact `definitions.json` semantic delta;
-- exact affected seasonal regression delta;
-- verify current main has no unrelated target-map change;
-- identify collisions introduced by New Start+ UI / Palace consumer / D35 docs;
-- prove D31 remains content-only target replacement;
-- list focused suites needed after reconstruction.
+Producer dependency base:
+`844aabdf9bf42c42e67961c75c0364ec7ea36aef`
 
-Do not put D31 production changes on main or consume full CI before Palace D23 merge + exact-main green.
+New assembly branch:
+`chat2/assembly-d31-seasonal-map-20261003-v1`
 
-## Queued integration order after Palace
+## Reconstruction
 
-1. D31 seasonal target map `79ff36c...`;
-2. accepted strong-Meta runtime candidate after Leader technical acceptance of Chat 4 v7;
-3. later Palace rich-six production slices after their producer freezes.
+Reconstruct the accepted D31 semantics on fresh current main.
 
-Chat 2 remains the only worker allowed full CI.
+Production delta:
+- `content/definitions.json` only;
+- exactly 19 target-stat leaf replacements;
+- Satyr Maid autumn Endurance already matches and therefore is not changed.
+
+Preserve exact D31 map:
+
+- Lumber: spring Dexterity -1; winter Strength -1
+- Satyr Maid: summer Sociability -1; autumn Endurance -1
+- Undead Farm: spring Reason -1; autumn Strength -1
+- Tavern: spring Reason -1; summer Wits -1
+- Hunter: spring Endurance -1; winter Dexterity -1
+- Guard: summer Manners -1; winter Reason -1
+- Merchant: summer Wits -1; winter Manners -1
+- Artist/Geisha: summer Manners -1; autumn Dexterity -1
+- Assassin: spring Reason -1; winter Manners -1
+- Prostitute: summer Sexuality -1; winter Endurance -1
+
+Do not change:
+- wages;
+- costs;
+- unlocks;
+- positive seasonal effects;
+- events;
+- action IDs;
+- Hard Work 50;
+- D26 cadence;
+- Lust negatives (there are none);
+- New Start+ semantics;
+- Palace semantics.
+
+## QA expectation repair
+
+Reconstruct frozen producer seasonal acceptance test.
+
+Align only stale exact-map expectations in the seven known current-main tests identified by preflight:
+- Assassin;
+- Artist/Geisha;
+- Guard;
+- Hunter;
+- Merchant;
+- Tavern;
+- Prostitute.
+
+Those are test expectation updates, not production semantic changes.
+
+## Focused gate before full CI
+
+Run:
+1. typecheck;
+2. validate;
+3. build;
+4. D31 seasonal acceptance;
+5. all seven stale-map preservation tests;
+6. ordinary Hard Work/meta;
+7. New Start+ package/UI preservation;
+8. Palace D23 consumer/shared predicate;
+9. School D20;
+10. Assassin/Prostitute natural/runtime checks.
+
+Mine all failures first.
+
+Only after focused green:
+- open current-main assembly PR;
+- use Chat 2's one full-CI slot;
+- freeze exact head;
+- report `READY_FOR_LEADER_MERGE`.
+
 Do not merge main.
