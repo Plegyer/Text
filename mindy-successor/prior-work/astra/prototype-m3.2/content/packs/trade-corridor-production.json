@@ -20,7 +20,8 @@
         "activity.trade-corridor.result.manifest-verified",
         "activity.trade-corridor.result.sample-secured",
         "trade.corridor.contact-thread-open",
-        "trade.corridor.sealed-pass-used"
+        "trade.corridor.sealed-pass-used",
+        "trade.corridor.city-return-recorded"
       ]
     },
     "writes": {
