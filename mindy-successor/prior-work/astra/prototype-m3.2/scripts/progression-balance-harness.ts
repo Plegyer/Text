@@ -388,7 +388,7 @@ export function milestoneDensityFor(
 
   for(const event of events){
     const thresholds:number[]=[];
-    event.conditions.forEach(condition=>recordThresholds(condition,career,thresholds));
+    recordThresholds(event,career,thresholds);
     if(thresholds.length)thresholdEvents.set(event.id,[...new Set(thresholds)].sort((a,b)=>a-b));
     if(event.reactionTriggers.some(
       trigger=>trigger.kind==='actionCompleted'&&trigger.action===`${career}.shift`
