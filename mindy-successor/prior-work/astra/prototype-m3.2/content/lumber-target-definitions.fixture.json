@@ -200,8 +200,30 @@
     {
       "id": "ending.lumber.forewoman",
       "title": "Lumber Forewoman fixture",
-      "description": "Cross-system fixture ending using the professional Foreman route and School-result career facts.",
+      "description": "D41 fixture: trusted-worker Lumber leadership with management School readiness, resolved production problem, and professional Foreman route.",
       "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "trusted-worker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "veteran"
+            }
+          ]
+        },
         {
           "kind": "careerFact",
           "career": "lumber",
@@ -220,15 +242,43 @@
           "stage": "route-professional"
         }
       ],
-      "reward": "lumber.forewoman.compat",
+      "reward": "specialist.lumber.forewoman-ledger",
       "metaRewards": [],
       "epilogue": "Fixture epilogue for the Forewoman outcome family."
     },
     {
       "id": "ending.lumber.forest",
       "title": "Lumber Forest fixture",
-      "description": "Cross-system fixture ending after a qualifying Forest Activity result and Lumber continuation.",
+      "description": "D41 fixture: trusted-worker Forest Compact after a qualifying success and preserved specimen validation.",
       "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "trusted-worker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "veteran"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-specimen-catalogued",
+          "present": true
+        },
         {
           "kind": "careerFact",
           "career": "lumber",
@@ -242,7 +292,7 @@
           "present": true
         }
       ],
-      "reward": "lumber.forest.compat",
+      "reward": "specialist.lumber.forest-compact-route",
       "metaRewards": [],
       "epilogue": "Fixture epilogue for the Forest outcome family."
     }
@@ -254,7 +304,9 @@
       "initialStage": "newcomer",
       "stages": [
         "newcomer",
-        "accepted-hand"
+        "accepted-hand",
+        "trusted-worker",
+        "veteran"
       ],
       "transitions": [
         {
@@ -279,6 +331,40 @@
               "fact": "foreman-noticed-player"
             }
           ]
+        },
+        {
+          "id": "trusted-worker",
+          "from": [
+            "accepted-hand"
+          ],
+          "to": "trusted-worker",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "lumber",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "veteran",
+          "from": [
+            "trusted-worker"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "lumber",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            }
+          ],
+          "effects": []
         }
       ]
     }
@@ -362,6 +448,11 @@
             {
               "kind": "addWorldFact",
               "fact": "lumber.forest.truth-known"
+            },
+            {
+              "kind": "addItem",
+              "id": "forest_preserved_specimen",
+              "count": 1
             }
           ]
         },

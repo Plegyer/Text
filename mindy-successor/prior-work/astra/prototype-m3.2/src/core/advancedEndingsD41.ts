@@ -185,9 +185,19 @@ export function migrateD41MetaData(input:Readonly<{
  * endings and grant the returned IDs through the one strong-Meta ownership API.
  * That ownership API is responsible for exactly-once deduplication.
  */
-export function d41PendingSpecialistRewardIds(completedEndings:readonly string[]):string[]{
+export function d41PendingSpecialistRewardIds(
+  completedEndings:readonly string[],
+  legacyUnlocks:readonly string[]=[]
+):string[]{
   const completed=new Set(completedEndings.map(canonicalD41EndingId));
-  return D41_SPECIALIST_BINDINGS
+  const pending=D41_SPECIALIST_BINDINGS
     .filter(binding=>completed.has(binding.endingId))
     .map(binding=>binding.rewardId);
+  // Frozen D41 migrates legacy House Credit ownership even when an old profile
+  // lacks a matching completed-ending row. This remains only a binding signal:
+  // the single strong-Meta runtime must grant/dedupe actual ownership.
+  if(legacyUnlocks.includes('satyr-maid.house-credit')){
+    pending.push(D41_SPECIALIST_REWARD_IDS.satyrHouseLedger);
+  }
+  return unique(pending);
 }
