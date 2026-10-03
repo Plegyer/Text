@@ -1,67 +1,77 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — ADVANCED ENDINGS TRANCHE A PRODUCER v11**
+Status: **ACTIVE — D41 PRODUCER FREE-EXIT REPAIR**
 Owner: Chat 5
 
-Accepted Product authority:
+Accepted D41 Product authority:
 `chat5/ordinary-complex-endings-tranche-a-v10@95c0f06449e0a62241e5286c8a95050c82346956`
 
-Leader authority:
-D41 accepts the frozen packet as exact Product contract for 14 endings across Lumber / Satyr Maid / Undead Farm / Tavern / Hunter.
-
-Authority commit:
-`main@0072f07b0f8188d4ff0732fb5ce557fe4f9a8434`
-
-New branch:
+Producer branch:
 `chat5/advanced-endings-tranche-a-producer-v11`
 
-## Assignment
+Current head:
+`ba9a336e707d8d8b4c72769855fcc1d314453f4d`
 
-Produce the current-main implementation candidate for D41.
+Latest exact-head self-hosted diagnostics:
+run `37125509264`
 
-Implement:
-- exact stable ending IDs;
-- exact stage/shift gates;
-- exact route facts/counters;
-- mandatory/optional School/Night/Activity/item requirements;
-- D16 non-terminal eligibility + explicit commit;
-- legacy Tavern ID retirement/migration rules where feasible;
-- current executable ending migrations where explicitly accepted;
-- automatic knowledge/content reward consumers compatible with current runtime;
-- focused tests for all 14 endings.
+Results:
+- typecheck: **SUCCESS**
+- build: **SUCCESS**
+- validate: **FAILURE**
+- D41 focused: **FAILURE**
 
-Frozen strong-Meta producer dependency:
-`chat4/strong-meta-runtime-producer-v7@6c3865aec1283055ab0713ca4b2873d379f3ddc6`
+## Exact root blocker
 
-Do NOT invent duplicate Specialist infrastructure.
-If current main lacks the accepted strong-Meta runtime:
-- keep Specialist reward IDs/effects as explicit integration seam/fixture;
-- document exact later binding for Chat 2;
-- do not silently weaken or replace the D41 reward.
+Both failing jobs collapse on:
 
-Preserve:
-- D33/D34 Lumber authority;
-- Hard Work 50 separate;
-- Satyr consent/boundary semantics;
-- no old Tavern Palace shortcut;
-- D38 standalone Activity endings remain distinct from Hunter;
-- D23 Palace entry sole gate;
-- D26 same-career cadence;
-- Secret Debt forced-Night separation.
+`Нет бесплатного выхода lumber-cross.activity-forest-return`
 
-No full CI.
+D41 added this new effect in:
+`content/packs/lumber-cross-production.json`
 
-Focused minimum:
+inside event:
+`lumber-cross.activity-forest-return`
+
+new effect:
+`removeItem forest_preserved_specimen`
+
+The accepted pre-D41 behavior was non-consuming.
+D41 does not authorize consuming the specimen.
+That new removal makes the event's only unconditional choice non-free and violates the repository validator.
+
+## Repair
+
+On the producer branch:
+- remove ONLY the newly-added `removeItem forest_preserved_specimen` effect from the live
+  `lumber-cross.activity-forest-return` event;
+- preserve the D41 career-fact writes;
+- do not invent a second exit;
+- do not weaken the free-exit validator;
+- do not change Forest result meaning;
+- do not alter D33/D34/D41 gates;
+- do not duplicate Strong Meta runtime.
+
+After repair, run fresh self-hosted focused verification from the exact repaired head:
 - typecheck;
 - validate;
 - build;
-- all 14 ending tests;
-- Lumber D33/D34 tests;
+- all D41 focused tests;
+- Lumber cross-system/natural tests;
 - Satyr/Undead/Tavern/Hunter natural tests;
-- explicit commit/overlap behavior;
-- legacy migration idempotence;
-- Palace non-bypass;
-- save/reload eligibility persistence.
+- migration;
+- Palace D23;
+- presentation parity.
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+No full CI.
+
+If green:
+1. create final handoff:
+   `mindy-successor/docs/tasks/CHAT5_ADVANCED_ENDINGS_TRANCHE_A_PRODUCER_v11.md`;
+2. list exact 14 endings and reward seams;
+3. freeze exact SHA;
+4. report:
+   `READY_FOR_CHAT2_ASSEMBLY`.
+
+Do not rebase onto current main.
+Do not merge main.
