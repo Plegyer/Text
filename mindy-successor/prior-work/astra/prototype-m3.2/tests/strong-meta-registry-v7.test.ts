@@ -18,15 +18,16 @@ import {
 } from '../src/core/strongMeta.ts';
 import {metaRewardSchema} from '../src/core/schema.ts';
 
-test('v7 registry contains exactly the four approved strong Meta rewards',()=>{
+test('registry preserves four v7 rewards and adds seven D40 Specialists',()=>{
   validateStrongMetaRegistry();
-  assert.equal(Object.keys(strongMetaRegistry).length,4);
+  assert.equal(Object.keys(strongMetaRegistry).length,11);
   assert.equal(STRONG_META_KEYSTONE_CAPACITY,1);
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
   assert.equal(strongMetaRegistry[STRONG_META_IDS.palaceCap200].class,'specialist');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.earnedReserveMatch].class,'keystone');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.workRhythm].class,'keystone');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.networkRetainer].class,'keystone');
+  for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster])assert.equal(strongMetaRegistry[id].class,'specialist',id);
 });
 
 test('ownership is separate from explicit Keystone/Specialist preference and deselection is exact',()=>{
@@ -165,11 +166,17 @@ test('unknown owned stable IDs survive canonicalization without becoming approve
   assert.equal(Object.hasOwn(strongMetaRegistry,'future.route.unknown'),false);
 });
 
-test('content metaReward schema accepts only the four approved strong Meta reward IDs',()=>{
+test('content metaReward schema accepts approved v7 and D40 strong Meta reward IDs',()=>{
   assert.equal(metaRewardSchema.safeParse({
     kind:'strongMeta',
     rewardId:'strong.reward.cap200',
     reward:STRONG_META_IDS.palaceCap200
+  }).success,true);
+
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'strongMeta',
+    rewardId:'strong.reward.d40',
+    reward:STRONG_META_IDS.guardInstitutionalFavors
   }).success,true);
 
   assert.equal(metaRewardSchema.safeParse({

@@ -471,6 +471,11 @@
               "kind": "addCareerFact",
               "career": "guard",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "ending-route-officer-selected"
             }
           ]
         },
@@ -496,6 +501,11 @@
               "kind": "addCareerFact",
               "career": "guard",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "ending-route-reform-selected"
             }
           ]
         },
@@ -521,6 +531,11 @@
               "kind": "addCareerFact",
               "career": "guard",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "ending-route-network-selected"
             }
           ]
         },
@@ -595,6 +610,11 @@
               "kind": "addCareerFact",
               "career": "guard",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "ending-route-major-case-selected"
             }
           ]
         },
