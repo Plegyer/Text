@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "id": "d40.tranche-b.school-publishers",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "schoolTracks": [
+        "school.track.literacy_and_numbers",
+        "school.track.etiquette_and_presentation",
+        "school.track.arts_and_performance",
+        "school.track.rhetoric_and_social"
+      ],
+      "careers": [
+        "guard",
+        "merchant",
+        "artist-geisha"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "guard",
+        "merchant",
+        "artist-geisha"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "d40.school.guard.literacy",
+      "title": "D40 School readiness: guard school-literacy-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "school-literacy-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for guard: school-literacy-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "school-literacy-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d40.school.guard.etiquette",
+      "title": "D40 School readiness: guard school-etiquette-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.manners"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.grooming"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.charm"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "guard",
+          "fact": "school-etiquette-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.etiquette_and_presentation",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.etiquette_and_presentation",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for guard: school-etiquette-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "guard",
+              "fact": "school-etiquette-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d40.school.merchant.literacy",
+      "title": "D40 School readiness: merchant school-literacy-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "merchant",
+          "fact": "school-literacy-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for merchant: school-literacy-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "school-literacy-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d40.school.artist-geisha.arts",
+      "title": "D40 School readiness: artist-geisha school-arts-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.creativity"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.charm"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.sociability"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.arts_and_performance.dexterity"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arts_and_performance",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arts_and_performance",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for artist-geisha: school-arts-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "school-arts-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d40.school.artist-geisha.literacy",
+      "title": "D40 School readiness: artist-geisha school-literacy-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.reason"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.literacy_and_numbers.wits"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.literacy_and_numbers",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for artist-geisha: school-literacy-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "school-literacy-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d40.school.artist-geisha.rhetoric",
+      "title": "D40 School readiness: artist-geisha school-rhetoric-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.charm"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.sociability"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.rhetoric_and_social.wits"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.rhetoric_and_social",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for artist-geisha: school-rhetoric-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "school-rhetoric-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d40.school.artist-geisha.etiquette",
+      "title": "D40 School readiness: artist-geisha school-etiquette-ready",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "actionCompleted",
+          "action": "school"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.manners"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.grooming"
+        },
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "school.night_study.etiquette_and_presentation.charm"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerFact",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready",
+          "present": false
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.etiquette_and_presentation",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 3
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.etiquette_and_presentation",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The D40 career-local School threshold is met for artist-geisha: school-etiquette-ready. Paid lessons and Night Study are alternatives, not a combined total.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record career-local School readiness",
+          "text": "Record the ready fact without creating a global certificate or project rule.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "school-etiquette-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
