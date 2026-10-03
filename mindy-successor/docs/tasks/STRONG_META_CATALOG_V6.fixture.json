@@ -1,0 +1,130 @@
+{
+  "contractVersion": 1,
+  "idFormat": {
+    "description": "Exactly three dot-separated kebab-case semantic segments: <source>.<outcome-or-scope>.<reward>.",
+    "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z0-9]+(?:-[a-z0-9]+)*$",
+    "immutable": true,
+    "notes": [
+      "Class (Keystone/Specialist) is metadata and is never encoded into the ID.",
+      "Balance numbers are not normally encoded into IDs; palace.true.cap-200 is a Product-established identity and is retained verbatim."
+    ]
+  },
+  "capacities": {
+    "keystone": 1,
+    "specialist": 2
+  },
+  "rewards": [
+    {
+      "id": "palace.true.cap-200",
+      "class": "specialist",
+      "lifecycle": "active",
+      "activationStatus": "resolvable",
+      "authority": "D24",
+      "sourceOutcome": "Palace True",
+      "effect": {
+        "kind": "progression-stat-cap",
+        "cap": 200,
+        "appliesTo": "12-progression-stats",
+        "excludes": [
+          "lust"
+        ],
+        "multipliesCurrentValues": false,
+        "multipliesStartingValues": false,
+        "multipliesHardWorkPackages": false,
+        "multipliesManualCreationPoints": false
+      }
+    },
+    {
+      "id": "secret-debt.paid-freedom.earned-reserve-match",
+      "class": "keystone",
+      "lifecycle": "active",
+      "activationStatus": "pending-balance",
+      "authority": "D30",
+      "sourceOutcome": "Paid Freedom",
+      "effect": {
+        "kind": "earned-reserve-match",
+        "matchRatio": {
+          "earned": 1,
+          "matched": 1
+        },
+        "qualifyingIncome": "ordinary-profession-wage-earned-in-run",
+        "excludes": [
+          "school-money",
+          "activity-money",
+          "item-money",
+          "passive-income",
+          "secret-debt-lender-grant",
+          "secret-debt-hidden-work-wage",
+          "repayment"
+        ],
+        "requiresNotSecretDebtBound": true,
+        "perRunCap": {
+          "state": "open",
+          "authority": "future-economy-pass"
+        }
+      }
+    },
+    {
+      "id": "secret-debt.bound-life.work-rhythm",
+      "class": "keystone",
+      "lifecycle": "active",
+      "activationStatus": "pending-balance",
+      "authority": "D30",
+      "sourceOutcome": "Bound Life",
+      "effect": {
+        "kind": "work-rhythm",
+        "trigger": "at-least-one-ordinary-profession-shift-completed-on-prior-calendar-day",
+        "energyDelta": 1,
+        "sameDayMultipleShiftsStack": false,
+        "excludes": [
+          "secret-debt-hidden-work",
+          "school-only",
+          "activity-only"
+        ],
+        "maxBonusDays": {
+          "state": "open",
+          "authority": "future-economy-balance-pass"
+        },
+        "secretDebtPenaltyOrder": "selected-energy-modifier-then-forced-next-day-minus-one"
+      }
+    },
+    {
+      "id": "secret-debt.takeover.network-retainer",
+      "class": "keystone",
+      "lifecycle": "active",
+      "activationStatus": "pending-balance",
+      "authority": "D30",
+      "sourceOutcome": "Takeover",
+      "effect": {
+        "kind": "network-retainer",
+        "paymentTiming": "start-of-eligible-early-run-day",
+        "paymentAmount": {
+          "state": "open",
+          "authority": "future-economy-pass"
+        },
+        "eligibleDayCount": {
+          "state": "open",
+          "authority": "future-economy-pass"
+        },
+        "perRunTotalCap": {
+          "state": "open",
+          "authority": "future-economy-pass"
+        },
+        "pausesWhileSecretDebtBound": true,
+        "pausedPaymentsBanked": false,
+        "invariantNonEffects": [
+          "lender-discovery",
+          "debt-size",
+          "repayment",
+          "forced-night",
+          "ordinary-career-lock",
+          "palace-d23-gating"
+        ]
+      }
+    }
+  ],
+  "automaticKnowledgeRegistry": {
+    "entries": [],
+    "note": "No automatic knowledge/content reward IDs are Product-approved in this v6 packet; the layer is represented but intentionally empty."
+  }
+}
