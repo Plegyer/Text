@@ -313,7 +313,7 @@ export function resolveStrongMetaSnapshot(state:StrongMetaState):ResolvedStrongM
   if(issue)throwSelectionIssue(issue);
   const specialists=[...state.preferredSelection.specialistIds].sort();
   const rewardIds=[...(state.preferredSelection.keystoneId?[state.preferredSelection.keystoneId]:[]),...specialists];
-  return strongMetaSnapshotSchema.parse({
+  const snapshot=strongMetaSnapshotSchema.parse({
     contractVersion:STRONG_META_CONTRACT_VERSION,
     registryVersion:STRONG_META_REGISTRY_VERSION,
     keystoneId:state.preferredSelection.keystoneId,
@@ -322,10 +322,49 @@ export function resolveStrongMetaSnapshot(state:StrongMetaState):ResolvedStrongM
     specialistCapacityAtStart:STRONG_META_SPECIALIST_CAPACITY,
     resolvedRewards:rewardIds.map(resolveReward)
   });
+  validateResolvedStrongMetaSnapshot(snapshot);
+  return snapshot;
 }
 
 export function emptyResolvedStrongMetaSnapshot():ResolvedStrongMetaSnapshot{
   return resolveStrongMetaSnapshot(emptyStrongMetaState());
+}
+
+export function validateResolvedStrongMetaSnapshot(snapshot:ResolvedStrongMetaSnapshot):void{
+  const selected=[
+    ...(snapshot.keystoneId?[snapshot.keystoneId]:[]),
+    ...snapshot.specialistIds
+  ];
+  if(new Set(selected).size!==selected.length)throw new Error('Strong Meta snapshot contains duplicate selected IDs.');
+  const rewards=snapshot.resolvedRewards.map(reward=>reward.id);
+  if(new Set(rewards).size!==rewards.length)throw new Error('Strong Meta snapshot contains duplicate resolved rewards.');
+  if(selected.length!==rewards.length||[...selected].sort().some((id,index)=>id!==[...rewards].sort()[index])){
+    throw new Error('Strong Meta snapshot selection/reward mismatch.');
+  }
+  for(const reward of snapshot.resolvedRewards){
+    if(reward.id===snapshot.keystoneId&&reward.class!=='keystone')throw new Error('Strong Meta snapshot Keystone class mismatch.');
+    if(snapshot.specialistIds.includes(reward.id)&&reward.class!=='specialist')throw new Error('Strong Meta snapshot Specialist class mismatch.');
+  }
+}
+
+export function validateStrongMetaRuntimeAgainstSnapshot(snapshot:ResolvedStrongMetaSnapshot|null,runtime:StrongMetaRuntime):void{
+  const effects=new Map((snapshot?.resolvedRewards??[]).map(reward=>[reward.effect.kind,reward.effect] as const));
+  const reserve=effects.get('earned-reserve-match');
+  if(!reserve&&runtime.reserveMatchPaid!==0)throw new Error('Reserve Match runtime state exists without resolved reward.');
+  if(reserve&&reserve.kind==='earned-reserve-match'&&runtime.reserveMatchPaid>reserve.perRunCap)throw new Error('Reserve Match runtime exceeds resolved cap.');
+
+  const rhythm=effects.get('work-rhythm');
+  if(!rhythm&&(runtime.workRhythmBonusDaysTriggered!==0||runtime.workRhythmArmedForDay!==null))throw new Error('Work Rhythm runtime state exists without resolved reward.');
+  if(rhythm&&rhythm.kind==='work-rhythm'&&runtime.workRhythmBonusDaysTriggered>rhythm.maxBonusDays)throw new Error('Work Rhythm runtime exceeds resolved day cap.');
+
+  const retainer=effects.get('network-retainer');
+  if(!retainer&&(runtime.networkRetainerLastProcessedDay!==null||runtime.networkRetainerPaidDays!==0||runtime.networkRetainerTotalPaid!==0)){
+    throw new Error('Network Retainer runtime state exists without resolved reward.');
+  }
+  if(retainer&&retainer.kind==='network-retainer'){
+    if(runtime.networkRetainerPaidDays>retainer.eligibleDayCount)throw new Error('Network Retainer runtime exceeds resolved day window.');
+    if(runtime.networkRetainerTotalPaid>retainer.perRunTotalCap)throw new Error('Network Retainer runtime exceeds resolved total cap.');
+  }
 }
 
 export function hasResolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):boolean{
