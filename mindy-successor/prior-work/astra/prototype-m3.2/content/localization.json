@@ -13337,6 +13337,158 @@
     "ending.ending.palace.return-home.description": {
       "ru": "Истинная концовка: дворцовая прогрессия завершена, все 12 характеристик развития не ниже 91 и присутствует сигнал победы над Принцем.",
       "en": "True Ending eligibility: Palace progression complete, all 12 progression stats at least 91, and the Prince-defeated signal present."
+    },
+    "ui.palace.title": {
+      "ru": "Дворец",
+      "en": "Palace"
+    },
+    "ui.palace.accessLabel": {
+      "ru": "Доступ",
+      "en": "Access"
+    },
+    "ui.palace.accessGranted": {
+      "ru": "открыт в этой жизни",
+      "en": "open for this life"
+    },
+    "ui.palace.stageLabel": {
+      "ru": "Этап",
+      "en": "Stage"
+    },
+    "ui.palace.dutyProgressLabel": {
+      "ru": "Структурные обязанности",
+      "en": "Structural duties"
+    },
+    "ui.palace.dutyProgress": {
+      "ru": "{count} / {total}",
+      "en": "{count} / {total}"
+    },
+    "ui.palace.duty.complete": {
+      "ru": "Структурная служба завершена.",
+      "en": "Structural service is complete."
+    },
+    "ui.palace.duty.usedToday": {
+      "ru": "Сегодняшняя структурная обязанность уже выполнена.",
+      "en": "Today's structural duty is already complete."
+    },
+    "ui.palace.duty.availableToday": {
+      "ru": "Сегодня можно выполнить одну структурную обязанность.",
+      "en": "One structural duty is available today."
+    },
+    "ui.palace.dutyCostLabel": {
+      "ru": "Стоимость обязанности",
+      "en": "Duty cost"
+    },
+    "ui.palace.wagePreviewLabel": {
+      "ru": "Доход этой обязанности",
+      "en": "Duty wage"
+    },
+    "ui.palace.nextDutyTitle": {
+      "ru": "Следующая структурная обязанность",
+      "en": "Next structural duty"
+    },
+    "ui.palace.supportTitle": {
+      "ru": "Поддержка и подготовка исходов",
+      "en": "Support and outcome preparation"
+    },
+    "ui.palace.support.usedToday": {
+      "ru": "Сегодняшнее действие поддержки уже использовано.",
+      "en": "Today's Palace support action has already been used."
+    },
+    "ui.palace.support.availableToday": {
+      "ru": "Сегодня можно выполнить одно доступное действие поддержки.",
+      "en": "One available Palace support action may be taken today."
+    },
+    "ui.palace.supportCost": {
+      "ru": "Стоимость: {energy} энергии · оплата: 0 монет · счётчик обязанностей не меняется.",
+      "en": "Cost: {energy} Energy · pay: 0 coins · structural duty progress does not change."
+    },
+    "ui.palace.route.service-life.label": {
+      "ru": "Жизнь в службе",
+      "en": "Service Life"
+    },
+    "ui.palace.route.court-power.label": {
+      "ru": "Придворное влияние",
+      "en": "Court Power"
+    },
+    "ui.palace.route.inner-truth.label": {
+      "ru": "Внутренняя истина",
+      "en": "Inner Truth"
+    },
+    "ui.palace.routeState.available": {
+      "ru": "доступна подготовка",
+      "en": "preparation available"
+    },
+    "ui.palace.routeState.in-progress": {
+      "ru": "подготовка начата",
+      "en": "preparation in progress"
+    },
+    "ui.palace.routeState.prepared": {
+      "ru": "подготовка завершена",
+      "en": "preparation complete"
+    },
+    "ui.palace.routeState.ready": {
+      "ru": "исход готов к выбору",
+      "en": "ending ready to choose"
+    },
+    "ui.palace.outcomeReady": {
+      "ru": "Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.",
+      "en": "Outcome Ready: this life's structural Palace progression is complete."
+    },
+    "ui.palace.endings.title": {
+      "ru": "Дворцовые судьбы",
+      "en": "Palace endings"
+    },
+    "ui.palace.endings.noneReady": {
+      "ru": "Дворцовые судьбы появятся здесь только после выполнения их реальных условий.",
+      "en": "Palace endings appear here only after their actual runtime conditions are satisfied."
+    },
+    "ui.palace.futureRewardLabel": {
+      "ru": "Награда будущих жизней",
+      "en": "Future-life reward"
+    },
+    "ui.palace.reward.steadyPractice.name": {
+      "ru": "Устойчивая практика",
+      "en": "Steady Practice"
+    },
+    "ui.palace.reward.formalIntroduction.name": {
+      "ru": "Формальное представление",
+      "en": "Formal Introduction"
+    },
+    "ui.palace.reward.sourceMethod.name": {
+      "ru": "Метод источников",
+      "en": "Source Method"
+    },
+    "ui.palace.reward.cap200.name": {
+      "ru": "Предел характеристик 200",
+      "en": "Cap 200"
+    },
+    "ui.palace.reward.layer.specialist": {
+      "ru": "Специалист",
+      "en": "Specialist"
+    },
+    "ui.palace.reward.layer.automaticKnowledge": {
+      "ru": "Автоматическое знание/контент",
+      "en": "Automatic knowledge/content"
+    },
+    "ui.palace.reward.specialistNote": {
+      "ru": "Награда выдаётся после завершения этой судьбы. В будущей New Start+ жизни её выбор и активация остаются в интерфейсе Strong Meta; отдельного дворцового слота нет.",
+      "en": "The reward is granted after this ending is completed. In a later New Start+ life, selection and activation remain owned by the Strong Meta interface; there is no separate Palace slot."
+    },
+    "ui.palace.reward.automaticNote": {
+      "ru": "Награда выдаётся после завершения этой судьбы и в будущих жизнях наследуется автоматически как знание; слот loadout не требуется.",
+      "en": "The reward is granted after this ending is completed and is inherited automatically as knowledge in later lives; it uses no loadout slot."
+    },
+    "ui.palace.summaryAria": {
+      "ru": "Дворец: этап {stage}; структурные обязанности {count} из {total}.",
+      "en": "Palace: stage {stage}; structural duties {count} of {total}."
+    },
+    "ui.palace.routeAria": {
+      "ru": "Маршрут {route}: {state}.",
+      "en": "Route {route}: {state}."
+    },
+    "ui.palace.rewardAria": {
+      "ru": "Награда будущих жизней: {name}; слой {layer}; идентификатор {id}.",
+      "en": "Future-life reward: {name}; layer {layer}; identifier {id}."
     }
   }
 }
