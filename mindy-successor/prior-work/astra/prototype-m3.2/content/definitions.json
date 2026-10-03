@@ -1560,7 +1560,7 @@
         ]
       },
       "wage": {
-        "base": 13,
+        "base": 35,
         "weights": [
           {
             "stat": "strength",
@@ -1592,7 +1592,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "charm",
@@ -1997,7 +1997,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "endurance",
@@ -2334,7 +2334,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "charm",
@@ -2705,7 +2705,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "dexterity",
@@ -3047,7 +3047,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "endurance",
@@ -3402,7 +3402,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "wits",
@@ -3609,7 +3609,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "manners",
@@ -3816,7 +3816,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "dexterity",
@@ -3999,7 +3999,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "sexuality",
