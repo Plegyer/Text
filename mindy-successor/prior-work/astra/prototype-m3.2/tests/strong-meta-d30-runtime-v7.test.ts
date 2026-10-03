@@ -233,3 +233,22 @@ test('in-progress D30 runtime reads resolved snapshot parameters rather than cur
   assert.equal(applyNetworkRetainerAtStartDay({snapshot:retainerSnap,runtime:retainerRuntime,day:2,secretDebtBound:false}).payment,0);
 });
 
+test('Work Rhythm start-day application is idempotent within the same calendar day',()=>{
+  const snap=snapshot(STRONG_META_IDS.workRhythm);
+  let runtime=armWorkRhythmForNextDay({
+    snapshot:snap,
+    runtime:emptyStrongMetaRuntime(),
+    currentDay:0
+  });
+
+  const first=applyWorkRhythmAtStartDay({snapshot:snap,runtime,day:1});
+  assert.equal(first.energyBonus,1);
+  assert.equal(first.runtime.workRhythmBonusDaysTriggered,1);
+  assert.equal(first.runtime.workRhythmAppliedDay,1);
+
+  const second=applyWorkRhythmAtStartDay({snapshot:snap,runtime:first.runtime,day:1});
+  assert.equal(second.energyBonus,1);
+  assert.equal(second.runtime.workRhythmBonusDaysTriggered,1);
+  assert.equal(second.runtime.workRhythmAppliedDay,1);
+});
+
