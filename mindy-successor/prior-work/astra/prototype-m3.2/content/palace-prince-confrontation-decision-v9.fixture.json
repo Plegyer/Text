@@ -1,0 +1,438 @@
+{
+  "formatVersion": 1,
+  "status": "READY_FOR_LEADER_PRODUCT_DECISION",
+  "baseline": "75adf92042961be4e4eda51622123214e1c97dce",
+  "sourcePalace": {
+    "d23Consumer": "9dfaab2a7b9e145c9753c0acd8e54d3f903be5fd",
+    "authoredSafe": "c7b26032af9347af59c590de187abd7d44795050",
+    "integrationManifest": "29def63f348ffd0bf46c16a7a3c7292b0877db9a"
+  },
+  "locked": {
+    "trueEndingFamily": "Palace Return Home",
+    "portOriginalPlusModeStructure": false,
+    "progressionStatThreshold": 91,
+    "progressionStats": [
+      "strength",
+      "endurance",
+      "dexterity",
+      "reason",
+      "magic",
+      "creativity",
+      "wits",
+      "charm",
+      "sociability",
+      "manners",
+      "grooming",
+      "sexuality"
+    ],
+    "lustIncluded": false,
+    "princeMustBeDefeated": true,
+    "princeLoreOrName": null,
+    "palaceCareerTopology": null
+  },
+  "commonContract": {
+    "progressionCompletionInput": "PALACE_PROGRESSION_COMPLETE_SIGNAL",
+    "note": "Placeholder only: bind to the authoritative completion signal emitted by whichever Palace topology Product later approves.",
+    "readinessConditions": [
+      {
+        "kind": "stat",
+        "stat": "strength",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "endurance",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "dexterity",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "reason",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "magic",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "creativity",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "wits",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "charm",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "sociability",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "manners",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "grooming",
+        "op": "gte",
+        "value": 91
+      },
+      {
+        "kind": "stat",
+        "stat": "sexuality",
+        "op": "gte",
+        "value": 91
+      }
+    ],
+    "confrontationAvailableWhen": [
+      "Palace access exists",
+      "PALACE_PROGRESSION_COMPLETE_SIGNAL is true",
+      "all 12 progression stats are >=91",
+      "palace.prince-defeated is absent"
+    ],
+    "exactDefeatSignal": {
+      "kind": "worldFact",
+      "fact": "palace.prince-defeated",
+      "present": true
+    },
+    "returnHomeEnding": {
+      "proposedId": "ending.palace.return-home",
+      "becomesEligibleOnlyAfter": [
+        "PALACE_PROGRESSION_COMPLETE_SIGNAL",
+        "all 12 progression stats >=91",
+        "worldFact palace.prince-defeated present=true"
+      ],
+      "separatePlayerCommit": true,
+      "automaticCommitOnDefeat": false,
+      "note": "Defeating the Prince only opens Return Home. Existing ending commit/complete flow remains a separate player decision."
+    },
+    "noAlternativeEntryGate": true,
+    "optionalSupportNeverRequired": true,
+    "cap200Rule": "Readiness remains raw >=91 even when shared progression-stat cap is 200; no normalization and no Palace multiplication."
+  },
+  "options": [
+    {
+      "id": "A_ACTIVITY_CORE",
+      "title": "Activity Core",
+      "implementability": "uses existing counter.v1 Activity without a new combat subsystem",
+      "availability": {
+        "mechanism": "Activity entryConditions",
+        "conditions": [
+          "Palace access",
+          "PALACE_PROGRESSION_COMPLETE_SIGNAL",
+          "strength >= 91",
+          "endurance >= 91",
+          "dexterity >= 91",
+          "reason >= 91",
+          "magic >= 91",
+          "creativity >= 91",
+          "wits >= 91",
+          "charm >= 91",
+          "sociability >= 91",
+          "manners >= 91",
+          "grooming >= 91",
+          "sexuality >= 91",
+          "palace.prince-defeated absent"
+        ]
+      },
+      "explicitBegin": {
+        "playerAction": "Press a dedicated 'Confront the Prince' Activity entry button",
+        "runtimeCommand": "enterActivity",
+        "candidateActivityId": "palace.prince-confrontation"
+      },
+      "sequence": {
+        "expectedPlayerSteps": "3-6 Activity choices after entry",
+        "adapter": "counter.v1",
+        "resumePolicy": "allowed",
+        "timePolicy": "same_day",
+        "failurePolicy": "exit_to_day",
+        "candidateTuning": {
+          "initialEndurance": 8,
+          "advanceEnduranceCost": 2,
+          "successAtProgress": 6,
+          "failAtEndurance": 0
+        },
+        "routeModel": "One explicit approach route, followed by several one-use options; optional item/relationship-supported options can improve progress/endurance efficiency but never gate success.",
+        "saveReload": "Native ActivityEnvelope persists activityId, progress, endurance, steps, routeId, resolvedOptionIds, checkpoint, and rngState. Reload resumes the same attempt."
+      },
+      "reusedMechanics": [
+        "activityDefinition counter.v1",
+        "Activity entryConditions",
+        "worldFact/stat/itemCapability/relationship conditions",
+        "Activity route selection",
+        "Activity success/escape/failure result",
+        "existing Activity UI and save envelope"
+      ],
+      "princeDefeatedSignal": {
+        "emittedBy": "Activity success result effect",
+        "effect": {
+          "kind": "addWorldFact",
+          "fact": "palace.prince-defeated"
+        }
+      },
+      "failureRefusalRetry": {
+        "refusal": "Use built-in escape action; no defeat signal.",
+        "failure": "End with failure outcome; no defeat signal.",
+        "retry": "Because failurePolicy is exit_to_day and readiness remains true, the player may explicitly enter a new attempt later. A new ActivityEnvelope starts from progress 0."
+      },
+      "avoidsSingleAutomaticCheck": [
+        "All-12 >=91 only unlocks entry.",
+        "Player must choose an approach and make multiple Activity decisions.",
+        "Success depends on authored progress/endurance sequencing rather than a one-shot stat roll.",
+        "No chance field or generic combat roll is required."
+      ],
+      "returnHomeSeparation": "Activity success adds prince-defeated only. The Return Home ending becomes eligible afterward and is committed separately through the existing ending UI.",
+      "optionalSupportExamples": [
+        "itemCapability branches such as guard_sealed_pass / artist_handle_invitation / merchant_verify_manifest / assassin_handle_evidence",
+        "Palace relationship facts from patron/rival/official-contact routes when those v5 relationships are integrated"
+      ],
+      "productionTouches": [
+        "content/definitions.json: add one Activity definition",
+        "content/packs/palace-prince-confrontation.json: optional success/escape/failure follow-up events",
+        "content/localization.json: Activity/options/results copy",
+        "src/ui/app.ts: expose Palace Activity entry in an authorized Palace-facing panel or activity list",
+        "optional presentation mapping/media after topology/presentation ownership is decided",
+        "focused Palace confrontation tests"
+      ],
+      "engineChangeRequired": false
+    },
+    {
+      "id": "B_QUEST_EVENT_CHAIN",
+      "title": "Quest-backed Latched Event Chain",
+      "implementability": "uses existing quest state machine + action + latched blocking events",
+      "availability": {
+        "mechanism": "story action conditions",
+        "conditions": [
+          "Palace access",
+          "PALACE_PROGRESSION_COMPLETE_SIGNAL",
+          "strength >= 91",
+          "endurance >= 91",
+          "dexterity >= 91",
+          "reason >= 91",
+          "magic >= 91",
+          "creativity >= 91",
+          "wits >= 91",
+          "charm >= 91",
+          "sociability >= 91",
+          "manners >= 91",
+          "grooming >= 91",
+          "sexuality >= 91",
+          "palace.prince-defeated absent",
+          "confrontation quest stage ready"
+        ]
+      },
+      "explicitBegin": {
+        "playerAction": "Press a dedicated story action 'Confront the Prince'",
+        "runtimeCommand": "action",
+        "candidateActionId": "palace.confront-prince"
+      },
+      "sequence": {
+        "expectedPlayerSteps": "3-5 blocking authored scenes",
+        "questStages": [
+          "ready",
+          "confronting",
+          "defeated"
+        ],
+        "eventDelivery": "latched",
+        "suggestedFlow": [
+          "begin action advances quest ready -> confronting",
+          "opening event chooses an approach",
+          "middle event resolves pressure/obstacle choices",
+          "resolution event chooses finish / withdraw",
+          "finish writes prince-defeated and advances quest confronting -> defeated"
+        ],
+        "saveReload": "Quest stage is serialized; each pending/latched event snapshot is serialized. Reload resumes the exact pending scene/allowed choices."
+      },
+      "reusedMechanics": [
+        "actionSchema story action",
+        "machineDefinition quest stages/transitions",
+        "latched blocking event resolver",
+        "choiceResolved and questTransition reaction triggers",
+        "worldFact/stat/itemCapability/relationship conditions",
+        "addWorldFact / advanceQuest effects"
+      ],
+      "princeDefeatedSignal": {
+        "emittedBy": "final successful resolution choice",
+        "effect": {
+          "kind": "addWorldFact",
+          "fact": "palace.prince-defeated"
+        }
+      },
+      "failureRefusalRetry": {
+        "refusal": "A withdraw choice advances quest confronting -> ready and writes no defeat signal.",
+        "failure": "An authored unsuccessful resolution advances quest confronting -> ready and writes no defeat signal.",
+        "retry": "The explicit begin action becomes available again while stage=ready. Event maxShows must allow the approved retry budget rather than being one-shot."
+      },
+      "avoidsSingleAutomaticCheck": [
+        "Readiness only unlocks the begin action.",
+        "At least three authored scenes require explicit choices.",
+        "Optional item/relationship conditions change available responses but do not auto-win.",
+        "Final defeat is written only by the successful terminal choice."
+      ],
+      "returnHomeSeparation": "Successful event chain writes prince-defeated and leaves the run active. Return Home eligibility then registers, and the player separately commits the ending.",
+      "optionalSupportExamples": [
+        "relationshipStage / relationshipFact choices from generic Palace relationships",
+        "itemCapability alternatives for evidence, formal access, sealed access, or invitation handling"
+      ],
+      "productionTouches": [
+        "content/definitions.json: add confrontation quest machine and one story action",
+        "content/packs/palace-prince-confrontation.json: 3-5 latched scenes",
+        "content/localization.json: action/event/choice copy",
+        "src/ui/app.ts: expose the explicit Palace story action in an authorized Palace-facing panel",
+        "focused quest/event reload + retry tests"
+      ],
+      "engineChangeRequired": false
+    },
+    {
+      "id": "C_PRELUDE_ACTIVITY_VERDICT",
+      "title": "Authored Prelude + Activity Core + Verdict",
+      "implementability": "combines existing authored event resolver with counter.v1 Activity and an activityResult follow-up",
+      "availability": {
+        "mechanism": "story action opens confrontation, then Activity entry is conditioned on a run-local open fact",
+        "conditions": [
+          "Palace access",
+          "PALACE_PROGRESSION_COMPLETE_SIGNAL",
+          "strength >= 91",
+          "endurance >= 91",
+          "dexterity >= 91",
+          "reason >= 91",
+          "magic >= 91",
+          "creativity >= 91",
+          "wits >= 91",
+          "charm >= 91",
+          "sociability >= 91",
+          "manners >= 91",
+          "grooming >= 91",
+          "sexuality >= 91",
+          "palace.prince-defeated absent"
+        ]
+      },
+      "explicitBegin": {
+        "playerAction": "Press a dedicated 'Begin the final confrontation' story action",
+        "runtimeCommand": "action",
+        "candidateActionId": "palace.begin-prince-confrontation"
+      },
+      "sequence": {
+        "expectedPlayerSteps": "1 prelude choice + 3-6 Activity choices + 1 verdict choice",
+        "phases": [
+          "prelude event records selected approach/support and adds palace.prince-confrontation-open",
+          "player enters palace.prince-confrontation Activity",
+          "Activity success emits activityResult success",
+          "latched verdict event asks player to stand by the successful outcome",
+          "verdict choice writes palace.prince-defeated"
+        ],
+        "activity": {
+          "adapter": "counter.v1",
+          "resumePolicy": "allowed",
+          "timePolicy": "same_day",
+          "failurePolicy": "exit_to_day"
+        },
+        "saveReload": "Prelude fact/choices, ActivityEnvelope, activityResult-triggered latched verdict, and pending verdict are all stored in existing run state."
+      },
+      "reusedMechanics": [
+        "story action + blocking event",
+        "worldFact and relationship/item-supported approach selection",
+        "counter.v1 Activity",
+        "activityResult reaction trigger",
+        "latched verdict event",
+        "existing ending registration/commit"
+      ],
+      "princeDefeatedSignal": {
+        "emittedBy": "final verdict choice after Activity success",
+        "effect": {
+          "kind": "addWorldFact",
+          "fact": "palace.prince-defeated"
+        }
+      },
+      "failureRefusalRetry": {
+        "refusal": "Prelude can offer 'Not yet' without opening the Activity.",
+        "failure": "Activity failure/escape clears the Activity and writes no defeat signal; confrontation-open may remain so the player can retry without replaying the prelude, or be cleared if Product wants a full reset.",
+        "retry": "Re-enter the Activity explicitly; successful result queues the verdict exactly once."
+      },
+      "avoidsSingleAutomaticCheck": [
+        "Readiness unlocks only the prelude.",
+        "Player explicitly chooses an approach before the Activity.",
+        "Multiple Activity decisions determine success.",
+        "Activity success still does not auto-commit Return Home or even write prince-defeated until the authored verdict choice."
+      ],
+      "returnHomeSeparation": "Verdict writes prince-defeated; Return Home becomes eligible afterward and remains a separate ending commit.",
+      "optionalSupportExamples": [
+        "prelude can expose item/relationship-supported approach choices",
+        "Activity can reuse itemCapability-conditioned efficiency options",
+        "none of those supports are required for a baseline successful route"
+      ],
+      "productionTouches": [
+        "content/definitions.json: add one story action and one Activity definition",
+        "content/packs/palace-prince-confrontation.json: prelude + activityResult verdict events",
+        "content/localization.json: action/Activity/event copy",
+        "src/ui/app.ts: expose begin action and Palace Activity entry",
+        "focused cross-system save/reload + exactly-once verdict tests"
+      ],
+      "engineChangeRequired": false
+    }
+  ],
+  "comparisonAxes": {
+    "A_ACTIVITY_CORE": {
+      "implementationSurface": "smallest",
+      "authoredCinematicControl": "medium",
+      "nativeRetryModel": "strong",
+      "nativeMidAttemptReload": "strong",
+      "uiTouch": "Activity entry exposure",
+      "stateTracking": "ActivityEnvelope + prince-defeated fact"
+    },
+    "B_QUEST_EVENT_CHAIN": {
+      "implementationSurface": "medium",
+      "authoredCinematicControl": "strongest",
+      "nativeRetryModel": "authored via quest transitions",
+      "nativeMidAttemptReload": "strong",
+      "uiTouch": "story action exposure",
+      "stateTracking": "quest stage + event queue/pending + prince-defeated fact"
+    },
+    "C_PRELUDE_ACTIVITY_VERDICT": {
+      "implementationSurface": "largest of the three but still existing systems only",
+      "authoredCinematicControl": "strong",
+      "nativeRetryModel": "strong",
+      "nativeMidAttemptReload": "strongest across phases",
+      "uiTouch": "story action + Activity entry exposure",
+      "stateTracking": "world facts + ActivityEnvelope + event queue/pending + prince-defeated fact"
+    }
+  },
+  "leaderDecisionQuestions": [
+    "Should the confrontation feel primarily systemic (A), primarily authored/dramatic (B), or hybrid (C)?",
+    "Should failure return immediately to a retryable ready state, or require replaying a short prelude?",
+    "Should optional Palace relationship/item support alter only available choices, or also reduce Activity endurance cost/progress burden?",
+    "Should the final successful action write prince-defeated immediately (A/B) or require a separate authored verdict confirmation (C)?"
+  ],
+  "explicitNonGoals": [
+    "No Prince name, identity, personality, motive, or lore.",
+    "No final 3-stage vs 6-stage Palace career topology.",
+    "No generic combat subsystem.",
+    "No production runtime implementation.",
+    "No change to D23 New Start+/Meta semantics.",
+    "No change to fixed all-12 >=91 True readiness.",
+    "No automatic Return Home commit on Prince defeat."
+  ]
+}
