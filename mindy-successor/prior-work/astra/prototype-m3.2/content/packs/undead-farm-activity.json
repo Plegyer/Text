@@ -47,6 +47,11 @@
       "maxShows": 1,
       "conditions": [
         {
+          "kind": "worldFact",
+          "fact": "lumber.forest.truth-known",
+          "present": true
+        },
+        {
           "kind": "careerFact",
           "career": "undead-farm",
           "fact": "sample-preserved",

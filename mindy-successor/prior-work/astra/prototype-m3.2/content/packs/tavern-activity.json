@@ -44,6 +44,11 @@
       "maxShows": 1,
       "conditions": [
         {
+          "kind": "worldFact",
+          "fact": "lumber.forest.truth-known",
+          "present": true
+        },
+        {
           "kind": "careerFact",
           "career": "tavern",
           "fact": "rumour-route-open",
