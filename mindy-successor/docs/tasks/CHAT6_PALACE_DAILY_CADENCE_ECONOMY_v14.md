@@ -1130,4 +1130,4 @@ Focused reference:
 - explicit ending commit remains separate;
 - Prince/Return Home path remains separate.
 
-**READY_FOR_LEADER PRODUCT DECISION**
+**READY_FOR_LEADER_PRODUCT_DECISION**
