@@ -546,6 +546,9 @@ function palaceWorkPanelHTML(){
  const outcome=model.outcomeReady
   ?`<p class="palace-outcome-ready" role="status">${esc(tr('ui.palace.outcomeReady','Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.'))}</p>`
   :'';
+ const dutyEconomy=model.nextDutyId
+  ?`<p class="palace-duty-economy"><strong>${esc(tr('ui.palace.dutyCostLabel','Стоимость обязанности'))}:</strong> ${model.structuralDutyEnergyCost} ${esc(tr('ui.work.energy','энергии'))} · <strong>${esc(tr('ui.palace.wagePreviewLabel','Доход этой обязанности'))}:</strong> ${model.wagePreview} ${esc(tr('ui.work.coins','монет'))}</p>`
+  :'';
  const summaryAria=fmt(tr('ui.palace.summaryAria','Дворец: этап {stage}; структурные обязанности {count} из {total}.'),{stage,count:model.dutyCount,total:model.dutyTotal});
  return `<section class="career-progress palace-progress" data-palace-access="granted" data-palace-stage="${esc(model.stage)}" tabindex="0" aria-label="${esc(summaryAria)}">
   <h3>${esc(tr('ui.palace.title','Дворец'))}</h3>
@@ -553,7 +556,7 @@ function palaceWorkPanelHTML(){
   <p class="palace-stage"><strong>${esc(tr('ui.palace.stageLabel','Этап'))}:</strong> ${esc(stage)}</p>
   <p class="palace-duty-progress" data-palace-duty-progress="${model.dutyCount}/${model.dutyTotal}"><strong>${esc(tr('ui.palace.dutyProgressLabel','Структурные обязанности'))}:</strong> ${esc(fmt(tr('ui.palace.dutyProgress','{count} / {total}'),{count:model.dutyCount,total:model.dutyTotal}))}</p>
   <p class="palace-duty-lock" data-palace-duty-used-today="${model.structuralDutyUsedToday?'true':'false'}">${esc(dutyStatus)}</p>
-  <p class="palace-duty-economy"><strong>${esc(tr('ui.palace.dutyCostLabel','Стоимость обязанности'))}:</strong> ${model.structuralDutyEnergyCost} ${esc(tr('ui.work.energy','энергии'))} · <strong>${esc(tr('ui.palace.wagePreviewLabel','Доход этой обязанности'))}:</strong> ${model.wagePreview} ${esc(tr('ui.work.coins','монет'))}</p>
+  ${dutyEconomy}
   ${outcome}
   ${model.nextDutyId?`<h4>${esc(tr('ui.palace.nextDutyTitle','Следующая структурная обязанность'))}</h4>${nextDuty}`:''}
   <div class="palace-support" data-palace-support-used-today="${model.supportUsedToday?'true':'false'}">
