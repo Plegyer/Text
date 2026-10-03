@@ -95,6 +95,7 @@ export const strongMetaRuntimeSchema=z.object({
   reserveMatchPaid:nonNegativeInt,
   workRhythmBonusDaysTriggered:z.number().int().min(0).max(160),
   workRhythmArmedForDay:calendarDay.nullable(),
+  workRhythmAppliedDay:calendarDay.nullable(),
   networkRetainerLastProcessedDay:calendarDay.nullable(),
   networkRetainerPaidDays:z.number().int().min(0).max(160),
   networkRetainerTotalPaid:nonNegativeInt
@@ -176,6 +177,7 @@ export function emptyStrongMetaRuntime():StrongMetaRuntime{
     reserveMatchPaid:0,
     workRhythmBonusDaysTriggered:0,
     workRhythmArmedForDay:null,
+    workRhythmAppliedDay:null,
     networkRetainerLastProcessedDay:null,
     networkRetainerPaidDays:0,
     networkRetainerTotalPaid:0
@@ -354,7 +356,7 @@ export function validateStrongMetaRuntimeAgainstSnapshot(snapshot:ResolvedStrong
   if(reserve&&reserve.kind==='earned-reserve-match'&&runtime.reserveMatchPaid>reserve.perRunCap)throw new Error('Reserve Match runtime exceeds resolved cap.');
 
   const rhythm=effects.get('work-rhythm');
-  if(!rhythm&&(runtime.workRhythmBonusDaysTriggered!==0||runtime.workRhythmArmedForDay!==null))throw new Error('Work Rhythm runtime state exists without resolved reward.');
+  if(!rhythm&&(runtime.workRhythmBonusDaysTriggered!==0||runtime.workRhythmArmedForDay!==null||runtime.workRhythmAppliedDay!==null))throw new Error('Work Rhythm runtime state exists without resolved reward.');
   if(rhythm&&rhythm.kind==='work-rhythm'&&runtime.workRhythmBonusDaysTriggered>rhythm.maxBonusDays)throw new Error('Work Rhythm runtime exceeds resolved day cap.');
 
   const retainer=effects.get('network-retainer');
@@ -365,6 +367,16 @@ export function validateStrongMetaRuntimeAgainstSnapshot(snapshot:ResolvedStrong
     if(runtime.networkRetainerPaidDays>retainer.eligibleDayCount)throw new Error('Network Retainer runtime exceeds resolved day window.');
     if(runtime.networkRetainerTotalPaid>retainer.perRunTotalCap)throw new Error('Network Retainer runtime exceeds resolved total cap.');
   }
+}
+
+export function strongMetaCurrentEnergyBonus(
+  snapshot:ResolvedStrongMetaSnapshot|null|undefined,
+  runtime:StrongMetaRuntime,
+  day:number
+):number{
+  const reward=resolvedReward(snapshot,STRONG_META_IDS.workRhythm);
+  if(!reward||reward.effect.kind!=='work-rhythm'||runtime.workRhythmAppliedDay!==day)return 0;
+  return reward.effect.energyDelta;
 }
 
 export function hasResolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):boolean{
@@ -420,12 +432,14 @@ export function applyWorkRhythmAtStartDay(input:Readonly<{
   day:number;
 }>):Readonly<{runtime:StrongMetaRuntime;energyBonus:number}>{
   const runtime=structuredClone(input.runtime);
+  runtime.workRhythmAppliedDay=null;
   const reward=resolvedReward(input.snapshot,STRONG_META_IDS.workRhythm);
   if(!reward||reward.effect.kind!=='work-rhythm')return {runtime,energyBonus:0};
   if(runtime.workRhythmArmedForDay!==input.day)return {runtime,energyBonus:0};
   runtime.workRhythmArmedForDay=null;
   if(runtime.workRhythmBonusDaysTriggered>=reward.effect.maxBonusDays)return {runtime,energyBonus:0};
   runtime.workRhythmBonusDaysTriggered++;
+  runtime.workRhythmAppliedDay=input.day;
   return {runtime,energyBonus:reward.effect.energyDelta};
 }
 
