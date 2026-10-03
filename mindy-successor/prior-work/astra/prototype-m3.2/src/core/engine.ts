@@ -1,9 +1,21 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap, createDefaultPalaceProgressionState } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
-import {markPalaceCreationQualification} from './palace.ts';
+import {
+  PALACE_DUTY_COUNTER,
+  PALACE_STRUCTURAL_DUTY_ENERGY_COST,
+  PALACE_SUPPORT_ENERGY_COST,
+  assertPalaceProgressionState,
+  markPalaceCreationQualification,
+  markPalaceRoutePrepared,
+  palaceDutyDefinition,
+  palaceStructuralDutyAvailable,
+  palaceStructuralWage,
+  palaceSupportActionAvailable,
+  palaceSupportDefinition
+} from './palace.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -173,11 +185,19 @@ function domainMap(s:Save,kind:DomainKind):Record<string,DomainState>{
   return (kind==='career'?s.run.progression.careers:kind==='quest'?s.run.progression.quests:s.run.progression.relationships) as Record<string,DomainState>;
 }
 function readDomainState(s:Save,kind:DomainKind,id:string,cat?:Catalog):DomainState|undefined{
+  if(kind==='career'&&id==='palace'){
+    if(!machineDefinition(cat,kind,id))return undefined;
+    return s.run.progression.palace;
+  }
   const existing=domainMap(s,kind)[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)return undefined;
   return {stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
 }
 function ensureDomainState(s:Save,kind:DomainKind,id:string,cat:Catalog):DomainState{
+  if(kind==='career'&&id==='palace'){
+    if(!machineDefinition(cat,kind,id))throw new Error('Неизвестная career state machine: palace');
+    return s.run.progression.palace;
+  }
   const map=domainMap(s,kind),existing=map[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)throw new Error(`Неизвестная ${kind} state machine: ${id}`);
   const created={stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
@@ -258,6 +278,8 @@ export type ActionAvailabilityOptions=Readonly<{ordinaryCareersDomainLocked?:boo
 
 export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
   const normalGateSatisfied=eligible(action.conditions,s,cat);
+  if(palaceDutyDefinition(action.id))return normalGateSatisfied&&palaceStructuralDutyAvailable(s,action.id);
+  if(palaceSupportDefinition(action.id))return normalGateSatisfied&&palaceSupportActionAvailable(s,action.id);
   const career=ordinaryCareerForShiftAction(action);
   if(!career)return normalGateSatisfied;
   return ordinaryCareerAvailableWithHardWork({
@@ -271,6 +293,80 @@ export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:Action
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
+}
+
+function palaceActionVariant(a:Action,s:Save,cat:Catalog){
+  return a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((left,right)=>right.conditions.length-left.conditions.length)[0];
+}
+
+function executePalaceStructuralDutyMutable(s:Save,a:Action,cat:Catalog){
+  const definition=palaceDutyDefinition(a.id);
+  if(!definition||!palaceStructuralDutyAvailable(s,a.id))throw new Error('Эта Palace duty сейчас недоступна.');
+  if(s.run.dayState.energyCurrent<PALACE_STRUCTURAL_DUTY_ENERGY_COST)throw new Error('Не хватает Energy для Palace duty.');
+
+  const before=cloneSave(s);
+  const beforeMetrics={...s.run.metrics};
+  const palace=s.run.progression.palace;
+  const wage=palaceStructuralWage(s);
+
+  s.run.dayState.energyCurrent-=PALACE_STRUCTURAL_DUTY_ENERGY_COST;
+  s.run.resources.money=Math.min(1_000_000,s.run.resources.money+wage);
+  palace.counters[PALACE_DUTY_COUNTER]=definition.ordinal;
+  palace.shifts=definition.ordinal;
+  palace.lastStructuralDutyDay=s.run.calendar.elapsedDays;
+  palace.committedDutyIds.push(definition.id);
+
+  if(definition.transition)applyTransition(s,'career','palace',definition.transition,cat);
+
+  s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
+  s.run.historyState.dayActionCount=Math.min(1000,s.run.historyState.dayActionCount+1);
+  log(s,`Заработано: ${wage} монет.`);
+  log(s,`${a.label}. Осталось энергии: ${s.run.dayState.energyCurrent}.`);
+
+  const variant=palaceActionVariant(a,s,cat);
+  s.run.flow.lastAction={
+    id:a.id,
+    title:a.label,
+    text:variant?.text??a.description,
+    media:variant?.media??['stage.town'],
+    presentationId:presentationIdForActionResult(cat,a.id,variant?.media??['stage.town']),
+    deltas:delta(beforeMetrics,s.run.metrics)
+  };
+
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'actionCompleted',action:a.id}],true);
+}
+
+function executePalaceSupportMutable(s:Save,a:Action,cat:Catalog){
+  const definition=palaceSupportDefinition(a.id);
+  if(!definition||!palaceSupportActionAvailable(s,a.id))throw new Error('Это Palace support action сейчас недоступно.');
+  if(s.run.dayState.energyCurrent<PALACE_SUPPORT_ENERGY_COST)throw new Error('Не хватает Energy для Palace support.');
+
+  const before=cloneSave(s);
+  const beforeMetrics={...s.run.metrics};
+  const palace=s.run.progression.palace;
+
+  s.run.dayState.energyCurrent-=PALACE_SUPPORT_ENERGY_COST;
+  palace.lastSupportActionDay=s.run.calendar.elapsedDays;
+  palace.completedSupportIds.push(definition.id);
+  if(definition.writesPrep)markPalaceRoutePrepared(s,definition.route);
+
+  s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
+  s.run.historyState.dayActionCount=Math.min(1000,s.run.historyState.dayActionCount+1);
+  log(s,`${a.label}. Осталось энергии: ${s.run.dayState.energyCurrent}.`);
+
+  const variant=palaceActionVariant(a,s,cat);
+  s.run.flow.lastAction={
+    id:a.id,
+    title:a.label,
+    text:variant?.text??a.description,
+    media:variant?.media??['stage.town'],
+    presentationId:presentationIdForActionResult(cat,a.id,variant?.media??['stage.town']),
+    deltas:delta(beforeMetrics,s.run.metrics)
+  };
+
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'actionCompleted',action:a.id}],true);
 }
 
 export type NewLifeRuntimeSetup=Readonly<{progressionStatCap?:ProgressionStatCap}>;
@@ -299,7 +395,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
-      progression:{careers:{},quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
+      progression:{careers:{},palace:createDefaultPalaceProgressionState(),quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
       endings:{eligible:[],committed:null,result:null},
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
@@ -671,6 +767,7 @@ export function resolveReactions(input:Save,facts:ReactionFact[],cat:Catalog,{ne
 function collectDomainFacts(before:Save,after:Save,cat:Catalog,kind:DomainKind,facts:ReactionFact[]){
   const beforeMap=domainMap(before,kind),afterMap=domainMap(after,kind);
   const ids=new Set([...Object.keys(beforeMap),...Object.keys(afterMap)]);
+  if(kind==='career'&&machineDefinition(cat,'career','palace'))ids.add('palace');
   for(const id of ids){
     const a=readDomainState(before,kind,id,cat),b=readDomainState(after,kind,id,cat);if(!a||!b)continue;
     if(a.stage!==b.stage){
@@ -1245,6 +1342,8 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   const a=cat.definitions.actions.find(a=>a.id===command.id);
   if(!a||!actionAvailable(a,s,cat))throw new Error('Условия действия не выполнены.');
   if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
+  if(palaceDutyDefinition(a.id)){executePalaceStructuralDutyMutable(s,a,cat);return s;}
+  if(palaceSupportDefinition(a.id)){executePalaceSupportMutable(s,a,cat);return s;}
   const before={...s.run.metrics};
   const cost=actionCost(a,s);
   const freeLesson=a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`];
@@ -1370,6 +1469,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  assertPalaceProgressionState(s);
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
