@@ -399,6 +399,22 @@ This section records user-provided clarification about the original game's struc
 
 Research implication: if the successor later creates any title-like strong-modifier layer, do not reproduce a set where one universal action-economy option trivially dominates the rest.
 
+## Newly verified cross-system interlocks — v3.6.0 raw pass
+
+Detailed evidence is preserved in:
+`mindy-successor/research/original_system_interlocks_verified_v2.md`.
+
+Newly confirmed from the user-supplied `Simply_Mindy_360(5).swf` (embedded UI version `v. 3.6.0`, SHA-256 `90c894bb7610e16d2c4150e119d4c08caf52b5527deca4dded9f8059109188d6`):
+
+- alternative stat rent has an affordability floor: the stat must be **strictly greater** than the 1/2/3/4-point payment or the game routes to outdoor/no-rent sleep instead of clipping the stat lower;
+- the original "$200 each day" ending reward is actually attached to normal paid sleep (and Finale sleep), not a universal calendar tick; outdoor/forced sleep paths that bypass those scenes can suppress it;
+- normal paid sleep can stack that +200 with a separate Froglord relationship income of random $180–220;
+- night outcomes establish base Stamina first, after which the main new-day handler adds `staminaBoost` and Busy Bee, so broad action Meta can offset forced-night pressure;
+- the hidden original cap-200 chain is exact: select `endMoeLose` -> `easterEggActive` -> hidden dungeon chest -> `statBoost=true` -> 200 clamp;
+- Final Mode uses `finaleBonusCount` in exact final-battle tiers: 0 / 1–15 / 16–30 / 31–45 / 46+ change both boss Health pressure and a `monsterBonus` added to multiple combat rolls; the available attack-code range also broadens as more bonuses are active.
+
+Derived full-run scale: paying cash rent for all 40 nights of Years 1–4 costs about **$80,000** total under the verified 100/300/600/1000 schedule. This is a derivation from verified calendar/rent rules, not a single SWF constant.
+
 ## Authority rule for using this reference
 
 When original and successor authority conflict:
@@ -414,10 +430,10 @@ Examples:
 
 ## Next extraction priorities
 
-1. exact original rent/payment amounts and housing flow;
-2. more ending/NG+ rewards;
-3. original Prostitute/poverty event thresholds beyond the basic unlock/no-rent route;
-4. original job ending thresholds and repeat-work counters;
-5. any original economy sinks that explain the much higher historical job wage scale.
+1. verify the actual enable/disable runtime effects behind all 66 ending-bonus descriptions;
+2. build an exact ending -> rule/stat/job/item/Title -> Finale-count dependency graph;
+3. finish intermediate career-route graphs where only the 15/50 skeleton is currently catalogued;
+4. decode the final battle attack-code semantics behind the newly recovered `finaleBonusCount` ranges;
+5. inventory recurring income/sinks by timing hook (action/main/sleep/new-day/contest/dungeon), not only headline amount.
 
 Only verified values should be promoted into this reference.
