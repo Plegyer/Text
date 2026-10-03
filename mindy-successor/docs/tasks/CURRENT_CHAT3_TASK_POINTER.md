@@ -1,140 +1,124 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — STANDALONE ACTIVITY ENDING FAMILY v9**
+Status: **ACTIVE — ORDINARY COMPLEX ENDINGS TRANCHE B v10**
 Owner: Chat 3
 
-Accepted Product packet:
-`chat3/large-activity-full-scope-v8@5d176da728d7a8b99efcc5970f97bbed411bae6f`
+Accepted prior Product packet:
+`chat3/activity-ending-family-v9@37079bea92a0fa442035de310d8d21fb0b435d53`
 
 Leader authority:
-D36 now locks:
-- exactly 4 functional Activity regions;
-- Forest Frontier / Trade Corridor / Anomalous Reach / Restricted Sites Network;
-- 2 Energy entry;
-- Field Time 6;
-- Endurance target range 6–8 by adapter;
-- Tracking Triangulation / Pattern-Ritual Circuit / Infiltration-Suspicion;
-- selected multi-day camp with max 2 field nights;
-- standalone Activity ending eligibility baseline;
-- no universal Activity XP/combat grind.
+D38 now locks:
+- three separate Activity ending IDs;
+- Pathfinder / Preservation / Network eligibility;
+- Surveyor's Atlas / Field Archive Protocol / Expedition Contact Network;
+- all three rewards are selectable Specialists;
+- D28 0..2 Specialist capacity remains binding.
 
 Authority commit:
-`main@9e92ffbd0b7b68c0cf333d36dac19551e10465f5`
+`main@20553cff531dcbc328df8b786829b7409e5d521f`
+
+## New assignment
+
+Close exact Product gates/rewards for the **later-half advanced ordinary-career endings**.
 
 New branch:
-`chat3/activity-ending-family-v9`
-
-## Assignment
-
-Close the remaining D36 ending gap so the user's complete Ending Atlas can eventually state exactly:
-**how the Activity ending is obtained and what it gives.**
-
-This is a Product decision packet only. Do not implement production runtime/content.
+`chat3/ordinary-complex-endings-tranche-b-v10`
 
 Create:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_ENDING_FAMILY_v9.md`
+1. `mindy-successor/docs/tasks/CHAT3_ORDINARY_COMPLEX_ENDINGS_TRANCHE_B_v10.md`
+2. `mindy-successor/research/ordinary_complex_endings_tranche_b_v1.csv`
 
-Use D16, D27-D28, D36 and the current Meta architecture.
+No production runtime/UI/content changes.
+No full CI.
 
-## Locked eligibility baseline
+## Endings in scope — exactly 16
 
-The standalone Activity ending family must require:
-- regional anchors resolved in at least **3 of 4** D36 regions;
-- specialized mechanics completed from at least **2 different mini-game families**;
-- at least one meaningful extracted capability/evidence/sample result;
-- at least one Activity contact/companion thread resolved;
-- no ordinary Hard Work requirement;
-- no Palace requirement;
-- eligibility is non-terminal until explicit commit.
+### Guard
+- Officer
+- Reform
+- Network / Corruption
+- Major Case
 
-Do not weaken or add hidden mandatory gates to that baseline.
+### Merchant
+- Merchant House
+- Speculator / Smuggler
+- Patron of Routes
 
-## Required Product work
+### Artist / Geisha
+- Master Artist
+- Patron Network
+- Court Invitation
 
-Design **three distinct ending directions** under the one standalone Activity family.
+### Assassin
+- Ghost
+- Handler Takeover
+- Refusal / Turncoat
 
-Use functional names until final lore copy is approved. The packet should evaluate and refine at least:
+### Prostitute
+- Independent House
+- Elite Clientele
+- Network / Protection
 
-1. **Pathfinder / Mapping**
-   - route mastery / safe access / exploration identity;
+Do not change the ordinary Hard Work ending for any career.
 
-2. **Preservation / Research**
-   - anomaly/sample/knowledge preservation identity;
+## For every ending define
 
-3. **Network / Access**
-   - trade/contact/route-network identity.
+1. proposed stable ending ID if none exists;
+2. exact minimum career progression/stage requirement;
+3. exact route facts/counters;
+4. exact School requirement if any;
+5. exact Night/relationship requirement if any;
+6. exact Activity/item requirement if any;
+7. exact stat threshold if justified;
+8. what is optional vs mandatory;
+9. explicit D16 commit boundary;
+10. current-life resolution;
+11. permanent/New Start+ reward;
+12. reward class under D27/D28;
+13. exact reward mechanics/caps/duration;
+14. save/migration implications;
+15. implementation status;
+16. remaining lore/presentation OPEN items.
 
-If one of these is mechanically weak or duplicates an ordinary career, replace it and explain why.
+## Reward constraints
 
-For each direction specify:
+Prefer identity-specific future-run changes over generic power.
 
-### How the player gets it
-- which regional anchor/facts distinguish this direction after the common 3-of-4 baseline;
-- which mini-game family contribution matters;
-- any item/evidence/contact requirements;
-- exact numbers where justified;
-- what remains optional;
-- explicit commit action/boundary.
-
-### Current-life resolution
-- what the player has achieved in this life;
-- what route state closes/resolves;
-- what is intentionally left as final lore copy.
-
-### Permanent / New Start+ reward
-Propose a concrete reward and classify it under current Meta architecture:
-- automatic knowledge/content;
-- Specialist;
-- Keystone;
-- or another already-authorized layer.
-
-Strong rule-changing rewards must respect D27/D28. Do not invent a free extra slot.
-
-Prefer rewards that change future Activity options rather than generic raw stats/money/Energy.
-
-For each reward show:
-- exact mechanical effect;
-- why it fits its class;
-- interaction with D36;
-- interaction with Secret Debt;
-- interaction with Palace;
-- stacking risks;
-- whether it should be automatic or selectable.
-
-### Balance comparison
-Compare the three rewards against:
-- D30/D32 Keystones;
-- D24 cap-200 Specialist;
-- ordinary Hard Work packages;
-- current Activity entry cost 2 Energy;
-- D36 <=10-entry ending pacing.
-
-Avoid:
+Do not use:
 - unconditional +1 daily Energy;
 - No Rent;
-- generic large starting cash;
-- extra calendar time;
-- bypassing D23;
-- bypassing Secret Debt forced Night.
+- broad passive money unless it clearly belongs in Keystone class and is proven necessary;
+- generic extra calendar time;
+- broad stat carry-over;
+- free Specialist slots;
+- Palace entry shortcuts;
+- Secret Debt bypasses.
 
-## Ending-family structure
+Ordinary Hard Work packages remain a separate unrestricted layer and do not consume Specialist capacity.
 
-Decide whether:
-- the three directions are three separate ending IDs under one Activity family;
-or
-- one ending ID with three completion variants.
+If a complex ending only merits automatic knowledge/content rather than a selectable strong modifier, say so.
 
-Recommend one implementation shape and explain save/Meta implications.
+## Cross-system authority
 
-## Deliverable summary
+Preserve:
+- D16 eligibility != automatic ending;
+- D23 Palace sole 10/10 permanent + 10/10 active entry;
+- D26 same-career max one shift/day;
+- D27/D28 strong Meta architecture;
+- D35 housing/private-space semantics;
+- D37 Night completeness bar;
+- D36/D38 Activity boundaries;
+- ordinary Prostitute never inherits Secret Debt forced-route semantics.
 
-End with an exact user-facing table:
+Court Invitation may create Palace-related knowledge/context only; it may **not** grant Palace access or substitute for D23.
 
-`Направление | Как получить | Что происходит | Что даёт навсегда | Reward class | Что ещё OPEN`
+Network/Corruption, Merchant network, Assassin network and Prostitute network endings must remain mechanically distinct from one another and from D30 Network Retainer.
 
-Mark the packet:
+## Final deliverable
+
+End with a Russian user-facing table:
+
+`Ending | Как получить | Что происходит | Что даёт навсегда | Reward class | Exact numbers | OPEN`
+
+Freeze exact SHA and report:
 `READY_FOR_LEADER_PRODUCT_DECISION`.
-
-No production code.
-No full CI.
-Freeze exact SHA.
