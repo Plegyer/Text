@@ -186,6 +186,19 @@ The same recovered Prostitute router uses multiple kinds of prerequisites: a 15-
 
 Design lesson: complex career outcomes are more interesting when they combine career experience with character build and authored choices. They need not be reducible to a single global score or only the final shift count.
 
+
+### 28. Complex outcomes are route-memory checks, not only stat checks
+The recovered shared Prostitute/Arm-Candy storyline stores several kinds of persistent route state at once:
+- which ally/path was chosen;
+- whether prerequisite career scenes occurred;
+- repeated interaction counters;
+- a route countdown/timer;
+- later branch-completion flags.
+
+Follow-up scenes require combinations of those facts rather than one universal score.
+
+Design lesson: a complex successor ending can combine relevant stats with evidence that the player actually lived that route — career progress, School, relationship choices, items/capabilities, Activity results or prior decisions. Avoid reducing every advanced ending to only a very high stat wall.
+
 ## Successor implications to test, not auto-lock
 
 - Current approved successor seasonal-tradeoff candidate yields **+1.5 net progression-stat points per ordinary shift on average for all ten careers**. That is roughly +75 summed stat points across 50 shifts, versus about +25 in the recovered original work model. This is a balance-test flag, not a command to copy the original: verify progression speed and cap timing over a full 160-day run, especially with School and NG+.
