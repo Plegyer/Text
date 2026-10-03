@@ -9434,7 +9434,13 @@
           "progressDelta": 0,
           "enduranceCost": 0,
           "setRoute": "hunter-trail",
-          "fieldTimeCost": 1
+          "fieldTimeCost": 1,
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.contact-thread-open"
+            }
+          ]
         },
         {
           "id": "forest.route.old-boundary",
@@ -9622,7 +9628,7 @@
           "effects": [
             {
               "kind": "addWorldFact",
-              "fact": "forest.frontier.preservation-used"
+              "fact": "activity.forest-frontier.mark.preservation"
             }
           ]
         },
@@ -9752,7 +9758,7 @@
           "effects": [
             {
               "kind": "addWorldFact",
-              "fact": "forest.frontier.preservation-used"
+              "fact": "activity.forest-frontier.mark.preservation"
             }
           ]
         },
@@ -9849,7 +9855,7 @@
           "effects": [
             {
               "kind": "addWorldFact",
-              "fact": "forest.frontier.preservation-used"
+              "fact": "activity.forest-frontier.mark.preservation"
             }
           ]
         },
@@ -9880,7 +9886,12 @@
           "progressDelta": 0,
           "enduranceCost": 0,
           "fieldTimeCost": 1,
-          "effects": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.contact-thread-open"
+            }
+          ],
           "setRoute": "hunter-trail",
           "miniGameTransition": {
             "game": "forest.tracking-triangulation",
@@ -10039,7 +10050,7 @@
           "effects": [
             {
               "kind": "addWorldFact",
-              "fact": "forest.frontier.pathfinder-evidence"
+              "fact": "activity.forest-frontier.mark.pathfinder"
             }
           ],
           "setRoute": "hunter-trail"
