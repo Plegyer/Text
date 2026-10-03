@@ -90,8 +90,13 @@ test('all-ten earned UI exposes Palace requirement separately from package contr
     assert.match(help.textContent,/10\/10/);
     assert.match(help.textContent,/активны все 10/);
 
-    for(const control of [...w.document.querySelectorAll('[data-hard-work-package]')])control.click();
-    await wait(()=>savedActive(w).length===10);
+    for(const career of earned){
+      const control=w.document.querySelector(`[data-hard-work-package="${career}"]`);
+      assert.ok(control,career);
+      control.click();
+      await wait(()=>savedActive(w).includes(career));
+    }
+    assert.equal(savedActive(w).length,10);
     await wait(()=>w.document.querySelector('.hard-work-palace-help')?.getAttribute('data-palace-qualified')==='true');
 
     assert.equal(w.document.querySelectorAll('[data-hard-work-package][aria-pressed="true"]').length,10);

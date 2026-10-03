@@ -102,7 +102,7 @@ test('RU/EN Palace help explicitly requires all ten earned and all ten active in
       progressionStatCap:100
     });
     assert.match(summary.palaceRequirement,/10/);
-    assert.match(summary.palaceProgress,/10/10/);
+    assert.match(summary.palaceProgress,/10\/10/);
   }
   assert.match(hardWorkNewStartCopy('en').palaceRequirement,/all 10.*earned.*all 10.*active/i);
   assert.match(hardWorkNewStartCopy('ru').palaceRequirement,/все 10.*заработаны.*все 10/i);
