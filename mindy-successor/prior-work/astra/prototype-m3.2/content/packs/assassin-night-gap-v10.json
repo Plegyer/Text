@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin.night",
+  "reads": [],
+  "writes": [],
+  "media": [],
+  "events": [
+    {
+      "id": "assassin.night.handler-contact",
+      "title": "Off-hours contact with the Handler",
+      "sourceDomain": "assassin.handler",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "assassin.night.handler-contact"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Meet to discuss boundaries, trust, or loyalty outside the covert-work notes. The scene creates no route evidence or mandatory relationship state.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Leave on your own terms.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
