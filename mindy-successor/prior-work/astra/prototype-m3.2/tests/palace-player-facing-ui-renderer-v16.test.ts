@@ -77,6 +77,7 @@ function prepareServiceLife(input:Save){
   if(!s.run.progression.palace.routePrepFacts.includes('service-life'))s.run.progression.palace.routePrepFacts.push('service-life');
   if(!s.run.progression.worldFacts.includes('palace.prep.service-life'))s.run.progression.worldFacts.push('palace.prep.service-life');
   if(!s.run.progression.worldFacts.includes('palace.outcome.service-life-ready'))s.run.progression.worldFacts.push('palace.outcome.service-life-ready');
+  if(!s.run.endings.eligible.includes('ending.palace.service-life'))s.run.endings.eligible.push('ending.palace.service-life');
   return parseSave(JSON.stringify(s),catalog);
 }
 
@@ -203,6 +204,7 @@ test('renderer: Return Home card appears only when full 12x91 plus Prince predic
   for(const stat of stats)ready.run.character.stats[stat]=91;
   ready.run.character.lust=1;
   ready.run.progression.worldFacts.push(PALACE_PRINCE_DEFEATED_FACT);
+  ready.run.endings.eligible.push('ending.palace.return-home');
   ready=parseSave(JSON.stringify(ready),catalog);
 
   const good=boot(JSON.stringify(ready));
@@ -226,6 +228,7 @@ test('renderer: Return Home card appears only when full 12x91 plus Prince predic
   low.run.character.stats.reason=90;
   low.run.character.lust=100;
   low.run.progression.worldFacts.push(PALACE_PRINCE_DEFEATED_FACT);
+  low.run.endings.eligible.push('ending.palace.return-home');
   low=parseSave(JSON.stringify(low),catalog);
 
   const bad=boot(JSON.stringify(low));
