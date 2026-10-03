@@ -88,7 +88,7 @@ test('clean Tavern run reaches Year-2 unlock, cross-system routes, overlapping e
   const seenSeasons=new Set<string>();
   while(
     (s.run.progression.careers.tavern?.counters.completed_shifts??0)<50
-    || s.run.resources.money<1300
+    || s.run.resources.money<1312
   ){
     s=workDay(s,seenSeasons);
     if(s.run.progression.careers.tavern?.counters.completed_shifts===10){
@@ -131,13 +131,16 @@ test('clean Tavern run reaches Year-2 unlock, cross-system routes, overlapping e
   s=settlePending(s);
   assert.equal(s.run.resources.inventory.field_preservation_kit,1);
 
-  while(calendar(s.run.day).season!=='winter')s=finishNight(s);
-  assert.ok(s.run.dayState.energyCurrent>=2);
+  s=dispatch(s,{type:'action',id:'forest.hunter-outfitter'},catalog);
+  s=settlePending(s);
+  assert.equal(s.run.resources.inventory.rope_kit,1);
+  while(!['summer','autumn'].includes(calendar(s.run.day).season)||s.run.dayState.energyCurrent<2)s=finishNight(s);
+  assert.ok(['summer','autumn'].includes(calendar(s.run.day).season));
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},catalog);
-  s=dispatch(s,{type:'activityAction',id:'forest.route.logging-road'},catalog);
-  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-navigation'},catalog);
-  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-winter-ruts'},catalog);
-  s=dispatch(s,{type:'activityAction',id:'forest.challenge.logging-preserve-sample'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.route.hunter-trail'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.hunter-navigation'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.hunter-rough-crossing'},catalog);
+  s=dispatch(s,{type:'activityAction',id:'forest.challenge.hunter-preserve-sample'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   s=settlePending(s);

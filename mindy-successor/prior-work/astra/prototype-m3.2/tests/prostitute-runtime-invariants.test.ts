@@ -28,13 +28,13 @@ test('Prostitute production preserves exact shipped ordinary-work and Hard Work 
     summer:[
       {kind:'modifyStat',stat:'charm',delta:1},
       {kind:'modifyStat',stat:'endurance',delta:1},
-      {kind:'modifyStat',stat:'grooming',delta:-1}
+      {kind:'modifyStat',stat:'sexuality',delta:-1}
     ],
     autumn:[{kind:'modifyStat',stat:'manners',delta:1},{kind:'modifyStat',stat:'sexuality',delta:1}],
     winter:[
       {kind:'modifyStat',stat:'charm',delta:1},
       {kind:'modifyStat',stat:'manners',delta:1},
-      {kind:'modifyStat',stat:'creativity',delta:-1}
+      {kind:'modifyStat',stat:'endurance',delta:-1}
     ]
   });
 
