@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 
 import {
   actionAvailable,
@@ -250,6 +251,16 @@ test('bound state locks all ten ordinary careers without mutating their progress
     assert.equal(actionAvailable(action,s,catalog,{ordinaryCareersDomainLocked:false}),false,career+' lock cannot be overridden');
   }
   assert.deepEqual(s.run.progression.careers,before);
+
+  s.run.secretDebt.status='paid-freedom';
+  s.run.secretDebt.debt=0;
+  s.run.secretDebt.resolvedDay=10;
+  for(const career of ordinaryHardWorkCareers){
+    const action=catalog.definitions.actions.find(item=>item.id===career+'.shift');
+    assert.ok(action,career);
+    assert.equal(actionAvailable(action,s,catalog),true,career+' access resumes after exit');
+  }
+  assert.deepEqual(s.run.progression.careers,before,'career progress must survive bound lock and exit');
 });
 
 test('School and Activity remain executable while bound',()=>{
@@ -346,6 +357,20 @@ test('forced Secret Debt Night owns every bound night and applies next-day Energ
   s=resolvePending(s);
   s=dispatch(s,{type:'endDay'},catalog);
   assert.equal(s.run.pending?.eventId,SECRET_DEBT_FORCED_NIGHT_EVENT_ID);
+});
+
+test('Meta Energy modifiers cannot suppress forced Secret Debt Night or its relative -1 penalty',()=>{
+  let s=setBound(started(),10,0);
+  s.meta.ruleModifiers['energy.daily']=1;
+  s.run.resources.money=1000;
+  s.run.dayState.energyCurrent=4;
+
+  s=dispatch(s,{type:'endDay'},catalog);
+  assert.equal(s.run.pending?.eventId,SECRET_DEBT_FORCED_NIGHT_EVENT_ID);
+  s=dispatch(s,{type:'choice',id:'continue'},catalog);
+  s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
+
+  assert.equal(s.run.dayState.energyCurrent,3,'base 4 from modifier minus bound Night 1');
 });
 
 test('Street and bound penalties stack in the correct order: paid lodging leaves 2 Energy, Street leaves 1',()=>{
@@ -458,8 +483,9 @@ test('Secret Debt content never writes relationship consent state and Palace acc
 
   let s=setBound(started(),40,0);
   assert.equal(palaceHasAccess(s),false);
-  s.run.progression.worldFacts.push(PALACE_ACCESS_FACT);
+  s.run.progression.worldFacts.push(PALACE_ACCESS_FACT,'palace.progression-complete');
   assert.equal(palaceHasAccess(s),true);
+  assert.ok(s.run.progression.worldFacts.includes('palace.progression-complete'));
 
   s.run.dayState.energyCurrent=3;
   s=dispatch(s,{type:'action',id:SECRET_DEBT_HIDDEN_WORK_ACTION_ID},catalog);
@@ -471,6 +497,7 @@ test('Secret Debt content never writes relationship consent state and Palace acc
   s=dispatch(s,{type:'choice',id:'continue'},catalog);
   s=dispatch(s,{type:'chooseLodging',id:'lodging.normal'},catalog);
   assert.equal(palaceHasAccess(s),true);
+  assert.ok(s.run.progression.worldFacts.includes('palace.progression-complete'));
 });
 
 test('Secret Debt ending rewards bind exact D30/D32 ownership IDs and standard transaction ledger grants once',()=>{
@@ -519,6 +546,30 @@ test('stale Bound Life eligibility cannot be committed after explicit repayment 
     ()=>dispatch(takeover,{type:'commitEnding',id:SECRET_DEBT_BOUND_LIFE_ENDING_ID},catalog),
     /больше не соответствует/i
   );
+});
+
+test('Secret Debt actions are player-facing in existing UI panels and required route copy is bilingual',()=>{
+  const app=readFileSync('src/ui/app.ts','utf8');
+  assert.match(app,/actionList\(\['secret-debt\.hidden-work'\]\)/);
+  assert.match(app,/actionList\(\['secret-debt\.repay','secret-debt\.takeover'\]\)/);
+  assert.match(app,/state\.run\.secretDebt\.debt/);
+
+  const strings=JSON.parse(readFileSync('content/localization.json','utf8')).strings as Record<string,{ru:string;en?:string}>;
+  const required=[
+    'action.secret-debt.hidden-work.label',
+    'action.secret-debt.repay.label',
+    'action.secret-debt.takeover.label',
+    'event.secret-debt.lender-encounter.title',
+    'event.secret-debt.trap-activation.title',
+    'event.secret-debt.forced-night.title',
+    'ending.ending.secret-debt.paid-freedom.title',
+    'ending.ending.secret-debt.bound-life.title',
+    'ending.ending.secret-debt.takeover.title'
+  ];
+  for(const key of required){
+    assert.ok(strings[key]?.ru.trim(),key+' RU');
+    assert.ok(strings[key]?.en?.trim(),key+' EN');
+  }
 });
 
 test('schema-v5 saves from before Secret Debt runtime migrate by default to a clean unseen route state',()=>{
