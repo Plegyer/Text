@@ -146,8 +146,9 @@ export function palacePlayerUiModel(s:Save):PalaceUiModel|null{
     .map(config=>{
       const routeSupportIds=palaceSupportDefinitions
         .filter(definition=>definition.route===config.route)
-        .map(definition=>definition.id);
-      const routeAvailableSupportIds=availableSupportIds.filter(id=>routeSupportIds.includes(id as never));
+        .map(definition=>definition.id as string);
+      const routeSupportIdSet=new Set(routeSupportIds);
+      const routeAvailableSupportIds=availableSupportIds.filter(id=>routeSupportIdSet.has(id));
       const ready=s.run.progression.worldFacts.includes(palaceRouteReadyWorldFacts[config.route]);
       const prepared=state.routePrepFacts.includes(config.route)
         || s.run.progression.worldFacts.includes(palaceRoutePrepWorldFacts[config.route]);
