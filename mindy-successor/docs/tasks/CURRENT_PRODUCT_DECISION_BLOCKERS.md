@@ -1,6 +1,6 @@
 # Current Product Decision Blockers
 
-Status: **ACTIVE — REFRESHED AFTER D33/D34**
+Status: **ACTIVE — REFRESHED AFTER D35**
 Owner: Leader / Product coordination
 
 Authority rule:
@@ -57,7 +57,6 @@ These are open Product/balance/content questions. They do **not** authorize work
 
 Still open:
 - final ordinary wage scale;
-- final lodging price/value relationship;
 - whether any later-year lodging escalation exists;
 - final School tuition/gain ratio.
 
@@ -66,19 +65,18 @@ Current executable scale is authority for testing until changed.
 Leader audit:
 `LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`.
 
-### Housing tier value
+### Housing tier value — RESOLVED by D35
 
-Current live normal lodging (100) is mechanically dominated by cheap lodging (50).
+Normal lodging keeps price **100**, cheap keeps **50**, street keeps **0**.
 
-Leader audit:
-`LEADER_HOUSING_SEMANTIC_AUDIT_v1.md`.
+D35 locks normal-room value as **explicit private-space capability**:
+- only explicitly authored private-space Night/relationship branches require normal;
+- School Night Study remains normal OR cheap;
+- public/workplace Night remains independently authored;
+- initial private-space seed targets Satyr Maid recurring guest, Tavern recurring traveler, Prostitute recurring client;
+- forced Secret Debt Night always overrides voluntary private-space access.
 
-Chat 5 currently owns the Product comparison packet for:
-- private-space allowlist;
-- bounded storage/preparation utility;
-- narrow rest/recovery utility.
-
-No production housing change is authorized before that decision.
+No unconditional normal-room +1 Energy or broad stat protection is authorized.
 
 ### Exact Lust starting value
 
@@ -117,6 +115,8 @@ Still open:
 Still open.
 
 ## Decisions that are NOT open anymore
+
+- D35 normal lodging private-space capability;
 
 Do not reopen without explicit Leader/Product action:
 - D26 same-career max one shift/day;
