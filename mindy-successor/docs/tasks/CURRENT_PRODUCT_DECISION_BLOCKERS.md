@@ -1,6 +1,6 @@
 # Current Product Decision Blockers
 
-Status: **ACTIVE — REFRESHED AFTER D38**
+Status: **ACTIVE — REFRESHED AFTER D39**
 Owner: Leader / Product coordination
 
 Authority rule:
@@ -96,13 +96,20 @@ Still open:
 ### Palace
 
 D29 locks rich six-stage topology and 2/5/8/12/15 structural duty milestones.
+D39 now locks permanent rewards for all three non-True Palace endings:
+- Service Life -> Steady Practice Specialist;
+- Court Power -> Formal Introduction Specialist;
+- Inner Truth -> Source Method automatic knowledge.
 
 Still open:
 - exact Palace daily cadence;
-- final authored content/lore within the topology;
+- exact Palace duty economy / wage model;
+- exact duty stat gain/penalty policy;
+- exact Secret Debt-bound daytime Palace interaction;
+- final authored lore/prose;
 - macro mystery/lore.
 
-Chat 6 currently owns the implementation-ready stage/duty contract.
+Chat 6 currently owns the Palace cadence + duty-economy Product packet.
 
 ### Activity
 
@@ -145,6 +152,7 @@ Still open.
 - D36 four-region Large Activity scope;
 - D37 minimum Night completeness bar;
 - D38 three standalone Activity endings + Specialist rewards;
+- D39 Palace non-True ending rewards;
 
 Do not reopen without explicit Leader/Product action:
 - D26 same-career max one shift/day;
