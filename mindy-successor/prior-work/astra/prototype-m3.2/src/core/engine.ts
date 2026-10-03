@@ -18,6 +18,8 @@ import {
   setPreferredStrongMetaKeystone,
   setPreferredStrongMetaSpecialist,
   strongMetaProgressionStatCap,
+  validateResolvedStrongMetaSnapshot,
+  validateStrongMetaRuntimeAgainstSnapshot,
   type ApprovedStrongRewardId
 } from './strongMeta.ts';
 
@@ -1470,6 +1472,8 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
+  validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
   if(!s.run.creation.complete&&s.run.creation.remaining+Object.values(s.run.creation.allocated).reduce((a,b)=>a+b,0)!==10)throw new Error('Некорректные стартовые очки.');
