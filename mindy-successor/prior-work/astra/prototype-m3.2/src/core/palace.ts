@@ -186,9 +186,14 @@ export function palaceExpectedStageForDutyCount(count:number):PalaceStage{
 }
 
 export function assertPalaceProgressionState(s:Save):void{
+  if(Object.prototype.hasOwnProperty.call(s.run.progression.careers,'palace')){
+    throw new Error('Palace progression must not be duplicated in progression.careers.');
+  }
+
   const state=s.run.progression.palace;
   const count=palaceDutyCount(s);
   if(!Number.isInteger(count)||count<0||count>PALACE_MAX_STRUCTURAL_DUTIES)throw new Error('Некорректный Palace duty count.');
+  if(state.shifts!==count)throw new Error('Palace shifts/duty-count mismatch.');
   const expectedStage=palaceExpectedStageForDutyCount(count);
   if(state.stage!==expectedStage)throw new Error(`Palace stage/count mismatch: ${state.stage} / ${count}.`);
 
@@ -198,17 +203,26 @@ export function assertPalaceProgressionState(s:Save):void{
   }
   if(new Set(state.completedSupportIds).size!==state.completedSupportIds.length)throw new Error('Дублированный Palace support action.');
   if(state.completedSupportIds.some(id=>!palaceSupportDefinition(id)))throw new Error('Неизвестный Palace support action в сохранении.');
+  for(const definition of palaceSupportDefinitions){
+    if(definition.priorId&&state.completedSupportIds.includes(definition.id)&&!state.completedSupportIds.includes(definition.priorId)){
+      throw new Error('Palace support sequence mismatch.');
+    }
+  }
   if(new Set(state.routePrepFacts).size!==state.routePrepFacts.length)throw new Error('Дублированный Palace route-prep fact.');
 
   for(const route of state.routePrepFacts){
     if(!s.run.progression.worldFacts.includes(palaceRoutePrepWorldFacts[route]))throw new Error('Palace route-prep projection mismatch.');
+    const completing=palaceSupportDefinitions.find(definition=>definition.route===route&&definition.writesPrep);
+    if(!completing||!state.completedSupportIds.includes(completing.id))throw new Error('Palace route-prep support mismatch.');
   }
   for(const route of Object.keys(palaceRoutePrepWorldFacts) as PalaceRoutePrepFact[]){
     const projected=s.run.progression.worldFacts.includes(palaceRoutePrepWorldFacts[route]);
     if(projected!==state.routePrepFacts.includes(route))throw new Error('Palace route-prep worldFact mismatch.');
   }
 
-  const complete=s.run.progression.worldFacts.includes(PALACE_PROGRESSION_COMPLETE_FACT);
+  const completionFactCount=s.run.progression.worldFacts.filter(fact=>fact===PALACE_PROGRESSION_COMPLETE_FACT).length;
+  const complete=completionFactCount===1;
+  if(completionFactCount>1)throw new Error('Дублированный Palace progression-complete fact.');
   if(complete!==(count===PALACE_MAX_STRUCTURAL_DUTIES&&state.stage==='outcome-ready')){
     throw new Error('Palace progression-complete mismatch.');
   }
