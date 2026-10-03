@@ -333,6 +333,43 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   return s;
 }
 
+export function applyStrongMetaOrdinaryWork(input:Save,ordinaryWage:number,secretDebtBound:boolean):Save{
+  const s=cloneSave(input);
+  const match=applyEarnedReserveMatch({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    ordinaryWage,
+    secretDebtBound
+  });
+  s.run.strongMetaRuntime=match.runtime;
+  if(match.bonus>0)s.run.resources.money=Math.min(1_000_000,s.run.resources.money+match.bonus);
+  s.run.strongMetaRuntime=armWorkRhythmForNextDay({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    currentDay:s.run.day
+  });
+  return s;
+}
+
+export function applyStrongMetaStartDay(input:Save,secretDebtBound:boolean):Readonly<{state:Save;energyBonus:number;retainerPayment:number}>{
+  const s=cloneSave(input);
+  const rhythm=applyWorkRhythmAtStartDay({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    day:s.run.day
+  });
+  s.run.strongMetaRuntime=rhythm.runtime;
+  const retainer=applyNetworkRetainerAtStartDay({
+    snapshot:s.run.strongMetaSnapshot,
+    runtime:s.run.strongMetaRuntime,
+    day:s.run.day,
+    secretDebtBound
+  });
+  s.run.strongMetaRuntime=retainer.runtime;
+  if(retainer.payment>0)s.run.resources.money=Math.min(1_000_000,s.run.resources.money+retainer.payment);
+  return {state:s,energyBonus:rhythm.energyBonus,retainerPayment:retainer.payment};
+}
+
 function delta(before:Record<string,number>,after:Record<string,number>){
   return Object.fromEntries((metrics as readonly string[]).filter(k=>(after[k]??0)!==(before[k]??0)&&k!=='stress').map(k=>[k,(after[k]??0)-(before[k]??0)]));
 }
