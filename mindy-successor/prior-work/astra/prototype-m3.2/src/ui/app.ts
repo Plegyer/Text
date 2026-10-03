@@ -453,7 +453,7 @@ function nightChoiceList(){
       ?fmt(tr('ui.artistGeisha.nightChoiceAria','Ночной выбор Дома искусств: {choice}'),{choice:choiceLabel})
       :'';
   const aria=nightBase?tr(`${nightBase}.aria`,fallbackAria):fallbackAria;
-  const presentationId=gapPresentationId??tavernPresentationId??artistPresentationId;
+  const presentationId=gapPresentationId||tavernPresentationId||artistPresentationId;
   return `<article class="activity" ${satyrNight?`data-satyr-night-option="${esc(choice.id)}"`:''} ${undeadFarmNight?`data-undead-farm-night-option="${esc(choice.id)}"`:''} ${tavernNight?`data-tavern-night-option="${esc(choice.id)}"`:''} ${artistNight?`data-artist-geisha-night-option="${esc(choice.id)}"`:''} ${gapPresentationId?`data-night-content-gap-option="${esc(choice.id)}"`:''} ${presentationId?`data-presentation-id="${esc(presentationId)}"`:''}><div><h3>${esc(choiceLabel)}</h3>${choiceBody?`<p>${esc(choiceBody)}</p>`:''}<small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${aria?`aria-label="${esc(aria)}"`:''} ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;
  }).join('')}</div>`;
 }
