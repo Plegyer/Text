@@ -998,7 +998,9 @@
           "palace.official-contact",
           "palace.professional-patron",
           "palace.night.work-review"
-        ]
+        ],
+        "preparationFactKind": "worldFact",
+        "finalReadyFactKind": "worldFact"
       },
       {
         "family": "court-power",
@@ -1012,7 +1014,9 @@
           "palace.professional-patron",
           "palace.rival",
           "palace.official-contact"
-        ]
+        ],
+        "preparationFactKind": "worldFact",
+        "finalReadyFactKind": "worldFact"
       },
       {
         "family": "inner-truth",
@@ -1028,13 +1032,16 @@
           "preserve_specimen",
           "prostitute_handle_evidence",
           "merchant_verify_manifest"
-        ]
+        ],
+        "preparationFactKind": "worldFact",
+        "finalReadyFactKind": "worldFact"
       }
     ],
     "coexistenceRule": "Any subset, including all three preparation facts and all three final-ready facts, may coexist in one active run before explicit ending commit.",
     "progressionIndependence": "None of the preparation or final-ready facts is required to reach outcome-ready or palace.progression-complete.",
     "finalizationRule": "At Outcome Ready, each earned preparation fact may expose its own completion-only finalize event, which writes only that family's finalReadyFact. Finalizing one family does not remove or block the others.",
-    "trueRouteIndependence": "Preparation/final-ready facts do not block Prince availability or Return Home."
+    "trueRouteIndependence": "Preparation/final-ready facts do not block Prince availability or Return Home.",
+    "factStorage": "run.progression.worldFacts"
   },
   "endingCommitSeparation": {
     "nonTrue": [
