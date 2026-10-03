@@ -1011,7 +1011,7 @@ function applyPendingNightPolicy(s:Save,cat:Catalog,point:NightPoint){
   n.suppressVoluntaryMenu ||= policy.suppressVoluntaryMenu;
   n.consumesNight ||= policy.consumesNight;
 }
-function finishNightMutable(s:Save,cat:Catalog){
+function finishNightMutable(s:Save,cat:Catalog,secretDebtBound=false){
   const n=nightState(s);
   if(s.run.pending)throw new Error('Нельзя завершить ночь с активной сценой.');
   const before=cloneSave(s);
@@ -1032,7 +1032,8 @@ function finishNightMutable(s:Save,cat:Catalog){
   n.phase='StartDay';
   const queued=s.run.dayState.nextDayModifiers;
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
-  s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
+  const strongDay=applyStrongMetaStartDayMutable(s,secretDebtBound);
+  s.run.metrics.energy=Math.max(1,energyMax(s)+strongDay.energyBonus+queued.energyDelta);
   s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
   s.run.housingState.paidForCurrentNight=false;
   for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
@@ -1337,9 +1338,15 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   applyActionEffectsMutable(s,a.effects,cat);
   if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
+  let ordinaryWage=0;
   if(a.wage){
     const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
+    ordinaryWage=wage;
+  }
+  if(ordinaryCareerForShiftAction(a)){
+    const matchBonus=applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,false);
+    if(matchBonus>0)log(s,`Strong Meta: заработанный резерв добавил ${matchBonus} монет.`);
   }
   s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
   if(freeLesson)s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]=true;
