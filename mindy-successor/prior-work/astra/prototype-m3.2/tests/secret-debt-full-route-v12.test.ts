@@ -25,7 +25,8 @@ import {
 } from '../src/core/secretDebt.ts';
 import {
   ordinaryHardWorkCareers,
-  type Save
+  type Save,
+  type Pack
 } from '../src/core/schema.ts';
 import {catalog,rawPacks,started} from './helpers.ts';
 
@@ -473,7 +474,7 @@ test('explicit Takeover action resolves route, exposes ending and never auto-com
 });
 
 test('Secret Debt content never writes relationship consent state and Palace access is preserved rather than created',()=>{
-  const pack=rawPacks.find(item=>item.id==='secret-debt');
+  const pack=rawPacks.find((item:Pack)=>item.id==='secret-debt') as Pack|undefined;
   assert.ok(pack);
   const relationshipEffects=pack.events.flatMap(event=>event.choices)
     .flatMap(choice=>choice.effects)
