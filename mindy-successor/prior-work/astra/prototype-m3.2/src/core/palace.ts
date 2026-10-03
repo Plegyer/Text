@@ -12,6 +12,8 @@ export const PALACE_D23_QUALIFIED_FACT='palace.d23-qualified';
 export const PALACE_ACCESS_FACT='palace.access-granted';
 export const PALACE_PROGRESSION_COMPLETE_FACT='palace.progression-complete';
 export const PALACE_PRINCE_DEFEATED_FACT='palace.prince-defeated';
+export const PALACE_PRINCE_CONFRONTATION_QUEST='palace.prince-confrontation';
+export const PALACE_CONFRONT_PRINCE_ACTION='palace.confront-prince';
 export const PALACE_TRUE_ENDING_STAT_THRESHOLD=91;
 export const PALACE_DUTY_COUNTER='palace-duty-count';
 export const PALACE_STRUCTURAL_DUTY_ENERGY_COST=1;
@@ -161,6 +163,16 @@ export function palaceHasAccess(s:Save):boolean{
 
 export function palaceTrueEndingStatsReady(values:Readonly<Record<Stat,number>>):boolean{
   return stats.every(stat=>values[stat]>=PALACE_TRUE_ENDING_STAT_THRESHOLD);
+}
+
+export function palacePrinceConfrontationReady(s:Save):boolean{
+  const questStage=s.run.progression.quests[PALACE_PRINCE_CONFRONTATION_QUEST]?.stage??'ready';
+  return palaceHasAccess(s)
+    && s.run.progression.palace.stage==='outcome-ready'
+    && s.run.progression.worldFacts.includes(PALACE_PROGRESSION_COMPLETE_FACT)
+    && palaceTrueEndingStatsReady(s.run.character.stats)
+    && !s.run.progression.worldFacts.includes(PALACE_PRINCE_DEFEATED_FACT)
+    && questStage==='ready';
 }
 
 export function palaceDutyCount(s:Save):number{
