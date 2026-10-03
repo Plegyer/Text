@@ -8,7 +8,18 @@ import {SCHOOL_COURSE_IDS} from '../src/core/school.ts';
 const fixture=JSON.parse(readFileSync('content/palace-authored-content-blueprint-v12.fixture.json','utf8'));
 const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
 const decisions=readFileSync('../../../docs/USER_DECISIONS_LOCKED_v1.md','utf8');
-const v5=JSON.parse(readFileSync('content/palace-authored-safe-v5.fixture.json','utf8'));
+const expectedPalaceLegacyCapabilities=[
+  'artist_formal_presence',
+  'artist_handle_invitation',
+  'official_guard_access',
+  'guard_sealed_pass',
+  'merchant_verify_manifest',
+  'merchant_handle_samples',
+  'access_guest_rooms_staff',
+  'cross_rough_route',
+  'preserve_specimen',
+  'prostitute_handle_evidence'
+] as const;
 
 const duties=fixture.fifteenDutyMap.duties;
 const routes=fixture.outcomeRoutes.routes;
@@ -138,7 +149,7 @@ test('all Activity hooks use shipped Activity IDs and remain optional-only',()=>
 
 test('all item/capability hooks are the ten shipped v5 Palace legacy capabilities',()=>{
   const shipped=new Set((definitions.itemDefinitions??[]).flatMap((item:any)=>item.capabilities??[]));
-  const expected=v5.legacyItemReactions.map((reaction:any)=>reaction.capability);
+  const expected=[...expectedPalaceLegacyCapabilities];
   assert.deepEqual(fixture.crossSystemHooks.items.shippedPalaceCapabilityIds,expected);
   assert.equal(expected.length,10);
   assert.equal(new Set(expected).size,10);
