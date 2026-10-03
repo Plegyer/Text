@@ -1,122 +1,73 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT KEYSTONE CALIBRATION v7**
+Status: **ACTIVE — HOUSING TIER VALUE DECISION v8**
 Owner: Chat 5
 
-Accepted v6 packet:
-`chat5/secret-debt-ending-meta-rewards-v6@461bfa161e00bea15bbda15baea2c08b2f6aa52a`
+Accepted calibration:
+`chat5/secret-debt-keystone-calibration-v7@e8e759b5470e45c94b6827ce5dbecede478d60ff`
 
-Leader/Product authority:
-- D28 = 0..1 Keystone + 0..2 Specialists;
-- D30 selects the **strong-but-bounded Keystone identities**:
-  1. Paid Freedom -> Earned Reserve Match;
-  2. Bound Life -> Work Rhythm;
-  3. Takeover -> Network Retainer.
-- reward identities/classes/invariants are locked;
-- exact D30 numeric parameters remain balance-open.
+D32 now locks:
+- Earned Reserve Match cap 1000;
+- Work Rhythm max 20 triggered bonus days;
+- Network Retainer 25/day × 40 eligible days, max 1000.
 
-Authority commit:
-`main@69eaedb1950e3ea712119388e1734c526a93be21`
+New branch:
+`chat5/housing-tier-value-decision-v8`
 
-Branch:
-`chat5/secret-debt-keystone-calibration-v7`
+Read:
+`mindy-successor/docs/tasks/LEADER_HOUSING_SEMANTIC_AUDIT_v1.md`
 
-The branch was created by Leader from the authority commit above.
-Branch existence is dispatch only; count work only after a real worker commit.
+## Problem
+
+Current live lodging:
+- normal = 100;
+- cheap = 50;
+- street = 0 with Energy -1 + Grooming -1.
+
+Leader's full 88-pack structural scan found:
+- School Night Study allows normal OR cheap equally;
+- ordinary career/relationship Night choices generally do not distinguish normal vs cheap;
+- the only normal-only authored event is effect-free;
+- cheap therefore currently gives essentially the same functional lodging value for half the price.
+
+This is a Product dominance gap.
 
 ## Assignment
 
-Calibrate the still-open numeric parameters for the three D30 Keystones using current successor systems and the existing Secret Debt balance harness. No production implementation.
+Produce a Product packet comparing three ways to give **normal lodging a directed, legible advantage without simply making cheap worse**:
 
-Use the **current executable economy** as baseline. Read:
-`mindy-successor/docs/tasks/LEADER_LIVE_ECONOMY_DRIFT_AUDIT_v1.md`
+1. explicit private-space access allowlist;
+2. bounded storage/preparation utility;
+3. narrowly bounded rest/recovery utility.
+
+For each option define:
+- exact mechanical effect;
+- which existing/new surfaces consume it;
+- current 100 vs 50 price justification;
+- interaction with School Night Study;
+- interaction with public/workplace Night choices;
+- interaction with relationship routes;
+- save/runtime state needs;
+- D30 Keystone interactions;
+- Secret Debt forced-Night precedence;
+- abuse/dominance risks;
+- minimal producer scope;
+- acceptance tests.
 
 Important:
-- current starter wages are materially below older WU candidate assumptions;
-- current lodging is normal 100 / cheap 50 / street 0;
-- current paid School tuition is 300–500/lesson with 1 Energy cost;
-- fresh money is 600 and base daily Energy is 3;
-- do **not** calibrate D30 against stale `1 WU ~= 50` wage assumptions;
-- old economy-candidate docs and original-game numbers are comparison/reference only;
-- D26 is now locked Product authority even if an older audit paragraph still calls the same-career policy a research option.
+- do not globally block all relationship Night choices on street;
+- do not copy original rent escalation;
+- do not grant unconditional normal-room +1 Energy without proving balance;
+- do not alter lodging prices in production;
+- do not implement runtime.
 
-Locked mechanics must not change.
+Recommend one model and, if needed, exact bounded numbers.
 
-### Earned Reserve Match
+The goal is:
+- normal has at least one real reason to pay 100;
+- cheap remains a viable 50-money budget strategy;
+- street remains viable but meaningfully harsher;
+- no housing choice cancels authored forced Night.
 
-Locked:
-- 1:1 match on eligible ordinary-profession wage earned;
-- only while not bound;
-- hidden work / lender grant / repayment / non-work money excluded;
-- finite per-run money cap.
-
-Sweep at minimum:
-- cap 500 / 750 / 1000 / 1500.
-
-Report:
-- calendar day cap is normally reached under starter/mid/late ordinary wages;
-- value by Day 40 / Hard Work 50 / Day 160;
-- School/lodging purchasing-power equivalent;
-- whether the cap changes ordinary-career unlock timing or makes economy pressure trivial.
-
-### Work Rhythm
-
-Locked:
-- at least one ordinary shift on a day arms +1 usable Energy next day;
-- non-stacking;
-- hidden work / School / Activity do not arm it;
-- D26 unchanged;
-- finite trigger count;
-- bound Secret Debt -1 remains relative to same unbound loadout.
-
-Sweep at minimum:
-- 10 / 15 / 20 / 25 triggered bonus days.
-
-Report:
-- extra action count;
-- conversion into work / School / Activity under realistic mixes;
-- earliest Hard Work effects under D26;
-- comparison with unconditional +1 daily Energy;
-- interaction with a later Secret Debt bind.
-
-### Network Retainer
-
-Locked:
-- fixed payment on eligible early-run days;
-- paused while bound;
-- missed bound payments are not banked;
-- finite duration and total.
-
-Compare at least four total-power envelopes:
-- about 500;
-- about 750;
-- about 1000;
-- about 1500;
-
-with multiple amount × duration shapes where useful.
-
-Report:
-- front-loading vs long-tail effects;
-- School/lodging affordability;
-- effect on work necessity;
-- effect of becoming bound during the payment window;
-- why it remains Keystone-class.
-
-## Cross-reward requirement
-
-Recommend one exact parameter set for each D30 Keystone, but mark it `READY_FOR_LEADER_PRODUCT_DECISION`, not authority.
-
-Test all three against:
-- current 160-day calendar;
-- D26 ordinary max-one-same-career shift/day;
-- Hard Work = 50;
-- +2000 / 10-day / 20000 Secret Debt;
-- forced Night + next-day Energy -1;
-- cap-200 Specialist;
-- no reward stacking with another Keystone;
-- ordinary Hard Work packages remaining separate.
-
-Use original-game numbers only as scale/reference, never as targets.
-No runtime/UI changes.
 No full CI.
-Freeze exact SHA.
+Freeze SHA and report `READY_FOR_LEADER_PRODUCT_DECISION`.
