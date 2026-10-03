@@ -219,7 +219,7 @@ test('declining the handler route preserves ordinary Assassin work',()=>{
   let s=started();
   s.run.character.stats.dexterity=30;
   s.run.character.stats.wits=25;
-  s.run.character.stats.reason=20;
+  s.run.character.stats.reason=30; // D31 Spring Reason -1 must not make this route test a threshold-attrition test.
 
   let guard=0;
   while(s.run.progression.relationships['assassin.handler']?.stage!=='route-resolved'){

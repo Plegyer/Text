@@ -24,10 +24,10 @@ test('Assassin preserves shipped ordinary-work unlock, seasonal tuning, and Hard
  ]});
  assert.deepEqual(action.scenes.map((x:any)=>x.id),['spring.default','summer.default','autumn.default','winter.default']);
  assert.deepEqual(action.seasonal,{
-  spring:[{kind:'modifyStat',stat:'dexterity',delta:1},{kind:'modifyStat',stat:'wits',delta:1},{kind:'modifyStat',stat:'grooming',delta:-1}],
+  spring:[{kind:'modifyStat',stat:'dexterity',delta:1},{kind:'modifyStat',stat:'wits',delta:1},{kind:'modifyStat',stat:'reason',delta:-1}],
   summer:[{kind:'modifyStat',stat:'dexterity',delta:1},{kind:'modifyStat',stat:'manners',delta:1}],
   autumn:[{kind:'modifyStat',stat:'wits',delta:1},{kind:'modifyStat',stat:'reason',delta:1}],
-  winter:[{kind:'modifyStat',stat:'dexterity',delta:1},{kind:'modifyStat',stat:'reason',delta:1},{kind:'modifyStat',stat:'sociability',delta:-1}]
+  winter:[{kind:'modifyStat',stat:'dexterity',delta:1},{kind:'modifyStat',stat:'reason',delta:1},{kind:'modifyStat',stat:'manners',delta:-1}]
  });
  const ending=definitions.endings.find((e:any)=>e.id==='ending.assassin.hard-work');
  assert.ok(ending);

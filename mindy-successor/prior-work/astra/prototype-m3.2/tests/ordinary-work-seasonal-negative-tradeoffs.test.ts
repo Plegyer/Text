@@ -7,33 +7,25 @@ const baseline=JSON.parse(readFileSync('tests/ordinary-work-seasonal-negative-tr
 
 const seasons=['spring','summer','autumn','winter'] as const;
 const approved:any={
-  lumber:{spring:'grooming',winter:'sociability'},
-  'satyr-maid':{summer:'grooming',autumn:'endurance'},
-  'undead-farm':{spring:'grooming',autumn:'sociability'},
-  tavern:{spring:'grooming',summer:'endurance'},
-  hunter:{spring:'grooming',winter:'sociability'},
-  guard:{summer:'grooming',winter:'sociability'},
-  merchant:{summer:'endurance',winter:'strength'},
-  'artist-geisha':{summer:'endurance',autumn:'reason'},
-  assassin:{spring:'grooming',winter:'sociability'},
-  prostitute:{summer:'grooming',winter:'creativity'}
+  lumber:{spring:'dexterity',winter:'strength'},
+  'satyr-maid':{summer:'sociability',autumn:'endurance'},
+  'undead-farm':{spring:'reason',autumn:'strength'},
+  tavern:{spring:'reason',summer:'wits'},
+  hunter:{spring:'endurance',winter:'dexterity'},
+  guard:{summer:'manners',winter:'reason'},
+  merchant:{summer:'wits',winter:'manners'},
+  'artist-geisha':{summer:'manners',autumn:'dexterity'},
+  assassin:{spring:'reason',winter:'manners'},
+  prostitute:{summer:'sexuality',winter:'endurance'}
 };
-
-function conditionStats(conditions:any[],out=new Set<string>()){
-  for(const condition of conditions??[]){
-    if(condition.kind==='stat')out.add(condition.stat);
-    if(Array.isArray(condition.conditions))conditionStats(condition.conditions,out);
-    if(condition.condition)conditionStats([condition.condition],out);
-  }
-  return out;
-}
 
 function preservedSeason(effects:any[]){
   return effects.filter(effect=>!(effect.kind==='modifyStat'&&effect.delta<0));
 }
 
-test('approved ordinary-work tradeoff map is exact: two -1 seasons per profession and no Lust',()=>{
+test('D31 ordinary-work tradeoff map is exact: two -1 seasons per profession, 20 total, no Lust',()=>{
   assert.deepEqual(Object.keys(approved),baseline.ordinaryRoster);
+  let totalNegatives=0;
   for(const career of baseline.ordinaryRoster){
     const action=definitions.actions.find((item:any)=>item.id===career+'.shift');
     assert.ok(action,career);
@@ -46,6 +38,7 @@ test('approved ordinary-work tradeoff map is exact: two -1 seasons per professio
       for(const effect of seasonNegatives)negatives.push({season,...effect});
     }
     assert.equal(negatives.length,2,career);
+    totalNegatives+=negatives.length;
     assert.deepEqual(
       Object.fromEntries(negatives.map(item=>[item.season,item.stat])),
       approved[career],
@@ -56,14 +49,13 @@ test('approved ordinary-work tradeoff map is exact: two -1 seasons per professio
       assert.notEqual(effect.stat,'lust',career+' '+effect.season);
     }
   }
+  assert.equal(totalNegatives,20);
 });
 
-test('approved tradeoffs never cancel a same-season positive stat or hit current unlock/wage core',()=>{
+test('D31 tradeoffs never cancel same-season positives and every target is replenished by another season',()=>{
   for(const career of baseline.ordinaryRoster){
     const action=definitions.actions.find((item:any)=>item.id===career+'.shift');
     assert.ok(action,career);
-    const unlock=conditionStats(action.conditions);
-    const wage=new Set((action.wage?.weights??[]).map((item:any)=>item.stat));
     for(const season of seasons){
       const effects=action.seasonal[season];
       const positive=new Set(effects.filter((effect:any)=>
@@ -74,8 +66,12 @@ test('approved tradeoffs never cancel a same-season positive stat or hit current
       );
       for(const effect of negative){
         assert.equal(positive.has(effect.stat),false,career+' '+season+' same-stat cancellation');
-        assert.equal(unlock.has(effect.stat),false,career+' '+season+' unlock collision');
-        assert.equal(wage.has(effect.stat),false,career+' '+season+' wage collision');
+        const replenishedElsewhere=seasons.some(other=>
+          other!==season&&action.seasonal[other].some((candidate:any)=>
+            candidate.kind==='modifyStat'&&candidate.stat===effect.stat&&candidate.delta>0
+          )
+        );
+        assert.equal(replenishedElsewhere,true,career+' '+season+' floor-aware replenishment');
       }
     }
   }
@@ -114,7 +110,7 @@ test('all ten ordinary Hard Work endings remain exactly the accepted 50-shift co
   }
 });
 
-test('Lumber is normalized to only Spring Grooming -1 and Winter Sociability -1',()=>{
+test('Lumber D31 targets are only Spring Dexterity -1 and Winter Strength -1',()=>{
   const action=definitions.actions.find((item:any)=>item.id==='lumber.shift');
   assert.ok(action);
   const actual:any[]=[];
@@ -124,8 +120,8 @@ test('Lumber is normalized to only Spring Grooming -1 and Winter Sociability -1'
     }
   }
   assert.deepEqual(actual,[
-    {season:'spring',stat:'grooming',delta:-1},
-    {season:'winter',stat:'sociability',delta:-1}
+    {season:'spring',stat:'dexterity',delta:-1},
+    {season:'winter',stat:'strength',delta:-1}
   ]);
   assert.equal(JSON.stringify(action.seasonal.summer).includes('"delta":-1'),false);
   assert.equal(JSON.stringify(action.seasonal.autumn).includes('"delta":-1'),false);
