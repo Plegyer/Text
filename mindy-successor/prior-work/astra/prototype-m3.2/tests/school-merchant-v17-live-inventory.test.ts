@@ -122,7 +122,8 @@ test('D40 Merchant School publisher creates literacy readiness at three sessions
   let s=started();
   while(s.run.resources.money<20_000)s=work(s,'lumber.shift');
   for(let i=0;i<3;i++){s=paidLesson(s,'school.course.literacy_and_numbers');s=settlePending(s);}
-  assert.ok(merchantFacts(s).includes('school-literacy-ready'),'D40 readiness may be prepared before first Merchant shift');
+  s=finishNight(s);
+  assert.ok(merchantFacts(s).includes('school-literacy-ready'),'D40 readiness may be prepared before first Merchant shift after the normal reaction/day boundary');
   s=parseSave(JSON.stringify(s),catalog);
   assert.ok(merchantFacts(s).includes('school-literacy-ready'),'readiness survives reload');
   for(let i=0;i<5;i++){s=paidLesson(s,'school.course.rhetoric_and_social');s=settlePending(s);}

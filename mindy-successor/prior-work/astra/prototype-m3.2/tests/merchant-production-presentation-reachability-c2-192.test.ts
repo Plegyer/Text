@@ -173,10 +173,15 @@ test('C2-192 Merchant registry exposes exactly 67 semantic surfaces after D40 en
 
   const save=started();
   const before=JSON.stringify(save);
+  const d40EndingSlots=new Set([
+    'ending/merchant/house',
+    'ending/merchant/speculator-smuggler',
+    'ending/merchant/patron-of-routes'
+  ]);
   for(const id of ids){
     const resolved=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'merchant-c2-192-static'});
     assert.equal(resolved.textOnly,false,id);
-    assert.equal(resolved.selected?.source,'override-static',id);
+    assert.equal(resolved.selected?.source,d40EndingSlots.has(id)?'catalog':'override-static',id);
     assert.ok(existsSync(resolved.selected!.src),resolved.selected!.src);
   }
   assert.equal(JSON.stringify(save),before);

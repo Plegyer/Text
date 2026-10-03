@@ -125,6 +125,7 @@ test('D40 Guard School publishers create only literacy and etiquette readiness a
       s=dispatch(s,{type:'schoolLesson',id:courseId},catalog);
       s=settlePending(s);
     }
+    s=finishNight(s);
     assert.ok(s.run.progression.careers.guard.facts.includes(fact),fact);
   }
   for(const fact of ['school-rhetoric-ready','school-physical-ready','school-arcana-ready']){
