@@ -1,0 +1,221 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.assassin-authored-v20.inventory",
+  "status": "SAFE_PREP_ONLY_NO_ASSASSIN_RUNTIME_AUTHORITY",
+  "activation": {
+    "branchStart": "d3b7fe038b35cdc53d786189ef7ba44853a7610d",
+    "shipped": {
+      "action": {
+        "id": "assassin.shift",
+        "energyCost": 1,
+        "unlock": {
+          "allStats": {
+            "dexterity": 30,
+            "wits": 25,
+            "reason": 20
+          },
+          "orCalendarYear": 3
+        },
+        "sceneIds": [
+          "spring.default",
+          "summer.default",
+          "autumn.default",
+          "winter.default"
+        ]
+      },
+      "career": {
+        "id": "assassin",
+        "initialStage": "runner",
+        "stages": [
+          "runner"
+        ],
+        "transitions": []
+      },
+      "ending": {
+        "id": "ending.assassin.hard-work",
+        "reward": "assassin.hardwork.compat",
+        "metaRewardId": "hardWork:assassin"
+      },
+      "activities": [
+        "lumber.forest",
+        "hunter.expedition"
+      ]
+    }
+  },
+  "shippedExternalAuthority": {
+    "guard": {
+      "facts": [
+        "tavern-evidence-known",
+        "cargo-pass-evidence",
+        "official-access-issued",
+        "sealed-pass-issued",
+        "major-case-thread-ready"
+      ],
+      "items": [
+        "guard_badge",
+        "guard_sealed_pass"
+      ],
+      "itemCapabilities": [
+        "official_guard_access",
+        "guard_sealed_pass"
+      ]
+    },
+    "tavern": {
+      "facts": [
+        "traveler-rumour-known",
+        "rumour-route-open",
+        "activity-returned",
+        "rumour-confirmed",
+        "staff-access-issued",
+        "staff-access-declined",
+        "guest-ledger-evidence-ready"
+      ],
+      "itemCapabilities": [
+        "access_guest_rooms_staff"
+      ]
+    },
+    "merchant": {
+      "facts": [
+        "delivery-recorded",
+        "manifest-verified",
+        "appraisal-recorded",
+        "shortage-handled",
+        "risk-accepted",
+        "tavern-input-known",
+        "guard-input-known"
+      ],
+      "crossInputs": [
+        "careerFact:tavern:rumour-confirmed",
+        "careerFact:guard:cargo-pass-evidence"
+      ]
+    },
+    "activity": {
+      "ids": [
+        "lumber.forest",
+        "hunter.expedition"
+      ],
+      "shippedFacts": [
+        "careerFact:hunter:expedition-qualified",
+        "careerFact:hunter:expedition-returned",
+        "careerFact:hunter:expedition-preserved-sample",
+        "careerFact:hunter:expedition-rough-route",
+        "careerFact:tavern:activity-returned"
+      ]
+    }
+  },
+  "draftCandidates": {
+    "authority": "DESIGN_DRAFT_ONLY",
+    "careerStages": [
+      {
+        "draft": "K0 Runner",
+        "shippedMatch": "runner"
+      },
+      {
+        "draft": "K1 Operative",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K2 Trusted Blade",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K3A Veteran",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K3B Ghost",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K3C Turncoat",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K3D Handler Takeover",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K3E Refusal Chain",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      },
+      {
+        "draft": "K4 Outcome-ready",
+        "runtimeId": "PENDING_RUNTIME_ID"
+      }
+    ],
+    "majorContractPhases": [
+      "offer",
+      "intel",
+      "prep",
+      "method-choice",
+      "execute-or-abort-or-redirect",
+      "fallout"
+    ],
+    "methods": [
+      "stealth",
+      "social-access",
+      "staged-accident",
+      "indirect-manipulation",
+      "nonlethal-substitution",
+      "expose-target"
+    ],
+    "relationshipRoles": [
+      "handler",
+      "rival-operative",
+      "recurring-contact",
+      "informant"
+    ],
+    "itemConcepts": [
+      "Concealed Toolset",
+      "Sealed Pass",
+      "disguise/formal attire",
+      "evidence/document",
+      "Activity route tool"
+    ],
+    "routeConcepts": [
+      "Veteran",
+      "Ghost",
+      "Turncoat",
+      "Handler Takeover",
+      "Refusal Chain",
+      "Outcome-ready"
+    ],
+    "futureConsumers": {
+      "majorContract": "PENDING_RUNTIME_ID",
+      "methods": "PENDING_RUNTIME_ID",
+      "relationships": "PENDING_RUNTIME_ID",
+      "items": "PENDING_RUNTIME_ID",
+      "advancedRoutes": "PENDING_RUNTIME_ID",
+      "activityAdapter": "PENDING_RUNTIME_ID",
+      "complexEndings": "PENDING_RUNTIME_ID"
+    }
+  },
+  "unresolvedDraftAuthority": [
+    "lethalNonlethalScope",
+    "combatPresence",
+    "targetContent",
+    "networkStructure",
+    "exactContractCount",
+    "falloutModel",
+    "rewards",
+    "exactAdvancedEndingIds"
+  ],
+  "forbiddenAssumptions": [
+    "universalBlackMarketShop",
+    "PalaceUnlockFromAssassin",
+    "globalMoralityStat",
+    "everyContractSupportsEveryMethod",
+    "ordinaryShiftEqualsCombat",
+    "newPublicEndingIds"
+  ],
+  "invariants": {
+    "createsAssassinGameplayIds": false,
+    "changesRuntimeMechanics": false,
+    "changesSaveOrRng": false,
+    "changesActivityEngine": false,
+    "changesEndingEligibilityRewardOrMeta": false,
+    "changesPalaceUnlock": false,
+    "changesProductionLocalization": false,
+    "finalRuntimeBindingDeferred": true
+  }
+}

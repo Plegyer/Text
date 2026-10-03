@@ -1,0 +1,215 @@
+{
+  "formatVersion": 1,
+  "id": "chat3.assassin-authored-v20.activation-mechanics",
+  "sourceHead": "d3b7fe038b35cdc53d786189ef7ba44853a7610d",
+  "status": "ACTIVATION_BASELINE_FOR_SAFE_PREP_ONLY",
+  "assassin": {
+    "action": {
+      "id": "assassin.shift",
+      "label": "Assassin shift",
+      "description": "Complete an ordinary covert work shift such as surveillance, delivery, route preparation, or cleanup. Initial tuning remains balance-owned.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "stat",
+                  "stat": "dexterity",
+                  "op": "gte",
+                  "value": 30
+                },
+                {
+                  "kind": "stat",
+                  "stat": "wits",
+                  "op": "gte",
+                  "value": 25
+                },
+                {
+                  "kind": "stat",
+                  "stat": "reason",
+                  "op": "gte",
+                  "value": 20
+                }
+              ]
+            },
+            {
+              "kind": "calendarYear",
+              "op": "gte",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "kind": "incrementCareerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "amount": 1
+        }
+      ],
+      "mode": "normal",
+      "wage": {
+        "base": 15,
+        "weights": [
+          {
+            "stat": "dexterity",
+            "factor": 0.35
+          },
+          {
+            "stat": "wits",
+            "factor": 0.3
+          },
+          {
+            "stat": "reason",
+            "factor": 0.2
+          },
+          {
+            "stat": "manners",
+            "factor": 0.1
+          }
+        ]
+      },
+      "scenes": [
+        {
+          "id": "spring.default",
+          "text": "Spring assassin shift: the season changes the ordinary work context.",
+          "conditions": [],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "summer.default",
+          "text": "Summer assassin shift: demand, routes, or crowds shift with the season.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "autumn.default",
+          "text": "Autumn assassin shift: seasonal pressure changes the work mix.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        },
+        {
+          "id": "winter.default",
+          "text": "Winter assassin shift: scarcity, access, or regular clients change the routine.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": [
+            "stage.town"
+          ]
+        }
+      ],
+      "seasonal": {
+        "spring": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          }
+        ],
+        "summer": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "manners",
+            "delta": 1
+          }
+        ],
+        "autumn": [
+          {
+            "kind": "modifyStat",
+            "stat": "wits",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ],
+        "winter": [
+          {
+            "kind": "modifyStat",
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "kind": "modifyStat",
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    "career": {
+      "id": "assassin",
+      "label": "Assassin",
+      "initialStage": "runner",
+      "stages": [
+        "runner"
+      ],
+      "transitions": []
+    },
+    "ending": {
+      "id": "ending.assassin.hard-work",
+      "title": "Assassin Hard Work",
+      "description": "Persistence ending: fifty completed Assassin shifts.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "assassin",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "assassin.hardwork.compat",
+      "metaRewards": [
+        {
+          "kind": "hardWork",
+          "rewardId": "hardWork:assassin",
+          "career": "assassin"
+        }
+      ],
+      "epilogue": "Hard Work completion recorded for Assassin."
+    },
+    "itemDefinitions": []
+  },
+  "finalRuntimeBindingDeferred": true
+}
