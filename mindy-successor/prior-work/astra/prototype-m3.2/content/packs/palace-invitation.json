@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.invitation",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "worldFacts": [
+        "palace.d23-qualified",
+        "palace.access-granted"
+      ]
+    },
+    "writes": {
+      "worldFacts": [
+        "palace.access-granted"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.invitation.day1-arrival",
+      "title": "Письмо в первый день",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "creationCompleted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.d23-qualified",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Утро новой жизни ещё не успевает стать привычным, когда у двери появляется посыльный с плотным конвертом и дворцовой печатью. На этот раз письмо не намекает и не проверяет тебя: приглашение уже выдано.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "open",
+          "label": "Вскрыть конверт",
+          "text": "Печать ломается легко. Внутри — официальное приглашение и время, когда тебя ждут у дворцового входа.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "palace.invitation.reveal",
+      "title": "Приглашение без нового испытания",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "choiceResolved",
+          "event": "palace.invitation.day1-arrival"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 99,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.d23-qualified",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Формулировка короткая: накопленный опыт десяти обычных профессий признан, а выбранные в этой жизни наследия делают приглашение действительным сейчас. Ни экзамена, ни случайной проверки, ни дополнительного пропуска не требуется.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Принять приглашение",
+          "text": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.access-granted"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
