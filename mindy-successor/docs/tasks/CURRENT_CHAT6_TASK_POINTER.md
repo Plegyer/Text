@@ -1,113 +1,116 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE AUTHORED CONTENT BLUEPRINT v12**
+Status: **ACTIVE — PALACE NON-TRUE ENDING REWARDS v13**
 Owner: Chat 6
 
-Accepted implementation contract:
-`chat6/palace-rich6-stage-contract-v11@0d95f1e3f3267901efdb701f727e4cc54fec4ef0`
+Accepted authored-content blueprint:
+`chat6/palace-authored-content-blueprint-v12@ade2dfa807a0bf8eb063eaa8b2cbf3c8965365ab`
 
-v11 disposition:
-`READY_FOR_LEADER_ACCEPTANCE` and accepted as the implementation contract for D29 rich-six topology.
+v12 Leader disposition:
+**ACCEPTED** as the implementation-ready Palace authored-content contract.
 
-Preserve frozen Prince packet:
-`chat6/palace-prince-confrontation-decision-v9@4de1a3925d499a6337a3c40c05b8b4aba9f3cc03`.
-
-## New assignment
-
-Turn the accepted rich-six mechanical contract into an implementation-ready **authored-content blueprint**, without final lore naming and without production runtime.
+Preserve:
+- D29 rich-six topology;
+- v11 stage/duty contract;
+- v12 exact 15-duty authored map;
+- v12 37 required core scenes;
+- v12 45 optional authored units;
+- v12 300 required bilingual RU/EN fields;
+- Secret Debt forced Night precedence;
+- D35 optional private-space Palace branch;
+- all romance/Night/items/School/Activity inputs remain optional;
+- True Ending handoff stays separate.
 
 New branch:
-`chat6/palace-authored-content-blueprint-v12`
+`chat6/palace-nontrue-ending-rewards-v13`
 
-Deliver:
-1. `mindy-successor/docs/tasks/CHAT6_PALACE_AUTHORED_CONTENT_BLUEPRINT_v12.md`
-2. `mindy-successor/prior-work/astra/prototype-m3.2/content/palace-authored-content-blueprint-v12.fixture.json`
-3. focused static contract test if useful.
+## Assignment
 
-Required scope:
+Close the largest remaining Palace Product gap:
+**what the three non-True Palace endings give permanently / in New Start+.**
 
-### Fifteen-duty authored map
-Create an exact 15-duty progression map distributed across v11's six duty families:
-- Service Rotation;
-- Logistics Support;
-- Records Review;
-- Coordination;
-- Formal Interface;
-- Evidence Review.
+Create:
+`mindy-successor/docs/tasks/CHAT6_PALACE_NONTRUE_ENDING_REWARDS_v13.md`
 
-For every duty define:
-- stage availability;
-- presentation function;
-- stat/capability emphasis;
-- optional variant hooks;
-- what it must **not** gate;
-- milestone relation;
-- how repetition is avoided.
+No production runtime/UI/content changes. No full CI.
 
-Do not invent Palace daily cadence; duty count remains D29/v11 authority only.
+## Endings in scope
 
-### Three non-True outcome routes
-Build authored route skeletons for:
-- Service Life;
-- Court Power;
-- Inner Truth.
+1. Service Life;
+2. Court Power;
+3. Inner Truth.
 
-For each:
-- preparation beats;
-- optional School/item/Activity/relationship inputs;
-- minimum facts;
-- non-exclusive behavior before commit;
-- explicit commit scene boundary;
-- current-life resolution;
-- reward status (OPEN if not locked).
+Return Home True Ending is out of scope:
+its D24 reward remains optional cap 100 -> 200 Specialist and must not be changed.
 
-No route may require romance, Palace Night or legacy items.
+## Required work
 
-### Optional Night / relationships
-Provide optional authored attachment points for:
-- professional review;
-- social conversation;
-- patron/contact;
-- rival;
-- optional romance.
+For each non-True ending:
 
-D35 private-space semantics may be used only where explicitly appropriate.
-Secret Debt forced Night always wins.
+### Exact eligibility/commit contract
 
-### Cross-system hooks
-Map:
-- ordinary-career legacy knowledge;
-- School;
-- Activity;
-- items;
-- relationships;
-to optional variants, never Palace entry substitution.
+Using D29 + accepted v12:
+- identify the route-preparation facts already required;
+- specify exact final-ready condition after Outcome Ready;
+- keep route preparation non-exclusive before commit;
+- define explicit commit boundary;
+- ensure no romance, Palace Night, item, Activity or legacy-career hook becomes mandatory;
+- preserve D23 Palace entry as the sole entry gate.
 
-### True Ending handoff
-Preserve:
-- Outcome Ready;
-- `palace.progression-complete`;
-- all 12 progression stats >=91;
-- Lust excluded;
-- Prince confrontation;
-- explicit Return Home commit;
-- cap-200 reward only after completion.
+### Permanent/New Start+ reward
 
-Do not name the Prince.
-Do not decide confrontation model beyond frozen v9 authority.
-Do not invent final mystery truth.
+Propose one concrete reward with exact mechanics.
 
-### Content budget / production readiness
-Give:
-- exact number of required core scenes;
-- optional variant scene budget;
-- RU/EN localization surface count;
-- media slot classes;
-- which assets can reuse generic Palace staging;
-- acceptance matrix for content completeness.
+Classify under current architecture:
+- automatic knowledge/content;
+- Specialist;
+- Keystone;
+- or another already-authorized layer.
 
-No production engine/UI changes.
-No full CI.
+Do not invent free extra loadout slots.
+
+Prefer rewards that express the ending identity rather than generic raw power.
+
+Avoid:
+- unconditional +1 daily Energy;
+- No Rent;
+- large generic starting cash;
+- extra calendar time;
+- broad stat carry-over;
+- bypassing ordinary 10/10 + active 10/10 Palace entry;
+- cancelling Secret Debt forced Night;
+- duplicating D24 cap-200.
+
+For every reward specify:
+- stable proposed reward ID;
+- ownership semantics;
+- whether automatic or selectable;
+- exact effect;
+- exact duration/cap if any;
+- why reward class is appropriate;
+- interaction with D28 0..1 Keystone + 0..2 Specialists;
+- interaction with D30/D32 Secret Debt rewards;
+- interaction with ordinary Hard Work packages;
+- interaction with Activity D36;
+- abuse/dominance risks;
+- save/migration/reselection behavior.
+
+### Cross-ending comparison
+
+The three Palace endings should encourage meaningfully different future-life styles.
+
+Compare:
+- Service/continuity;
+- court/network/power;
+- truth/knowledge/exploration.
+
+Do not make one strictly dominate the other two.
+
+## Required final table
+
+`Ending | Как получить | Explicit commit | Что происходит | Permanent reward | Reward class | Exact mechanics | Main tradeoff`
+
+Mark exact values as authority candidates, not runtime authority.
 
 Freeze exact SHA and report:
-`READY_FOR_LEADER_ACCEPTANCE`.
+`READY_FOR_LEADER_PRODUCT_DECISION`.
