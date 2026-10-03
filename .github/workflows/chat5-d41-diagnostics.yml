@@ -1,0 +1,84 @@
+name: Chat 5 D41 diagnostics
+
+on:
+  push:
+    branches:
+      - chat5/qa-d41-diagnostics-20261003-v1
+
+defaults:
+  run:
+    working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: npm run validate
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  d41-focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: >-
+          node --experimental-strip-types --test
+          tests/advanced-endings-tranche-a-v11.test.ts
+          tests/ending-meta.test.ts
+          tests/lumber-career-persistence.test.ts
+          tests/lumber-hard-work-invariant.test.ts
+          tests/lumber-foreman-leadership-integration.test.ts
+          tests/lumber-target-cross-system.test.ts
+          tests/lumber-target-production.test.ts
+          tests/school-natural-path-lumber-v1.test.ts
+          tests/satyr-maid-natural-acceptance.test.ts
+          tests/satyr-maid-ending-coexistence.test.ts
+          tests/satyr-maid-boundary-ending.test.ts
+          tests/satyr-maid-house-power-ending.test.ts
+          tests/satyr-maid-relationship-night.test.ts
+          tests/satyr-maid-school-hook.test.ts
+          tests/undead-farm-natural-acceptance.test.ts
+          tests/undead-farm-ending-coexistence.test.ts
+          tests/school-undead-v13-natural-acceptance.test.ts
+          tests/tavern-natural-acceptance.test.ts
+          tests/tavern-runtime.test.ts
+          tests/school-tavern-v14-natural-acceptance.test.ts
+          tests/hunter-natural-acceptance.test.ts
+          tests/school-hunter-v15-natural-acceptance.test.ts
+          tests/migration.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
