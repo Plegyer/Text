@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "id": "school.prostitute.v20.literacy",
+  "task": "C5-219",
+  "targetCareerId": "prostitute",
+  "contentSafety": "NON_EXPLICIT_VOLUNTARY_ORDINARY_CAREER",
+  "role": "records_contracts_business_notes",
+  "courseId": "school.course.literacy_and_numbers",
+  "trackId": "school.track.literacy_and_numbers",
+  "teacherContentId": "school.teacher.mara-fen",
+  "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Деловая запись без лишнего досье",
+      "en": "A business note without an unnecessary dossier"
+    },
+    "body": {
+      "ru": "Мара просит вести краткую запись встреч, оплат и невыполненных обязательств так, чтобы она отвечала на рабочие вопросы и не собирала лишнюю личную информацию. Ты отмечаешь дату, сумму, статус договорённости и то, что ещё нужно уточнить.",
+      "en": "Mara asks you to keep a concise record of appointments, payments, and unresolved obligations so it answers business questions without collecting unnecessary personal information. You mark the date, amount, agreement status, and what still needs clarification."
+    },
+    "result": {
+      "ru": "Запись помогает сверять договорённости, но не создаёт accounting subsystem, pricing formula, client dossier или карьерный gate.",
+      "en": "The note helps verify agreements but creates no accounting subsystem, pricing formula, client dossier, or career gate."
+    },
+    "journal": {
+      "ru": "Школа: деловая запись сведена к датам, суммам, статусу и открытым вопросам.",
+      "en": "School: reduced the business note to dates, amounts, status, and open questions."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока записей; отдельная система бухгалтерии или клиентского досье не вводится.",
+      "en": "Text result for a records lesson; no separate accounting system or client dossier is introduced."
+    }
+  },
+  "constraints": {
+    "createsAccountingSubsystem": false,
+    "createsPricingFormula": false,
+    "createsClientDossier": false,
+    "createsCareerGate": false,
+    "createsSecretDebtState": false,
+    "createsForcedNight": false,
+    "createsOwnerState": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}
