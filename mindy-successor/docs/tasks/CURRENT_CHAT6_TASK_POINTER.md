@@ -1,42 +1,38 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — GLOBAL PRESENTATION MAPPING PRODUCER v23**
+Status: **ACTIVE — GLOBAL PRESENTATION MAPPING EXACT-HEAD QA v24**
 Owner: Chat 6
 
-Frozen audit:
-`chat6/global-media-gap-audit-v22@f81788f046eafdafc8f9fbdc542793becfc6794c`
+Frozen producer:
+`chat6/global-presentation-mapping-producer-v23@f25069c369c449ce0efbfe57acf877f950b1dfea`
 
-Audit verdict:
-- minimum new non-Palace 1.0 asset count = **0**;
-- required work is presentation mapping/fallback correction.
+v23 scope:
+93 additive presentation mappings only.
 
-New branch:
-`chat6/global-presentation-mapping-producer-v23`
+Do not mutate the frozen producer.
 
-Base:
-`f81788f046eafdafc8f9fbdc542793becfc6794c`
+QA branch:
+`chat6/qa-global-presentation-mapping-v24`
 
-Implement only the P1/P2-safe mapping corrections identified by v22:
-1. Assassin event family -> existing Assassin result master;
-2. Assassin infiltration routes/returns -> existing Assassin result master;
-3. Secret Debt repay/rest/rent-room -> approved poverty/town/room assets;
-4. authored seasonal career sub-scenes -> matching existing seasonal master;
-5. Forest hunter-trail -> approved existing Forest route master.
+Task:
+run executable exact-head focused verification of v23.
 
-Rules:
-- no new art;
-- no engine/schema changes;
-- no gameplay mechanics;
-- no lore strengthening;
-- preserve existing alt/altKey RU/EN accessibility;
-- do not touch Palace D48 assets;
-- do not invent character appearance canon.
+The workflow must explicitly checkout:
+`f25069c369c449ce0efbfe57acf877f950b1dfea`
 
-Add focused static/presentation tests.
+Required checks:
+- typecheck;
+- validate;
+- build;
+- `global-presentation-mapping-producer-v23.test.ts`;
+- presentation/source-inventory integrity tests;
+- accessibility RU/EN parity tests;
+- semantic presentation ID validation;
+- Palace presentation firewall;
+- no missing asset paths.
+
 No full CI.
+No production behavior changes on the frozen producer.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT6_GLOBAL_PRESENTATION_MAPPING_PRODUCER_v23.md`
-
-Freeze exact SHA and report:
+If green, document exact workflow/run/job IDs and report:
 `READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
