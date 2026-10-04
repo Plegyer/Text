@@ -4,10 +4,11 @@ Status: **ACTIVE**
 
 Current Chat 2 lane:
 1. **D40 Tranche B**
-   - assembly head currently moving on `chat2/assembly-d40-tranche-b-current-main-20261003-v1`;
+   - assembly head checked: `537bceb9934f2bbdd90b220657a732143949f191`;
    - focused D40 gate #1167: **SUCCESS**;
-   - latest full CI #1172 is the active gate;
-   - do not merge until full CI is green.
+   - full CI #1172: **FAILURE — exactly 1 remaining test**;
+   - blocker: Merchant School readiness must publish after three sessions before first Merchant shift across the normal reaction/day boundary;
+   - repair and rerun full CI; no merge before green.
 
 Frozen next candidates:
 2. **D41 Tranche A**
