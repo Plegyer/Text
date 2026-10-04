@@ -1,46 +1,52 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — MACRO MYSTERY / LORE AUTHORITY v21**
+Status: **ACTIVE — GLOBAL 1.0 MEDIA GAP AUDIT v22**
 Owner: Chat 6
 
-Accepted authorities:
-- D45 Palace / Threshold / Prince;
-- D48 Palace minimum media target.
+Accepted lore authority:
+`chat6/macro-mystery-lore-authority-v21@d4313ea670340a3539b89e4c9ba34261aff1deb7`
 
-Frozen prior Product packet:
-`chat6/palace-media-production-plan-v20@10b748fd400c25e6384fcb451164fd3203ea8768`
+Leader lock:
+`mindy-successor/docs/tasks/LEADER1_D49_MACRO_LORE_LOCK_2026-10-04.md`
 
-Do not mutate v20.
+Do not mutate v21.
 
 New branch:
-`chat6/macro-mystery-lore-authority-v21`
+`chat6/global-media-gap-audit-v22`
+
+Base:
+`d4313ea670340a3539b89e4c9ba34261aff1deb7`
 
 Task:
-close the remaining 1.0 macro mystery/lore Product gap without resolving mysteries D45 intentionally leaves open.
+close the remaining non-Palace/global 1.0 art-media planning gap.
 
-Produce a compact lore authority for:
-- what the player can know before Palace;
-- what ordinary careers/Night/School/Activity/Secret Debt may foreshadow;
-- what the Palace reveals at duty 12 and duty 15;
-- what the Prince confrontation proves;
-- what Return Home proves;
-- what remains explicitly unknown after each ending;
-- safe recurring motifs/terminology across RU/EN content;
-- forbidden lore claims that would contradict D45.
+Audit current project-owned media and presentation coverage for:
+- ten ordinary careers;
+- School;
+- Night/relationships;
+- Large Activity and its three endings;
+- Secret Debt;
+- Strong Meta/New Start+;
+- global endings/results.
 
-Do not:
-- decide the original displacement cause;
-- decide who created the Threshold;
-- make all historical crossings intentional;
-- make Prince divine/omniscient;
-- make Palace responsible for the heroine's arrival;
-- turn optional system echoes into gates;
-- change mechanics/rewards/economy.
+Exclude Palace dedicated assets already governed by D48 except where needed for global accounting.
 
-Research/Product only. No runtime changes. No full CI.
+Produce:
+- exact uncovered/low-fidelity presentation families;
+- P1/P2/P3 priority;
+- minimum new-asset count for 1.0;
+- safe existing fallbacks;
+- filenames/slot families;
+- accessibility requirements;
+- areas where no new asset is required.
+
+Research/planning only.
+Do not generate art.
+Do not change mechanics or presentation engine.
+No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_MACRO_MYSTERY_LORE_AUTHORITY_v21.md`
+`mindy-successor/docs/tasks/CHAT6_GLOBAL_MEDIA_GAP_AUDIT_v22.md`
 
 Report:
 `READY_FOR_PRODUCT_LOCK`.
