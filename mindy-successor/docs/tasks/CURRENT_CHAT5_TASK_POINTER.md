@@ -1,65 +1,39 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — D47 HARD WORK BONUS MAPPING PRODUCER v13**
+Status: **ACTIVE — D47 FOCUSED QA v13**
 Owner: Chat 5
 
-Accepted Product authority:
-**D47** in `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md`
+Frozen producer candidate:
+`chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
 
-Source packet:
-`chat5/hard-work-bonus-mapping-decision-v12@b2a44983f1aae88888623f096b093a6e21354293`
+Do not mutate the producer candidate.
 
-D46 runtime base:
-`chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
-
-New branch:
-`chat5/hard-work-bonus-mapping-producer-v13`
+QA branch:
+`chat5/qa-d47-hard-work-mapping-v13`
 
 Base:
-`a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
+`252dc26c514e24f4ab0f0cc0da7694254282e4c4`
 
-Reason for D46 base:
-new-life Lust is already 5 there, so D47 Prostitute Lust +5 can be tested against the final 1.0 start semantics without later rebasing ambiguity.
+Task:
+run exact-head focused executable verification for D47.
 
-Implement D47 exactly:
-- Lumber Strength +5;
-- Satyr Maid Charm +5;
-- Undead Farm Magic +5;
-- Tavern Wits +5;
-- Hunter Dexterity +5;
-- Guard Endurance +5 + Manners +5;
-- Merchant Reason +5 + Sociability +5;
-- Artist/Geisha Creativity +5 + Grooming +5;
-- Assassin Dexterity +5 + Wits +5;
-- Prostitute Sexuality +5 + Charm +5 + separate Lust +5.
+Required:
+- typecheck;
+- validate;
+- build;
+- D47 focused mapping tests;
+- ordinary Hard Work package catalog/runtime tests;
+- New Start+ UI/presentation tests;
+- D23 Palace package-identity tests;
+- D24 cap-200 tests;
+- Strong Meta capacity/isolation tests;
+- Secret Debt and advanced-ending adjacency regressions;
+- save/reload/idempotence.
 
-Preserve:
-- profession package is the selectable unit;
-- arbitrary earned subset;
-- first five exactly one progression bonus;
-- later five exactly two progression bonuses;
-- Lust separate from 12 progression stats;
-- package application atomic and once per new run;
-- save/reload never reapplies bonuses;
-- D23 counts ten active package identities;
-- D24 cap-200 does not multiply bonuses;
-- old +3/+3 and Merchant +600 remain absent;
-- no Strong Meta slot consumption.
+QA branch may add only verification workflow/docs needed to run the checks.
+Do not change production behavior to make QA pass unless a real producer bug is found; if so, repair on a new producer-repair branch and report the exact cause.
 
 No full CI.
 
-Focused QA minimum:
-- exact mapping;
-- subset selection;
-- all-ten totals 75 progression points + Lust 5;
-- D46 base Lust 5 -> active Prostitute package yields Lust 10 before later play;
-- cap clipping;
-- reload/idempotence;
-- D23 10/10 package identity;
-- no advanced-ending/Secret Debt/Palace/Strong Meta drift.
-
-Deliver:
-`mindy-successor/docs/tasks/CHAT5_HARD_WORK_BONUS_MAPPING_PRODUCER_v13.md`
-
-Freeze exact SHA and report:
+If green, document exact workflow/run and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
