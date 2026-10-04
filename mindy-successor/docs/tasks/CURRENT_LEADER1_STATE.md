@@ -8,11 +8,12 @@ This file exists so a fresh Leader chat can continue without relying on prior ch
 ## Bootstrap for a future Leader chat
 
 Read in this order:
-1. `mindy-successor/docs/tasks/CURRENT_LEADER1_STATE.md`
-2. `mindy-successor/docs/tasks/CURRENT_LEADER1_ASSEMBLY_QUEUE.md`
-3. `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md`
-4. current `CURRENT_CHAT2_TASK_POINTER.md` ... `CURRENT_CHAT6_TASK_POINTER.md`
-5. any referenced recovery/freeze/handoff docs below.
+1. `mindy-successor/docs/tasks/LEADER1_USER_COMMUNICATION_PROTOCOL.md`
+2. `mindy-successor/docs/tasks/CURRENT_LEADER1_STATE.md`
+3. `mindy-successor/docs/tasks/CURRENT_LEADER1_ASSEMBLY_QUEUE.md`
+4. `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md`
+5. current `CURRENT_CHAT2_TASK_POINTER.md` ... `CURRENT_CHAT6_TASK_POINTER.md`
+6. any referenced recovery/freeze/handoff docs below.
 
 Then **re-query live GitHub before acting**. Branches move quickly. Exact SHA + test evidence outrank prose status.
 
@@ -389,3 +390,8 @@ Do not re-open D41. The sole integration lane is now D42.
   - Forest capability manifest missing read declaration for `activity.forest-frontier.result.research-grade`
 - current Chat 4 task: `chat4/activity-camp-baseline-repair-v19`
 - objective: make exact Camp candidate typecheck/validate/build/focused all green without changing Camp semantics.
+
+
+## User communication
+
+Follow `mindy-successor/docs/tasks/LEADER1_USER_COMMUNICATION_PROTOCOL.md` for all user-facing updates.
