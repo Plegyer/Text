@@ -1,57 +1,75 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — D40 FULL-CI SINGLE-FAILURE REPAIR**
+Status: **ACTIVE — D41 TRANCHE A CURRENT-MAIN ASSEMBLY**
 Owner: Chat 2 / sole current-main assembly + full-CI lane
 
-Assembly branch:
-`chat2/assembly-d40-tranche-b-current-main-20261003-v1`
+Previous gate:
+- D40 assembly head: `9f16458df1dd2232afe205e3f05920618f6007aa`
+- full CI #1176: **SUCCESS**
+- Leader merge: `209e2f6dae5ae3c34c0803410d640b67022cc899`
+- exact-main CI #1177: **SUCCESS**
 
-Latest checked head:
-`537bceb9934f2bbdd90b220657a732143949f191`
+## Current assembly
 
-D40 focused gate:
-- #1167 / run `37145143038`
-- **SUCCESS**
+Frozen D41 producer:
+`chat5/advanced-endings-tranche-a-producer-v11@56e1fcc19201f8586634262bb8746cb99d33f8e9`
 
-Full-CI history:
-- #1168: FAILURE — initial D40 full-suite drift;
-- #1169: CANCELLED by newer repair;
-- #1170: FAILURE — reduced repair set;
-- #1172 / run `37146771798`: **FAILURE — 1 test only**.
+Accepted Product authority:
+`chat5/ordinary-complex-endings-tranche-a-v10@95c0f06449e0a62241e5286c8a95050c82346956`
 
-Exact remaining blocker on #1172:
+Producer focused QA:
+run `37143638847` — **SUCCESS**
 
-`D40 Merchant School publisher creates literacy readiness at three sessions and persists it before and after career entry`
+New assembly branch:
+`chat2/assembly-d41-tranche-a-current-main-20261004-v1`
 
-Assertion:
-`D40 readiness may be prepared before first Merchant shift after the normal reaction/day boundary`
+Base:
+`main@0bb174b7e0692a9291da300ff25f86811fcf2e19`
 
-Observed:
-- expected `true`;
-- actual `false`.
+## Assembly rule
 
-All other tests in the full suite passed.
+Do **not** merge the historical producer branch wholesale.
 
-## Repair target
-
-Repair only the Merchant D40 School-readiness timing/consumer seam needed for the accepted D40 contract.
-
-Preserve:
-- D40 exact three-session School publisher authority;
-- readiness may be prepared before first Merchant shift;
-- normal reaction/day-boundary semantics;
-- no direct hidden mutation that bypasses normal reaction processing;
-- D23 Palace boundary;
+Selectively assemble the D41 production/runtime/tests on current main while preserving:
+- merged D40 current-main behavior;
+- canonical Strong Meta schema6/runtime;
+- D23 Palace sole gate;
+- D16 explicit ending commit;
+- D26 same-career cadence;
+- D31 seasonal map;
 - Secret Debt boundaries;
-- canonical Strong Meta runtime;
-- D31 map;
-- D16 explicit ending commit.
+- current localization/presentation registries;
+- all later Product locks and Leader docs.
 
-Do not weaken the test merely to hide a real publisher/timing gap.
+D41 scope is exactly the accepted 14 advanced endings for:
+- Lumber;
+- Satyr Maid;
+- Undead Farm;
+- Tavern;
+- Hunter.
 
-After repair:
-1. run focused Merchant/D40 checks;
-2. run full CI from the exact repaired assembly head;
-3. if green, freeze exact head and report `READY_FOR_LEADER_MERGE`.
+Bind D41 Specialist rewards into canonical Strong Meta. Automatic knowledge/content remains slot-free. Do not create a parallel registry.
+
+Preserve the final producer repair:
+`lumber-cross.activity-forest-return` must **not** consume `forest_preserved_specimen`.
+
+## Gate
+
+Before full CI:
+- typecheck;
+- validate;
+- build;
+- D41 focused ending tests;
+- Lumber cross-system/natural regressions;
+- Satyr/Undead/Tavern/Hunter natural regressions;
+- migration/idempotence;
+- D23 Palace non-bypass;
+- Strong Meta capacity/reward ownership;
+- presentation/localization parity.
+
+Only after focused green:
+1. run one full CI;
+2. freeze exact assembly SHA;
+3. report `READY_FOR_LEADER_MERGE`.
 
 Do not merge main.
