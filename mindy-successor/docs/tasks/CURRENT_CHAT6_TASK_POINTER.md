@@ -1,52 +1,42 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — GLOBAL 1.0 MEDIA GAP AUDIT v22**
+Status: **ACTIVE — GLOBAL PRESENTATION MAPPING PRODUCER v23**
 Owner: Chat 6
 
-Accepted lore authority:
-`chat6/macro-mystery-lore-authority-v21@d4313ea670340a3539b89e4c9ba34261aff1deb7`
+Frozen audit:
+`chat6/global-media-gap-audit-v22@f81788f046eafdafc8f9fbdc542793becfc6794c`
 
-Leader lock:
-`mindy-successor/docs/tasks/LEADER1_D49_MACRO_LORE_LOCK_2026-10-04.md`
-
-Do not mutate v21.
+Audit verdict:
+- minimum new non-Palace 1.0 asset count = **0**;
+- required work is presentation mapping/fallback correction.
 
 New branch:
-`chat6/global-media-gap-audit-v22`
+`chat6/global-presentation-mapping-producer-v23`
 
 Base:
-`d4313ea670340a3539b89e4c9ba34261aff1deb7`
+`f81788f046eafdafc8f9fbdc542793becfc6794c`
 
-Task:
-close the remaining non-Palace/global 1.0 art-media planning gap.
+Implement only the P1/P2-safe mapping corrections identified by v22:
+1. Assassin event family -> existing Assassin result master;
+2. Assassin infiltration routes/returns -> existing Assassin result master;
+3. Secret Debt repay/rest/rent-room -> approved poverty/town/room assets;
+4. authored seasonal career sub-scenes -> matching existing seasonal master;
+5. Forest hunter-trail -> approved existing Forest route master.
 
-Audit current project-owned media and presentation coverage for:
-- ten ordinary careers;
-- School;
-- Night/relationships;
-- Large Activity and its three endings;
-- Secret Debt;
-- Strong Meta/New Start+;
-- global endings/results.
+Rules:
+- no new art;
+- no engine/schema changes;
+- no gameplay mechanics;
+- no lore strengthening;
+- preserve existing alt/altKey RU/EN accessibility;
+- do not touch Palace D48 assets;
+- do not invent character appearance canon.
 
-Exclude Palace dedicated assets already governed by D48 except where needed for global accounting.
-
-Produce:
-- exact uncovered/low-fidelity presentation families;
-- P1/P2/P3 priority;
-- minimum new-asset count for 1.0;
-- safe existing fallbacks;
-- filenames/slot families;
-- accessibility requirements;
-- areas where no new asset is required.
-
-Research/planning only.
-Do not generate art.
-Do not change mechanics or presentation engine.
+Add focused static/presentation tests.
 No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_GLOBAL_MEDIA_GAP_AUDIT_v22.md`
+`mindy-successor/docs/tasks/CHAT6_GLOBAL_PRESENTATION_MAPPING_PRODUCER_v23.md`
 
-Report:
-`READY_FOR_PRODUCT_LOCK`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
