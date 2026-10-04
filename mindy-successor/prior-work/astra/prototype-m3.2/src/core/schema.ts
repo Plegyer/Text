@@ -392,6 +392,7 @@ export const activityDefinitionSchema=z.object({
   resumePolicy:z.enum(['allowed','checkpoint_only','forbidden']),
   timePolicy:z.enum(['same_day','advances_calendar_on_exit','can_advance_days_internally']),
   failurePolicy:z.enum(['exit_to_day','exit_to_night','terminal']),
+  campPolicy:z.object({maxNights:z.number().int().min(1).max(2)}).strict().optional(),
   adapter:z.literal('counter.v1'),
   adapterConfig:counterActivityConfigSchema,
   options:z.array(activityOptionSchema).max(64).default([]),
@@ -405,6 +406,16 @@ const activityMiniGameStateSchema=z.object({
   choiceIds:z.array(id).max(64).default([]),
   suspicion:z.number().int().min(0).max(100).default(0)
 }).strict();
+
+export const activityCampPhases=['idle','chosen','calendar_advanced','field_day_ready'] as const;
+const activityCampStateSchema=z.object({
+  phase:z.enum(activityCampPhases),
+  nightsUsed:z.number().int().min(0).max(2),
+  boundaryDay:n.max(159).nullable(),
+  calendarAdvanceCommitted:z.boolean(),
+  fieldTimeRefreshCommitted:z.boolean()
+}).strict();
+export type ActivityCampState=z.infer<typeof activityCampStateSchema>;
 
 const counterActivityStateSchema=z.object({
   progress:z.number().int().min(0).max(1_000_000),
@@ -425,6 +436,13 @@ export const activityEnvelopeSchema=z.object({
   startedDay:n.max(159),
   entryEnergyCommitted:z.literal(true),
   optionModelVersion:z.number().int().min(0).max(1).default(0),
+  campState:activityCampStateSchema.default({
+    phase:'idle',
+    nightsUsed:0,
+    boundaryDay:null,
+    calendarAdvanceCommitted:false,
+    fieldTimeRefreshCommitted:false
+  }),
   internalState:counterActivityStateSchema,
   rngState:z.number().int().min(0).max(4294967295),
   checkpoint:id,
