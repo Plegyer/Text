@@ -66,8 +66,8 @@ export function validateHardWorkPackageDefinitions(
       if (statBonusCount !== 1) {
         throw new Error(`First-five Hard Work package ${definition.career} must contain exactly one +5 progression-stat bonus.`);
       }
-    } else if (statBonusCount < 1 || statBonusCount > 2) {
-      throw new Error(`Later-five Hard Work package ${definition.career} must contain one or two +5 progression-stat bonuses.`);
+    } else if (statBonusCount !== 2) {
+      throw new Error(`Later-five Hard Work package ${definition.career} must contain exactly two +5 progression-stat bonuses.`);
     }
 
     const seenStats = new Set<Stat>();

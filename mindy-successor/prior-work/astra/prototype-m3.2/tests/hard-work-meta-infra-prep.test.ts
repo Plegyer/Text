@@ -88,7 +88,7 @@ test('validator rejects missing/duplicate careers, invalid breadth, non-+5 stat 
     ...laterTooWide[5]!.statBonuses,
     {stat:stats[11],amount:5}
   ]};
-  assert.throws(()=>validateHardWorkPackageDefinitions(laterTooWide),/later-five.*one or two/i);
+  assert.throws(()=>validateHardWorkPackageDefinitions(laterTooWide),/later-five.*exactly two/i);
 
   const wrongAmount=structuredClone(valid) as unknown as Array<{
     career:OrdinaryHardWorkCareer;
