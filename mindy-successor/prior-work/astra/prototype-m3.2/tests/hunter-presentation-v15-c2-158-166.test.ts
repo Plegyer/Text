@@ -181,7 +181,7 @@ test('C2-163 only the authorized live Hunter School consumer receives Hunter Sch
   }
 });
 
-test('C2-164 late Hunter route events are route presentation, not invented ending cards',()=>{
+test('C2-164 late Hunter route presentation stays distinct from exact D41 ending cards',()=>{
   for(const eventId of HUNTER_ROUTE_EVENT_IDS){
     const event=catalog.events.find(item=>item.id===eventId);
     assert.ok(event,eventId);
@@ -192,13 +192,17 @@ test('C2-164 late Hunter route events are route presentation, not invented endin
   }
 
   const hunterEndings=catalog.definitions.endings.filter(ending=>ending.id.includes('hunter'));
-  assert.deepEqual(hunterEndings.map(ending=>ending.id),['ending.hunter.hard-work']);
-  assert.equal(presentation.slots['ending/hunter/master-hunter'],undefined);
-  assert.equal(presentation.slots['ending/hunter/warden'],undefined);
-  assert.equal(presentation.slots['ending/hunter/legend'],undefined);
+  assert.deepEqual(hunterEndings.map(ending=>ending.id),[
+    'ending.hunter.hard-work','ending.hunter.master-hunter','ending.hunter.warden','ending.hunter.legend'
+  ]);
+  for(const ending of hunterEndings){
+    const id=presentationIdForEnding(ending.id);
+    assertLocalizedMedia(id);
+    assert.ok(presentation.slots[id]?.static,id+' static');
+  }
 });
 
-test('C2-165 existing Hunter Hard Work ending presentation remains the only Hunter ending surface',()=>{
+test('C2-165 Hunter Hard Work remains localized alongside D41 advanced ending surfaces',()=>{
   const endingId='ending.hunter.hard-work';
   assert.ok(catalog.definitions.endings.some(ending=>ending.id===endingId));
   const id=presentationIdForEnding(endingId);
