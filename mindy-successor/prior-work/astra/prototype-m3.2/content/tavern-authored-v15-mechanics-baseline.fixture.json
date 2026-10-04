@@ -1089,6 +1089,12 @@
                 "conditions": [],
                 "effects": [
                   {
+                    "kind": "setRelationshipChoice",
+                    "relationship": "tavern.recurring-traveler",
+                    "choice": "request-response",
+                    "value": "accepted"
+                  },
+                  {
                     "kind": "addRelationshipFact",
                     "relationship": "tavern.recurring-traveler",
                     "fact": "request-resolved"
@@ -1114,6 +1120,12 @@
                 "id": "decline-request",
                 "conditions": [],
                 "effects": [
+                  {
+                    "kind": "setRelationshipChoice",
+                    "relationship": "tavern.recurring-traveler",
+                    "choice": "request-response",
+                    "value": "declined"
+                  },
                   {
                     "kind": "addRelationshipFact",
                     "relationship": "tavern.recurring-traveler",
@@ -1552,7 +1564,11 @@
           "reads": {
             "careers": [
               "tavern"
-            ]
+            ],
+            "meta": [
+              "unlock"
+            ],
+            "calendar": true
           },
           "writes": {
             "careers": [
@@ -1608,6 +1624,206 @@
                     "fact": "rumour-route-open"
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "id": "tavern.information.broker-index-y1",
+            "sourceDomain": "tavern",
+            "trigger": [
+              "tavern.shift"
+            ],
+            "reactionTriggers": [
+              {
+                "kind": "careerFactAdded",
+                "career": "tavern",
+                "fact": "traveler-rumour-known"
+              }
+            ],
+            "priorityClass": "normal_progression",
+            "priority": 34,
+            "blocking": false,
+            "delivery": {
+              "policy": "live"
+            },
+            "nightPolicy": null,
+            "chance": null,
+            "cooldownDays": 0,
+            "variantCooldownDays": 0,
+            "maxShows": 1,
+            "conditions": [
+              {
+                "kind": "metaUnlock",
+                "unlock": "knowledge.tavern.broker-index",
+                "present": true
+              },
+              {
+                "kind": "calendarYear",
+                "op": "eq",
+                "value": 1
+              },
+              {
+                "kind": "careerFact",
+                "career": "tavern",
+                "fact": "traveler-rumour-known",
+                "present": true
+              }
+            ],
+            "choices": [
+              {
+                "id": "read-hint",
+                "conditions": [],
+                "effects": []
+              }
+            ]
+          },
+          {
+            "id": "tavern.information.broker-index-y2",
+            "sourceDomain": "tavern",
+            "trigger": [
+              "tavern.shift"
+            ],
+            "reactionTriggers": [
+              {
+                "kind": "careerFactAdded",
+                "career": "tavern",
+                "fact": "traveler-rumour-known"
+              }
+            ],
+            "priorityClass": "normal_progression",
+            "priority": 34,
+            "blocking": false,
+            "delivery": {
+              "policy": "live"
+            },
+            "nightPolicy": null,
+            "chance": null,
+            "cooldownDays": 0,
+            "variantCooldownDays": 0,
+            "maxShows": 1,
+            "conditions": [
+              {
+                "kind": "metaUnlock",
+                "unlock": "knowledge.tavern.broker-index",
+                "present": true
+              },
+              {
+                "kind": "calendarYear",
+                "op": "eq",
+                "value": 2
+              },
+              {
+                "kind": "careerFact",
+                "career": "tavern",
+                "fact": "traveler-rumour-known",
+                "present": true
+              }
+            ],
+            "choices": [
+              {
+                "id": "read-hint",
+                "conditions": [],
+                "effects": []
+              }
+            ]
+          },
+          {
+            "id": "tavern.information.broker-index-y3",
+            "sourceDomain": "tavern",
+            "trigger": [
+              "tavern.shift"
+            ],
+            "reactionTriggers": [
+              {
+                "kind": "careerFactAdded",
+                "career": "tavern",
+                "fact": "traveler-rumour-known"
+              }
+            ],
+            "priorityClass": "normal_progression",
+            "priority": 34,
+            "blocking": false,
+            "delivery": {
+              "policy": "live"
+            },
+            "nightPolicy": null,
+            "chance": null,
+            "cooldownDays": 0,
+            "variantCooldownDays": 0,
+            "maxShows": 1,
+            "conditions": [
+              {
+                "kind": "metaUnlock",
+                "unlock": "knowledge.tavern.broker-index",
+                "present": true
+              },
+              {
+                "kind": "calendarYear",
+                "op": "eq",
+                "value": 3
+              },
+              {
+                "kind": "careerFact",
+                "career": "tavern",
+                "fact": "traveler-rumour-known",
+                "present": true
+              }
+            ],
+            "choices": [
+              {
+                "id": "read-hint",
+                "conditions": [],
+                "effects": []
+              }
+            ]
+          },
+          {
+            "id": "tavern.information.broker-index-y4",
+            "sourceDomain": "tavern",
+            "trigger": [
+              "tavern.shift"
+            ],
+            "reactionTriggers": [
+              {
+                "kind": "careerFactAdded",
+                "career": "tavern",
+                "fact": "traveler-rumour-known"
+              }
+            ],
+            "priorityClass": "normal_progression",
+            "priority": 34,
+            "blocking": false,
+            "delivery": {
+              "policy": "live"
+            },
+            "nightPolicy": null,
+            "chance": null,
+            "cooldownDays": 0,
+            "variantCooldownDays": 0,
+            "maxShows": 1,
+            "conditions": [
+              {
+                "kind": "metaUnlock",
+                "unlock": "knowledge.tavern.broker-index",
+                "present": true
+              },
+              {
+                "kind": "calendarYear",
+                "op": "eq",
+                "value": 4
+              },
+              {
+                "kind": "careerFact",
+                "career": "tavern",
+                "fact": "traveler-rumour-known",
+                "present": true
+              }
+            ],
+            "choices": [
+              {
+                "id": "read-hint",
+                "conditions": [],
+                "effects": []
               }
             ]
           }
@@ -1727,6 +1943,9 @@
             ],
             "careers": [
               "tavern"
+            ],
+            "worldFacts": [
+              "lumber.forest.truth-known"
             ]
           },
           "writes": {
@@ -1760,6 +1979,11 @@
             "variantCooldownDays": 0,
             "maxShows": 1,
             "conditions": [
+              {
+                "kind": "worldFact",
+                "fact": "lumber.forest.truth-known",
+                "present": true
+              },
               {
                 "kind": "careerFact",
                 "career": "tavern",
@@ -2273,163 +2497,6 @@
     ],
     "endings": [
       {
-        "id": "tavern-stay",
-        "conditions": [
-          {
-            "kind": "any",
-            "conditions": [
-              {
-                "kind": "visits",
-                "action": "tavern",
-                "value": 18
-              },
-              {
-                "kind": "all",
-                "conditions": [
-                  {
-                    "kind": "careerCounter",
-                    "career": "tavern",
-                    "counter": "completed_shifts",
-                    "op": "gte",
-                    "value": 18
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "school-records-ready",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "guest-ledger-evidence-ready",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "crisis-resolved",
-                    "present": true
-                  }
-                ]
-              },
-              {
-                "kind": "careerFact",
-                "career": "tavern",
-                "fact": "innkeeper-ready",
-                "present": true
-              }
-            ]
-          }
-        ],
-        "reward": "host",
-        "metaRewards": null
-      },
-      {
-        "id": "tavern-guild",
-        "conditions": [
-          {
-            "kind": "any",
-            "conditions": [
-              {
-                "kind": "flag",
-                "key": "tavern.guild",
-                "value": true
-              },
-              {
-                "kind": "all",
-                "conditions": [
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "housing-assistance-complete",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "confidentiality-kept",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "crisis-resolved",
-                    "present": true
-                  }
-                ]
-              },
-              {
-                "kind": "careerFact",
-                "career": "tavern",
-                "fact": "sanctuary-ready",
-                "present": true
-              }
-            ]
-          }
-        ],
-        "reward": "mediator",
-        "metaRewards": null
-      },
-      {
-        "id": "tavern-court",
-        "conditions": [
-          {
-            "kind": "any",
-            "conditions": [
-              {
-                "kind": "flag",
-                "key": "tavern.prince",
-                "value": true
-              },
-              {
-                "kind": "all",
-                "conditions": [
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "school-broker-ready",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "rumour-route-open",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "rumour-confirmed",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "confidentiality-resolved",
-                    "present": true
-                  },
-                  {
-                    "kind": "careerFact",
-                    "career": "tavern",
-                    "fact": "crisis-resolved",
-                    "present": true
-                  }
-                ]
-              },
-              {
-                "kind": "careerFact",
-                "career": "tavern",
-                "fact": "information-broker-ready",
-                "present": true
-              }
-            ]
-          }
-        ],
-        "reward": "court",
-        "metaRewards": null
-      },
-      {
         "id": "ending.tavern.hard-work",
         "conditions": [
           {
@@ -2446,6 +2513,272 @@
             "kind": "hardWork",
             "rewardId": "hardWork:tavern",
             "career": "tavern"
+          }
+        ]
+      },
+      {
+        "id": "ending.tavern.innkeeper",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "tavern",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 15
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "house-node-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "school-records-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "guest-ledger-evidence-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "crisis-innkeeper",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "innkeeper-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "crisis-resolved",
+            "present": true
+          },
+          {
+            "kind": "careerCounter",
+            "career": "tavern",
+            "counter": "supply_pressure",
+            "op": "gte",
+            "value": 2
+          },
+          {
+            "kind": "itemCapability",
+            "capability": "access_guest_rooms_staff",
+            "present": true
+          }
+        ],
+        "reward": "specialist.tavern.house-ledger",
+        "metaRewards": [
+          {
+            "kind": "strongMeta",
+            "rewardId": "specialist.tavern.house-ledger",
+            "reward": "specialist.tavern.house-ledger"
+          }
+        ]
+      },
+      {
+        "id": "ending.tavern.information-broker",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "tavern",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 15
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "house-node-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "school-broker-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "traveler-rumour-known",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "rumour-route-open",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "rumour-confirmed",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "confidentiality-resolved",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "crisis-broker",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "information-broker-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "crisis-resolved",
+            "present": true
+          },
+          {
+            "kind": "relationshipCounter",
+            "relationship": "tavern.recurring-traveler",
+            "counter": "night-meetings",
+            "op": "gte",
+            "value": 1
+          },
+          {
+            "kind": "relationshipChoice",
+            "relationship": "tavern.recurring-traveler",
+            "choice": "night-response",
+            "value": "accepted"
+          },
+          {
+            "kind": "relationshipChoice",
+            "relationship": "tavern.recurring-traveler",
+            "choice": "request-response",
+            "value": "accepted"
+          },
+          {
+            "kind": "any",
+            "conditions": [
+              {
+                "kind": "relationshipChoice",
+                "relationship": "tavern.recurring-traveler",
+                "choice": "confidentiality-response",
+                "value": "keep-private"
+              },
+              {
+                "kind": "relationshipChoice",
+                "relationship": "tavern.recurring-traveler",
+                "choice": "confidentiality-response",
+                "value": "share-route-only"
+              }
+            ]
+          }
+        ],
+        "reward": "knowledge.tavern.broker-index",
+        "metaRewards": [
+          {
+            "kind": "unlock",
+            "rewardId": "knowledge.tavern.broker-index",
+            "unlock": "knowledge.tavern.broker-index"
+          }
+        ]
+      },
+      {
+        "id": "ending.tavern.sanctuary",
+        "conditions": [
+          {
+            "kind": "careerCounter",
+            "career": "tavern",
+            "counter": "completed_shifts",
+            "op": "gte",
+            "value": 15
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "house-node-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "housing-assistance-complete",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "confidentiality-kept",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "crisis-sanctuary",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "sanctuary-ready",
+            "present": true
+          },
+          {
+            "kind": "careerFact",
+            "career": "tavern",
+            "fact": "crisis-resolved",
+            "present": true
+          },
+          {
+            "kind": "careerCounter",
+            "career": "tavern",
+            "counter": "shelter_pressure",
+            "op": "gte",
+            "value": 2
+          },
+          {
+            "kind": "relationshipCounter",
+            "relationship": "tavern.recurring-traveler",
+            "counter": "night-meetings",
+            "op": "gte",
+            "value": 1
+          },
+          {
+            "kind": "relationshipChoice",
+            "relationship": "tavern.recurring-traveler",
+            "choice": "night-response",
+            "value": "accepted"
+          },
+          {
+            "kind": "relationshipChoice",
+            "relationship": "tavern.recurring-traveler",
+            "choice": "request-response",
+            "value": "accepted"
+          },
+          {
+            "kind": "relationshipChoice",
+            "relationship": "tavern.recurring-traveler",
+            "choice": "confidentiality-response",
+            "value": "keep-private"
+          }
+        ],
+        "reward": "specialist.tavern.safehouse-network",
+        "metaRewards": [
+          {
+            "kind": "strongMeta",
+            "rewardId": "specialist.tavern.safehouse-network",
+            "reward": "specialist.tavern.safehouse-network"
           }
         ]
       }
