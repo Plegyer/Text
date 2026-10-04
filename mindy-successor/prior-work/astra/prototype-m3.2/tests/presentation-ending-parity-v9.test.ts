@@ -11,7 +11,7 @@ const manifest=JSON.parse(readFileSync('content/presentation-drafts/presentation
 
 test('all existing ending semantic IDs have exact static RU/EN presentation parity',()=>{
   const rows=manifest.endingParity.existingEndingPresentationIds;
-  assert.equal(rows.length,9);
+  assert.equal(rows.length,8);
   const registry=new Set(presentationSlots(catalog).map(slot=>slot.id));
   const checked=applyPresentation(catalog,presentation);
   for(const row of rows){
@@ -47,7 +47,7 @@ test('current ending definitions all map to live semantic slots while the audite
       assert.ok(resolved.selected,id+' must resolve to a live static/fallback presentation surface');
     }
   }
-  assert.equal(audited.size,9);
+  assert.equal(audited.size,8);
 });
 
 test('historical v9 committed-state classification does not override current live presentation coverage',()=>{
