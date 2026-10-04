@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "tavern.night",
+  "reads": [],
+  "writes": [],
+  "media": [],
+  "events": [
+    {
+      "id": "tavern.night.traveler-private",
+      "title": "A private-space conversation with the recurring traveler",
+      "sourceDomain": "tavern",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "tavern.night.traveler-private"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Talk privately about personal context or safety without silently resolving confidentiality, rumours, or any information route.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the private conversation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
