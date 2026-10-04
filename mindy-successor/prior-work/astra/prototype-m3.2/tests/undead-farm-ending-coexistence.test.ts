@@ -51,7 +51,7 @@ test('Undead Farm Hard Work, Research Farmer and Successor can coexist without t
   assert.equal(s.run.endings.committed,null);
 });
 
-test('complex Undead Farm ending uses explicit commit/completion and adds no unresolved Meta modifier',()=>{
+test('complex Undead Farm ending uses explicit commit/completion and grants canonical Strong Meta ownership once',()=>{
   let s=combinedAt49();
   s=dispatch(s,{type:'action',id:'undead-farm.shift'},catalog);
   const completedBefore=s.meta.runsCompleted;
@@ -65,9 +65,11 @@ test('complex Undead Farm ending uses explicit commit/completion and adds no unr
   assert.equal(s.meta.runsCompleted,completedBefore+1);
   assert.ok(s.meta.completedEndings.includes('ending.undead-farm.research-farmer'));
   assert.equal(s.meta.completedEndings.includes('ending.undead-farm.successor'),false);
-  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['specialist.undead-farm.field-preservation']);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,['specialist.undead-farm.field-preservation']);
 
   const again=dispatch(s,{type:'completeEnding'},catalog);
   assert.equal(again.meta.runsCompleted,completedBefore+1);
-  assert.deepEqual(again.run.endings.result?.appliedMetaRewardIds,[]);
+  assert.deepEqual(again.run.endings.result?.appliedMetaRewardIds,['specialist.undead-farm.field-preservation']);
+  assert.deepEqual(again.meta.strongMeta.ownership.ownedRewardIds,['specialist.undead-farm.field-preservation']);
 });
