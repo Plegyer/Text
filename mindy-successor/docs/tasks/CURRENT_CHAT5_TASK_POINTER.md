@@ -1,55 +1,60 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — LUMBER-STAY 1.0 RETIREMENT / LEGACY POLICY v16**
+Status: **ACTIVE — LUMBER-STAY RETIREMENT PRODUCER v17**
 Owner: Chat 5
 
-Completed identity audit:
-`chat5/final-ending-id-migration-audit-v15@288f4eae979eea223e9667352055f51946b5cb46`
+Accepted Product decision source:
+`chat5/lumber-stay-retirement-decision-v16@4f4df720c9677b4b9becc0cb8538da26a276f944`
 
-The audit confirms the canonical ordinary-career 1.0 surface is exactly:
-- 10 Hard Work endings;
-- 14 D41 advanced endings;
-- 16 D40 advanced endings;
-- total = **40**.
-
-Open legacy identity:
-`lumber-stay`
-- old prototype requirement: 24 Lumber visits;
-- old reward: `vitality` / next-life +1 daily Energy;
-- still live in current catalog;
-- has no one-to-one canonical replacement.
+Production base:
+`main@f36de067ae2e82518360dbe045f71c700e200805` (D41 merged production SHA)
 
 New branch:
-`chat5/lumber-stay-retirement-decision-v16`
+`chat5/lumber-stay-retirement-producer-v17`
 
-Task:
-produce the exact 1.0 Product/migration policy for `lumber-stay` and `vitality`.
+Implement the v16 retirement policy exactly.
 
-Evaluate the preferred direction:
-**retire from new play so the live ordinary-career surface is exactly the canonical 40**, while preserving historical saves conservatively.
+Required live 1.0 result:
+- remove `lumber-stay` from new-play live ending registration;
+- remove new acquisition of `vitality`;
+- canonical ordinary-career surface remains exactly 40 endings;
+- no alias to Hard Work / Forewoman / Forest.
 
-Specify exact behavior for:
-- completed historical `lumber-stay`;
-- old committed-but-not-completed state;
-- old eligible-only state;
-- existing profile/unlock/reward evidence for `vitality`;
-- whether any legacy +1 Energy remains active in future runs or is quarantined as historical compatibility only;
-- RunResult identity;
-- transaction proof;
-- presentation/source inventory rows;
-- localization;
-- save/load idempotence.
+Historical compatibility:
+- completed historical `lumber-stay` stays historical evidence;
+- normalize historical `vitality` ownership to one legacy perk:
+  `legacy.lumber-stay.vitality`;
+- historical owners preserve exactly +1 daily Energy;
+- no new acquisition, no slots, no stacking duplicates;
+- eligible-only old state is removed without reward;
+- committed-but-unfinished old state is cleared and run resumes active;
+- existing historical RunResult/transaction identity is preserved;
+- old ended pre-RunResult save gets deterministic compatibility proof only, never reward replay.
 
-Constraints:
-- do not alias `lumber-stay` to Forewoman, Forest Compact, or Hard Work;
-- do not silently map `vitality` into a modern Specialist/Keystone/Hard Work package;
-- do not create a 41st live ordinary-career ending;
-- preserve historical completion evidence without fabricating modern progression.
+Presentation/localization:
+- retire live `ending/lumber-stay` semantic/source inventory;
+- historical display is non-interactive and uses legacy localization namespace;
+- no 41st live ending card;
+- canonical Lumber endings remain unchanged.
 
-Research/Product only. No runtime changes. No full CI.
+Migration:
+- deterministic;
+- idempotent;
+- no fabricated canonical completion;
+- no conversion of legacy visits into Hard Work shifts.
+
+No full CI.
+
+Focused QA minimum:
+- all acceptance cases from v16 decision;
+- second parse/load idempotence;
+- profile merge dedupe;
+- canonical 40 count;
+- Palace / Strong Meta / Hard Work / Secret Debt isolation;
+- live presentation/source inventory contains no `ending/lumber-stay`.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT5_LUMBER_STAY_RETIREMENT_DECISION_v16.md`
+`mindy-successor/docs/tasks/CHAT5_LUMBER_STAY_RETIREMENT_PRODUCER_v17.md`
 
-Report:
-`READY_FOR_PRODUCT_LOCK`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
