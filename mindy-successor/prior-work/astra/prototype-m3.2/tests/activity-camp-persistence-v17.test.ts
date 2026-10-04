@@ -45,7 +45,15 @@ function definitions(){
   return {
     version:'0.1.0',
     flags:['story.arrived'],
-    actions:[],
+    actions:[{
+      id:'rest',
+      label:'Synthetic rest',
+      description:'Synthetic NightFlow last-action identity for Camp QA.',
+      cost:{money:0,energy:0},
+      conditions:[],
+      effects:[],
+      mode:'normal'
+    }],
     endings:[],
     lodgings:[
       {
@@ -77,7 +85,10 @@ function forcedNightPack(){
       reads:{worldFacts:['test.bound']},
       writes:{nextDay:true}
     },
-    media:[],
+    media:[
+      {id:'stage.room',kind:'image',src:'assets/room.svg',alt:'Synthetic room'},
+      {id:'stage.outside',kind:'image',src:'assets/outside.svg',alt:'Synthetic outside'}
+    ],
     events:[{
       id:'camp-debt.forced-night',
       title:'Synthetic bound Night',
