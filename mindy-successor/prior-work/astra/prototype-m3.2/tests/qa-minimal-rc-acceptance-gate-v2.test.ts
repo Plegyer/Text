@@ -35,6 +35,19 @@ function resolveV14PovertyNight(state:Save){
   return s;
 }
 
+function resolveD41LumberMilestones(state:Save){
+  let s=state,guard=0;
+  while(s.run.pending&&['lumber.career-trusted-worker','lumber.career-veteran'].includes(s.run.pending.eventId)){
+    if(++guard>4)throw new Error('D41 Lumber milestone cascade exceeded guard');
+    const event=catalog.events.find(entry=>entry.id===s.run.pending!.eventId);
+    assert.ok(event,s.run.pending.eventId);
+    const choice=event.choices.find(entry=>(s.run.pending!.allowedChoiceIds??event.choices.map(candidate=>candidate.id)).includes(entry.id));
+    assert.ok(choice,event.id);
+    s=runtime.dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+
 
 test('minimal RC locks exact Hard Work contract and inventory-derived capability semantics', {
   skip:!currentRcRuntime
@@ -240,6 +253,9 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   );
 
   s=runtime.dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  s=resolveD41LumberMilestones(s);
+  assert.equal(s.run.pending,null);
+  assert.equal(s.run.progression.careers.lumber?.stage,'veteran');
 
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,50);
   assert.ok(s.run.endings.eligible.includes('ending.lumber.hard-work'));

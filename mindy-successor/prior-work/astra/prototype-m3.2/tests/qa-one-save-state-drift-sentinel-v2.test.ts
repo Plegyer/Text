@@ -35,6 +35,19 @@ function arcanaLessons(state:Save){
 function arcanaNightStudies(state:Save){
   return state.run.progression.school.tracks['school.track.arcana']?.counters.night_study_sessions??0;
 }
+function resolveD41LumberMilestones(state:Save){
+  let s=state,guard=0;
+  while(s.run.pending&&['lumber.career-trusted-worker','lumber.career-veteran'].includes(s.run.pending.eventId)){
+    if(++guard>4)throw new Error('D41 Lumber milestone cascade exceeded guard');
+    const event=catalog.events.find(entry=>entry.id===s.run.pending!.eventId);
+    assert.ok(event,s.run.pending.eventId);
+    const choice=event.choices.find(entry=>(s.run.pending!.allowedChoiceIds??event.choices.map(candidate=>candidate.id)).includes(entry.id));
+    assert.ok(choice,event.id);
+    s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+
 
 test('final one-Save drift sentinel v2 preserves PR24 state across School, Night, Forest, ending and New Run',()=>{
   let s=started();
@@ -261,6 +274,9 @@ test('final one-Save drift sentinel v2 preserves PR24 state across School, Night
 
   const hardWorkShiftMoneyBefore=s.run.resources.money;
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  s=resolveD41LumberMilestones(s);
+  assert.equal(s.run.pending,null);
+  assert.equal(s.run.progression.careers.lumber?.stage,'veteran');
   const hardWorkShiftMoneyAfter=s.run.resources.money;
 
   assert.ok(hardWorkShiftMoneyAfter>hardWorkShiftMoneyBefore);

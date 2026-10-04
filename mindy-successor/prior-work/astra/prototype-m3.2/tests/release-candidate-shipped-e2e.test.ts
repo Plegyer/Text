@@ -23,6 +23,19 @@ function resolveV14PovertyNight(state:Save){
   return s;
 }
 
+function resolveD41LumberMilestones(state:Save){
+  let s=state,guard=0;
+  while(s.run.pending&&['lumber.career-trusted-worker','lumber.career-veteran'].includes(s.run.pending.eventId)){
+    if(++guard>4)throw new Error('D41 Lumber milestone cascade exceeded guard');
+    const event=catalog.events.find(entry=>entry.id===s.run.pending!.eventId);
+    assert.ok(event,s.run.pending.eventId);
+    const choice=event.choices.find(entry=>(s.run.pending!.allowedChoiceIds??event.choices.map(candidate=>candidate.id)).includes(entry.id));
+    assert.ok(choice,event.id);
+    s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+
 
 test('release-candidate shipped E2E keeps one Save coherent across Lumber, School, Night, Forest and Hard Work',()=>{
   let s=started();
@@ -158,6 +171,9 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
   assert.equal(s.run.endings.eligible.includes('ending.lumber.hard-work'),false);
 
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
+  s=resolveD41LumberMilestones(s);
+  assert.equal(s.run.pending,null);
+  assert.equal(s.run.progression.careers.lumber?.stage,'veteran');
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,50);
   assert.equal(s.run.dayState.energyCurrent,0);
   assert.ok(s.run.endings.eligible.includes('ending.lumber.hard-work'));
