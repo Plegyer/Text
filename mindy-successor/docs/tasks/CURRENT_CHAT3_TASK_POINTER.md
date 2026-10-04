@@ -1,52 +1,61 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — D51 SECRET DEBT / ACTIVITY ENERGY COMPAT PRODUCER v20**
+Status: **ACTIVE — SECRET DEBT v12 + D51 ASSEMBLY PREFLIGHT v22**
 Owner: Chat 3
 
-Accepted Product authority:
-`mindy-successor/docs/tasks/LEADER1_D51_BOUND_STREET_ACTIVITY_ENERGY_LOCK_2026-10-04.md`
+Completed D51 QA:
+- frozen producer: `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
+- exact-head QA: run `37205501396`
+- typecheck / validate / build PASS
+- focused **58/58 PASS**
+- production tree unchanged
+- disposition: `READY_FOR_CHAT2_ASSEMBLY`
 
-Source audit:
-`chat3/activity-secret-debt-energy-compat-audit-v19@d030bc72be62212130aad709cff748947eb36507`
-
-Frozen Secret Debt base:
-`chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
+Next integration after current D42 lane:
+Secret Debt v12 + D51 compatibility.
 
 New branch:
-`chat3/secret-debt-activity-energy-compat-producer-v20`
+`chat3/secret-debt-d51-assembly-preflight-v22`
 
-Implement D51 narrowly on the Secret Debt/Night next-day Energy seam.
+Current production reference:
+`main@f36de067ae2e82518360dbe045f71c700e200805`
+(D41 production merge; D42 is still being assembled separately by Chat 2.)
 
-Required behavior:
-- if the immediately preceding Night applied both Street Energy -1 and `secret-debt.bound-night` Energy -1, process both but apply a provenance-gated compatibility floor of 2 after those two specific modifiers;
-- unrelated independent Energy penalties remain separate and may reduce below 2;
-- no global Energy floor;
-- Activity entry remains exactly 2 Energy;
-- hidden work remains 1 Energy;
-- Street Grooming consequence remains;
-- Secret Debt forced Night remains every bound night;
-- voluntary Night suppression remains;
-- acceptance -> trap activation morning gets no retroactive forced-Night penalty;
-- save/reload cannot duplicate or lose either modifier.
+Frozen sources:
+- Secret Debt v12:
+  `chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
+- D51:
+  `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
 
-Use explicit modifier provenance/tags; do not infer from housing alone.
+Task:
+prepare the exact selective-assembly preflight for Chat 2's next lane after D42.
 
-Focused QA must include v19 T1-T11, especially:
-- normal/cheap controls;
-- bound+Street reproduction/fix;
-- reload before/after forced Night choice;
-- trap activation boundary;
-- second bound Street morning;
-- unrelated third penalty;
-- Meta +1 diagnostic;
-- route exit.
+Produce:
+- exact production files changed by v12;
+- exact production files changed by D51;
+- overlap/conflict matrix between v12 and D51;
+- expected overlap with current D42 Night ownership;
+- files that must be selectively composed rather than wholesale copied;
+- tests/fixtures that are source-specific vs current-main authoritative;
+- exact focused test bundle Chat 2 should run;
+- required migration/save checks;
+- Night priority checks;
+- D51 provenance checks;
+- D44 wage/threshold non-regression;
+- Activity 2-Energy availability;
+- Palace / Strong Meta / ordinary-career isolation;
+- expected current-main conflict hotspots.
 
-Do not change D44 wages/thresholds, D36 entry cost, lodging prices, Palace, or Strong Meta.
+Important:
+D42 is not merged yet. Do not fabricate its future exact SHA.
+Use D42 Product authority and frozen Night producer only to identify semantic ownership/conflict risk.
 
-No full CI.
+Research/preflight only.
+Do not modify runtime.
+Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_ACTIVITY_ENERGY_COMPAT_PRODUCER_v20.md`
+`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_D51_ASSEMBLY_PREFLIGHT_v22.md`
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+Report:
+`READY_FOR_CHAT2_PREFLIGHT`.
