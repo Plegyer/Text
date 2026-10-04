@@ -1,44 +1,45 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — D46 ECONOMY REACHABILITY AUDIT v15**
+Status: **ACTIVE — 1.0 SAVE / MIGRATION CLOSURE AUDIT v16**
 Owner: Chat 4
 
-Frozen D46 runtime producer:
-`chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
-
-Focused QA:
-run `37147051068` — typecheck/validate/build PASS, focused **59/59 PASS**.
-
-Do not mutate v14.
+Previous result:
+`chat4/d46-economy-reachability-audit-v15@bb79be1f39c55e6297287cd071e1e8268005148a`
+— **PASS**, no evidence-backed D46 retune blocker.
 
 New branch:
-`chat4/d46-economy-reachability-audit-v15`
+`chat4/final-save-migration-audit-v16`
 
 Base:
-`a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
+`main@209e2f6dae5ae3c34c0803410d640b67022cc899` (D40 production merge)
 
 Task:
-perform a 1.0 economy/reachability stress audit using implemented D46 values.
+build the final pre-1.0 save/migration acceptance matrix across all queued systems.
 
-Audit representative 160-day paths:
-- low-stat fresh life;
-- ordinary mixed-career life;
-- School-heavy life;
-- Activity-heavy life;
-- normal/cheap/street lodging mixes;
-- Strong Meta money/Work Rhythm cases;
-- Secret Debt entry/repayment pressure;
-- Palace finite-pay interaction;
-- cap-200 late-meta case.
+Audit:
+- schema evolution and old-save defaults;
+- Strong Meta schema6/current-run snapshot immutability;
+- D40/D41 selected-route facts and ambiguous legacy outcome-ready cases;
+- Night state;
+- Secret Debt bound/repayment/ending state;
+- Palace access/duty/confrontation state;
+- Activity route/mini-game/camp/suspicion state;
+- D46 fresh Lust vs existing-save Lust preservation;
+- D47 active Hard Work package snapshot and no double-application.
 
-Find only real soft-lock/exploit risks.
-Do not reopen D46 numbers unless evidence shows a concrete blocker.
-No runtime implementation changes.
+For each system specify:
+- old-save input shape;
+- required migrated/default state;
+- idempotence expectation;
+- forbidden inference;
+- save/reload checkpoint;
+- exact regression test needed before 1.0.
+
+Research/audit only. Do not change runtime.
+No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT4_D46_ECONOMY_REACHABILITY_AUDIT_v15.md`
+`mindy-successor/docs/tasks/CHAT4_FINAL_SAVE_MIGRATION_AUDIT_v16.md`
 
 Report:
 `READY_FOR_LEADER_REVIEW`.
-
-No full CI.
