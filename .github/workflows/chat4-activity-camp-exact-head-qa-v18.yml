@@ -6,6 +6,11 @@ on:
       - chat4/qa-activity-camp-persistence-v18
     paths:
       - '.github/workflows/chat4-activity-camp-exact-head-qa-v18.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/chat4-activity-camp-exact-head-qa-v18.yml'
 
 concurrency:
   group: chat4-activity-camp-exact-head-qa-v18
