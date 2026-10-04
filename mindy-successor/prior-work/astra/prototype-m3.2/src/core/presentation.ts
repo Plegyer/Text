@@ -106,6 +106,25 @@ export interface ResolvedPresentation {
 
 export const emptyPresentation=():Presentation=>({version:1,texts:{},media:{}});
 
+export const NIGHT_CONTENT_GAP_PRESENTATION_IDS={
+  'lumber.night.foreman-social':'relationship/lumber-foreman/lumber-night-foreman-social/default',
+  'hunter.night.field-debrief':'night/hunter/hunter-night-field-debrief',
+  'hunter.night.senior-guide':'relationship/hunter-senior-guide/hunter-night-senior-guide/default',
+  'guard.night.case-debrief':'night/guard/guard-night-case-debrief',
+  'guard.night.partner':'relationship/guard-partner/guard-night-partner/default',
+  'merchant.night.ledger-plan':'night/merchant/merchant-night-ledger-plan',
+  'merchant.night.supplier':'relationship/merchant-supplier/merchant-night-supplier/default',
+  'assassin.night.handler-contact':'relationship/assassin-handler/assassin-night-handler-contact/default',
+  'prostitute.night.personal-continuation':'relationship/prostitute-recurring-client/prostitute-night-personal-continuation/default',
+  'satyr-maid.night.recurring-guest-private':'night/satyr-maid/satyr-maid-night-recurring-guest-private',
+  'tavern.night.traveler-private':'night/tavern/tavern-night-traveler-private',
+  'prostitute.night.client-private':'night/prostitute/prostitute-night-client-private'
+} as const;
+
+export function presentationIdForNightContentGapChoice(choiceId:string):string|null{
+  return (NIGHT_CONTENT_GAP_PRESENTATION_IDS as Record<string,string>)[choiceId]??null;
+}
+
 const jobIds=new Set(['tavern','lumber','hunt','hunter','guard','satyr-maid','undead-farm','artist-geisha','assassin','merchant','prostitute']);
 const clean=(value:string)=>value.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'')||'default';
 const pathParts=(value:string)=>value.toLowerCase().split(/[./]+/).map(clean).filter(Boolean);
@@ -174,6 +193,8 @@ export function presentationIdForActivityRoute(cat:Catalog,activityId:string,rou
 }
 
 export function presentationIdForEvent(cat:Catalog,eventId:string,variantId:string){
+  const nightContentGapId=presentationIdForNightContentGapChoice(eventId);
+  if(nightContentGapId)return nightContentGapId;
   const event=cat.events.find(e=>e.id===eventId);
   const sourceDomain=event?.sourceDomain;
   const domain=sourceDomain?clean(sourceDomain):'';
@@ -825,6 +846,20 @@ export function presentationSlots(cat:Catalog):PresentationSlot[]{
         });
       }
     }
+  }
+
+  // D42 Night-gap choices own exact semantic presentation IDs accepted in v9.
+  // This is presentation-only: eligibility/effects remain in NightChoice definitions.
+  for(const [choiceId,presentationId] of Object.entries(NIGHT_CONTENT_GAP_PRESENTATION_IDS)){
+    if(!(cat.definitions.nightChoices??[]).some(choice=>choice.id===choiceId))continue;
+    const careerId=choiceId.split('.')[0]??'';
+    const resultId=`job/${clean(careerId)}/result/default`;
+    add({
+      id:presentationId,
+      label:`D42 Night · ${choiceId}`,
+      baseMediaIds:[],
+      fallbackId:slots.has(resultId)?resultId:'location/town/default'
+    });
   }
 
   // Stage and resource surfaces are Presentation-owned semantic views over
