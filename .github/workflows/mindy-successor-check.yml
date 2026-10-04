@@ -47,5 +47,5 @@ jobs:
           Run-Group "d40-core" "node --experimental-strip-types --test tests/d40-advanced-endings-tranche-b-v11.test.ts"
           Run-Group "merchant-school" "node --experimental-strip-types --test tests/school-merchant-v17-live-inventory.test.ts"
           Run-Group "other-d40-school" "node --experimental-strip-types --test tests/school-guard-v16-live-inventory.test.ts tests/school-artist-geisha-v18-live-inventory.test.ts"
-          Run-Group "reaction-regression" "node --experimental-strip-types --test tests/event-resolver.test.ts tests/reaction-priority.test.ts"
+          Run-Group "reaction-regression" "node --experimental-strip-types --test tests/resolver.test.ts tests/school-hunter-v15-immediate-resolver.test.ts tests/school-satyr-v12-immediate-resolver.test.ts tests/school-tavern-v14-immediate-resolver.test.ts tests/school-undead-v13-immediate-resolver.test.ts"
           if ($failed -ne 0) { exit 1 }
