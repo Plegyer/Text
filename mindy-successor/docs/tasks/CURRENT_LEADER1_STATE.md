@@ -29,27 +29,26 @@ Then **re-query live GitHub before acting**. Branches move quickly. Exact SHA + 
 
 ## Current burn-down
 
-Broad remaining gates: **7**.
+Broad remaining gates: **6**.
 
-D40 is closed.
+D40 and D41 are closed.
 Remaining order:
-1. D41 tranche A
-2. D42 Night
-3. Secret Debt v12
-4. Palace cumulative + content
-5. Activity cumulative + Camp persistence + D38 endings/content
-6. D46 + D47 runtime closure
-7. final save/migration/UI/localization/presentation/regression closure
+1. D42 Night
+2. Secret Debt v12 + D51 compatibility
+3. Palace cumulative + content
+4. Activity cumulative + Camp persistence + D38 endings/content
+5. D46 + D47 + legacy ending retirement
+6. final save/migration/UI/localization/presentation/regression closure
 
 ## Current main
 
-Current `main`:
-`bdbce6297b3db167513a45fe596fd1fdee4c7b9e`
+Current production merge baseline:
+`f36de067ae2e82518360dbe045f71c700e200805`
 
 Important:
-- last production merge was D40:
-  `209e2f6dae5ae3c34c0803410d640b67022cc899`
-- exact-main full CI #1177 on that production merge: **SUCCESS**
+- last production merge was D41:
+  `f36de067ae2e82518360dbe045f71c700e200805`
+- exact-main full CI #1200 on that production merge: **SUCCESS**
 - commits after `209e2f6d...` on main are Leader coordination/docs/recovery control-plane commits, not production integrations.
 - do not claim exact-current-main full CI green unless re-verified; #1177 is exact for the D40 production merge, not for later docs-only main heads.
 
@@ -331,3 +330,39 @@ run `37203184279` — SUCCESS, focused 36/36 PASS.
 
 Operational note:
 updating GitHub pointers does not wake an already-idle ChatGPT conversation. The user must send a message in that chat (or start a replacement chat with its recovery/bootstrap prompt) before the worker will execute the new pointer.
+
+
+## AUTHORITATIVE LIVE UPDATE — D41 CLOSED / D42 ACTIVE
+
+This section supersedes older D41-progress notes above where they conflict.
+
+### D41 — CLOSED
+- frozen assembly: `325f439cc4977745d80ce1a38962763f7be43804`
+- full CI #1199 / run `37204412669`: **SUCCESS**
+- Leader merge: `f36de067ae2e82518360dbe045f71c700e200805`
+- exact-main #1200 / run `37204724787`: **SUCCESS**
+- burn-down: **7 -> 6**
+
+### Current Chat 2
+- branch: `chat2/assembly-d42-night-current-main-20261004-v1`
+- production base: `f36de067ae2e82518360dbe045f71c700e200805`
+- producer: `chat4/night-content-gap-producer-v10@9305d1da055203c51137041a78a345cbc64339c0`
+- task: selective D42 Night current-main assembly, focused QA, then one full CI.
+
+### Current Chat 3
+- frozen D51 producer: `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
+- active QA branch: `chat3/qa-secret-debt-activity-energy-compat-v21`
+- `main` pointer has been synchronized to v21.
+
+### Current Chat 5
+- accepted Product packet: `chat5/lumber-stay-retirement-decision-v16@4f4df720c9677b4b9becc0cb8538da26a276f944`
+- active producer branch: `chat5/lumber-stay-retirement-producer-v17`
+- production base: D41-merged `f36de067ae2e82518360dbe045f71c700e200805`
+- `main` pointer has been synchronized to v17.
+
+### D51
+Accepted compatibility authority remains:
+`LEADER1_D51_BOUND_STREET_ACTIVITY_ENERGY_LOCK_2026-10-04.md`.
+
+### Operational priority
+Do not re-open D41. The sole integration lane is now D42.
