@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "lumber.night",
+  "reads": [],
+  "writes": [],
+  "media": [],
+  "events": [
+    {
+      "id": "lumber.night.foreman-social",
+      "title": "A conversation beyond the shift",
+      "sourceDomain": "lumber.foreman",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "lumber.night.foreman-social"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Choose time together that is personal rather than another work debrief. The route stays optional and does not imply romance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the conversation on your own terms.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
