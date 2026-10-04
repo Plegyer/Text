@@ -122,10 +122,12 @@ test('clean Satyr run reaches relationship/Night, School crisis, Hard Work, comp
   s=dispatch(s,{type:'completeEnding'},catalog);
   assert.equal(s.run.status,'ended');
   assert.equal(s.meta.unlocks.includes('satyr-maid.house-credit'),false);
-  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['specialist.satyr-maid.house-ledger']);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,['specialist.satyr-maid.house-ledger']);
 
   s=dispatch(s,{type:'newLife'},catalog);
   assert.equal(s.run.resources.money,600);
   assert.equal(s.run.progression.careers['satyr-maid'],undefined);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,['specialist.satyr-maid.house-ledger']);
   assert.equal(s.run.status,'active');
 });
