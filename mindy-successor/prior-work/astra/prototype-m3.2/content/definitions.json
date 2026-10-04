@@ -4305,169 +4305,6 @@
       "epilogue": "Диплом пахнет чернилами и слегка — карамелью. Взрослый выпускник соседней мастерской приглашает вас на праздничный ужин: «Без пробирок, обещаю». Свидание остаётся вашим выбором, а право на новое начало уже заслужено."
     },
     {
-      "id": "tavern-stay",
-      "title": "Хозяйка третьего тоста",
-      "conditions": [
-        {
-          "kind": "any",
-          "conditions": [
-            {
-              "kind": "visits",
-              "action": "tavern",
-              "value": 18
-            },
-            {
-              "kind": "all",
-              "conditions": [
-                {
-                  "kind": "careerCounter",
-                  "career": "tavern",
-                  "counter": "completed_shifts",
-                  "op": "gte",
-                  "value": 18
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "school-records-ready",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "guest-ledger-evidence-ready",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "crisis-resolved",
-                  "present": true
-                }
-              ]
-            },
-            {
-              "kind": "careerFact",
-              "career": "tavern",
-              "fact": "innkeeper-ready",
-              "present": true
-            }
-          ]
-        }
-      ],
-      "reward": "host",
-      "description": "18 смен в таверне. Наследие: обаяние +5 в следующей жизни.",
-      "epilogue": "Ваша доля в таверне закреплена договором. Марек приглашает отметить это ужином вдвоём; дружеский вечер тоже его вполне устраивает. Домом иногда становится место, где знают, как вы любите чай."
-    },
-    {
-      "id": "tavern-guild",
-      "title": "Праздник без разрешения",
-      "conditions": [
-        {
-          "kind": "any",
-          "conditions": [
-            {
-              "kind": "flag",
-              "key": "tavern.guild",
-              "value": true
-            },
-            {
-              "kind": "all",
-              "conditions": [
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "housing-assistance-complete",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "confidentiality-kept",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "crisis-resolved",
-                  "present": true
-                }
-              ]
-            },
-            {
-              "kind": "careerFact",
-              "career": "tavern",
-              "fact": "sanctuary-ready",
-              "present": true
-            }
-          ]
-        }
-      ],
-      "reward": "mediator",
-      "description": "Защитить самостоятельность городского праздника. Наследие: чуткость +5.",
-      "epilogue": "Горожане выбирают вас распорядительницей праздника. Марек оставляет два места на крыше — полюбоваться огнями, поговорить или наконец выспаться."
-    },
-    {
-      "id": "tavern-court",
-      "title": "Приглашение под печатью",
-      "conditions": [
-        {
-          "kind": "any",
-          "conditions": [
-            {
-              "kind": "flag",
-              "key": "tavern.prince",
-              "value": true
-            },
-            {
-              "kind": "all",
-              "conditions": [
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "school-broker-ready",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "rumour-route-open",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "rumour-confirmed",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "confidentiality-resolved",
-                  "present": true
-                },
-                {
-                  "kind": "careerFact",
-                  "career": "tavern",
-                  "fact": "crisis-resolved",
-                  "present": true
-                }
-              ]
-            },
-            {
-              "kind": "careerFact",
-              "career": "tavern",
-              "fact": "information-broker-ready",
-              "present": true
-            }
-          ]
-        }
-      ],
-      "reward": "court",
-      "description": "Передать накладную принцу. Наследие: дерзость +5.",
-      "epilogue": "Принц вручает вам придворное приглашение с улыбкой, рассчитанной на памятник. Статус вырос; мелкий шрифт ещё предстоит изучить. На празднике вы сами выбираете компанию."
-    },
-    {
       "id": "lumber-stay",
       "title": "Бригадир поневоле",
       "description": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
@@ -4597,6 +4434,1122 @@
       "epilogue": "Hard Work completion recorded for Hunter."
     },
     {
+      "id": "ending.lumber.forewoman",
+      "title": "Lumber — Forewoman",
+      "description": "Trusted-worker Lumber leadership ending: management School readiness, the resolved production problem, and the professional Foreman route.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "trusted-worker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "veteran"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "management-school-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forewoman-problem-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "lumber.foreman",
+          "stage": "route-professional"
+        }
+      ],
+      "reward": "specialist.lumber.forewoman-ledger",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.lumber.forewoman-ledger",
+          "reward": "specialist.lumber.forewoman-ledger"
+        }
+      ],
+      "epilogue": "You remain with the crew as a forewoman: the ledger, work plan, and professional trust now belong to the same working life."
+    },
+    {
+      "id": "ending.lumber.forest",
+      "title": "Lumber — Forest Compact",
+      "description": "Trusted-worker Lumber ending after a successful Forest return, preserved specimen validation, and the resolved forest problem.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "lumber",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "trusted-worker"
+            },
+            {
+              "kind": "careerStage",
+              "career": "lumber",
+              "stage": "veteran"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-specimen-catalogued",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-truth-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "lumber",
+          "fact": "forest-problem-resolved",
+          "present": true
+        }
+      ],
+      "reward": "specialist.lumber.forest-compact-route",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.lumber.forest-compact-route",
+          "reward": "specialist.lumber.forest-compact-route"
+        }
+      ],
+      "epilogue": "The crew keeps working, but no longer treats the forest as an unreadable obstacle. The compact becomes part of ordinary practice."
+    },
+    {
+      "id": "ending.satyr-maid.house-power",
+      "title": "Satyr Maid — House Power",
+      "description": "Veteran-service ending built from a resolved house crisis and either management or rhetoric School competence.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "crisis-house-power",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "house-power-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "school-management-ready",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "satyr-maid",
+              "fact": "school-rhetoric-ready",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "reward": "specialist.satyr-maid.house-ledger",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.satyr-maid.house-ledger",
+          "reward": "specialist.satyr-maid.house-ledger"
+        }
+      ],
+      "epilogue": "You become one of the people who can set the house's working terms and keep its business running."
+    },
+    {
+      "id": "ending.satyr-maid.personal-network",
+      "title": "Satyr Maid — Personal Network",
+      "description": "Veteran-service ending built through repeated professional service, a voluntary Night meeting, and an explicitly accepted and resolved request.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "personal-network-ready",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "satyr-maid.recurring-guest",
+          "stage": "request-resolved"
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "satyr-maid.recurring-guest",
+          "counter": "service-meetings",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "satyr-maid.recurring-guest",
+          "counter": "night-meetings",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "satyr-maid.recurring-guest",
+          "choice": "night-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "satyr-maid.recurring-guest",
+          "choice": "request-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "satyr-maid.recurring-guest",
+          "fact": "request-resolved",
+          "present": true
+        }
+      ],
+      "reward": "specialist.satyr-maid.guest-network",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.satyr-maid.guest-network",
+          "reward": "specialist.satyr-maid.guest-network"
+        }
+      ],
+      "epilogue": "A durable personal network grows out of work, trust, and explicit choices. It does not require romance."
+    },
+    {
+      "id": "ending.satyr-maid.boundary-mastery",
+      "title": "Satyr Maid — Boundary Mastery",
+      "description": "Veteran-service ending built on Body Confidence, a resolved customer-pressure crisis, and an explicit refusal rather than consent by implication.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "satyr-maid",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "veteran-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "house-power"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "personal-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "boundaries"
+            },
+            {
+              "kind": "careerStage",
+              "career": "satyr-maid",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "school-boundaries-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "crisis-boundaries",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "boundaries-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "satyr-maid",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "satyr-maid.recurring-guest",
+          "counter": "service-meetings",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "satyr-maid.recurring-guest",
+          "choice": "night-response",
+          "value": "declined"
+        }
+      ],
+      "reward": "satyr-maid.clear-terms",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "satyr-maid.clear-terms",
+          "unlock": "satyr-maid.clear-terms"
+        }
+      ],
+      "epilogue": "You become known for professional warmth on clear terms, with refusal respected as refusal."
+    },
+    {
+      "id": "ending.undead-farm.research-farmer",
+      "title": "Undead Farm — Research Farmer",
+      "description": "Keeper-of-process ending built from Arcana-backed analysis, a normally preserved farm specimen, and the resolved research crisis.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "process-keeper-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "school-research-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "sample-preserved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "crisis-research",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "research-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "crisis-resolved",
+          "present": true
+        }
+      ],
+      "reward": "specialist.undead-farm.field-preservation",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.undead-farm.field-preservation",
+          "reward": "specialist.undead-farm.field-preservation"
+        }
+      ],
+      "epilogue": "You turn the farm's strange production into a disciplined field of study."
+    },
+    {
+      "id": "ending.undead-farm.successor",
+      "title": "Undead Farm — Successor",
+      "description": "Keeper-of-process ending built from management records, professional trust, a voluntary Night meeting, and an accepted keeper request.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "process-keeper-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "school-management-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "successor-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "crisis-successor",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipStage",
+          "relationship": "undead-farm.keeper",
+          "stage": "partner-ready"
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "undead-farm.keeper",
+          "counter": "work-meetings",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "undead-farm.keeper",
+          "counter": "night-meetings",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "undead-farm.keeper",
+          "choice": "night-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "undead-farm.keeper",
+          "choice": "request-response",
+          "value": "accepted"
+        }
+      ],
+      "reward": "specialist.undead-farm.supplier-account",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.undead-farm.supplier-account",
+          "reward": "specialist.undead-farm.supplier-account"
+        }
+      ],
+      "epilogue": "You take responsibility for the farm through records and professional trust, not a romance shortcut."
+    },
+    {
+      "id": "ending.undead-farm.external-anomaly",
+      "title": "Undead Farm — External Anomaly",
+      "description": "Keeper-of-process ending combining Arcana research, a preserved farm specimen, and a successful external anomaly source return.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "undead-farm",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "process-keeper-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "school-research-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "sample-preserved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "activity-source-returned",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "external-anomaly-ready",
+          "present": true
+        }
+      ],
+      "reward": "knowledge.undead-farm.anomaly-catalog",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "knowledge.undead-farm.anomaly-catalog",
+          "unlock": "knowledge.undead-farm.anomaly-catalog"
+        }
+      ],
+      "epilogue": "The farm's anomaly is no longer an isolated curiosity: you catalogue it against evidence brought back from outside."
+    },
+    {
+      "id": "ending.tavern.innkeeper",
+      "title": "Tavern — Innkeeper",
+      "description": "House-node ending built from Literacy & Numbers, staff-only guest-room access, ledger evidence, supply pressure, and a resolved house crisis.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "house-node-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "school-records-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "guest-ledger-evidence-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-innkeeper",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "innkeeper-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "supply_pressure",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "itemCapability",
+          "capability": "access_guest_rooms_staff",
+          "present": true
+        }
+      ],
+      "reward": "specialist.tavern.house-ledger",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.tavern.house-ledger",
+          "reward": "specialist.tavern.house-ledger"
+        }
+      ],
+      "epilogue": "You take responsibility for the house as an innkeeper, with records and staff access carrying real weight."
+    },
+    {
+      "id": "ending.tavern.information-broker",
+      "title": "Tavern — Information Broker",
+      "description": "House-node ending built from Rhetoric, a voluntarily accepted traveler Night meeting, resolved confidentiality, and an Activity-confirmed rumour.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "house-node-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "school-broker-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "traveler-rumour-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-route-open",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "rumour-confirmed",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "confidentiality-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-broker",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "information-broker-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "tavern.recurring-traveler",
+          "counter": "night-meetings",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "night-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "request-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "keep-private"
+            },
+            {
+              "kind": "relationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "confidentiality-response",
+              "value": "share-route-only"
+            }
+          ]
+        }
+      ],
+      "reward": "knowledge.tavern.broker-index",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "knowledge.tavern.broker-index",
+          "unlock": "knowledge.tavern.broker-index"
+        }
+      ],
+      "epilogue": "You become a broker of information because you can distinguish rumour, evidence, and confidence without turning any of them into a Palace shortcut."
+    },
+    {
+      "id": "ending.tavern.sanctuary",
+      "title": "Tavern — Sanctuary",
+      "description": "House-node ending built from housing assistance, kept confidentiality, shelter pressure, and a voluntarily accepted traveler Night route.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "house-node-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "housing-assistance-complete",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "confidentiality-kept",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-sanctuary",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "sanctuary-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "tavern",
+          "fact": "crisis-resolved",
+          "present": true
+        },
+        {
+          "kind": "careerCounter",
+          "career": "tavern",
+          "counter": "shelter_pressure",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "relationshipCounter",
+          "relationship": "tavern.recurring-traveler",
+          "counter": "night-meetings",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "night-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "request-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "tavern.recurring-traveler",
+          "choice": "confidentiality-response",
+          "value": "keep-private"
+        }
+      ],
+      "reward": "specialist.tavern.safehouse-network",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.tavern.safehouse-network",
+          "reward": "specialist.tavern.safehouse-network"
+        }
+      ],
+      "epilogue": "The tavern becomes a place where practical shelter and confidentiality can coexist without changing what ordinary lodging means."
+    },
+    {
+      "id": "ending.hunter.master-hunter",
+      "title": "Hunter — Master Hunter",
+      "description": "Recognized-hunter ending requiring all four seasonal contract counters, two successful expeditions, preserved evidence, and a rough-route return.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "recognized-ready",
+          "present": true
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "spring_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "summer_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "autumn_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "winter_contracts",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "successful_expeditions",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-preserved-sample",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "expedition-rough-route",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "master-route-ready",
+          "present": true
+        }
+      ],
+      "reward": "specialist.hunter.master-kit",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "specialist.hunter.master-kit",
+          "reward": "specialist.hunter.master-kit"
+        }
+      ],
+      "epilogue": "You are recognized as a master hunter through repeated field work across seasons and routes."
+    },
+    {
+      "id": "ending.hunter.warden",
+      "title": "Hunter — Warden",
+      "description": "Recognized-hunter ending built from cooperation with the Senior Guide, a protected-route choice, and at least one qualifying clue; no Activity completion is mandatory.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "recognized-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "relationship-trust-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "protected-route-choice",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "warden-route-ready",
+          "present": true
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "protected_routes",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "forest-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "hunter.senior-guide",
+          "choice": "conflict-response",
+          "value": "cooperate"
+        }
+      ],
+      "reward": "knowledge.hunter.warden-signs",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "knowledge.hunter.warden-signs",
+          "unlock": "knowledge.hunter.warden-signs"
+        }
+      ],
+      "epilogue": "You become a warden by protecting routes and reading the signs that matter, without collapsing that work into an Activity ending."
+    },
+    {
+      "id": "ending.hunter.legend",
+      "title": "Hunter — Legend",
+      "description": "Recognized-hunter ending requiring master preparation, a rare contract, the forest and tavern clue lines plus a farm or lumber clue, and three successful expeditions total.",
+      "conditions": [
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "completed_shifts",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "recognized-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-ready",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "forest-clue-known",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "tavern-clue-known",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "farm-clue-known",
+              "present": true
+            },
+            {
+              "kind": "careerFact",
+              "career": "hunter",
+              "fact": "lumber-clue-known",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-active",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "rare-contract-complete",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "hunter",
+          "fact": "legend-route-ready",
+          "present": true
+        },
+        {
+          "kind": "careerCounter",
+          "career": "hunter",
+          "counter": "successful_expeditions",
+          "op": "gte",
+          "value": 3
+        }
+      ],
+      "reward": "knowledge.hunter.legend-contracts",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "knowledge.hunter.legend-contracts",
+          "unlock": "knowledge.hunter.legend-contracts"
+        }
+      ],
+      "epilogue": "The rare contract becomes the story people repeat because it was prepared, accepted, completed, and survived."
+    },
+    {
       "id": "ending.guard.hard-work",
       "title": "Guard Hard Work",
       "description": "Persistence ending: fifty completed Guard shifts.",
@@ -4710,235 +5663,6 @@
         }
       ],
       "epilogue": "Hard Work completion recorded for Prostitute."
-    },
-    {
-      "id": "ending.lumber.forewoman",
-      "title": "Lumber Forewoman fixture",
-      "description": "Cross-system fixture ending using the professional Foreman route and School-result career facts.",
-      "conditions": [
-        {
-          "kind": "careerFact",
-          "career": "lumber",
-          "fact": "management-school-ready",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "lumber",
-          "fact": "forewoman-problem-resolved",
-          "present": true
-        },
-        {
-          "kind": "relationshipStage",
-          "relationship": "lumber.foreman",
-          "stage": "route-professional"
-        }
-      ],
-      "reward": "lumber.forewoman.compat",
-      "metaRewards": [],
-      "epilogue": "Fixture epilogue for the Forewoman outcome family."
-    },
-    {
-      "id": "ending.lumber.forest",
-      "title": "Lumber Forest fixture",
-      "description": "Cross-system fixture ending after a qualifying Forest Activity result and Lumber continuation.",
-      "conditions": [
-        {
-          "kind": "careerFact",
-          "career": "lumber",
-          "fact": "forest-truth-known",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "lumber",
-          "fact": "forest-problem-resolved",
-          "present": true
-        }
-      ],
-      "reward": "lumber.forest.compat",
-      "metaRewards": [],
-      "epilogue": "Fixture epilogue for the Forest outcome family."
-    },
-    {
-      "id": "ending.satyr-maid.house-power",
-      "title": "Satyr Maid — House Power",
-      "description": "A complex Satyr Maid ending built on veteran service, School-backed management or negotiation, and a resolved house crisis.",
-      "conditions": [
-        {
-          "kind": "careerCounter",
-          "career": "satyr-maid",
-          "counter": "completed_shifts",
-          "op": "gte",
-          "value": 15
-        },
-        {
-          "kind": "careerFact",
-          "career": "satyr-maid",
-          "fact": "crisis-house-power",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "satyr-maid",
-          "fact": "house-power-ready",
-          "present": true
-        },
-        {
-          "kind": "any",
-          "conditions": [
-            {
-              "kind": "careerFact",
-              "career": "satyr-maid",
-              "fact": "school-management-ready",
-              "present": true
-            },
-            {
-              "kind": "careerFact",
-              "career": "satyr-maid",
-              "fact": "school-rhetoric-ready",
-              "present": true
-            }
-          ]
-        }
-      ],
-      "reward": "satyr-maid.house-credit",
-      "metaRewards": [
-        {
-          "kind": "unlock",
-          "rewardId": "satyr-maid.house-credit",
-          "unlock": "satyr-maid.house-credit"
-        }
-      ],
-      "epilogue": "You become one of the people who can set the house's working terms and keep its business running."
-    },
-    {
-      "id": "ending.satyr-maid.boundary-mastery",
-      "title": "Satyr Maid — Boundary Mastery",
-      "description": "A complex Satyr Maid ending built through explicit refusal, clear service terms, School-backed confidence, and a resolved customer-pressure crisis.",
-      "conditions": [
-        {
-          "kind": "careerCounter",
-          "career": "satyr-maid",
-          "counter": "completed_shifts",
-          "op": "gte",
-          "value": 15
-        },
-        {
-          "kind": "careerFact",
-          "career": "satyr-maid",
-          "fact": "school-boundaries-ready",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "satyr-maid",
-          "fact": "crisis-boundaries",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "satyr-maid",
-          "fact": "boundaries-ready",
-          "present": true
-        },
-        {
-          "kind": "relationshipChoice",
-          "relationship": "satyr-maid.recurring-guest",
-          "choice": "night-response",
-          "value": "declined"
-        }
-      ],
-      "reward": "satyr-maid.clear-terms",
-      "metaRewards": [
-        {
-          "kind": "unlock",
-          "rewardId": "satyr-maid.clear-terms",
-          "unlock": "satyr-maid.clear-terms"
-        }
-      ],
-      "epilogue": "You become known for service on clear terms: professional warmth without surrendering control over your own boundaries."
-    },
-    {
-      "id": "ending.undead-farm.research-farmer",
-      "title": "Undead Farm — Research Farmer",
-      "description": "A complex Farm ending built from School-backed analysis, a preserved specimen, and a solved containment crisis.",
-      "conditions": [
-        {
-          "kind": "careerCounter",
-          "career": "undead-farm",
-          "counter": "completed_shifts",
-          "op": "gte",
-          "value": 15
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "school-research-ready",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "sample-preserved",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "crisis-research",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "research-ready",
-          "present": true
-        }
-      ],
-      "reward": "undead-farm.research-farmer.compat",
-      "metaRewards": [],
-      "epilogue": "You turn the farm's strange production into a disciplined field of study without requiring a new permanent Meta modifier."
-    },
-    {
-      "id": "ending.undead-farm.successor",
-      "title": "Undead Farm — Successor",
-      "description": "A management ending built from production experience, professional trust, School-backed records, and a resolved farm crisis.",
-      "conditions": [
-        {
-          "kind": "careerCounter",
-          "career": "undead-farm",
-          "counter": "completed_shifts",
-          "op": "gte",
-          "value": 15
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "school-management-ready",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "successor-ready",
-          "present": true
-        },
-        {
-          "kind": "careerFact",
-          "career": "undead-farm",
-          "fact": "crisis-successor",
-          "present": true
-        },
-        {
-          "kind": "relationshipStage",
-          "relationship": "undead-farm.keeper",
-          "stage": "partner-ready"
-        }
-      ],
-      "reward": "undead-farm.successor.compat",
-      "metaRewards": [],
-      "epilogue": "You take responsibility for the farm through production records and professional trust, not a romance shortcut."
     },
     {
       "id": "ending.guard.officer",
@@ -5380,7 +6104,9 @@
       "initialStage": "newcomer",
       "stages": [
         "newcomer",
-        "accepted-hand"
+        "accepted-hand",
+        "trusted-worker",
+        "veteran"
       ],
       "transitions": [
         {
@@ -5405,6 +6131,40 @@
               "fact": "foreman-noticed-player"
             }
           ]
+        },
+        {
+          "id": "trusted-worker",
+          "from": [
+            "accepted-hand"
+          ],
+          "to": "trusted-worker",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "lumber",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 8
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "veteran",
+          "from": [
+            "trusted-worker"
+          ],
+          "to": "veteran",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "lumber",
+              "counter": "completed_shifts",
+              "op": "gte",
+              "value": 20
+            }
+          ],
+          "effects": []
         }
       ]
     },

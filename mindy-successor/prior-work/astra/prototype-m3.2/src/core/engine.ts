@@ -25,6 +25,7 @@ import {
   type ApprovedStrongRewardId
 } from './strongMeta.ts';
 import {markPalaceCreationQualification} from './palace.ts';
+import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -66,16 +67,33 @@ export function palaceAvailable(meta:Meta,activePackages:readonly string[]=[]):b
 export function palaceRunQualified(s:Save):boolean{
   return palaceAvailable(s.meta,s.run.character.creation.activeHardWorkPackages);
 }
+function grantD41PendingStrongMeta(
+  input:Meta['strongMeta']|undefined,
+  completedEndings:readonly string[],
+  rawLegacyUnlocks:readonly string[]
+){
+  let state=canonicalStrongMetaState(input);
+  for(const id of d41PendingSpecialistRewardIds(completedEndings,rawLegacyUnlocks)){
+    state=grantStrongMetaReward(state,id as ApprovedStrongRewardId);
+  }
+  return state;
+}
+
 function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):Meta {
-  const completed=[...new Set(input?.completedEndings??input?.completed??[])];
+  const rawLegacyUnlocks=[...new Set(input?.unlocks??[])];
+  const migratedD41=migrateD41MetaData({
+    completedEndings:input?.completedEndings??input?.completed??[],
+    unlocks:rawLegacyUnlocks
+  });
+  const completed=migratedD41.completedEndings;
   const runsStarted=Math.max(1,input?.runsStarted??input?.lives??1);
   const core={
     profileVersion:input?.profileVersion??1,
     completedEndings:completed,
-    unlocks:[...new Set(input?.unlocks??[])].filter(unlock=>unlock!=='palace'),
+    unlocks:migratedD41.unlocks.filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
-    strongMeta:canonicalStrongMetaState(input?.strongMeta),
+    strongMeta:grantD41PendingStrongMeta(input?.strongMeta,completed,rawLegacyUnlocks),
     persistentChoices:structuredClone(input?.persistentChoices??{}),
     activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
     appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
@@ -299,7 +317,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
   const meta=defaultMeta(metaInput);
   const progressionStatCap:ProgressionStatCap=100;
   const statRecord=Object.fromEntries(stats.map(k=>[k,1])) as Record<Stat,number>;
-  const startingMoney=600+(meta.unlocks.includes('satyr-maid.house-credit')?600:0);
+  const startingMoney=600;
   const save={
     schemaVersion:6 as const,
     contentVersion:'0.1.0',
@@ -1487,6 +1505,47 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.strongMetaRuntime=emptyStrongMetaRuntime();
     raw.schemaVersion=6;
   }
+
+  // D41 migration runs before reference validation. Only completed legacy Tavern
+  // outcomes migrate; uncompleted legacy eligibility/commit state is retired.
+  raw.meta=raw.meta??{};
+  const rawLegacyD41Unlocks=[...(raw.meta.unlocks??[])];
+  let d41Meta=migrateD41MetaData({
+    completedEndings:raw.meta.completedEndings??raw.meta.completed??[],
+    unlocks:rawLegacyD41Unlocks
+  });
+  raw.meta.completedEndings=d41Meta.completedEndings;
+  raw.meta.unlocks=d41Meta.unlocks;
+  let migratedStrongMeta=canonicalStrongMetaState(raw.meta.strongMeta);
+  for(const id of d41PendingSpecialistRewardIds(raw.meta.completedEndings,rawLegacyD41Unlocks)){
+    migratedStrongMeta=grantStrongMetaReward(migratedStrongMeta,id as ApprovedStrongRewardId);
+  }
+  raw.meta.strongMeta=migratedStrongMeta;
+
+  const rawEndings=raw.run?.endings;
+  if(rawEndings){
+    rawEndings.eligible=(rawEndings.eligible??[]).filter((id:string)=>!isRetiredD41TavernEnding(id));
+    const committed=rawEndings.committed as string|null|undefined;
+    const resultEnding=rawEndings.result?.endingId as string|undefined;
+    const historicalLegacy=resultEnding&&isRetiredD41TavernEnding(resultEnding);
+    if(raw.run?.status==='ended'&&historicalLegacy){
+      const canonical=canonicalD41EndingId(resultEnding!);
+      rawEndings.committed=canonical;
+      rawEndings.result.endingId=canonical;
+      if(!raw.meta.completedEndings.includes(canonical))raw.meta.completedEndings.push(canonical);
+      d41Meta=migrateD41MetaData({completedEndings:raw.meta.completedEndings,unlocks:raw.meta.unlocks});
+      raw.meta.completedEndings=d41Meta.completedEndings;
+      raw.meta.unlocks=d41Meta.unlocks;
+      for(const id of d41PendingSpecialistRewardIds(raw.meta.completedEndings,rawLegacyD41Unlocks)){
+        raw.meta.strongMeta=grantStrongMetaReward(raw.meta.strongMeta,id as ApprovedStrongRewardId);
+      }
+    }else if(committed&&isRetiredD41TavernEnding(committed)){
+      rawEndings.committed=null;
+      rawEndings.result=null;
+      if(raw.run?.status==='ending_committed')raw.run.status='active';
+    }
+  }
+
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   repairD40SelectedRouteFactsMutable(s);
