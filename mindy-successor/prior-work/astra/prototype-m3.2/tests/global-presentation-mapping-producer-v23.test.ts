@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {existsSync,readFileSync,readdirSync} from 'node:fs';
 
 import {
+  applyPresentation,
   presentationIdForActivityRoute,
   presentationIdForEvent,
   presentationSchema
@@ -27,6 +28,7 @@ function bilingual(key:string){
 
 test('v23 presentation patch remains schema-valid and project-owned',()=>{
   presentationSchema.parse(presentation);
+  applyPresentation(catalog,presentation);
   for(const slot of Object.values(presentation.slots) as any[]){
     if(slot?.static?.src) assert.doesNotMatch(slot.static.src,/^(?:https?:)?\/\//i,slot.static.src);
   }
