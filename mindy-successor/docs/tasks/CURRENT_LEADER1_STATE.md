@@ -302,3 +302,32 @@ When Chat 2 reports green:
 9. only then decrement burn-down.
 
 Never accept verbal READY without exact SHA + evidence.
+
+
+## Live update — 2026-10-04 after worker idle check
+
+Current Chat 2:
+- assembly branch `chat2/assembly-d41-tranche-a-current-main-20261004-v1`;
+- repaired production head reached `b62688ce00cb3b9800ca005252dd5a8a97e8e2af`;
+- CI #1195 failed at one TypeScript compile blocker only:
+  `tests/chat3-content-depth-v4.test.ts:96:16 TS2571 Object is of type 'unknown'`;
+- current pointer narrows work to that compile fix, then full CI.
+
+D51 accepted:
+`LEADER1_D51_BOUND_STREET_ACTIVITY_ENERGY_LOCK_2026-10-04.md`.
+Bound+Street simultaneous Secret Debt/Street Energy penalties use a provenance-gated compatibility floor of 2 after those two modifiers only; unrelated penalties remain separate.
+
+Current worker tasks:
+- Chat 3: `chat3/secret-debt-activity-energy-compat-producer-v20`;
+- Chat 4: `chat4/qa-activity-camp-persistence-v18`;
+- Chat 5: `chat5/lumber-stay-retirement-decision-v16`;
+- Chat 6: `chat6/final-localization-closure-audit-v25`.
+
+Chat 4 Camp producer frozen handoff:
+`chat4/activity-camp-persistence-producer-v17@0cae33dd3518dbda7d6d84e4ea6661b02fe49886`.
+
+Chat 6 v23 exact-head executable QA:
+run `37203184279` — SUCCESS, focused 36/36 PASS.
+
+Operational note:
+updating GitHub pointers does not wake an already-idle ChatGPT conversation. The user must send a message in that chat (or start a replacement chat with its recovery/bootstrap prompt) before the worker will execute the new pointer.
