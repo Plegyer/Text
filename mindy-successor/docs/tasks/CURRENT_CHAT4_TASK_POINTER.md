@@ -1,52 +1,85 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY CAMP PERSISTENCE PRODUCER v17 / NEW CHAT**
+Status: **ACTIVE — ACTIVITY CAMP BASELINE REPAIR v19**
 Owner: Chat 4
 
-Context recovery:
-`mindy-successor/docs/tasks/CHAT4_CONTEXT_RECOVERY_ACTIVITY_CAMP_v17_2026-10-04.md`
+Frozen Camp producer:
+`chat4/activity-camp-persistence-producer-v17@0cae33dd3518dbda7d6d84e4ea6661b02fe49886`
 
-Completed previous audit:
-`chat4/final-save-migration-audit-v16@51ce65c4627d6c9e67bcc7f3d9348861cc75826e`
+Exact-head QA handoff:
+`mindy-successor/docs/tasks/CHAT4_ACTIVITY_CAMP_PERSISTENCE_EXACT_HEAD_QA_v18.md`
 
-Audit verdict:
-**RISK — one concrete pre-1.0 blocker: Activity Camp state is not persisted.**
+QA verdict:
+`EXACT_HEAD_QA_RED — NOT_READY_FOR_CHAT2_ASSEMBLY`
 
-New branch:
-`chat4/activity-camp-persistence-producer-v17`
+Known evidence:
+- Camp behavior itself: 6/7 on frozen fixture;
+- fixture-only proof branch:
+  `chat4/activity-camp-persistence-qa-fixture-repair-v18@03eab6f049011e81efcda0641a790eaed6ecd803`
+- repaired Camp focused suite: **7/7 PASS**;
+- inherited v15 typecheck and validate blockers remain on frozen producer.
+
+New repair branch:
+`chat4/activity-camp-baseline-repair-v19`
 
 Base:
-`chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
+exact frozen Camp producer
+`0cae33dd3518dbda7d6d84e4ea6661b02fe49886`
 
 Task:
-implement explicit persisted multi-day Activity Camp state and migration/default behavior required by D36.
+make the Camp candidate executable-green without changing Camp semantics.
 
-Required:
-- max 2 camp nights per Activity entry;
-- camp replaces city Night for that day;
-- no city lodging charge for camp night;
-- no voluntary city Night menu;
-- one calendar advance exactly once per camp;
-- next field day refreshes Field Time, not global Energy;
-- no duplicate full city workday on return;
-- Secret Debt forced Night has absolute precedence and blocks camp continuation across that boundary;
-- preserve next-day Debt Energy -1.
+Required narrow repairs:
 
-Save contract:
-- typed Camp state;
-- neutral old-save default;
-- deterministic resume;
-- exactly-once calendar/Field Time transitions;
-- persisted 2-night count;
-- explicit rejection of incompatible active state rather than inferred Camp progress.
+1. **Inherited Activity test typing**
+   `tests/item-capability-activity-closure.test.ts`
+   Fix only the typed synthetic Activity option shape that currently fails TS2345 because required `effects` is missing.
+   Preserve the exact undeclared-item-capability rejection assertion.
 
-Preserve all four Activity regions, 2-Energy entry, no Activity XP, Palace firewall, Night ownership, Secret Debt semantics.
+2. **Inherited Forest capability manifest**
+   `content/packs/forest-frontier-production.json`
+   The research-grade event reads
+   `activity.forest-frontier.result.research-grade`
+   in a worldFact condition but the capability manifest declares it only under writes.
+   Add the exact required read declaration.
+   Do not change event mechanics, facts, triggers, choices, rewards or D38 semantics.
+
+3. **Camp synthetic Night fixture**
+   Bring in only the fixture correction proven by
+   `03eab6f049011e81efcda0641a790eaed6ecd803`:
+   the synthetic catalog must declare the existing NightFlow `rest` action identity and required room/outside stage media so post-Night parseSave is valid.
+   Do not modify production NightFlow.
+
+Then run:
+- typecheck;
+- validate;
+- build;
+- `activity-camp-persistence-v17.test.ts`;
+- Activity option/capability closure;
+- Forest Frontier production validation;
+- migration;
+- Activity option reload;
+- Restricted Sites;
+- Trade Corridor;
+- Anomalous Reach;
+- NightFlow/calendar/lodging adjacency.
 
 No full CI.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_ACTIVITY_CAMP_PERSISTENCE_PRODUCER_v17.md`
+Acceptance:
+- typecheck PASS;
+- validate PASS;
+- build PASS;
+- Camp 7/7 PASS;
+- previously blocked adjacency files load and pass;
+- no runtime Camp semantics changed from frozen v17;
+- no Secret Debt priority change;
+- no 2-Energy entry change;
+- no Field Time change;
+- no Palace/Strong Meta coupling.
 
-Focused QA required.
-Freeze exact SHA and report:
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_ACTIVITY_CAMP_BASELINE_REPAIR_v19.md`
+
+Freeze exact green SHA and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
