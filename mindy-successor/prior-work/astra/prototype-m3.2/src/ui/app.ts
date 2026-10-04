@@ -1,5 +1,5 @@
 import {mountEditor} from './editor.ts';
-import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForHunterItem,presentationIdForHunterRelationshipStage,presentationIdForHunterStage,presentationIdForHunterState,presentationIdForGuardItem,presentationIdForGuardRelationshipStage,presentationIdForGuardStage,presentationIdForGuardState,presentationIdForArtistGeishaNightChoice,presentationIdForSatyrMaidStage,presentationIdForUndeadFarmStage,presentationIdForTavernNightChoice,presentationIdForTavernRelationshipStage,presentationIdForTavernStage,presentationIdForTavernState,ARTIST_GEISHA_NIGHT_CHOICE_IDS,TAVERN_NIGHT_CHOICE_IDS,type Presentation} from '../core/presentation.ts';
+import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForNightContentGapChoice,presentationIdForHunterItem,presentationIdForHunterRelationshipStage,presentationIdForHunterStage,presentationIdForHunterState,presentationIdForGuardItem,presentationIdForGuardRelationshipStage,presentationIdForGuardStage,presentationIdForGuardState,presentationIdForArtistGeishaNightChoice,presentationIdForSatyrMaidStage,presentationIdForUndeadFarmStage,presentationIdForTavernNightChoice,presentationIdForTavernRelationshipStage,presentationIdForTavernStage,presentationIdForTavernState,ARTIST_GEISHA_NIGHT_CHOICE_IDS,TAVERN_NIGHT_CHOICE_IDS,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
 import {freshSave,dispatch,parseSave,eligible,calendar,actionCost,actionAvailable,meets,energyMax,rent,favorStat,availableActivityActions,ordinaryCareerForShiftAction,type Command} from '../core/engine.ts';
 import {stats,type Save,type Catalog,type Condition,type Action,type OrdinaryHardWorkCareer} from '../core/schema.ts';
@@ -32,8 +32,36 @@ const activityNarrative=(activityId:string,routeId:string|null)=>{
  const key=forestActivityNarrativeKey(state,catalog);
  return key?tr(key,fallback):fallback;
 };
-const eventTitle=(id:string,fallback:string)=>tr(`event.${id}.title`,fallback);
-const eventVariantText=(eventId:string,variantId:string,fallback:string)=>tr(`event.${eventId}.variant.${variantId}.text`,fallback);
+const nightContentLocalizationBase=(id:string)=>{
+ const presentationId=presentationIdForNightContentGapChoice(id);
+ if(!presentationId)return '';
+ const parts=id.split('.');
+ return parts.length>=3&&parts[1]==='night'?`night.${parts[0]}.${parts.slice(2).join('.')}`:'';
+};
+const eventTitle=(id:string,fallback:string)=>{
+ const base=nightContentLocalizationBase(id);
+ return tr(`event.${id}.title`,base?tr(`${base}.label`,fallback):fallback);
+};
+const eventVariantText=(eventId:string,variantId:string,fallback:string)=>{
+ const base=nightContentLocalizationBase(eventId);
+ return tr(`event.${eventId}.variant.${variantId}.text`,base?tr(`${base}.body`,fallback):fallback);
+};
+const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
+ const core=eventVariantText(eventId,variantId,fallback);
+ const count=state.run.historyState.eventHistory[eventId]?.count??0;
+ const key=povertyPendingLocalizationKey(eventId,variantId,count);
+ return key?tr(key,core):core;
+};
+const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>{
+ const base=nightContentLocalizationBase(eventId);
+ const localizedFallback=base&&choiceId==='continue'?tr('ui.night.sequence.finish','Завершить ночь'):fallback;
+ return tr(`event.${eventId}.choice.${choiceId}.label`,localizedFallback);
+};
+const eventChoiceText=(eventId:string,choiceId:string,fallback:string)=>{
+ const base=nightContentLocalizationBase(eventId);
+ const localizedFallback=base&&choiceId==='continue'?tr('ui.night.sequence.finishText',fallback):fallback;
+ return tr(`event.${eventId}.choice.${choiceId}.text`,localizedFallback);
+};
 const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
  const core=eventVariantText(eventId,variantId,fallback);
  const count=state.run.historyState.eventHistory[eventId]?.count??0;
@@ -76,7 +104,8 @@ function localizedNightChoiceLabel(id:string,fallback:string){
   const stat=rest.slice(split+1);
   return fmt(tr('ui.school.nightStudyChoice','Ночная учёба: {course} — {stat}'),{course:schoolCourseLabel(course),stat:schoolStatLabel(stat)});
  }
- return tr(`nightChoice.${id}.label`,fallback);
+ const base=nightContentLocalizationBase(id);
+ return base?tr(`${base}.label`,tr(`nightChoice.${id}.label`,fallback)):tr(`nightChoice.${id}.label`,fallback);
 }
 const satyrRelationshipEventStates:Record<string,string>={
  'satyr-maid.recurring-guest.intro':'work-introduction',
@@ -409,7 +438,32 @@ function activityEntryList(ids:string[]){
 }
 function nightChoiceList(){
  const choices=catalog.definitions.nightChoices.filter(choice=>eligible(choice.conditions,state,catalog));
- return `<div class="activity-list">${choices.map(choice=>{const schoolNight=choice.id.startsWith('school.night_study.');const satyrNight=choice.id.startsWith('satyr-maid.night.');const undeadFarmNight=choice.id.startsWith('undead-farm.night.');const tavernNight=(TAVERN_NIGHT_CHOICE_IDS as readonly string[]).includes(choice.id);const artistNight=(ARTIST_GEISHA_NIGHT_CHOICE_IDS as readonly string[]).includes(choice.id);const delta=choice.nextDayEnergyDelta?fmt(tr('ui.night.nextDayEnergy','Энергия завтра: {delta}'),{delta:`${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`}):'';const choiceLabel=localizedNightChoiceLabel(choice.id,choice.label);const tavernPresentationId=tavernNight?presentationIdForTavernNightChoice(choice.id):'';const artistPresentationId=artistNight?presentationIdForArtistGeishaNightChoice(choice.id):'';const aria=satyrNight?fmt(tr('ui.satyrMaid.nightChoiceAria','Ночной выбор: {choice}'),{choice:choiceLabel}):undeadFarmNight?fmt(tr('ui.undeadFarm.nightChoiceAria','Ночной выбор фермы: {choice}'),{choice:choiceLabel}):tavernNight?fmt(tr('ui.tavern.nightChoiceAria','Ночной выбор таверны: {choice}'),{choice:choiceLabel}):artistNight?fmt(tr('ui.artistGeisha.nightChoiceAria','Ночной выбор Дома искусств: {choice}'),{choice:choiceLabel}):'';return `<article class="activity" ${satyrNight?`data-satyr-night-option="${esc(choice.id)}"`:''} ${undeadFarmNight?`data-undead-farm-night-option="${esc(choice.id)}"`:''} ${tavernNight?`data-tavern-night-option="${esc(choice.id)}" data-presentation-id="${esc(tavernPresentationId)}"`:''} ${artistNight?`data-artist-geisha-night-option="${esc(choice.id)}" data-presentation-id="${esc(artistPresentationId)}"`:''}><div><h3>${esc(choiceLabel)}</h3><small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${aria?`aria-label="${esc(aria)}"`:''} ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;}).join('')}</div>`;
+ return `<div class="activity-list">${choices.map(choice=>{
+  const schoolNight=choice.id.startsWith('school.night_study.');
+  const satyrNight=choice.id.startsWith('satyr-maid.night.');
+  const undeadFarmNight=choice.id.startsWith('undead-farm.night.');
+  const tavernNight=(TAVERN_NIGHT_CHOICE_IDS as readonly string[]).includes(choice.id);
+  const artistNight=(ARTIST_GEISHA_NIGHT_CHOICE_IDS as readonly string[]).includes(choice.id);
+  const nightBase=nightContentLocalizationBase(choice.id);
+  const gapPresentationId=presentationIdForNightContentGapChoice(choice.id);
+  const delta=choice.nextDayEnergyDelta?fmt(tr('ui.night.nextDayEnergy','Энергия завтра: {delta}'),{delta:`${choice.nextDayEnergyDelta>0?'+':''}${choice.nextDayEnergyDelta}`}):'';
+  const choiceLabel=localizedNightChoiceLabel(choice.id,choice.label);
+  const choiceBody=nightBase?tr(`${nightBase}.body`,''):'';
+  const tavernPresentationId=tavernNight?presentationIdForTavernNightChoice(choice.id):'';
+  const artistPresentationId=artistNight?presentationIdForArtistGeishaNightChoice(choice.id):'';
+  const fallbackAria=satyrNight
+   ?fmt(tr('ui.satyrMaid.nightChoiceAria','Ночной выбор: {choice}'),{choice:choiceLabel})
+   :undeadFarmNight
+    ?fmt(tr('ui.undeadFarm.nightChoiceAria','Ночной выбор фермы: {choice}'),{choice:choiceLabel})
+    :tavernNight
+     ?fmt(tr('ui.tavern.nightChoiceAria','Ночной выбор таверны: {choice}'),{choice:choiceLabel})
+     :artistNight
+      ?fmt(tr('ui.artistGeisha.nightChoiceAria','Ночной выбор Дома искусств: {choice}'),{choice:choiceLabel})
+      :'';
+  const aria=nightBase?tr(`${nightBase}.aria`,fallbackAria):fallbackAria;
+  const presentationId=gapPresentationId||tavernPresentationId||artistPresentationId;
+  return `<article class="activity" ${satyrNight?`data-satyr-night-option="${esc(choice.id)}"`:''} ${undeadFarmNight?`data-undead-farm-night-option="${esc(choice.id)}"`:''} ${tavernNight?`data-tavern-night-option="${esc(choice.id)}"`:''} ${artistNight?`data-artist-geisha-night-option="${esc(choice.id)}"`:''} ${gapPresentationId?`data-night-content-gap-option="${esc(choice.id)}"`:''} ${presentationId?`data-presentation-id="${esc(presentationId)}"`:''}><div><h3>${esc(choiceLabel)}</h3>${choiceBody?`<p>${esc(choiceBody)}</p>`:''}<small>${schoolNight?esc(tr('ui.school.nightStudyContext','Ночная учёба: выбранная характеристика +2, Energy следующего дня −1.')):`${esc(tr('ui.night.choice.slot','Ночное занятие'))}${delta?` · ${esc(delta)}`:''}`}</small></div><button data-night-choice="${choice.id}" ${aria?`aria-label="${esc(aria)}"`:''} ${busy||locked?'disabled':''}>${schoolNight?esc(tr('ui.school.nightStudyButton','Учиться ночью')):esc(tr('ui.night.choice.select','Выбрать'))}</button></article>`;
+ }).join('')}</div>`;
 }
 function presentationOccurrenceKey(presentationId:string){
  const r=state.run;
