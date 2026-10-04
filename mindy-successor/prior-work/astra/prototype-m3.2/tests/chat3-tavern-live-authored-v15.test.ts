@@ -155,6 +155,7 @@ test('C3-166 Forest return uses exact Activity result and ledger-backed authored
   s=resolveReactions(s,[{kind:'activityResult',activity:'lumber.forest',outcome:'success',result:'lumber.forest.success'}],catalog).state;
   assert.equal(s.run.pending?.eventId,'forest-result-content-v1.success');
   s=dispatch(s,{type:'choice',id:'return'},catalog);
+  s=resolveReactions(s,[{kind:'activityResult',activity:'lumber.forest',outcome:'success',result:'lumber.forest.success'}],catalog).state;
   assert.equal(s.run.pending?.eventId,e.id);
   assert.equal(s.run.pending?.variantId,'ledger-context');
   s=dispatch(s,{type:'choice',id:'confirm-rumour'},catalog);
