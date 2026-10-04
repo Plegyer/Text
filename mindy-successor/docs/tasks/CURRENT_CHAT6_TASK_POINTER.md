@@ -1,41 +1,48 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE FINAL PROSE / MEDIA v19**
+Status: **ACTIVE — PALACE MEDIA PRODUCTION PLAN v20**
 Owner: Chat 6
 
-Frozen previous producer:
-`chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`
+Frozen Palace content producer:
+`chat6/palace-final-prose-media-v19@6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
 
-Do not mutate v18.
+Do not mutate v19.
 
 New branch:
-`chat6/palace-final-prose-media-v19`
-
-Branch task seed:
-`a2f3ce625129827a37dded642e90af0678b9cc0d`
+`chat6/palace-media-production-plan-v20`
 
 Base:
-`67f948d185883d8e706dad522e5010bff8e2bd48`
+`6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
+
+Source manifest:
+`mindy-successor/research/palace_missing_media_v1.csv`
 
 Task:
-finish the Palace content layer that remains open for 1.0:
-- final line-by-line RU/EN prose for invitation, reveal milestones, route finals, Prince confrontation, defeat aftermath and Return Home;
-- presentation/media mapping using existing project-owned media where possible;
-- identify genuinely missing art/media assets without inventing a new mechanic;
-- preserve D45 ambiguity and all D23/D29/D39/D43 mechanics.
+turn the four missing Palace media groups into an exact minimum 1.0 production plan.
 
-This task is content-only and must not block Chat 2 from assembling frozen v18.
+Required groups:
+- P1 Threshold Archive;
+- P1 Custodian audience;
+- P1 Return Home Threshold;
+- P2 service interior.
 
-Do not:
-- change gates, rewards, economy, quest stages or IDs;
-- add Prince numeric requirements;
-- make romance/School/Activity mandatory;
-- resolve the origin of displacement;
-- turn Prince into a god/avatar/combat boss;
-- create a new presentation engine.
+Produce:
+- exact asset count recommendation;
+- reusable scene/variant plan;
+- file naming and presentation-slot mapping;
+- aspect/crop/accessibility requirements;
+- RU/EN alt/caption requirements;
+- canon red lines from D45;
+- which current fallbacks remain acceptable if an asset misses 1.0;
+- priority/order and acceptance checklist.
+
+Audit the existing project-owned media inventory first.
+Do not create mechanics, gates, rewards, new presentation engine or final Prince species/name/appearance canon.
+
+Research/planning only. No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_PALACE_FINAL_PROSE_MEDIA_v19.md`
-plus content/localization/presentation changes if needed.
+`mindy-successor/docs/tasks/CHAT6_PALACE_MEDIA_PRODUCTION_PLAN_v20.md`
 
-No full CI. Focused/static checks only. Report `READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+Report:
+`READY_FOR_PRODUCT_LOCK`.
