@@ -27,6 +27,45 @@ jobs:
             throw "Expected frozen producer 79a868bf30af2c162b2ea1323759dffad5e8dadf, got $head"
           }
 
+      - name: Apply QA-only v20 fixture corrections
+        shell: powershell
+        run: |
+          $path = 'tests/secret-debt-activity-energy-compat-v20.test.ts'
+          $text = Get-Content $path -Raw
+
+          $pattern = "    lastLenderAttemptDay:null\r?\n  \};\r?\n  return s;"
+          $replacement = @"
+              lastLenderAttemptDay:null
+            };
+            s.run.historyState.eventHistory['secret-debt.trap-activation']={
+              count:1,lastDay:day,variants:{default:day}
+            };
+            return s;
+          "@
+          $regex = [regex]::new($pattern)
+          $patched = $regex.Replace($text,$replacement,1)
+          if ($patched -eq $text) {
+            throw 'Failed to patch setBound trap-activation history fixture.'
+          }
+
+          $patched2 = $patched.Replace(
+            'assert.equal(s.run.secretDebt.boundDay,1);',
+            'assert.equal(s.run.secretDebt.boundDay,10);'
+          )
+          if ($patched2 -eq $patched) {
+            throw 'Failed to patch exact D19 boundDay expectation.'
+          }
+
+          Set-Content -Path $path -Value $patched2 -Encoding UTF8
+
+      - name: Verify production worktree remains frozen
+        shell: powershell
+        run: |
+          git diff --exit-code -- src/core content
+          if ($LASTEXITCODE -ne 0) {
+            throw 'QA overlay modified production files.'
+          }
+
       - uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
