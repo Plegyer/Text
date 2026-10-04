@@ -20,7 +20,7 @@ jobs:
           ref: 79a868bf30af2c162b2ea1323759dffad5e8dadf
 
       - name: Verify exact frozen head
-        shell: pwsh
+        shell: powershell
         run: |
           $head = (git rev-parse HEAD).Trim()
           if ($head -ne '79a868bf30af2c162b2ea1323759dffad5e8dadf') {
