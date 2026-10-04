@@ -25,8 +25,11 @@ Then preserve the established order:
 6. **Activity cumulative through Restricted Sites v15**
    - `chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`.
 7. **D38 Activity ending family binding** — consume the new Chat 3 v16 producer when frozen.
-8. **D46 economy/start-balance runtime** — consume Chat 4 v14 when frozen.
-9. Final reachability/save/migration/UI/localization/regression closure.
+8. **D46 economy/start-balance runtime**
+   - frozen `chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`;
+   - focused run `37147051068`: typecheck/validate/build PASS, 59/59 focused PASS.
+9. **D47 Hard Work package mapping runtime** — consume Chat 5 v13 when frozen.
+10. Final reachability/save/migration/UI/localization/regression closure.
 
 Rules:
 - Chat 2 is the sole current-main assembly/full-CI lane.
