@@ -235,8 +235,8 @@ test('C3-179 every touched live Hunter event has RU/EN parity and localization c
  assert.equal(hunterLoc.some(([,v]:any)=>'conditions' in v||'effects' in v),false);
 });
 
-test('C3-169..179 authored layer adds no Secret Debt state or new public Hunter ending',()=>{
+test('C3-169..179 authored layer adds no Secret Debt state and keeps the exact D41 Hunter ending roster',()=>{
  const serialized=JSON.stringify({packs,action:defs.actions.find((x:any)=>x.id==='hunter.shift'),activity:defs.activities.find((x:any)=>x.id==='hunter.expedition')});
  assert.doesNotMatch(serialized,/secret.?debt|lender|slave/i);
- assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('hunter')).map((x:any)=>x.id),['ending.hunter.hard-work']);
+ assert.deepEqual(defs.endings.filter((x:any)=>x.id.includes('hunter')).map((x:any)=>x.id),['ending.hunter.hard-work','ending.hunter.master-hunter','ending.hunter.warden','ending.hunter.legend']);
 });
