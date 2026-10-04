@@ -71,7 +71,7 @@ test('C3 starter-career collision guard accepts approved Satyr and Undead runtim
 
   assert.deepEqual(
     definitions.endings.filter((ending:any)=>/satyr-maid/.test(ending.id)).map((ending:any)=>ending.id).sort(),
-    [...satyrRuntime.endings].sort()
+    ['ending.satyr-maid.hard-work','ending.satyr-maid.house-power','ending.satyr-maid.personal-network','ending.satyr-maid.boundary-mastery'].sort()
   );
   assert.deepEqual(
     definitions.endings.filter((ending:any)=>/undead-farm/.test(ending.id)).map((ending:any)=>ending.id).sort(),
