@@ -1,0 +1,58 @@
+name: Chat 5 D47 exact-head focused QA
+
+on:
+  push:
+    branches:
+      - chat5/qa-d47-hard-work-mapping-v13
+
+jobs:
+  focused-d47:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact frozen producer
+        uses: actions/checkout@v4
+        with:
+          ref: 252dc26c514e24f4ab0f0cc0da7694254282e4c4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused D47 verification
+        run: >
+          node --experimental-strip-types --test
+          tests/hard-work-bonus-mapping-v13.test.ts
+          tests/hard-work-meta-infra-prep.test.ts
+          tests/hard-work-package-catalog-runtime.test.ts
+          tests/hard-work-newstart-presentation-v2.test.ts
+          tests/hard-work-newstart-ui-v2.test.ts
+          tests/hard-work-meta-migration-v5.test.ts
+          tests/ordinary-hard-work-meta-production.test.ts
+          tests/ordinary-hard-work-lifecycle-parity.test.ts
+          tests/hard-work-stat-cap-d24.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/strong-meta-d30-runtime-v7.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
+          tests/lumber-foreman-leadership-integration.test.ts
+          tests/satyr-maid-ending-coexistence.test.ts
+          tests/satyr-maid-boundary-ending.test.ts
+          tests/undead-farm-ending-coexistence.test.ts
+          tests/tavern-runtime.test.ts
+          tests/hunter-natural-acceptance.test.ts
+          tests/ending-meta.test.ts
