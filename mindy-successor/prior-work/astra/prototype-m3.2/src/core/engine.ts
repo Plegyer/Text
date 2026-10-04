@@ -26,6 +26,12 @@ import {
 } from './strongMeta.ts';
 import {markPalaceCreationQualification} from './palace.ts';
 import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';
+import {
+  LUMBER_STAY_LEGACY_PERK_ID,
+  RETIRED_LUMBER_STAY_ENDING_ID,
+  isRetiredHistoricalEndingId,
+  migrateLumberStayLegacyMetaData
+} from './lumberStayLegacy.ts';
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -85,17 +91,22 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     completedEndings:input?.completedEndings??input?.completed??[],
     unlocks:rawLegacyUnlocks
   });
-  const completed=migratedD41.completedEndings;
+  const migratedLumberStay=migrateLumberStayLegacyMetaData({
+    completedEndings:migratedD41.completedEndings,
+    unlocks:migratedD41.unlocks,
+    activeLegacyPerks:input?.activeLegacyPerks??[]
+  });
+  const completed=migratedLumberStay.completedEndings;
   const runsStarted=Math.max(1,input?.runsStarted??input?.lives??1);
   const core={
     profileVersion:input?.profileVersion??1,
     completedEndings:completed,
-    unlocks:migratedD41.unlocks.filter(unlock=>unlock!=='palace'),
+    unlocks:migratedLumberStay.unlocks.filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
     strongMeta:grantD41PendingStrongMeta(input?.strongMeta,completed,rawLegacyUnlocks),
     persistentChoices:structuredClone(input?.persistentChoices??{}),
-    activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
+    activeLegacyPerks:migratedLumberStay.activeLegacyPerks,
     appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
     runsStarted,
     runsCompleted:Math.max(0,input?.runsCompleted??Math.min(completed.length,runsStarted-1))
@@ -810,7 +821,7 @@ function register(s:Save,cat:Catalog){
 export function energyMax(s:Save){
   const modifier=Number(s.meta.ruleModifiers['energy.daily']??0);
   const strongBonus=strongMetaCurrentEnergyBonus(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,s.run.day);
-  return Math.max(1,3+modifier+(s.meta.unlocks.includes('vitality')?1:0)+strongBonus);
+  return Math.max(1,3+modifier+(s.meta.activeLegacyPerks.includes(LUMBER_STAY_LEGACY_PERK_ID)?1:0)+strongBonus);
 }
 export function rent(s:Save){
   const base=100;
@@ -1521,6 +1532,15 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     migratedStrongMeta=grantStrongMetaReward(migratedStrongMeta,id as ApprovedStrongRewardId);
   }
   raw.meta.strongMeta=migratedStrongMeta;
+  let lumberStayMeta=migrateLumberStayLegacyMetaData({
+    completedEndings:raw.meta.completedEndings,
+    unlocks:raw.meta.unlocks,
+    activeLegacyPerks:raw.meta.activeLegacyPerks??[]
+  });
+  raw.meta.completedEndings=lumberStayMeta.completedEndings;
+  raw.meta.unlocks=lumberStayMeta.unlocks;
+  raw.meta.activeLegacyPerks=lumberStayMeta.activeLegacyPerks;
+  raw.meta.appliedResultTransactions=raw.meta.appliedResultTransactions??[];
 
   const rawEndings=raw.run?.endings;
   if(rawEndings){
@@ -1546,7 +1566,54 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     }
   }
 
-  const parsed=saveSchema.parse(raw) as unknown as Save;
+  if(rawEndings){
+    rawEndings.eligible=(rawEndings.eligible??[]).filter((id:string)=>id!==RETIRED_LUMBER_STAY_ENDING_ID);
+    const committed=rawEndings.committed as string|null|undefined;
+
+    if(raw.run?.status==='ended'&&committed===RETIRED_LUMBER_STAY_ENDING_ID&&!rawEndings.result){
+      const ids=resultIdentityFor(
+        raw.run.id,
+        Math.max(1,raw.meta.runsStarted??raw.meta.lives??1),
+        RETIRED_LUMBER_STAY_ENDING_ID
+      );
+      rawEndings.result={
+        resultId:ids.resultId,
+        endingId:RETIRED_LUMBER_STAY_ENDING_ID,
+        transactionId:ids.transactionId,
+        completedAtDay:raw.run.calendar?.elapsedDays??raw.run.day??0,
+        firstCompletion:false,
+        appliedMetaRewardIds:[]
+      };
+      if(!raw.meta.appliedResultTransactions.includes(ids.transactionId))raw.meta.appliedResultTransactions.push(ids.transactionId);
+    }
+
+    const historicalResultEnding=rawEndings.result?.endingId as string|undefined;
+    if(raw.run?.status==='ended'&&historicalResultEnding===RETIRED_LUMBER_STAY_ENDING_ID){
+      rawEndings.committed=RETIRED_LUMBER_STAY_ENDING_ID;
+      if(!raw.meta.completedEndings.includes(RETIRED_LUMBER_STAY_ENDING_ID)){
+        raw.meta.completedEndings.push(RETIRED_LUMBER_STAY_ENDING_ID);
+      }
+      const historicalTransaction=rawEndings.result?.transactionId as string|undefined;
+      if(historicalTransaction&&!raw.meta.appliedResultTransactions.includes(historicalTransaction)){
+        raw.meta.appliedResultTransactions.push(historicalTransaction);
+      }
+    }else if(committed===RETIRED_LUMBER_STAY_ENDING_ID){
+      rawEndings.committed=null;
+      rawEndings.result=null;
+      if(raw.run?.status==='ending_committed')raw.run.status='active';
+    }
+  }
+
+  lumberStayMeta=migrateLumberStayLegacyMetaData({
+    completedEndings:raw.meta.completedEndings,
+    unlocks:raw.meta.unlocks,
+    activeLegacyPerks:raw.meta.activeLegacyPerks??[]
+  });
+  raw.meta.completedEndings=lumberStayMeta.completedEndings;
+  raw.meta.unlocks=lumberStayMeta.unlocks;
+  raw.meta.activeLegacyPerks=lumberStayMeta.activeLegacyPerks;
+
+    const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   repairD40SelectedRouteFactsMutable(s);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
@@ -1579,13 +1646,18 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
-  const referencedEndings=[
-    ...s.run.availableEndings,
-    ...s.meta.completed,
-    ...(s.run.acceptedEnding?[s.run.acceptedEnding]:[]),
-    ...(s.run.endings.result?[s.run.endings.result.endingId]:[])
-  ];
-  if(referencedEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  if(s.run.availableEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная live-судьба.');
+  if(s.meta.completedEndings.some(id=>!endingIds.has(id)&&!isRetiredHistoricalEndingId(id))){
+    throw new Error('Неизвестная завершённая судьба.');
+  }
+  const committedEnding=s.run.endings.committed;
+  const resultEnding=s.run.endings.result?.endingId??null;
+  const historicalRetiredRun=
+    s.run.status==='ended'&&
+    committedEnding===RETIRED_LUMBER_STAY_ENDING_ID&&
+    resultEnding===RETIRED_LUMBER_STAY_ENDING_ID;
+  if(committedEnding&&!endingIds.has(committedEnding)&&!historicalRetiredRun)throw new Error('Неизвестная committed судьба.');
+  if(resultEnding&&!endingIds.has(resultEnding)&&!historicalRetiredRun)throw new Error('Неизвестная RunResult судьба.');
   if(new Set(s.meta.appliedResultTransactions).size!==s.meta.appliedResultTransactions.length)throw new Error('Дублированный Meta transaction proof.');
   if(s.run.status==='active'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Active run не может иметь committed/result ending.');
   if(s.run.status==='ending_committed'&&(!s.run.endings.committed||s.run.endings.result))throw new Error('Некорректный ending_committed state.');

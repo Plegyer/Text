@@ -2718,14 +2718,6 @@
       "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.information-broker и не открывает Дворец.",
       "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.information-broker and grants no Palace access."
     },
-    "ending.lumber-stay.title": {
-      "ru": "Бригадир поневоле",
-      "en": "Reluctant Forewoman"
-    },
-    "ending.lumber-stay.description": {
-      "ru": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
-      "en": "Complete 24 lumber shifts. In the next life, daytime Energy maximum is +1."
-    },
     "ending.ending.lumber.hard-work.title": {
       "ru": "Лесоруб: тяжкий труд",
       "en": "Lumber: Hard Work"
@@ -3009,10 +3001,6 @@
     "unlock.court.label": {
       "ru": "Придворная выдержка",
       "en": "Court Composure"
-    },
-    "unlock.vitality.label": {
-      "ru": "Запас сил",
-      "en": "Vitality Reserve"
     },
     "unlock.lumber.forewoman.compat.label": {
       "ru": "Путь бригадира",
@@ -3373,14 +3361,6 @@
     "presentation.static.ending.tavern-court.caption": {
       "ru": "Финал таверны: приглашение ко двору.",
       "en": "Tavern ending: an invitation to court."
-    },
-    "presentation.static.ending.lumber-stay.alt": {
-      "ru": "Сложенные брёвна и рабочие инструменты обозначают решение остаться в лесной артели без изменения карьерных условий.",
-      "en": "Stacked logs and work tools represent the choice to remain with the lumber crew without changing career conditions."
-    },
-    "presentation.static.ending.lumber-stay.caption": {
-      "ru": "Финал: остаться в лесной артели.",
-      "en": "Ending: staying with the lumber crew."
     },
     "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt": {
       "ru": "Летняя небогатая улица у закрывающегося рынка, используемая как статичная сцена для короткой помощи у прилавков.",
@@ -13153,6 +13133,26 @@
     "event.hunter.routes.legend-contract-variant.choice.defer.text": {
       "ru": "Оставить дополнительный вариант неиспользованным; обычный редкий контракт остаётся доступен.",
       "en": "Leave the additional variant unused; the ordinary rare contract remains available."
+    },
+    "legacy.ending.lumber-stay.title": {
+      "ru": "Бригадир поневоле",
+      "en": "Reluctant Forewoman"
+    },
+    "legacy.ending.lumber-stay.description": {
+      "ru": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
+      "en": "Complete 24 lumber shifts. In the next life, daytime Energy maximum is +1."
+    },
+    "legacy.perk.lumber-stay-vitality.label": {
+      "ru": "Исторический запас сил · +1 к дневному максимуму Энергии",
+      "en": "Historical Vitality Reserve · +1 daily Energy maximum"
+    },
+    "ui.legacy.historicalTitle": {
+      "ru": "Исторические судьбы",
+      "en": "Historical fates"
+    },
+    "ui.ending.state.historical": {
+      "ru": "историческая",
+      "en": "historical"
     }
   }
 }

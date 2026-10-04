@@ -179,6 +179,31 @@ function guardRelationshipChoiceState(eventId:string,choiceId:string){
 const professions=['lumber.shift','satyr-maid.shift','undead-farm.shift','tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift'];
 const lateCareerProfessions=new Set(['tavern.shift','hunter.shift','guard.shift','merchant.shift','artist-geisha.shift','assassin.shift','prostitute.shift']);
 const lumberOutcomeIds=['ending.lumber.hard-work','ending.lumber.forewoman','ending.lumber.forest'] as const;
+const retiredLumberStayId='lumber-stay';
+const lumberStayLegacyPerkId='legacy.lumber-stay.vitality';
+function endingTitleForDisplay(endingId:string){
+ const ending=catalog.definitions.endings.find(item=>item.id===endingId);
+ if(ending)return tr(`ending.${ending.id}.title`,ending.title);
+ if(endingId===retiredLumberStayId)return tr('legacy.ending.lumber-stay.title','Бригадир поневоле');
+ return endingId;
+}
+function endingPresentationForDisplay(endingId:string){
+ return endingId===retiredLumberStayId?'job/lumber/result/default':presentationIdForEnding(endingId);
+}
+function historicalLegacyEndingCards(){
+ if(!state.meta.completedEndings.includes(retiredLumberStayId))return '';
+ const stateLabel=tr('ui.ending.state.historical','историческая');
+ const title=tr('legacy.ending.lumber-stay.title','Бригадир поневоле');
+ const description=tr('legacy.ending.lumber-stay.description','24 смены у лесорубов. В следующей жизни дневной запас энергии +1.');
+ return `<section class="legacy-history"><h3>${esc(tr('ui.legacy.historicalTitle','Исторические судьбы'))}</h3><article class="ending historical-ending" data-legacy-ending-id="${retiredLumberStayId}" data-ending-state="historical" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${title} — ${stateLabel}`}))}"><span class="ending-state">${esc(stateLabel)}</span><h3>${esc(title)}</h3><p>${esc(description)}</p></article></section>`;
+}
+function legacyInheritanceText(){
+ const values=state.meta.unlocks.map(k=>tr(`unlock.${k}.label`,labels[k]??k));
+ if(state.meta.activeLegacyPerks.includes(lumberStayLegacyPerkId)){
+   values.push(tr('legacy.perk.lumber-stay-vitality.label','Исторический запас сил · +1 к дневному максимуму Энергии'));
+ }
+ return values.map(esc).join(' · ')||esc(tr('ui.legacy.emptyInheritance','Ещё впереди'));
+}
 function lumberCareerProgress(){
  const career=state.run.progression.careers.lumber;
  if(!career)return '';
@@ -467,14 +492,14 @@ function central(){
  if(r.status!=='active'){
   const endingId=r.endings.result?.endingId??r.endings.committed??r.acceptedEnding;
   const endingDef=endingId?catalog.definitions.endings.find(item=>item.id===endingId):undefined;
-  const endingTitle=endingDef?tr(`ending.${endingDef.id}.title`,endingDef.title):'';
+  const endingTitle=endingId?endingTitleForDisplay(endingId):'';
   const presentationState=r.status==='ended'?'completed':r.status==='ending_committed'?'committed':'expired';
   const heading=r.status==='ended'
    ?tr('ui.run.endingCompleted',tr('ui.run.endingAccepted','Судьба принята'))
    :r.status==='ending_committed'
     ?tr('ui.run.endingCommitted','Судьба выбрана')
     :tr('ui.run.timeExpired','Срок истёк');
-  return `<section class="stage" data-ending-presentation-state="${esc(presentationState)}" ${endingId?`data-ending-id="${esc(endingId)}"`:''}>${mediaHTML(endingId?presentationIdForEnding(endingId):'location/town/default')}<div class="stage-title"><h1>${esc(heading)}</h1>${endingTitle?`<p class="ending-identity" tabindex="0">${esc(endingTitle)}</p>`:''}</div></section><section class="dialogue"><p>${esc(r.journal.at(-1)??'')}</p><button data-panel="legacy">${esc(tr('ui.run.fatesAndNextLife','Судьбы и следующая жизнь'))}</button></section>`;
+  return `<section class="stage" data-ending-presentation-state="${esc(presentationState)}" ${endingId?`data-ending-id="${esc(endingId)}"`:''}>${mediaHTML(endingId?endingPresentationForDisplay(endingId):'location/town/default')}<div class="stage-title"><h1>${esc(heading)}</h1>${endingTitle?`<p class="ending-identity" tabindex="0">${esc(endingTitle)}</p>`:''}</div></section><section class="dialogue"><p>${esc(r.journal.at(-1)??'')}</p><button data-panel="legacy">${esc(tr('ui.run.fatesAndNextLife','Судьбы и следующая жизнь'))}</button></section>`;
  }
  if(!r.flags['story.arrived'])return `<section class="stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</span><h1>${esc(tr('ui.arrival.title','Следуйте за сусликом'))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.arrival.body','Обычный день. Белый суслик. Люк, который кто-то забыл закрыть.'))}</p><button data-action="arrival" class="primary" ${locked||busy?'disabled':''}>${esc(tr('ui.arrival.button','Пойти за ним'))}</button></section>`;
  if(r.flow.activity){
@@ -529,7 +554,7 @@ function panelContent(){
   return `<h2>${esc(tr('ui.panel.journal','Дневник'))}</h2>${entries.length?[...entries].reverse().map(t=>`<p class="journal-entry">${esc(t)}</p>`).join(''):`<p>${esc(tr('ui.journal.empty','Пока записей нет.'))}</p>`}`;
  }
  if(panel==='bag')return `<h2>${esc(tr('ui.bag.title','Сумка и дела'))}</h2>${Object.entries(state.run.inventory).map(([k,v])=>`<p>${esc(itemLabel(k))}: ${v}</p>`).join('')}<p>${esc(tr('ui.bag.debtLabel','Долг'))}: ${state.run.metrics.debt}</p>${actionList(['repay','rent-room'])}`;
- if(panel==='legacy')return `<h2>${esc(tr('ui.panel.legacy','Судьбы'))}</h2><p>${esc(tr('ui.legacy.help','Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.'))}</p>${catalog.definitions.endings.map(e=>{const presentationState=endingPresentationState(e.id);const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}"><span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span><h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3><p>${esc(tr(`ending.${e.id}.description`,e.description))}</p><small>${e.conditions.map(c=>`${meets(c,state,catalog)?'✓':'○'} ${esc(explain(c))}`).join(' · ')}</small><button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button></article>`;}).join('')}<h3>${esc(tr('ui.legacy.inheritanceTitle','Наследие'))}</h3><p>${state.meta.unlocks.map(k=>esc(tr(`unlock.${k}.label`,labels[k]??k))).join(' · ')||esc(tr('ui.legacy.emptyInheritance','Ещё впереди'))}</p>${state.run.status!=='active'?`<button id="new-life">${esc(tr('ui.legacy.nextLifeButton','Следующая жизнь'))}</button>`:''}`;
+ if(panel==='legacy')return `<h2>${esc(tr('ui.panel.legacy','Судьбы'))}</h2><p>${esc(tr('ui.legacy.help','Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.'))}</p>${catalog.definitions.endings.map(e=>{const presentationState=endingPresentationState(e.id);const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}"><span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span><h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3><p>${esc(tr(`ending.${e.id}.description`,e.description))}</p><small>${e.conditions.map(c=>`${meets(c,state,catalog)?'✓':'○'} ${esc(explain(c))}`).join(' · ')}</small><button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button></article>`;}).join('')}${historicalLegacyEndingCards()}<h3>${esc(tr('ui.legacy.inheritanceTitle','Наследие'))}</h3><p>${legacyInheritanceText()}</p>${state.run.status!=='active'?`<button id="new-life">${esc(tr('ui.legacy.nextLifeButton','Следующая жизнь'))}</button>`:''}`;
  if(panel==='editor')return '<div id="editor" class="editor"></div>';
  if(panel==='catalog')return `<h2>Инспектор событий</h2>${catalog.events.map(e=>`<details><summary>${esc(e.title)}</summary><pre>${esc(JSON.stringify(e,null,2))}</pre></details>`).join('')}`;
  return `<h2>${esc(tr('ui.menu.title','Меню'))}</h2><div class="menu-buttons"><button id="language-toggle">${esc(fmt(tr('ui.menu.languageButton','Язык: {language}'),{language:tr(locale==='ru'?'ui.language.ru':'ui.language.en',locale==='ru'?'Русский':'English')}))}</button><button id="export">${esc(tr('ui.menu.exportSave','Экспорт сохранения'))}</button><button id="import">${esc(tr('ui.menu.importSave','Импорт сохранения'))}</button><input type="file" id="file" accept=".json" hidden><button data-panel="editor">${esc(tr('ui.menu.editor','Тексты и изображения'))}</button><button id="animation-toggle">${esc(fmt(tr('ui.menu.animationToggle','Анимация GIF: {state}'),{state:tr(animationsEnabled?'ui.menu.animationOn':'ui.menu.animationOff',animationsEnabled?'включена':'выключена')}))}</button><button data-panel="catalog">Инспектор событий</button><button id="restart" ${busy||locked?'disabled':''}>${esc(tr('ui.menu.restart','Новая героиня с сохранением наследия'))}</button></div><p class="muted">${esc(tr('ui.menu.footer','M3 · Игровая оболочка. Иллюстрации — заменяемые эскизы. Новая героиня начинает со статами 1 и десятью очками. У загруженной старой жизни характеристики сохранены.'))}</p>`;
