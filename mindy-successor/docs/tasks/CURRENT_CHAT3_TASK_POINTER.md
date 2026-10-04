@@ -1,35 +1,61 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — D51 EXACT-HEAD QA v21**
+Status: **ACTIVE — SECRET DEBT v12 + D51 ASSEMBLY PREFLIGHT v22**
 Owner: Chat 3
 
-Frozen producer:
-`chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
+Completed D51 QA:
+- frozen producer: `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
+- exact-head QA: run `37205501396`
+- typecheck / validate / build PASS
+- focused **58/58 PASS**
+- production tree unchanged
+- disposition: `READY_FOR_CHAT2_ASSEMBLY`
 
-Do not mutate the frozen producer.
+Next integration after current D42 lane:
+Secret Debt v12 + D51 compatibility.
 
-QA branch:
-`chat3/qa-secret-debt-activity-energy-compat-v21`
+New branch:
+`chat3/secret-debt-d51-assembly-preflight-v22`
+
+Current production reference:
+`main@f36de067ae2e82518360dbe045f71c700e200805`
+(D41 production merge; D42 is still being assembled separately by Chat 2.)
+
+Frozen sources:
+- Secret Debt v12:
+  `chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
+- D51:
+  `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
 
 Task:
-run executable exact-head verification of the frozen D51 producer.
+prepare the exact selective-assembly preflight for Chat 2's next lane after D42.
 
-The workflow must explicitly checkout:
-`79a868bf30af2c162b2ea1323759dffad5e8dadf`
+Produce:
+- exact production files changed by v12;
+- exact production files changed by D51;
+- overlap/conflict matrix between v12 and D51;
+- expected overlap with current D42 Night ownership;
+- files that must be selectively composed rather than wholesale copied;
+- tests/fixtures that are source-specific vs current-main authoritative;
+- exact focused test bundle Chat 2 should run;
+- required migration/save checks;
+- Night priority checks;
+- D51 provenance checks;
+- D44 wage/threshold non-regression;
+- Activity 2-Energy availability;
+- Palace / Strong Meta / ordinary-career isolation;
+- expected current-main conflict hotspots.
 
-Required checks:
-- typecheck;
-- validate;
-- build;
-- `secret-debt-activity-energy-compat-v20.test.ts`;
-- `secret-debt-full-route-v12.test.ts`;
-- NightFlow save/reload adjacency;
-- next-day modifier provenance/tag persistence;
-- Activity 2-Energy entry regressions;
-- T1-T11 matrix from the v20 handoff.
+Important:
+D42 is not merged yet. Do not fabricate its future exact SHA.
+Use D42 Product authority and frozen Night producer only to identify semantic ownership/conflict risk.
 
-No full CI.
-No production behavior changes on the frozen producer.
+Research/preflight only.
+Do not modify runtime.
+Do not run full CI.
 
-If green, document exact workflow/run/job IDs and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+Deliver:
+`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_D51_ASSEMBLY_PREFLIGHT_v22.md`
+
+Report:
+`READY_FOR_CHAT2_PREFLIGHT`.
