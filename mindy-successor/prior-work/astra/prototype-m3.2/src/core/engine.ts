@@ -816,6 +816,19 @@ function activityDefinition(cat:Catalog,id:string):ActivityDefinition{
   if(!definition)throw new Error(`Неизвестная Activity: ${id}`);
   return definition;
 }
+function neutralActivityCampState():ActivityEnvelope['campState']{
+  return {
+    phase:'idle',
+    nightsUsed:0,
+    boundaryDay:null,
+    calendarAdvanceCommitted:false,
+    fieldTimeRefreshCommitted:false
+  };
+}
+const ACTIVITY_CAMP_CHOOSE='camp';
+const ACTIVITY_CAMP_ADVANCE='camp.advance-calendar';
+const ACTIVITY_CAMP_REFRESH='camp.refresh-field-time';
+
 function activityRandom(envelope:ActivityEnvelope){
   envelope.rngState=(Math.imul(envelope.rngState,1664525)+1013904223)>>>0;
   return envelope.rngState/4294967296;
@@ -871,6 +884,82 @@ function applyActivityMiniGameTransition(
   if(transition.outcome)game.status=transition.outcome;
   games[transition.game]=game;
 }
+function forcedConsumingNightCatalog(cat:Catalog):Catalog{
+  const events=cat.events.filter(event=>
+    event.blocking
+    &&event.priorityClass==='forced'
+    &&event.nightPolicy?.intercept==='before_lodging'
+    &&event.nightPolicy.consumesNight
+    &&event.nightPolicy.suppressVoluntaryMenu
+    &&event.reactionTriggers.some(trigger=>trigger.kind==='nightPhase'&&trigger.point==='before_lodging')
+  );
+  return {...cat,events};
+}
+function handoffForcedNightAtCampBoundaryMutable(s:Save,cat:Catalog){
+  const forcedCat=forcedConsumingNightCatalog(cat);
+  if(!forcedCat.events.length)return false;
+  const before=cloneSave(s);
+  runResolverBoundary(s,before,forcedCat,[{kind:'nightPhase',point:'before_lodging'}],true);
+  if(!s.run.pending)return false;
+  const event=forcedCat.events.find(candidate=>candidate.id===s.run.pending!.eventId);
+  if(!event)throw new Error('Camp boundary selected an invalid forced Night event.');
+  s.run.flow.activity=null;
+  s.run.flow.night=createNightState(s.run.day);
+  const night=s.run.flow.night;
+  night.phase='NightEventResolution';
+  night.currentIntercept='before_lodging';
+  applyPendingNightPolicy(s,cat,'before_lodging');
+  return true;
+}
+function activityCampCanChoose(s:Save,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  const policy=definition.campPolicy;
+  if(!policy)return false;
+  const camp=envelope.campState;
+  if(camp.phase!=='idle'&&camp.phase!=='field_day_ready')return false;
+  if(camp.nightsUsed>=policy.maxNights)return false;
+  if(s.run.day+1>=160)return false;
+  return activityFieldTimeRemaining(envelope)===0;
+}
+function chooseActivityCampMutable(s:Save,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  if(!activityCampCanChoose(s,definition,envelope))throw new Error('Camp сейчас недоступен.');
+  const camp=envelope.campState;
+  camp.phase='chosen';
+  camp.boundaryDay=s.run.day;
+  camp.calendarAdvanceCommitted=false;
+  camp.fieldTimeRefreshCommitted=false;
+  envelope.checkpoint='camp.chosen';
+}
+function advanceActivityCampCalendarMutable(s:Save,cat:Catalog,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  const camp=envelope.campState;
+  if(!definition.campPolicy)throw new Error('Activity не поддерживает Camp.');
+  if(camp.phase!=='chosen'||camp.boundaryDay!==s.run.day||camp.calendarAdvanceCommitted||camp.fieldTimeRefreshCommitted){
+    throw new Error('Camp calendar advance находится в несовместимом состоянии.');
+  }
+  if(handoffForcedNightAtCampBoundaryMutable(s,cat))return;
+  if(!advanceCalendarOneDayMutable(s))throw new Error('Camp не может выйти за предел календаря текущей жизни.');
+  camp.nightsUsed++;
+  camp.calendarAdvanceCommitted=true;
+  camp.phase='calendar_advanced';
+  envelope.checkpoint='camp.calendar-advanced';
+}
+function refreshActivityCampFieldTimeMutable(s:Save,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  const camp=envelope.campState;
+  const segments=definition.adapterConfig.fieldTimeSegments;
+  if(
+    !definition.campPolicy
+    ||segments===undefined
+    ||camp.phase!=='calendar_advanced'
+    ||camp.boundaryDay===null
+    ||s.run.day!==camp.boundaryDay+1
+    ||!camp.calendarAdvanceCommitted
+    ||camp.fieldTimeRefreshCommitted
+  )throw new Error('Camp Field Time refresh находится в несовместимом состоянии.');
+  envelope.internalState.fieldTimeRemaining=segments;
+  camp.fieldTimeRefreshCommitted=true;
+  camp.phase='field_day_ready';
+  envelope.checkpoint='camp.field-day-ready';
+}
+
 function finalizeActivityMutable(s:Save,cat:Catalog,outcome:ActivityOutcome){
   const envelope=s.run.flow.activity;if(!envelope)throw new Error('Нет активной Activity.');
   const definition=activityDefinition(cat,envelope.activityId);
@@ -903,6 +992,7 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
     startedDay:s.run.day,
     entryEnergyCommitted:true,
     optionModelVersion:definition.options.length?1:0,
+    campState:neutralActivityCampState(),
     internalState:{
       progress:0,
       endurance:definition.adapterConfig.initialEndurance,
@@ -925,7 +1015,15 @@ function activityActionMutable(s:Save,cat:Catalog,action:string){
   const definition=activityDefinition(cat,envelope.activityId);
   if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с сохранённым envelope.');
   if(envelope.status!=='active')throw new Error('Activity сейчас не принимает действия.');
-  if(action==='escape'){finalizeActivityMutable(s,cat,'escape');return;}
+  const camp=envelope.campState;
+  if(action==='escape'){
+    if(camp.phase==='chosen'||camp.phase==='calendar_advanced')throw new Error('Сначала завершите выбранную Camp boundary.');
+    finalizeActivityMutable(s,cat,'escape');return;
+  }
+  if(action===ACTIVITY_CAMP_CHOOSE){chooseActivityCampMutable(s,definition,envelope);return;}
+  if(action===ACTIVITY_CAMP_ADVANCE){advanceActivityCampCalendarMutable(s,cat,definition,envelope);return;}
+  if(action===ACTIVITY_CAMP_REFRESH){refreshActivityCampFieldTimeMutable(s,definition,envelope);return;}
+  if(camp.phase==='chosen'||camp.phase==='calendar_advanced')throw new Error('Сначала завершите Camp boundary.');
   if(envelope.optionModelVersion===0&&action!=='advance')throw new Error(`Неизвестное Activity action: ${action}`);
   const state=envelope.internalState;
   const requiresRouteSelection=envelope.optionModelVersion>=1&&definition.options.some(option=>option.category==='route');
@@ -967,7 +1065,16 @@ export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;la
   const envelope=s.run.flow.activity;if(!envelope||envelope.status!=='active')return [];
   const definition=activityDefinition(cat,envelope.activityId);
   const state=envelope.internalState;
-  if(envelope.optionModelVersion===0)return [{id:'advance',label:'Продолжить'},{id:'escape',label:'Отступить'}];
+  const camp=envelope.campState;
+  if(camp.phase==='chosen')return [{id:ACTIVITY_CAMP_ADVANCE,label:'Перейти через лагерную ночь'}];
+  if(camp.phase==='calendar_advanced')return [{id:ACTIVITY_CAMP_REFRESH,label:'Начать новый полевой день'}];
+  if(envelope.optionModelVersion===0){
+    const campAction=activityCampCanChoose(s,definition,envelope)?[{id:ACTIVITY_CAMP_CHOOSE,label:'Разбить лагерь'}]:[];
+    const advance=activityFieldTimeAffordable(envelope,definition.adapterConfig.advanceFieldTimeCost??0)
+      ?[{id:'advance',label:'Продолжить'}]
+      :[];
+    return [...advance,...campAction,{id:'escape',label:'Отступить'}];
+  }
   const custom=definition.options
     .filter(option=>!state.resolvedOptionIds.includes(option.id))
     .filter(option=>eligible(option.conditions,s,cat))
@@ -980,11 +1087,35 @@ export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;la
   const ordinary=requiresRouteSelection&&!state.routeId||!activityFieldTimeAffordable(envelope,advanceCost)
     ?[]
     :[{id:'advance',label:'Продолжить'}];
-  return [...custom,...ordinary,{id:'escape',label:'Отступить'}];
+  const campAction=activityCampCanChoose(s,definition,envelope)?[{id:ACTIVITY_CAMP_CHOOSE,label:'Разбить лагерь'}]:[];
+  return [...custom,...ordinary,...campAction,{id:'escape',label:'Отступить'}];
+}
+
+function advanceCalendarOneDayMutable(s:Save){
+  if(s.run.day+1>=160)return false;
+  s.run.day++;
+  s.run.slot=0;
+  return true;
 }
 
 type NightPoint='before_lodging'|'after_lodging'|'after_choice';
 type NightState=NonNullable<Save['run']['flow']['night']>;
+
+function createNightState(startedDay:number):NightState{
+  return {
+    phase:'PreLodgingForcedCheck',
+    startedDay,
+    selectedLodgingId:null,
+    lodgingPaymentCommitted:false,
+    selectedNightChoiceId:null,
+    suppressLodgingPayment:false,
+    suppressVoluntaryMenu:false,
+    consumesNight:false,
+    calendarAdvanceCommitted:false,
+    currentIntercept:null,
+    handledEventIds:[]
+  };
+}
 
 function nightState(s:Save):NightState{
   const n=s.run.flow.night;if(!n)throw new Error('Ночная последовательность не начата.');return n;
@@ -1020,8 +1151,7 @@ function finishNightMutable(s:Save,cat:Catalog){
       s.run.flow.night=null;
       return;
     }
-    s.run.day++;
-    s.run.slot=0;
+    if(!advanceCalendarOneDayMutable(s))throw new Error('Night calendar advance failed.');
     n.calendarAdvanceCommitted=true;
   }
   n.phase='StartDay';
@@ -1079,19 +1209,7 @@ function beginNightMutable(s:Save,cat:Catalog){
     log(s,'Четыре года истекли. Выберите открытую судьбу или начните следующую жизнь.');
     return;
   }
-  s.run.flow.night={
-    phase:'PreLodgingForcedCheck',
-    startedDay:s.run.day,
-    selectedLodgingId:null,
-    lodgingPaymentCommitted:false,
-    selectedNightChoiceId:null,
-    suppressLodgingPayment:false,
-    suppressVoluntaryMenu:false,
-    consumesNight:false,
-    calendarAdvanceCommitted:false,
-    currentIntercept:null,
-    handledEventIds:[]
-  };
+  s.run.flow.night=createNightState(s.run.day);
   runNightPointMutable(s,cat,'before_lodging');
 }
 function chooseLodgingMutable(s:Save,cat:Catalog,lodging:LodgingDefinition){
@@ -1514,7 +1632,54 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     if(definition.adapter!==a.adapter)throw new Error(`Несовместимый Activity adapter: ${a.activityId}`);
     if(a.status!=='active')throw new Error('Нестабильное resolving Activity состояние не может быть загружено.');
     if(a.startedDay>s.run.day)throw new Error('Activity начата в будущем календаря.');
-    if(definition.timePolicy==='same_day'&&a.startedDay!==s.run.day)throw new Error('same_day Activity не может пережить CalendarAdvance.');
+    const camp=a.campState;
+    if(!definition.campPolicy){
+      if(definition.timePolicy==='same_day'&&a.startedDay!==s.run.day)throw new Error('same_day Activity не может пережить CalendarAdvance.');
+      if(
+        camp.phase!=='idle'
+        ||camp.nightsUsed!==0
+        ||camp.boundaryDay!==null
+        ||camp.calendarAdvanceCommitted
+        ||camp.fieldTimeRefreshCommitted
+      )throw new Error('Activity без campPolicy не может содержать Camp state.');
+    }else{
+      if(definition.timePolicy!=='can_advance_days_internally')throw new Error('Camp Activity имеет несовместимый timePolicy.');
+      if(camp.nightsUsed>definition.campPolicy.maxNights)throw new Error('Activity Camp превысил лимит ночей.');
+      if(s.run.day-a.startedDay!==camp.nightsUsed)throw new Error('Activity Camp calendar state не совпадает с persisted nightsUsed.');
+      if(camp.phase==='idle'){
+        if(
+          camp.nightsUsed!==0
+          ||camp.boundaryDay!==null
+          ||camp.calendarAdvanceCommitted
+          ||camp.fieldTimeRefreshCommitted
+        )throw new Error('Некорректный neutral Activity Camp state.');
+      }else if(camp.phase==='chosen'){
+        if(
+          camp.boundaryDay!==s.run.day
+          ||camp.calendarAdvanceCommitted
+          ||camp.fieldTimeRefreshCommitted
+          ||camp.nightsUsed>=definition.campPolicy.maxNights
+          ||a.internalState.fieldTimeRemaining!==0
+        )throw new Error('Некорректный chosen Activity Camp state.');
+      }else if(camp.phase==='calendar_advanced'){
+        if(
+          camp.boundaryDay===null
+          ||s.run.day!==camp.boundaryDay+1
+          ||!camp.calendarAdvanceCommitted
+          ||camp.fieldTimeRefreshCommitted
+          ||camp.nightsUsed<1
+          ||a.internalState.fieldTimeRemaining!==0
+        )throw new Error('Некорректный calendar-advanced Activity Camp state.');
+      }else if(
+        camp.boundaryDay===null
+        ||s.run.day!==camp.boundaryDay+1
+        ||!camp.calendarAdvanceCommitted
+        ||!camp.fieldTimeRefreshCommitted
+        ||camp.nightsUsed<1
+      ){
+        throw new Error('Некорректный refreshed Activity Camp state.');
+      }
+    }
     if(a.internalState.endurance>definition.adapterConfig.initialEndurance)throw new Error('Некорректный internal Endurance Activity.');
     if(a.internalState.progress>=definition.adapterConfig.successAtProgress)throw new Error('Activity должна была завершиться success до сохранения.');
     if(a.internalState.endurance<=definition.adapterConfig.failAtEndurance)throw new Error('Activity должна была завершиться failure до сохранения.');
