@@ -366,3 +366,26 @@ Accepted compatibility authority remains:
 
 ### Operational priority
 Do not re-open D41. The sole integration lane is now D42.
+
+
+## AUTHORITATIVE LIVE UPDATE — D51 GREEN / CAMP REPAIR PATH
+
+### Chat 3 / D51
+- frozen producer: `79a868bf30af2c162b2ea1323759dffad5e8dadf`
+- exact-head QA workflow run `37205501396`: **SUCCESS**
+- typecheck / validate / build: PASS
+- focused suite: **58/58 PASS**
+- production tree unchanged
+- status: **READY_FOR_CHAT2_ASSEMBLY**
+- current Chat 3 task: `chat3/secret-debt-d51-assembly-preflight-v22`
+
+### Chat 4 / Camp
+- frozen producer: `0cae33dd3518dbda7d6d84e4ea6661b02fe49886`
+- exact-head QA v18: **RED — NOT READY**
+- Camp-specific frozen suite: 6/7
+- fixture-only repair `03eab6f049011e81efcda0641a790eaed6ecd803`: Camp **7/7 PASS**
+- inherited v15 blockers:
+  - test typing defect in `item-capability-activity-closure.test.ts`
+  - Forest capability manifest missing read declaration for `activity.forest-frontier.result.research-grade`
+- current Chat 4 task: `chat4/activity-camp-baseline-repair-v19`
+- objective: make exact Camp candidate typecheck/validate/build/focused all green without changing Camp semantics.
