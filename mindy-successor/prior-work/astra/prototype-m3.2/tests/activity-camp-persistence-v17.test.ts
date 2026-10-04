@@ -153,6 +153,7 @@ test('Camp state is typed, neutral for old active saves, and Activity entry stil
   const cat=catalog();
   let s=enter(cat);
   assert.equal(s.run.dayState.energyCurrent,1);
+  assert.equal(s.run.flow.activity?.campStateVersion,1);
   assert.deepEqual(s.run.flow.activity?.campState,{
     phase:'idle',
     nightsUsed:0,
@@ -162,8 +163,10 @@ test('Camp state is typed, neutral for old active saves, and Activity entry stil
   });
 
   const raw=JSON.parse(JSON.stringify(s));
+  delete raw.run.flow.activity.campStateVersion;
   delete raw.run.flow.activity.campState;
   s=parseSave(JSON.stringify(raw),cat);
+  assert.equal(s.run.flow.activity?.campStateVersion,1);
   assert.deepEqual(s.run.flow.activity?.campState,{
     phase:'idle',
     nightsUsed:0,
@@ -324,6 +327,13 @@ test('Camp is unavailable to same-day Activity and incompatible persisted Camp/c
   assert.throws(
     ()=>parseSave(JSON.stringify(raw),cat),
     /persisted nightsUsed/
+  );
+
+  const partial=JSON.parse(JSON.stringify(multi));
+  delete partial.run.flow.activity.campStateVersion;
+  assert.throws(
+    ()=>parseSave(JSON.stringify(partial),cat),
+    /Несовместимое persisted Activity Camp state/
   );
 
   multi=exhaustFieldTime(multi,cat);
