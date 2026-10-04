@@ -1,60 +1,45 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — LUMBER-STAY RETIREMENT PRODUCER v17**
+Status: **ACTIVE — D46 + D47 + LEGACY ENDING ASSEMBLY PREFLIGHT v18**
 Owner: Chat 5
 
-Accepted Product decision source:
-`chat5/lumber-stay-retirement-decision-v16@4f4df720c9677b4b9becc0cb8538da26a276f944`
-
-Production base:
-`main@f36de067ae2e82518360dbe045f71c700e200805` (D41 merged production SHA)
+Previous work accepted:
+- lumber-stay retirement producer v17 is focused-green and READY_FOR_CHAT2_ASSEMBLY.
 
 New branch:
-`chat5/lumber-stay-retirement-producer-v17`
+`chat5/d46-d47-legacy-assembly-preflight-v18`
 
-Implement the v16 retirement policy exactly.
+Frozen sources:
+- D46 economy/start balance:
+  `chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
+- D47 Hard Work mapping:
+  `chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
+- lumber-stay retirement:
+  `chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb`
 
-Required live 1.0 result:
-- remove `lumber-stay` from new-play live ending registration;
-- remove new acquisition of `vitality`;
-- canonical ordinary-career surface remains exactly 40 endings;
-- no alias to Hard Work / Forewoman / Forest.
+Task:
+prepare the exact selective-assembly plan for the later D46+D47+legacy-ending closure tranche.
 
-Historical compatibility:
-- completed historical `lumber-stay` stays historical evidence;
-- normalize historical `vitality` ownership to one legacy perk:
-  `legacy.lumber-stay.vitality`;
-- historical owners preserve exactly +1 daily Energy;
-- no new acquisition, no slots, no stacking duplicates;
-- eligible-only old state is removed without reward;
-- committed-but-unfinished old state is cleared and run resumes active;
-- existing historical RunResult/transaction identity is preserved;
-- old ended pre-RunResult save gets deterministic compatibility proof only, never reward replay.
+Produce:
+- exact production files changed by each source;
+- overlap/conflict matrix;
+- exact order of composition;
+- migration risks;
+- fresh-run starting money/Energy/Lust checks;
+- ordinary-career wage checks;
+- Hard Work 50-shift reward checks;
+- D47 bonus mapping checks;
+- historical lumber-stay/vitality migration checks;
+- canonical 40-ending count;
+- Strong Meta / Palace / Secret Debt isolation;
+- exact focused tests Chat 2 should run.
 
-Presentation/localization:
-- retire live `ending/lumber-stay` semantic/source inventory;
-- historical display is non-interactive and uses legacy localization namespace;
-- no 41st live ending card;
-- canonical Lumber endings remain unchanged.
-
-Migration:
-- deterministic;
-- idempotent;
-- no fabricated canonical completion;
-- no conversion of legacy visits into Hard Work shifts.
-
-No full CI.
-
-Focused QA minimum:
-- all acceptance cases from v16 decision;
-- second parse/load idempotence;
-- profile merge dedupe;
-- canonical 40 count;
-- Palace / Strong Meta / Hard Work / Secret Debt isolation;
-- live presentation/source inventory contains no `ending/lumber-stay`.
+Research/preflight only.
+Do not modify production runtime.
+Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT5_LUMBER_STAY_RETIREMENT_PRODUCER_v17.md`
+`mindy-successor/docs/tasks/CHAT5_D46_D47_LEGACY_ASSEMBLY_PREFLIGHT_v18.md`
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+Report:
+`READY_FOR_CHAT2_PREFLIGHT`.
