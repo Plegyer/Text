@@ -93,7 +93,10 @@ test('C3-31 Forest audit matches current route and terminal result identities',(
     assert.deepEqual(historicalChoices.map((choice:any)=>choice.id),audited.choiceIds);
     assert.deepEqual(historicalChoices.flatMap((choice:any)=>choice.effects),audited.effects);
   }
-  const warden=byId.get('forest-result-content-v1.success').choices.find((choice:any)=>choice.id==='warden-conservation-route');
+  const successEvent:any=byId.get('forest-result-content-v1.success');
+  assert.ok(successEvent,'forest-result-content-v1.success');
+  const warden=successEvent.choices.find((choice:any)=>choice.id==='warden-conservation-route');
+  assert.ok(warden,'warden-conservation-route');
   assert.deepEqual(warden.conditions,[{kind:'metaUnlock',unlock:'knowledge.hunter.warden-signs',present:true},{kind:'worldFact',fact:'reward.hunter.warden-signs.used',present:false}]);
   assert.deepEqual(warden.effects,[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]);
 });
