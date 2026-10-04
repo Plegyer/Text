@@ -72,7 +72,7 @@ test('C2-117 late-career Work rows expose bilingual visible state and keyboard-s
 
 test('C2-117 eligible Hard Work ending exposes focusable control and bilingual presentation state',async()=>{
  let save=started();
- save.run.progression.careers.lumber={stage:'accepted-hand',shifts:0,counters:{completed_shifts:49},choices:{},facts:[]};
+ save.run.progression.careers.lumber={stage:'veteran',shifts:0,counters:{completed_shifts:49},choices:{},facts:[]};
  save=dispatch(save,{type:'action',id:'lumber.shift'},catalog);
  for(const locale of ['ru','en'] as const){
   const {dom,w,errors}=await boot(save,locale);
