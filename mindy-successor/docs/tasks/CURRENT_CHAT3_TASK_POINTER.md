@@ -1,42 +1,52 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY / SECRET DEBT ENERGY COMPAT AUDIT v19**
+Status: **ACTIVE — D51 SECRET DEBT / ACTIVITY ENERGY COMPAT PRODUCER v20**
 Owner: Chat 3
 
-Completed reachability audit:
-`chat3/activity-ending-reachability-audit-v18@7ae7a9b273f1806ac04b566c318896783bab6595`
+Accepted Product authority:
+`mindy-successor/docs/tasks/LEADER1_D51_BOUND_STREET_ACTIVITY_ENERGY_LOCK_2026-10-04.md`
 
-v18 verdict:
-- all three D38 endings are structurally reachable in 160 days;
-- ~5 Activity entries is a credible mid-prep reference;
-- <=10 entries remains healthy;
-- Network is naturally later;
-- one high integration risk remains: Street Energy penalty + Secret Debt next-day Energy penalty may stack and make the locked 2-Energy Activity entry unavailable while bound.
+Source audit:
+`chat3/activity-secret-debt-energy-compat-audit-v19@d030bc72be62212130aad709cff748947eb36507`
+
+Frozen Secret Debt base:
+`chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
 
 New branch:
-`chat3/activity-secret-debt-energy-compat-audit-v19`
+`chat3/secret-debt-activity-energy-compat-producer-v20`
 
-Task:
-resolve that risk from repository truth and locked D19/D35/D36/D44 rules.
+Implement D51 narrowly on the Secret Debt/Night next-day Energy seam.
 
-Determine exactly:
-- whether Street next-day Energy -1 and Secret Debt next-day Energy -1 stack;
-- minimum Energy a bound player can have on the next day;
-- whether a bound player can ever be prevented from entering a normally available 2-Energy Activity solely by the combination;
-- whether D19's Activity-availability guarantee requires clamping, sequencing, suppression, or no change;
-- exact save/reload and Night-boundary tests needed.
+Required behavior:
+- if the immediately preceding Night applied both Street Energy -1 and `secret-debt.bound-night` Energy -1, process both but apply a provenance-gated compatibility floor of 2 after those two specific modifiers;
+- unrelated independent Energy penalties remain separate and may reduce below 2;
+- no global Energy floor;
+- Activity entry remains exactly 2 Energy;
+- hidden work remains 1 Energy;
+- Street Grooming consequence remains;
+- Secret Debt forced Night remains every bound night;
+- voluntary Night suppression remains;
+- acceptance -> trap activation morning gets no retroactive forced-Night penalty;
+- save/reload cannot duplicate or lose either modifier.
 
-Audit all relevant engine/Night/Secret Debt/Activity seams.
-Do not implement runtime.
-Do not weaken Street consequences or Secret Debt consequences without explicit Product authority.
-Do not change 2-Energy Activity entry.
+Use explicit modifier provenance/tags; do not infer from housing alone.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_SECRET_DEBT_ENERGY_COMPAT_AUDIT_v19.md`
+Focused QA must include v19 T1-T11, especially:
+- normal/cheap controls;
+- bound+Street reproduction/fix;
+- reload before/after forced Night choice;
+- trap activation boundary;
+- second bound Street morning;
+- unrelated third penalty;
+- Meta +1 diagnostic;
+- route exit.
 
-Report one of:
-- `PASS_NO_CHANGE`
-- `READY_FOR_PRODUCT_DECISION`
-- `RUNTIME_BLOCKER_FOUND`
+Do not change D44 wages/thresholds, D36 entry cost, lodging prices, Palace, or Strong Meta.
 
 No full CI.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_ACTIVITY_ENERGY_COMPAT_PRODUCER_v20.md`
+
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
