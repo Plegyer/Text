@@ -1,45 +1,51 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — D46 + D47 + LEGACY ENDING ASSEMBLY PREFLIGHT v18**
+Status: **ACTIVE — PALACE D39 REWARD IMPLEMENTATION PREFLIGHT v19**
 Owner: Chat 5
 
-Previous work accepted:
-- lumber-stay retirement producer v17 is focused-green and READY_FOR_CHAT2_ASSEMBLY.
+Previous D46+D47+legacy preflight v18 is complete and accepted.
 
 New branch:
-`chat5/d46-d47-legacy-assembly-preflight-v18`
+`chat5/palace-d39-reward-implementation-preflight-v19`
 
-Frozen sources:
-- D46 economy/start balance:
-  `chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
-- D47 Hard Work mapping:
-  `chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
-- lumber-stay retirement:
-  `chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb`
+Problem:
+Palace assembly preflight found that the three accepted D39 non-True Palace rewards are Product-locked but do not yet have a complete implementation source for current Strong Meta.
+
+D39 accepted rewards:
+
+1. Service Life -> Steady Practice
+   `palace.service-life.steady-practice`
+   class: Specialist
+
+2. Court Power -> Formal Introduction
+   `palace.court-power.formal-introduction`
+   class: Specialist
+
+3. Inner Truth -> Source Method
+   `palace.inner-truth.source-method`
+   class: automatic knowledge/content, no slot
 
 Task:
-prepare the exact selective-assembly plan for the later D46+D47+legacy-ending closure tranche.
+prepare the exact implementation packet for current Strong Meta / ending reward lifecycle.
 
-Produce:
-- exact production files changed by each source;
-- overlap/conflict matrix;
-- exact order of composition;
-- migration risks;
-- fresh-run starting money/Energy/Lust checks;
-- ordinary-career wage checks;
-- Hard Work 50-shift reward checks;
-- D47 bonus mapping checks;
-- historical lumber-stay/vitality migration checks;
-- canonical 40-ending count;
-- Strong Meta / Palace / Secret Debt isolation;
-- exact focused tests Chat 2 should run.
+Specify:
+- reward registry entries;
+- ownership/migration semantics;
+- future-run activation;
+- Specialist slot behavior;
+- Source Method automatic inheritance;
+- exactly-once ending transaction binding;
+- save/load and profile merge behavior;
+- tests needed for each reward;
+- exact files Chat 2 must modify during Palace assembly;
+- interactions that must remain forbidden.
 
-Research/preflight only.
-Do not modify production runtime.
+Do not invent new Product behavior.
+Do not modify production runtime in this preflight.
 Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT5_D46_D47_LEGACY_ASSEMBLY_PREFLIGHT_v18.md`
+`mindy-successor/docs/tasks/CHAT5_PALACE_D39_REWARD_IMPLEMENTATION_PREFLIGHT_v19.md`
 
 Report:
-`READY_FOR_CHAT2_PREFLIGHT`.
+`READY_FOR_PALACE_ASSEMBLY`.
