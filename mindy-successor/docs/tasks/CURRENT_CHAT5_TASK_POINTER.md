@@ -1,46 +1,49 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — D41 FULL-SUITE FAILURE TRIAGE v14**
+Status: **ACTIVE — FINAL ENDING ID / MIGRATION AUDIT v15**
 Owner: Chat 5
 
-Frozen D47 producer:
-`chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
+Completed D41 triage:
+`chat5/d41-full-suite-triage-v14@06fd08196d9eabdc1b4f6e3a360794cd64d1e80c`
 
-D47 exact-head QA:
-- run `37200203160`
-- **SUCCESS**
-- typecheck/validate/build PASS
-- focused tests **103/103 PASS**
+Triage result:
+- 18 stale pre-D41 expectations;
+- 4 retired legacy identity/presentation references;
+- 0 D41 runtime regressions.
 
 New branch:
-`chat5/d41-full-suite-triage-v14`
+`chat5/final-ending-id-migration-audit-v15`
 
 Task:
-support Chat 2 by triaging D41 current-main full CI #1180 / run `37201061717`.
+audit the full ordinary-career ending identity surface for 1.0.
 
-Known state:
-- Chat 2 head `836639de6ae9d654e168f50a8c5e1896b1347d91`;
-- #1180 has 22 failures.
+Scope:
+- 10 Hard Work endings;
+- 14 D41 advanced endings;
+- 16 D40 advanced endings;
+- total expected ordinary-career ending surface = 40 stable endings.
 
-Classify every failure as:
-A. stale pre-D41 freeze/negative expectation;
-B. retired legacy presentation/identity reference;
-C. real D41 integration regression.
+Verify:
+- exact stable IDs;
+- no duplicate semantic identity;
+- retired aliases/legacy IDs and their migration policy;
+- completed-old-ending canonicalization;
+- uncompleted eligibility/commit cleanup;
+- RunResult and transaction identity;
+- reward ownership mapping;
+- localization/presentation/source-inventory references;
+- no dead legacy semantic rows;
+- no Palace implication from Tavern legacy IDs;
+- no advanced ending auto-commit;
+- save/load idempotence.
 
-For each failure provide:
-- failing test;
-- exact expected authority after D41;
-- whether test or production seam should change;
-- smallest safe repair;
-- preserved safety purpose;
-- any coupling to Forest/Hunter/Tavern/D16/Strong Meta/Palace.
-
-Do not modify Chat 2 assembly branch.
-Do not implement runtime.
-Do not run full CI.
+Research/audit only.
+Do not modify runtime or Chat 2 assembly.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT5_D41_FULL_SUITE_TRIAGE_v14.md`
+`mindy-successor/docs/tasks/CHAT5_FINAL_ENDING_ID_MIGRATION_AUDIT_v15.md`
 
 Report:
-`READY_FOR_CHAT2_REPAIR`.
+`READY_FOR_LEADER_REVIEW`.
+
+No full CI.
