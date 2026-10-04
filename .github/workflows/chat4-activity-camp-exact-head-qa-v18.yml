@@ -8,7 +8,7 @@ on:
       - '.github/workflows/chat4-activity-camp-exact-head-qa-v18.yml'
   pull_request:
     branches:
-      - main
+      - chat4/activity-camp-persistence-producer-v17
     paths:
       - '.github/workflows/chat4-activity-camp-exact-head-qa-v18.yml'
 
