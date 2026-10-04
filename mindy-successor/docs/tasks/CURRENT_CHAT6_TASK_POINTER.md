@@ -1,48 +1,46 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — PALACE MEDIA PRODUCTION PLAN v20**
+Status: **ACTIVE — MACRO MYSTERY / LORE AUTHORITY v21**
 Owner: Chat 6
 
-Frozen Palace content producer:
-`chat6/palace-final-prose-media-v19@6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
+Accepted authorities:
+- D45 Palace / Threshold / Prince;
+- D48 Palace minimum media target.
 
-Do not mutate v19.
+Frozen prior Product packet:
+`chat6/palace-media-production-plan-v20@10b748fd400c25e6384fcb451164fd3203ea8768`
+
+Do not mutate v20.
 
 New branch:
-`chat6/palace-media-production-plan-v20`
-
-Base:
-`6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
-
-Source manifest:
-`mindy-successor/research/palace_missing_media_v1.csv`
+`chat6/macro-mystery-lore-authority-v21`
 
 Task:
-turn the four missing Palace media groups into an exact minimum 1.0 production plan.
+close the remaining 1.0 macro mystery/lore Product gap without resolving mysteries D45 intentionally leaves open.
 
-Required groups:
-- P1 Threshold Archive;
-- P1 Custodian audience;
-- P1 Return Home Threshold;
-- P2 service interior.
+Produce a compact lore authority for:
+- what the player can know before Palace;
+- what ordinary careers/Night/School/Activity/Secret Debt may foreshadow;
+- what the Palace reveals at duty 12 and duty 15;
+- what the Prince confrontation proves;
+- what Return Home proves;
+- what remains explicitly unknown after each ending;
+- safe recurring motifs/terminology across RU/EN content;
+- forbidden lore claims that would contradict D45.
 
-Produce:
-- exact asset count recommendation;
-- reusable scene/variant plan;
-- file naming and presentation-slot mapping;
-- aspect/crop/accessibility requirements;
-- RU/EN alt/caption requirements;
-- canon red lines from D45;
-- which current fallbacks remain acceptable if an asset misses 1.0;
-- priority/order and acceptance checklist.
+Do not:
+- decide the original displacement cause;
+- decide who created the Threshold;
+- make all historical crossings intentional;
+- make Prince divine/omniscient;
+- make Palace responsible for the heroine's arrival;
+- turn optional system echoes into gates;
+- change mechanics/rewards/economy.
 
-Audit the existing project-owned media inventory first.
-Do not create mechanics, gates, rewards, new presentation engine or final Prince species/name/appearance canon.
-
-Research/planning only. No full CI.
+Research/Product only. No runtime changes. No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_PALACE_MEDIA_PRODUCTION_PLAN_v20.md`
+`mindy-successor/docs/tasks/CHAT6_MACRO_MYSTERY_LORE_AUTHORITY_v21.md`
 
 Report:
 `READY_FOR_PRODUCT_LOCK`.
