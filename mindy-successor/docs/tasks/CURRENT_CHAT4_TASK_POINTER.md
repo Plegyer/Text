@@ -1,45 +1,52 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — 1.0 SAVE / MIGRATION CLOSURE AUDIT v16**
+Status: **ACTIVE — ACTIVITY CAMP PERSISTENCE PRODUCER v17 / NEW CHAT**
 Owner: Chat 4
 
-Previous result:
-`chat4/d46-economy-reachability-audit-v15@bb79be1f39c55e6297287cd071e1e8268005148a`
-— **PASS**, no evidence-backed D46 retune blocker.
+Context recovery:
+`mindy-successor/docs/tasks/CHAT4_CONTEXT_RECOVERY_ACTIVITY_CAMP_v17_2026-10-04.md`
+
+Completed previous audit:
+`chat4/final-save-migration-audit-v16@51ce65c4627d6c9e67bcc7f3d9348861cc75826e`
+
+Audit verdict:
+**RISK — one concrete pre-1.0 blocker: Activity Camp state is not persisted.**
 
 New branch:
-`chat4/final-save-migration-audit-v16`
+`chat4/activity-camp-persistence-producer-v17`
 
 Base:
-`main@209e2f6dae5ae3c34c0803410d640b67022cc899` (D40 production merge)
+`chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
 
 Task:
-build the final pre-1.0 save/migration acceptance matrix across all queued systems.
+implement explicit persisted multi-day Activity Camp state and migration/default behavior required by D36.
 
-Audit:
-- schema evolution and old-save defaults;
-- Strong Meta schema6/current-run snapshot immutability;
-- D40/D41 selected-route facts and ambiguous legacy outcome-ready cases;
-- Night state;
-- Secret Debt bound/repayment/ending state;
-- Palace access/duty/confrontation state;
-- Activity route/mini-game/camp/suspicion state;
-- D46 fresh Lust vs existing-save Lust preservation;
-- D47 active Hard Work package snapshot and no double-application.
+Required:
+- max 2 camp nights per Activity entry;
+- camp replaces city Night for that day;
+- no city lodging charge for camp night;
+- no voluntary city Night menu;
+- one calendar advance exactly once per camp;
+- next field day refreshes Field Time, not global Energy;
+- no duplicate full city workday on return;
+- Secret Debt forced Night has absolute precedence and blocks camp continuation across that boundary;
+- preserve next-day Debt Energy -1.
 
-For each system specify:
-- old-save input shape;
-- required migrated/default state;
-- idempotence expectation;
-- forbidden inference;
-- save/reload checkpoint;
-- exact regression test needed before 1.0.
+Save contract:
+- typed Camp state;
+- neutral old-save default;
+- deterministic resume;
+- exactly-once calendar/Field Time transitions;
+- persisted 2-night count;
+- explicit rejection of incompatible active state rather than inferred Camp progress.
 
-Research/audit only. Do not change runtime.
+Preserve all four Activity regions, 2-Energy entry, no Activity XP, Palace firewall, Night ownership, Secret Debt semantics.
+
 No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT4_FINAL_SAVE_MIGRATION_AUDIT_v16.md`
+`mindy-successor/docs/tasks/CHAT4_ACTIVITY_CAMP_PERSISTENCE_PRODUCER_v17.md`
 
-Report:
-`READY_FOR_LEADER_REVIEW`.
+Focused QA required.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
