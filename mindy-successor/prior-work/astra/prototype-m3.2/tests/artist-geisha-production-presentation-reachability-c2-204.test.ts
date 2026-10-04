@@ -73,7 +73,12 @@ test('C2-204 frozen Artist runtime backs every presentation-owned semantic famil
   assert.ok(relationship);
   assert.deepEqual(career.stages,[...ARTIST_GEISHA_PRESENTATION_STAGES]);
   assert.deepEqual(relationship.stages,[...ARTIST_GEISHA_RELATIONSHIP_STAGES]);
-  assert.deepEqual([...ARTIST_GEISHA_SCHOOL_EVENT_IDS],[]);
+  assert.deepEqual([...ARTIST_GEISHA_SCHOOL_EVENT_IDS],[
+    'd40.school.artist-geisha.arts',
+    'd40.school.artist-geisha.literacy',
+    'd40.school.artist-geisha.rhetoric',
+    'd40.school.artist-geisha.etiquette'
+  ]);
 
   const caps:Record<string,string>={
     artist_formal_attire:'artist_formal_presence',

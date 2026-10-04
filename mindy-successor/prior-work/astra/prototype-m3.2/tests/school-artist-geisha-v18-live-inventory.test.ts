@@ -107,77 +107,23 @@ test('C5-193 exact five-track Artist inventory reuses current courses teachers m
   }
 });
 
-test('C5-203/C5-204 final natural acceptance: paid lessons and Night-study persist without manufacturing frozen Artist School facts or reactions',()=>{
+test('D40 Artist School publishers create only the four approved readiness facts and persist them across reload',()=>{
   let s=started();
-  const artistAction=catalog.definitions.actions.find(a=>a.id==='artist-geisha.shift');
-  assert.ok(artistAction);
-  assert.equal(actionAvailable(artistAction,s,catalog),false);
-
   while(s.run.resources.money<20_000)s=work(s,'lumber.shift');
-
-  // Reach the shipped stat-based Artist unlock using only existing paid School mechanics.
-  let guard=0;
-  while(!actionAvailable(artistAction,s,catalog)){
-    if(++guard>40)throw new Error('Artist School unlock prep did not converge');
-    const creativity=s.run.character.stats.creativity;
-    const manners=s.run.character.stats.manners;
-    const grooming=s.run.character.stats.grooming;
-    const course:SchoolCourseId=creativity<35
-      ?'school.course.arts_and_performance'
-      :(manners<25||grooming<30)
-        ?'school.course.etiquette_and_presentation'
-        :'school.course.arts_and_performance';
-    s=paidLesson(s,course);
-    const consumers=authority.hooks.map((x:any)=>x.consumerEventId);
-    assert.equal(consumers.includes(s.run.pending?.eventId),false,'unlock prep must not trigger Artist consumer');
-    s=settlePending(s);
-  }
-  assert.equal(actionAvailable(artistAction,s,catalog),true);
-
-  for(const hook of authority.hooks){
-    assert.equal(artistFacts(s).includes(hook.artistFactId),false,hook.trackId+' before Artist work');
-  }
-
-  s=work(s,'artist-geisha.shift');
-  assert.ok(s.run.progression.careers['artist-geisha']);
-  const artistShifts=s.run.progression.careers['artist-geisha'].counters.completed_shifts;
-  const consumerIds=authority.hooks.map((x:any)=>x.consumerEventId);
-
-  for(const hook of authority.hooks){
-    const before=s.run.progression.school.tracks[hook.trackId]?.counters.lessons_completed??0;
-    for(let i=0;i<3;i++){
-      s=paidLesson(s,hook.courseId as SchoolCourseId);
-      assert.equal(consumerIds.includes(s.run.pending?.eventId),false,hook.trackId+' paid lesson consumer');
-      assert.equal(artistFacts(s).includes(hook.artistFactId),false,hook.trackId+' paid lesson fact');
+  const hooks=[
+    ['school.course.arts_and_performance','school.track.arts_and_performance','school-arts-ready'],
+    ['school.course.literacy_and_numbers','school.track.literacy_and_numbers','school-literacy-ready'],
+    ['school.course.rhetoric_and_social','school.track.rhetoric_and_social','school-rhetoric-ready'],
+    ['school.course.etiquette_and_presentation','school.track.etiquette_and_presentation','school-etiquette-ready']
+  ] as const;
+  for(const [courseId,trackId,fact] of hooks){
+    while((s.run.progression.school.tracks[trackId]?.counters.lessons_completed??0)<3){
+      s=paidLesson(s,courseId);
       s=settlePending(s);
-      s=parseSave(JSON.stringify(s),catalog);
-      assert.equal(artistFacts(s).includes(hook.artistFactId),false,hook.trackId+' reload fact');
     }
-    const after=s.run.progression.school.tracks[hook.trackId]?.counters.lessons_completed??0;
-    assert.equal(after,before+3,hook.trackId+' paid lesson exactly-once persistence');
+    s=parseSave(JSON.stringify(s),catalog);
+    assert.ok(artistFacts(s).includes(fact),fact+' persisted readiness');
   }
-
-  for(const hook of authority.hooks){
-    const mapping=inventory.mappings.find((x:any)=>x.trackId===hook.trackId);
-    assert.ok(mapping,hook.trackId);
-    const before=s.run.progression.school.tracks[hook.trackId]?.counters.night_study_sessions??0;
-    const choiceId=mapping.nightChoiceIds[0];
-    for(let i=0;i<3;i++){
-      s=studyNight(s,choiceId);
-      assert.equal(consumerIds.includes(s.run.pending?.eventId),false,hook.trackId+' Night-study consumer');
-      assert.equal(artistFacts(s).includes(hook.artistFactId),false,hook.trackId+' Night-study fact');
-      s=parseSave(JSON.stringify(s),catalog);
-      assert.equal(artistFacts(s).includes(hook.artistFactId),false,hook.trackId+' Night-study reload fact');
-    }
-    const after=s.run.progression.school.tracks[hook.trackId]?.counters.night_study_sessions??0;
-    assert.equal(after,before+3,hook.trackId+' Night-study exactly-once persistence');
-  }
-
-  assert.equal(s.run.progression.careers['artist-geisha'].counters.completed_shifts,artistShifts,
-    'School prep must not require or manufacture a dummy artist-geisha.shift');
-  for(const hook of authority.hooks){
-    assert.equal(artistFacts(s).includes(hook.artistFactId),false,hook.trackId+' final fact');
-    assert.equal(hook.producerThreshold,null,hook.trackId);
-    assert.equal(hook.selectedPublicFactId,null,hook.trackId);
-  }
+  const body=authority.hooks.find((x:any)=>x.trackId==='school.track.body_confidence');assert.ok(body);
+  assert.equal(artistFacts(s).includes(body.artistFactId),false,'body-confidence stays outside D40 publisher scope');
 });

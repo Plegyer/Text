@@ -12894,6 +12894,22 @@
       "ru": "Принять приглашение",
       "en": "Accept the invitation"
     },
+    "event.assassin.routes.refusal-chain-ready.title": {
+      "ru": "Маршрут «Цепь отказов» готов",
+      "en": "Refusal Chain route ready"
+    },
+    "event.assassin.routes.refusal-chain-ready.variant.default.text": {
+      "ru": "Повторяющийся отказ теперь оформлен как поздний маршрут Убийцы: есть подтверждённые отказы, завершённый цикл контракта и уваженный отказ перед куратором.",
+      "en": "Repeated refusal is now an authored late Assassin route: evidence, a completed contract cycle, and a respected handler refusal are all present."
+    },
+    "event.assassin.routes.refusal-chain-ready.choice.record.label": {
+      "ru": "Зафиксировать готовность «Цепи отказов»",
+      "en": "Record Refusal Chain readiness"
+    },
+    "event.assassin.routes.refusal-chain-ready.choice.record.text": {
+      "ru": "Зафиксировать маршрут без автоматического выбора финала.",
+      "en": "Record the route without auto-committing an ending."
+    },
     "event.palace.invitation.reveal.choice.accept.text": {
       "ru": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
       "en": "You confirm the visit. That is enough to open access to Palace work in this life."

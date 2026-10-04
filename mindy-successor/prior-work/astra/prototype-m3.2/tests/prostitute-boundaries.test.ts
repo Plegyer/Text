@@ -95,7 +95,7 @@ test('recurring client modes stay distinct and romance is never a career require
   assert.equal(serialized.includes('"romance"'),false);
 });
 
-test('Prostitute items and routes create no Palace access or new public complex ending identity',()=>{
+test('Prostitute items and routes create no Palace access and expose only the exact D40 public ending identities',()=>{
   const exactCaps=new Set([
     'prostitute_formal_presence','prostitute_private_room_access',
     'prostitute_client_token','prostitute_handle_evidence'
@@ -106,6 +106,11 @@ test('Prostitute items and routes create no Palace access or new public complex 
   }
   assert.deepEqual(
     definitions.endings.filter((e:any)=>e.id.startsWith('ending.prostitute.')).map((e:any)=>e.id),
-    ['ending.prostitute.hard-work']
+    [
+      'ending.prostitute.hard-work',
+      'ending.prostitute.independent-house',
+      'ending.prostitute.elite-clientele',
+      'ending.prostitute.network-protection'
+    ]
   );
 });

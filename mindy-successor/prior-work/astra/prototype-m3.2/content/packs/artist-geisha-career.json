@@ -375,6 +375,11 @@
               "kind": "addCareerFact",
               "career": "artist-geisha",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "ending-route-master-artist-selected"
             }
           ]
         },
@@ -400,6 +405,11 @@
               "kind": "addCareerFact",
               "career": "artist-geisha",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "ending-route-patron-network-selected"
             }
           ]
         },
@@ -425,6 +435,11 @@
               "kind": "addCareerFact",
               "career": "artist-geisha",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "artist-geisha",
+              "fact": "ending-route-court-invitation-selected"
             }
           ]
         },

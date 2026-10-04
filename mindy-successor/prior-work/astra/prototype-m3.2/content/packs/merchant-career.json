@@ -436,6 +436,11 @@
               "kind": "addCareerFact",
               "career": "merchant",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "ending-route-merchant-house-selected"
             }
           ]
         },
@@ -461,6 +466,11 @@
               "kind": "addCareerFact",
               "career": "merchant",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "ending-route-speculator-smuggler-selected"
             }
           ]
         },
@@ -535,6 +545,11 @@
               "kind": "addCareerFact",
               "career": "merchant",
               "fact": "outcome-ready"
+            },
+            {
+              "kind": "addCareerFact",
+              "career": "merchant",
+              "fact": "ending-route-patron-routes-selected"
             }
           ]
         },

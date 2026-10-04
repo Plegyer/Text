@@ -80,7 +80,12 @@ test('Artist/Geisha v16 preserves shipped action, seasonal, and Hard Work identi
   }]);
   assert.deepEqual(
     definitions.endings.filter((e:any)=>e.id.startsWith('ending.artist-geisha.')).map((e:any)=>e.id),
-    ['ending.artist-geisha.hard-work']
+    [
+      'ending.artist-geisha.hard-work',
+      'ending.artist-geisha.master-artist',
+      'ending.artist-geisha.patron-network',
+      'ending.artist-geisha.court-invitation'
+    ]
   );
 });
 

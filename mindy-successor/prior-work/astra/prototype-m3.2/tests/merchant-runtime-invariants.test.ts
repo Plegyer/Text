@@ -67,7 +67,12 @@ test('Merchant v15 preserves shipped action, seasonal, and Hard Work identities'
   assert.deepEqual(ending.metaRewards,[{kind:'hardWork',rewardId:'hardWork:merchant',career:'merchant'}]);
   assert.deepEqual(
     definitions.endings.filter((e:any)=>e.id.startsWith('ending.merchant.')).map((e:any)=>e.id),
-    ['ending.merchant.hard-work']
+    [
+      'ending.merchant.hard-work',
+      'ending.merchant.house',
+      'ending.merchant.speculator-smuggler',
+      'ending.merchant.patron-of-routes'
+    ]
   );
 });
 
