@@ -27,7 +27,6 @@ jobs:
           fetch-depth: 0
 
       - name: Verify exact checkout
-        shell: pwsh
         run: |
           $actual = git rev-parse HEAD
           if ($actual -ne 'f25069c369c449ce0efbfe57acf877f950b1dfea') {
@@ -68,11 +67,9 @@ jobs:
           tests/seasonal-static-media-production.test.ts
 
       - name: Palace presentation firewall
-        shell: pwsh
         run: |
           node -e "const cp=require('node:child_process'); const path='mindy-successor/prior-work/astra/prototype-m3.2/content/presentation.json'; const get=(ref)=>JSON.parse(cp.execFileSync('git',['show',ref+':'+path],{encoding:'utf8'})); const base=get('f81788f046eafdafc8f9fbdc542793becfc6794c'); const head=get('f25069c369c449ce0efbfe57acf877f950b1dfea'); const pick=o=>Object.fromEntries(Object.entries(o.slots||{}).filter(([k])=>k.includes('/palace/')||k.startsWith('job/palace/'))); if(JSON.stringify(pick(base))!==JSON.stringify(pick(head))) throw new Error('Palace presentation slots changed'); console.log('Palace presentation firewall: unchanged');"
 
       - name: No missing presentation asset paths
-        shell: pwsh
         run: |
           node -e "const fs=require('node:fs'); const p=JSON.parse(fs.readFileSync('content/presentation.json','utf8')); const srcs=[]; const walk=x=>{if(!x)return;if(typeof x==='object'&&typeof x.src==='string')srcs.push(x.src);if(Array.isArray(x))x.forEach(walk);else if(typeof x==='object')Object.values(x).forEach(walk)}; walk(p.slots||{}); const local=[...new Set(srcs)].filter(s=>!/^https?:\/\//i.test(s)); const missing=local.filter(s=>!fs.existsSync(s)); if(missing.length) throw new Error('Missing presentation assets: '+missing.join(', ')); console.log('Presentation asset paths OK:',local.length);"
