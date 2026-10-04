@@ -1,0 +1,78 @@
+name: Chat 6 v24 exact-head presentation QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - chat6/qa-global-presentation-mapping-v24
+    paths:
+      - '.github/workflows/chat6-v24-exact-head.yml'
+
+concurrency:
+  group: chat6-v24-exact-head
+  cancel-in-progress: false
+
+jobs:
+  focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout frozen v23 exact head
+        uses: actions/checkout@v4
+        with:
+          ref: f25069c369c449ce0efbfe57acf877f950b1dfea
+          fetch-depth: 0
+
+      - name: Verify exact checkout
+        shell: pwsh
+        run: |
+          $actual = git rev-parse HEAD
+          if ($actual -ne 'f25069c369c449ce0efbfe57acf877f950b1dfea') {
+            throw "Expected frozen v23 SHA, got $actual"
+          }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: Focused presentation tests
+        run: >
+          node --experimental-strip-types --test
+          tests/global-presentation-mapping-producer-v23.test.ts
+          tests/presentation-source-integrity-v9.test.ts
+          tests/project-owned-static-media-production.test.ts
+          tests/presentation-locale-accessibility-parity-v7.test.ts
+          tests/presentation-locale-accessibility-v9.test.ts
+          tests/presentation-full-roster-a11y-c2-117.test.ts
+          tests/product-presentation-semantic-ids.test.ts
+          tests/presentation-stale-semantic-id-validator-v6.test.ts
+          tests/presentation-production-reachability-c2-119.test.ts
+          tests/seasonal-static-media-production.test.ts
+
+      - name: Palace presentation firewall
+        shell: pwsh
+        run: |
+          node -e "const cp=require('node:child_process'); const path='mindy-successor/prior-work/astra/prototype-m3.2/content/presentation.json'; const get=(ref)=>JSON.parse(cp.execFileSync('git',['show',ref+':'+path],{encoding:'utf8'})); const base=get('f81788f046eafdafc8f9fbdc542793becfc6794c'); const head=get('f25069c369c449ce0efbfe57acf877f950b1dfea'); const pick=o=>Object.fromEntries(Object.entries(o.slots||{}).filter(([k])=>k.includes('/palace/')||k.startsWith('job/palace/'))); if(JSON.stringify(pick(base))!==JSON.stringify(pick(head))) throw new Error('Palace presentation slots changed'); console.log('Palace presentation firewall: unchanged');"
+
+      - name: No missing presentation asset paths
+        shell: pwsh
+        run: |
+          node -e "const fs=require('node:fs'); const p=JSON.parse(fs.readFileSync('content/presentation.json','utf8')); const srcs=[]; const walk=x=>{if(!x)return;if(typeof x==='object'&&typeof x.src==='string')srcs.push(x.src);if(Array.isArray(x))x.forEach(walk);else if(typeof x==='object')Object.values(x).forEach(walk)}; walk(p.slots||{}); const local=[...new Set(srcs)].filter(s=>!/^https?:\/\//i.test(s)); const missing=local.filter(s=>!fs.existsSync(s)); if(missing.length) throw new Error('Missing presentation assets: '+missing.join(', ')); console.log('Presentation asset paths OK:',local.length);"
