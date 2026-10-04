@@ -6,7 +6,7 @@ import {catalog,started} from './helpers.ts';
 test('Lumber ending eligibility stays playable until explicit commit and completes through RunResult flow',()=>{
   let s=started();
   s.run.progression.careers.lumber={
-    stage:'accepted-hand',
+    stage:'veteran',
     shifts:0,
     counters:{completed_shifts:49},
     choices:{},
