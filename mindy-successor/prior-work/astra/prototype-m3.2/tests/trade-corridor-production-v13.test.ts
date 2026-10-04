@@ -7,7 +7,8 @@ import {
   availableActivityActions,
   dispatch,
   eligible,
-  parseSave
+  parseSave,
+  resolveReactions
 } from '../src/core/engine.ts';
 import type {Save} from '../src/core/schema.ts';
 
@@ -36,6 +37,15 @@ function finishPending(s:Save){
     const choice=event.choices.find(c=>(!allowed||allowed.includes(c.id))&&eligible(c.conditions,s,catalog));
     assert.ok(choice,event.id);
     s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+function finishDayStartedFeedback(s:Save,done:(state:Save)=>boolean){
+  s=finishPending(s);
+  for(let guard=0;guard<20&&!done(s);guard++){
+    s=resolveReactions(s,[{kind:'dayStarted',day:s.run.day}],catalog,{newEpoch:true}).state;
+    if(!s.run.pending)break;
+    s=finishPending(s);
   }
   return s;
 }
@@ -99,7 +109,7 @@ test('D36 Trade Corridor definition is a six-Field-Time playable region with thr
 });
 
 test('Trade Corridor is exposed in Explore and keeps generic option checkpoint labeling',()=>{
-  assert.match(appSource,/activityEntryList\(\['lumber\.forest','trade\.corridor','hunter\.expedition'\]\)/);
+  assert.match(appSource,/activityEntryList\(\['lumber\.forest','trade\.corridor','anomalous\.reach','restricted\.sites','hunter\.expedition'\]\)/);
   assert.match(appSource,/checkpointIsOption/);
 });
 
@@ -317,7 +327,12 @@ test('success feeds Merchant/Guard career facts and supplier contact can create 
   career=dispatch(career,{type:'activityAction',id:'trade.challenge.customs-verify-manifest'},catalog);
   career=dispatch(career,{type:'activityAction',id:'trade.challenge.customs-secure-sample'},catalog);
   career=dispatch(career,{type:'activityAction',id:'trade.shortcut.sealed-gate'},catalog);
-  career=finishPending(career);
+  career=finishDayStartedFeedback(
+    career,
+    state=>
+      state.run.progression.careers.merchant.facts.includes('trade-corridor-returned')
+      &&state.run.progression.careers.guard.facts.includes('trade-corridor-evidence-known')
+  );
   assert.ok(career.run.progression.worldFacts.includes('trade.corridor.city-return-recorded'));
   assert.ok(career.run.progression.careers.merchant.facts.includes('trade-corridor-returned'));
   assert.ok(career.run.progression.careers.guard.facts.includes('trade-corridor-evidence-known'));
@@ -336,7 +351,10 @@ test('success feeds Merchant/Guard career facts and supplier contact can create 
   network=dispatch(network,{type:'activityAction',id:'trade.challenge.market-price-sheet'},catalog);
   network=dispatch(network,{type:'activityAction',id:'trade.challenge.market-supplier-contact'},catalog);
   network=dispatch(network,{type:'activityAction',id:'advance'},catalog);
-  network=finishPending(network);
+  network=finishDayStartedFeedback(
+    network,
+    state=>state.run.progression.worldFacts.includes('activity.trade-corridor.mark.network')
+  );
   assert.ok(network.run.progression.worldFacts.includes('trade.corridor.contact-thread-open'));
   assert.ok(network.run.progression.worldFacts.includes('activity.trade-corridor.mark.network'));
   assert.ok(
