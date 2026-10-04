@@ -62,14 +62,6 @@ const eventChoiceText=(eventId:string,choiceId:string,fallback:string)=>{
  const localizedFallback=base&&choiceId==='continue'?tr('ui.night.sequence.finishText',fallback):fallback;
  return tr(`event.${eventId}.choice.${choiceId}.text`,localizedFallback);
 };
-const pendingEventVariantText=(eventId:string,variantId:string,fallback:string)=>{
- const core=eventVariantText(eventId,variantId,fallback);
- const count=state.run.historyState.eventHistory[eventId]?.count??0;
- const key=povertyPendingLocalizationKey(eventId,variantId,count);
- return key?tr(key,core):core;
-};
-const eventChoiceLabel=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.label`,fallback);
-const eventChoiceText=(eventId:string,choiceId:string,fallback:string)=>tr(`event.${eventId}.choice.${choiceId}.text`,fallback);
 const mediaAlt=(mediaId:string|undefined,fallback:string)=>mediaId?tr(`media.${mediaId}.alt`,fallback):fallback;
 const lodgingLabel=(id:string,fallback:string)=>tr(`lodging.${id}.label`,fallback);
 const housingLabel=(id:string,fallback:string)=>tr(`housing.${id}.label`,fallback);
