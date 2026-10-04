@@ -468,13 +468,14 @@ function central(){
   const endingId=r.endings.result?.endingId??r.endings.committed??r.acceptedEnding;
   const endingDef=endingId?catalog.definitions.endings.find(item=>item.id===endingId):undefined;
   const endingTitle=endingDef?tr(`ending.${endingDef.id}.title`,endingDef.title):'';
+  const endingBody=r.status==='ended'&&endingDef?tr(`ending.${endingDef.id}.epilogue`,endingDef.epilogue):(r.journal.at(-1)??'');
   const presentationState=r.status==='ended'?'completed':r.status==='ending_committed'?'committed':'expired';
   const heading=r.status==='ended'
    ?tr('ui.run.endingCompleted',tr('ui.run.endingAccepted','Судьба принята'))
    :r.status==='ending_committed'
     ?tr('ui.run.endingCommitted','Судьба выбрана')
     :tr('ui.run.timeExpired','Срок истёк');
-  return `<section class="stage" data-ending-presentation-state="${esc(presentationState)}" ${endingId?`data-ending-id="${esc(endingId)}"`:''}>${mediaHTML(endingId?presentationIdForEnding(endingId):'location/town/default')}<div class="stage-title"><h1>${esc(heading)}</h1>${endingTitle?`<p class="ending-identity" tabindex="0">${esc(endingTitle)}</p>`:''}</div></section><section class="dialogue"><p>${esc(r.journal.at(-1)??'')}</p><button data-panel="legacy">${esc(tr('ui.run.fatesAndNextLife','Судьбы и следующая жизнь'))}</button></section>`;
+  return `<section class="stage" data-ending-presentation-state="${esc(presentationState)}" ${endingId?`data-ending-id="${esc(endingId)}"`:''}>${mediaHTML(endingId?presentationIdForEnding(endingId):'location/town/default')}<div class="stage-title"><h1>${esc(heading)}</h1>${endingTitle?`<p class="ending-identity" tabindex="0">${esc(endingTitle)}</p>`:''}</div></section><section class="dialogue"><p>${esc(endingBody)}</p><button data-panel="legacy">${esc(tr('ui.run.fatesAndNextLife','Судьбы и следующая жизнь'))}</button></section>`;
  }
  if(!r.flags['story.arrived'])return `<section class="stage">${mediaHTML('location/town/default')}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</span><h1>${esc(tr('ui.arrival.title','Следуйте за сусликом'))}</h1></div></section><section class="dialogue"><p>${esc(tr('ui.arrival.body','Обычный день. Белый суслик. Люк, который кто-то забыл закрыть.'))}</p><button data-action="arrival" class="primary" ${locked||busy?'disabled':''}>${esc(tr('ui.arrival.button','Пойти за ним'))}</button></section>`;
  if(r.flow.activity){
