@@ -1,0 +1,88 @@
+name: Chat 4 Activity Camp baseline repair v19
+
+on:
+  push:
+    branches:
+      - chat4/activity-camp-baseline-repair-v19
+    paths:
+      - '.github/workflows/chat4-activity-camp-baseline-repair-v19.yml'
+
+concurrency:
+  group: chat4-activity-camp-baseline-repair-v19
+  cancel-in-progress: true
+
+jobs:
+  focused-repair-gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact repair candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 9e3465d99c85a6ebbb1f5d2ac099919cc6ea53d4
+          fetch-depth: 1
+
+      - name: Verify exact repair SHA
+        shell: cmd
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          if not "%ACTUAL%"=="9e3465d99c85a6ebbb1f5d2ac099919cc6ea53d4" exit /b 1
+          echo Exact repair candidate: %ACTUAL%
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        run: npm run typecheck
+
+      - name: Validate
+        id: validate
+        continue-on-error: true
+        run: npm run validate
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: npm run build
+
+      - name: Focused Activity Camp baseline repair tests
+        id: focused
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/activity-camp-persistence-v17.test.ts
+          tests/activity.test.ts
+          tests/item-capability-activity-closure.test.ts
+          tests/forest-frontier-production-hardening-v12.test.ts
+          tests/migration.test.ts
+          tests/qa-activity-option-reload.test.ts
+          tests/qa-exactly-once-reload.test.ts
+          tests/restricted-sites-production-v15.test.ts
+          tests/trade-corridor-production-v13.test.ts
+          tests/anomalous-reach-production-v14.test.ts
+          tests/night-flow.test.ts
+
+      - name: Required-check gate
+        if: always()
+        shell: cmd
+        run: |
+          echo typecheck=${{ steps.typecheck.outcome }}
+          echo validate=${{ steps.validate.outcome }}
+          echo build=${{ steps.build.outcome }}
+          echo focused=${{ steps.focused.outcome }}
+          if not "${{ steps.typecheck.outcome }}"=="success" exit /b 1
+          if not "${{ steps.validate.outcome }}"=="success" exit /b 1
+          if not "${{ steps.build.outcome }}"=="success" exit /b 1
+          if not "${{ steps.focused.outcome }}"=="success" exit /b 1
