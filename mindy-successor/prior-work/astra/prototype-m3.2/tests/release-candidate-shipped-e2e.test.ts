@@ -152,6 +152,8 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
 
   // Explicit long-threshold accelerator only: prepare 49 completed shifts.
   // This is not product-authoring evidence; it only avoids replaying dozens of ordinary days.
+  assert.ok(s.run.progression.careers.lumber!.facts.includes('forest-specimen-catalogued'));
+  s.run.progression.careers.lumber!.stage='veteran';
   s.run.progression.careers.lumber!.counters.completed_shifts=49;
   s=reload(s);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,49);
