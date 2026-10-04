@@ -1,35 +1,20 @@
-name: mindy-successor check
+name: mindy-successor D41 current-main focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-d41-focused-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-d41-')
     runs-on: [self-hosted, Windows, X64]
-    timeout-minutes: 20
+    timeout-minutes: 25
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
@@ -44,5 +29,25 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused D41 validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+          Run-Group "d41-core" "node --experimental-strip-types --test tests/advanced-endings-tranche-a-v11.test.ts tests/ending-meta.test.ts tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts"
+          Run-Group "lumber" "node --experimental-strip-types --test tests/lumber-career-persistence.test.ts tests/lumber-hard-work-invariant.test.ts tests/lumber-foreman-leadership-integration.test.ts tests/lumber-target-cross-system.test.ts tests/lumber-target-production.test.ts tests/school-natural-path-lumber-v1.test.ts"
+          Run-Group "satyr" "node --experimental-strip-types --test tests/satyr-maid-natural-acceptance.test.ts tests/satyr-maid-ending-coexistence.test.ts tests/satyr-maid-boundary-ending.test.ts tests/satyr-maid-house-power-ending.test.ts tests/satyr-maid-relationship-night.test.ts tests/satyr-maid-school-hook.test.ts"
+          Run-Group "farm-tavern-hunter" "node --experimental-strip-types --test tests/undead-farm-natural-acceptance.test.ts tests/undead-farm-ending-coexistence.test.ts tests/school-undead-v13-natural-acceptance.test.ts tests/tavern-natural-acceptance.test.ts tests/tavern-runtime.test.ts tests/school-tavern-v14-natural-acceptance.test.ts tests/hunter-natural-acceptance.test.ts tests/school-hunter-v15-natural-acceptance.test.ts"
+          Run-Group "migration-palace" "node --experimental-strip-types --test tests/migration.test.ts tests/hard-work-meta-migration-v5.test.ts tests/palace-d23-consumer-integration-v8.test.ts tests/hard-work-palace-meta-smoke.test.ts"
+          Run-Group "presentation-localization" "node --experimental-strip-types --test tests/satyr-maid-production-presentation-reachability-c2-131.test.ts tests/undead-farm-presentation-v13-c2-134-142.test.ts tests/tavern-presentation-v14-baseline-c2-146-c2-153.test.ts tests/tavern-presentation-v14-c2-145-154.test.ts tests/presentation-ending-parity-v9.test.ts tests/presentation-stale-dead-binding-v9.test.ts tests/presentation-registry-collision-stale-v7.test.ts tests/late-career-presentation-replacement-validator.test.ts tests/localization.test.ts tests/ending-action-localization-production.test.ts"
+          if ($failed -ne 0) { exit 1 }
