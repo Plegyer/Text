@@ -22,14 +22,14 @@ jobs:
       - name: Checkout exact repair candidate
         uses: actions/checkout@v4
         with:
-          ref: 9e3465d99c85a6ebbb1f5d2ac099919cc6ea53d4
+          ref: c38ab2a67b7c029e7e656dbb89d37dfb194fdb17
           fetch-depth: 1
 
       - name: Verify exact repair SHA
         shell: cmd
         run: |
           for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
-          if not "%ACTUAL%"=="9e3465d99c85a6ebbb1f5d2ac099919cc6ea53d4" exit /b 1
+          if not "%ACTUAL%"=="c38ab2a67b7c029e7e656dbb89d37dfb194fdb17" exit /b 1
           echo Exact repair candidate: %ACTUAL%
 
       - name: Setup Node
