@@ -6,7 +6,7 @@ Owner: Chat 2 / sole current-main assembly + full-CI lane
 Assembly branch:
 `chat2/assembly-d41-tranche-a-current-main-20261004-v1`
 
-Latest checked head:
+Latest checked production head:
 `836639de6ae9d654e168f50a8c5e1896b1347d91`
 
 D41 producer:
@@ -16,54 +16,53 @@ Producer focused QA:
 `37143638847` — **SUCCESS**
 
 First D41 current-main full CI:
-- run #1180 / `37201061717`
-- result: **FAILURE**
-- total failing tests: **22**
+- #1180 / run `37201061717`
+- **FAILURE**
+- 1081 total / 1059 pass / 22 fail / 0 skipped
 
-## Failure classes
+## Authoritative triage
 
-A. **Stale frozen/negative contracts now contradicted by accepted D41**
-Examples:
-- Forest audit/result identities;
-- Hunter producer-mechanics freeze comparisons;
-- old Forest default aftermath expectations;
-- starter-career collision guards;
-- old Tavern route/ending identity assumptions.
+Chat 5 completed exact failure-by-failure triage:
 
-B. **Retired legacy presentation semantic still referenced**
-- dead semantic: `ending/tavern-court`.
-D41 canonical retirement/migration must remain authoritative; do not resurrect the retired semantic merely to satisfy old presentation inventory.
+`chat5/d41-full-suite-triage-v14@06fd08196d9eabdc1b4f6e3a360794cd64d1e80c`
 
-C. **Real current-flow regressions to repair, not mask**
-Examples:
-- Lumber ending eligibility blocked by a current pending scene/Activity state;
-- eligible ending controls remain disabled in UI;
-- RC one-Save / release-candidate flows fail to reach/commit expected ending state.
+Document:
+`mindy-successor/docs/tasks/CHAT5_D41_FULL_SUITE_TRIAGE_v14.md`
+
+Classification:
+- **18 Class A** — stale pre-D41 freeze/negative/accelerator expectations;
+- **4 Class B** — retired Tavern legacy identity/presentation-manifest references;
+- **0 Class C** — no evidence of a D41 runtime/seam regression.
+
+Use that triage as the repair map.
 
 ## Repair rule
 
-For every failure classify first as:
-1. stale pre-D41 expectation -> update to exact D41 authority while preserving its original safety purpose; or
-2. real integration regression -> repair production/runtime seam.
+Update only the exact stale tests/fixtures/manifests identified by the triage.
 
-Do not:
-- weaken D16 explicit commit;
-- auto-clear legitimate pending Night/Activity scenes;
-- restore retired Tavern legacy ending IDs/rewards;
-- reintroduce old Palace shortcuts;
-- change D23 Palace gate;
-- bypass canonical Strong Meta;
-- modify D31 seasonal rules;
-- infer routes from generic readiness.
+Do not repair #1180 by:
+- removing D41 Hunter endings or Satyr Personal Network;
+- restoring Tavern legacy ending IDs or old rewards;
+- removing Warden Signs Forest choice;
+- removing `lumber.forest.truth-known` from Tavern confirmation;
+- removing `forest-specimen-catalogued` from Forest Compact;
+- consuming the preserved Forest specimen;
+- weakening Lumber D34 stage gates;
+- allowing ending commit while a legitimate blocking scene owns interaction;
+- creating Palace coupling;
+- changing Secret Debt behavior;
+- bypassing canonical Strong Meta.
 
-Priority:
-1. fix real blocking-state / ending-control regressions;
-2. remove/replace dead retired Tavern presentation references;
-3. update stale Forest/Hunter/Tavern freeze expectations to current authoritative identities;
-4. rerun focused D41 + affected one-Save/UI suites;
-5. only then rerun full CI.
+Specific production hygiene still required:
+- remove dead `ending/tavern-stay`, `ending/tavern-court`, `ending/tavern-guild` source-inventory references;
+- replace with exactly one canonical source-inventory reference for Innkeeper / Information Broker / Sanctuary;
+- preserve neutral Tavern imagery for Information Broker.
 
-If the repaired exact head is fully green:
-- freeze SHA;
-- report `READY_FOR_LEADER_MERGE`;
-- do not merge main.
+After repairs:
+1. focused D41 + affected Forest/Hunter/Tavern/UI/one-Save suites;
+2. typecheck / validate / build;
+3. one full CI;
+4. freeze exact green head;
+5. report `READY_FOR_LEADER_MERGE`.
+
+Do not merge main.
