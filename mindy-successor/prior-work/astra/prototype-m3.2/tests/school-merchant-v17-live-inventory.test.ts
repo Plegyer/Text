@@ -122,8 +122,9 @@ test('D40 Merchant School publisher creates literacy readiness at three sessions
   let s=started();
   while(s.run.resources.money<20_000)s=work(s,'lumber.shift');
   for(let i=0;i<3;i++){s=paidLesson(s,'school.course.literacy_and_numbers');s=settlePending(s);}
-  s=finishNight(s);
-  assert.ok(merchantFacts(s).includes('school-literacy-ready'),'D40 readiness may be prepared before first Merchant shift after the normal reaction/day boundary');
+  assert.ok(merchantFacts(s).includes('school-literacy-ready'),'D40 readiness is published on the exact third session through normal resolver cascade before first Merchant shift');
+  assert.ok(s.run.progression.careers.guard?.facts.includes('school-literacy-ready'),'simultaneous Guard literacy readiness drains in the same resolver cascade');
+  assert.ok(s.run.progression.careers['artist-geisha']?.facts.includes('school-literacy-ready'),'simultaneous Artist literacy readiness drains in the same resolver cascade');
   s=parseSave(JSON.stringify(s),catalog);
   assert.ok(merchantFacts(s).includes('school-literacy-ready'),'readiness survives reload');
   for(let i=0;i<5;i++){s=paidLesson(s,'school.course.rhetoric_and_social');s=settlePending(s);}
