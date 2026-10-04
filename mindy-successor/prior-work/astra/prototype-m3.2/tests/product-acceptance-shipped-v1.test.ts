@@ -220,11 +220,11 @@ test('PA14-PA20: Forest entry/logging-road/reload/success/escape are shipped; Ol
 test('PA21-PA26 accelerator: two Lumber endings may be eligible; ordinary play remains available; Hard Work commits/completes once and changes New Run',()=>{
   let s=started();
   s.run.progression.careers.lumber={
-    stage:'accepted-hand',
+    stage:'veteran',
     shifts:0,
     counters:{completed_shifts:49},
     choices:{},
-    facts:['forest-truth-known','forest-problem-resolved']
+    facts:['forest-specimen-catalogued','forest-truth-known','forest-problem-resolved']
   };
 
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);

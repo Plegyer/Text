@@ -75,7 +75,10 @@ test('C2-145 Tavern v14 presentation constants match the published C1D-121 contr
     'introduced','trusted','night-request','request-resolved','confidentiality-resolved'
   ]);
   assert.deepEqual([...TAVERN_ENDING_IDS],[
-    'tavern-stay','tavern-guild','tavern-court','ending.tavern.hard-work'
+    'ending.tavern.hard-work',
+    'ending.tavern.innkeeper',
+    'ending.tavern.information-broker',
+    'ending.tavern.sanctuary'
   ]);
 });
 

@@ -18,30 +18,6 @@
       "ru": "Сдать экзамен. Наследие: смекалка +5 на старте и один бесплатный урок каждую неделю.",
       "en": "Pass the exam. Legacy: +5 intelligence at the start and one free lesson every week."
     },
-    "ending.tavern-stay.title": {
-      "ru": "Хозяйка третьего тоста",
-      "en": "Mistress of the Third Toast"
-    },
-    "ending.tavern-stay.description": {
-      "ru": "18 смен в таверне. Наследие: обаяние +5 в следующей жизни.",
-      "en": "Complete 18 tavern shifts. Legacy: +5 charm in the next life."
-    },
-    "ending.tavern-guild.title": {
-      "ru": "Праздник без разрешения",
-      "en": "Festival Without Permission"
-    },
-    "ending.tavern-guild.description": {
-      "ru": "Защитить самостоятельность городского праздника. Наследие: чуткость +5.",
-      "en": "Protect the town festival’s independence. Legacy: +5 empathy."
-    },
-    "ending.tavern-court.title": {
-      "ru": "Приглашение под печатью",
-      "en": "Invitation Under Seal"
-    },
-    "ending.tavern-court.description": {
-      "ru": "Передать накладную принцу. Наследие: дерзость +5.",
-      "en": "Give the delivery note to the prince. Legacy: +5 boldness."
-    },
     "ending.lumber-stay.title": {
       "ru": "Бригадир поневоле",
       "en": "Reluctant Forewoman"
@@ -73,6 +49,30 @@
     "ending.ending.lumber.forest.description": {
       "ru": "Судьба после подтверждённой лесной правды и завершения связанной карьерной проблемы в артели.",
       "en": "A fate reached after the forest truth is confirmed and the related Lumber career problem is resolved."
+    },
+    "ending.ending.tavern.innkeeper.title": {
+      "ru": "Таверна — хозяйка",
+      "en": "Tavern — Innkeeper"
+    },
+    "ending.ending.tavern.innkeeper.description": {
+      "ru": "Управленческий финал через учёт, доступ персонала, доказательства из книги гостей, давление поставок и разрешённый кризис дома.",
+      "en": "A management ending through records, staff access, guest-ledger evidence, supply pressure, and a resolved house crisis."
+    },
+    "ending.ending.tavern.information-broker.title": {
+      "ru": "Таверна — информационный посредник",
+      "en": "Tavern — Information Broker"
+    },
+    "ending.ending.tavern.information-broker.description": {
+      "ru": "Профессиональный информационный финал через риторику, добровольный контакт с путешественником, конфиденциальность и независимо подтверждённый слух.",
+      "en": "A professional information ending through Rhetoric, voluntary traveler contact, confidentiality, and an independently confirmed rumour."
+    },
+    "ending.ending.tavern.sanctuary.title": {
+      "ru": "Таверна — убежище",
+      "en": "Tavern — Sanctuary"
+    },
+    "ending.ending.tavern.sanctuary.description": {
+      "ru": "Финал защищённого общественного узла через помощь с жильём, сохранённую конфиденциальность и давление на доступное укрытие.",
+      "en": "A protected community-node ending through housing assistance, kept confidentiality, and pressure on available shelter."
     }
   },
   "invariants": {

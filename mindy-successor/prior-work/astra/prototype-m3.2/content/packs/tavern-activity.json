@@ -10,6 +10,9 @@
       ],
       "careers": [
         "tavern"
+      ],
+      "worldFacts": [
+        "lumber.forest.truth-known"
       ]
     },
     "writes": {
@@ -43,6 +46,11 @@
       "variantCooldownDays": 0,
       "maxShows": 1,
       "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "lumber.forest.truth-known",
+          "present": true
+        },
         {
           "kind": "careerFact",
           "career": "tavern",

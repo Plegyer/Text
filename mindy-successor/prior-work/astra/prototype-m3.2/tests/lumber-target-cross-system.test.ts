@@ -62,7 +62,12 @@ test('School result triggers Lumber reaction without another shift or extra reac
   assert.equal(s.run.progression.careers.lumber.counters.completed_shifts,shifts);
   assert.ok(s.run.progression.careers.lumber.facts.includes('management-school-ready'));
   assert.ok(s.run.progression.careers.lumber.facts.includes('forewoman-problem-resolved'));
-  assert.ok(s.run.endings.eligible.includes('ending.lumber.forewoman'));
+  assert.equal(s.run.endings.eligible.includes('ending.lumber.forewoman'),false,
+    'D34 forbids Forewoman before trusted-worker / 8 shifts');
+  const ending=cat.definitions.endings.find(e=>e.id==='ending.lumber.forewoman')!;
+  s.run.progression.careers.lumber.stage='trusted-worker';
+  s.run.progression.careers.lumber.counters.completed_shifts=8;
+  assert.equal(eligible(ending.conditions,s,cat),true);
 });
 
 test('old_boundary_token capability fixture opens the Lumber Forest Activity entry',()=>{
@@ -83,7 +88,9 @@ test('old_boundary_token capability fixture opens the Lumber Forest Activity ent
 
 test('A5 activityResult success triggers immediate Lumber continuation with 0 extra Energy',()=>{
   const cat=catalog();
-  let s=grantOldBoundaryTokenCapability(ready(),cat);
+  const base=ready();
+  base.run.progression.careers.lumber={stage:'trusted-worker',shifts:0,counters:{completed_shifts:8},choices:{},facts:[]};
+  let s=grantOldBoundaryTokenCapability(base,cat);
   s=dispatch(s,{type:'enterActivity',id:'lumber.forest'},cat);
   const cityEnergy=s.run.dayState.energyCurrent;
   s=dispatch(s,{type:'activityAction',id:'advance'},cat);
@@ -97,8 +104,10 @@ test('A5 activityResult success triggers immediate Lumber continuation with 0 ex
 
   s=dispatch(s,{type:'choice',id:'continue'},cat);
   assert.equal(s.run.dayState.energyCurrent,cityEnergy);
+  assert.ok(s.run.progression.careers.lumber.facts.includes('forest-specimen-catalogued'));
   assert.ok(s.run.progression.careers.lumber.facts.includes('forest-truth-known'));
   assert.ok(s.run.progression.careers.lumber.facts.includes('forest-problem-resolved'));
+  assert.equal(s.run.inventory.forest_preserved_specimen??0,1,'D41 does not consume the preserved Forest specimen');
   assert.ok(s.run.endings.eligible.includes('ending.lumber.forest'));
 });
 
@@ -111,6 +120,11 @@ test('Hard Work, Forewoman and Forest can be eligible together and eligibility d
   s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   assert.equal(s.run.progression.careers.lumber.counters.completed_shifts,50);
   assert.ok(s.run.endings.eligible.includes('ending.lumber.hard-work'));
+  assert.equal(s.run.pending?.eventId,'lumber.career-trusted-worker');
+  s=dispatch(s,{type:'choice',id:'continue'},cat);
+  assert.equal(s.run.pending?.eventId,'lumber.career-veteran');
+  s=dispatch(s,{type:'choice',id:'continue'},cat);
+  assert.equal(s.run.progression.careers.lumber.stage,'veteran');
 
   s=dispatch(s,{type:'action',id:'school.lumber-management'},cat);
   assert.equal(s.run.pending?.eventId,'lumber-cross.school-management-return');

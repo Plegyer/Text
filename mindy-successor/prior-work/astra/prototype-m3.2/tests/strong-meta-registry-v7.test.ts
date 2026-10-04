@@ -18,9 +18,9 @@ import {
 } from '../src/core/strongMeta.ts';
 import {metaRewardSchema} from '../src/core/schema.ts';
 
-test('registry preserves four v7 rewards and adds seven D40 Specialists',()=>{
+test('registry preserves v7 + D40 and adds nine D41 Specialists without changing capacity',()=>{
   validateStrongMetaRegistry();
-  assert.equal(Object.keys(strongMetaRegistry).length,11);
+  assert.equal(Object.keys(strongMetaRegistry).length,20);
   assert.equal(STRONG_META_KEYSTONE_CAPACITY,1);
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
   assert.equal(strongMetaRegistry[STRONG_META_IDS.palaceCap200].class,'specialist');
@@ -28,6 +28,10 @@ test('registry preserves four v7 rewards and adds seven D40 Specialists',()=>{
   assert.equal(strongMetaRegistry[STRONG_META_IDS.workRhythm].class,'keystone');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.networkRetainer].class,'keystone');
   for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster])assert.equal(strongMetaRegistry[id].class,'specialist',id);
+  for(const id of [STRONG_META_IDS.lumberForewomanLedger,STRONG_META_IDS.lumberForestCompactRoute,STRONG_META_IDS.satyrHouseLedger,STRONG_META_IDS.satyrGuestNetwork,STRONG_META_IDS.farmFieldPreservation,STRONG_META_IDS.farmSupplierAccount,STRONG_META_IDS.tavernHouseLedger,STRONG_META_IDS.tavernSafehouseNetwork,STRONG_META_IDS.hunterMasterKit]){
+    assert.equal(strongMetaRegistry[id].class,'specialist',id);
+    assert.equal(strongMetaRegistry[id].authority,'D41',id);
+  }
 });
 
 test('ownership is separate from explicit Keystone/Specialist preference and deselection is exact',()=>{
@@ -166,7 +170,7 @@ test('unknown owned stable IDs survive canonicalization without becoming approve
   assert.equal(Object.hasOwn(strongMetaRegistry,'future.route.unknown'),false);
 });
 
-test('content metaReward schema accepts approved v7 and D40 strong Meta reward IDs',()=>{
+test('content metaReward schema accepts approved v7, D40, and D41 strong Meta reward IDs',()=>{
   assert.equal(metaRewardSchema.safeParse({
     kind:'strongMeta',
     rewardId:'strong.reward.cap200',
@@ -177,6 +181,12 @@ test('content metaReward schema accepts approved v7 and D40 strong Meta reward I
     kind:'strongMeta',
     rewardId:'strong.reward.d40',
     reward:STRONG_META_IDS.guardInstitutionalFavors
+  }).success,true);
+
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'strongMeta',
+    rewardId:'strong.reward.d41',
+    reward:STRONG_META_IDS.lumberForewomanLedger
   }).success,true);
 
   assert.equal(metaRewardSchema.safeParse({

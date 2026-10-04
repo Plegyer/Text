@@ -74,28 +74,28 @@
       "captionKey": "presentation.static.ending.scholar-life.caption"
     },
     {
-      "presentationId": "ending/tavern-stay",
-      "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
+      "presentationId": "ending/tavern/innkeeper",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
       "state": "exact-after-c2-52",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.static.ending.tavern-stay.alt",
-      "captionKey": "presentation.static.ending.tavern-stay.caption"
+      "altKey": "presentation.static.tavern-ending-innkeeper.alt",
+      "captionKey": "presentation.static.tavern-ending-innkeeper.caption"
     },
     {
-      "presentationId": "ending/tavern-guild",
-      "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
+      "presentationId": "ending/tavern/sanctuary",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
       "state": "exact-after-c2-52",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.static.ending.tavern-guild.alt",
-      "captionKey": "presentation.static.ending.tavern-guild.caption"
+      "altKey": "presentation.static.tavern-ending-sanctuary.alt",
+      "captionKey": "presentation.static.tavern-ending-sanctuary.caption"
     },
     {
-      "presentationId": "ending/tavern-court",
-      "sourceAsset": "assets/presentation/tavern-ending-court.svg",
+      "presentationId": "ending/tavern/information-broker",
+      "sourceAsset": "assets/presentation/career-tavern-result.svg",
       "state": "exact-after-c2-52",
       "fallbackId": "location/town/default",
-      "altKey": "presentation.static.ending.tavern-court.alt",
-      "captionKey": "presentation.static.ending.tavern-court.caption"
+      "altKey": "presentation.static.tavern-ending-information-broker.alt",
+      "captionKey": "presentation.static.tavern-ending-information-broker.caption"
     },
     {
       "presentationId": "ending/lumber-stay",

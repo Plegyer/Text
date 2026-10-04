@@ -13,6 +13,12 @@
       ],
       "inventory": [
         "farm_preserved_specimen"
+      ],
+      "worldFacts": [
+        "lumber.forest.truth-known"
+      ],
+      "meta": [
+        "unlock"
       ]
     },
     "writes": {
@@ -46,6 +52,11 @@
       "variantCooldownDays": 0,
       "maxShows": 1,
       "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "lumber.forest.truth-known",
+          "present": true
+        },
         {
           "kind": "careerFact",
           "career": "undead-farm",
@@ -91,6 +102,64 @@
               "fact": "external-anomaly-ready"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "undead-farm.activity.anomaly-catalog-diagnosis",
+      "title": "Anomaly Catalog: a second diagnosis",
+      "sourceDomain": "undead-farm",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerFactAdded",
+          "career": "undead-farm",
+          "fact": "activity-source-returned"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 35,
+      "blocking": false,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "metaUnlock",
+          "unlock": "knowledge.undead-farm.anomaly-catalog",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "activity-source-returned",
+          "present": true
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "sample-preserved",
+          "present": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The inherited anomaly catalog suggests one extra comparison: separate what changed outside the farm from what was already present in the preserved sample. It reveals a route clue, but completes no Farm requirement.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "review-catalog",
+          "label": "Review the extra diagnosis",
+          "text": "Read the additional diagnosis as information only; it grants no item, capability, or ending-ready fact.",
+          "conditions": [],
+          "effects": []
         }
       ]
     }

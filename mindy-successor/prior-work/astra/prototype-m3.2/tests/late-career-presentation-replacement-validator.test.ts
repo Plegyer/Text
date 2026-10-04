@@ -63,14 +63,11 @@ test('late-career semantic slots are editor-replaceable without gameplay or Save
   }
 });
 
-test('manifest keeps presentation ownership boundaries and documented out-of-scope Tavern endings',()=>{
+test('manifest keeps presentation ownership boundaries after D41 retires stale Tavern ending IDs',()=>{
   assert.equal(manifest.gameplayMutation,false);
   assert.equal(manifest.invariants.existingSemanticIdsOnly,true);
   assert.equal(manifest.invariants.noGameplayFieldsChanged,true);
   assert.equal(manifest.invariants.noSaveOrRngMutation,true);
   assert.equal(manifest.invariants.nonExplicitProfessionalCoverage,true);
-  assert.deepEqual(
-    manifest.documentedMissingSlots.map((entry:any)=>entry.presentationId).sort(),
-    ['ending/tavern-court','ending/tavern-guild','ending/tavern-stay']
-  );
+  assert.deepEqual(manifest.documentedMissingSlots,[]);
 });

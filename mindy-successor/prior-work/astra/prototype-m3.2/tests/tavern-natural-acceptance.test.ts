@@ -159,22 +159,26 @@ test('clean Tavern run reaches Year-2 unlock, cross-system routes, overlapping e
   assert.ok(s.run.progression.careers.tavern.facts.includes('information-broker-ready'));
   assert.equal(s.run.progression.careers.tavern.stage,'outcome-ready');
 
-  for(const ending of ['ending.tavern.hard-work','tavern-guild','tavern-court']){
+  for(const ending of ['ending.tavern.hard-work','ending.tavern.information-broker']){
     assert.ok(s.run.endings.eligible.includes(ending),ending);
   }
+  assert.equal(s.run.endings.eligible.includes('ending.tavern.sanctuary'),false,
+    'information-crisis resolution must not silently become Sanctuary');
   assert.equal(s.run.status,'active');
   assert.equal(s.run.endings.committed,null);
 
-  s=dispatch(s,{type:'commitEnding',id:'tavern-court'},catalog);
+  s=dispatch(s,{type:'commitEnding',id:'ending.tavern.information-broker'},catalog);
   assert.equal(s.run.status,'ending_committed');
   s=dispatch(s,{type:'completeEnding'},catalog);
   assert.equal(s.run.status,'ended');
-  assert.ok(s.meta.completedEndings.includes('tavern-court'));
-  assert.ok(s.meta.unlocks.includes('court'));
+  assert.ok(s.meta.completedEndings.includes('ending.tavern.information-broker'));
+  assert.ok(s.meta.unlocks.includes('knowledge.tavern.broker-index'));
+  assert.equal(s.meta.unlocks.includes('court'),false);
 
   s=dispatch(s,{type:'newLife'},catalog);
   assert.equal(s.run.status,'active');
   assert.equal(s.run.progression.careers.tavern,undefined);
-  assert.ok(s.meta.unlocks.includes('court'));
-  assert.ok(s.meta.completedEndings.includes('tavern-court'));
+  assert.ok(s.meta.unlocks.includes('knowledge.tavern.broker-index'));
+  assert.ok(s.meta.completedEndings.includes('ending.tavern.information-broker'));
+  assert.equal(s.meta.completedEndings.includes('tavern-court'),false);
 });

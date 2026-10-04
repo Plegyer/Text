@@ -2695,28 +2695,28 @@
       "en": "Pass the exam. Legacy: +5 intelligence at the start and one free lesson every week."
     },
     "ending.tavern-stay.title": {
-      "ru": "Хозяйка третьего тоста",
-      "en": "Mistress of the Third Toast"
+      "ru": "Устаревший финал таверны (мигрируется)",
+      "en": "Retired Tavern ending (migrated)"
     },
     "ending.tavern-stay.description": {
-      "ru": "18 смен в таверне. Наследие: обаяние +5 в следующей жизни.",
-      "en": "Complete 18 tavern shifts. Legacy: +5 charm in the next life."
+      "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.innkeeper.",
+      "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.innkeeper."
     },
     "ending.tavern-guild.title": {
-      "ru": "Праздник без разрешения",
-      "en": "Festival Without Permission"
+      "ru": "Устаревший финал таверны (мигрируется)",
+      "en": "Retired Tavern ending (migrated)"
     },
     "ending.tavern-guild.description": {
-      "ru": "Защитить самостоятельность городского праздника. Наследие: чуткость +5.",
-      "en": "Protect the town festival’s independence. Legacy: +5 empathy."
+      "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.sanctuary.",
+      "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.sanctuary."
     },
     "ending.tavern-court.title": {
-      "ru": "Приглашение под печатью",
-      "en": "Invitation Under Seal"
+      "ru": "Устаревший финал таверны (мигрируется)",
+      "en": "Retired Tavern ending (migrated)"
     },
     "ending.tavern-court.description": {
-      "ru": "Передать накладную принцу. Наследие: дерзость +5.",
-      "en": "Give the delivery note to the prince. Legacy: +5 boldness."
+      "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.information-broker и не открывает Дворец.",
+      "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.information-broker and grants no Palace access."
     },
     "ending.lumber-stay.title": {
       "ru": "Бригадир поневоле",
@@ -12913,6 +12913,246 @@
     "event.palace.invitation.reveal.choice.accept.text": {
       "ru": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
       "en": "You confirm the visit. That is enough to open access to Palace work in this life."
+    },
+    "ending.ending.satyr-maid.personal-network.title": {
+      "ru": "Служанка у сатиров — личная сеть",
+      "en": "Satyr Maid — Personal Network"
+    },
+    "ending.ending.satyr-maid.personal-network.description": {
+      "ru": "Профессиональный финал через повторные рабочие встречи, добровольную ночную встречу и явно принятую и завершённую просьбу; романтика не обязательна.",
+      "en": "A professional ending through repeated work meetings, a voluntary Night meeting, and an explicitly accepted and resolved request; romance is not required."
+    },
+    "ending.ending.undead-farm.external-anomaly.title": {
+      "ru": "Ферма нежити — внешняя аномалия",
+      "en": "Undead Farm — External Anomaly"
+    },
+    "ending.ending.undead-farm.external-anomaly.description": {
+      "ru": "Финал через исследовательскую подготовку, сохранённый образец фермы и подтверждённый внешний источник аномалии.",
+      "en": "An ending built from research preparation, a preserved farm specimen, and a confirmed external anomaly source."
+    },
+    "ending.ending.tavern.innkeeper.title": {
+      "ru": "Таверна — хозяйка",
+      "en": "Tavern — Innkeeper"
+    },
+    "ending.ending.tavern.innkeeper.description": {
+      "ru": "Управленческий финал через учёт, доступ персонала, доказательства из книги гостей, давление поставок и разрешённый кризис дома.",
+      "en": "A management ending through records, staff access, guest-ledger evidence, supply pressure, and a resolved house crisis."
+    },
+    "ending.ending.tavern.information-broker.title": {
+      "ru": "Таверна — информационный посредник",
+      "en": "Tavern — Information Broker"
+    },
+    "ending.ending.tavern.information-broker.description": {
+      "ru": "Профессиональный информационный финал через риторику, добровольный контакт с путешественником, конфиденциальность и независимо подтверждённый слух.",
+      "en": "A professional information ending through Rhetoric, voluntary traveler contact, confidentiality, and an independently confirmed rumour."
+    },
+    "ending.ending.tavern.sanctuary.title": {
+      "ru": "Таверна — убежище",
+      "en": "Tavern — Sanctuary"
+    },
+    "ending.ending.tavern.sanctuary.description": {
+      "ru": "Финал защищённого общественного узла через помощь с жильём, сохранённую конфиденциальность и давление на доступное укрытие.",
+      "en": "A protected community-node ending through housing assistance, kept confidentiality, and pressure on available shelter."
+    },
+    "ending.ending.hunter.master-hunter.title": {
+      "ru": "Охотница — мастер",
+      "en": "Hunter — Master Hunter"
+    },
+    "ending.ending.hunter.master-hunter.description": {
+      "ru": "Финал мастерства через контракты всех четырёх сезонов, две успешные экспедиции, сохранённые доказательства и сложный маршрут.",
+      "en": "A mastery ending through all four seasonal contracts, two successful expeditions, preserved evidence, and a rough route."
+    },
+    "ending.ending.hunter.warden.title": {
+      "ru": "Охотница — хранительница",
+      "en": "Hunter — Warden"
+    },
+    "ending.ending.hunter.warden.description": {
+      "ru": "Финал управления территорией через сотрудничество со Старшей проводницей, защищённый маршрут и подтверждённую территориальную улику; Activity не обязательна.",
+      "en": "A territory-stewardship ending through Senior Guide cooperation, a protected route, and a qualifying territorial clue; Activity is not mandatory."
+    },
+    "ending.ending.hunter.legend.title": {
+      "ru": "Охотница — легенда",
+      "en": "Hunter — Legend"
+    },
+    "ending.ending.hunter.legend.description": {
+      "ru": "Финал редкого контракта после мастерской подготовки, независимых линий улик и третьей успешной экспедиции.",
+      "en": "A rare-contract ending after master preparation, independent clue lines, and a third successful expedition."
+    },
+    "presentation.static.satyr-maid-ending-personal-network.alt": {
+      "ru": "Профессиональная сцена финала личной сети служанки у сатиров без романтического обязательства.",
+      "en": "A professional Satyr Maid Personal Network ending scene without a romance requirement."
+    },
+    "presentation.static.satyr-maid-ending-personal-network.caption": {
+      "ru": "Финал служанки у сатиров: личная сеть.",
+      "en": "Satyr Maid ending: Personal Network."
+    },
+    "presentation.static.undead-farm-ending-external-anomaly.alt": {
+      "ru": "Статичная сцена финала фермы нежити после сопоставления сохранённого образца с внешним источником.",
+      "en": "A static Undead Farm ending scene after comparing a preserved specimen with an external source."
+    },
+    "presentation.static.undead-farm-ending-external-anomaly.caption": {
+      "ru": "Финал фермы нежити: внешняя аномалия.",
+      "en": "Undead Farm ending: External Anomaly."
+    },
+    "presentation.static.tavern-ending-innkeeper.alt": {
+      "ru": "Рабочая сцена таверны с учётом и ключами персонала обозначает принятие ответственности за дом.",
+      "en": "A tavern work scene with records and staff keys represents taking operational responsibility for the house."
+    },
+    "presentation.static.tavern-ending-innkeeper.caption": {
+      "ru": "Финал таверны: хозяйка.",
+      "en": "Tavern ending: Innkeeper."
+    },
+    "presentation.static.tavern-ending-information-broker.alt": {
+      "ru": "Рабочая сцена таверны с записями обозначает профессиональный информационный узел без дворцового приглашения.",
+      "en": "A tavern work scene with records represents a professional information node without any Palace invitation."
+    },
+    "presentation.static.tavern-ending-information-broker.caption": {
+      "ru": "Финал таверны: информационный посредник.",
+      "en": "Tavern ending: Information Broker."
+    },
+    "presentation.static.tavern-ending-sanctuary.alt": {
+      "ru": "Рабочая сцена таверны обозначает защищённое убежище, где практическая помощь сочетается с конфиденциальностью.",
+      "en": "A tavern work scene represents a protected sanctuary combining practical shelter with confidentiality."
+    },
+    "presentation.static.tavern-ending-sanctuary.caption": {
+      "ru": "Финал таверны: убежище.",
+      "en": "Tavern ending: Sanctuary."
+    },
+    "presentation.static.hunter-ending-master-hunter.alt": {
+      "ru": "Охотничья рабочая сцена обозначает мастерство, доказанное сезонами и подготовленными экспедициями.",
+      "en": "A hunter work scene represents mastery proven across seasons and prepared expeditions."
+    },
+    "presentation.static.hunter-ending-master-hunter.caption": {
+      "ru": "Финал охотницы: мастер.",
+      "en": "Hunter ending: Master Hunter."
+    },
+    "presentation.static.hunter-ending-warden.alt": {
+      "ru": "Охотничья рабочая сцена обозначает охрану маршрутов и сотрудничество в управлении территорией.",
+      "en": "A hunter work scene represents route protection and cooperative territory stewardship."
+    },
+    "presentation.static.hunter-ending-warden.caption": {
+      "ru": "Финал охотницы: хранительница.",
+      "en": "Hunter ending: Warden."
+    },
+    "presentation.static.hunter-ending-legend.alt": {
+      "ru": "Охотничья рабочая сцена обозначает завершённый редкий контракт после подготовленной серии экспедиций.",
+      "en": "A hunter work scene represents a completed rare contract after a prepared sequence of expeditions."
+    },
+    "presentation.static.hunter-ending-legend.caption": {
+      "ru": "Финал охотницы: легенда.",
+      "en": "Hunter ending: Legend."
+    },
+    "event.undead-farm.activity.anomaly-catalog-diagnosis.title": {
+      "ru": "Каталог аномалий: второй диагноз",
+      "en": "Anomaly Catalog: a second diagnosis"
+    },
+    "event.undead-farm.activity.anomaly-catalog-diagnosis.variant.default.text": {
+      "ru": "Унаследованный каталог предлагает ещё одно сопоставление: отделить внешнее изменение от того, что уже было в сохранённом образце. Это только подсказка маршрута и не завершает ни одного требования фермы.",
+      "en": "The inherited anomaly catalog suggests one extra comparison: separate what changed outside the farm from what was already present in the preserved sample. It is only a route clue and completes no Farm requirement."
+    },
+    "event.undead-farm.activity.anomaly-catalog-diagnosis.choice.review-catalog.label": {
+      "ru": "Проверить дополнительный диагноз",
+      "en": "Review the extra diagnosis"
+    },
+    "event.undead-farm.activity.anomaly-catalog-diagnosis.choice.review-catalog.text": {
+      "ru": "Прочитать дополнительный вывод как информацию: без предмета, способности или факта готовности финала.",
+      "en": "Read the additional diagnosis as information only: no item, capability, or ending-ready fact."
+    },
+    "event.tavern.information.broker-index-y1.title": {
+      "ru": "Индекс посредника: заметка о риске маршрута",
+      "en": "Broker Index: route risk note"
+    },
+    "event.tavern.information.broker-index-y1.variant.default.text": {
+      "ru": "Индекс напоминает об одном практическом риске: записанный рассказ всё ещё требует независимого подтверждения маршрута. Подсказка не меняет факты и не завершает условия.",
+      "en": "The Broker Index marks one practical risk: a recorded report still needs an independent route confirmation. The hint changes no fact and completes no prerequisite."
+    },
+    "event.tavern.information.broker-index-y1.choice.read-hint.label": {
+      "ru": "Прочитать подсказку посредника",
+      "en": "Read the broker hint"
+    },
+    "event.tavern.information.broker-index-y1.choice.read-hint.text": {
+      "ru": "Использовать заметку только как ориентир интерфейса: без расхода ресурсов и продвижения маршрута.",
+      "en": "Use the note as UI guidance only: no resource cost and no route advancement."
+    },
+    "event.tavern.information.broker-index-y2.title": {
+      "ru": "Индекс посредника: заметка о риске маршрута",
+      "en": "Broker Index: route risk note"
+    },
+    "event.tavern.information.broker-index-y2.variant.default.text": {
+      "ru": "Индекс напоминает об одном практическом риске: записанный рассказ всё ещё требует независимого подтверждения маршрута. Подсказка не меняет факты и не завершает условия.",
+      "en": "The Broker Index marks one practical risk: a recorded report still needs an independent route confirmation. The hint changes no fact and completes no prerequisite."
+    },
+    "event.tavern.information.broker-index-y2.choice.read-hint.label": {
+      "ru": "Прочитать подсказку посредника",
+      "en": "Read the broker hint"
+    },
+    "event.tavern.information.broker-index-y2.choice.read-hint.text": {
+      "ru": "Использовать заметку только как ориентир интерфейса: без расхода ресурсов и продвижения маршрута.",
+      "en": "Use the note as UI guidance only: no resource cost and no route advancement."
+    },
+    "event.tavern.information.broker-index-y3.title": {
+      "ru": "Индекс посредника: заметка о риске маршрута",
+      "en": "Broker Index: route risk note"
+    },
+    "event.tavern.information.broker-index-y3.variant.default.text": {
+      "ru": "Индекс напоминает об одном практическом риске: записанный рассказ всё ещё требует независимого подтверждения маршрута. Подсказка не меняет факты и не завершает условия.",
+      "en": "The Broker Index marks one practical risk: a recorded report still needs an independent route confirmation. The hint changes no fact and completes no prerequisite."
+    },
+    "event.tavern.information.broker-index-y3.choice.read-hint.label": {
+      "ru": "Прочитать подсказку посредника",
+      "en": "Read the broker hint"
+    },
+    "event.tavern.information.broker-index-y3.choice.read-hint.text": {
+      "ru": "Использовать заметку только как ориентир интерфейса: без расхода ресурсов и продвижения маршрута.",
+      "en": "Use the note as UI guidance only: no resource cost and no route advancement."
+    },
+    "event.tavern.information.broker-index-y4.title": {
+      "ru": "Индекс посредника: заметка о риске маршрута",
+      "en": "Broker Index: route risk note"
+    },
+    "event.tavern.information.broker-index-y4.variant.default.text": {
+      "ru": "Индекс напоминает об одном практическом риске: записанный рассказ всё ещё требует независимого подтверждения маршрута. Подсказка не меняет факты и не завершает условия.",
+      "en": "The Broker Index marks one practical risk: a recorded report still needs an independent route confirmation. The hint changes no fact and completes no prerequisite."
+    },
+    "event.tavern.information.broker-index-y4.choice.read-hint.label": {
+      "ru": "Прочитать подсказку посредника",
+      "en": "Read the broker hint"
+    },
+    "event.tavern.information.broker-index-y4.choice.read-hint.text": {
+      "ru": "Использовать заметку только как ориентир интерфейса: без расхода ресурсов и продвижения маршрута.",
+      "en": "Use the note as UI guidance only: no resource cost and no route advancement."
+    },
+    "event.forest-result-content-v1.success.choice.warden-conservation-route.label": {
+      "ru": "Пройти по меткам хранительницы",
+      "en": "Follow the Warden-marked conservation line"
+    },
+    "event.forest-result-content-v1.success.choice.warden-conservation-route.text": {
+      "ru": "Прочитать одну природоохранную ветку уже доступного лесного маршрута. Стоимость входа, полевое время, способности и факты финалов не меняются.",
+      "en": "Read one conservation-focused branch of the already-available Forest route. Entry cost, Field Time, capabilities, and ending facts remain unchanged."
+    },
+    "event.hunter.routes.legend-contract-variant.title": {
+      "ru": "Контракты легенды: унаследованный вариант",
+      "en": "Legend Contracts: an inherited variant"
+    },
+    "event.hunter.routes.legend-contract-variant.variant.inherited-ledger.text": {
+      "ru": "Унаследованный реестр предлагает ещё одну формулировку легендарного контракта. Всё ещё нужны обычные независимые улики, сохранение образца, явное принятие и успешная экспедиция; реестр не даёт ответа или обхода условий.",
+      "en": "An inherited contract ledger offers one additional legendary-contract framing. It still requires the normal independent clues, preservation capability, explicit acceptance, and a successful expedition; the ledger supplies no answer or shortcut."
+    },
+    "event.hunter.routes.legend-contract-variant.choice.accept.label": {
+      "ru": "Принять унаследованный вариант",
+      "en": "Accept the inherited contract variant"
+    },
+    "event.hunter.routes.legend-contract-variant.choice.accept.text": {
+      "ru": "Взять дополнительную формулировку контракта при обычных требованиях редкого маршрута.",
+      "en": "Take the additional contract framing under the normal rare-route requirements."
+    },
+    "event.hunter.routes.legend-contract-variant.choice.defer.label": {
+      "ru": "Отложить унаследованный вариант",
+      "en": "Defer the inherited variant"
+    },
+    "event.hunter.routes.legend-contract-variant.choice.defer.text": {
+      "ru": "Оставить дополнительный вариант неиспользованным; обычный редкий контракт остаётся доступен.",
+      "en": "Leave the additional variant unused; the ordinary rare contract remains available."
     }
   }
 }

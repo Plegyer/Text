@@ -14,7 +14,7 @@ const expected=[
   ['forest-result-content-v1.failure','failure','lumber.forest.failure']
 ] as const;
 
-test('Forest bilingual production pack preserves exact activityResult boundaries and has no mechanical choice effects',()=>{
+test('Forest bilingual production pack preserves activityResult boundaries with only the exact D41 Warden consumer',()=>{
   assert.equal(pack.id,'forest-result-content-v1');
   assert.deepEqual(pack.capabilities?.reads.activities,['lumber.forest']);
   assert.equal(pack.events.length,3);
@@ -28,8 +28,19 @@ test('Forest bilingual production pack preserves exact activityResult boundaries
       outcome,
       result
     }]);
-    assert.ok(event.choices.every(choice=>choice.effects.length===0));
-    assert.ok(event.choices.every(choice=>choice.conditions.length===0));
+    const warden=event.choices.find(choice=>choice.id==='warden-conservation-route');
+    if(id==='forest-result-content-v1.success'){
+      assert.ok(warden);
+      assert.deepEqual(warden.conditions,[
+        {kind:'metaUnlock',unlock:'knowledge.hunter.warden-signs',present:true},
+        {kind:'worldFact',fact:'reward.hunter.warden-signs.used',present:false}
+      ]);
+      assert.deepEqual(warden.effects,[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]);
+    }else assert.equal(warden,undefined);
+    for(const choice of event.choices.filter(choice=>choice.id!=='warden-conservation-route')){
+      assert.deepEqual(choice.effects,[],id+' / '+choice.id);
+      assert.deepEqual(choice.conditions,[],id+' / '+choice.id);
+    }
   }
 });
 

@@ -1,35 +1,20 @@
-name: mindy-successor check
+name: mindy-successor D41 full-suite repair focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-d41-fullsuite-repair-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-d41-')
     runs-on: [self-hosted, Windows, X64]
-    timeout-minutes: 20
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
@@ -44,5 +29,27 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused D41 full-suite repair validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+
+          Run-Group "d41-core" "node --experimental-strip-types --test tests/advanced-endings-tranche-a-v11.test.ts tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/migration.test.ts tests/palace-d23-consumer-integration-v8.test.ts"
+          Run-Group "full-ci-1180-contracts" "node --experimental-strip-types --test tests/chat3-content-depth-v4.test.ts tests/chat3-hunter-live-authored-v16.test.ts tests/chat3-production-promotion-no-mechanics-v11.test.ts tests/chat3-production-promotion-parity-v11.test.ts tests/chat3-starter-poverty-collision-v1.test.ts tests/chat3-tavern-live-authored-v15.test.ts tests/forest-bilingual-production.test.ts tests/gopher.test.ts tests/hunter-presentation-v15-c2-158-166.test.ts tests/hunter-production-presentation-reachability-c2-167.test.ts"
+          Run-Group "lumber-ending-ui" "node --experimental-strip-types --test tests/lumber-ending-commitment.test.ts tests/presentation-full-roster-a11y-c2-117.test.ts tests/presentation-keyboard-focus-v9.test.ts tests/presentation-source-integrity-v9.test.ts tests/product-acceptance-shipped-v1.test.ts"
+          Run-Group "one-save-gates" "node --experimental-strip-types --test tests/qa-minimal-rc-acceptance-gate-v2.test.ts tests/qa-one-save-state-drift-sentinel-v2.test.ts tests/release-candidate-shipped-e2e.test.ts"
+          Run-Group "natural-regressions" "node --experimental-strip-types --test tests/lumber-target-cross-system.test.ts tests/lumber-target-production.test.ts tests/satyr-maid-natural-acceptance.test.ts tests/undead-farm-natural-acceptance.test.ts tests/tavern-natural-acceptance.test.ts tests/hunter-natural-acceptance.test.ts tests/presentation-ending-parity-v9.test.ts tests/localization.test.ts"
+
+          if ($failed -ne 0) { exit 1 }

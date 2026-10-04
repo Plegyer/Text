@@ -36,7 +36,12 @@ test('C3-112 frozen default aftermath remains present under intentional v13 resu
   assert.ok(localization[key]?.ru?.trim(),key+' ru');
   assert.ok(localization[key]?.en?.trim(),key+' en');
   assert.equal(event.variants.find((variant:any)=>variant.id==='default')?.text,localization[key].ru,event.id);
-  assert.ok(event.choices.every((choice:any)=>choice.effects.length===0),event.id);
+  for(const choice of event.choices){
+   if(choice.id==='warden-conservation-route'){
+    assert.equal(event.id,'forest-result-content-v1.success');
+    assert.deepEqual(choice.effects,[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]);
+   }else assert.deepEqual(choice.effects,[],event.id+' / '+choice.id);
+  }
  }
 });
 

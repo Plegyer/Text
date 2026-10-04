@@ -89,8 +89,20 @@ test('C3-31 Forest audit matches current route and terminal result identities',(
     const event:any=byId.get(audited.id);
     assert.ok(event,audited.id);
     for(const variantId of audited.variantIds)assert.ok(event.variants.some((variant:any)=>variant.id===variantId),audited.id+' / '+variantId);
-    assert.deepEqual(event.choices.map((choice:any)=>choice.id),audited.choiceIds);
-    assert.deepEqual(event.choices.flatMap((choice:any)=>choice.effects),audited.effects);
+    for(const choiceId of audited.choiceIds){
+      const choice=event.choices.find((candidate:any)=>candidate.id===choiceId);
+      assert.ok(choice,audited.id+' / '+choiceId);
+      assert.deepEqual(choice.effects,[],audited.id+' / '+choiceId+' historical effects');
+    }
+    const extras=event.choices.filter((choice:any)=>!audited.choiceIds.includes(choice.id));
+    if(audited.id==='forest-result-content-v1.success'){
+      assert.deepEqual(extras.map((choice:any)=>choice.id),['warden-conservation-route']);
+      assert.deepEqual(extras[0].conditions,[
+        {kind:'metaUnlock',unlock:'knowledge.hunter.warden-signs',present:true},
+        {kind:'worldFact',fact:'reward.hunter.warden-signs.used',present:false}
+      ]);
+      assert.deepEqual(extras[0].effects,[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]);
+    }else assert.deepEqual(extras,[]);
   }
 });
 

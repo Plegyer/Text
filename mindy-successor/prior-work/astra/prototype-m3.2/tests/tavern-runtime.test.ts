@@ -112,16 +112,19 @@ test('three Rhetoric lessons publish the Tavern broker hook without a dummy Work
   assert.equal(s.run.dayState.energyCurrent,0);
 });
 
-test('Tavern complete-career mapping preserves legacy ending IDs and reward identifiers',()=>{
+test('Tavern uses canonical D41 endings and retires legacy modern contracts',()=>{
   const expected={
-    'tavern-stay':'host',
-    'tavern-guild':'mediator',
-    'tavern-court':'court',
+    'ending.tavern.innkeeper':'specialist.tavern.house-ledger',
+    'ending.tavern.information-broker':'knowledge.tavern.broker-index',
+    'ending.tavern.sanctuary':'specialist.tavern.safehouse-network',
     'ending.tavern.hard-work':'tavern.hardwork.compat'
   } as const;
   for(const [id,reward] of Object.entries(expected)){
     const ending=catalog.definitions.endings.find(e=>e.id===id);
     assert.ok(ending,id);
     assert.equal(ending.reward,reward,id);
+  }
+  for(const retired of ['tavern-stay','tavern-guild','tavern-court']){
+    assert.equal(catalog.definitions.endings.some(e=>e.id===retired),false,retired);
   }
 });

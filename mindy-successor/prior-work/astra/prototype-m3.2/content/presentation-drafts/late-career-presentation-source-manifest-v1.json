@@ -396,20 +396,7 @@
       "safetyClass": "non-explicit-completed-work"
     }
   ],
-  "documentedMissingSlots": [
-    {
-      "presentationId": "ending/tavern-stay",
-      "reason": "Current gameplay ending exists, but C2-26 scope is shift/result only."
-    },
-    {
-      "presentationId": "ending/tavern-guild",
-      "reason": "Current gameplay ending exists, but C2-26 scope is shift/result only."
-    },
-    {
-      "presentationId": "ending/tavern-court",
-      "reason": "Current gameplay ending exists, but C2-26 scope is shift/result only."
-    }
-  ],
+  "documentedMissingSlots": [],
   "invariants": {
     "existingSemanticIdsOnly": true,
     "projectOwnedLocalSourcesOnly": true,

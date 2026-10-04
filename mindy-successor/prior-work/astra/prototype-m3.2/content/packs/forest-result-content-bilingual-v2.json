@@ -11,7 +11,8 @@
       "worldFacts": [
         "lumber.forest.truth-known",
         "lumber.forest.escaped",
-        "lumber.forest.failed"
+        "lumber.forest.failed",
+        "reward.hunter.warden-signs.used"
       ],
       "inventory": [
         "rope_kit",
@@ -25,9 +26,16 @@
         "cut_heavy_wood",
         "enter_old_boundary"
       ],
-      "calendar": true
+      "calendar": true,
+      "meta": [
+        "unlock"
+      ]
     },
-    "writes": {}
+    "writes": {
+      "worldFacts": [
+        "reward.hunter.warden-signs.used"
+      ]
+    }
   },
   "media": [
     {
@@ -237,6 +245,29 @@
           "text": "Ты собираешь записи и возвращаешься к артели, чтобы лесной результат дошёл до тех, кого он касается.",
           "conditions": [],
           "effects": []
+        },
+        {
+          "id": "warden-conservation-route",
+          "label": "Follow the Warden-marked conservation line",
+          "text": "Use the inherited Warden signs to read one conservation-focused branch of this already-unlocked Forest route. Entry cost, Field Time, capabilities, and ending facts remain unchanged.",
+          "conditions": [
+            {
+              "kind": "metaUnlock",
+              "unlock": "knowledge.hunter.warden-signs",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "reward.hunter.warden-signs.used",
+              "present": false
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "reward.hunter.warden-signs.used"
+            }
+          ]
         }
       ],
       "sourceDomain": "lumber"
