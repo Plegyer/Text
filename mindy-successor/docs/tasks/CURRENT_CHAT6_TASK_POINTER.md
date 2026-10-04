@@ -1,55 +1,67 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — FINAL 1.0 LOCALIZATION / ACCESSIBILITY CLOSURE AUDIT v25**
+Status: **ACTIVE — ENDING LOCALIZATION CLOSURE PRODUCER v26**
 Owner: Chat 6
 
-Frozen presentation producer:
-`chat6/global-presentation-mapping-producer-v23@f25069c369c449ce0efbfe57acf877f950b1dfea`
+Accepted audit:
+`chat6/final-localization-closure-audit-v25@e80a656ffe98f4fe8c96fa724f242854b83ae272`
 
-Executable QA:
-run `37203184279` — **SUCCESS**
-- exact producer checkout PASS;
-- typecheck/validate/build PASS;
-- focused presentation bundle 36/36 PASS;
-- asset paths 98/98 present;
-- RU/EN accessibility parity PASS;
-- Palace firewall unchanged.
+Production base:
+`main@f36de067ae2e82518360dbe045f71c700e200805` (D41 production merge)
 
 New branch:
-`chat6/final-localization-closure-audit-v25`
+`chat6/ending-localization-closure-producer-v26`
+
+Important ownership:
+- Activity v17 already owns the generic localized ending-screen seam in `src/ui/app.ts`;
+- do **not** duplicate or rewrite that runtime seam;
+- D42 captions are owned by current Chat 2 D42 assembly;
+- `lumber-stay` retirement/localization is owned by Chat 5 v17;
+- Palace v19 and Activity v17 ending copy are already complete and must not be rewritten.
 
 Task:
-audit the complete 1.0 RU/EN localization and accessibility surface across current main + frozen/queued producers.
+close the remaining ordinary/live ending localization debt that can be authored independently on D41-merged production.
 
-Cover:
-- D40 endings;
-- D41 endings;
-- D42 Night;
-- Secret Debt;
-- Palace v18/v19;
-- Activity v15/v16/v17;
-- D46/D47 New Start+;
-- D49 macro-lore epistemic wording;
-- D50/v23 presentation alt keys;
-- result/ending epilogues;
-- accessibility names/captions;
-- stale retired legacy IDs/keys.
+Required content:
+1. D40 — all 16 advanced endings:
+   - final RU/EN title;
+   - final RU/EN description;
+   - final RU/EN epilogue.
+2. Hard Work — all 10 canonical endings:
+   - add missing RU/EN epilogue.
+3. D41 — add the 10 missing RU/EN epilogues while preserving the 4 already localized.
+4. Live generic prototype endings:
+   - `guild-life` epilogue RU/EN;
+   - `scholar-life` epilogue RU/EN.
+5. Merchant localization correctness:
+   - fix the two v25 wrong-route RU strings;
+   - align the seven P2 consequence-parity keys identified by v25.
+6. Hard Work namespace:
+   - resolve Merchant / Artist-Geisha live double-prefix runtime keys;
+   - preserve compatibility only where an actual consumer exists.
 
-Produce:
-- missing RU keys;
-- missing EN keys;
-- RU/EN semantic-strength mismatches;
-- stale/dead localization keys that still reference retired live semantics;
-- inaccessible presentation slots;
-- copy that accidentally strengthens report/inference into objective canon;
-- exact pre-1.0 repair list.
+Do not:
+- touch `src/ui/app.ts`;
+- touch Activity runtime/content;
+- touch D42 Night copy/captions;
+- touch Secret Debt epilogues yet;
+- touch Palace;
+- touch `lumber-stay` / `vitality`;
+- change mechanics/rewards/gates.
 
-Do not rewrite Product lore unless a concrete mismatch is identified.
-Do not change runtime.
+Focused QA:
+- every canonical D40/D41/Hard Work ending has RU+EN runtime title/description/epilogue coverage as applicable;
+- all 40 canonical ordinary-career endings have RU+EN epilogue coverage;
+- guild-life/scholar-life epilogues have RU+EN coverage;
+- no locale changes alter ending IDs/reward ownership;
+- Merchant route wording matches the actual route;
+- no D49 epistemic strengthening;
+- localization loader/validator/build remains green.
+
 No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_CLOSURE_AUDIT_v25.md`
+`mindy-successor/docs/tasks/CHAT6_ENDING_LOCALIZATION_CLOSURE_PRODUCER_v26.md`
 
-Report:
-`READY_FOR_LEADER_REVIEW`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
