@@ -1,0 +1,42 @@
+name: Chat 4 Activity Camp QA fixture repair proof v18
+
+on:
+  push:
+    branches:
+      - chat4/activity-camp-persistence-qa-fixture-repair-v18
+    paths:
+      - '.github/workflows/chat4-activity-camp-fixture-repair-proof-v18.yml'
+
+jobs:
+  camp-fixture-proof:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout fixture repair
+        uses: actions/checkout@v4
+        with:
+          ref: 03eab6f049011e81efcda0641a790eaed6ecd803
+          fetch-depth: 1
+
+      - name: Verify repair SHA
+        shell: cmd
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          if not "%ACTUAL%"=="03eab6f049011e81efcda0641a790eaed6ecd803" exit /b 1
+          echo Fixture repair: %ACTUAL%
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Camp suite only
+        run: node --experimental-strip-types --test tests/activity-camp-persistence-v17.test.ts
