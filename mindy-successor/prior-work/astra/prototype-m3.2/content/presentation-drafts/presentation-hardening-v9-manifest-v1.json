@@ -2567,6 +2567,9 @@
       {
         "sourceAsset": "assets/presentation/career-tavern-result.svg",
         "semanticIds": [
+          "ending/tavern/innkeeper",
+          "ending/tavern/information-broker",
+          "ending/tavern/sanctuary",
           "job/tavern/result/default"
         ],
         "mediaIds": [],
@@ -3018,36 +3021,6 @@
         ]
       },
       {
-        "sourceAsset": "assets/presentation/tavern-ending-court.svg",
-        "semanticIds": [
-          "ending/tavern-court"
-        ],
-        "mediaIds": [],
-        "roles": [
-          "exact-static"
-        ]
-      },
-      {
-        "sourceAsset": "assets/presentation/tavern-ending-guild.svg",
-        "semanticIds": [
-          "ending/tavern-guild"
-        ],
-        "mediaIds": [],
-        "roles": [
-          "exact-static"
-        ]
-      },
-      {
-        "sourceAsset": "assets/presentation/tavern-ending-stay.svg",
-        "semanticIds": [
-          "ending/tavern-stay"
-        ],
-        "mediaIds": [],
-        "roles": [
-          "exact-static"
-        ]
-      },
-      {
         "sourceAsset": "assets/stage-school.svg",
         "semanticIds": [],
         "mediaIds": [
@@ -3077,7 +3050,7 @@
         ]
       }
     ],
-    "uniqueSourceCount": 89,
+    "uniqueSourceCount": 86,
     "duplicateSourceRows": 0,
     "missingSourceCount": 0,
     "deadIdentityReferenceCount": 0
