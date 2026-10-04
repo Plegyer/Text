@@ -1,104 +1,52 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — TRADE CORRIDOR PRODUCTION v13**
+Status: **ACTIVE — D51 SECRET DEBT / ACTIVITY ENERGY COMPAT PRODUCER v20**
 Owner: Chat 3
 
-Accepted frozen producer candidate:
-`chat3/forest-frontier-production-hardening-v12@d151e4b99378d56bf17397cc0df8aa0fffa9d68a`
+Accepted Product authority:
+`mindy-successor/docs/tasks/LEADER1_D51_BOUND_STREET_ACTIVITY_ENERGY_LOCK_2026-10-04.md`
 
-Leader disposition:
-**ACCEPTED FOR CHAT2 ASSEMBLY QUEUE**.
+Source audit:
+`chat3/activity-secret-debt-energy-compat-audit-v19@d030bc72be62212130aad709cff748947eb36507`
 
-Forest v12 now provides the first production-ready D36 region candidate:
-- typed Field Time;
-- deterministic save/resume;
-- Tracking Triangulation state;
-- success / failure / escape;
-- seasonal/capability route structure;
-- compatibility with existing Lumber/Tavern/Undead/Hunter Forest consumers.
-
-Do not modify the frozen v12 head.
-
-## New assignment
-
-Build D36 Region 2 — **Trade Corridor** — on top of the accepted Forest/shared Activity runtime.
+Frozen Secret Debt base:
+`chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
 
 New branch:
-`chat3/trade-corridor-production-v13`
+`chat3/secret-debt-activity-energy-compat-producer-v20`
 
-Base:
-`d151e4b99378d56bf17397cc0df8aa0fffa9d68a`
+Implement D51 narrowly on the Secret Debt/Night next-day Energy seam.
+
+Required behavior:
+- if the immediately preceding Night applied both Street Energy -1 and `secret-debt.bound-night` Energy -1, process both but apply a provenance-gated compatibility floor of 2 after those two specific modifiers;
+- unrelated independent Energy penalties remain separate and may reduce below 2;
+- no global Energy floor;
+- Activity entry remains exactly 2 Energy;
+- hidden work remains 1 Energy;
+- Street Grooming consequence remains;
+- Secret Debt forced Night remains every bound night;
+- voluntary Night suppression remains;
+- acceptance -> trap activation morning gets no retroactive forced-Night penalty;
+- save/reload cannot duplicate or lose either modifier.
+
+Use explicit modifier provenance/tags; do not infer from housing alone.
+
+Focused QA must include v19 T1-T11, especially:
+- normal/cheap controls;
+- bound+Street reproduction/fix;
+- reload before/after forced Night choice;
+- trap activation boundary;
+- second bound Street morning;
+- unrelated third penalty;
+- Meta +1 diagnostic;
+- route exit.
+
+Do not change D44 wages/thresholds, D36 entry cost, lodging prices, Palace, or Strong Meta.
 
 No full CI.
 
-## Production target
-
-Trade Corridor is early/mid Activity content and must be a real playable region, not a single event.
-
-Implement a functional non-final-lore region with:
-- at least 3 route contexts;
-- at least 1 shortcut;
-- at least 1 capability/fact-gated option;
-- at least 1 season-sensitive edge;
-- at least 1 information/risk choice;
-- >=2 meaningful capability/equipment hooks;
-- Field Time through the shared D36 runtime;
-- explicit continue/detour/escape;
-- success/failure/escape;
-- deterministic save/reload;
-- city preparation -> Activity feedback;
-- Activity -> city/career/contact feedback;
-- at least one contact/network thread suitable for the D38 Network family.
-
-Do not create a universal Activity XP bar.
-
-## Mini-game rule
-
-Reuse the accepted D36 mini-game families only.
-
-Trade Corridor may reuse Tracking Triangulation where route verification fits.
-Do not invent a fourth universal mini-game family.
-
-Do not implement final Restricted-Sites Infiltration ownership here unless only a minimal shared registry/interface is required.
-
-## D38 seams
-
-Add typed Trade Corridor anchor/result markers sufficient for later:
-- Pathfinder;
-- Preservation where justified;
-- Network;
-- meaningful extracted evidence/sample/capability;
-- contact thread.
-
-Do not make any standalone Activity ending reachable from Trade Corridor + Forest alone unless the exact D38 common baseline is genuinely satisfied.
-
-## Compatibility
-
-Preserve all Forest v12 typed results and current ordinary-career consumers.
-Do not regress D23, NightFlow, Secret Debt boundaries or Activity entry cost = 2 Energy.
-
-## Focused QA
-
-Producer worker: no full CI.
-
-Run focused:
-- typecheck;
-- validate;
-- build;
-- Forest v12 regressions;
-- new Trade Corridor route tests;
-- Field Time/save-reload;
-- success/failure/escape;
-- season edge;
-- capability hooks;
-- contact thread;
-- D38 non-premature ending eligibility;
-- 2-Energy entry preservation.
-
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_TRADE_CORRIDOR_PRODUCTION_v13.md`
+`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_ACTIVITY_ENERGY_COMPAT_PRODUCER_v20.md`
 
 Freeze exact SHA and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
-
-Do not merge main.
