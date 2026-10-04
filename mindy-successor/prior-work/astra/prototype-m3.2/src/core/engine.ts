@@ -992,6 +992,7 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
     startedDay:s.run.day,
     entryEnergyCommitted:true,
     optionModelVersion:definition.options.length?1:0,
+    campStateVersion:1,
     campState:neutralActivityCampState(),
     internalState:{
       progress:0,
@@ -1517,6 +1518,19 @@ function migrateV3(raw:any){
   }
   return migrated;
 }
+function migrateActivityCampStateV1(raw:any){
+  const active=raw.run?.flow?.activity;
+  if(!active)return;
+  const version=active.campStateVersion;
+  const state=active.campState;
+  if(version===undefined&&state===undefined){
+    active.campStateVersion=1;
+    active.campState=neutralActivityCampState();
+    return;
+  }
+  if(version!==1||state===undefined)throw new Error('Несовместимое persisted Activity Camp state.');
+}
+
 export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   let raw=JSON.parse(text);
   if(raw.schemaVersion===1){raw.schemaVersion=2;raw.run.actionCounts={work:raw.run.metrics.work};}
@@ -1547,6 +1561,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.character.creation.activeHardWorkPackages=[];
     raw.run.character.creation.hardWorkPackagesApplied=true;
   }
+  if(raw.schemaVersion===5)migrateActivityCampStateV1(raw);
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
   if(s.run.flow.activity){
