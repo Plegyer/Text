@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "authority": "D38",
+  "family": "activity",
+  "bindingStatus": "CHAT2_CANONICAL_STRONG_META_BINDING_REQUIRED",
+  "endingIds": [
+    "ending.activity.pathfinder",
+    "ending.activity.preservation",
+    "ending.activity.network"
+  ],
+  "common": {
+    "anchors": {
+      "forest": "activity.forest-frontier.anchor-secured",
+      "trade": "activity.trade-corridor.anchor-secured",
+      "anomalous": "activity.anomalous-reach.anchor-secured",
+      "restricted": "activity.restricted-sites.anchor-secured"
+    },
+    "minimumAnchors": 3,
+    "miniGameFamilies": {
+      "tracking": [
+        "forest.frontier.tracking-triangulated",
+        "trade.corridor.tracking-verified"
+      ],
+      "pattern": [
+        "activity.anomalous-reach.minigame.pattern-ritual-complete"
+      ],
+      "infiltration": [
+        "activity.restricted-sites.minigame.infiltration-suspicion-complete"
+      ]
+    },
+    "minimumDistinctMiniGameFamilies": 2,
+    "meaningfulExtractionFacts": [
+      "activity.trade-corridor.result.sample-secured",
+      "activity.anomalous-reach.result.sample-secured",
+      "activity.restricted-sites.result.evidence-secured"
+    ],
+    "resolvedContactFacts": [
+      "activity.forest-frontier.mark.network",
+      "activity.trade-corridor.mark.network",
+      "activity.anomalous-reach.mark.network",
+      "activity.restricted-sites.mark.network"
+    ],
+    "requiresOrdinaryHardWork": false,
+    "requiresPalace": false,
+    "explicitCommitRequired": true
+  },
+  "specialists": [
+    {
+      "endingId": "ending.activity.pathfinder",
+      "id": "specialist.activity.surveyors-atlas",
+      "class": "Specialist",
+      "slotCost": 1,
+      "markedAnchors": {
+        "forest": "activity.forest-frontier.mark.pathfinder",
+        "trade": "activity.trade-corridor.mark.pathfinder",
+        "anomalous": "activity.anomalous-reach.mark.pathfinder",
+        "restricted": "activity.restricted-sites.mark.pathfinder"
+      },
+      "minimumMarkedAnchors": 2,
+      "requiredSuccessFacts": [
+        "forest.frontier.tracking-triangulated",
+        "trade.corridor.tracking-verified"
+      ],
+      "mechanic": {
+        "oncePerRegionPerRun": true,
+        "trigger": "first-authored-route-survey-or-discovery-with-exactly-1-field-time",
+        "normalFieldTimeCost": 1,
+        "specialistFieldTimeCost": 0,
+        "maxDirectFieldTimeSavingPerRun": 4,
+        "revealsOnlyNormalSurveyInformation": true
+      },
+      "firewalls": [
+        "field-time-baseline-6",
+        "activity-entry-energy-2",
+        "region-unlock",
+        "capability-gates",
+        "seasonal-gates",
+        "ending-gates",
+        "automatic-encounter-resolution",
+        "automatic-anchor-resolution"
+      ]
+    },
+    {
+      "endingId": "ending.activity.preservation",
+      "id": "specialist.activity.field-archive",
+      "class": "Specialist",
+      "slotCost": 1,
+      "markedAnchors": {
+        "forest": "activity.forest-frontier.mark.preservation",
+        "trade": "activity.trade-corridor.mark.preservation",
+        "anomalous": "activity.anomalous-reach.mark.preservation",
+        "restricted": "activity.restricted-sites.mark.preservation"
+      },
+      "minimumMarkedAnchors": 2,
+      "requiredSuccessFacts": [
+        "activity.anomalous-reach.minigame.pattern-ritual-complete"
+      ],
+      "researchGradeFacts": [
+        "activity.forest-frontier.result.research-grade",
+        "activity.anomalous-reach.result.research-grade",
+        "activity.restricted-sites.result.research-grade"
+      ],
+      "mechanic": {
+        "oncePerRegionPerRun": true,
+        "eligibilityTag": "activity-secure-eligible",
+        "action": "mark-one-carried-result-secured-at-stable-activity-checkpoint",
+        "survivesLaterEscapeOrFailure": true,
+        "maxSecuredResultsPerRun": 4
+      },
+      "firewalls": [
+        "no-result-creation-or-duplication",
+        "no-challenge-waiver",
+        "no-capability-waiver",
+        "no-consumable-refund",
+        "no-cross-life-generic-inventory",
+        "system-critical-gate-requires-explicit-opt-in"
+      ]
+    },
+    {
+      "endingId": "ending.activity.network",
+      "id": "specialist.activity.contact-network",
+      "class": "Specialist",
+      "slotCost": 1,
+      "markedAnchors": {
+        "forest": "activity.forest-frontier.mark.network",
+        "trade": "activity.trade-corridor.mark.network",
+        "anomalous": "activity.anomalous-reach.mark.network",
+        "restricted": "activity.restricted-sites.mark.network"
+      },
+      "minimumMarkedAnchors": 2,
+      "requiredSuccessFacts": [
+        "activity.restricted-sites.minigame.infiltration-suspicion-complete"
+      ],
+      "networkCapableContactFacts": [
+        "activity.forest-frontier.mark.network",
+        "activity.trade-corridor.mark.network",
+        "activity.anomalous-reach.mark.network",
+        "activity.restricted-sites.mark.network"
+      ],
+      "mechanic": {
+        "requiresNormalRegionUnlock": true,
+        "introductionTag": "activity-network-introduction",
+        "maxIntroductionsPerRegionPerRun": 1,
+        "maxIntroductionsPerRun": 4
+      },
+      "firewalls": [
+        "region-unlock",
+        "career-stage",
+        "ordinary-hard-work",
+        "relationship-stage",
+        "item-capability",
+        "palace-qualification-or-duty",
+        "secret-debt",
+        "ending-eligibility"
+      ]
+    }
+  ],
+  "sharedRewardRules": {
+    "selectableNotAutomatic": true,
+    "normalD28SpecialistSlotCost": 1,
+    "normalD28MaxActiveSpecialists": 2,
+    "noActivityOnlyBonusSlot": true,
+    "activityEntryEnergy": 2,
+    "noActivityXp": true,
+    "noStartingStatsMoneyEnergyOrCalendarTime": true,
+    "noPalaceSubstitution": true,
+    "noSecretDebtForcedNightSuppression": true
+  }
+}

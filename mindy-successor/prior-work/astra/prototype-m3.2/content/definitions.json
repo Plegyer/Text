@@ -4939,6 +4939,1189 @@
       "reward": "undead-farm.successor.compat",
       "metaRewards": [],
       "epilogue": "You take responsibility for the farm through production records and professional trust, not a romance shortcut."
+    },
+    {
+      "id": "ending.activity.pathfinder",
+      "title": "Activity: Следопыт",
+      "description": "Завершите Activity-базу D38 и закрепите минимум два Pathfinder-маркированных региональных якоря; нужен успешный Tracking Triangulation.",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "worldFact",
+                      "fact": "forest.frontier.tracking-triangulated",
+                      "present": true
+                    },
+                    {
+                      "kind": "worldFact",
+                      "fact": "trade.corridor.tracking-verified",
+                      "present": true
+                    }
+                  ]
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "worldFact",
+                      "fact": "forest.frontier.tracking-triangulated",
+                      "present": true
+                    },
+                    {
+                      "kind": "worldFact",
+                      "fact": "trade.corridor.tracking-verified",
+                      "present": true
+                    }
+                  ]
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.result.sample-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.result.sample-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.result.evidence-secured",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.forest-frontier.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.mark.network",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.pathfinder",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.pathfinder",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.pathfinder",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.pathfinder",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.pathfinder",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.pathfinder",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.pathfinder",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.pathfinder",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.pathfinder",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.pathfinder",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.pathfinder",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.pathfinder",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "forest.frontier.tracking-triangulated",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "trade.corridor.tracking-verified",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "reward": "specialist.activity.surveyors-atlas",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "specialist.activity.surveyors-atlas",
+          "unlock": "specialist.activity.surveyors-atlas"
+        }
+      ],
+      "epilogue": "Вы сводите разрозненные маршруты в надёжную полевую карту. Эта судьба завершена только после вашего явного выбора."
+    },
+    {
+      "id": "ending.activity.preservation",
+      "title": "Activity: Сохранение",
+      "description": "Завершите Activity-базу D38, закрепите минимум два Preservation-маркированных региональных якоря, успешно пройдите Pattern / Ritual Circuit и получите research-grade результат.",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "worldFact",
+                      "fact": "forest.frontier.tracking-triangulated",
+                      "present": true
+                    },
+                    {
+                      "kind": "worldFact",
+                      "fact": "trade.corridor.tracking-verified",
+                      "present": true
+                    }
+                  ]
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "worldFact",
+                      "fact": "forest.frontier.tracking-triangulated",
+                      "present": true
+                    },
+                    {
+                      "kind": "worldFact",
+                      "fact": "trade.corridor.tracking-verified",
+                      "present": true
+                    }
+                  ]
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.result.sample-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.result.sample-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.result.evidence-secured",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.forest-frontier.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.mark.network",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.preservation",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.preservation",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.preservation",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.preservation",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.preservation",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.preservation",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.preservation",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.preservation",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.preservation",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.preservation",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.preservation",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.preservation",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.forest-frontier.result.research-grade",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.result.research-grade",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.result.research-grade",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "reward": "specialist.activity.field-archive",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "specialist.activity.field-archive",
+          "unlock": "specialist.activity.field-archive"
+        }
+      ],
+      "epilogue": "Вы превращаете хрупкие полевые находки в воспроизводимый архивный метод. Эта судьба завершена только после вашего явного выбора."
+    },
+    {
+      "id": "ending.activity.network",
+      "title": "Activity: Сеть",
+      "description": "Завершите Activity-базу D38, закрепите минимум два Network-маркированных региональных якоря и успешно пройдите Infiltration / Suspicion через реальную сеть контактов.",
+      "conditions": [
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "worldFact",
+                      "fact": "forest.frontier.tracking-triangulated",
+                      "present": true
+                    },
+                    {
+                      "kind": "worldFact",
+                      "fact": "trade.corridor.tracking-verified",
+                      "present": true
+                    }
+                  ]
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "worldFact",
+                      "fact": "forest.frontier.tracking-triangulated",
+                      "present": true
+                    },
+                    {
+                      "kind": "worldFact",
+                      "fact": "trade.corridor.tracking-verified",
+                      "present": true
+                    }
+                  ]
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.result.sample-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.result.sample-secured",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.result.evidence-secured",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.forest-frontier.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.mark.network",
+              "present": true
+            }
+          ]
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.network",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.network",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.network",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.network",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.forest-frontier.mark.network",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.network",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.network",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.network",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.trade-corridor.mark.network",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.network",
+                  "present": true
+                }
+              ]
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.anomalous-reach.mark.network",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.anchor-secured",
+                  "present": true
+                },
+                {
+                  "kind": "worldFact",
+                  "fact": "activity.restricted-sites.mark.network",
+                  "present": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "activity.forest-frontier.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.trade-corridor.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.anomalous-reach.mark.network",
+              "present": true
+            },
+            {
+              "kind": "worldFact",
+              "fact": "activity.restricted-sites.mark.network",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "reward": "specialist.activity.contact-network",
+      "metaRewards": [
+        {
+          "kind": "unlock",
+          "rewardId": "specialist.activity.contact-network",
+          "unlock": "specialist.activity.contact-network"
+        }
+      ],
+      "epilogue": "Вы связываете региональные контакты в устойчивую экспедиционную сеть. Эта судьба завершена только после вашего явного выбора."
     }
   ],
   "careers": [

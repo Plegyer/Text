@@ -12897,6 +12897,54 @@
     "event.palace.invitation.reveal.choice.accept.text": {
       "ru": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
       "en": "You confirm the visit. That is enough to open access to Palace work in this life."
+    },
+    "ending.ending.activity.pathfinder.title": {
+      "ru": "Activity: Следопыт",
+      "en": "Activity: Pathfinder"
+    },
+    "ending.ending.activity.pathfinder.description": {
+      "ru": "Закрепите минимум 3 из 4 региональных якорей, пройдите не меньше двух разных семейств мини-игр, сохраните значимый результат и завершите контактную линию. Для Следопыта дополнительно нужны два Pathfinder-маркированных завершённых региона и успешный Tracking Triangulation.",
+      "en": "Secure at least 3 of 4 regional anchors, complete at least two distinct mini-game families, extract a meaningful result, and resolve an Activity contact thread. Pathfinder additionally requires two completed Pathfinder-marked regions and a successful Tracking Triangulation."
+    },
+    "ending.ending.activity.preservation.title": {
+      "ru": "Activity: Сохранение",
+      "en": "Activity: Preservation"
+    },
+    "ending.ending.activity.preservation.description": {
+      "ru": "Закрепите минимум 3 из 4 региональных якорей, пройдите не меньше двух разных семейств мини-игр, сохраните значимый результат и завершите контактную линию. Для Сохранения дополнительно нужны два Preservation-маркированных завершённых региона, успешный Pattern / Ritual Circuit и research-grade результат.",
+      "en": "Secure at least 3 of 4 regional anchors, complete at least two distinct mini-game families, extract a meaningful result, and resolve an Activity contact thread. Preservation additionally requires two completed Preservation-marked regions, a successful Pattern / Ritual Circuit, and a research-grade result."
+    },
+    "ending.ending.activity.network.title": {
+      "ru": "Activity: Сеть",
+      "en": "Activity: Network"
+    },
+    "ending.ending.activity.network.description": {
+      "ru": "Закрепите минимум 3 из 4 региональных якорей, пройдите не меньше двух разных семейств мини-игр, сохраните значимый результат и завершите контактную линию. Для Сети дополнительно нужны два Network-маркированных завершённых региона и успешный Infiltration / Suspicion через реальную сеть контактов.",
+      "en": "Secure at least 3 of 4 regional anchors, complete at least two distinct mini-game families, extract a meaningful result, and resolve an Activity contact thread. Network additionally requires two completed Network-marked regions and a successful Infiltration / Suspicion backed by a real contact network."
+    },
+    "unlock.specialist.activity.surveyors-atlas.label": {
+      "ru": "Атлас землемера",
+      "en": "Surveyor's Atlas"
+    },
+    "specialist.activity.surveyors-atlas.description": {
+      "ru": "Выбираемый Specialist: один раз на регион за прохождение первое авторское обследование маршрута стоимостью ровно 1 Field Time может стоить 0; максимум 4 Field Time за прохождение. Не открывает регионы и не обходит capability, season или ending gates.",
+      "en": "Selectable Specialist: once per region per run, the first authored route survey/discovery that normally costs exactly 1 Field Time may cost 0; maximum direct saving is 4 Field Time per run. It does not unlock regions or bypass capability, seasonal, or ending gates."
+    },
+    "unlock.specialist.activity.field-archive.label": {
+      "ru": "Протокол полевого архива",
+      "en": "Field Archive Protocol"
+    },
+    "specialist.activity.field-archive.description": {
+      "ru": "Выбираемый Specialist: один раз на регион за прохождение законно полученный результат с тегом activity-secure-eligible можно закрепить как Secured на стабильной Activity-точке; максимум 4 за прохождение. Не создаёт результат и не отменяет требования его получения.",
+      "en": "Selectable Specialist: once per region per run, a legally obtained activity-secure-eligible result may be marked Secured at a stable Activity checkpoint; maximum 4 per run. It does not create a result or waive the requirement used to obtain it."
+    },
+    "unlock.specialist.activity.contact-network.label": {
+      "ru": "Сеть экспедиционных контактов",
+      "en": "Expedition Contact Network"
+    },
+    "specialist.activity.contact-network.description": {
+      "ru": "Выбираемый Specialist: после обычного открытия региона в нём может появиться ровно один авторский activity-network-introduction за прохождение; максимум 4. Не обходит открытие региона, карьеру, отношения, предметные возможности, Palace, Secret Debt или ending eligibility.",
+      "en": "Selectable Specialist: after a region is normally unlocked, it may expose exactly one authored activity-network-introduction per run; maximum 4. It does not bypass region unlock, career, relationship, item capability, Palace, Secret Debt, or ending eligibility."
     }
   }
 }
