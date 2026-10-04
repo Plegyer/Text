@@ -1,61 +1,46 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT v12 + D51 ASSEMBLY PREFLIGHT v22**
+Status: **ACTIVE — PALACE ASSEMBLY PREFLIGHT v23**
 Owner: Chat 3
 
-Completed D51 QA:
-- frozen producer: `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
-- exact-head QA: run `37205501396`
-- typecheck / validate / build PASS
-- focused **58/58 PASS**
-- production tree unchanged
-- disposition: `READY_FOR_CHAT2_ASSEMBLY`
-
-Next integration after current D42 lane:
-Secret Debt v12 + D51 compatibility.
+Previous work accepted:
+- D51 producer exact-head QA: 58/58 PASS.
+- Secret Debt + D51 assembly preflight v22: READY_FOR_CHAT2_PREFLIGHT.
 
 New branch:
-`chat3/secret-debt-d51-assembly-preflight-v22`
-
-Current production reference:
-`main@f36de067ae2e82518360dbe045f71c700e200805`
-(D41 production merge; D42 is still being assembled separately by Chat 2.)
-
-Frozen sources:
-- Secret Debt v12:
-  `chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
-- D51:
-  `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
+`chat3/palace-assembly-preflight-v23`
 
 Task:
-prepare the exact selective-assembly preflight for Chat 2's next lane after D42.
+prepare the exact selective-assembly plan for the Palace tranche that follows Secret Debt in the Leader queue.
 
-Produce:
-- exact production files changed by v12;
-- exact production files changed by D51;
-- overlap/conflict matrix between v12 and D51;
-- expected overlap with current D42 Night ownership;
-- files that must be selectively composed rather than wholesale copied;
-- tests/fixtures that are source-specific vs current-main authoritative;
-- exact focused test bundle Chat 2 should run;
-- required migration/save checks;
-- Night priority checks;
-- D51 provenance checks;
-- D44 wage/threshold non-regression;
-- Activity 2-Energy availability;
-- Palace / Strong Meta / ordinary-career isolation;
-- expected current-main conflict hotspots.
+Frozen Palace sources:
+- mechanics: `chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`
+- prose/media: `chat6/palace-final-prose-media-v19@6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
 
-Important:
-D42 is not merged yet. Do not fabricate its future exact SHA.
-Use D42 Product authority and frozen Night producer only to identify semantic ownership/conflict risk.
+Authorities:
+- D43/D45 Palace rules in USER_DECISIONS_LOCKED_v1.md
+- D48 Palace media plan
+- D49 macro-mystery lore lock
+
+Produce a current-main selective-assembly preflight:
+- exact files owned by Palace v18/v19;
+- likely conflicts with post-D42 + Secret Debt current main;
+- files to compose manually instead of wholesale copying;
+- exact focused tests Chat 2 should run;
+- save/migration risks;
+- Prince gate and Return Home checks;
+- Palace run-local / no permanent unlock checks;
+- Secret Debt forced-Night firewall;
+- Strong Meta / ordinary-career isolation;
+- presentation/media fallback checks;
+- D49 lore wording checks.
 
 Research/preflight only.
-Do not modify runtime.
+Do not modify production runtime.
 Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_D51_ASSEMBLY_PREFLIGHT_v22.md`
+`mindy-successor/docs/tasks/CHAT3_PALACE_ASSEMBLY_PREFLIGHT_v23.md`
 
 Report:
 `READY_FOR_CHAT2_PREFLIGHT`.
