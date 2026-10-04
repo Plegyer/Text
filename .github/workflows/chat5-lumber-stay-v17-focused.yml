@@ -1,0 +1,49 @@
+name: Chat 5 lumber-stay retirement v17 focused QA
+
+on:
+  push:
+    branches:
+      - chat5/qa-lumber-stay-retirement-v17
+
+jobs:
+  focused-v17:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact producer candidate
+        uses: actions/checkout@v4
+        with:
+          ref: cbeae73e8559d43fcce24213d6f5606b682b3e7d
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused retirement and isolation regressions
+        run: >
+          node --experimental-strip-types --test
+          tests/lumber-stay-retirement-v17.test.ts
+          tests/migration.test.ts
+          tests/ending-meta.test.ts
+          tests/advanced-endings-tranche-a-v11.test.ts
+          tests/d40-advanced-endings-tranche-b-v11.test.ts
+          tests/hard-work-package-catalog-runtime.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
+          tests/presentation-source-integrity-v9.test.ts
+          tests/presentation-full-roster-a11y-c2-117.test.ts
