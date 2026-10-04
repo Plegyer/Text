@@ -1,52 +1,41 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY CAMP PERSISTENCE PRODUCER v17 / NEW CHAT**
+Status: **ACTIVE — ACTIVITY CAMP PERSISTENCE EXACT-HEAD QA v18**
 Owner: Chat 4
 
-Context recovery:
-`mindy-successor/docs/tasks/CHAT4_CONTEXT_RECOVERY_ACTIVITY_CAMP_v17_2026-10-04.md`
+Frozen producer:
+`chat4/activity-camp-persistence-producer-v17@0cae33dd3518dbda7d6d84e4ea6661b02fe49886`
 
-Completed previous audit:
-`chat4/final-save-migration-audit-v16@51ce65c4627d6c9e67bcc7f3d9348861cc75826e`
+Do not mutate the frozen producer.
 
-Audit verdict:
-**RISK — one concrete pre-1.0 blocker: Activity Camp state is not persisted.**
-
-New branch:
-`chat4/activity-camp-persistence-producer-v17`
-
-Base:
-`chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
+QA branch:
+`chat4/qa-activity-camp-persistence-v18`
 
 Task:
-implement explicit persisted multi-day Activity Camp state and migration/default behavior required by D36.
+run executable exact-head verification of the frozen Camp producer.
 
-Required:
-- max 2 camp nights per Activity entry;
-- camp replaces city Night for that day;
-- no city lodging charge for camp night;
-- no voluntary city Night menu;
-- one calendar advance exactly once per camp;
-- next field day refreshes Field Time, not global Energy;
-- no duplicate full city workday on return;
-- Secret Debt forced Night has absolute precedence and blocks camp continuation across that boundary;
-- preserve next-day Debt Energy -1.
+Workflow must explicitly checkout:
+`0cae33dd3518dbda7d6d84e4ea6661b02fe49886`
 
-Save contract:
-- typed Camp state;
-- neutral old-save default;
-- deterministic resume;
-- exactly-once calendar/Field Time transitions;
-- persisted 2-night count;
-- explicit rejection of incompatible active state rather than inferred Camp progress.
-
-Preserve all four Activity regions, 2-Energy entry, no Activity XP, Palace firewall, Night ownership, Secret Debt semantics.
+Required checks:
+- typecheck;
+- validate;
+- build;
+- `activity-camp-persistence-v17.test.ts`;
+- Activity save/reload/migration adjacency tests;
+- NightFlow exactly-once tests relevant to calendar ownership;
+- Activity entry cost / Field Time regressions;
+- explicit old-save neutral Camp migration;
+- unsupported/partial Camp state rejection;
+- 2-night persistence cap;
+- exactly-once calendar advance;
+- exactly-once Field Time refresh;
+- forced before-lodging Night interception.
 
 No full CI.
+No production behavior changes on the frozen producer.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_ACTIVITY_CAMP_PERSISTENCE_PRODUCER_v17.md`
+If a real producer bug is found, report it and create a separate repair branch; do not silently alter the frozen head.
 
-Focused QA required.
-Freeze exact SHA and report:
+If green, document exact workflow/run/job IDs and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
