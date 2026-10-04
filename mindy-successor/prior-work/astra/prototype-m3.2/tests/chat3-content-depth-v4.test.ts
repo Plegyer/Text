@@ -89,9 +89,13 @@ test('C3-31 Forest audit matches current route and terminal result identities',(
     const event:any=byId.get(audited.id);
     assert.ok(event,audited.id);
     for(const variantId of audited.variantIds)assert.ok(event.variants.some((variant:any)=>variant.id===variantId),audited.id+' / '+variantId);
-    assert.deepEqual(event.choices.map((choice:any)=>choice.id),audited.choiceIds);
-    assert.deepEqual(event.choices.flatMap((choice:any)=>choice.effects),audited.effects);
+    const historicalChoices=event.choices.filter((choice:any)=>choice.id!=='warden-conservation-route');
+    assert.deepEqual(historicalChoices.map((choice:any)=>choice.id),audited.choiceIds);
+    assert.deepEqual(historicalChoices.flatMap((choice:any)=>choice.effects),audited.effects);
   }
+  const warden=byId.get('forest-result-content-v1.success').choices.find((choice:any)=>choice.id==='warden-conservation-route');
+  assert.deepEqual(warden.conditions,[{kind:'metaUnlock',unlock:'knowledge.hunter.warden-signs',present:true},{kind:'worldFact',fact:'reward.hunter.warden-signs.used',present:false}]);
+  assert.deepEqual(warden.effects,[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]);
 });
 
 test('C3-32 Forest seasonal/result depth points only at current route/result IDs',()=>{
