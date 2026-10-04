@@ -436,13 +436,8 @@ export const activityEnvelopeSchema=z.object({
   startedDay:n.max(159),
   entryEnergyCommitted:z.literal(true),
   optionModelVersion:z.number().int().min(0).max(1).default(0),
-  campState:activityCampStateSchema.default({
-    phase:'idle',
-    nightsUsed:0,
-    boundaryDay:null,
-    calendarAdvanceCommitted:false,
-    fieldTimeRefreshCommitted:false
-  }),
+  campStateVersion:z.literal(1),
+  campState:activityCampStateSchema,
   internalState:counterActivityStateSchema,
   rngState:z.number().int().min(0).max(4294967295),
   checkpoint:id,
