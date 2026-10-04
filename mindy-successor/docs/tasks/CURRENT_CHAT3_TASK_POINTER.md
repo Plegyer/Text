@@ -1,46 +1,41 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — PALACE ASSEMBLY PREFLIGHT v23**
+Status: **ACTIVE — ACTIVITY CUMULATIVE ASSEMBLY PREFLIGHT v24**
 Owner: Chat 3
 
-Previous work accepted:
-- D51 producer exact-head QA: 58/58 PASS.
-- Secret Debt + D51 assembly preflight v22: READY_FOR_CHAT2_PREFLIGHT.
+Previous Palace preflight v23 is complete and accepted.
 
 New branch:
-`chat3/palace-assembly-preflight-v23`
+`chat3/activity-cumulative-assembly-preflight-v24`
 
-Task:
-prepare the exact selective-assembly plan for the Palace tranche that follows Secret Debt in the Leader queue.
+Prepare the exact future Chat 2 assembly plan for the full Activity tranche.
 
-Frozen Palace sources:
-- mechanics: `chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`
-- prose/media: `chat6/palace-final-prose-media-v19@6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
+Frozen/accepted sources:
+- regions through Restricted Sites v15:
+  `chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
+- executable-green Camp repair:
+  `chat4/activity-camp-baseline-repair-v19@efde0a38bf71a8946194402a9fc47abb168f2aff`
+- D38 mechanics:
+  `chat3/activity-ending-family-producer-v16-r1@3cf69d7cb3df1a58d68908159d0acc14736435c4`
+- D38 content/presentation:
+  `chat3/activity-ending-content-presentation-v17@df9ef5c3d04cfd8eb582c24838d971854e984218`
 
-Authorities:
-- D43/D45 Palace rules in USER_DECISIONS_LOCKED_v1.md
-- D48 Palace media plan
-- D49 macro-mystery lore lock
-
-Produce a current-main selective-assembly preflight:
-- exact files owned by Palace v18/v19;
-- likely conflicts with post-D42 + Secret Debt current main;
-- files to compose manually instead of wholesale copying;
-- exact focused tests Chat 2 should run;
+Produce:
+- exact composition order;
+- overlap/conflict map;
+- Camp + D38 compatibility;
 - save/migration risks;
-- Prince gate and Return Home checks;
-- Palace run-local / no permanent unlock checks;
-- Secret Debt forced-Night firewall;
-- Strong Meta / ordinary-career isolation;
-- presentation/media fallback checks;
-- D49 lore wording checks.
+- Secret Debt Night priority firewall;
+- exact focused tests Chat 2 should run;
+- presentation/localization dependencies;
+- files that must be manually composed rather than copied wholesale.
 
 Research/preflight only.
-Do not modify production runtime.
+Do not modify runtime.
 Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_PALACE_ASSEMBLY_PREFLIGHT_v23.md`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_CUMULATIVE_ASSEMBLY_PREFLIGHT_v24.md`
 
 Report:
 `READY_FOR_CHAT2_PREFLIGHT`.
