@@ -30,11 +30,11 @@ function setBound(s:Save,day=10){
 }
 
 function setAcceptedForTomorrow(s:Save){
-  s.run.calendar.elapsedDays=0;
+  s.run.calendar.elapsedDays=9;
   s.run.secretDebt={
     status:'accepted',
     acceptedDay:0,
-    trapDay:1,
+    trapDay:10,
     boundDay:null,
     resolvedDay:null,
     debt:0,
