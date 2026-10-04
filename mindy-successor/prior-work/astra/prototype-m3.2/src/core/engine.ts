@@ -1001,6 +1001,28 @@ function applyPendingNightPolicy(s:Save,cat:Catalog,point:NightPoint){
   n.suppressVoluntaryMenu ||= policy.suppressVoluntaryMenu;
   n.consumesNight ||= policy.consumesNight;
 }
+const D51_STREET_ENERGY_PROVENANCE_TAG='lodging.street.energy-penalty' as const;
+const D51_BOUND_NIGHT_ENERGY_PROVENANCE_TAG='secret-debt.bound-night' as const;
+const D51_BOUND_STREET_COMPATIBILITY_FLOOR=2 as const;
+const D51_BOUND_STREET_LOCKED_DELTA=-2 as const;
+
+function nextDayEnergyAfterD51Compatibility(s:Save,queued:Save['run']['dayState']['nextDayModifiers']){
+  const base=energyMax(s);
+  const hasBoundStreetPair=
+    queued.tags.includes(D51_STREET_ENERGY_PROVENANCE_TAG)
+    && queued.tags.includes(D51_BOUND_NIGHT_ENERGY_PROVENANCE_TAG);
+  if(!hasBoundStreetPair)return Math.max(1,base+queued.energyDelta);
+
+  // D51 processes the two locked -1 penalties first, floors only that pair at 2,
+  // then applies every unrelated queued Energy modifier independently.
+  const unrelatedDelta=queued.energyDelta-D51_BOUND_STREET_LOCKED_DELTA;
+  const afterLockedPair=Math.max(
+    D51_BOUND_STREET_COMPATIBILITY_FLOOR,
+    base+D51_BOUND_STREET_LOCKED_DELTA
+  );
+  return Math.max(1,afterLockedPair+unrelatedDelta);
+}
+
 function finishNightMutable(s:Save,cat:Catalog){
   const n=nightState(s);
   if(s.run.pending)throw new Error('Нельзя завершить ночь с активной сценой.');
@@ -1023,7 +1045,7 @@ function finishNightMutable(s:Save,cat:Catalog){
   activateSecretDebtIfDueMutable(s);
   const queued=s.run.dayState.nextDayModifiers;
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
-  s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
+  s.run.metrics.energy=nextDayEnergyAfterD51Compatibility(s,queued);
   s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
   s.run.housingState.paidForCurrentNight=false;
   for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
@@ -1105,6 +1127,9 @@ function chooseLodgingMutable(s:Save,cat:Catalog,lodging:LodgingDefinition){
   n.lodgingPaymentCommitted=true;
   applyEffectsMutable(s,lodging.effects,cat,true);
   queueNextDay(s,lodging.nextDayEnergyDelta,lodging.nextDayEffects,`lodging.${lodging.id}`);
+  if(lodging.id==='lodging.street'&&lodging.nextDayEnergyDelta===-1){
+    addUnique(s.run.dayState.nextDayModifiers.tags,D51_STREET_ENERGY_PROVENANCE_TAG);
+  }
   n.phase='PostLodgingForcedCheck';
   runNightPointMutable(s,cat,'after_lodging',before);
 }

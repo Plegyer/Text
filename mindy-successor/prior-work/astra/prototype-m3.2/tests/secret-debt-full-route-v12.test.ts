@@ -383,8 +383,8 @@ test('Meta Energy modifiers cannot suppress forced Secret Debt Night or its rela
   assert.equal(s.run.dayState.energyCurrent,3,'base 4 from modifier minus bound Night 1');
 });
 
-test('Street and bound penalties stack in the correct order: paid lodging leaves 2 Energy, Street leaves 1',()=>{
-  for(const [lodging,expected] of [['lodging.normal',2],['lodging.street',1]] as const){
+test('D51 preserves both bound and Street penalties but floors their specific pair at 2 Energy',()=>{
+  for(const [lodging,expected] of [['lodging.normal',2],['lodging.street',2]] as const){
     let s=setBound(started(),10,0);
     s.run.resources.money=1000;
     s.run.dayState.energyCurrent=3;
