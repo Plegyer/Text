@@ -249,7 +249,12 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
     for(const result of activity.results)checkEffects(result.effects);
     if(activity.adapter==='counter.v1'){
       if(activity.resumePolicy!=='allowed')throw new Error(`counter.v1 поддерживает только resumePolicy=allowed: ${activity.id}`);
-      if(activity.timePolicy!=='same_day')throw new Error(`counter.v1 поддерживает только timePolicy=same_day: ${activity.id}`);
+      if(activity.campPolicy){
+        if(activity.timePolicy!=='can_advance_days_internally')throw new Error(`counter.v1 campPolicy требует timePolicy=can_advance_days_internally: ${activity.id}`);
+        if(activity.adapterConfig.fieldTimeSegments===undefined)throw new Error(`counter.v1 campPolicy требует finite Field Time: ${activity.id}`);
+      }else if(activity.timePolicy!=='same_day'){
+        throw new Error(`counter.v1 без campPolicy поддерживает только timePolicy=same_day: ${activity.id}`);
+      }
       if(activity.failurePolicy!=='exit_to_day')throw new Error(`counter.v1 поддерживает только failurePolicy=exit_to_day: ${activity.id}`);
       if(activity.adapterConfig.failAtEndurance>=activity.adapterConfig.initialEndurance)throw new Error(`Activity ${activity.id}: failAtEndurance должен быть ниже initialEndurance`);
       const segments=activity.adapterConfig.fieldTimeSegments;
