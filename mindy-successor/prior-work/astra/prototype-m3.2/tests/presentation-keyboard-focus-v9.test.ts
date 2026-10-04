@@ -83,7 +83,7 @@ test('School course controls have visible accessible names and preserve current 
 
 test('ending controls expose a visible name, disable unavailable endings and enable an eligible existing ending',async()=>{
   let s=started();
-  s.run.progression.careers.lumber={stage:'accepted-hand',shifts:0,counters:{completed_shifts:49},choices:{},facts:[]};
+  s.run.progression.careers.lumber={stage:'veteran',shifts:0,counters:{completed_shifts:49},choices:{},facts:[]};
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
   const {dom,w,errors}=await boot(s);
   try{
