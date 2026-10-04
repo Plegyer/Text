@@ -7,7 +7,8 @@ import {
   availableActivityActions,
   dispatch,
   eligible,
-  parseSave
+  parseSave,
+  resolveReactions
 } from '../src/core/engine.ts';
 import type {Save} from '../src/core/schema.ts';
 
@@ -54,6 +55,15 @@ function finishPending(s:Save){
     const choice=event.choices.find(c=>(!allowed||allowed.includes(c.id))&&eligible(c.conditions,s,catalog));
     assert.ok(choice,event.id);
     s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+function finishDayStartedFeedback(s:Save,done:(state:Save)=>boolean){
+  s=finishPending(s);
+  for(let guard=0;guard<20&&!done(s);guard++){
+    s=resolveReactions(s,[{kind:'dayStarted',day:s.run.day}],catalog,{newEpoch:true}).state;
+    if(!s.run.pending)break;
+    s=finishPending(s);
   }
   return s;
 }
@@ -115,7 +125,7 @@ test('entry requires Year 2 plus real preparation, not calendar alone or prep al
 test('Anomalous Reach is exposed in Explore without changing the shared Activity engine',()=>{
   assert.match(
     appSource,
-    /activityEntryList\(\['lumber\.forest','trade\.corridor','anomalous\.reach','hunter\.expedition'\]\)/
+    /activityEntryList\(\['lumber\.forest','trade\.corridor','anomalous\.reach','restricted\.sites','hunter\.expedition'\]\)/
   );
 });
 
@@ -290,6 +300,7 @@ test('Old Boundary Rift is autumn/winter + access gated and route-specific optio
 test('real Keeper contact can create the Network marker after a successful Rift return',()=>{
   let s=year2Arcana(3);
   setDay(s,60);
+  s.run.character.stats.magic=5;
   s.run.progression.careers['undead-farm']={
     stage:'research',
     shifts:20,
@@ -313,7 +324,10 @@ test('real Keeper contact can create the Network marker after a successful Rift 
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
 
   assert.equal(s.run.flow.activity,null);
-  s=finishPending(s);
+  s=finishDayStartedFeedback(
+    s,
+    state=>state.run.progression.worldFacts.includes('activity.anomalous-reach.mark.network')
+  );
   assert.ok(s.run.progression.worldFacts.includes('activity.anomalous-reach.anchor-secured'));
   assert.ok(s.run.progression.worldFacts.includes('activity.anomalous-reach.mark.network'));
   assert.ok(
@@ -337,7 +351,12 @@ test('successful return feeds Undead Farm and Arcana without changing lesson cou
   s=dispatch(s,{type:'activityAction',id:'anomaly.ritual.resolve'},catalog);
   s=dispatch(s,{type:'activityAction',id:'anomaly.shortcut.stabilized-fold'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
-  s=finishPending(s);
+  s=finishDayStartedFeedback(
+    s,
+    state=>
+      state.run.progression.careers['undead-farm'].facts.includes('anomalous-reach-returned')
+      &&state.run.progression.worldFacts.includes('anomalous.reach.school-reflection-recorded')
+  );
 
   assert.ok(s.run.progression.careers['undead-farm'].facts.includes('anomalous-reach-returned'));
   assert.ok(s.run.progression.worldFacts.includes('anomalous.reach.school-reflection-recorded'));
