@@ -1,39 +1,46 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — D47 FOCUSED QA v13**
+Status: **ACTIVE — D41 FULL-SUITE FAILURE TRIAGE v14**
 Owner: Chat 5
 
-Frozen producer candidate:
+Frozen D47 producer:
 `chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
 
-Do not mutate the producer candidate.
+D47 exact-head QA:
+- run `37200203160`
+- **SUCCESS**
+- typecheck/validate/build PASS
+- focused tests **103/103 PASS**
 
-QA branch:
-`chat5/qa-d47-hard-work-mapping-v13`
-
-Base:
-`252dc26c514e24f4ab0f0cc0da7694254282e4c4`
+New branch:
+`chat5/d41-full-suite-triage-v14`
 
 Task:
-run exact-head focused executable verification for D47.
+support Chat 2 by triaging D41 current-main full CI #1180 / run `37201061717`.
 
-Required:
-- typecheck;
-- validate;
-- build;
-- D47 focused mapping tests;
-- ordinary Hard Work package catalog/runtime tests;
-- New Start+ UI/presentation tests;
-- D23 Palace package-identity tests;
-- D24 cap-200 tests;
-- Strong Meta capacity/isolation tests;
-- Secret Debt and advanced-ending adjacency regressions;
-- save/reload/idempotence.
+Known state:
+- Chat 2 head `836639de6ae9d654e168f50a8c5e1896b1347d91`;
+- #1180 has 22 failures.
 
-QA branch may add only verification workflow/docs needed to run the checks.
-Do not change production behavior to make QA pass unless a real producer bug is found; if so, repair on a new producer-repair branch and report the exact cause.
+Classify every failure as:
+A. stale pre-D41 freeze/negative expectation;
+B. retired legacy presentation/identity reference;
+C. real D41 integration regression.
 
-No full CI.
+For each failure provide:
+- failing test;
+- exact expected authority after D41;
+- whether test or production seam should change;
+- smallest safe repair;
+- preserved safety purpose;
+- any coupling to Forest/Hunter/Tavern/D16/Strong Meta/Palace.
 
-If green, document exact workflow/run and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+Do not modify Chat 2 assembly branch.
+Do not implement runtime.
+Do not run full CI.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT5_D41_FULL_SUITE_TRIAGE_v14.md`
+
+Report:
+`READY_FOR_CHAT2_REPAIR`.
