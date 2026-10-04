@@ -1,0 +1,54 @@
+name: Chat 3 D51 exact-head QA v21
+
+on:
+  push:
+    branches:
+      - chat3/qa-secret-debt-activity-energy-compat-v21
+
+defaults:
+  run:
+    working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+jobs:
+  exact-head-focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    steps:
+      - name: Checkout frozen D51 producer
+        uses: actions/checkout@v4
+        with:
+          ref: 79a868bf30af2c162b2ea1323759dffad5e8dadf
+
+      - name: Verify exact frozen head
+        shell: pwsh
+        run: |
+          $head = (git rev-parse HEAD).Trim()
+          if ($head -ne '79a868bf30af2c162b2ea1323759dffad5e8dadf') {
+            throw "Expected frozen producer 79a868bf30af2c162b2ea1323759dffad5e8dadf, got $head"
+          }
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: D51 exact-head focused regressions
+        run: >
+          node --experimental-strip-types --test
+          tests/secret-debt-activity-energy-compat-v20.test.ts
+          tests/secret-debt-full-route-v12.test.ts
+          tests/night-flow.test.ts
+          tests/activity.test.ts
