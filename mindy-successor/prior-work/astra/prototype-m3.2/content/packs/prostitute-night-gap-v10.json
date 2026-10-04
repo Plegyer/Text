@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "prostitute.night",
+  "reads": [],
+  "writes": [],
+  "media": [],
+  "events": [
+    {
+      "id": "prostitute.night.personal-continuation",
+      "title": "A personal continuation by explicit choice",
+      "sourceDomain": "prostitute.recurring-client",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "prostitute.night.personal-continuation"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Continue only after friendship or romance was explicitly chosen earlier. The scene never treats confidence, Lust, Sexuality, or privacy as consent.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the personal evening.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "prostitute.night.client-private",
+      "title": "A voluntary private-space continuation",
+      "sourceDomain": "prostitute",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "prostitute.night.client-private"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Choose a private setting without changing the relationship mode or importing Secret Debt semantics. Any intimacy or romance remains a separate explicit choice.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the private-space continuation.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}
