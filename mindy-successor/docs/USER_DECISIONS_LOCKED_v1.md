@@ -1504,9 +1504,84 @@ Acceptance anchors for a later runtime producer:
 D46 closes the remaining numeric economy, starting-Lust, lodging-escalation and School-tuning Product blockers. Runtime implementation remains separate and must preserve existing saves.
 
 
+### D47 — ordinary Hard Work New Start+ stat mapping
+
+Accepted Product packet:
+`chat5/hard-work-bonus-mapping-decision-v12@b2a44983f1aae88888623f096b093a6e21354293`.
+
+Exact profession-package mapping:
+
+- Lumber -> **Strength +5**;
+- Satyr Maid -> **Charm +5**;
+- Undead Farm -> **Magic +5**;
+- Tavern -> **Wits +5**;
+- Hunter -> **Dexterity +5**;
+- Guard -> **Endurance +5, Manners +5**;
+- Merchant -> **Reason +5, Sociability +5**;
+- Artist/Geisha -> **Creativity +5, Grooming +5**;
+- Assassin -> **Dexterity +5, Wits +5**;
+- Prostitute -> **Sexuality +5, Charm +5**, plus a separate **Lust +5** component.
+
+D22 interpretation is exact:
+- first five professions have exactly one +5 progression-stat component;
+- later five have exactly two distinct +5 progression-stat components;
+- Lust is the separate content axis, not one of the 12 progression stats, so Prostitute's Lust +5 does not replace or count as one of its two progression-stat components;
+- the selectable unit remains the profession package, not each component;
+- any earned subset of profession packages may be active;
+- ordinary Hard Work packages remain outside Keystone/Specialist slots.
+
+All 12 progression stats receive at least one Hard Work inheritance path. Intentional repeats are Dexterity, Wits and Charm where profession identity genuinely overlaps.
+
+Preserve:
+- D23 Palace checks package identity 10/10, not bonus-component count;
+- D24 cap-200 only changes the cap and never multiplies package bonuses;
+- D26 Hard Work remains 50 shifts and one same-career shift/day;
+- no package implies consent or forces Night/relationship content;
+- old automatic +3/+3 and Merchant +600 remain retired;
+- no advanced-ending, Secret Debt, Palace or Strong Meta reward rule changes.
+
+
+### D48 — minimum Palace 1.0 media package
+
+Accepted Product packet:
+`chat6/palace-media-production-plan-v20@10b748fd400c25e6384fcb451164fd3203ea8768`.
+
+Minimum dedicated Palace 1.0 target:
+exactly **4 reusable static SVG assets**, 16:9, recommended `viewBox="0 0 1200 675"`:
+
+1. `assets/presentation/palace-custodian-audience.svg` — P1;
+2. `assets/presentation/palace-threshold-archive.svg` — P1;
+3. `assets/presentation/palace-return-home-threshold.svg` — P1;
+4. `assets/presentation/palace-service-interior.svg` — P2.
+
+One reusable master per visual family is sufficient for 1.0. No phase-specific variants, animation, GIF pool, seasonal variants or extra camera angles are required.
+
+Priority:
+1. Custodian Audience;
+2. Threshold Archive;
+3. Return Home Threshold;
+4. Service Interior.
+
+If dedicated media misses release:
+- Service Interior -> `assets/stage-room.svg` is acceptable;
+- Threshold Archive -> `assets/stage-room.svg` is acceptable but undesirable;
+- Custodian Audience -> `assets/stage-room.svg` is acceptable but undesirable;
+- Return Home -> `assets/stage-town.svg` is acceptable but lowest-fidelity.
+
+D45 visual firewalls are binding:
+- no dream/simulation reveal;
+- no successor-world collapse;
+- no chosen-one/godhood imagery;
+- Prince remains a human institutional Custodian, never deity/avatar/combat boss/mandatory romance;
+- no visual answer to the displacement cause or Threshold creator/mechanism;
+- no single artifact that contains all truth;
+- no visual item/School/Activity gate.
+
+Palace story must remain fully understandable without dedicated art through RU/EN text and accessibility copy.
+
+
 ## Still open after this lock
 
-- exact ordinary profession -> selectable +5 stat mapping, under D22 breadth/Lust constraints;
-- final authored Palace lore/prose within the locked D45 topology;
 - macro mystery/lore not fixed by D45;
-- final production art/media budget and missing-asset decisions.
+- non-Palace/global 1.0 art/media gap and production-budget closure;
+- final cross-system reachability/save/migration/regression closure after integration.
