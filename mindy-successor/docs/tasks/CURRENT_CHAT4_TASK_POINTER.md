@@ -1,60 +1,52 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — NIGHT CONTENT GAP PRODUCER v10**
+Status: **ACTIVE — ACTIVITY CAMP PERSISTENCE PRODUCER v17 / NEW CHAT**
 Owner: Chat 4
 
-Accepted implementation authority:
-`chat4/night-content-gap-blueprint-v9@1c52123c3e05b5d2ba2bfcf6f6b12e3291fd11e7`
+Context recovery:
+`mindy-successor/docs/tasks/CHAT4_CONTEXT_RECOVERY_ACTIVITY_CAMP_v17_2026-10-04.md`
 
-Leader authority:
-D42 accepts all 12 stable Night surface contracts.
+Completed previous audit:
+`chat4/final-save-migration-audit-v16@51ce65c4627d6c9e67bcc7f3d9348861cc75826e`
 
-Authority commit:
-`main@0072f07b0f8188d4ff0732fb5ce557fe4f9a8434`
+Audit verdict:
+**RISK — one concrete pre-1.0 blocker: Activity Camp state is not persisted.**
 
 New branch:
-`chat4/night-content-gap-producer-v10`
+`chat4/activity-camp-persistence-producer-v17`
 
-## Assignment
+Base:
+`chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
 
-Implement all 12 D42 Night surfaces on fresh current main.
+Task:
+implement explicit persisted multi-day Activity Camp state and migration/default behavior required by D36.
 
 Required:
-- exact stable IDs from v9;
-- exact housing conditions;
-- exactly three D35 private-space branches with `housingTier=normal`;
-- relationship/career facts and counters exactly as accepted;
-- refusal/back-out semantics;
-- no hidden progression gate;
-- presentation/localization bindings;
-- save/reload safety;
-- exactly-one calendar advance through shared NightFlow.
+- max 2 camp nights per Activity entry;
+- camp replaces city Night for that day;
+- no city lodging charge for camp night;
+- no voluntary city Night menu;
+- one calendar advance exactly once per camp;
+- next field day refreshes Field Time, not global Energy;
+- no duplicate full city workday on return;
+- Secret Debt forced Night has absolute precedence and blocks camp continuation across that boundary;
+- preserve next-day Debt Energy -1.
 
-Preserve:
-- cheap keeps School Night Study and public/workplace Night;
-- no forced romance;
-- confidence/Lust/Sexuality never imply consent;
-- ordinary Prostitute never inherits Secret Debt forced semantics;
-- Secret Debt forced Night suppresses voluntary/private-space Night;
-- no broad affinity system.
+Save contract:
+- typed Camp state;
+- neutral old-save default;
+- deterministic resume;
+- exactly-once calendar/Field Time transitions;
+- persisted 2-night count;
+- explicit rejection of incompatible active state rather than inferred Camp progress.
 
-If a relationship stage/counter referenced by the accepted blueprint is missing on current main:
-- add only the minimal typed state/content extension needed for that exact surface;
-- do not redesign the relationship system.
+Preserve all four Activity regions, 2-Energy entry, no Activity XP, Palace firewall, Night ownership, Secret Debt semantics.
 
 No full CI.
 
-Focused minimum:
-- typecheck;
-- validate;
-- build;
-- all 12 new Night surfaces;
-- D35 exact normal-only count = 3;
-- cheap/street rejection for private branches;
-- School Night Study preservation;
-- reload at pending Night boundary;
-- one calendar advance;
-- existing Night regression suite.
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_ACTIVITY_CAMP_PERSISTENCE_PRODUCER_v17.md`
 
+Focused QA required.
 Freeze exact SHA and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
