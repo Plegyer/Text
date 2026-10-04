@@ -56,6 +56,16 @@ Preserve:
 
 Do not merge the historical producer wholesale if it would overwrite newer current-main runtime/schema/content. Selectively compose D42 on current main.
 
+## D42 localization/accessibility closure from Chat 6 v25
+
+Before freezing D42, also close the accepted non-mechanical v25 gaps:
+- add RU/EN caption pairs for all 12 D42 presentation alt keys;
+- align the two private-conversation EN labels with the explicit conversation wording already used in RU/body copy:
+  - Satyr Maid recurring guest;
+  - Tavern recurring traveler.
+
+These are content/accessibility repairs only. Do not change Night mechanics, consent semantics, housing gates, or presentation engine.
+
 ## Gate
 
 Before full CI:
