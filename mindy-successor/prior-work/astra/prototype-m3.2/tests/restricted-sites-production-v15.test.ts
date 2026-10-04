@@ -7,7 +7,8 @@ import {
   availableActivityActions,
   dispatch,
   eligible,
-  parseSave
+  parseSave,
+  resolveReactions
 } from '../src/core/engine.ts';
 import type {Save} from '../src/core/schema.ts';
 
@@ -75,6 +76,15 @@ function finishPending(s:Save){
     const choice=event.choices.find(c=>(!allowed||allowed.includes(c.id))&&eligible(c.conditions,s,catalog));
     assert.ok(choice,event.id);
     s=dispatch(s,{type:'choice',id:choice.id},catalog);
+  }
+  return s;
+}
+function finishDayStartedFeedback(s:Save,done:(state:Save)=>boolean){
+  s=finishPending(s);
+  for(let guard=0;guard<20&&!done(s);guard++){
+    s=resolveReactions(s,[{kind:'dayStarted',day:s.run.day}],catalog,{newEpoch:true}).state;
+    if(!s.run.pending)break;
+    s=finishPending(s);
   }
   return s;
 }
@@ -335,7 +345,10 @@ test('accepted Handler contact can publish the fourth-region Network marker afte
   s=dispatch(s,{type:'activityAction',id:'restricted.shortcut.clean-route'},catalog);
 
   assert.equal(s.run.flow.activity,null);
-  s=finishPending(s);
+  s=finishDayStartedFeedback(
+    s,
+    state=>state.run.progression.worldFacts.includes('activity.restricted-sites.mark.network')
+  );
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.mark.network'));
   assert.ok(
     s.run.progression.relationships['assassin.handler'].facts.includes('restricted-sites-return-shared')
@@ -353,7 +366,10 @@ test('secured evidence + successful infiltration + anchor publishes research-gra
   s=dispatch(s,{type:'activityAction',id:'restricted.shortcut.clean-route'},catalog);
   s=dispatch(s,{type:'activityAction',id:'advance'},catalog);
   assert.equal(s.run.flow.activity,null);
-  s=finishPending(s);
+  s=finishDayStartedFeedback(
+    s,
+    state=>state.run.progression.worldFacts.includes('activity.restricted-sites.result.research-grade')
+  );
 
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.anchor-secured'));
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.result.evidence-secured'));
