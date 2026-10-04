@@ -163,6 +163,28 @@ test('D40 School publishers use exact 3 paid OR 3 Night Study rule and never sum
   }
 });
 
+test('D40 School publishers cascade simultaneous ready facts through normal careerFactAdded reactions',()=>{
+  const events=catalog.events.filter(e=>e.id.startsWith('d40.school.'));
+  const published=[
+    ['guard','school-literacy-ready'],
+    ['guard','school-etiquette-ready'],
+    ['merchant','school-literacy-ready'],
+    ['artist-geisha','school-arts-ready'],
+    ['artist-geisha','school-literacy-ready'],
+    ['artist-geisha','school-rhetoric-ready'],
+    ['artist-geisha','school-etiquette-ready']
+  ] as const;
+  assert.equal(events.length,7);
+  for(const event of events){
+    for(const [career,fact] of published){
+      assert.ok(
+        event.reactionTriggers.some(trigger=>trigger.kind==='careerFactAdded'&&trigger.career===career&&trigger.fact===fact),
+        event.id+' cascade '+career+'.'+fact
+      );
+    }
+  }
+});
+
 test('Assassin Refusal Chain has the missing exact producer contract',()=>{
   const event=catalog.events.find(e=>e.id==='assassin.routes.refusal-chain-ready');
   assert.ok(event);

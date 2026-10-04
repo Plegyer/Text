@@ -47,6 +47,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",
@@ -133,6 +168,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",
@@ -215,6 +285,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",
@@ -305,6 +410,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",
@@ -387,6 +527,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",
@@ -473,6 +648,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",
@@ -559,6 +769,41 @@
         },
         {
           "kind": "dayStarted"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "guard",
+          "fact": "school-etiquette-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "merchant",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-arts-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-literacy-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-rhetoric-ready"
+        },
+        {
+          "kind": "careerFactAdded",
+          "career": "artist-geisha",
+          "fact": "school-etiquette-ready"
         }
       ],
       "priorityClass": "critical_progression",

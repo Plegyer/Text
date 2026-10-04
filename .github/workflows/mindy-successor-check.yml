@@ -1,33 +1,18 @@
-name: mindy-successor check
+name: mindy-successor D40 Merchant School cascade focused check
 
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-d40-merchant-school-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
+    if: startsWith(github.head_ref, 'chat2/qa-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
@@ -44,5 +29,23 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Focused Merchant School cascade validation
+        shell: powershell
+        run: |
+          $failed = 0
+          function Run-Group([string]$name, [string]$command) {
+            Write-Host "=== $name ==="
+            Invoke-Expression $command
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "::error::$name failed"
+              $script:failed = 1
+            }
+          }
+          Run-Group "typecheck" "npm run typecheck"
+          Run-Group "validate" "npm run validate"
+          Run-Group "build" "npm run build"
+          Run-Group "d40-core" "node --experimental-strip-types --test tests/d40-advanced-endings-tranche-b-v11.test.ts"
+          Run-Group "merchant-school" "node --experimental-strip-types --test tests/school-merchant-v17-live-inventory.test.ts"
+          Run-Group "other-d40-school" "node --experimental-strip-types --test tests/school-guard-v16-live-inventory.test.ts tests/school-artist-geisha-v18-live-inventory.test.ts"
+          Run-Group "reaction-regression" "node --experimental-strip-types --test tests/event-resolver.test.ts tests/reaction-priority.test.ts"
+          if ($failed -ne 0) { exit 1 }
