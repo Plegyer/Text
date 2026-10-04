@@ -192,13 +192,11 @@ test('C2-164 late Hunter route events are route presentation, not invented endin
   }
 
   const hunterEndings=catalog.definitions.endings.filter(ending=>ending.id.includes('hunter'));
-  assert.deepEqual(hunterEndings.map(ending=>ending.id),['ending.hunter.hard-work']);
-  assert.equal(presentation.slots['ending/hunter/master-hunter'],undefined);
-  assert.equal(presentation.slots['ending/hunter/warden'],undefined);
-  assert.equal(presentation.slots['ending/hunter/legend'],undefined);
+  assert.deepEqual(hunterEndings.map(ending=>ending.id),['ending.hunter.hard-work','ending.hunter.master-hunter','ending.hunter.warden','ending.hunter.legend']);
+  for(const id of ['ending/hunter/master-hunter','ending/hunter/warden','ending/hunter/legend'])assert.ok(presentation.slots[id]?.static,id);
 });
 
-test('C2-165 existing Hunter Hard Work ending presentation remains the only Hunter ending surface',()=>{
+test('C2-165 existing Hunter Hard Work ending presentation remains a live Hunter ending surface',()=>{
   const endingId='ending.hunter.hard-work';
   assert.ok(catalog.definitions.endings.some(ending=>ending.id===endingId));
   const id=presentationIdForEnding(endingId);

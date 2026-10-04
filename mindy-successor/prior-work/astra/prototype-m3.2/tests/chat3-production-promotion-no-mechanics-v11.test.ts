@@ -33,7 +33,8 @@ test('C3-117 frozen v11 Forest contracts remain present under the intentional v1
  ]);
  assert.ok(activity.results.find((entry:any)=>entry.id==='lumber.forest.success').effects.some((effect:any)=>effect.kind==='addWorldFact'&&effect.fact==='lumber.forest.truth-known'));
  assert.ok(forest.events.every((entry:any)=>entry.variants.some((variant:any)=>variant.id==='default')));
- assert.ok(forest.events.every((entry:any)=>entry.choices.every((choice:any)=>choice.effects.length===0)));
+ const effectful=forest.events.flatMap((entry:any)=>entry.choices.map((choice:any)=>({eventId:entry.id,choice}))).filter((entry:any)=>entry.choice.effects.length>0);
+ assert.deepEqual(effectful.map((entry:any)=>({eventId:entry.eventId,id:entry.choice.id,effects:entry.choice.effects})),[{eventId:'forest-result-content-v1.success',id:'warden-conservation-route',effects:[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]}]);
  const continuation=lumberCross.events.find((entry:any)=>entry.id==='lumber-cross.activity-forest-return');
  assert.ok(continuation.choices[0].effects.some((effect:any)=>effect.kind==='addCareerFact'&&effect.fact==='forest-truth-known'));
  assert.ok(continuation.choices[0].effects.some((effect:any)=>effect.kind==='addCareerFact'&&effect.fact==='forest-problem-resolved'));

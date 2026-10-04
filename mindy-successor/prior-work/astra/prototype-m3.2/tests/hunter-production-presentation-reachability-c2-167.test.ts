@@ -171,15 +171,14 @@ test('C2-167 every Hunter stage relationship item state Activity and ending over
     assert.ok(presentation.slots?.[id]?.static,id+' static');
   }
 
-  const endingId='ending.hunter.hard-work';
-  assert.ok(catalog.definitions.endings.some(ending=>ending.id===endingId));
-  const endingPresentation=presentationIdForEnding(endingId);
-  assert.ok(known.has(endingPresentation),endingPresentation);
-  assert.ok(presentation.slots?.[endingPresentation]?.static,endingPresentation+' static');
-  assert.deepEqual(
-    catalog.definitions.endings.filter(ending=>ending.id.includes('hunter')).map(ending=>ending.id),
-    [endingId]
-  );
+  const endingIds=['ending.hunter.hard-work','ending.hunter.master-hunter','ending.hunter.warden','ending.hunter.legend'];
+  for(const endingId of endingIds){
+    assert.ok(catalog.definitions.endings.some(ending=>ending.id===endingId),endingId);
+    const endingPresentation=presentationIdForEnding(endingId);
+    assert.ok(known.has(endingPresentation),endingPresentation);
+    assert.ok(presentation.slots?.[endingPresentation]?.static,endingPresentation+' static');
+  }
+  assert.deepEqual(catalog.definitions.endings.filter(ending=>ending.id.includes('hunter')).map(ending=>ending.id),endingIds);
 });
 
 test('C2-167 a real Hunter shift reaches ordinary presentation and exact live milestone event presentation',()=>{

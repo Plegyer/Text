@@ -28,8 +28,15 @@ test('Forest bilingual production pack preserves exact activityResult boundaries
       outcome,
       result
     }]);
-    assert.ok(event.choices.every(choice=>choice.effects.length===0));
-    assert.ok(event.choices.every(choice=>choice.conditions.length===0));
+    const effectful=event.choices.filter(choice=>choice.effects.length>0);
+    const conditional=event.choices.filter(choice=>choice.conditions.length>0);
+    if(id==='forest-result-content-v1.success'){
+      assert.deepEqual(effectful.map(choice=>({id:choice.id,effects:choice.effects})),[{id:'warden-conservation-route',effects:[{kind:'addWorldFact',fact:'reward.hunter.warden-signs.used'}]}]);
+      assert.deepEqual(conditional.map(choice=>choice.id),['warden-conservation-route']);
+    }else{
+      assert.deepEqual(effectful,[]);
+      assert.deepEqual(conditional,[]);
+    }
   }
 });
 

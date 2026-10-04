@@ -1,6 +1,6 @@
 import {z} from 'zod';
 
-export const STRONG_META_REGISTRY_VERSION='strong-meta-v2' as const;
+export const STRONG_META_REGISTRY_VERSION='strong-meta-v3' as const;
 export const STRONG_META_CONTRACT_VERSION=1 as const;
 export const STRONG_META_KEYSTONE_CAPACITY=1 as const;
 export const STRONG_META_SPECIALIST_CAPACITY=2 as const;
@@ -16,7 +16,16 @@ export const STRONG_META_IDS={
   assassinGhostRoutes:'specialist.assassin.ghost-routes',
   assassinContractLedger:'specialist.assassin.contract-ledger',
   prostituteHousebook:'specialist.prostitute.housebook',
-  prostituteMutualAidRoster:'specialist.prostitute.mutual-aid-roster'
+  prostituteMutualAidRoster:'specialist.prostitute.mutual-aid-roster',
+  lumberForewomanLedger:'specialist.lumber.forewoman-ledger',
+  lumberForestCompactRoute:'specialist.lumber.forest-compact-route',
+  satyrHouseLedger:'specialist.satyr-maid.house-ledger',
+  satyrGuestNetwork:'specialist.satyr-maid.guest-network',
+  farmFieldPreservation:'specialist.undead-farm.field-preservation',
+  farmSupplierAccount:'specialist.undead-farm.supplier-account',
+  tavernHouseLedger:'specialist.tavern.house-ledger',
+  tavernSafehouseNetwork:'specialist.tavern.safehouse-network',
+  hunterMasterKit:'specialist.hunter.master-kit'
 } as const;
 
 export type ApprovedStrongRewardId=typeof STRONG_META_IDS[keyof typeof STRONG_META_IDS];
@@ -24,7 +33,10 @@ export const approvedStrongRewardIdSchema=z.enum([
   STRONG_META_IDS.palaceCap200,STRONG_META_IDS.earnedReserveMatch,STRONG_META_IDS.workRhythm,STRONG_META_IDS.networkRetainer,
   STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,
   STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,
-  STRONG_META_IDS.prostituteMutualAidRoster
+  STRONG_META_IDS.prostituteMutualAidRoster,STRONG_META_IDS.lumberForewomanLedger,STRONG_META_IDS.lumberForestCompactRoute,
+  STRONG_META_IDS.satyrHouseLedger,STRONG_META_IDS.satyrGuestNetwork,STRONG_META_IDS.farmFieldPreservation,
+  STRONG_META_IDS.farmSupplierAccount,STRONG_META_IDS.tavernHouseLedger,STRONG_META_IDS.tavernSafehouseNetwork,
+  STRONG_META_IDS.hunterMasterKit
 ]);
 export type StrongRewardClass='keystone'|'specialist';
 export type StrongRewardLifecycle='active'|'retired';
@@ -64,13 +76,22 @@ const assassinGhostRoutesEffectSchema=z.object({kind:z.literal('assassin-ghost-r
 const assassinContractLedgerEffectSchema=z.object({kind:z.literal('assassin-contract-ledger'),maxContractsPerRun:z.literal(2),reveal:z.tuple([z.literal('sponsor-tag'),z.literal('fallout-tag')]),allowAuthoredReroute:z.literal(true)}).strict();
 const prostituteHousebookEffectSchema=z.object({kind:z.literal('prostitute-housebook'),maxBookingsPerRun:z.literal(2),reveal:z.tuple([z.literal('terms'),z.literal('risk')]),allow:z.tuple([z.literal('decline'),z.literal('renegotiate')])}).strict();
 const prostituteMutualAidRosterEffectSchema=z.object({kind:z.literal('prostitute-mutual-aid-roster'),maxRiskScenesPerRun:z.literal(2),allow:z.tuple([z.literal('safe-exit'),z.literal('request-help'),z.literal('contact-support')])}).strict();
+const lumberForewomanLedgerEffectSchema=z.object({kind:z.literal('lumber-forewoman-ledger'),maxUsesPerRun:z.literal(1)}).strict();
+const lumberForestCompactRouteEffectSchema=z.object({kind:z.literal('lumber-forest-compact-route'),maxUsesPerRun:z.literal(1)}).strict();
+const satyrHouseLedgerEffectSchema=z.object({kind:z.literal('satyr-maid-house-ledger'),maxUsesPerRun:z.literal(1)}).strict();
+const satyrGuestNetworkEffectSchema=z.object({kind:z.literal('satyr-maid-guest-network'),maxUsesPerRun:z.literal(1)}).strict();
+const farmFieldPreservationEffectSchema=z.object({kind:z.literal('undead-farm-field-preservation'),maxUsesPerRun:z.literal(1)}).strict();
+const farmSupplierAccountEffectSchema=z.object({kind:z.literal('undead-farm-supplier-account'),maxUsesPerRun:z.literal(1)}).strict();
+const tavernHouseLedgerEffectSchema=z.object({kind:z.literal('tavern-house-ledger'),maxUsesPerRun:z.literal(5),totalPerRunCap:z.literal(125),unitAmount:z.literal(25)}).strict();
+const tavernSafehouseNetworkEffectSchema=z.object({kind:z.literal('tavern-safehouse-network'),maxUsesPerRun:z.literal(4),perCalendarYearCap:z.literal(1),totalPerRunCap:z.literal(4)}).strict();
+const hunterMasterKitEffectSchema=z.object({kind:z.literal('hunter-master-kit'),maxUsesPerRun:z.literal(1)}).strict();
 
 export const resolvedStrongRewardSchema=z.discriminatedUnion('class',[
   z.object({
     id:strongRewardIdSchema,
     class:z.literal('specialist'),
     definitionVersion:z.number().int().min(1),
-    effect:z.union([cap200EffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema])
+    effect:z.union([cap200EffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema,lumberForewomanLedgerEffectSchema,lumberForestCompactRouteEffectSchema,satyrHouseLedgerEffectSchema,satyrGuestNetworkEffectSchema,farmFieldPreservationEffectSchema,farmSupplierAccountEffectSchema,tavernHouseLedgerEffectSchema,tavernSafehouseNetworkEffectSchema,hunterMasterKitEffectSchema])
   }).strict(),
   z.object({
     id:strongRewardIdSchema,
@@ -128,7 +149,7 @@ export type StrongRewardDefinition=Readonly<{
   class:StrongRewardClass;
   lifecycle:StrongRewardLifecycle;
   definitionVersion:1;
-  authority:'D24'|'D30'|'D32'|'D40';
+  authority:'D24'|'D30'|'D32'|'D40'|'D41';
   effect:ResolvedStrongReward['effect'];
 }>;
 
@@ -143,7 +164,16 @@ export const strongMetaRegistry:Readonly<Record<ApprovedStrongRewardId,StrongRew
   [STRONG_META_IDS.assassinGhostRoutes]:{id:STRONG_META_IDS.assassinGhostRoutes,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'assassin-ghost-routes',maxContractsPerRun:2}},
   [STRONG_META_IDS.assassinContractLedger]:{id:STRONG_META_IDS.assassinContractLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'assassin-contract-ledger',maxContractsPerRun:2,reveal:['sponsor-tag','fallout-tag'],allowAuthoredReroute:true}},
   [STRONG_META_IDS.prostituteHousebook]:{id:STRONG_META_IDS.prostituteHousebook,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'prostitute-housebook',maxBookingsPerRun:2,reveal:['terms','risk'],allow:['decline','renegotiate']}},
-  [STRONG_META_IDS.prostituteMutualAidRoster]:{id:STRONG_META_IDS.prostituteMutualAidRoster,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'prostitute-mutual-aid-roster',maxRiskScenesPerRun:2,allow:['safe-exit','request-help','contact-support']}}
+  [STRONG_META_IDS.prostituteMutualAidRoster]:{id:STRONG_META_IDS.prostituteMutualAidRoster,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D40',effect:{kind:'prostitute-mutual-aid-roster',maxRiskScenesPerRun:2,allow:['safe-exit','request-help','contact-support']}},
+  [STRONG_META_IDS.lumberForewomanLedger]:{id:STRONG_META_IDS.lumberForewomanLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'lumber-forewoman-ledger',maxUsesPerRun:1}},
+  [STRONG_META_IDS.lumberForestCompactRoute]:{id:STRONG_META_IDS.lumberForestCompactRoute,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'lumber-forest-compact-route',maxUsesPerRun:1}},
+  [STRONG_META_IDS.satyrHouseLedger]:{id:STRONG_META_IDS.satyrHouseLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'satyr-maid-house-ledger',maxUsesPerRun:1}},
+  [STRONG_META_IDS.satyrGuestNetwork]:{id:STRONG_META_IDS.satyrGuestNetwork,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'satyr-maid-guest-network',maxUsesPerRun:1}},
+  [STRONG_META_IDS.farmFieldPreservation]:{id:STRONG_META_IDS.farmFieldPreservation,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'undead-farm-field-preservation',maxUsesPerRun:1}},
+  [STRONG_META_IDS.farmSupplierAccount]:{id:STRONG_META_IDS.farmSupplierAccount,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'undead-farm-supplier-account',maxUsesPerRun:1}},
+  [STRONG_META_IDS.tavernHouseLedger]:{id:STRONG_META_IDS.tavernHouseLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'tavern-house-ledger',maxUsesPerRun:5,totalPerRunCap:125,unitAmount:25}},
+  [STRONG_META_IDS.tavernSafehouseNetwork]:{id:STRONG_META_IDS.tavernSafehouseNetwork,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'tavern-safehouse-network',maxUsesPerRun:4,perCalendarYearCap:1,totalPerRunCap:4}},
+  [STRONG_META_IDS.hunterMasterKit]:{id:STRONG_META_IDS.hunterMasterKit,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'hunter-master-kit',maxUsesPerRun:1}}
 };
 
 const approvedIdSet=new Set<string>(Object.keys(strongMetaRegistry));
@@ -471,7 +501,7 @@ export function applyNetworkRetainerAtStartDay(input:Readonly<{
 
 export function validateStrongMetaRegistry():void{
   const ids=Object.keys(strongMetaRegistry);
-  if(ids.length!==11)throw new Error('Strong Meta registry must contain four v7 rewards plus seven D40 Specialists.');
+  if(ids.length!==20)throw new Error('Strong Meta registry must contain four v7 rewards, seven D40 Specialists, and nine D41 Specialists.');
   for(const [key,definition] of Object.entries(strongMetaRegistry)){
     if(key!==definition.id)throw new Error(`Strong Meta registry key mismatch: ${key}`);
     if(!strongRewardIdPattern.test(key))throw new Error(`Invalid Strong Meta reward ID: ${key}`);
@@ -479,11 +509,15 @@ export function validateStrongMetaRegistry():void{
   if(new Set(ids).size!==ids.length)throw new Error('Duplicate Strong Meta reward ID.');
   const specialists=Object.values(strongMetaRegistry).filter(x=>x.class==='specialist');
   const keystones=Object.values(strongMetaRegistry).filter(x=>x.class==='keystone');
-  if(specialists.length!==8)throw new Error('Strong Meta Specialist registry drift.');
+  if(specialists.length!==17)throw new Error('Strong Meta Specialist registry drift.');
   if(keystones.length!==3)throw new Error('Strong Meta Keystone registry drift.');
   for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster]){
     const definition=strongMetaRegistry[id];
     if(definition.class!=='specialist'||definition.authority!=='D40')throw new Error(`D40 Specialist registry drift: ${id}`);
+  }
+  for(const id of [STRONG_META_IDS.lumberForewomanLedger,STRONG_META_IDS.lumberForestCompactRoute,STRONG_META_IDS.satyrHouseLedger,STRONG_META_IDS.satyrGuestNetwork,STRONG_META_IDS.farmFieldPreservation,STRONG_META_IDS.farmSupplierAccount,STRONG_META_IDS.tavernHouseLedger,STRONG_META_IDS.tavernSafehouseNetwork,STRONG_META_IDS.hunterMasterKit]){
+    const definition=strongMetaRegistry[id];
+    if(definition.class!=='specialist'||definition.authority!=='D41')throw new Error(`D41 Specialist registry drift: ${id}`);
   }
   const reserve=strongMetaRegistry[STRONG_META_IDS.earnedReserveMatch].effect;
   const rhythm=strongMetaRegistry[STRONG_META_IDS.workRhythm].effect;

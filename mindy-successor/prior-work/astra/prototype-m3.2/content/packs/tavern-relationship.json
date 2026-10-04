@@ -256,6 +256,12 @@
           "conditions": [],
           "effects": [
             {
+              "kind": "setRelationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "request-response",
+              "value": "accepted"
+            },
+            {
               "kind": "addRelationshipFact",
               "relationship": "tavern.recurring-traveler",
               "fact": "request-resolved"
@@ -283,6 +289,12 @@
           "text": "Keep the traveler relationship professional without taking responsibility for the rumour.",
           "conditions": [],
           "effects": [
+            {
+              "kind": "setRelationshipChoice",
+              "relationship": "tavern.recurring-traveler",
+              "choice": "request-response",
+              "value": "declined"
+            },
             {
               "kind": "addRelationshipFact",
               "relationship": "tavern.recurring-traveler",

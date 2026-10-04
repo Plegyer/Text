@@ -71,11 +71,11 @@ test('C3 starter-career collision guard accepts approved Satyr and Undead runtim
 
   assert.deepEqual(
     definitions.endings.filter((ending:any)=>/satyr-maid/.test(ending.id)).map((ending:any)=>ending.id).sort(),
-    [...satyrRuntime.endings].sort()
+    ['ending.satyr-maid.hard-work','ending.satyr-maid.house-power','ending.satyr-maid.personal-network','ending.satyr-maid.boundary-mastery'].sort()
   );
   assert.deepEqual(
     definitions.endings.filter((ending:any)=>/undead-farm/.test(ending.id)).map((ending:any)=>ending.id).sort(),
-    [...undeadRuntime.endings].sort()
+    ['ending.undead-farm.hard-work','ending.undead-farm.research-farmer','ending.undead-farm.successor','ending.undead-farm.external-anomaly'].sort()
   );
 
   // Preparation fixtures predate both approved complete-career runtimes and remain historical evidence only.

@@ -141,7 +141,9 @@ test('clean Undead Farm run exercises seasons, resources, relationship/Night, Sc
   s=dispatch(s,{type:'completeEnding'},catalog);
   assert.equal(s.run.status,'ended');
   assert.ok(s.meta.completedEndings.includes('ending.undead-farm.research-farmer'));
-  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[]);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,['specialist.undead-farm.field-preservation']);
+  assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,['specialist.undead-farm.field-preservation']);
+  assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,['specialist.undead-farm.field-preservation']);
 
   s=dispatch(s,{type:'newLife'},catalog);
   assert.equal(s.run.status,'active');

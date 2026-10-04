@@ -14,7 +14,7 @@ const presentation=JSON.parse(readFileSync('content/presentation.json','utf8'));
 const localization=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 
 const seasons=['spring','summer','autumn','winter'] as const;
-const endingIds=['tavern-stay','tavern-guild','tavern-court','ending.tavern.hard-work'] as const;
+const endingIds=['ending.tavern.innkeeper','ending.tavern.information-broker','ending.tavern.sanctuary','ending.tavern.hard-work'] as const;
 
 test('C2-146 Tavern seasonal work uses only existing project-owned static assets until a safe motion source exists',()=>{
   const checked=applyPresentation(catalog,presentation);
@@ -53,9 +53,9 @@ test('C2-153 all assigned Tavern ending identities preserve distinct live semant
   const mapped=endingIds.map(id=>presentationIdForEnding(id));
 
   assert.deepEqual(mapped,[
-    'ending/tavern-stay',
-    'ending/tavern-guild',
-    'ending/tavern-court',
+    'ending/tavern/innkeeper',
+    'ending/tavern/information-broker',
+    'ending/tavern/sanctuary',
     'ending/tavern/hard-work'
   ]);
   assert.equal(new Set(mapped).size,4,'ending semantic IDs remain distinct');
@@ -91,7 +91,7 @@ test('C2-153 all assigned Tavern ending identities preserve distinct live semant
   }
 });
 
-test('C2-145 baseline keeps the pre-contract seasonal and ending identities intact after the runtime contract is published',()=>{
+test('C2-145 baseline keeps seasonal surfaces and canonical D41 Tavern ending identities live',()=>{
   const published=new Set(Object.keys(presentation.slots??{}).filter(id=>id.includes('tavern')));
   for(const id of [
     'job/tavern/result/default',

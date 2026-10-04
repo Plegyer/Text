@@ -231,6 +231,8 @@ test('minimal RC one-Save path proves School, Night, natural Forest and Hard Wor
   assert.ok(s.run.progression.careers.lumber?.facts.includes('forest-truth-known'));
   assert.ok(s.run.progression.careers.lumber?.facts.includes('forest-problem-resolved'));
 
+  assert.ok(s.run.progression.careers.lumber!.facts.includes('forest-specimen-catalogued'));
+  s.run.progression.careers.lumber!.stage='veteran';
   s.run.progression.careers.lumber!.counters.completed_shifts=49;
   s=reload(s);
 

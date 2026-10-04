@@ -152,6 +152,7 @@ test('C3-166 Forest return uses exact Activity result and ledger-backed authored
   assert.deepEqual(e.reactionTriggers,[{kind:'activityResult',activity:'lumber.forest',outcome:'success',result:'lumber.forest.success'}]);
   let s=stateAt('house-node','winter');
   s.run.progression.careers.tavern!.facts.push('rumour-route-open','guest-ledger-evidence-ready');
+  s.run.progression.worldFacts.push('lumber.forest.truth-known');
   s=resolveReactions(s,[{kind:'activityResult',activity:'lumber.forest',outcome:'success',result:'lumber.forest.success'}],catalog).state;
   assert.equal(s.run.pending?.eventId,e.id);
   assert.equal(s.run.pending?.variantId,'ledger-context');
@@ -167,9 +168,10 @@ test('C3-167 crisis/outcome copy preserves ending IDs and rewards',()=>{
   for(const id of ['tavern.career.veteran-service','tavern.career.innkeeper','tavern.career.information-broker','tavern.career.sanctuary','tavern.career.outcome-ready',crisis.id])localizationForEvent(id);
   const rewards=new Map(defs.endings.filter((x:any)=>/tavern/.test(x.id)).map((x:any)=>[x.id,x.reward]));
   assert.equal(rewards.get('ending.tavern.hard-work'),'tavern.hardwork.compat');
-  assert.equal(rewards.get('tavern-stay'),'host');
-  assert.equal(rewards.get('tavern-court'),'court');
-  assert.equal(rewards.get('tavern-guild'),'mediator');
+  assert.equal(rewards.get('ending.tavern.innkeeper'),'specialist.tavern.house-ledger');
+  assert.equal(rewards.get('ending.tavern.information-broker'),'knowledge.tavern.broker-index');
+  assert.equal(rewards.get('ending.tavern.sanctuary'),'specialist.tavern.safehouse-network');
+  for(const retired of ['tavern-stay','tavern-court','tavern-guild'])assert.equal(rewards.has(retired),false,retired);
 });
 
 test('all Chat 3 live Tavern authored prose stays role-only and outside Secret Debt',()=>{
