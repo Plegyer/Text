@@ -1,38 +1,39 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — D38 ACTIVITY ENDING CONTENT / PRESENTATION v17**
+Status: **ACTIVE — D38 ACTIVITY ENDING REACHABILITY / PACING AUDIT v18**
 Owner: Chat 3
 
-Frozen mechanics producer:
-`chat3/activity-ending-family-producer-v16-r1@3cf69d7cb3df1a58d68908159d0acc14736435c4`
-
-Do not mutate v16.
+Frozen mechanics/content:
+- v16 mechanics: `chat3/activity-ending-family-producer-v16-r1@3cf69d7cb3df1a58d68908159d0acc14736435c4`
+- v17 content: `chat3/activity-ending-content-presentation-v17@df9ef5c3d04cfd8eb582c24838d971854e984218`
 
 New branch:
-`chat3/activity-ending-content-presentation-v17`
-
-Base:
-`3cf69d7cb3df1a58d68908159d0acc14736435c4`
+`chat3/activity-ending-reachability-audit-v18`
 
 Task:
-finish the player-facing 1.0 content layer for the three D38 Activity endings:
+audit the three D38 endings for real 160-day reachability and pacing.
+
+Required scenarios:
 - Pathfinder;
 - Preservation;
-- Network.
+- Network;
+- mixed low/mid/high preparation;
+- normal/cheap/street lodging pressure where relevant;
+- <=10 Activity-entry reference target;
+- roughly Day-120 reference eligibility;
+- 3/4 anchors;
+- >=2 mini-game families;
+- meaningful extraction;
+- contact/network thread;
+- explicit commit remains separate.
 
-Produce:
-- final RU/EN titles/descriptions/epilogues;
-- ending and Specialist reward presentation copy;
-- presentation-slot mapping using existing project-owned media where safe;
-- accessibility alt/caption coverage;
-- a short missing-asset manifest for genuinely absent Activity-ending visuals.
+Audit interactions with School/career prep, D36 2-Energy entry, Camp, Secret Debt-bound Activity, Strong Meta rewards, and D23 Palace firewall.
 
-Preserve all D38 mechanics and stable IDs exactly.
-Do not change eligibility, rewards, Strong Meta capacity, Activity runtime, 2-Energy entry, Palace or Secret Debt rules.
+Research only. Do not change runtime/content.
 No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_ENDING_CONTENT_PRESENTATION_v17.md`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_ENDING_REACHABILITY_AUDIT_v18.md`
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+Report:
+`READY_FOR_LEADER_REVIEW`.
