@@ -31,13 +31,11 @@ jobs:
           fetch-depth: 1
 
       - name: Verify exact HEAD
-        shell: pwsh
+        shell: cmd
         run: |
-          $actual = git rev-parse HEAD
-          if ($actual -ne '0cae33dd3518dbda7d6d84e4ea6661b02fe49886') {
-            throw "Expected frozen Camp producer 0cae33dd3518dbda7d6d84e4ea6661b02fe49886, got $actual"
-          }
-          Write-Host "Exact frozen producer: $actual"
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          if not "%ACTUAL%"=="0cae33dd3518dbda7d6d84e4ea6661b02fe49886" exit /b 1
+          echo Exact frozen producer: %ACTUAL%
 
       - name: Setup Node
         uses: actions/setup-node@v4
