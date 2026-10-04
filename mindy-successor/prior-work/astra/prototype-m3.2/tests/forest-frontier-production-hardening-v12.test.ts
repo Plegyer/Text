@@ -216,6 +216,13 @@ test('informed risk is School-information gated and exposes its exact bounded tr
 test('legacy Activity adapters stay unlimited when Field Time is not declared',()=>{
   let s=started();
   s.run.dayState.energyCurrent=3;
+  s.run.progression.careers.hunter={
+    stage:'recognized-hunter',
+    shifts:0,
+    counters:{},
+    choices:{},
+    facts:['expedition-qualified']
+  };
   s=dispatch(s,{type:'enterActivity',id:'hunter.expedition'},catalog);
   assert.equal(s.run.flow.activity?.internalState.fieldTimeRemaining,null);
   assert.equal(forest().adapterConfig.fieldTimeSegments,6);
