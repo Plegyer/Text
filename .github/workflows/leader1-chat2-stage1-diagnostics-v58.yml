@@ -1,0 +1,65 @@
+name: Leader1 Chat2 Stage1 Diagnostics v58
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-focused-gate-v57
+    paths:
+      - '.github/workflows/leader1-chat2-stage1-diagnostics-v58.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnostics:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: a87b6d5090029d737a84f9f7312d1781c168aea9
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: npm ci
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        shell: powershell
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: |
+          npm run typecheck *>&1 | Tee-Object "$env:RUNNER_TEMP\typecheck-v58.log"
+          exit $LASTEXITCODE
+      - name: Core
+        id: core
+        continue-on-error: true
+        shell: powershell
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: |
+          node --experimental-strip-types --test tests/secret-debt-full-route-v12.test.ts tests/secret-debt-activity-energy-compat-v20.test.ts tests/secret-debt-ending-localization-producer-v27.test.ts tests/prostitute-boundaries.test.ts *>&1 | Tee-Object "$env:RUNNER_TEMP\core-v58.log"
+          exit $LASTEXITCODE
+      - name: Checkout evidence
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-focused-gate-v57
+          path: evidence-repo
+          persist-credentials: true
+      - name: Publish logs
+        if: always()
+        shell: powershell
+        run: |
+          $base="evidence-repo/mindy-successor/docs/tasks"
+          Copy-Item "$env:RUNNER_TEMP\typecheck-v58.log" "$base/CHAT2_STAGE1_TYPECHECK_v58.log" -Force
+          Copy-Item "$env:RUNNER_TEMP\core-v58.log" "$base/CHAT2_STAGE1_CORE_v58.log" -Force
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_TYPECHECK_v58.log mindy-successor/docs/tasks/CHAT2_STAGE1_CORE_v58.log
+          git commit -m "qa(chat2): publish Stage1 diagnostics v58"
+          git push origin HEAD:leader1/chat2-stage1-focused-gate-v57
