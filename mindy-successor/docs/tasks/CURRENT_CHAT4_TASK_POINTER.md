@@ -1,19 +1,19 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE CAREER PRODUCER EXACT-HEAD QA BUNDLE v29-v31**
+Status: **ACTIVE — AUTO-CONTINUE PALACE EXACT-HEAD QA BUNDLE v32-v34**
 Owner: Chat 4
 
-Previous Secret Debt + D51 bundle v26-v28 is complete and accepted.
+Previous D46/D47/lumber exact-head QA bundle v29-v31 is complete and GREEN.
 
 Current branch:
-`chat4/career-producers-exact-head-qa-bundle-v29`
+`chat4/palace-exact-head-qa-bundle-v32`
 
-Complete ALL tasks below in order without waiting for Leader.
+Complete ALL tasks in order without waiting for Leader.
 
-## Task A — v29: D46 economy exact-head QA
+## Task A — v32: Palace mechanics/narrative exact-head QA
 
-Verify frozen producer:
-`chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
+Verify:
+`chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`
 
 Required:
 - exact SHA guard;
@@ -21,59 +21,50 @@ Required:
 - typecheck;
 - validate;
 - build;
-- D46 focused economy/start/wage tests;
-- existing-save Lust preservation;
-- ordinary wage cap 120;
-- Secret Debt/non-ordinary wage isolation.
+- Palace entry/D23;
+- duty cadence/economy;
+- Outcome Ready;
+- 12x91 Prince readiness;
+- retryable confrontation;
+- explicit Return Home;
+- Secret Debt forced-Night isolation;
+- save/reload.
 
-No full CI.
-Do not mutate frozen producer.
+No full CI. Do not mutate producer.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT4_D46_ECONOMY_EXACT_HEAD_QA_v29.md`
+`mindy-successor/docs/tasks/CHAT4_PALACE_V18_EXACT_HEAD_QA_v32.md`
 
-## Task B — v30: D47 Hard Work exact-head QA
+## Task B — v33: Palace final prose/media exact-head QA
 
-Verify frozen producer:
-`chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
+Verify:
+`chat6/palace-final-prose-media-v19@6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
 
 Required:
 - exact SHA guard;
-- typecheck / validate / build;
-- exact ten-package mapping;
-- Prostitute Lust +5;
-- Merchant no-money change;
-- package application exactly once;
-- D23 package identity count;
-- no Strong Meta slot usage.
+- localization parity;
+- presentation/media mappings;
+- Palace ending copy;
+- D48 fallback behavior;
+- D49 lore reveal boundaries;
+- no mechanics changes.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT4_D47_HARD_WORK_EXACT_HEAD_QA_v30.md`
+`mindy-successor/docs/tasks/CHAT4_PALACE_V19_PROSE_MEDIA_EXACT_HEAD_QA_v33.md`
 
-## Task C — v31: lumber-stay retirement exact-head QA
+## Task C — v34: Palace preassembly acceptance
 
-Verify frozen implementation:
-`39912e7435c3707d98f96fe550d697c20ac0bedb`
+Create:
+`mindy-successor/docs/tasks/CHAT4_PALACE_PREASSEMBLY_ACCEPTANCE_v34.md`
 
-Accepted handoff branch:
-`chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb`
+Combine:
+- v18 QA;
+- v19 QA;
+- D39 producer v20 + Chat5 independent QA v24;
+- Palace cumulative assembly refresh v21;
+- Chat3 Palace review v33-v35.
 
-Required:
-- exact implementation SHA guard;
-- typecheck / validate / build;
-- no live lumber-stay ending;
-- historical lumber-stay/vitality normalization;
-- +1 Energy exactly once;
-- no Hard Work/package conversion;
-- canonical ordinary ending count remains 40;
-- migration/reload idempotence;
-- presentation retirement preserved.
+State exact accepted inputs, remaining merge-only risks, and stop conditions for Chat 2.
 
-No full CI.
-Do not mutate frozen producer.
-
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_LUMBER_RETIREMENT_EXACT_HEAD_QA_v31.md`
-
-After all three are committed, report:
+After all three:
 `BUNDLE_COMPLETE — READY_FOR_CHAT2_ASSEMBLY`.
