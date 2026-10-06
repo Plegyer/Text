@@ -25,9 +25,10 @@ Final disposition:
 - true Camp-vs-D38 authored deltas are path-disjoint;
 - historical whole-tree/whole-file assembly is unsafe against current main;
 - Camp `efde0a...` is exact-head executable-green, focused **107/107 PASS**;
-- Activity `ab378d...` and D38 `7ae7a9...` are not standalone exact-head green because the same inherited synthetic Activity fixture omits required `effects`;
-- Camp v19 contains the exact accepted cumulative fixture repair `effects: []` and passes the full gate;
-- this is a stale historical test-fixture lineage blocker, not a Product/runtime defect requiring frozen producer mutation;
+- Activity `ab378d...` and D38 `7ae7a9...` are not standalone exact-head green: diagnostic run `37504871830` shows inherited Activity baseline typecheck + typed-read validation/catalog-load + focused-fixture debt;
+- both standalone heads still build successfully;
+- Camp v19 contains the accepted cumulative repairs (synthetic `effects: []`, Forest typed-read manifest closure, regional focused-fixture updates) and passes the full gate with 107/107 focused tests;
+- this is historical Activity executable-baseline debt, not a D38-specific Product/runtime defect requiring frozen producer mutation;
 - Chat2 must apply Activity -> Camp repair -> D38 selectively on current main and run focused QA before its one full CI.
 
 Do not fabricate a cumulative historical candidate.
