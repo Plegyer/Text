@@ -1,40 +1,36 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — PALACE CUMULATIVE ASSEMBLY REFRESH v21**
+Status: **ACTIVE — RETIRED TAVERN CLEANUP EXACT-HEAD QA v23**
 Owner: Chat 5
 
-Previous Palace D39 reward producer v20 is complete and focused-green.
+Previous Activity D38 exact-head QA v22 is green and accepted.
 
-New branch:
-`chat5/palace-cumulative-assembly-refresh-v21`
+Producer under verification:
+`chat6/retired-tavern-localization-cleanup-v31@eb03a847347339ade109b0ec9022b81cd4abadaf`
 
-Goal:
-refresh the Palace assembly plan now that the D39 reward implementation source exists.
+QA branch:
+`chat5/qa-retired-tavern-cleanup-v23`
 
-Use:
-- Palace mechanics/narrative v18;
-- Palace final prose/media v19;
-- D39 reward producer v20;
-- D43/D45/D48/D49 Product authorities;
-- current Strong Meta rules;
-- Secret Debt forced-Night firewall.
+Task:
+run executable exact-head verification of the retired Tavern localization cleanup.
 
-Produce one exact selective Chat 2 assembly packet:
-- composition order;
-- shared-file conflicts;
-- exact D39 reward bindings;
-- save/migration risks;
-- Prince/Return Home checks;
-- presentation/localization merge rules;
-- focused test bundle;
-- explicit stop conditions.
+Workflow must explicitly checkout:
+`eb03a847347339ade109b0ec9022b81cd4abadaf`
 
-Research/preflight only.
-Do not modify production runtime.
-Do not run full CI.
+Required checks:
+- exact SHA guard;
+- production firewall;
+- npm ci;
+- typecheck;
+- validate;
+- build;
+- v31 cleanup focused test;
+- D41 migration/history compatibility tests;
+- presentation/source-integrity adjacency;
+- verify no live Tavern ending/presentation is reintroduced.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT5_PALACE_CUMULATIVE_ASSEMBLY_REFRESH_v21.md`
+No full CI.
+Do not mutate the frozen producer.
 
-Report:
-`READY_FOR_CHAT2_PREFLIGHT`.
+If green, document run/job evidence and report:
+`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
