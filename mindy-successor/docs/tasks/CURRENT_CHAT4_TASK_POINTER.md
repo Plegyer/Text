@@ -1,18 +1,18 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **START NOW — D46 + D47 + LEGACY EXACT-HEAD QA v47-v49**
+Status: **START NOW — SECRET DEBT + D51 RECOVERY-HEAD QA v50-v52**
 Owner: Chat 4
 
-Previous Palace cumulative exact-head QA v44-v46 is accepted as assembly guidance; its two historical Palace repairs remain mandatory for future Chat2 Palace composition.
+Previous D46+D47+legacy exact-head QA v47-v49 is accepted.
 
 Current branch:
-`chat4/d46-d47-legacy-exact-head-qa-v47`
+`chat4/qa-secret-debt-d51-recovery-head-v50`
 
 Task:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_EXACT_HEAD_QA_v47_v49_TASK.md`
+`mindy-successor/docs/tasks/CHAT4_QA_SECRET_DEBT_D51_RECOVERY_HEAD_v50_v52_TASK.md`
 
-Complete all v47-v49 tasks in order.
-Exact-head QA/preassembly only. Do not mutate frozen producers. No full CI. Do not merge main.
+Freeze the live Chat2 recovery head at task start, perform exact-head focused QA, and publish Leader handoff.
+Do not mutate Chat2. No full CI. Do not merge main.
 
 Expected final:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_D46_D47_LEGACY_ASSEMBLY_PREP`.
+`BUNDLE_COMPLETE — READY_FOR_LEADER_SECRET_DEBT_REVIEW`.
