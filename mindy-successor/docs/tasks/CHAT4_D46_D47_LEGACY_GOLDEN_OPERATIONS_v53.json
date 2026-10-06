@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "id": "CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53",
+  "status": "GOLDEN_SEMANTIC_OPERATIONS",
+  "owner": "Chat4",
+  "authorities": {
+    "d46": "a0c5f855b63d3bb85556f5b2780aaaabb58fbced",
+    "d47": "252dc26c514e24f4ab0f0cc0da7694254282e4c4",
+    "lumberVerifiedTarget": "39912e7435c3707d98f96fe550d697c20ac0bedb",
+    "acceptedChat4V49Branch": "chat4/d46-d47-legacy-exact-head-qa-v47",
+    "acceptedChat4V49Document": "mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_EXACT_HEAD_QA_v49.md"
+  },
+  "observedCurrentMain": {
+    "sha": "b7ef94d4357f99bc906842942aa3e11e6f84a8d4",
+    "note": "Audit evidence only. Chat2 must freeze its live integration base again at assembly time.",
+    "sharedFileBlobs": {
+      "content/definitions.json": "311b2fec271a274e61c34fad9645d5bff13f4993",
+      "src/core/engine.ts": "e8b979355e6ebacad7ae62dce36d625687613152",
+      "src/core/hardWorkMeta.ts": "5c9440874c0fdb61589d15de768416be04aaf606"
+    }
+  },
+  "assemblyPolicy": {
+    "freezeLiveBaseAtIntegrationTime": true,
+    "noWholeFileReplacement": [
+      "content/definitions.json",
+      "src/core/engine.ts",
+      "src/core/hardWorkMeta.ts",
+      "content/localization.json",
+      "content/presentation.json",
+      "src/ui/app.ts",
+      "src/core/schema.ts",
+      "src/core/content.ts"
+    ],
+    "preserveCurrentMainDomains": [
+      "schema6-and-current-migrations",
+      "strong-meta-registry-snapshot-runtime",
+      "d40-advanced-endings",
+      "d41-advanced-endings",
+      "palace",
+      "night-d42-and-current-nightflow",
+      "activity",
+      "school",
+      "runresult-ending-transaction-ledger",
+      "secret-debt-d51-if-present-on-live-integration-base",
+      "all-unowned-localization-and-presentation-keys"
+    ],
+    "thirdValueRules": [
+      {
+        "id": "THIRD_VALUE_STOP",
+        "rule": "For a scalar/keyed semantic operation, if the live integration value is neither the expected historical/pre-value nor the desired golden value, STOP and classify current-main drift; do not overwrite."
+      },
+      {
+        "id": "ALREADY_APPLIED_IDEMPOTENT",
+        "rule": "If the live integration value already equals the desired golden value, treat the operation as already applied and do not rewrite unrelated bytes."
+      },
+      {
+        "id": "UNOWNED_SURFACE_PRESERVE",
+        "rule": "Any field/key/ID not explicitly owned by an operation in this manifest must be preserved byte-for-byte or semantically equivalent from the live integration base."
+      },
+      {
+        "id": "DELETE_ONLY_EXACT_ID",
+        "rule": "Delete operations apply only to the exact stable ID/key listed. If a similarly named replacement/current key exists, preserve it unless separately listed."
+      },
+      {
+        "id": "DIVERGED_SHARED_FILE_STOP",
+        "rule": "If a shared file contains newer accepted systems, compose by stable ID/symbol only. Never resolve divergence by copying an authority snapshot wholesale."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "id": "D46_FRESH_LUST_DEFAULT",
+      "authority": "d46",
+      "file": "src/core/engine.ts",
+      "op": "set-semantic-default",
+      "selector": "freshSave().run.character.lust",
+      "desired": 5,
+      "expectedHistoricalPreValue": 1,
+      "preserve": [
+        "existing stored/migrated Lust values",
+        "starting money logic",
+        "base Energy logic",
+        "Strong Meta and other current run initialization"
+      ],
+      "stopIf": "Any migration rewrites a legitimate stored Lust value to 5."
+    },
+    {
+      "id": "D46_ORDINARY_WAGE_BASES",
+      "authority": "d46",
+      "file": "content/definitions.json",
+      "op": "set-by-action-id",
+      "selectorField": "action.id",
+      "valueField": "wage.base",
+      "desiredById": {
+        "lumber.shift": 35,
+        "satyr-maid.shift": 37,
+        "undead-farm.shift": 37,
+        "tavern.shift": 37,
+        "hunter.shift": 37,
+        "guard.shift": 37,
+        "merchant.shift": 37,
+        "artist-geisha.shift": 37,
+        "assassin.shift": 37,
+        "prostitute.shift": 37
+      },
+      "preserveFields": [
+        "wage.weights",
+        "conditions",
+        "effects",
+        "seasonal",
+        "all non-ordinary actions"
+      ]
+    },
+    {
+      "id": "D46_ORDINARY_SHIFT_WAGE_CAP",
+      "authority": "d46",
+      "file": "src/core/engine.ts",
+      "op": "ensure-semantic-helper",
+      "selector": "ordinaryShiftWage(action, save)",
+      "constants": {
+        "ORDINARY_SHIFT_WAGE_CAP": 120
+      },
+      "appliesOnlyToActionIds": [
+        "lumber.shift",
+        "satyr-maid.shift",
+        "undead-farm.shift",
+        "tavern.shift",
+        "hunter.shift",
+        "guard.shift",
+        "merchant.shift",
+        "artist-geisha.shift",
+        "assassin.shift",
+        "prostitute.shift"
+      ],
+      "requiredOrder": "Compute committed ordinary wage before action/seasonal stat effects; pay the committed value after effects.",
+      "preserve": [
+        "Palace wages",
+        "Secret Debt hidden-work wage",
+        "School",
+        "Activity",
+        "all non-ordinary wage paths"
+      ]
+    },
+    {
+      "id": "D47_PACKAGE_SELECTION_POLICY",
+      "authority": "d47",
+      "file": "src/core/hardWorkMeta.ts",
+      "op": "ensure-policy",
+      "desired": {
+        "mode": "arbitrary-earned-subset",
+        "allowNone": true,
+        "allowAllEarned": true,
+        "wholePackageOnly": true
+      },
+      "preserve": [
+        "Strong Meta Keystone/Specialist selection as a separate system"
+      ]
+    },
+    {
+      "id": "D47_EXACT_PACKAGE_MAP",
+      "authority": "d47",
+      "file": "src/core/hardWorkMeta.ts",
+      "op": "set-package-map-by-career",
+      "packages": [
+        {
+          "career": "lumber",
+          "statBonuses": [
+            {
+              "stat": "strength",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "satyr-maid",
+          "statBonuses": [
+            {
+              "stat": "charm",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "undead-farm",
+          "statBonuses": [
+            {
+              "stat": "magic",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "tavern",
+          "statBonuses": [
+            {
+              "stat": "wits",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "hunter",
+          "statBonuses": [
+            {
+              "stat": "dexterity",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "guard",
+          "statBonuses": [
+            {
+              "stat": "endurance",
+              "amount": 5
+            },
+            {
+              "stat": "manners",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "merchant",
+          "statBonuses": [
+            {
+              "stat": "reason",
+              "amount": 5
+            },
+            {
+              "stat": "sociability",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "artist-geisha",
+          "statBonuses": [
+            {
+              "stat": "creativity",
+              "amount": 5
+            },
+            {
+              "stat": "grooming",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "assassin",
+          "statBonuses": [
+            {
+              "stat": "dexterity",
+              "amount": 5
+            },
+            {
+              "stat": "wits",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "career": "prostitute",
+          "statBonuses": [
+            {
+              "stat": "sexuality",
+              "amount": 5
+            },
+            {
+              "stat": "charm",
+              "amount": 5
+            }
+          ],
+          "lustBonus": 5
+        }
+      ],
+      "aggregateProgressionStatPoints": 75,
+      "lustBonusIsSeparateFromProgressionStats": true
+    },
+    {
+      "id": "D47_APPLY_EXACTLY_ONCE",
+      "authority": "d47",
+      "file": "src/core/hardWorkMeta.ts",
+      "op": "ensure-idempotent-application",
+      "guardField": "run.character.creation.hardWorkPackagesApplied",
+      "snapshotField": "packagesApplied",
+      "desired": true,
+      "semantics": [
+        "Apply only selected earned whole packages at creation completion.",
+        "Apply each selected package once.",
+        "Clip progression-stat bonuses to the resolved progression stat cap.",
+        "Do not multiply +5 components.",
+        "Do not consume Strong Meta Keystone/Specialist slots."
+      ]
+    },
+    {
+      "id": "HARD_WORK_THRESHOLD_50",
+      "authority": "d47",
+      "file": "content/definitions.json",
+      "op": "ensure-ending-condition-by-id",
+      "counter": "completed_shifts",
+      "operator": "gte",
+      "value": 50,
+      "endingIds": [
+        "ending.lumber.hard-work",
+        "ending.satyr-maid.hard-work",
+        "ending.undead-farm.hard-work",
+        "ending.tavern.hard-work",
+        "ending.hunter.hard-work",
+        "ending.guard.hard-work",
+        "ending.merchant.hard-work",
+        "ending.artist-geisha.hard-work",
+        "ending.assassin.hard-work",
+        "ending.prostitute.hard-work"
+      ],
+      "rewardIdentityPattern": "hardWork:<career>"
+    },
+    {
+      "id": "LUMBER_RETIRE_LIVE_ENDING",
+      "authority": "lumberVerifiedTarget",
+      "file": "content/definitions.json",
+      "op": "delete-by-ending-id",
+      "endingId": "lumber-stay",
+      "expectedLegacyReward": "vitality",
+      "replacementLiveEnding": null,
+      "preserveHistoricalRecognition": true
+    },
+    {
+      "id": "LUMBER_ADD_EXACT_LEGACY_HELPER",
+      "authority": "lumberVerifiedTarget",
+      "file": "src/core/lumberStayLegacy.ts",
+      "op": "add-new-file-exact-authority-blob",
+      "authorityBlob": "e9484f9b6eaf834b656b3db9abfbc94c4a19fd58",
+      "constants": {
+        "retiredEndingId": "lumber-stay",
+        "retiredUnlockId": "vitality",
+        "legacyPerkId": "legacy.lumber-stay.vitality"
+      }
+    },
+    {
+      "id": "LUMBER_NORMALIZE_HISTORICAL_EVIDENCE",
+      "authority": "lumberVerifiedTarget",
+      "file": "src/core/engine.ts",
+      "op": "compose-migration-semantics",
+      "evidenceAnyOf": [
+        "meta.completedEndings contains lumber-stay",
+        "meta.unlocks contains vitality",
+        "meta.activeLegacyPerks contains legacy.lumber-stay.vitality"
+      ],
+      "desired": {
+        "addActiveLegacyPerk": "legacy.lumber-stay.vitality",
+        "removeGenericUnlock": "vitality",
+        "dedupeArrays": true
+      },
+      "forbidden": [
+        "fabricate hardWork:lumber",
+        "fabricate Palace qualification",
+        "fabricate Strong Meta ownership",
+        "create a new live ending"
+      ]
+    },
+    {
+      "id": "LUMBER_LEGACY_ENERGY_PLUS_ONE",
+      "authority": "lumberVerifiedTarget",
+      "file": "src/core/engine.ts",
+      "op": "compose-energy-max-source",
+      "sourcePerkId": "legacy.lumber-stay.vitality",
+      "amount": 1,
+      "maxApplications": 1,
+      "dedupeBySetMembership": true,
+      "preserveOtherEnergySources": true
+    },
+    {
+      "id": "LUMBER_PRESERVE_HISTORICAL_RUNRESULT",
+      "authority": "lumberVerifiedTarget",
+      "file": "src/core/engine.ts",
+      "op": "compose-save-migration-compatibility",
+      "retiredEndingId": "lumber-stay",
+      "semantics": [
+        "Remove retired eligible-only state without granting a reward.",
+        "Cancel committed-but-unfinished retired ending and resume active run without reward.",
+        "Preserve an existing historical RunResult and transaction proof exactly.",
+        "For ended pre-RunResult lumber-stay, create deterministic compatibility proof without reward replay.",
+        "Preserve completedEndings historical evidence.",
+        "Profile merge dedupes legacy perk and strips duplicate vitality evidence."
+      ]
+    },
+    {
+      "id": "LUMBER_RETIRE_LIVE_LOCALIZATION",
+      "authority": "lumberVerifiedTarget",
+      "file": "content/localization.json",
+      "op": "delete-exact-keys",
+      "keys": [
+        "ending.lumber-stay.title",
+        "ending.lumber-stay.description",
+        "unlock.vitality.label",
+        "presentation.static.ending.lumber-stay.alt",
+        "presentation.static.ending.lumber-stay.caption"
+      ]
+    },
+    {
+      "id": "LUMBER_KEEP_HISTORICAL_LOCALIZATION",
+      "authority": "lumberVerifiedTarget",
+      "file": "content/localization.json",
+      "op": "ensure-exact-key-family",
+      "keys": [
+        "legacy.ending.lumber-stay.title",
+        "legacy.ending.lumber-stay.description",
+        "legacy.perk.lumber-stay-vitality.label",
+        "ui.legacy.historicalTitle",
+        "ui.ending.state.historical"
+      ],
+      "preserveAllUnlistedLocalizationKeys": true
+    },
+    {
+      "id": "LUMBER_RETIRE_LIVE_PRESENTATION_SLOT",
+      "authority": "lumberVerifiedTarget",
+      "file": "content/presentation.json",
+      "op": "delete-exact-slot",
+      "slotId": "ending/lumber-stay",
+      "preserveAllOtherSlots": true
+    },
+    {
+      "id": "LUMBER_KEEP_HISTORICAL_UI_RENDERING",
+      "authority": "lumberVerifiedTarget",
+      "file": "src/ui/app.ts",
+      "op": "compose-historical-display-only",
+      "semantics": [
+        "Do not render lumber-stay as a live selectable ending.",
+        "Render historical completed lumber-stay in a separate historical card.",
+        "Use job/lumber/result/default as historical fallback presentation.",
+        "Show legacy.lumber-stay.vitality in inheritance text when active."
+      ],
+      "preserveCurrentMainUI": true
+    }
+  ],
+  "goldenInvariants": {
+    "freshLifeLust": 5,
+    "existingSaveLustPreserved": true,
+    "ordinaryWageBases": {
+      "lumber.shift": 35,
+      "satyr-maid.shift": 37,
+      "undead-farm.shift": 37,
+      "tavern.shift": 37,
+      "hunter.shift": 37,
+      "guard.shift": 37,
+      "merchant.shift": 37,
+      "artist-geisha.shift": 37,
+      "assassin.shift": 37,
+      "prostitute.shift": 37
+    },
+    "ordinaryShiftWageCap": 120,
+    "hardWorkThreshold": 50,
+    "hardWorkPackageCount": 10,
+    "hardWorkAggregateProgressionPoints": 75,
+    "canonicalOrdinaryEndingCountAfterRetirement": 40,
+    "retiredLiveEndingId": "lumber-stay",
+    "retiredGenericUnlockId": "vitality",
+    "historicalLegacyPerkId": "legacy.lumber-stay.vitality",
+    "historicalLegacyEnergyBonus": 1
+  }
+}
