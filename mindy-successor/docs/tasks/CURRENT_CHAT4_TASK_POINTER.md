@@ -1,31 +1,46 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT LOCALIZATION EXACT-HEAD QA v23**
+Status: **ACTIVE — SECRET DEBT LOCALIZATION QA RETRY v24**
 Owner: Chat 4
 
-Producer under verification:
+Previous v23 QA was blocked by runner infrastructure / shell setup, not by a producer failure.
+
+Frozen producer:
 `chat6/secret-debt-ending-localization-producer-v27@b6cc4ca6990936f4d801004806b25e4d920f9abf`
 
-QA branch:
-`chat4/qa-secret-debt-localization-v23`
+Frozen mechanics adjacency source:
+`chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
+
+New branch:
+`chat4/qa-secret-debt-localization-v24`
 
 Task:
-run executable exact-head verification of the frozen v27 Secret Debt localization producer.
+repair the QA workflow only and rerun exact-source executable verification.
 
-Workflow must explicitly checkout:
-`b6cc4ca6990936f4d801004806b25e4d920f9abf`
+Important runner fix:
+- use Windows PowerShell available on HOME-PC;
+- do not require `pwsh` if it is unavailable.
 
-Required checks:
+Required executable proof:
+A. exact v27 checkout:
+- exact SHA guard;
+- production firewall;
+- npm ci;
 - typecheck;
 - validate;
 - build;
-- `secret-debt-ending-localization-producer-v27.test.ts`;
-- Secret Debt v12 focused route tests;
-- ending localization loader/runtime-key coverage;
-- verify production runtime/mechanics are unchanged.
+- v27 localization focused test;
+- localization/runtime-key adjacency tests.
 
+B. exact v12 checkout:
+- Secret Debt v12 route suite;
+- ordinary Prostitute separation suite.
+
+Do not mutate frozen v27 or v12.
 No full CI.
-Do not mutate the frozen v27 producer.
 
-If green, document exact run/job evidence and report:
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_SECRET_DEBT_LOCALIZATION_EXACT_HEAD_QA_v24.md`
+
+If green, report:
 `READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
