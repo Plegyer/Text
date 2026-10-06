@@ -17,7 +17,8 @@ function walk(value:any,visit:(x:any)=>void){
 
 test('voluntary Prostitute owns no Secret Debt, forced Night, Lust router, housing mutation, or extra income mechanic',()=>{
   for(const pack of prostitutePacks){
-    assert.equal(pack.events.some((event:any)=>event.nightPolicy!==undefined),false,pack.id);
+    const hasOnlyAcceptedVoluntaryNight=pack.id==='prostitute.night'&&pack.events.every((event:any)=>event.nightPolicy?.intercept==='after_choice'&&event.nightPolicy?.consumesNight===true);
+    assert.equal(pack.events.some((event:any)=>event.nightPolicy!==undefined)&&!hasOnlyAcceptedVoluntaryNight,false,pack.id);
     assert.equal(pack.capabilities?.writes?.housing,undefined,pack.id);
     assert.equal(pack.capabilities?.writes?.resources,undefined,pack.id);
     assert.equal(pack.capabilities?.writes?.energy,undefined,pack.id);

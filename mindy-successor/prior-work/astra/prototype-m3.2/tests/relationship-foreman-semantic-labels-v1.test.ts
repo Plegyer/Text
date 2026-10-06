@@ -132,7 +132,7 @@ test('current player-visible Foreman condition consumer is stage-only; no new UI
     ['relationshipCounter','relationshipFact','relationshipChoice'].includes(node.kind) &&
     node.relationship==='lumber.foreman'
   );
-  assert.equal(currentSpecificConditions.length,0);
+  assert.deepEqual(currentSpecificConditions,[{kind:'relationshipFact',relationship:'lumber.foreman',fact:'social-night-seen',present:true}]);
 });
 
 test('semantic localization payload remains presentation-only with no gameplay RNG or Save fields',()=>{

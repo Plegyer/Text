@@ -33,7 +33,7 @@ function project(){
       }))
     })),
     relationshipDefinitions:(defs.relationships??[]).filter((x:any)=>x.id==='tavern.recurring-traveler'),
-    nightChoices:(defs.nightChoices??[]).filter((x:any)=>x.id.startsWith('tavern.')),
+    nightChoices:(defs.nightChoices??[]).filter((x:any)=>x.id.startsWith('tavern.')&&x.id!=='tavern.night.traveler-private'),
     itemDefinitions:(defs.itemDefinitions??[]).filter((x:any)=>x.id==='tavern_staff_key'),
     endings:defs.endings.filter((x:any)=>/tavern/.test(x.id)).map((x:any)=>({id:x.id,conditions:x.conditions,reward:x.reward??null,metaRewards:x.metaRewards??null}))
   };

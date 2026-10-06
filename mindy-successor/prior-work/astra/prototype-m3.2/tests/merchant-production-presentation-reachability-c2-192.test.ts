@@ -113,7 +113,7 @@ test('C2-192 frozen Merchant production identities back every presentation-owned
   ]);
 
   const events=catalog.events.filter(event=>event.sourceDomain==='merchant');
-  assert.equal(events.length,29);
+  assert.equal(events.length,30);
   assert.equal(events.some(event=>event.id.startsWith('merchant.school.')),false);
 
   assert.deepEqual(
@@ -146,7 +146,7 @@ test('C2-192 frozen Merchant production identities back every presentation-owned
   assert.ok(known.has(presentationIdForEnding('ending.merchant.hard-work')));
 });
 
-test('C2-192 all 29 frozen Merchant events resolve through exact live presentation IDs',()=>{
+test('C2-192 all 30 current Merchant events resolve through exact live presentation IDs',()=>{
   const checked=applyPresentation(catalog,presentation);
   const known=new Set(presentationSlots(checked).map(slot=>slot.id));
   const expected=new Set<string>();
@@ -161,15 +161,15 @@ test('C2-192 all 29 frozen Merchant events resolve through exact live presentati
       assert.ok(existsSync(resolved.selected!.src),resolved.selected!.src);
     }
   }
-  assert.equal(expected.size,29);
+  assert.equal(expected.size,30);
 });
 
-test('C2-192 Merchant registry exposes exactly 67 semantic surfaces after D40 endings and remains static-safe with animations off',()=>{
+test('C2-192 Merchant registry exposes exactly 68 semantic surfaces after D42 Night and remains static-safe with animations off',()=>{
   const checked=applyPresentation(catalog,presentation);
   const ids=presentationSlots(checked).map(slot=>slot.id).filter(id=>
     id.startsWith('job/merchant/')||id.startsWith('relationship/merchant-supplier/')||id.startsWith('ending/merchant/')
   );
-  assert.equal(new Set(ids).size,67);
+  assert.equal(new Set(ids).size,68);
 
   const save=started();
   const before=JSON.stringify(save);

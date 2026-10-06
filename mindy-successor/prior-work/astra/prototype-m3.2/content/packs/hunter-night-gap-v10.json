@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter.night",
+  "reads": [],
+  "writes": [],
+  "media": [],
+  "events": [
+    {
+      "id": "hunter.night.field-debrief",
+      "title": "Field notes after dark",
+      "sourceDomain": "hunter",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "hunter.night.field-debrief"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Sort tracks, observations, and tomorrow's field plan as professional work. No relationship route or ending readiness is granted.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "Close the field notes.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "hunter.night.senior-guide",
+      "title": "Off-duty time with the Senior Guide",
+      "sourceDomain": "hunter.senior-guide",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "nightChoiceCompleted",
+          "choice": "hunter.night.senior-guide"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "nightPolicy": {
+        "intercept": "after_choice",
+        "suppressLodgingPayment": false,
+        "suppressVoluntaryMenu": true,
+        "consumesNight": true
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Share optional personal time with the Senior Guide or companion. Friendship is sufficient and romance is never assumed.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "End the evening when you choose.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

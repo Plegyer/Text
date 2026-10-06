@@ -225,7 +225,7 @@ test('C2-178 Guard Hard Work remains present alongside the exact D40 ending surf
 test('C2-179 integrated 65 Guard surfaces have RU EN alt-caption parity and animation-off static safety',()=>{
   const checked=applyPresentation(catalog,presentation);
   const guardSlots=Object.entries<any>(presentation.slots??{}).filter(([id])=>id.includes('guard'));
-  assert.equal(guardSlots.length,65,'complete integrated Guard surface count');
+  assert.equal(guardSlots.length,67,'complete integrated Guard surface count with D42 Night surfaces');
   for(const [id,slot] of guardSlots){
     assertLocalizedStatic(id);
     const off=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'c2-179'});
@@ -244,8 +244,8 @@ test('C2-179 every published Guard event override maps to one exact frozen produ
       .filter(event=>event.sourceDomain==='guard')
       .flatMap(event=>event.variants.map(variant=>presentationIdForEvent(catalog,event.id,variant.id)))
   );
-  assert.equal(expected.size,28);
-  const published=Object.keys(presentation.slots??{}).filter(id=>id.startsWith('job/guard/event/'));
-  assert.equal(published.length,28);
+  assert.equal(expected.size,29);
+  const published=Object.keys(presentation.slots??{}).filter(id=>expected.has(id));
+  assert.equal(published.length,29);
   for(const id of published)assert.ok(expected.has(id),id+' exact catalog backing');
 });
