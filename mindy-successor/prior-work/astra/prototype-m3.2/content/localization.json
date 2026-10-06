@@ -13593,6 +13593,18 @@
     "presentation.static.prostitute.night.client-private.caption": {
       "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
       "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
+    },
+    "ui.condition.strongMetaKnowledge": {
+      "ru": "Наследуемое знание {knowledge}: {state}",
+      "en": "Inherited knowledge {knowledge}: {state}"
+    },
+    "ui.condition.formalIntroduction": {
+      "ru": "Формальное представление: {relationship}",
+      "en": "Formal introduction: {relationship}"
+    },
+    "event.school-life-content-v1.night-study.arcana-reason.variant.source-method-crosscheck.text": {
+      "ru": "Проследи каждое утверждение до того, что действительно наблюдалось, и до того, кто это сообщил. Независимое совпадение усиливает вывод; расхождение остаётся отмеченным как неразрешённое, а не превращается в готовый ответ.",
+      "en": "Trace each claim back to what was actually observed and who supplied it. Independent agreement strengthens a conclusion; a mismatch stays marked as unresolved instead of being turned into an answer."
     }
   }
 }
