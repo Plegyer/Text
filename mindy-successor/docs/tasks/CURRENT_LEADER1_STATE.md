@@ -670,3 +670,13 @@ User communication rule remains: report only works / waits / error / done, and d
 - disposition: READY_FOR_CHAT2_PREFLIGHT.
 - current task:
   `chat3/d46-d47-legacy-final-assembly-packet-v29`
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 WORKER STATUS CHECK
+
+- Chat 2: D42 is merged. Worker is not actively changing code. Exact-main CI #1217 / run `37458386606` is still in progress. User-facing status: WAITS FOR CHECK.
+- Chat 3: current task `chat3/d46-d47-legacy-final-assembly-packet-v29`; no worker-authored commit yet. User-facing status: STANDING WITH TASK ASSIGNED.
+- Chat 4: current task `chat4/secret-debt-d51-final-assembly-packet-v26`; no worker-authored commit yet. User-facing status: STANDING WITH TASK ASSIGNED.
+- Chat 5: retired Tavern cleanup QA v23 completed green; current task now `chat5/qa-palace-d39-reward-v24`. User-facing status: NEW TASK ASSIGNED.
+- Chat 6: current task `chat6/final-localization-assembly-packet-v32`; no worker-authored commit yet. User-facing status: STANDING WITH TASK ASSIGNED.
+- Burn-down remains 6 until exact-main D42 CI #1217 succeeds; then 5.
