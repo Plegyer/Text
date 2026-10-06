@@ -18,11 +18,11 @@ jobs:
         with:
           ref: 7770b6bf7f930e8af17331e8b22613523bb2e768
       - name: Verify exact producer head
-        shell: pwsh
+        shell: cmd
         run: |
-          $head = git rev-parse HEAD
-          Write-Host $head
-          if ($head -ne "7770b6bf7f930e8af17331e8b22613523bb2e768") { throw "Wrong producer head: $head" }
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
+          echo %HEADSHA%
+          if not "%HEADSHA%"=="7770b6bf7f930e8af17331e8b22613523bb2e768" exit /b 1
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
