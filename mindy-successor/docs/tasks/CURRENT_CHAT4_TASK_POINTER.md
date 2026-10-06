@@ -1,30 +1,21 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **START NOW — STRONG META UI EXACT-HEAD QA v41-v43**
+Status: **START NOW — PALACE CUMULATIVE EXACT-HEAD QA v44-v46**
 Owner: Chat 4
 
-Producer to verify:
-Chat6 Strong Meta UI closure implementation head
-`fac645878ebd726f50fd1364ac72414796755a2d`
+Current branch:
+`chat4/palace-cumulative-exact-head-qa-v44`
 
-QA branch:
-`chat4/qa-strong-meta-ui-v41`
+Task:
+`mindy-successor/docs/tasks/CHAT4_PALACE_CUMULATIVE_EXACT_HEAD_QA_v44_v46_TASK.md`
 
-Complete ALL tasks in order.
+Complete ALL v44-v46 tasks in order.
+Do not wait for Chat 3's future D39 implementation and do not implement D39 in this lane.
+Verify the frozen Palace v18/v19 base, run exact-head executable/focused QA, then publish collision-safe Chat2 assembly guidance.
 
-## v41
-Exact-head guard + npm ci + typecheck + validate + build.
+No full CI.
+Do not mutate frozen Palace producers.
+Do not merge main.
 
-## v42
-Run focused Strong Meta selector, registry/snapshot, modal ARIA, localization/accessibility and save/reload adjacency tests.
-
-## v43
-Document exact evidence and disposition.
-Do not mutate producer.
-Do not run full CI.
-
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_STRONG_META_UI_EXACT_HEAD_QA_v43.md`
-
-Report:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+Expected final:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_PALACE_BASE_ASSEMBLY`.
