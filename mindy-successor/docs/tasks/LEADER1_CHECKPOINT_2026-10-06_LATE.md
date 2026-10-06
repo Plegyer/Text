@@ -443,3 +443,33 @@ The earlier assumption that localization was fully repaired from seeing 15 Secre
 Current Chat6 v70-v71 branch did not publish a worker-authored handoff before this correction; its intended output has been superseded by the Leader-generated exact recovery manifest above.
 
 Broad burn-down remains **5** until Stage 1 is Leader-merged and exact-main CI is green.
+
+
+## Live update — Chat2 context exhausted after localization repair; replacement goes straight to gates
+
+The previous Chat2 conversation exhausted context after applying the final Secret Debt localization repair.
+
+Leader independently verified the live Chat2 branch against frozen v12+v27 authorities:
+- required Secret Debt localization keys: **37**
+- exact matches: **37/37**
+- missing: **0**
+- mismatches: **0**
+- current localization blob: `c180f641844d0094ebd533d8939d0339469baadf`
+
+Therefore localization is no longer a blocker.
+
+Current Chat2 branch remains:
+`chat2/assembly-secret-debt-d51-current-main-recovery-v2`
+
+Current pointer:
+`GATES NOW — STAGE 1 SECRET DEBT + D51`
+
+Replacement recovery:
+`CHAT2_CONTEXT_RECOVERY_SECRET_DEBT_D51_GATES_NOW_2026-10-06.md`
+
+Replacement Chat2 must NOT redo old assembly/localization work. It goes directly:
+typecheck -> validate -> build -> full focused v28 -> exactly one full CI -> freeze exact SHA -> `READY_FOR_LEADER_MERGE`.
+
+Leader 1 then performs production merge and exact-main CI.
+
+Broad burn-down remains **5** until that merge + exact-main CI succeeds.
