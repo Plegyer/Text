@@ -1,45 +1,41 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — FINAL LOCALIZATION/PRESENTATION CLOSURE v28**
+Status: **ACTIVE — GLOBAL CAPTION CLOSURE PRODUCER v29**
 Owner: Chat 6
 
-This task is intended for a fresh Chat 6 context.
-
-Completed and accepted:
-- v25 localization/accessibility audit;
-- v26 ordinary-ending localization closure;
-- v27 Secret Debt ending localization closure.
+Accepted audit:
+`chat6/final-localization-presentation-closure-v28@d57381dc7fa4af028cea3effdb4146a75cc9c60a`
 
 New branch:
-`chat6/final-localization-presentation-closure-v28`
+`chat6/global-caption-closure-producer-v29`
 
-Goal:
-perform one final 1.0 localization/presentation closure audit over all accepted/frozen content layers and current D42 assembly state.
+v28 found exactly two required P1 presentation-caption gaps and no new authoring blocker.
 
-Check:
-- RU/EN missing keys;
-- ending title/description/epilogue coverage;
-- D42 Night event/caption coverage;
-- Secret Debt v27 coverage;
-- Palace v19 copy/media/accessibility;
-- Activity D38 v17 copy/presentation;
-- global presentation v23 mappings;
-- retired Tavern/lumber-stay stale live surfaces;
-- missing alt/caption pairs;
-- localization keys whose live consumer no longer exists;
-- live consumers with only fallback text.
+Add bilingual captions only for:
 
-Do not change runtime.
-Do not change mechanics.
-Do not run full CI.
+1. `media.stage.room.caption`
+   - RU: `Сцена дешёвой общей комнаты для ночлега.`
+   - EN: `Cheap shared-room lodging scene.`
 
-If only content/localization repairs are needed, list them exactly and separate them into:
-- P0 release blocker;
-- P1 required closure;
-- P2 polish/cleanup.
+2. `media.base.town.caption`
+   - RU: `Условная иллюстрация фэнтезийного города.`
+   - EN: `A stylized illustration of the fantasy town.`
+
+These must match the already accepted alt semantics.
+
+Do not:
+- change runtime;
+- change mechanics;
+- change presentation routing;
+- touch D42 mechanics;
+- delete retired Tavern compatibility localization;
+- change Palace/Activity/Secret Debt content.
+
+Add focused localization/presentation parity test.
+No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_PRESENTATION_CLOSURE_v28.md`
+`mindy-successor/docs/tasks/CHAT6_GLOBAL_CAPTION_CLOSURE_PRODUCER_v29.md`
 
-Report:
-`READY_FOR_LEADER_REVIEW`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
