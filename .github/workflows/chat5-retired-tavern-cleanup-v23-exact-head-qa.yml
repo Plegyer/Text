@@ -19,35 +19,24 @@ jobs:
           ref: eb03a847347339ade109b0ec9022b81cd4abadaf
           fetch-depth: 1
       - name: Exact SHA guard
-        shell: bash
+        shell: cmd
         working-directory: .
         run: |
-          set -euo pipefail
-          head="$(git rev-parse HEAD)"
-          echo "$head"
-          test "$head" = "eb03a847347339ade109b0ec9022b81cd4abadaf"
-      - name: Production firewall
-        shell: bash
-        working-directory: .
-        run: |
-          set -euo pipefail
-          git fetch --no-tags --depth=1 origin 36711bc8c9c5e8c2b99ffb8f8c861c462c414bca b37551d567d8017dbc25b87d66034af3e9c7a812
-          mapfile -t changed < <(git diff --name-only 36711bc8c9c5e8c2b99ffb8f8c861c462c414bca b37551d567d8017dbc25b87d66034af3e9c7a812)
-          printf 'Implementation delta:\n%s\n' "${changed[*]}"
-          test "${#changed[@]}" -eq 2
-          printf '%s\n' "${changed[@]}" | grep -Fxq "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json"
-          printf '%s\n' "${changed[@]}" | grep -Fxq "mindy-successor/prior-work/astra/prototype-m3.2/tests/retired-tavern-localization-cleanup-v31.test.ts"
-          if git diff --name-only b37551d567d8017dbc25b87d66034af3e9c7a812 eb03a847347339ade109b0ec9022b81cd4abadaf -- mindy-successor/prior-work/astra/prototype-m3.2 | grep -q .; then
-            echo "Frozen handoff changed prototype production/test files after implementation head."
-            git diff --name-only b37551d567d8017dbc25b87d66034af3e9c7a812 eb03a847347339ade109b0ec9022b81cd4abadaf -- mindy-successor/prior-work/astra/prototype-m3.2
-            exit 1
-          fi
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
+          echo %HEADSHA%
+          if not "%HEADSHA%"=="eb03a847347339ade109b0ec9022b81cd4abadaf" exit /b 1
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Production firewall
+        shell: cmd
+        working-directory: .
+        run: |
+          git fetch --no-tags --depth=1 origin 36711bc8c9c5e8c2b99ffb8f8c861c462c414bca b37551d567d8017dbc25b87d66034af3e9c7a812
+          node -e "const cp=require('node:child_process'); const seed='36711bc8c9c5e8c2b99ffb8f8c861c462c414bca', impl='b37551d567d8017dbc25b87d66034af3e9c7a812', head='eb03a847347339ade109b0ec9022b81cd4abadaf'; const out=(c)=>cp.execSync(c,{encoding:'utf8'}).trim().split(/\\r?\\n/).filter(Boolean); const changed=out('git diff --name-only '+seed+' '+impl); console.log('Implementation delta:',changed); const expected=['mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json','mindy-successor/prior-work/astra/prototype-m3.2/tests/retired-tavern-localization-cleanup-v31.test.ts']; if(changed.length!==2||expected.some(x=>!changed.includes(x))) process.exit(1); const post=out('git diff --name-only '+impl+' '+head+' -- mindy-successor/prior-work/astra/prototype-m3.2'); console.log('Post-implementation prototype delta:',post); if(post.length) process.exit(1);"
       - name: Install dependencies
         run: npm ci
       - name: Typecheck
