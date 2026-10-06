@@ -1,21 +1,20 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **START NOW — FINAL PLAYER-FACING RELEASE EVIDENCE v66-v67**
+Status: **START NOW — FINAL PLAYER-FACING RELEASE DRY-RUN v68-v69**
 Owner: Chat 6
 
-Previous cross-contract QA v63-v65 is accepted.
+Previous final player-facing release evidence v66-v67 is accepted.
 
 Current branch:
-`chat6/final-player-facing-release-evidence-v66`
+`chat6/final-player-facing-release-dryrun-v68`
 
 Task:
-`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_RELEASE_EVIDENCE_v66_v67_TASK.md`
+`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_RELEASE_DRYRUN_v68_v69_TASK.md`
 
 This is intentionally lightweight.
-Read the compact v65 handoff and Leader checkpoint first.
-Do not reread giant manifests unless one exact field must be verified.
+Read compact handoffs only; do not reread giant manifests unless one exact field needs verification.
 
 No production changes. No full CI. Do not merge main.
 
 Expected final:
-`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_EVIDENCE`.
+`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_DRYRUN`.
