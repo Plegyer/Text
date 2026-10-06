@@ -13153,6 +13153,14 @@
     "event.hunter.routes.legend-contract-variant.choice.defer.text": {
       "ru": "Оставить дополнительный вариант неиспользованным; обычный редкий контракт остаётся доступен.",
       "en": "Leave the additional variant unused; the ordinary rare contract remains available."
+    },
+    "media.stage.room.caption": {
+      "ru": "Сцена дешёвой общей комнаты для ночлега.",
+      "en": "Cheap shared-room lodging scene."
+    },
+    "media.base.town.caption": {
+      "ru": "Условная иллюстрация фэнтезийного города.",
+      "en": "A stylized illustration of the fantasy town."
     }
   }
 }
