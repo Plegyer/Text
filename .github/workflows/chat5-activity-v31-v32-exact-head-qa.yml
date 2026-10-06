@@ -6,15 +6,14 @@ on:
       - chat5/activity-exact-head-qa-bundle-v31
 
 jobs:
-  regions-v15:
+  regions-v15-diagnostics:
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
     steps:
-      - name: Checkout frozen v15 regions
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: ab378d68765f7c9bbff43abf3b4b41e24df82e01
       - name: Exact SHA guard
@@ -24,25 +23,19 @@ jobs:
           for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
           echo %HEADSHA%
           if not "%HEADSHA%"=="ab378d68765f7c9bbff43abf3b4b41e24df82e01" exit /b 1
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
-      - name: Install
-        run: npm ci
-      - name: Typecheck
-        continue-on-error: true
-        run: npm run typecheck
-      - name: Validate
-        continue-on-error: true
+      - run: npm ci
+      - name: Validate exact head
         run: npm run validate
-      - name: Build
-        continue-on-error: true
+      - name: Build exact head
+        if: always()
         run: npm run build
       - name: Four-region Activity focused QA
-        continue-on-error: true
+        if: always()
         run: >
           node --experimental-strip-types --test
           tests/activity.test.ts
@@ -53,15 +46,14 @@ jobs:
           tests/restricted-sites-production-v15.test.ts
           tests/qa-activity-option-reload.test.ts
 
-  d38-mechanics-v16:
+  d38-mechanics-v16-diagnostics:
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
     steps:
-      - name: Checkout frozen v16 mechanics
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: 3cf69d7cb3df1a58d68908159d0acc14736435c4
       - name: Exact SHA guard
@@ -71,37 +63,33 @@ jobs:
           for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
           echo %HEADSHA%
           if not "%HEADSHA%"=="3cf69d7cb3df1a58d68908159d0acc14736435c4" exit /b 1
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
-      - name: Install
-        run: npm ci
-      - name: Typecheck
-        run: npm run typecheck
-      - name: Validate
+      - run: npm ci
+      - name: Validate exact head
         run: npm run validate
-      - name: Build
+      - name: Build exact head
+        if: always()
         run: npm run build
       - name: D38 mechanics and explicit commit QA
-        continue-on-error: true
+        if: always()
         run: >
           node --experimental-strip-types --test
           tests/activity-ending-family-v16.test.ts
           tests/ending-meta.test.ts
           tests/restricted-sites-production-v15.test.ts
 
-  d38-content-v17:
+  d38-content-v17-diagnostics:
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
     steps:
-      - name: Checkout frozen v17 content presentation
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: df9ef5c3d04cfd8eb582c24838d971854e984218
       - name: Exact SHA guard
@@ -111,22 +99,19 @@ jobs:
           for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
           echo %HEADSHA%
           if not "%HEADSHA%"=="df9ef5c3d04cfd8eb582c24838d971854e984218" exit /b 1
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
-      - name: Install
-        run: npm ci
-      - name: Typecheck
-        run: npm run typecheck
-      - name: Validate
+      - run: npm ci
+      - name: Validate exact head
         run: npm run validate
-      - name: Build
+      - name: Build exact head
+        if: always()
         run: npm run build
       - name: D38 RU EN content and presentation QA
-        continue-on-error: true
+        if: always()
         run: >
           node --experimental-strip-types --test
           tests/activity-ending-content-presentation-v17.test.ts
