@@ -1,40 +1,35 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY D38 REWARD PRODUCER v26**
+Status: **ACTIVE — D38 AUTHORED TAG MAPPING v27**
 Owner: Chat 3
 
-Accepted preflight:
-`chat3/activity-d38-reward-implementation-preflight-v25@1024d8a657f0514f894042936e615364940f5e26`
+Previous D38 reward producer v26 is complete and accepted as a producer candidate.
 
 New branch:
-`chat3/activity-d38-reward-producer-v26`
+`chat3/activity-d38-authored-tag-mapping-v27`
 
-Implement the accepted three D38 Activity permanent rewards using current Strong Meta architecture:
+Goal:
+prepare the exact authored Activity content mapping needed to wire the three D38 rewards during Chat 2 assembly.
 
-- `specialist.activity.surveyors-atlas`
-- `specialist.activity.field-archive`
-- `specialist.activity.contact-network`
+Inspect the accepted Activity region/content sources and identify exact existing authored candidates for:
 
-Follow v25 exactly.
+- Surveyor's Atlas tag: `activity-survey-discovery`
+- Field Archive tag: `activity-secure-eligible`
+- Contact Network tag: `activity-network-introduction`
 
-Requirements:
-- all three are normal Specialists;
-- normal max 2 active Specialist slots;
-- no same-life activation after earning;
-- completeEnding grants ownership exactly once;
-- run-local usage state is persisted and bounded;
-- Camp does not reset uses;
-- no Secret Debt / Palace / career / region / capability bypass;
-- no Activity entry-Energy reduction;
-- no baseline Field Time increase;
-- no generic unlock-only final ownership;
-- no new Product behavior.
+For each proposed tagged option/result/contact:
+- give exact source file + stable ID;
+- explain why it matches the accepted reward semantics;
+- prove it does not bypass normal region/capability/relationship conditions;
+- state whether no safe existing candidate exists.
 
-Add focused executable tests.
-No full CI.
+Do not invent new scenes.
+Do not modify runtime.
+Do not add tags in production yet.
+Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_D38_REWARD_PRODUCER_v26.md`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_D38_AUTHORED_TAG_MAPPING_v27.md`
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+Report:
+`READY_FOR_ACTIVITY_ASSEMBLY`.
