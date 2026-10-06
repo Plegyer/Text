@@ -156,6 +156,7 @@ test('Source Method is granted at completeEnding, never enters preference, and a
   assert.deepEqual(s.meta.strongMeta.ownership.ownedRewardIds,[]);
   assert.deepEqual(s.meta.strongMeta.preferredSelection,{keystoneId:null,specialistIds:[]});
   assert.equal(s.run.strongMetaSnapshot?.automaticKnowledgeIds.includes(STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod),false);
+  assert.equal(meets({kind:'strongMetaKnowledge',knowledge:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod,present:true},s,cat),false);
   assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod]);
 
   s=dispatch(s,{type:'newLife'},cat);
@@ -166,6 +167,7 @@ test('Source Method is granted at completeEnding, never enters preference, and a
   s=finishCreation(s,cat);
   assert.deepEqual(s.run.strongMetaSnapshot?.automaticKnowledgeIds,[STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod]);
   assert.deepEqual(s.run.strongMetaSnapshot?.specialistIds,[]);
+  assert.equal(meets({kind:'strongMetaKnowledge',knowledge:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod,present:true},s,cat),true);
 });
 
 test('Steady Practice binds first two careers at shift 8 and prevents exactly three D31 seasonal losses each',()=>{
@@ -181,6 +183,11 @@ test('Steady Practice binds first two careers at shift 8 and prevents exactly th
   assert.deepEqual(s.run.strongMetaRuntime.steadyPracticeBoundCareerIds,['lumber']);
   assert.equal(s.run.strongMetaRuntime.steadyPracticeProtectionsUsedByCareer.lumber,1);
   assert.equal(s.run.character.stats.dexterity,3);
+
+  s=applyEffects(s,[{kind:'modifyStat',stat:'dexterity',delta:-1}],cat);
+  assert.equal(s.run.character.stats.dexterity,2);
+  assert.equal(s.run.strongMetaRuntime.steadyPracticeProtectionsUsedByCareer.lumber,1);
+  s.run.character.stats.dexterity=3;
 
   s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
@@ -215,9 +222,18 @@ test('Steady Practice binds first two careers at shift 8 and prevents exactly th
   assert.throws(()=>parseSave(JSON.stringify(withoutReward),cat),/Steady Practice runtime state exists without resolved reward/);
 });
 
-test('Formal Introduction requires legal ordinary work, advances only the authored transition, and has three unique uses',()=>{
+test('Court Power grants Formal Introduction for a later selected life with three unique authored uses',()=>{
   const cat=catalog();
-  let s=finishCreation(freshSave({strongMeta:selectedSpecialist(STRONG_META_IDS.palaceFormalIntroduction)}),cat);
+  let earned=finishCreation(freshSave(),cat);
+  earned=complete(earned,cat,palaceEndingIds.court);
+  assert.deepEqual(earned.meta.strongMeta.ownership.ownedRewardIds,[STRONG_META_IDS.palaceFormalIntroduction]);
+  assert.deepEqual(earned.run.endings.result?.appliedMetaRewardIds,[STRONG_META_IDS.palaceFormalIntroduction]);
+  assert.equal(earned.run.strongMetaSnapshot?.specialistIds.includes(STRONG_META_IDS.palaceFormalIntroduction),false);
+
+  let s=dispatch(earned,{type:'newLife'},cat);
+  s=dispatch(s,{type:'setStrongMetaSpecialist',id:STRONG_META_IDS.palaceFormalIntroduction,active:true},cat);
+  s=finishCreation(s,cat);
+  assert.deepEqual(s.run.strongMetaSnapshot?.specialistIds,[STRONG_META_IDS.palaceFormalIntroduction]);
   const condition=(relationshipId:string)=>({
     kind:'strongMetaFormalIntroductionAvailable' as const,
     career:'guard',
