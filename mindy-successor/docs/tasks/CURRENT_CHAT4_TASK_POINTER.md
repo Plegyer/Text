@@ -1,19 +1,21 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **START NOW — CROSS-GOLDEN LEGACY CONSISTENCY QA v56-v58**
+Status: **START NOW — LEGACY / D46 / D47 RELEASE EVIDENCE v59-v60**
 Owner: Chat 4
 
-Previous D46 + D47 + Legacy Golden Manifest v53-v55 is accepted at:
-`13424ebeefa55c91af7ca39e70a3843b80a75f99`
+Previous cross-golden legacy consistency v56-v58 is accepted.
 
 Current branch:
-`chat4/cross-golden-legacy-consistency-v56`
+`chat4/legacy-release-evidence-v59`
 
 Task:
-`mindy-successor/docs/tasks/CHAT4_CROSS_GOLDEN_LEGACY_CONSISTENCY_v56_v58_TASK.md`
+`mindy-successor/docs/tasks/CHAT4_LEGACY_RELEASE_EVIDENCE_v59_v60_TASK.md`
 
-Complete v56-v58 in order.
-Cross-contract QA/test-only work. No production mutation. No full CI. Do not merge main.
+This is intentionally lightweight.
+Read the compact v58 handoff and Leader checkpoint first.
+Do not reread giant manifests unless one exact field must be verified.
+
+No production changes. No full CI. Do not merge main.
 
 Expected final:
-`BUNDLE_COMPLETE — READY_FOR_CROSS_GOLDEN_LEGACY_GATE`.
+`BUNDLE_COMPLETE — READY_FOR_D46_D47_LEGACY_RELEASE_EVIDENCE`.
