@@ -1,0 +1,118 @@
+name: Chat4 Palace cumulative exact-head QA v44-v46
+
+on:
+  push:
+    branches:
+      - chat4/palace-cumulative-exact-head-qa-v44
+    paths:
+      - '.github/workflows/chat4-palace-cumulative-exact-head-qa-v44-v46.yml'
+  workflow_dispatch:
+
+jobs:
+  palace-v19-exact-head:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout frozen Palace v19
+        uses: actions/checkout@v4
+        with:
+          ref: 6cf19169b92fa709e8ae51cf73ff72ef2c0fac19
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "6cf19169b92fa709e8ae51cf73ff72ef2c0fac19"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Exact-head guard failed: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        run: npm run typecheck
+
+      - name: Validate
+        id: validate
+        continue-on-error: true
+        run: npm run validate
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: npm run build
+
+      - name: D23 and Palace v15 runtime
+        id: v15
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/palace-derived-unlock.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+
+      - name: Palace v16 UI model renderer
+        id: v16
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+
+      - name: Palace v18 Prince narrative runtime renderer
+        id: v18
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+
+      - name: Palace v19 prose media
+        id: v19
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-final-prose-media-v19.test.ts
+
+      - name: Save reload ending commit adjacency
+        id: adjacency
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/ending-meta.test.ts
+          tests/qa-exactly-once-reload.test.ts
+
+      - name: Aggregate exact-head result
+        shell: powershell
+        run: |
+          $names = @("typecheck","validate","build","v15","v16","v18","v19","adjacency")
+          $values = @(
+            "${{ steps.typecheck.outcome }}",
+            "${{ steps.validate.outcome }}",
+            "${{ steps.build.outcome }}",
+            "${{ steps.v15.outcome }}",
+            "${{ steps.v16.outcome }}",
+            "${{ steps.v18.outcome }}",
+            "${{ steps.v19.outcome }}",
+            "${{ steps.adjacency.outcome }}"
+          )
+          for ($i=0; $i -lt $names.Length; $i++) {
+            Write-Host "$($names[$i])=$($values[$i])"
+          }
+          if ($values -contains "failure") {
+            throw "Frozen Palace v19 exact-head QA contains one or more failing gates."
+          }
