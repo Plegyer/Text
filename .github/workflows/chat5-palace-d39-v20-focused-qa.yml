@@ -16,7 +16,7 @@ jobs:
       - name: Checkout exact producer
         uses: actions/checkout@v4
         with:
-          ref: 024300988c865a13764c0333829cf1e98d6db739
+          ref: b28b19628c0374c405cd32afedb0f16c105e2403
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
