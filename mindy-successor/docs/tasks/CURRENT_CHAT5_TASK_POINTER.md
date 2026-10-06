@@ -1,53 +1,57 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE CROSS-SYSTEM REVIEW BUNDLE v25-v27**
+Status: **ACTIVE — AUTO-CONTINUE FINAL MIGRATION RELEASE REVIEW v28-v30**
 Owner: Chat 5
 
-Completed:
-- Palace D39 producer v20 focused-green
-- Palace D39 independent exact-head QA v24 GREEN
+Previous cross-system review bundle v25-v27 is complete and accepted.
 
 Current branch:
-`chat5/cross-system-independent-review-bundle-v25`
+`chat5/final-migration-release-review-v28`
 
-IMPORTANT:
-Complete ALL tasks below in order.
-Do not stop after the first review.
-Only stop for a genuine conflict requiring Leader decision.
+Complete ALL tasks below in order without waiting for Leader.
 
-## Task A — v25
+## Task A — v28
 Create:
-`CHAT5_ACTIVITY_FINAL_PACKET_INDEPENDENT_REVIEW_v25.md`
+`mindy-successor/docs/tasks/CHAT5_FINAL_MIGRATION_CLOSURE_REFRESH_v28.md`
 
-Independently review:
-- Chat3 Activity final packet v28;
-- D38 reward producer v26;
-- D38 authored tag mapping v27.
+Refresh the earlier final save/migration closure against all later accepted work:
+- D42 merged;
+- Secret Debt v12 + D51;
+- Palace + D39;
+- Activity + Camp + D38;
+- D46/D47;
+- lumber-stay retirement;
+- localization/presentation closures.
 
-Find contradictions, missing wiring, unsafe assumptions, or confirm clean.
+Identify any migration case missing from the older closure plan.
 
-## Task B — v26
+## Task B — v29
 Create:
-`CHAT5_D46_D47_LEGACY_PACKET_INDEPENDENT_REVIEW_v26.md`
+`mindy-successor/docs/tasks/CHAT5_FINAL_COMBINED_SAVE_MATRIX_v29.md`
 
-Independently review Chat3 D46+D47+legacy packet v29 against frozen producers and canonical 40-ending rule.
+Produce one combined final release save/reload matrix, including mixed states:
+- D38 + D39 selected together;
+- Secret Debt bound + Activity/Camp state;
+- Palace progress + later Secret Debt binding;
+- legacy lumber compatibility;
+- old Strong Meta snapshots;
+- profile merge;
+- exactly-once ending rewards.
 
-## Task C — v27
+## Task C — v30
 Create:
-`CHAT5_D38_D39_STRONG_META_COLLISION_AUDIT_v27.md`
+`mindy-successor/docs/tasks/CHAT5_FINAL_RELEASE_REGRESSION_PARTITION_v30.md`
 
-Audit combined future registry/runtime behavior when Activity D38 and Palace D39 rewards coexist:
-- Specialist capacity remains 2;
-- no duplicate IDs;
-- no slot-free Specialist loophole;
-- Source Method remains automatic knowledge;
-- cap-200 remains normal Specialist;
-- current-run snapshot immutable;
-- profile ownership merge/preferences safe;
-- ending rewards exactly once.
+Partition final release regression checks into:
+- must-run focused gates after each remaining assembly;
+- exact-main gate after each merge;
+- final 1.0 regression-only checks.
 
-No production runtime changes.
-No full CI.
+Avoid duplicate tests where one authoritative suite supersedes another.
+
+Research/review only.
+Do not change runtime.
+Do not run full CI.
 
 After all three are committed, report:
 `BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
