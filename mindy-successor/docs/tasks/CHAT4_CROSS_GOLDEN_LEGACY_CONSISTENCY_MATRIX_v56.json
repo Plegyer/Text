@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "id": "CHAT4_CROSS_GOLDEN_LEGACY_CONSISTENCY_MATRIX_v56",
+  "status": "CROSS_CONTRACT_QA",
+  "owner": "Chat4",
+  "authorities": {
+    "chat4": {
+      "branchHead": "13424ebeefa55c91af7ca39e70a3843b80a75f99",
+      "operationsPath": "mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53.json",
+      "operationsBlob": "17282cf11436d54d49915f44ed84de56a0eebf7c",
+      "gatePath": "mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_GATE_v54.json",
+      "gateBlob": "dae0b2bf197f66c1b1fe834e643caf541c6ef4c7"
+    },
+    "chat6": {
+      "branch": "chat6/final-player-facing-golden-manifest-v54",
+      "branchHead": "62b4da9028c96f7c999a9156d596590ddae74ebd",
+      "fixturePath": "mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-golden-v54.json",
+      "fixtureBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
+      "handoffPath": "mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_MANIFEST_v56.md",
+      "handoffBlob": "f249b0e8de6db53868433c19db37c53f3bd483ac"
+    },
+    "chat3SaveGate": {
+      "branch": "chat3/final-save-migration-gate-prep-v51",
+      "branchHead": "883b92aede656ee66ef57bd0d648072341363d20",
+      "designPath": "mindy-successor/docs/tasks/CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md",
+      "designBlob": "b77db9b3d8bf145b2994d8e439dddeddabf96c69",
+      "prepPath": "mindy-successor/docs/tasks/CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md",
+      "prepBlob": "d9d34fab865e8ed289d2e89d41c01b284fed74e0"
+    },
+    "chat3Historical": {
+      "branch": "chat3/final-historical-fixture-recovery-v54",
+      "branchHead": "7c360378db7c63c1950901b6c9231415939be45e",
+      "handoffPath": "mindy-successor/docs/tasks/CHAT3_FINAL_HISTORICAL_FIXTURE_RECOVERY_v56.md",
+      "handoffBlob": "0a62c22c14310b9459d09ffa8b3d162fb1523d68"
+    }
+  },
+  "normalizedContracts": {
+    "lumberRetirement": {
+      "liveEndingId": "lumber-stay",
+      "liveRewardId": "vitality",
+      "historicalPerkId": "legacy.lumber-stay.vitality",
+      "liveEndingMustBeAbsent": true,
+      "liveVitalityAcquisitionMustBeAbsent": true,
+      "historicalOnlyIdentity": true,
+      "energyBonus": 1,
+      "maxApplications": 1,
+      "noModernEndingFabrication": true,
+      "noStrongMetaFabrication": true,
+      "noHardWorkFabrication": true,
+      "noPalaceQualificationFabrication": true,
+      "canonicalOrdinaryEndingCount": 40
+    },
+    "localization": {
+      "liveDeletionKeys": [
+        "ending.lumber-stay.title",
+        "ending.lumber-stay.description",
+        "unlock.vitality.label",
+        "presentation.static.ending.lumber-stay.alt",
+        "presentation.static.ending.lumber-stay.caption"
+      ],
+      "historicalRetentionKeys": [
+        "legacy.ending.lumber-stay.title",
+        "legacy.ending.lumber-stay.description",
+        "legacy.perk.lumber-stay-vitality.label",
+        "ui.ending.state.historical",
+        "ui.legacy.historicalTitle"
+      ]
+    },
+    "presentation": {
+      "liveDeletionSlots": [
+        "ending/lumber-stay"
+      ],
+      "historicalDisplayInteractive": false,
+      "historicalUiRequiredTokens": [
+        "data-legacy-ending-id",
+        "legacy.ending.lumber-stay.title"
+      ],
+      "historicalUiForbiddenTokens": [
+        "presentationIdForEnding(retiredLumberStayId)"
+      ]
+    },
+    "migration": {
+      "preserveExistingRunResultAndTransactionExactly": true,
+      "preRunResultDeterministicProof": true,
+      "noRewardReplay": true,
+      "profileMergeDedupesLegacyPerk": true,
+      "stripGenericVitalityOwnership": true,
+      "parseTwiceIdempotent": true
+    },
+    "d46": {
+      "freshLust": 5,
+      "storedLustPreserved": true
+    },
+    "d47": {
+      "hardWorkPackagesSeparateFromStrongMetaSlots": true,
+      "existingRunPackageSnapshotPreserved": true,
+      "newPackagesApplyOnceAtCreationCompletion": true
+    }
+  },
+  "matrix": [
+    {
+      "assertionId": "X01",
+      "assertion": "live lumber-stay ending absent",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "LUMBER_RETIRE_LIVE_ENDING",
+        "chat6": "retiredSurfaces.lumberStayVitality.forbiddenEndingDefinitionIds",
+        "chat3": "case 06 no live lumber-stay; historical fixtures must not become modern live ending"
+      }
+    },
+    {
+      "assertionId": "X02",
+      "assertion": "live vitality acquisition absent",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "LUMBER_NORMALIZE_HISTORICAL_EVIDENCE removes generic vitality",
+        "chat6": "forbiddenEndingRewardIds=vitality and forbiddenLocalization unlock.vitality.label",
+        "chat3": "case 06 vitality historical evidence only; no modern ownership"
+      }
+    },
+    {
+      "assertionId": "X03",
+      "assertion": "legacy.lumber-stay.vitality is historical-only compatibility identity",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "goldenInvariants.historicalLegacyPerkId",
+        "chat6": "retiredSurfaces.lumberStayVitality.historicalPerkId",
+        "chat3": "case 06 and F4/F5 recovery use legacy identity without modern ending"
+      }
+    },
+    {
+      "assertionId": "X04",
+      "assertion": "historical vitality contributes exactly +1 Energy once",
+      "chat4": "AGREE",
+      "chat6": "AGREE_PRESENTATION_TEXT_ONLY",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "LUMBER_LEGACY_ENERGY_PLUS_ONE amount=1 maxApplications=1",
+        "chat6": "historical localization explicitly says +1 daily Energy maximum",
+        "chat3": "case 06 requires legacy +1 daily Energy exactly once"
+      }
+    },
+    {
+      "assertionId": "X05",
+      "assertion": "retirement must not fabricate Strong Meta, Hard Work, or Palace identity",
+      "chat4": "AGREE",
+      "chat6": "AGREE_UI_SEPARATION",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "forbidden fabrication list; phase strong-meta-palace",
+        "chat6": "Hard Work packages outside Strong Meta; historical lumber is display-only",
+        "chat3": "case 06 no Keystone/Specialist/Hard Work conversion; fixture stop conditions"
+      }
+    },
+    {
+      "assertionId": "X06",
+      "assertion": "canonical ordinary ending count after retirement is 40",
+      "chat4": "AGREE",
+      "chat6": "NOT_OWNER",
+      "chat3": "COMPATIBLE_NOT_COUNT_OWNER",
+      "evidence": {
+        "chat4": "goldenInvariants.canonicalOrdinaryEndingCountAfterRetirement=40",
+        "chat6": "player-facing fixture forbids lumber-stay but does not define mechanics count",
+        "chat3": "save gate treats lumber-stay as retired historical identity; no conflicting count"
+      }
+    },
+    {
+      "assertionId": "X07",
+      "assertion": "exact five live lumber localization keys are deleted",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "NOT_OWNER",
+      "evidence": {
+        "chat4": "LUMBER_RETIRE_LIVE_LOCALIZATION keys",
+        "chat6": "retiredSurfaces.lumberStayVitality.forbiddenLocalizationKeys exact same five keys",
+        "chat3": "save/migration contract is content-neutral and does not own localization key set"
+      }
+    },
+    {
+      "assertionId": "X08",
+      "assertion": "exact five historical compatibility localization keys are retained",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "NOT_OWNER",
+      "evidence": {
+        "chat4": "LUMBER_KEEP_HISTORICAL_LOCALIZATION keys",
+        "chat6": "retiredSurfaces.lumberStayVitality.historicalLocalizationKeys exact same five keys",
+        "chat3": "save/migration contract does not own localization key set"
+      }
+    },
+    {
+      "assertionId": "X09",
+      "assertion": "ending/lumber-stay presentation slot is deleted",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "NOT_OWNER",
+      "evidence": {
+        "chat4": "LUMBER_RETIRE_LIVE_PRESENTATION_SLOT",
+        "chat6": "presentation.deleteTargets and forbiddenPresentationSlots",
+        "chat3": "presentation is required save-neutral"
+      }
+    },
+    {
+      "assertionId": "X10",
+      "assertion": "historical lumber display remains non-interactive",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "COMPATIBLE",
+      "evidence": {
+        "chat4": "LUMBER_KEEP_HISTORICAL_UI_RENDERING display-only",
+        "chat6": "historical required token + forbidden live presentation resolver token",
+        "chat3": "retired fixture must not become modern ending/action"
+      }
+    },
+    {
+      "assertionId": "X11",
+      "assertion": "existing historical RunResult and transaction proof preserved exactly",
+      "chat4": "AGREE",
+      "chat6": "NOT_OWNER",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "LUMBER_PRESERVE_HISTORICAL_RUNRESULT",
+        "chat6": "player-facing contract is save-neutral",
+        "chat3": "case 06 + F4 exact historical RunResult/transaction preservation"
+      }
+    },
+    {
+      "assertionId": "X12",
+      "assertion": "pre-RunResult lumber completion receives deterministic compatibility proof without reward replay",
+      "chat4": "AGREE",
+      "chat6": "NOT_OWNER",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "LUMBER_PRESERVE_HISTORICAL_RUNRESULT",
+        "chat6": "player-facing contract is save-neutral",
+        "chat3": "case 06 + F5 leaves result/proof absent for migration to construct"
+      }
+    },
+    {
+      "assertionId": "X13",
+      "assertion": "profile merge and repeated parse are idempotent for lumber legacy perk",
+      "chat4": "AGREE",
+      "chat6": "NOT_OWNER",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "profile merge dedupe and exactly-once gate",
+        "chat6": "player-facing contract is save-neutral",
+        "chat3": "case 06 protected profile merge + parse-twice idempotence"
+      }
+    },
+    {
+      "assertionId": "X14",
+      "assertion": "D46 fresh Lust 5 is separate from preservation of stored historical Lust",
+      "chat4": "AGREE",
+      "chat6": "NOT_OWNER",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "D46_FRESH_LUST_DEFAULT and existingSaveLustPreserved",
+        "chat6": "player-facing contract does not own save Lust",
+        "chat3": "case 22 old Lust unchanged; fresh Lust exactly 5"
+      }
+    },
+    {
+      "assertionId": "X15",
+      "assertion": "D47 Hard Work package snapshot remains separate from Strong Meta slots/current-run snapshot",
+      "chat4": "AGREE",
+      "chat6": "AGREE",
+      "chat3": "AGREE",
+      "evidence": {
+        "chat4": "D47_APPLY_EXACTLY_ONCE + phase-strong-meta-palace",
+        "chat6": "selectionContract.hardWorkPackagesOutsideStrongMeta=true and immutable currentRunSnapshot",
+        "chat3": "case 22/23 Strong Meta slots separate from packages and current-run snapshot protected"
+      }
+    }
+  ],
+  "contradictions": [],
+  "disposition": {
+    "semanticConflictsFound": 0,
+    "chronologyResolutionUsed": false,
+    "lastWriteWinsUsed": false,
+    "proceedToValidator": true
+  }
+}
