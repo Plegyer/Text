@@ -3350,30 +3350,6 @@
       "ru": "Финал: жизнь через образование.",
       "en": "Ending: a life shaped by education."
     },
-    "presentation.static.ending.tavern-stay.alt": {
-      "ru": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
-      "en": "A warm tavern after closing, with a counter, mug, and keys representing the choice to stay and run the place."
-    },
-    "presentation.static.ending.tavern-stay.caption": {
-      "ru": "Финал таверны: остаться в «Третьем тосте».",
-      "en": "Tavern ending: staying at the Third Toast."
-    },
-    "presentation.static.ending.tavern-guild.alt": {
-      "ru": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
-      "en": "A tavern table with a mug, ledger, and guild mark representing a move from shifts into broader guild work."
-    },
-    "presentation.static.ending.tavern-guild.caption": {
-      "ru": "Финал таверны: путь через гильдию.",
-      "en": "Tavern ending: the guild route."
-    },
-    "presentation.static.ending.tavern-court.alt": {
-      "ru": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
-      "en": "A sealed invitation beside a tavern mug represents a court invitation without depicting specific characters."
-    },
-    "presentation.static.ending.tavern-court.caption": {
-      "ru": "Финал таверны: приглашение ко двору.",
-      "en": "Tavern ending: an invitation to court."
-    },
     "presentation.static.ending.lumber-stay.alt": {
       "ru": "Сложенные брёвна и рабочие инструменты обозначают решение остаться в лесной артели без изменения карьерных условий.",
       "en": "Stacked logs and work tools represent the choice to remain with the lumber crew without changing career conditions."
