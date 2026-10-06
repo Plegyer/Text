@@ -1,66 +1,57 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE RELEASE LOCALIZATION BUNDLE v33-v35**
+Status: **ACTIVE — AUTO-CONTINUE ACTIVITY NETWORK COPY FIX BUNDLE v36-v38**
 Owner: Chat 6
 
-This bundle is for a FRESH Chat 6 context.
+Previous release-localization bundle v33-v35 is complete.
 
-Completed:
-- v26 ordinary ending localization
-- v27 Secret Debt localization
-- v28 final presentation/localization audit
-- v29 global caption closure
-- v30 Tavern compatibility audit
-- v31 Tavern cleanup
-- v32 final localization assembly packet
+v35 found one concrete route-semantic contradiction:
+`ending.activity.network.epilogue`
+claims all four directions are connected, while the accepted route can complete with only 3 of 4 regional anchors.
 
 Current branch:
-`chat6/release-localization-bundle-v33`
+`chat6/activity-network-copy-fix-v36`
 
-IMPORTANT:
 Complete ALL tasks below in order.
-Do not stop after the first deliverable.
-Only stop for a real content/Product ambiguity.
 
-## Task A — v33
-Create machine-readable manifest:
-`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_PRESENTATION_MANIFEST_v33.json`
+## Task A — v36
+Create a localization-only content correction producer.
 
-It must enumerate, by source tranche:
-- localization keys to add/replace;
-- localization keys to delete;
-- keys that must remain for migration;
-- presentation slots to add;
-- known dependency order;
-- source exact SHAs.
+Change only the RU/EN epilogue for:
+`ending.activity.network.epilogue`
 
-No whole-file snapshots.
+Required semantic correction:
+remove the unconditional numeric claim of **four** directions while preserving the idea that the heroine's contact network connects previously separate routes/areas into a practical working network.
 
-## Task B — v34
+Safe target wording:
+
+RU:
+`Контакты связывают разрозненные направления в единое рабочее пространство.`
+
+EN:
+`The contacts tie disconnected routes into one practical working network.`
+
+Do not change mechanics, requirements, rewards, title, description, or lore.
+
+Add a focused test proving:
+- bilingual epilogue exists;
+- no unconditional four-region claim remains;
+- Activity Network mechanics are unchanged.
+
+## Task B — v37
 Create:
-`CHAT6_PLAYER_FACING_FALLBACK_AUDIT_v34.md`
+`mindy-successor/docs/tasks/CHAT6_ACTIVITY_NETWORK_COPY_FIX_QA_NOTE_v37.md`
 
-Audit all accepted live player-facing families for raw-key/fallback-text risk:
-- ordinary endings;
-- Secret Debt endings;
-- D42 Night;
-- Activity endings;
-- Palace endings;
-- generic ending screen;
-- generic Night room/rest surfaces.
+Document exact diff, source authority, and assembly guidance.
 
-Classify any finding P0/P1/P2.
-
-## Task C — v35
+## Task C — v38
 Create:
-`CHAT6_FINAL_COPY_CONSISTENCY_AUDIT_v35.md`
+`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_MANIFEST_DELTA_v38.md`
 
-Check RU/EN consistency and route semantics across final ending titles/descriptions/epilogues.
-Do not rewrite accepted mechanics or lore.
-List only concrete contradictions or confirm clean.
+Update the final localization assembly guidance to include the v36 corrected epilogue as the authoritative final value.
 
 No runtime changes.
 No full CI.
 
-After all three are committed, report:
-`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
+Freeze exact producer SHA and report:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
