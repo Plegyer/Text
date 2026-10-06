@@ -473,3 +473,58 @@ typecheck -> validate -> build -> full focused v28 -> exactly one full CI -> fre
 Leader 1 then performs production merge and exact-main CI.
 
 Broad burn-down remains **5** until that merge + exact-main CI succeeds.
+
+
+## Stage1 execution breakthrough — Leader-run push-trigger Actions
+
+Chat2 replacement correctly reported that its terminal has no mounted checkout and no DNS access to github.com, while the GitHub connector has no shell/workflow_dispatch action.
+
+Leader1 proved this is NOT a terminal blocker for Stage1:
+- create a QA branch from the exact Chat2 branch;
+- add a temporary workflow with a branch-specific `push` trigger;
+- workflow checkout uses the exact pre-workflow source SHA;
+- self-hosted Windows runner executes npm/gates;
+- workflow writes machine-readable evidence back to the QA branch.
+
+First real focused gate evidence:
+`leader1/chat2-stage1-focused-gate-v54`
+`CHAT2_STAGE1_FOCUSED_GATE_RESULT_v54.json`
+tested SHA:
+`e59478e336b92ce6e56173990c0da107454a78c6`
+
+v54 results:
+- npm ci PASS
+- validate PASS
+- build PASS
+- Night PASS
+- Activity PASS
+- Strong Meta PASS
+- Palace PASS
+- localization/presentation PASS
+- typecheck FAIL
+- Secret Debt/D51 core FAIL
+
+Diagnostics v55 proved:
+- stale v12 test used obsolete Strong Meta `earnedRewardIds` path;
+- D51 queue itself correctly owns both -1 penalties;
+- new current-main blocking Street/day-start scenes caused historical focused tests to assert before NightFlow/morning scene completion.
+
+Leader adapted tests only; production engine/content was not changed:
+- v20 now resolves current-main pending scenes before D51/Activity assertions and uses current absolute bound day;
+- v12 resolves current-main pending Night scenes and uses `ownership.ownedRewardIds`.
+
+Second diagnostics v58:
+- D51/core 42/43 PASS;
+- sole remaining core failure and typecheck failure were the second stale `after.meta.strongMeta.earnedRewardIds` assertion.
+Leader repaired that remaining test-only path in Chat2 commit:
+`63e28896260887ed753b7fba0ea29949d73c2ebb`.
+
+Current exact focused rerun:
+`leader1/chat2-stage1-focused-gate-v59`
+source is the latest Chat2 head after the test-only adaptation.
+Evidence file expected:
+`CHAT2_STAGE1_FOCUSED_GATE_RESULT_v59.json`
+
+At this checkpoint v59 is queued/running on the self-hosted runner; no green claim yet.
+Do not call terminal/DNS limitation a blocker again: Leader1 has a working push-trigger Actions execution path.
+Do not run full CI until v59 is fully green.
