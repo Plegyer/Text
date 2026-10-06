@@ -195,3 +195,22 @@ Whenever a major state changes:
 
 Never rely on ChatGPT cross-chat memory as project authority.
 GitHub is the durable project memory.
+
+
+## Newest checkpoint — 2026-10-06
+
+D39 blocker has a Leader decision:
+- Formal Introduction -> Assassin handler neutral first-professional seam.
+- Source Method -> School Arcana/Reason effect-free information variant.
+Authority:
+`mindy-successor/docs/tasks/LEADER1_D39_LIVE_CONSUMER_DECISION_2026-10-06.md`
+
+Current worker branches:
+- Chat2: `chat2/assembly-secret-debt-d51-current-main-v1`; recovery file available if window is lost.
+- Chat3: `chat3/d39-consumer-producer-v45`
+- Chat4: `chat4/qa-strong-meta-ui-v41`
+- Chat5: `chat5/qa-secret-debt-current-head-v40`
+- Chat6: `chat6/final-player-facing-cumulative-v45`
+
+Broad burn-down remains 5.
+Re-query every branch before status claims.
