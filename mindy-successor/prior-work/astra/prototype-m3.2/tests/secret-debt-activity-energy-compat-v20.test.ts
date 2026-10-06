@@ -15,6 +15,7 @@ const BOUND_NIGHT_TAG='secret-debt.bound-night';
 
 function setBound(s:Save,day=10){
   s.run.calendar.elapsedDays=day;
+  s.run.day=day;
   s.run.secretDebt={
     status:'bound',
     acceptedDay:0,
@@ -31,6 +32,7 @@ function setBound(s:Save,day=10){
 
 function setAcceptedForTomorrow(s:Save){
   s.run.calendar.elapsedDays=9;
+  s.run.day=9;
   s.run.secretDebt={
     status:'accepted',
     acceptedDay:0,
