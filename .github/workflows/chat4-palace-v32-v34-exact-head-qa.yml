@@ -1,0 +1,77 @@
+name: Chat4 Palace v32-v34 exact-head QA
+
+on:
+  push:
+    branches:
+      - chat4/palace-exact-head-qa-bundle-v32
+    paths:
+      - .github/workflows/chat4-palace-v32-v34-exact-head-qa.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  palace-v18-exact-head:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact v18 producer head
+        uses: actions/checkout@v4
+        with:
+          ref: 67f948d185883d8e706dad522e5010bff8e2bd48
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.18.0
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused Palace v15-v18 QA
+        run: >-
+          node --experimental-strip-types --test
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+
+  palace-v19-exact-head:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact v19 prose/media head
+        uses: actions/checkout@v4
+        with:
+          ref: 6cf19169b92fa709e8ae51cf73ff72ef2c0fac19
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.18.0
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused Palace v18-v19 QA
+        run: >-
+          node --experimental-strip-types --test
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/palace-final-prose-media-v19.test.ts
