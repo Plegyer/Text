@@ -1,51 +1,51 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — D42 FINAL TWO ASSERTIONS**
-Owner: Chat 2
+Status: **ACTIVE — SECRET DEBT + D51 CURRENT-MAIN ASSEMBLY v1**
+Owner: Chat 2 / sole current-main assembly + full-CI lane
+
+D42 is CLOSED:
+- merged main commit: `a51bbee97b0f5e5b0a182da03407277eecc7a758`
+- exact-main CI #1217: SUCCESS
 
 Current branch:
-`chat2/assembly-d42-night-current-main-20261004-v1`
+`chat2/assembly-secret-debt-d51-current-main-v1`
 
-Latest production head:
-`0176fa77394524f3af64e49447be12edf8bf1847`
+Assemble selectively from accepted sources:
+- Secret Debt v12:
+  `chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
+- D51 compatibility:
+  `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`
+- Secret Debt ending localization v27:
+  `chat6/secret-debt-ending-localization-producer-v27@b6cc4ca6990936f4d801004806b25e4d920f9abf`
+- Secret Debt+D51 preflight v22:
+  `chat3/secret-debt-d51-assembly-preflight-v22@49fb8209ddfbc869ebe34ab155ead1afbf8c5c2c`
+- v27 exact-head QA v24: GREEN.
 
-Latest full CI:
-run `37454323411` — FAILURE with exactly 2 tests.
+Work continuously through these internal steps without waiting for Leader:
+1. selective mechanics/schema/content compose onto actual current main;
+2. canonical Strong Meta reward binding reconciliation;
+3. D51 Street+bound-night Energy compatibility compose;
+4. localization v27 merge by key;
+5. focused Secret Debt/D51/Night/save tests;
+6. typecheck / validate / build;
+7. one full CI.
 
-Both remaining failures are stale assertions only. Production D42 behavior is correct.
+Preserve:
+- ordinary jobs locked while bound;
+- School/Activity available;
+- forced Night absolute priority;
+- Bound Life exactly 50 hidden shifts;
+- Takeover explicit, no auto-ending;
+- D51 floor-2 compatibility only for the Street -1 + bound-night -1 pair;
+- unrelated later penalties may reduce Energy below 2;
+- no global Energy floor;
+- D42 behavior/presentation remains intact.
 
-Required exact repair:
-
-1. `tests/guard-presentation-v16-c2-169-179.test.ts`
-   Keep:
-   `assert.equal(expected.size,29)`
-   Change:
-   `assert.equal(published.length,29)`
-   to:
-   `assert.equal(published.length,28)`
-   and explicitly assert:
-   `expected.has('night/guard/guard-night-case-debrief')`.
-
-2. `tests/guard-production-presentation-reachability-c2-180.test.ts`
-   Keep:
-   `assert.equal(expected.size,29)`
-   Replace:
-   `assert.equal(published.length,expected.size)`
-   with:
-   `assert.equal(published.length,28)`
-   and explicitly assert:
-   `expected.has('night/guard/guard-night-case-debrief')`.
-
-Do not change production files.
-
-Then run:
-- the two Guard suites;
-- D42 Night focused suite;
-- presentation/source-integrity focused checks;
-- typecheck / validate / build;
-- one full CI.
-
-If green, freeze exact SHA and report:
-`READY_FOR_LEADER_MERGE`.
-
+Do not wholesale-copy historical shared files.
 Do not merge main.
+
+If full CI is green:
+freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+
+If a real semantic conflict or focused failure appears:
+stop and report the exact blocker rather than improvising.
