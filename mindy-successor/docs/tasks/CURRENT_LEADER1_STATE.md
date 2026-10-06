@@ -709,3 +709,40 @@ Current:
 
 Protocol:
 `mindy-successor/docs/tasks/LEADER1_WORKER_BUNDLE_PROTOCOL.md`
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 BUNDLE CHECK
+
+Broad burn-down remains **5**.
+
+### Chat 2
+- current branch: `chat2/assembly-secret-debt-d51-current-main-v1`
+- latest worker commit only rebases/prepares the branch at `0463e2a18ba619b3bdf9636b37876c4cbbbd2829`
+- no Secret Debt+D51 assembly implementation commit yet.
+- user-facing status: STANDING WITH ACTIVE TASK / NOT READY.
+
+### Chat 3
+Completed full v30-v32 career closure bundle at `9d6730364cb98801d52e039b85e71b1f11877f5d`.
+Accepted.
+Current bundle:
+`chat3/palace-independent-release-review-v33` through v35.
+
+### Chat 4
+Completed full Secret Debt+D51 v26-v28 research/QA packet at `98deaeb43ccc16c55151a2783e4997c7501aa3a7`.
+Accepted.
+Current bundle:
+`chat4/career-producers-exact-head-qa-bundle-v29` through v31.
+
+### Chat 5
+Completed full cross-system independent review v25-v27 at `46389257b32b70a5831e21746a13f7b95c743c34`.
+Key finding: D38+D39 have no Product collision; future Strong Meta assembly requires semantic union and combined registry guards.
+Accepted.
+Current bundle:
+`chat5/final-migration-release-review-v28` through v30.
+
+### Chat 6
+Completed release localization bundle v33-v35 at `2ae39520ba95b4f12a7ebd13b06ae04d891db3a3`.
+Key finding: one concrete copy contradiction in `ending.activity.network.epilogue`: unconditional four-region wording exceeds accepted 3-of-4-capable route semantics.
+Accepted with content correction required.
+Current bundle:
+`chat6/activity-network-copy-fix-v36` through v38.
