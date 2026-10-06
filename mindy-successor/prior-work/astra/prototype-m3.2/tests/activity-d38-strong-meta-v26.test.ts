@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import rawBinding from '../content/activity-d38-reward-v26.fixture.json' with {type:'json'};
 
 import {
   ACTIVITY_D38_TAGS,
@@ -88,6 +89,30 @@ function ready(input:Save,cat:Catalog){
   s.run.flags['story.arrived']=true;
   return s;
 }
+
+test('canonical D38 binding fixture maps all three endings to strongMeta ownership, never generic unlocks',()=>{
+  const source=rawBinding as {
+    version:number;
+    authority:string;
+    bindings:Array<{
+      endingId:string;
+      rewardId:string;
+      metaReward:{kind:string;rewardId:string;reward:string};
+    }>;
+  };
+  assert.equal(source.version,1);
+  assert.equal(source.authority,'D38');
+  assert.deepEqual(source.bindings.map(row=>[row.endingId,row.rewardId]),[
+    ['ending.activity.pathfinder',STRONG_META_IDS.activitySurveyorsAtlas],
+    ['ending.activity.preservation',STRONG_META_IDS.activityFieldArchive],
+    ['ending.activity.network',STRONG_META_IDS.activityContactNetwork]
+  ]);
+  for(const row of source.bindings){
+    assert.equal(row.metaReward.kind,'strongMeta');
+    assert.equal(row.metaReward.rewardId,row.rewardId);
+    assert.equal(row.metaReward.reward,row.rewardId);
+  }
+});
 
 test('D38 registry rewards are normal Specialists and preserve the global capacity of two',()=>{
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
