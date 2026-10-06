@@ -319,3 +319,35 @@ Expected:
 `BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_EVIDENCE`
 
 User must launch the replacement Chat6 window manually.
+
+
+## Live update — Chat3/Chat4 completed while UI idle; Chat2 fallback recovery prepared
+
+Chat3 v60-v62 completed before the user reported it standing.
+Accepted handoff:
+`CHAT3_FINAL_SAVE_MIGRATION_GOLDEN_QA_v62.md`
+Verdict: package-level QA passed; no production mutation/full CI.
+Current lightweight assignment:
+`chat3/final-save-migration-release-evidence-v63`
+task `CHAT3_FINAL_SAVE_MIGRATION_RELEASE_EVIDENCE_v63_v64_TASK.md`.
+
+Chat4 v56-v58 completed before the user reported it standing.
+Accepted handoff:
+`CHAT4_CROSS_GOLDEN_LEGACY_CONSISTENCY_v58.md`
+Verdict: 15/15 cross-contract consistent, 0 conflicts; validator 10/10 PASS; no production mutation/full CI.
+Current lightweight assignment:
+`chat4/legacy-release-evidence-v59`
+task `CHAT4_LEGACY_RELEASE_EVIDENCE_v59_v60_TASK.md`.
+
+Chat2 remains incomplete:
+- branch `chat2/assembly-secret-debt-d51-current-main-recovery-v2`;
+- schema splice repair is done;
+- Secret Debt localization remains entirely absent;
+- no final handoff exists.
+
+Because the user reports Chat2 is not visible, a fallback recovery file now exists:
+`CHAT2_CONTEXT_RECOVERY_SECRET_DEBT_D51_NARROW_REPAIR_2026-10-06.md`
+
+Use it only if the original Chat2 conversation is genuinely irretrievable. Do not replace a still-live Chat2 window.
+
+Broad burn-down remains **5**.
