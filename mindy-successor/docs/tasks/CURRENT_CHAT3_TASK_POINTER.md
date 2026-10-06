@@ -1,58 +1,53 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE RELEASE CAREER CLOSURE BUNDLE v30-v32**
+Status: **ACTIVE — AUTO-CONTINUE PALACE RELEASE REVIEW BUNDLE v33-v35**
 Owner: Chat 3
 
-Completed and accepted:
-- Activity final assembly packet v28
-- D46+D47+legacy final assembly packet v29
+Previous career-closure bundle v30-v32 is complete and accepted.
 
 Current branch:
-`chat3/release-career-closure-bundle-v30`
+`chat3/palace-independent-release-review-v33`
 
-IMPORTANT:
-Complete ALL tasks below in order in the same work session.
-Do not stop after the first deliverable.
-Only stop for a genuine Product ambiguity/blocker.
+Complete ALL tasks below in order without waiting for Leader.
 
-## Task A — v30
+## Task A — v33
 Create:
-`CHAT3_D46_D47_LEGACY_MIGRATION_MATRIX_v30.md`
+`mindy-successor/docs/tasks/CHAT3_PALACE_FINAL_PACKET_INDEPENDENT_REVIEW_v33.md`
 
-Produce the exact save/migration/reload matrix for the future assembled D46+D47+lumber-retirement tranche:
-- fresh profile;
-- existing saves preserving stored Lust;
-- historical lumber-stay/vitality;
-- duplicate historical evidence;
-- earned vs selected Hard Work packages;
-- current-run package snapshot;
-- exactly-once package application;
-- canonical 40-ending count.
+Independently review the accepted Palace assembly stack:
+- Palace mechanics/narrative v18;
+- final prose/media v19;
+- D39 reward producer v20;
+- Palace cumulative assembly refresh v21;
+- D43/D45/D48/D49 locks.
 
-## Task B — v31
+Find contradictions, missing wiring, unsafe assumptions, or confirm clean.
+
+## Task B — v34
 Create:
-`CHAT3_ORDINARY_CAREER_END_TO_END_RELEASE_CHECKLIST_v31.md`
+`mindy-successor/docs/tasks/CHAT3_PALACE_SAVE_RELOAD_MATRIX_v34.md`
 
-Cover all ten ordinary careers end-to-end:
-fresh start -> wage -> shift progression -> 50 Hard Work -> explicit ending -> completeEnding -> future package selection/application.
+Produce the exact save/reload matrix for:
+- access qualification;
+- duty progress;
+- support use;
+- Outcome Ready;
+- Prince readiness/retry;
+- prince-defeated fact;
+- explicit Return Home commit;
+- D39 reward completion;
+- current-run vs future-run reward activation;
+- Secret Debt forced-Night coexistence.
 
-Include D42/Secret Debt/Palace isolation checks.
-
-## Task C — v32
+## Task C — v35
 Create:
-`CHAT3_FINAL_ECONOMY_HARDWORK_CONFLICT_AUDIT_v32.md`
+`mindy-successor/docs/tasks/CHAT3_PALACE_POST_ASSEMBLY_QA_CHECKLIST_v35.md`
 
-Cross-check D46/D47/legacy against:
-- Strong Meta;
-- Palace D23/D24;
-- Secret Debt hidden work/wages;
-- Activity;
-- current save migration chain;
-- D40/D41 ending identities.
+Define focused executable test roster + stop conditions for Chat 2 after Palace assembly.
 
-Research/audit only.
-No production runtime changes.
-No full CI.
+Research/review only.
+Do not change production runtime.
+Do not run full CI.
 
-After all three deliverables are committed, report:
+After all three are committed, report:
 `BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
