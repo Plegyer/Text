@@ -1,0 +1,71 @@
+name: Chat 5 Retired Tavern Cleanup v23 exact-head QA
+
+on:
+  push:
+    branches:
+      - chat5/qa-retired-tavern-cleanup-v23
+
+jobs:
+  focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout frozen Tavern cleanup producer
+        uses: actions/checkout@v4
+        with:
+          ref: eb03a847347339ade109b0ec9022b81cd4abadaf
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: bash
+        working-directory: .
+        run: |
+          set -euo pipefail
+          head="$(git rev-parse HEAD)"
+          echo "$head"
+          test "$head" = "eb03a847347339ade109b0ec9022b81cd4abadaf"
+      - name: Production firewall
+        shell: bash
+        working-directory: .
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 36711bc8c9c5e8c2b99ffb8f8c861c462c414bca b37551d567d8017dbc25b87d66034af3e9c7a812
+          mapfile -t changed < <(git diff --name-only 36711bc8c9c5e8c2b99ffb8f8c861c462c414bca b37551d567d8017dbc25b87d66034af3e9c7a812)
+          printf 'Implementation delta:\n%s\n' "${changed[*]}"
+          test "${#changed[@]}" -eq 2
+          printf '%s\n' "${changed[@]}" | grep -Fxq "mindy-successor/prior-work/astra/prototype-m3.2/content/localization.json"
+          printf '%s\n' "${changed[@]}" | grep -Fxq "mindy-successor/prior-work/astra/prototype-m3.2/tests/retired-tavern-localization-cleanup-v31.test.ts"
+          if git diff --name-only b37551d567d8017dbc25b87d66034af3e9c7a812 eb03a847347339ade109b0ec9022b81cd4abadaf -- mindy-successor/prior-work/astra/prototype-m3.2 | grep -q .; then
+            echo "Frozen handoff changed prototype production/test files after implementation head."
+            git diff --name-only b37551d567d8017dbc25b87d66034af3e9c7a812 eb03a847347339ade109b0ec9022b81cd4abadaf -- mindy-successor/prior-work/astra/prototype-m3.2
+            exit 1
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Tavern cleanup and D41 compatibility
+        run: >
+          node --experimental-strip-types --test
+          tests/retired-tavern-localization-cleanup-v31.test.ts
+          tests/advanced-endings-tranche-a-v11.test.ts
+          tests/migration.test.ts
+          tests/presentation-legacy-migration.test.ts
+      - name: Presentation source-integrity adjacency
+        run: >
+          node --experimental-strip-types --test
+          tests/presentation-ending-parity-v9.test.ts
+          tests/presentation-source-integrity-v9.test.ts
+          tests/chat3-tavern-live-authored-v15.test.ts
