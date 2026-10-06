@@ -9,7 +9,7 @@ on:
 
 concurrency:
   group: chat5-activity-camp-d38-preassembly-v44
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   exact-head-focused:
@@ -64,11 +64,11 @@ jobs:
           fetch-depth: 1
 
       - name: Verify exact frozen SHA
-        shell: pwsh
+        shell: cmd
         run: |
-          $actual = git rev-parse HEAD
-          if ($actual -ne "${{ matrix.sha }}") { throw "Exact-head guard failed: $actual" }
-          Write-Host "${{ matrix.label }} exact head: $actual"
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          if not "%ACTUAL%"=="${{ matrix.sha }}" exit /b 1
+          echo ${{ matrix.label }} exact head: %ACTUAL%
 
       - name: Setup Node
         uses: actions/setup-node@v4
