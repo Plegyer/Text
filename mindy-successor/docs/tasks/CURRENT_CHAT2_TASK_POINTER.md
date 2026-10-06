@@ -1,36 +1,25 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **CONTINUE NOW — SECRET DEBT + D51 CURRENT-MAIN ASSEMBLY v1**
+Status: **CONTINUE NOW — SECRET DEBT + D51 FULL-TREE RECOVERY v2**
 Owner: Chat 2 / sole current-main assembly + full-CI lane
 
-Do not wait for Leader.
-Continue from the existing branch head. Do not redo already committed assembly work.
+Keep the CURRENT Chat 2 conversation. Do not replace or restart the window.
 
-Current branch:
+The old v1 branch is confirmed structurally sparse and is now source/evidence only:
 `chat2/assembly-secret-debt-d51-current-main-v1`
 
-Required completion path:
-1. finish remaining Secret Debt v12 composition;
-2. finish D51 compatibility composition;
-3. merge Secret Debt ending localization v27 by key;
-4. reconcile canonical Strong Meta ending rewards;
-5. run focused Secret Debt/D51/Night/save-reload QA;
-6. run typecheck / validate / build;
-7. run one full CI;
-8. if green, freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+Continue on:
+`chat2/assembly-secret-debt-d51-current-main-recovery-v2`
 
-Preserve:
-- forced Night absolute priority;
-- ordinary jobs locked while bound;
-- School/Activity available;
-- Bound Life exactly 50 hidden shifts;
-- Takeover explicit; no auto-ending;
-- hidden wage cap 140;
-- D51 compatibility floor only for Street -1 + bound-night -1 pair;
-- unrelated later Energy penalties may reduce below 2;
-- no global Energy floor;
-- D42 remains intact.
+Task:
+`mindy-successor/docs/tasks/CHAT2_SECRET_DEBT_D51_RECOVERY_v2_TASK.md`
 
-Accepted support now also includes Chat4 Secret Debt+D51 v26-v28 packet/matrix/QA checklist.
+Read first:
+`mindy-successor/docs/tasks/CHAT5_SECRET_DEBT_CURRENT_HEAD_GAP_QA_v42.md`
+
+Preserve and selectively replay already-authored Secret Debt/D51 work from v1; do not redo Product decisions and do not wholesale replace shared files with sparse historical blobs.
+
+Finish runtime/D51/UI/localization, then focused gates, typecheck/validate/build, and one full CI.
+If green, freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
 
 Do not merge main.
