@@ -374,3 +374,23 @@ Current lightweight Chat6 assignment:
 - expected `BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_DRYRUN`.
 
 User must manually message Chat6 to start.
+
+
+## Live update — Chat3 v64 and Chat4 v60 accepted / dry-run refills
+
+Chat3 final save/migration release evidence v63-v64 completed and is accepted.
+Current:
+- branch `chat3/final-save-migration-dryrun-v65`;
+- task `CHAT3_FINAL_SAVE_MIGRATION_DRYRUN_v65_v66_TASK.md`;
+- expected `BUNDLE_COMPLETE — READY_FOR_FINAL_SAVE_MIGRATION_DRYRUN`.
+
+Chat4 legacy/D46/D47 release evidence v59-v60 completed and is accepted.
+Current:
+- branch `chat4/legacy-release-dryrun-v61`;
+- task `CHAT4_LEGACY_RELEASE_DRYRUN_v61_v62_TASK.md`;
+- expected `BUNDLE_COMPLETE — READY_FOR_D46_D47_LEGACY_RELEASE_DRYRUN`.
+
+Both new bundles are intentionally lightweight to preserve chat context.
+User must manually message each worker window to start.
+
+Broad burn-down remains **5**.
