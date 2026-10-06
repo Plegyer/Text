@@ -1,53 +1,68 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE PALACE RELEASE REVIEW BUNDLE v33-v35**
+Status: **ACTIVE — AUTO-CONTINUE FINAL GAMEPLAY RELEASE SMOKE BUNDLE v36-v38**
 Owner: Chat 3
 
-Previous career-closure bundle v30-v32 is complete and accepted.
+Previous Palace review bundle v33-v35 is complete and accepted.
 
 Current branch:
-`chat3/palace-independent-release-review-v33`
+`chat3/final-gameplay-release-smoke-bundle-v36`
 
-Complete ALL tasks below in order without waiting for Leader.
+Complete ALL tasks in order without waiting for Leader.
 
-## Task A — v33
+## Task A — v36
 Create:
-`mindy-successor/docs/tasks/CHAT3_PALACE_FINAL_PACKET_INDEPENDENT_REVIEW_v33.md`
+`mindy-successor/docs/tasks/CHAT3_FINAL_GAMEPLAY_SMOKE_MATRIX_v36.md`
 
-Independently review the accepted Palace assembly stack:
-- Palace mechanics/narrative v18;
-- final prose/media v19;
-- D39 reward producer v20;
-- Palace cumulative assembly refresh v21;
-- D43/D45/D48/D49 locks.
+Build a compact end-to-end player journey matrix for the final 1.0 target:
+- fresh start;
+- ordinary career;
+- School;
+- Night;
+- Secret Debt;
+- Activity + Camp;
+- Palace;
+- Hard Work ending;
+- advanced ending;
+- save/reload in each major subsystem;
+- explicit ending commit and completion.
 
-Find contradictions, missing wiring, unsafe assumptions, or confirm clean.
+Cover both normal and edge cases.
 
-## Task B — v34
+## Task B — v37
 Create:
-`mindy-successor/docs/tasks/CHAT3_PALACE_SAVE_RELOAD_MATRIX_v34.md`
+`mindy-successor/docs/tasks/CHAT3_EXPLICIT_ENDING_COMMIT_RELEASE_AUDIT_v37.md`
 
-Produce the exact save/reload matrix for:
-- access qualification;
-- duty progress;
-- support use;
-- Outcome Ready;
-- Prince readiness/retry;
-- prince-defeated fact;
-- explicit Return Home commit;
-- D39 reward completion;
-- current-run vs future-run reward activation;
-- Secret Debt forced-Night coexistence.
+Audit every ending family for:
+- no auto-ending;
+- explicit D16 commit;
+- one ending per life;
+- completeEnding exactly once;
+- permanent reward only on completion;
+- reload cannot duplicate or skip completion.
 
-## Task C — v35
+Families:
+- 40 ordinary career endings;
+- Secret Debt;
+- Activity;
+- Palace;
+- generic guild/scholar compatibility.
+
+## Task C — v38
 Create:
-`mindy-successor/docs/tasks/CHAT3_PALACE_POST_ASSEMBLY_QA_CHECKLIST_v35.md`
+`mindy-successor/docs/tasks/CHAT3_FINAL_PRODUCT_INVARIANT_TRACEABILITY_v38.md`
 
-Define focused executable test roster + stop conditions for Chat 2 after Palace assembly.
+Create a release traceability matrix mapping locked Product rules to:
+- owning runtime/content surface;
+- accepted producer;
+- focused test(s);
+- final regression gate.
 
-Research/review only.
+Highlight any locked Product rule with no executable coverage.
+
+Research/audit only.
 Do not change production runtime.
 Do not run full CI.
 
-After all three are committed, report:
+After all three:
 `BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
