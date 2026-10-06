@@ -56,6 +56,85 @@ jobs:
         continue-on-error: true
         run: npm run build
 
+      - name: Static Palace v45 invariants
+        id: staticv45
+        continue-on-error: true
+        shell: powershell
+        run: |
+          @'
+          const fs=require('fs');
+          const assert=require('assert/strict');
+          const defs=JSON.parse(fs.readFileSync('content/definitions.json','utf8'));
+          const progression=JSON.parse(fs.readFileSync('content/packs/palace-progression.json','utf8'));
+          const invitation=JSON.parse(fs.readFileSync('content/packs/palace-invitation.json','utf8'));
+          const prince=JSON.parse(fs.readFileSync('content/packs/palace-prince-confrontation.json','utf8'));
+          const presentation=JSON.parse(fs.readFileSync('content/presentation.json','utf8'));
+
+          const duties=defs.actions.filter(a=>a.id.startsWith('palace.duty.'));
+          assert.equal(duties.length,15,'exactly 15 structural duties');
+
+          const confront=defs.actions.find(a=>a.id==='palace.confront-prince');
+          assert.ok(confront,'missing confrontation action');
+          assert.equal(confront.cost.money,0);
+          assert.equal(confront.cost.energy,0);
+          const statConditions=confront.conditions.filter(c=>c.kind==='stat');
+          assert.equal(statConditions.length,12);
+          assert.ok(statConditions.every(c=>c.op==='gte'&&c.value===91));
+          assert.equal(statConditions.some(c=>c.stat==='lust'),false);
+          const forbiddenKinds=new Set(['itemCount','itemCapability','schoolTrack','relationshipStage','activityState','metaUnlock']);
+          assert.equal(confront.conditions.some(c=>forbiddenKinds.has(c.kind)),false);
+
+          const quest=(defs.quests||[]).find(q=>q.id==='palace.prince-confrontation');
+          assert.ok(quest);
+          assert.deepEqual(quest.stages,['ready','audit-record','name-contradiction','define-boundary','reconstruct-return','defeated']);
+
+          assert.equal(prince.events.length,4);
+          assert.ok(prince.events.every(e=>e.blocking===true));
+          assert.ok(prince.events.every(e=>e.choices.some(c=>c.id==='not-yet')));
+          const writers=[];
+          for(const e of prince.events)for(const choice of e.choices||[])for(const effect of choice.effects||[]){
+            if(effect.kind==='addWorldFact'&&effect.fact==='palace.prince-defeated')writers.push([e.id,choice.id]);
+          }
+          assert.deepEqual(writers,[['palace.prince-confrontation.phase-04-reconstruct-return','present-origin-trace']]);
+          const princeRaw=JSON.stringify(prince);
+          assert.equal(/commitEnding|completeEnding|acceptEnding/.test(princeRaw),false);
+          assert.equal(/"chance"|"rng"|"random"/i.test(princeRaw),false);
+          assert.ok(princeRaw.includes('world-remains-real'));
+          assert.ok(princeRaw.includes('unsupported-unreal'));
+
+          const milestones=new Map(progression.events.map(e=>[e.id,e]));
+          const duty12=JSON.stringify(milestones.get('palace.progression.milestone-12-crossroads'));
+          const duty15=JSON.stringify(milestones.get('palace.progression.milestone-15-outcome-ready'));
+          assert.equal(/Threshold Archive|Palace Concordance|real inter-world Threshold/.test(duty12),false);
+          assert.ok(/Palace Concordance/.test(duty15));
+          assert.ok(/Threshold Archive/.test(duty15));
+          assert.ok(/real inter-world Threshold/.test(duty15));
+          assert.ok(/still do not know what originally displaced you/i.test(duty15));
+
+          const inviteRaw=JSON.stringify(invitation);
+          assert.ok(inviteRaw.includes('palace.d23-qualified'));
+          assert.ok(inviteRaw.includes('palace.access-granted'));
+          assert.equal(/prophecy/i.test(inviteRaw),true);
+
+          const palaceEndings=defs.endings.filter(e=>e.id.startsWith('ending.palace.'));
+          assert.equal(palaceEndings.length,4);
+          assert.deepEqual(
+            palaceEndings.map(e=>e.reward).sort(),
+            ['palace.court-power.formal-introduction','palace.inner-truth.source-method','palace.service-life.steady-practice','palace.true.cap-200'].sort()
+          );
+          const palaceSurface=JSON.stringify({palaceEndings,progression,invitation,prince});
+          assert.equal(/strongMetaFormalIntroductionAvailable|useStrongMetaFormalIntroduction|strongMetaKnowledge/.test(palaceSurface),false);
+
+          const slots=Object.keys(presentation.slots||{}).filter(k=>k.includes('palace'));
+          assert.equal(slots.length,19);
+          const sources=slots.map(k=>presentation.slots[k]?.source).filter(Boolean);
+          assert.ok(sources.every(s=>s==='assets/stage-town.svg'||s==='assets/stage-room.svg'));
+
+          console.log('STATIC_V45_PASS duties=15 statGates=12 princePhases=4 presentationSlots=19');
+          '@ | Set-Content -Encoding utf8 .chat4-palace-v45-static.cjs
+          node .chat4-palace-v45-static.cjs
+          Remove-Item .chat4-palace-v45-static.cjs
+
       - name: D23 and Palace v15 runtime
         id: v15
         continue-on-error: true
@@ -99,11 +178,12 @@ jobs:
       - name: Aggregate exact-head result
         shell: powershell
         run: |
-          $names = @("typecheck","validate","build","v15","v16","v18","v19","adjacency")
+          $names = @("typecheck","validate","build","staticv45","v15","v16","v18","v19","adjacency")
           $values = @(
             "${{ steps.typecheck.outcome }}",
             "${{ steps.validate.outcome }}",
             "${{ steps.build.outcome }}",
+            "${{ steps.staticv45.outcome }}",
             "${{ steps.v15.outcome }}",
             "${{ steps.v16.outcome }}",
             "${{ steps.v18.outcome }}",
