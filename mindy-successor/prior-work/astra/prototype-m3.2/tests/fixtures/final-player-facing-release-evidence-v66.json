@@ -181,5 +181,51 @@
       "no referenced STOP condition triggered"
     ],
     "otherwise": "NO-GO"
+  },
+  "finalAssemblyTarget": {
+    "branch": null,
+    "sha": null,
+    "schemaVersion": null,
+    "contentCatalogVersion": null,
+    "strongMetaRegistryVersion": null,
+    "activityLocalVersions": null,
+    "note": "Populate only on the fully assembled release candidate before final save/migration execution."
+  },
+  "finalGateEvidence": {
+    "playerFacingGolden": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    },
+    "uiAccessibilitySmoke": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    },
+    "crossContract": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    },
+    "saveMigration23CaseClosure": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    },
+    "renderedRU": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    },
+    "renderedEN": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    },
+    "legacy32MandatoryAssertions": {
+      "status": "NOT-RUN",
+      "candidateSha": null,
+      "resultRef": null
+    }
   }
 }
