@@ -886,3 +886,27 @@ Worker state after refill:
 - Chat6: final player-facing cumulative v45-v47 accepted; Palace D48 media v48-v50 assigned.
 
 Burn-down remains **5** until Secret Debt+D51 is Leader-merged and exact-main CI succeeds.
+
+
+## AUTHORITATIVE LATE CHECKPOINT — 2026-10-06
+
+A newer compact durable snapshot now exists:
+
+`mindy-successor/docs/tasks/LEADER1_CHECKPOINT_2026-10-06_LATE.md`
+
+This section supersedes older worker-assignment/status sections where they conflict.
+
+Key current facts:
+- broad burn-down remains **5**;
+- Chat2 stays on `chat2/assembly-secret-debt-d51-current-main-recovery-v2`;
+- Chat4 QA proved the recovery tree is full;
+- Chat2 has repaired the malformed `schema.ts` splice blocker;
+- Secret Debt localization is still entirely missing on the live Chat2 branch, so Stage 1 is **not ready** for focused green/full CI/Leader merge;
+- Chat3 current: final save/migration golden manifest v57-v59, started, v59 handoff pending;
+- Chat4 current: cross-golden legacy consistency v56-v58, assigned, not yet worker-started at last live check;
+- Chat5 current: Activity+Camp+D38 golden assembly prep v46-v48, assigned, not yet worker-started at last live check;
+- Chat6 v57-v59 golden QA is accepted; current v60-v62 final UI/accessibility smoke bundle is assigned, not yet worker-started at last live check;
+- GitHub pointer/task updates do **not** start worker windows; the user must explicitly message Chat3/4/5/6 to continue;
+- preserve the current Chat2 window and never replace it unless that exact window loses context.
+
+Read the new checkpoint and then re-query live GitHub before acting.
