@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "CHAT4_CROSS_GOLDEN_LEGACY_CONTRACT_v57",
+  "status": "TEST_ONLY_CROSS_CONTRACT",
+  "matrixPath": "mindy-successor/docs/tasks/CHAT4_CROSS_GOLDEN_LEGACY_CONSISTENCY_MATRIX_v56.json",
+  "sources": {
+    "chat4": {
+      "operationsBlob": "17282cf11436d54d49915f44ed84de56a0eebf7c",
+      "gateBlob": "dae0b2bf197f66c1b1fe834e643caf541c6ef4c7"
+    },
+    "chat6": {
+      "fixtureBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
+      "handoffBlob": "f249b0e8de6db53868433c19db37c53f3bd483ac"
+    },
+    "chat3": {
+      "designBlob": "b77db9b3d8bf145b2994d8e439dddeddabf96c69",
+      "prepBlob": "d9d34fab865e8ed289d2e89d41c01b284fed74e0",
+      "historicalBlob": "0a62c22c14310b9459d09ffa8b3d162fb1523d68"
+    }
+  },
+  "domainSnapshots": {
+    "chat4Mechanics": {
+      "liveLumberStayAbsent": true,
+      "liveVitalityAcquisitionAbsent": true,
+      "historicalPerkId": "legacy.lumber-stay.vitality",
+      "historicalOnly": true,
+      "energyBonus": 1,
+      "energyMaxApplications": 1,
+      "noStrongMetaFabrication": true,
+      "noHardWorkFabrication": true,
+      "noPalaceFabrication": true,
+      "canonicalOrdinaryEndingCount": 40,
+      "liveLocalizationDeletionKeys": [
+        "ending.lumber-stay.title",
+        "ending.lumber-stay.description",
+        "unlock.vitality.label",
+        "presentation.static.ending.lumber-stay.alt",
+        "presentation.static.ending.lumber-stay.caption"
+      ],
+      "historicalLocalizationRetentionKeys": [
+        "legacy.ending.lumber-stay.title",
+        "legacy.ending.lumber-stay.description",
+        "legacy.perk.lumber-stay-vitality.label",
+        "ui.ending.state.historical",
+        "ui.legacy.historicalTitle"
+      ],
+      "presentationDeletionSlots": [
+        "ending/lumber-stay"
+      ],
+      "historicalDisplayInteractive": false,
+      "preserveExistingRunResultAndTransactionExactly": true,
+      "preRunResultDeterministicProof": true,
+      "noRewardReplay": true,
+      "profileMergeDedupesLegacyPerk": true,
+      "freshLust": 5,
+      "storedLustPreserved": true,
+      "hardWorkPackagesOutsideStrongMetaSlots": true
+    },
+    "chat6PlayerFacing": {
+      "liveLumberStayAbsent": true,
+      "liveVitalityAcquisitionAbsent": true,
+      "historicalPerkId": "legacy.lumber-stay.vitality",
+      "historicalOnly": true,
+      "historicalLabelEnergyBonus": 1,
+      "liveLocalizationDeletionKeys": [
+        "ending.lumber-stay.title",
+        "ending.lumber-stay.description",
+        "unlock.vitality.label",
+        "presentation.static.ending.lumber-stay.alt",
+        "presentation.static.ending.lumber-stay.caption"
+      ],
+      "historicalLocalizationRetentionKeys": [
+        "legacy.ending.lumber-stay.title",
+        "legacy.ending.lumber-stay.description",
+        "legacy.perk.lumber-stay-vitality.label",
+        "ui.ending.state.historical",
+        "ui.legacy.historicalTitle"
+      ],
+      "presentationDeletionSlots": [
+        "ending/lumber-stay"
+      ],
+      "historicalDisplayInteractive": false,
+      "historicalUiRequiredTokens": [
+        "data-legacy-ending-id",
+        "legacy.ending.lumber-stay.title"
+      ],
+      "historicalUiForbiddenTokens": [
+        "presentationIdForEnding(retiredLumberStayId)"
+      ],
+      "hardWorkPackagesOutsideStrongMetaSlots": true,
+      "currentRunStrongMetaSnapshotEngineOwnedImmutable": true,
+      "canonicalOrdinaryEndingCount": null,
+      "saveMechanicsOwner": false
+    },
+    "chat3SaveMigration": {
+      "liveLumberStayAbsent": true,
+      "liveVitalityModernOwnershipAbsent": true,
+      "historicalPerkId": "legacy.lumber-stay.vitality",
+      "historicalOnly": true,
+      "energyBonus": 1,
+      "energyMaxApplications": 1,
+      "noModernEndingFabrication": true,
+      "noStrongMetaFabrication": true,
+      "noHardWorkFabrication": true,
+      "preserveExistingRunResultAndTransactionExactly": true,
+      "preRunResultDeterministicProof": true,
+      "noRewardReplay": true,
+      "profileMergeDedupesLegacyPerk": true,
+      "parseTwiceIdempotent": true,
+      "freshLust": 5,
+      "storedLustPreserved": true,
+      "hardWorkPackageSnapshotPreserved": true,
+      "hardWorkPackagesOutsideStrongMetaSlots": true,
+      "localizationOwner": false,
+      "presentationOwner": false,
+      "canonicalOrdinaryEndingCount": null
+    }
+  },
+  "validationRules": [
+    {
+      "id": "V01_EXACT_LIVE_DELETION_SET",
+      "failIf": "Chat4 liveLocalizationDeletionKeys != Chat6 liveLocalizationDeletionKeys"
+    },
+    {
+      "id": "V02_EXACT_HISTORICAL_RETENTION_SET",
+      "failIf": "Chat4 historicalLocalizationRetentionKeys != Chat6 historicalLocalizationRetentionKeys"
+    },
+    {
+      "id": "V03_EXACT_PRESENTATION_DELETE_SET",
+      "failIf": "Chat4 presentationDeletionSlots != Chat6 presentationDeletionSlots"
+    },
+    {
+      "id": "V04_RETIRED_IDENTITY_CONTRADICTION",
+      "failIf": "Any owner marks lumber-stay/vitality live or uses a historicalPerkId other than legacy.lumber-stay.vitality"
+    },
+    {
+      "id": "V05_ENERGY_EXACTLY_ONE",
+      "failIf": "Chat4 or Chat3 Energy bonus/maxApplications is not exactly 1, or Chat6 historical label claims a value other than 1"
+    },
+    {
+      "id": "V06_NO_MODERN_IDENTITY_FABRICATION",
+      "failIf": "Any migration contract permits retirement evidence to fabricate a modern ending, Strong Meta, Hard Work, or Palace identity"
+    },
+    {
+      "id": "V07_ORDINARY_ENDING_COUNT",
+      "failIf": "Chat4 canonical ordinary ending count != 40, or another domain supplies a non-null contradictory count"
+    },
+    {
+      "id": "V08_HISTORICAL_DISPLAY_NOT_LIVE",
+      "failIf": "Chat4 or Chat6 historical display is interactive/live, required historical tokens are absent, or live retired resolver token is allowed"
+    },
+    {
+      "id": "V09_RUNRESULT_TRANSACTION_PRESERVATION",
+      "failIf": "Chat4 and Chat3 disagree on exact existing RunResult/transaction preservation, deterministic pre-RunResult proof, or no-replay"
+    },
+    {
+      "id": "V10_PROFILE_IDEMPOTENCE",
+      "failIf": "Chat4/Chat3 do not require legacy-perk dedupe or Chat3 does not require parse-twice idempotence"
+    },
+    {
+      "id": "V11_D46_LUST_SEPARATION",
+      "failIf": "Chat4/Chat3 fresh Lust != 5 or either contract permits stored historical Lust rewrite"
+    },
+    {
+      "id": "V12_D47_STRONG_META_SEPARATION",
+      "failIf": "Any domain places Hard Work packages in Strong Meta slots or permits current-run Strong Meta/package snapshot rebuild from newer profile data"
+    },
+    {
+      "id": "V13_OWNER_BOUNDARY",
+      "failIf": "A non-owner domain is treated as authority for localization, presentation, canonical ending count, or save mechanics merely to resolve a disagreement"
+    }
+  ],
+  "forbiddenResolutionStrategies": [
+    "chronology-wins",
+    "last-write-wins",
+    "whole-file-snapshot-replacement",
+    "wildcard-retired-key-deletion",
+    "fabricate-modern-identity-from-historical-evidence",
+    "change-production-runtime-to-fit-test-fixture"
+  ],
+  "expectedResult": {
+    "conflicts": 0,
+    "allValidationRulesPass": true,
+    "selectiveAssemblySemanticallyAllowed": true
+  }
+}
