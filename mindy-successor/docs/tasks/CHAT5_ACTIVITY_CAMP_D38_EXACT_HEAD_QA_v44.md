@@ -132,21 +132,76 @@ Therefore the exact classification is:
 
 This is a lineage/collision fact that Chat2 must preserve during selective assembly. Do not repair or rewrite the frozen Activity/D38 branches.
 
-## Diagnostic follow-up
+## Diagnostic follow-up — completed
 
-Chat5 authored a final diagnostic workflow revision at:
+Chat5 diagnostic workflow revision:
 
 `759733d46f45899545d72cc3f9d4cce8d8cfd071`
-
-It keeps validate/build/focused execution alive after typecheck so a future runner slot can reveal whether anything lies behind the known fixture error, while still failing the final required-check gate if any required step fails.
 
 Run:
 
 `37504871830`
 
-At the final v44 checkpoint it remained queued with no active project runner job. Its completion is not required to classify the exact-head blocker above: run `37503918423` already provides deterministic exact-head evidence of the stale fixture, and Camp provides the accepted repaired cumulative baseline.
+It deliberately continued validate/build/focused after a failed typecheck and then failed the final required-check gate if any required command failed.
 
-If the diagnostic run later executes, its output is supplementary evidence only. It must not mutate frozen producers or supersede current-main Chat2 assembly QA.
+### Activity v15 diagnostic
+
+Job `112410841740`:
+
+- exact checkout / SHA guard: PASS;
+- `npm ci`: PASS;
+- typecheck outcome: **FAIL** on missing `effects` in `tests/item-capability-activity-closure.test.ts`;
+- validate outcome: **FAIL**;
+- build outcome: **PASS**;
+- focused outcome: **FAIL**, 13 pass / 5 fail.
+
+Validate and the five focused-file failures share the same catalog-load root cause:
+
+`Недопустимая typed capability: read worldFact activity.forest-frontier.result.research-grade`
+
+The failing focused files cannot initialize the shared catalog because the historical Forest pack does not declare that typed read capability.
+
+### D38 v18 diagnostic
+
+Job `112410841160`:
+
+- exact checkout / SHA guard: PASS;
+- `npm ci`: PASS;
+- typecheck outcome: **FAIL** on the same missing-`effects` synthetic fixture;
+- validate outcome: **FAIL** on the same undeclared Forest research-grade typed read;
+- build outcome: **PASS**;
+- focused outcome: **FAIL**, 13 pass / 6 fail.
+
+The two D38 focused files fail during the same shared catalog initialization; no D38-specific assertion is reached before that inherited baseline failure.
+
+### Camp v19 diagnostic
+
+Job `112410841757`:
+
+- exact checkout / SHA guard: PASS;
+- `npm ci`: PASS;
+- typecheck: PASS;
+- validate: PASS;
+- build: PASS;
+- focused: **107/107 PASS**;
+- final required-check gate: PASS.
+
+### Exact cumulative repair chain already in Camp v19
+
+Camp v19 contains the baseline repairs needed to turn the shared Activity snapshot executable-green, including:
+
+- `90f111c413e140fd47aeac271a7680989328009b` — add `effects: []` to the synthetic Activity option fixture;
+- `8e6d658269c992562093d31974a4ad3c1d75b191` — declare Forest `activity.forest-frontier.result.research-grade` typed read capability;
+- `c38ab2a67b7c029e7e656dbb89d37dfb194fdb17` — declare Forest `forest.frontier.school-reflection-recorded` typed read capability;
+- later cumulative regional fixture repairs, including Anomalous, Restricted and Trade day-start feedback handling.
+
+Therefore v44's exact classification is broader than one test line but remains a single lineage class:
+
+**HISTORICAL ACTIVITY EXECUTABLE-BASELINE DEBT — ALREADY REPAIRED BY THE ACCEPTED CAMP v19 CUMULATIVE LINEAGE.**
+
+The standalone Activity v15 and D38 v18 historical snapshots are buildable, but they are not typecheck/validate/focused green. Camp v19 is the accepted repaired cumulative Activity baseline and is fully exact-head green.
+
+No frozen producer mutation is authorized or required. Chat2 must carry the Camp cumulative baseline repairs before treating D38 focused QA as executable.
 
 ## Focused roster for Chat2 assembly
 
@@ -181,10 +236,12 @@ Required Product adjacency remains:
 
 There is **no newly discovered Product/runtime producer blocker**.
 
-There is one precise historical executable blocker:
+There is one precise historical lineage class of executable blockers:
 
-**STALE SHARED TEST FIXTURE — already repaired on the frozen Camp v19 cumulative lineage.**
+**HISTORICAL ACTIVITY EXECUTABLE-BASELINE DEBT — already repaired on the frozen Camp v19 cumulative lineage.**
 
-Chat2 must assemble Activity first, then apply Camp (including the repaired baseline test fixture), then D38. It must not use the standalone Activity/D38 historical test snapshot as a final executable baseline.
+It includes the stale synthetic test typing, missing Forest typed-read manifest declarations, and cumulative regional focused-fixture drift. Camp v19 resolves that baseline and passes typecheck/validate/build plus 107/107 focused tests.
+
+Chat2 must assemble Activity first, then apply Camp (including those accepted cumulative baseline repairs), then D38. It must not use the standalone Activity/D38 historical snapshot as the final executable baseline.
 
 **v44 COMPLETE — EXACT-HEAD COLLISION CLASSIFIED; NO FROZEN PRODUCER MUTATION.**
