@@ -393,6 +393,7 @@ test('D51 preserves both bound and Street penalties but floors their specific pa
     assert.equal(s.run.pending?.eventId,SECRET_DEBT_FORCED_NIGHT_EVENT_ID);
     s=dispatch(s,{type:'choice',id:'continue'},catalog);
     s=dispatch(s,{type:'chooseLodging',id:lodging},catalog);
+    s=resolvePending(s);
     assert.equal(s.run.dayState.energyCurrent,expected,lodging);
   }
 });
@@ -530,7 +531,7 @@ test('Secret Debt ending rewards bind exact D30/D32 ownership IDs and standard t
   s=resolvePending(s);
   s=dispatch(s,{type:'completeEnding'},catalog);
 
-  assert.equal(s.meta.strongMeta.earnedRewardIds.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
+  assert.equal(s.meta.strongMeta.ownership.ownedRewardIds.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
   assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[SECRET_DEBT_REWARD_IDS.paidFreedom]);
   assert.equal(s.meta.appliedResultTransactions.length,1);
 
