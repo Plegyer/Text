@@ -146,6 +146,7 @@ test('each D38 ending grants canonical ownership exactly once only at completeEn
 
     s=dispatch(s,{type:'completeEnding'},cat);
     assert.equal(s.meta.strongMeta.ownership.ownedRewardIds.filter(id=>id===rewardId).length,1);
+    assert.equal(s.meta.unlocks.includes(rewardId),false);
     assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[rewardId]);
     assert.deepEqual(s.run.strongMetaSnapshot,earningSnapshot);
     assert.equal(s.run.strongMetaSnapshot?.specialistIds.includes(rewardId),false);
