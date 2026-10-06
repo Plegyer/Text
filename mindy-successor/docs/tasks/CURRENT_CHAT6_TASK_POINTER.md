@@ -1,83 +1,72 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **CONTINUE NOW**
+Status: **START NOW — STRONG META UI CLOSURE BUNDLE v42-v44**
 Owner: Chat 6
 
-Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
-
-Previous Activity Network copy-fix bundle v36-v38 is complete and accepted.
+Previous v39-v41 bundle is COMPLETE and accepted.
+Do not redo v39, v40, or v41.
 
 Current branch:
-`chat6/final-player-facing-release-audit-v39`
+`chat6/strong-meta-ui-closure-v42`
 
-Complete ALL tasks below in order without waiting for Leader.
-Only stop for a real Product/content ambiguity.
+Complete all tasks below in order without waiting for Leader.
+Only stop for a genuine Product/API blocker.
 
-## Task A — v39: final player-facing UI localization audit
+## Task A — v42: Strong Meta player-facing selector closure
+
+Close the v39 P1 finding that the accepted player-facing app has no visible Strong Meta Keystone/Specialist selector.
+
+Requirements:
+- UI-only / wiring-only change;
+- use existing accepted Strong Meta ownership/selection APIs if available;
+- do not change reward ownership semantics;
+- do not change engine capacity rules;
+- preserve max 1 Keystone and max 2 Specialists;
+- `palace.true.cap-200` remains a normal Specialist and consumes a Specialist slot;
+- Source Method remains automatic knowledge and must never appear as selectable;
+- ordinary Hard Work packages remain outside Strong Meta slots;
+- current-run Strong Meta snapshot remains immutable;
+- imported/owned rewards never auto-select;
+- do not invent a new save schema or a second selection system.
+
+If the current accepted UI/runtime has no legal existing API seam for this selector, STOP and document the exact blocker instead of inventing mechanics.
+
+Add focused tests for the player-facing selector behavior.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT6_STRONG_META_UI_CLOSURE_v42.md`
+
+## Task B — v43: modal accessibility-name closure
+
+Close the v39 P1 finding where generic modal ARIA naming can expose raw internal panel IDs.
+
+Requirements:
+- player-facing accessible name must be localized/human-readable;
+- no raw internal panel ID may be exposed as the normal ARIA label;
+- preserve existing modal routing/behavior;
+- no mechanics change;
+- add focused accessibility/localization test coverage.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT6_MODAL_ARIA_NAME_CLOSURE_v43.md`
+
+## Task C — v44: exact focused QA + handoff
+
+Run:
+- typecheck;
+- validate;
+- build;
+- focused Strong Meta UI tests;
+- modal accessibility tests;
+- localization parity tests;
+- save/reload / Strong Meta snapshot adjacency needed by the touched UI seam.
+
+Do not run full CI.
 
 Create:
-`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_UI_LOCALIZATION_AUDIT_v39.md`
+`mindy-successor/docs/tasks/CHAT6_STRONG_META_UI_CLOSURE_HANDOFF_v44.md`
 
-Audit accepted live player-facing UI strings beyond ending prose:
-- Night;
-- Secret Debt;
-- Activity;
-- Palace;
-- School;
-- Strong Meta / reward selection;
-- save/load/migration notices;
-- ending screen;
-- generic buttons/status labels;
-- presentation alt/captions.
+Report exact implementation SHA and disposition:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_CONTENT_ASSEMBLY`
 
-Find:
-- raw localization keys visible to player;
-- missing RU/EN pairs;
-- fallback-only player text;
-- stale retired live labels;
-- contradictory button/status wording.
-
-Classify findings P0/P1/P2.
-
-## Task B — v40: content-only closure producer if needed
-
-If v39 finds P0/P1 issues that can be fixed only by localization/presentation text:
-- fix only those exact keys/rows;
-- add focused localization tests;
-- change no runtime/mechanics/routing.
-
-If no P0/P1 content-only issue exists:
-create:
-`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_UI_CLOSURE_NOOP_v40.md`
-documenting why no producer is required.
-
-Any runtime/UI-logic issue must be documented for Leader, not changed by Chat 6.
-
-## Task C — v41: final manual copy/presentation smoke matrix
-
-Create:
-`mindy-successor/docs/tasks/CHAT6_FINAL_MANUAL_COPY_PRESENTATION_SMOKE_MATRIX_v41.md`
-
-Provide a compact manual release checklist covering:
-- all ending families;
-- Night surfaces;
-- Secret Debt;
-- Activity;
-- Palace;
-- generic ending screen;
-- alt/caption accessibility;
-- RU/EN switch parity;
-- retired-content absence;
-- no raw keys/fallback labels.
-
-Include the accepted v36 Activity Network epilogue correction:
-RU:
-`Контакты связывают разрозненные направления в единое рабочее пространство.`
-EN:
-`The contacts tie disconnected routes into one practical working network.`
-
-No runtime changes.
-No full CI.
-
-After all three tasks are committed, report:
-`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
+Do not merge main.
