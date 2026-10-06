@@ -19,7 +19,7 @@ function bilingual(key:string){
 }
 
 test('every live Prostitute event and choice has RU/EN production copy',()=>{
-  assert.equal(events.length,34);
+  assert.equal(events.length,36);
   for(const event of events){
     bilingual(`event.${event.id}.title`);
     for(const variant of event.variants)bilingual(`event.${event.id}.variant.${variant.id}.text`);
