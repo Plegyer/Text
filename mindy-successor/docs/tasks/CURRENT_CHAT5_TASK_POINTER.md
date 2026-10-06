@@ -1,36 +1,35 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — RETIRED TAVERN CLEANUP EXACT-HEAD QA v23**
+Status: **ACTIVE — PALACE D39 REWARD EXACT-HEAD QA v24**
 Owner: Chat 5
 
-Previous Activity D38 exact-head QA v22 is green and accepted.
+Previous retired Tavern cleanup exact-head QA v23 is complete and green.
 
 Producer under verification:
-`chat6/retired-tavern-localization-cleanup-v31@eb03a847347339ade109b0ec9022b81cd4abadaf`
+`chat5/palace-d39-reward-producer-v20@b5ab23a88ee0e18c6250251de15818ff799ff3f6`
 
 QA branch:
-`chat5/qa-retired-tavern-cleanup-v23`
+`chat5/qa-palace-d39-reward-v24`
 
 Task:
-run executable exact-head verification of the retired Tavern localization cleanup.
+run independent exact-head executable verification of the frozen Palace D39 reward producer.
 
-Workflow must explicitly checkout:
-`eb03a847347339ade109b0ec9022b81cd4abadaf`
-
-Required checks:
+Workflow must explicitly checkout the frozen producer implementation head documented by v20 and verify:
 - exact SHA guard;
 - production firewall;
 - npm ci;
 - typecheck;
 - validate;
 - build;
-- v31 cleanup focused test;
-- D41 migration/history compatibility tests;
-- presentation/source-integrity adjacency;
-- verify no live Tavern ending/presentation is reintroduced.
+- D39 reward lifecycle tests;
+- Strong Meta registry/integration;
+- Palace D23 adjacency;
+- Secret Debt isolation;
+- save/load defaults and future-life activation;
+- Source Method remains automatic knowledge, not Specialist/Keystone.
 
 No full CI.
 Do not mutate the frozen producer.
 
-If green, document run/job evidence and report:
-`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+If green, document exact run/job evidence and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
