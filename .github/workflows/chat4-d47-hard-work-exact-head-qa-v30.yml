@@ -1,0 +1,79 @@
+name: Chat 4 D47 Hard Work exact-head QA v30
+
+on:
+  push:
+    branches:
+      - chat4/career-producers-exact-head-qa-bundle-v29
+    paths:
+      - '.github/workflows/chat4-d47-hard-work-exact-head-qa-v30.yml'
+
+concurrency:
+  group: chat4-d47-hard-work-exact-head-qa-v30
+  cancel-in-progress: true
+
+jobs:
+  exact-head-qa:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact frozen D47 producer
+        uses: actions/checkout@v4
+        with:
+          ref: 252dc26c514e24f4ab0f0cc0da7694254282e4c4
+          fetch-depth: 0
+
+      - name: Verify exact producer HEAD
+        shell: cmd
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          echo Exact frozen D47 producer: %ACTUAL%
+          if not "%ACTUAL%"=="252dc26c514e24f4ab0f0cc0da7694254282e4c4" exit /b 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: D47 focused Hard Work mapping and adjacency
+        run: >
+          node --experimental-strip-types --test
+          tests/hard-work-bonus-mapping-v13.test.ts
+          tests/hard-work-meta-infra-prep.test.ts
+          tests/hard-work-package-catalog-runtime.test.ts
+          tests/hard-work-newstart-presentation-v2.test.ts
+          tests/hard-work-newstart-ui-v2.test.ts
+          tests/hard-work-meta-migration-v5.test.ts
+          tests/ordinary-hard-work-meta-production.test.ts
+          tests/ordinary-hard-work-lifecycle-parity.test.ts
+          tests/hard-work-stat-cap-d24.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/strong-meta-d30-runtime-v7.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
+          tests/lumber-foreman-leadership-integration.test.ts
+          tests/satyr-maid-ending-coexistence.test.ts
+          tests/satyr-maid-boundary-ending.test.ts
+          tests/undead-farm-ending-coexistence.test.ts
+          tests/tavern-runtime.test.ts
+          tests/hunter-natural-acceptance.test.ts
+          tests/ending-meta.test.ts
