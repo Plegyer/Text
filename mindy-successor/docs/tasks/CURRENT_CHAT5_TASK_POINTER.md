@@ -1,37 +1,40 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — PALACE D39 REWARD PRODUCER v20**
+Status: **ACTIVE — PALACE CUMULATIVE ASSEMBLY REFRESH v21**
 Owner: Chat 5
 
-Previous D39 implementation preflight v19 is complete and accepted.
+Previous Palace D39 reward producer v20 is complete and focused-green.
 
 New branch:
-`chat5/palace-d39-reward-producer-v20`
+`chat5/palace-cumulative-assembly-refresh-v21`
 
-Implement the accepted D39 Palace rewards using the existing current Strong Meta / ending transaction architecture.
+Goal:
+refresh the Palace assembly plan now that the D39 reward implementation source exists.
 
-Required rewards:
-1. Service Life -> Steady Practice (Specialist)
-2. Court Power -> Formal Introduction (Specialist)
-3. Inner Truth -> Source Method (automatic knowledge/content, no slot)
+Use:
+- Palace mechanics/narrative v18;
+- Palace final prose/media v19;
+- D39 reward producer v20;
+- D43/D45/D48/D49 Product authorities;
+- current Strong Meta rules;
+- Secret Debt forced-Night firewall.
 
-Follow v19 exactly.
+Produce one exact selective Chat 2 assembly packet:
+- composition order;
+- shared-file conflicts;
+- exact D39 reward bindings;
+- save/migration risks;
+- Prince/Return Home checks;
+- presentation/localization merge rules;
+- focused test bundle;
+- explicit stop conditions.
 
-Requirements:
-- normal Specialist capacity only;
-- no extra Palace slot;
-- no same-life activation after earning;
-- completeEnding grants exactly once;
-- Source Method never appears as Specialist/Keystone/preference;
-- no Palace access bypass;
-- no Secret Debt/Activity/Hard Work gate bypass;
-- no new Product behavior.
-
-Add focused executable tests for reward lifecycle and mechanics.
-No full CI.
+Research/preflight only.
+Do not modify production runtime.
+Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT5_PALACE_D39_REWARD_PRODUCER_v20.md`
+`mindy-successor/docs/tasks/CHAT5_PALACE_CUMULATIVE_ASSEMBLY_REFRESH_v21.md`
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+Report:
+`READY_FOR_CHAT2_PREFLIGHT`.
