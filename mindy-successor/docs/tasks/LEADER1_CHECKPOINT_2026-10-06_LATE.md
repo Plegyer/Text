@@ -232,3 +232,33 @@ Do not reopen unless implementation proves unsafe/impossible.
 5. Accept/refill completed Chat3-6 packets immediately.
 6. Do not decrement burn-down from 5 until Secret Debt+D51 is Leader-merged and exact-main CI is green.
 7. After stage 1 closes, Palace + D39 is the next production stage.
+
+
+## Live update — Chat3 context replacement after v57-v59
+
+Previous Chat3 conversation exhausted its context **after** completing the final save/migration golden manifest v57-v59.
+
+Accepted handoff:
+`CHAT3_FINAL_SAVE_MIGRATION_GOLDEN_MANIFEST_v59.md`
+
+Accepted package facts:
+- exactly 23 golden save/migration cases;
+- manifest JSON parses and contains exactly 23 cases;
+- package validator exists;
+- F1-F5 remain authoritative reconstructions, not genuine user saves;
+- no production runtime/content mutation;
+- no full CI.
+
+Replacement Chat3 recovery:
+`CHAT3_CONTEXT_RECOVERY_FINAL_SAVE_MIGRATION_GOLDEN_QA_2026-10-06.md`
+
+Current replacement branch:
+`chat3/final-save-migration-golden-qa-v60`
+
+Current task:
+`CHAT3_FINAL_SAVE_MIGRATION_GOLDEN_QA_v60_v62_TASK.md`
+
+Expected final:
+`BUNDLE_COMPLETE — READY_FOR_FINAL_SAVE_MIGRATION_GOLDEN_EXECUTION_QA`
+
+The new window must not repeat v57-v59.
