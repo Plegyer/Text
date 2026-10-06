@@ -1,0 +1,60 @@
+name: Chat 5 Palace D39 Reward v24 exact-head QA
+
+on:
+  push:
+    branches:
+      - chat5/qa-palace-d39-reward-v24
+
+jobs:
+  focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout frozen Palace D39 implementation
+        uses: actions/checkout@v4
+        with:
+          ref: b28b19628c0374c405cd32afedb0f16c105e2403
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: cmd
+        working-directory: .
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
+          echo %HEADSHA%
+          if not "%HEADSHA%"=="b28b19628c0374c405cd32afedb0f16c105e2403" exit /b 1
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Production firewall
+        shell: cmd
+        working-directory: .
+        run: |
+          git fetch --no-tags --depth=1 origin 09a97e0deef5bbccdbcdfbc4fc955f59b369345c b5ab23a88ee0e18c6250251de15818ff799ff3f6
+          node -e "const cp=require('node:child_process'); const base='09a97e0deef5bbccdbcdfbc4fc955f59b369345c', impl='b28b19628c0374c405cd32afedb0f16c105e2403', final='b5ab23a88ee0e18c6250251de15818ff799ff3f6'; const out=(c)=>{const s=cp.execSync(c,{encoding:'utf8'}).trim(); return s?s.split(/\r?\n/):[]}; const changed=out('git diff --name-only '+base+' '+impl); console.log('Implementation delta:',changed); const expected=['mindy-successor/prior-work/astra/prototype-m3.2/src/core/content.ts','mindy-successor/prior-work/astra/prototype-m3.2/src/core/engine.ts','mindy-successor/prior-work/astra/prototype-m3.2/src/core/schema.ts','mindy-successor/prior-work/astra/prototype-m3.2/src/core/strongMeta.ts','mindy-successor/prior-work/astra/prototype-m3.2/src/ui/app.ts','mindy-successor/prior-work/astra/prototype-m3.2/tests/palace-d39-reward-producer-v20.test.ts','mindy-successor/prior-work/astra/prototype-m3.2/tests/strong-meta-registry-v7.test.ts']; if(changed.length!==expected.length||expected.some(x=>!changed.includes(x))) process.exit(1); const post=out('git diff --name-only '+impl+' '+final+' -- mindy-successor/prior-work/astra/prototype-m3.2'); console.log('Post-implementation prototype delta:',post); if(post.length) process.exit(1);"
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: D39 reward lifecycle Strong Meta save-load
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/ending-meta.test.ts
+      - name: Palace D23 Secret Debt isolation
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
