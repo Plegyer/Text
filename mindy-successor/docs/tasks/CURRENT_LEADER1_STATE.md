@@ -770,3 +770,16 @@ Broad burn-down remains **5**.
 - Chat 4: Palace QA bundle v32-v34 complete at `ce31a0f5e383a7e0c27978b673692a78d9b0677e`; historical producer blockers classified, not waived. Refilled with `chat4/career-preassembly-acceptance-bundle-v35` through v37.
 - Chat 5: Activity QA bundle v31-v33 complete at `83b383ff725d7f44be3a63ba84f4974cab287e59`; inherited historical baseline failures are covered by accepted green v19 repair. Refilled with `chat5/final-cross-tranche-readiness-v34` through v36.
 - Chat 6: `chat6/final-player-facing-release-audit-v39` is active; v39 and v40 committed, v41 not yet committed at checkpoint.
+
+
+## AUTHORITATIVE LIVE UPDATE — CHAT3/CHAT5 COMPLETE AND REFILLED
+
+- Chat 3 v39 stopped correctly on a real Formal Introduction content-topology blocker at `d65e5b2dd02628c7c36e7adb45a49493f0182e21`.
+- No safe existing live consumer exists without route regression or trust-stage shortcut.
+- Chat 3 current bundle: `chat3/palace-d39-consumer-resolution-v42` through v44, covering Source Method mapping + minimal Formal Introduction seam proposal + decision packet.
+
+- Chat 5 cross-tranche readiness v34-v36 completed at `27c68b72894ffa177e5a7efa63f938ea632193bd`.
+- Its blocker register confirms broad five-stage order remains valid; active hard gates are Stage 1 completion and D39 live-consumer closure.
+- Chat 5 current bundle: `chat5/windows-release-preflight-v37` through v39.
+
+- Broad burn-down remains **5**.
