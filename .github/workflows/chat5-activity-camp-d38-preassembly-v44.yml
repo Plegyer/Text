@@ -8,12 +8,12 @@ on:
       - '.github/workflows/chat5-activity-camp-d38-preassembly-v44.yml'
 
 concurrency:
-  group: chat5-activity-camp-d38-preassembly-v44-hosted
+  group: chat5-activity-camp-d38-preassembly-v44-windows-final
   cancel-in-progress: true
 
 jobs:
   exact-head-focused:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 25
     strategy:
       fail-fast: false
@@ -64,11 +64,11 @@ jobs:
           fetch-depth: 1
 
       - name: Verify exact frozen SHA
-        shell: bash
+        shell: cmd
         run: |
-          actual="$(git rev-parse HEAD)"
-          test "$actual" = "${{ matrix.sha }}"
-          echo "${{ matrix.label }} exact head: $actual"
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          if not "%ACTUAL%"=="${{ matrix.sha }}" exit /b 1
+          echo ${{ matrix.label }} exact head: %ACTUAL%
 
       - name: Setup Node
         uses: actions/setup-node@v4
