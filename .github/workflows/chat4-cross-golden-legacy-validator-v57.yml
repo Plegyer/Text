@@ -20,13 +20,13 @@ jobs:
       - name: Checkout exact cross-contract head
         uses: actions/checkout@v4
         with:
-          ref: 95b1b087aa277eb6444a473206df1bd000e2f3d2
+          ref: 8338488bf4491047641aadb9f9b7a2fe875be1fd
           fetch-depth: 1
 
       - name: Exact SHA guard
         shell: powershell
         run: |
-          $expected = "95b1b087aa277eb6444a473206df1bd000e2f3d2"
+          $expected = "8338488bf4491047641aadb9f9b7a2fe875be1fd"
           $actual = (git rev-parse HEAD).Trim()
           Write-Host "expected=$expected"
           Write-Host "actual=$actual"
