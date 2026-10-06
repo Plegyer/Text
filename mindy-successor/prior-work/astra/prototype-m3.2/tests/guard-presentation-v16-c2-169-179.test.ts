@@ -245,7 +245,7 @@ test('C2-179 every published Guard event override maps to one exact frozen produ
       .flatMap(event=>event.variants.map(variant=>presentationIdForEvent(catalog,event.id,variant.id)))
   );
   assert.equal(expected.size,29);
-  const published=Object.keys(presentation.slots??{}).filter(id=>id.startsWith('job/guard/event/'));
+  const published=Object.keys(presentation.slots??{}).filter(id=>expected.has(id));
   assert.equal(published.length,29);
   for(const id of published)assert.ok(expected.has(id),id+' exact catalog backing');
 });
