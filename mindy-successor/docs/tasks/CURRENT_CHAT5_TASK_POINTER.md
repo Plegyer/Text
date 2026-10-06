@@ -1,57 +1,71 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE FINAL MIGRATION RELEASE REVIEW v28-v30**
+Status: **ACTIVE — AUTO-CONTINUE ACTIVITY EXACT-HEAD QA BUNDLE v31-v33**
 Owner: Chat 5
 
-Previous cross-system review bundle v25-v27 is complete and accepted.
+Previous final migration review bundle v28-v30 is complete and accepted.
 
 Current branch:
-`chat5/final-migration-release-review-v28`
+`chat5/activity-exact-head-qa-bundle-v31`
 
-Complete ALL tasks below in order without waiting for Leader.
+Complete ALL tasks in order without waiting for Leader.
 
-## Task A — v28
+## Task A — v31: Activity regions exact-head QA
+
+Verify accepted region source:
+`chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
+
+Required:
+- exact SHA guard;
+- npm ci;
+- typecheck;
+- validate;
+- build;
+- Forest / Trade / Anomalous / Restricted region tests;
+- Activity entry Energy 2;
+- Field Time 6;
+- region/capability gates;
+- no Secret Debt/Palace bypass.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT5_ACTIVITY_REGIONS_V15_EXACT_HEAD_QA_v31.md`
+
+## Task B — v32: D38 mechanics + content exact-head QA
+
+Verify:
+- mechanics:
+  `chat3/activity-ending-family-producer-v16-r1@3cf69d7cb3df1a58d68908159d0acc14736435c4`
+- content/presentation:
+  `chat3/activity-ending-content-presentation-v17@df9ef5c3d04cfd8eb582c24838d971854e984218`
+
+Required:
+- exact SHA guards;
+- D38 eligibility and explicit ending commit;
+- final RU/EN copy;
+- presentation;
+- current Activity Network epilogue issue noted as superseded by Chat6 v36 correction;
+- no Palace substitution.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT5_ACTIVITY_D38_V16_V17_EXACT_HEAD_QA_v32.md`
+
+## Task C — v33: final Activity preassembly acceptance
+
 Create:
-`mindy-successor/docs/tasks/CHAT5_FINAL_MIGRATION_CLOSURE_REFRESH_v28.md`
+`mindy-successor/docs/tasks/CHAT5_ACTIVITY_PREASSEMBLY_ACCEPTANCE_v33.md`
 
-Refresh the earlier final save/migration closure against all later accepted work:
-- D42 merged;
-- Secret Debt v12 + D51;
-- Palace + D39;
-- Activity + Camp + D38;
-- D46/D47;
-- lumber-stay retirement;
-- localization/presentation closures.
+Combine:
+- v15 regions QA;
+- Camp green repair v19;
+- D38 mechanics/content QA;
+- D38 reward producer v26 + exact-head QA v22;
+- authored tag mapping v27;
+- Activity final packet v28;
+- Chat6 v36 corrected Network epilogue.
 
-Identify any migration case missing from the older closure plan.
+State exact accepted inputs, remaining merge-only risks, and stop conditions for Chat 2.
 
-## Task B — v29
-Create:
-`mindy-successor/docs/tasks/CHAT5_FINAL_COMBINED_SAVE_MATRIX_v29.md`
+No full CI.
 
-Produce one combined final release save/reload matrix, including mixed states:
-- D38 + D39 selected together;
-- Secret Debt bound + Activity/Camp state;
-- Palace progress + later Secret Debt binding;
-- legacy lumber compatibility;
-- old Strong Meta snapshots;
-- profile merge;
-- exactly-once ending rewards.
-
-## Task C — v30
-Create:
-`mindy-successor/docs/tasks/CHAT5_FINAL_RELEASE_REGRESSION_PARTITION_v30.md`
-
-Partition final release regression checks into:
-- must-run focused gates after each remaining assembly;
-- exact-main gate after each merge;
-- final 1.0 regression-only checks.
-
-Avoid duplicate tests where one authoritative suite supersedes another.
-
-Research/review only.
-Do not change runtime.
-Do not run full CI.
-
-After all three are committed, report:
-`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
+After all three:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_ASSEMBLY`.
