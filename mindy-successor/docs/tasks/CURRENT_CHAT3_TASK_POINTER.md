@@ -1,62 +1,71 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **START NOW**
+Status: **ACTIVE — PALACE D39 CONSUMER RESOLUTION v42-v44**
 Owner: Chat 3
 
-Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
-
-Previous final gameplay smoke bundle v36-v38 is complete and accepted.
+Previous v39 task is complete:
+Formal Introduction has no safe existing live consumer.
+That blocker is accepted and must not be bypassed.
 
 Current branch:
-`chat3/palace-d39-live-consumer-closure-v39`
+`chat3/palace-d39-consumer-resolution-v42`
 
-Complete ALL tasks in order without waiting for Leader.
+Complete all tasks in order without waiting for Leader.
 
-## Task A — v39: Formal Introduction live-consumer mapping
-Find exact existing ordinary-professional event/relationship transition candidates that can legally consume:
-- `strongMetaFormalIntroductionAvailable`
-- `useStrongMetaFormalIntroduction`
+## Task A — v42: Source Method consumer mapping
 
-Requirements:
-- existing legal ordinary-career content only;
-- no Palace/Activity/Secret Debt target;
-- no new generic bypass;
-- preserve original gates;
-- identify exact stable IDs and one preferred mapping.
-If no unique safe mapping exists, document blocker and stop.
-
-Deliver:
-`mindy-successor/docs/tasks/CHAT3_D39_FORMAL_INTRODUCTION_CONSUMER_MAPPING_v39.md`
-
-## Task B — v40: Source Method live-consumer mapping
-Find exact existing information-only scene(s) that can legally consume:
+Find a safe existing information-only live consumer for:
 `palace.inner-truth.source-method`
 
 Requirements:
 - information/provenance/cross-check only;
 - no resource/stat/counter/stage/ending eligibility effect;
-- no D49-reserved macro-truth leak;
+- no D49 macro-truth leak;
 - preserve existing gates;
 - identify exact stable IDs and one preferred mapping.
-If no unique safe mapping exists, document blocker and stop.
+
+If no unique safe existing consumer exists, document the blocker clearly.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_D39_SOURCE_METHOD_CONSUMER_MAPPING_v40.md`
+`mindy-successor/docs/tasks/CHAT3_D39_SOURCE_METHOD_CONSUMER_MAPPING_v42.md`
 
-## Task C — v41: Palace D39 consumer closure packet
+## Task B — v43: minimal Formal Introduction content-seam proposal
+
+Because v39 proved no safe existing consumer exists, design the smallest safe new authored seam.
+
+Requirements:
+- one existing ordinary career/relationship only;
+- one new first-professional introduction event/transition at most;
+- no trust/route/conflict shortcut;
+- no Palace/Activity/Secret Debt target;
+- normal later relationship route remains reachable;
+- original career/relationship gates remain;
+- no generic bypass system;
+- specify exact files/IDs/tests;
+- do not implement runtime unless the seam is uniquely safe from existing structure.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT3_D39_FORMAL_INTRODUCTION_MINIMAL_SEAM_PROPOSAL_v43.md`
+
+## Task C — v44: D39 consumer decision packet
+
 Create:
-`mindy-successor/docs/tasks/CHAT3_D39_LIVE_CONSUMER_CLOSURE_PACKET_v41.md`
+`mindy-successor/docs/tasks/CHAT3_D39_CONSUMER_DECISION_PACKET_v44.md`
 
-Combine v39/v40 into exact Chat 2 assembly guidance:
-- target IDs;
-- required conditions/effects;
-- file ownership;
-- focused tests;
-- save/reload and slot firewalls;
+Combine:
+- v39 blocker evidence;
+- v42 Source Method result;
+- v43 minimal Formal Introduction seam proposal.
+
+State:
+- what is safe now;
+- what requires one explicit Product/content decision;
+- exact recommended choice;
+- exact Chat 2 assembly/test implications;
 - stop conditions.
 
-Research/mapping only unless the mapping is uniquely determined by existing accepted content.
+Research/design only.
 No full CI.
 
 After all three:
-`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
+`BUNDLE_COMPLETE — READY_FOR_LEADER_DECISION`.
