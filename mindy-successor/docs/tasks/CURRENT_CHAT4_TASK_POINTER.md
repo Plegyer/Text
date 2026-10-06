@@ -1,66 +1,47 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — D42 FULL-SUITE FAILURE TRIAGE v20**
+Status: **ACTIVE — FINAL SAVE/MIGRATION CLOSURE PREFLIGHT v21**
 Owner: Chat 4
 
-Previous Camp work is complete and accepted:
-- executable-green Camp repair candidate:
-  `chat4/activity-camp-baseline-repair-v19@efde0a38bf71a8946194402a9fc47abb168f2aff`
-- focused gate: typecheck / validate / build PASS
-- focused suite: 107/107 PASS
-- disposition: READY_FOR_CHAT2_ASSEMBLY
+Previous D42 triage v20 is complete and accepted.
 
 New branch:
-`chat4/d42-full-suite-triage-v20`
+`chat4/final-save-migration-closure-preflight-v21`
 
-Target under review:
-`chat2/assembly-d42-night-current-main-20261004-v1@3d92dbbe0c5bfa0e8676178fb05765012f41f8e1`
+Goal:
+prepare the final save/migration closure plan against all already-accepted producers before the later 1.0 release gate.
 
-Latest full CI:
-- run `37206154367`
-- conclusion: FAILURE
-- total failing tests: 13
+Use as inputs:
+- Secret Debt v12 + D51;
+- Palace v18/v19;
+- Activity v15 + Camp green repair v19 + D38 v16/v17;
+- D46 economy;
+- D47 Hard Work packages;
+- lumber-stay retirement v17;
+- localization v26;
+- global presentation v23.
 
 Task:
-classify every D42 full-suite failure before Chat 2 changes anything.
+refresh the previous final save/migration audit and produce the exact final 23-case migration/reload matrix for the fully assembled 1.0 target.
 
-For each failure, classify exactly one:
-A. stale pre-D42 count/fixture/presentation expectation;
-B. missing D42 localization/caption/content closure;
-C. real D42 runtime/behavior regression;
-D. unrelated pre-existing failure.
+Identify:
+- old-save defaulting risks;
+- schema/version collisions;
+- exactly-once reward/action risks;
+- ending migration risks;
+- Camp resume risks;
+- Secret Debt trap/forced-Night reload risks;
+- Palace progress/Return Home reload risks;
+- legacy lumber-stay/vitality risks;
+- Strong Meta ownership/loadout migration risks;
+- exact final tests Chat 2 must run after all production tranches are assembled.
 
-Known failing areas include:
-- Assassin localization coverage;
-- Tavern frozen-mechanics comparison;
-- Guard presentation counts/parity;
-- Hunter Night caption;
-- Merchant presentation counts/parity;
-- ordinary Prostitute Secret Debt firewall;
-- Prostitute localization count;
-- Foreman UI-surface expectation;
-- Tavern private-Night caption.
-
-Required output:
-- exact 13-test ledger;
-- classification for each;
-- smallest safe repair;
-- explicit list of production changes allowed/forbidden;
-- identify any true runtime blocker separately;
-- do not modify production runtime;
-- do not run full CI.
-
-Preserve D42 accepted semantics:
-- exactly 12 Night surfaces;
-- three private-space branches require normal lodging;
-- voluntary Night never becomes Secret Debt;
-- forced Secret Debt Night retains priority;
-- refusal/back-out never publishes success;
-- one Night advances calendar once;
-- no broad affinity system.
+Research/preflight only.
+Do not modify runtime.
+Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT4_D42_FULL_SUITE_TRIAGE_v20.md`
+`mindy-successor/docs/tasks/CHAT4_FINAL_SAVE_MIGRATION_CLOSURE_PREFLIGHT_v21.md`
 
 Report:
-`READY_FOR_CHAT2_REPAIR`.
+`READY_FOR_FINAL_CLOSURE`.
