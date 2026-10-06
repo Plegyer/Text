@@ -1,37 +1,40 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY D38 REWARD IMPLEMENTATION PREFLIGHT v25**
+Status: **ACTIVE — ACTIVITY D38 REWARD PRODUCER v26**
 Owner: Chat 3
 
-Previous Activity cumulative preflight v24 is complete and accepted.
+Accepted preflight:
+`chat3/activity-d38-reward-implementation-preflight-v25@1024d8a657f0514f894042936e615364940f5e26`
 
 New branch:
-`chat3/activity-d38-reward-implementation-preflight-v25`
+`chat3/activity-d38-reward-producer-v26`
 
-Goal:
-prepare the exact current-Strong-Meta implementation packet for the three accepted D38 Activity rewards.
+Implement the accepted three D38 Activity permanent rewards using current Strong Meta architecture:
 
-Accepted rewards:
 - `specialist.activity.surveyors-atlas`
 - `specialist.activity.field-archive`
 - `specialist.activity.contact-network`
 
-Task:
-- map exact current Strong Meta registry additions;
-- define run-local usage counters/state;
-- define ending lifecycle binding through normal completeEnding transaction;
-- preserve 0..2 Specialist capacity;
-- preserve no activation in earning life;
-- specify save/reload/profile-merge behavior;
-- specify exact files Chat 2 must modify later;
-- specify focused tests for all three rewards and cross-system firewalls.
+Follow v25 exactly.
 
-Do not implement production runtime in this preflight.
-Do not invent new Product behavior.
-Do not run full CI.
+Requirements:
+- all three are normal Specialists;
+- normal max 2 active Specialist slots;
+- no same-life activation after earning;
+- completeEnding grants ownership exactly once;
+- run-local usage state is persisted and bounded;
+- Camp does not reset uses;
+- no Secret Debt / Palace / career / region / capability bypass;
+- no Activity entry-Energy reduction;
+- no baseline Field Time increase;
+- no generic unlock-only final ownership;
+- no new Product behavior.
+
+Add focused executable tests.
+No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_D38_REWARD_IMPLEMENTATION_PREFLIGHT_v25.md`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_D38_REWARD_PRODUCER_v26.md`
 
-Report:
-`READY_FOR_ACTIVITY_ASSEMBLY`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
