@@ -1,0 +1,67 @@
+name: Chat 4 D46 economy exact-head QA v29
+
+on:
+  push:
+    branches:
+      - chat4/career-producers-exact-head-qa-bundle-v29
+    paths:
+      - '.github/workflows/chat4-d46-economy-exact-head-qa-v29.yml'
+
+concurrency:
+  group: chat4-d46-economy-exact-head-qa-v29
+  cancel-in-progress: true
+
+jobs:
+  exact-head-qa:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact frozen D46 producer
+        uses: actions/checkout@v4
+        with:
+          ref: a0c5f855b63d3bb85556f5b2780aaaabb58fbced
+          fetch-depth: 0
+
+      - name: Verify exact producer HEAD
+        shell: cmd
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
+          echo Exact frozen D46 producer: %ACTUAL%
+          if not "%ACTUAL%"=="a0c5f855b63d3bb85556f5b2780aaaabb58fbced" exit /b 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: D46 focused economy/start/wage adjacency
+        run: >
+          node --experimental-strip-types --test
+          tests/economy-start-balance-v14.test.ts
+          tests/ordinary-hard-work-meta-production.test.ts
+          tests/hard-work-stat-cap-d24.test.ts
+          tests/ordinary-hard-work-lifecycle-parity.test.ts
+          tests/school-engine-adapter.test.ts
+          tests/school-body-confidence-lust-d20.test.ts
+          tests/school-night-study-adapter.test.ts
+          tests/strong-meta-d30-runtime-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
