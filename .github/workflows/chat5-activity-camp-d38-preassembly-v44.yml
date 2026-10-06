@@ -1,0 +1,93 @@
+name: Chat 5 Activity Camp D38 preassembly v44
+
+on:
+  push:
+    branches:
+      - chat5/activity-camp-d38-preassembly-v43
+    paths:
+      - '.github/workflows/chat5-activity-camp-d38-preassembly-v44.yml'
+
+concurrency:
+  group: chat5-activity-camp-d38-preassembly-v44
+  cancel-in-progress: false
+
+jobs:
+  exact-head-focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - label: activity-v15
+            sha: ab378d68765f7c9bbff43abf3b4b41e24df82e01
+            focused: >-
+              tests/activity.test.ts
+              tests/item-capability-activity-closure.test.ts
+              tests/forest-frontier-production-hardening-v12.test.ts
+              tests/trade-corridor-production-v13.test.ts
+              tests/anomalous-reach-production-v14.test.ts
+              tests/restricted-sites-production-v15.test.ts
+          - label: d38-v18-cumulative
+            sha: 7ae7a9b273f1806ac04b566c318896783bab6595
+            focused: >-
+              tests/activity.test.ts
+              tests/forest-frontier-production-hardening-v12.test.ts
+              tests/trade-corridor-production-v13.test.ts
+              tests/anomalous-reach-production-v14.test.ts
+              tests/restricted-sites-production-v15.test.ts
+              tests/activity-ending-family-v16.test.ts
+              tests/activity-ending-content-presentation-v17.test.ts
+          - label: camp-v19-cumulative
+            sha: efde0a38bf71a8946194402a9fc47abb168f2aff
+            focused: >-
+              tests/activity-camp-persistence-v17.test.ts
+              tests/activity.test.ts
+              tests/item-capability-activity-closure.test.ts
+              tests/forest-frontier-production-hardening-v12.test.ts
+              tests/trade-corridor-production-v13.test.ts
+              tests/anomalous-reach-production-v14.test.ts
+              tests/restricted-sites-production-v15.test.ts
+              tests/migration.test.ts
+              tests/qa-activity-option-reload.test.ts
+              tests/qa-exactly-once-reload.test.ts
+              tests/night-flow.test.ts
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact frozen head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.sha }}
+          fetch-depth: 1
+
+      - name: Verify exact frozen SHA
+        shell: pwsh
+        run: |
+          $actual = git rev-parse HEAD
+          if ($actual -ne "${{ matrix.sha }}") { throw "Exact-head guard failed: $actual" }
+          Write-Host "${{ matrix.label }} exact head: $actual"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: Focused Activity Camp D38 tests
+        run: node --experimental-strip-types --test ${{ matrix.focused }}
