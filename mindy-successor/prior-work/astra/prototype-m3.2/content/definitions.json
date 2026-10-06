@@ -9185,6 +9185,7 @@
       "initialStage": "introduced",
       "stages": [
         "introduced",
+        "formal-introduced",
         "professional-trust",
         "conflict-open",
         "utility-ready",
@@ -9192,9 +9193,25 @@
       ],
       "transitions": [
         {
-          "id": "build-trust",
+          "id": "formal-introduction",
           "from": [
             "introduced"
+          ],
+          "to": "formal-introduced",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "introduced-at-work"
+            }
+          ]
+        },
+        {
+          "id": "build-trust",
+          "from": [
+            "introduced",
+            "formal-introduced"
           ],
           "to": "professional-trust",
           "conditions": [
