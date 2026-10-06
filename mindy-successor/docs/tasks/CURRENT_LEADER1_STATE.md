@@ -546,3 +546,61 @@ Current:
 - `chat6/global-caption-closure-producer-v29`
 - add exactly the two required generic caption keys, no runtime/mechanics changes.
 
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 STATUS RESET / ALL LANES REFILLED
+
+This section supersedes older active-worker notes where they conflict.
+
+### Chat 2
+- latest D42 full CI run 1213 / `37454323411`: FAILURE with exactly 2 stale Guard assertions.
+- production D42 behavior remains accepted by triage.
+- exact current task: change the two remaining Guard namespace assertions only, then focused checks + one full CI.
+- no production file change authorized.
+
+### Chat 3
+Completed:
+- D38 reward producer v26 at `7770b6bf7f930e8af17331e8b22613523bb2e768`.
+- status: READY_FOR_CHAT2_ASSEMBLY as producer candidate; executable QA still separate.
+
+Current:
+- `chat3/activity-d38-authored-tag-mapping-v27`
+- map exact existing Activity authored candidates for Atlas / Archive / Contact Network tags.
+
+### Chat 4
+Previous:
+- Secret Debt localization QA v23 was not a producer failure.
+- one job was cancelled by runner shutdown;
+- the other later failed because the workflow required unavailable `pwsh`.
+
+Current:
+- `chat4/qa-secret-debt-localization-v24`
+- repair QA workflow shell only and rerun exact-source v27 + v12 verification.
+
+### Chat 5
+Completed:
+- Palace D39 reward producer v20 at `b5ab23a88ee0e18c6250251de15818ff799ff3f6`.
+- focused executable QA: 59/59 PASS.
+- status: READY_FOR_CHAT2_ASSEMBLY.
+
+Current:
+- `chat5/palace-cumulative-assembly-refresh-v21`
+- refresh exact Palace assembly packet using v18/v19 + D39 v20.
+
+### Chat 6
+Completed:
+- global caption closure v29 at `6b56569e6a5dfff69af646c4ab5bd19c56632b60`.
+- exactly two required generic caption keys added; runtime untouched.
+- status: READY_FOR_CHAT2_CONTENT_ASSEMBLY as content candidate.
+
+Current:
+- `chat6/retired-tavern-localization-compat-audit-v30`
+- determine which retired Tavern localization rows are safe to remove vs must remain for compatibility.
+
+### User-facing status rule
+When reporting worker state, distinguish:
+- WORKS = worker is actively changing/processing its current task;
+- WAITS = task intentionally blocked on another lane/check;
+- ERROR = last required check failed and a repair task is needed;
+- DONE = worker finished current task and should immediately receive another task.
+Do not describe a running GitHub Actions check as the worker itself "working".
