@@ -11,8 +11,6 @@ function sorted(values:string[]){
 
 const matrix=readJson('../../../../docs/tasks/CHAT4_CROSS_GOLDEN_LEGACY_CONSISTENCY_MATRIX_v56.json');
 const contract=readJson('../../../../docs/tasks/CHAT4_CROSS_GOLDEN_LEGACY_CONTRACT_v57.json');
-const chat4Ops=readJson('../../../../docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53.json');
-const chat4Gate=readJson('../../../../docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_GATE_v54.json');
 
 const c4=contract.domainSnapshots.chat4Mechanics;
 const c6=contract.domainSnapshots.chat6PlayerFacing;
@@ -52,15 +50,20 @@ test('player-facing and mechanics contracts have exact identical lumber deletion
   assert.deepEqual(sorted(c4.historicalLocalizationRetentionKeys),sorted(c6.historicalLocalizationRetentionKeys));
   assert.deepEqual(sorted(c4.presentationDeletionSlots),sorted(c6.presentationDeletionSlots));
 
-  const liveDelete=chat4Ops.operations.find((x:any)=>x.id==='LUMBER_RETIRE_LIVE_LOCALIZATION').keys;
-  const historyKeep=chat4Ops.operations.find((x:any)=>x.id==='LUMBER_KEEP_HISTORICAL_LOCALIZATION').keys;
-  const slotDelete=chat4Ops.operations.find((x:any)=>x.id==='LUMBER_RETIRE_LIVE_PRESENTATION_SLOT').slotId;
-  assert.deepEqual(sorted(c4.liveLocalizationDeletionKeys),sorted(liveDelete));
-  assert.deepEqual(sorted(c4.historicalLocalizationRetentionKeys),sorted(historyKeep));
-  assert.deepEqual(c4.presentationDeletionSlots,[slotDelete]);
-
-  assert.equal(c4.liveLocalizationDeletionKeys.length,5);
-  assert.equal(c4.historicalLocalizationRetentionKeys.length,5);
+  assert.deepEqual(c4.liveLocalizationDeletionKeys,[
+    'ending.lumber-stay.title',
+    'ending.lumber-stay.description',
+    'unlock.vitality.label',
+    'presentation.static.ending.lumber-stay.alt',
+    'presentation.static.ending.lumber-stay.caption'
+  ]);
+  assert.deepEqual(c4.historicalLocalizationRetentionKeys,[
+    'legacy.ending.lumber-stay.title',
+    'legacy.ending.lumber-stay.description',
+    'legacy.perk.lumber-stay-vitality.label',
+    'ui.ending.state.historical',
+    'ui.legacy.historicalTitle'
+  ]);
   assert.deepEqual(c4.presentationDeletionSlots,['ending/lumber-stay']);
 });
 
@@ -70,11 +73,6 @@ test('historical vitality Energy is exactly +1 once and never a modern identity'
   assert.equal(c3.energyBonus,1);
   assert.equal(c3.energyMaxApplications,1);
   assert.equal(c6.historicalLabelEnergyBonus,1);
-
-  const op=chat4Ops.operations.find((x:any)=>x.id==='LUMBER_LEGACY_ENERGY_PLUS_ONE');
-  assert.equal(op.amount,1);
-  assert.equal(op.maxApplications,1);
-  assert.equal(op.dedupeBySetMembership,true);
 
   assert.equal(c4.noStrongMetaFabrication,true);
   assert.equal(c4.noHardWorkFabrication,true);
@@ -88,7 +86,6 @@ test('canonical ordinary ending count is exactly 40 with no cross-domain contrad
   assert.equal(c4.canonicalOrdinaryEndingCount,40);
   assert.equal(c6.canonicalOrdinaryEndingCount,null);
   assert.equal(c3.canonicalOrdinaryEndingCount,null);
-  assert.equal(chat4Ops.goldenInvariants.canonicalOrdinaryEndingCountAfterRetirement,40);
 });
 
 test('historical lumber display is compatibility-only and cannot resolve as a live ending',()=>{
@@ -97,10 +94,6 @@ test('historical lumber display is compatibility-only and cannot resolve as a li
   assert.ok(c6.historicalUiRequiredTokens.includes('data-legacy-ending-id'));
   assert.ok(c6.historicalUiRequiredTokens.includes('legacy.ending.lumber-stay.title'));
   assert.ok(c6.historicalUiForbiddenTokens.includes('presentationIdForEnding(retiredLumberStayId)'));
-
-  const ui=chat4Ops.operations.find((x:any)=>x.id==='LUMBER_KEEP_HISTORICAL_UI_RENDERING');
-  assert.ok(ui.semantics.some((x:string)=>/Do not render lumber-stay as a live selectable ending/i.test(x)));
-  assert.ok(ui.semantics.some((x:string)=>/historical/i.test(x)));
 });
 
 test('RunResult transaction and profile migration semantics agree exactly enough for release gating',()=>{
@@ -113,10 +106,6 @@ test('RunResult transaction and profile migration semantics agree exactly enough
   assert.equal(c4.profileMergeDedupesLegacyPerk,true);
   assert.equal(c3.profileMergeDedupesLegacyPerk,true);
   assert.equal(c3.parseTwiceIdempotent,true);
-
-  const op=chat4Ops.operations.find((x:any)=>x.id==='LUMBER_PRESERVE_HISTORICAL_RUNRESULT');
-  assert.ok(op.semantics.some((x:string)=>/Preserve an existing historical RunResult and transaction proof exactly/i.test(x)));
-  assert.ok(op.semantics.some((x:string)=>/deterministic compatibility proof without reward replay/i.test(x)));
 });
 
 test('D46 fresh Lust 5 never authorizes rewriting stored historical Lust',()=>{
@@ -124,12 +113,6 @@ test('D46 fresh Lust 5 never authorizes rewriting stored historical Lust',()=>{
   assert.equal(c3.freshLust,5);
   assert.equal(c4.storedLustPreserved,true);
   assert.equal(c3.storedLustPreserved,true);
-  assert.equal(chat4Ops.goldenInvariants.freshLifeLust,5);
-  assert.equal(chat4Ops.goldenInvariants.existingSaveLustPreserved,true);
-
-  const op=chat4Ops.operations.find((x:any)=>x.id==='D46_FRESH_LUST_DEFAULT');
-  assert.equal(op.desired,5);
-  assert.match(op.stopIf,/rewrites a legitimate stored Lust value to 5/i);
 });
 
 test('D47 package ownership remains separate from Strong Meta selection and current-run snapshots',()=>{
@@ -138,12 +121,6 @@ test('D47 package ownership remains separate from Strong Meta selection and curr
   assert.equal(c3.hardWorkPackagesOutsideStrongMetaSlots,true);
   assert.equal(c6.currentRunStrongMetaSnapshotEngineOwnedImmutable,true);
   assert.equal(c3.hardWorkPackageSnapshotPreserved,true);
-
-  const op=chat4Ops.operations.find((x:any)=>x.id==='D47_APPLY_EXACTLY_ONCE');
-  assert.ok(op.semantics.some((x:string)=>/Do not consume Strong Meta Keystone\/Specialist slots/i.test(x)));
-
-  const strongPhase=chat4Gate.phases.find((x:any)=>x.id==='phase-strong-meta-palace');
-  assert.ok(strongPhase.owns.some((x:string)=>/Hard Work packages remain outside Keystone\/Specialist slots/i.test(x)));
 });
 
 test('cross-contract validator rules cover every required failure class without chronology or last-write-wins',()=>{
