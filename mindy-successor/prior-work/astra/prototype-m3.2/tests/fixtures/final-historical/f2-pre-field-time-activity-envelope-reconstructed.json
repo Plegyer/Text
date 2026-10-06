@@ -1,0 +1,18 @@
+{
+  "activityId": "lumber.forest",
+  "definitionVersion": 1,
+  "adapter": "counter.v1",
+  "status": "active",
+  "startedDay": 0,
+  "entryEnergyCommitted": true,
+  "internalState": {
+    "progress": 0,
+    "endurance": 5,
+    "steps": 0,
+    "lastRoll": null
+  },
+  "rngState": 1107666780,
+  "checkpoint": "entry",
+  "accumulatedRewards": [],
+  "emittedFacts": []
+}
