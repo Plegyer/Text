@@ -42,6 +42,7 @@ jobs:
           tests/school-life-content-reload.test.ts
           tests/school-night-study-adapter.test.ts
           tests/school-production-v11-content-quality.test.ts
+          tests/school-production-v11-locale-save.test.ts
           tests/assassin-runtime-invariants.test.ts
           tests/assassin-natural-acceptance.test.ts
           tests/assassin-boundaries.test.ts
@@ -49,3 +50,4 @@ jobs:
           tests/strong-meta-registry-v7.test.ts
           tests/strong-meta-engine-integration-v7.test.ts
           tests/ending-meta.test.ts
+          tests/migration.test.ts
