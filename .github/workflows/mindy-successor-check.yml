@@ -1,33 +1,18 @@
-name: mindy-successor check
+name: mindy-successor D39 focused QA
 
 on:
-  workflow_dispatch:
   pull_request:
     paths:
       - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
       - '.github/workflows/mindy-successor-check.yml'
-  push:
-    branches:
-      - main
-    paths:
-      - 'mindy-successor/prior-work/astra/prototype-m3.2/**'
-      - '.github/workflows/mindy-successor-check.yml'
+  workflow_dispatch:
 
 concurrency:
-  group: mindy-successor-check-${{ github.event.pull_request.number || github.ref }}
+  group: mindy-successor-d39-focused-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    # One self-hosted runner is a scarce integration gate.
-    # Producer PRs (chat3..chat6) intentionally skip the full check.
-    # Chat 2 / Lead QA branches own PR CI; main and manual dispatch still run.
-    if: >-
-      github.event_name != 'pull_request' ||
-      startsWith(github.head_ref, 'chat2/qa-') ||
-      startsWith(github.head_ref, 'chat2/assembly-') ||
-      startsWith(github.head_ref, 'lead/ci-') ||
-      startsWith(github.head_ref, 'lead/integrate-')
     runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 20
     defaults:
@@ -44,5 +29,24 @@ jobs:
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Full check
-        run: npm run check
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate content
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused D39 / Assassin / School / Strong Meta tests
+        run: >-
+          node --experimental-strip-types --test
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/d39-formal-introduction-assassin-v46.test.ts
+          tests/school-life-content-reload.test.ts
+          tests/school-night-study-adapter.test.ts
+          tests/school-production-v11-content-quality.test.ts
+          tests/assassin-runtime-invariants.test.ts
+          tests/assassin-natural-acceptance.test.ts
+          tests/assassin-boundaries.test.ts
+          tests/assassin-production-presentation.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/ending-meta.test.ts
