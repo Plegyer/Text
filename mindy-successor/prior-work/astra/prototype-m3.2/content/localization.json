@@ -13153,6 +13153,42 @@
     "event.hunter.routes.legend-contract-variant.choice.defer.text": {
       "ru": "Оставить дополнительный вариант неиспользованным; обычный редкий контракт остаётся доступен.",
       "en": "Leave the additional variant unused; the ordinary rare contract remains available."
+    },
+    "ending.ending.secret-debt.paid-freedom.title": {
+      "ru": "Свобода через выплату",
+      "en": "Paid Freedom"
+    },
+    "ending.ending.secret-debt.paid-freedom.description": {
+      "ru": "Полностью выплатить 20 000 одним явным действием и выйти из связанного состояния.",
+      "en": "Repay the full 20,000 principal in one explicit action and leave the bound state."
+    },
+    "ending.ending.secret-debt.bound-life.title": {
+      "ru": "Связанная жизнь",
+      "en": "Bound Life"
+    },
+    "ending.ending.secret-debt.bound-life.description": {
+      "ru": "Завершить 50 скрытых дневных смен, оставаясь связанным долгом, а затем явно принять эту судьбу.",
+      "en": "Complete 50 hidden daytime shifts while still bound, then explicitly commit to this ending."
+    },
+    "ending.ending.secret-debt.takeover.title": {
+      "ru": "Перехват контроля",
+      "en": "Takeover"
+    },
+    "ending.ending.secret-debt.takeover.description": {
+      "ru": "Выполнить точные требования D44 и отдельным явным действием перехватить контроль над долговым маршрутом.",
+      "en": "Meet the exact D44 requirements and use the separate explicit action to take control of the debt route."
+    },
+    "ending.ending.secret-debt.paid-freedom.epilogue": {
+      "ru": "Ты закрываешь весь долг полной выплатой и выходишь из связанного состояния. Долговой маршрут завершён именно выплатой; никакой другой исход не подменяет этот выбор.",
+      "en": "You close the entire debt through full repayment and leave the bound state. The debt route ends through repayment itself; no other outcome substitutes for that choice."
+    },
+    "ending.ending.secret-debt.bound-life.epilogue": {
+      "ru": "После ровно пятидесяти скрытых дневных смен ты явно выбираешь исход «Связанная жизнь», пока долг остаётся активным. Это не автоматический финал: завершение наступает только после отдельного выбора этой судьбы.",
+      "en": "After exactly fifty hidden daytime shifts, you explicitly choose the Bound Life ending while the debt remains active. This is not an automatic ending: completion happens only after the separate ending choice."
+    },
+    "ending.ending.secret-debt.takeover.epilogue": {
+      "ru": "Выполнив высокие требования маршрута, ты отдельным явным действием перехватываешь контроль над долговой системой и выходишь из роли должницы. Этот исход фиксирует подготовленный захват управления, а не автоматическое завершение за сам факт долга.",
+      "en": "After meeting the route's high requirements, you use a separate explicit action to take control of the debt system and leave the debtor role. This ending records a prepared takeover, not an automatic result of being in debt."
     }
   }
 }
