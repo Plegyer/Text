@@ -8,7 +8,7 @@ on:
       - '.github/workflows/chat5-activity-camp-d38-preassembly-v44.yml'
 
 concurrency:
-  group: chat5-activity-camp-d38-preassembly-v44-windows-final
+  group: chat5-activity-camp-d38-preassembly-v44-diagnostic-final
   cancel-in-progress: true
 
 jobs:
@@ -81,13 +81,34 @@ jobs:
         run: npm ci
 
       - name: Typecheck
+        id: typecheck
+        continue-on-error: true
         run: npm run typecheck
 
       - name: Validate
+        id: validate
+        continue-on-error: true
         run: npm run validate
 
       - name: Build
+        id: build
+        continue-on-error: true
         run: npm run build
 
       - name: Focused Activity Camp D38 tests
+        id: focused
+        continue-on-error: true
         run: node --experimental-strip-types --test ${{ matrix.focused }}
+
+      - name: Required-check gate
+        if: always()
+        shell: cmd
+        run: |
+          echo typecheck=${{ steps.typecheck.outcome }}
+          echo validate=${{ steps.validate.outcome }}
+          echo build=${{ steps.build.outcome }}
+          echo focused=${{ steps.focused.outcome }}
+          if not "${{ steps.typecheck.outcome }}"=="success" exit /b 1
+          if not "${{ steps.validate.outcome }}"=="success" exit /b 1
+          if not "${{ steps.build.outcome }}"=="success" exit /b 1
+          if not "${{ steps.focused.outcome }}"=="success" exit /b 1
