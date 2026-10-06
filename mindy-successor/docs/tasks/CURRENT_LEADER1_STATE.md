@@ -746,3 +746,16 @@ Key finding: one concrete copy contradiction in `ending.activity.network.epilogu
 Accepted with content correction required.
 Current bundle:
 `chat6/activity-network-copy-fix-v36` through v38.
+
+
+## AUTHORITATIVE LIVE UPDATE — CHAT6 v36-v38 COMPLETE
+
+- Chat 6 Activity Network copy-fix bundle v36-v38 completed at
+  `750999ce1ab17b6e0f1ed1083349fcb8350548ed`.
+- v36 corrected the overbroad four-region epilogue wording without changing mechanics.
+- v37 documented exact diff/QA guidance.
+- v38 updated final localization manifest guidance.
+- Accepted.
+- Current Chat 6 bundle:
+  `chat6/final-player-facing-release-audit-v39` through v41.
+- Broad burn-down remains **5**.
