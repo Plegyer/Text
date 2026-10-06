@@ -500,3 +500,49 @@ Current task:
 - Final save/migration 23-case closure plan v21 complete.
 - Palace D39 implementation packet v19 complete.
 - Secret Debt ending localization v27 complete.
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 AFTER V22/V25/V28
+
+This section supersedes older active-worker notes where they conflict.
+
+### Chat 2
+- D42 production repair head remains `8e3f854a2607d103d1b22bd5da564089efedfc15`.
+- Chat 4 v22 proved the final 2 failures are test-only stale Guard namespace counts.
+- zero production change is required.
+- Chat 2 is ACTIVE on the final two-test repair, then focused checks + one full CI.
+- do not merge until exact full CI is green.
+
+### Chat 3
+Completed:
+- Activity D38 reward implementation preflight v25 at `1024d8a657f0514f894042936e615364940f5e26`.
+- disposition: READY_FOR_ACTIVITY_ASSEMBLY.
+
+Current:
+- `chat3/activity-d38-reward-producer-v26`
+- implement the three accepted D38 Activity Specialists with focused QA.
+
+### Chat 4
+Completed:
+- D42 post-repair failure triage v22 at `339edc2b9da00332782df8b7b29f722fdd00a192`.
+- disposition: READY_FOR_CHAT2_REPAIR.
+
+Current:
+- `chat4/qa-secret-debt-localization-v23`
+- exact-head executable QA for Chat 6 Secret Debt localization v27.
+
+### Chat 5
+Current:
+- `chat5/palace-d39-reward-producer-v20`
+- worker is still actively committing implementation work.
+- no final handoff accepted yet.
+
+### Chat 6
+Completed:
+- final localization/presentation closure audit v28 at `d57381dc7fa4af028cea3effdb4146a75cc9c60a`.
+- findings: 0 new authoring P0 defects; exactly 2 P1 generic caption keys remain; P2 cleanup optional.
+
+Current:
+- `chat6/global-caption-closure-producer-v29`
+- add exactly the two required generic caption keys, no runtime/mechanics changes.
+
