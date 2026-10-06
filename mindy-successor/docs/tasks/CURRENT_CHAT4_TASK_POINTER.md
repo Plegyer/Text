@@ -1,54 +1,30 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **START NOW**
+Status: **START NOW — STRONG META UI EXACT-HEAD QA v41-v43**
 Owner: Chat 4
 
-Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
+Producer to verify:
+Chat6 Strong Meta UI closure implementation head
+`fac645878ebd726f50fd1364ac72414796755a2d`
 
-Previous Palace QA bundle v32-v34 is complete.
-
-Current branch:
-`chat4/career-preassembly-acceptance-bundle-v35`
+QA branch:
+`chat4/qa-strong-meta-ui-v41`
 
 Complete ALL tasks in order.
 
-## Task A — v35
-Create:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_PREASSEMBLY_ACCEPTANCE_v35.md`
+## v41
+Exact-head guard + npm ci + typecheck + validate + build.
 
-Combine accepted D46, D47 and lumber-retirement producers with the green exact-head QA v29-v31 and Chat3 v29-v32 planning.
+## v42
+Run focused Strong Meta selector, registry/snapshot, modal ARIA, localization/accessibility and save/reload adjacency tests.
 
-State exact accepted sources, known merge-only risks, and stop conditions.
+## v43
+Document exact evidence and disposition.
+Do not mutate producer.
+Do not run full CI.
 
-## Task B — v36
-Create:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_CURRENT_MAIN_CONFLICT_MAP_v36.md`
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_STRONG_META_UI_EXACT_HEAD_QA_v43.md`
 
-Map shared-file conflicts against the current post-D42 architecture:
-- engine/schema/content;
-- hardWorkMeta/Strong Meta;
-- definitions/localization/presentation;
-- save/migration;
-- Secret Debt/Palace/Activity ownership boundaries.
-
-Do not assume future main file contents; distinguish stable semantic conflicts from exact-base checks Chat 2 must redo.
-
-## Task C — v37
-Create:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_POST_ASSEMBLY_QA_v37.md`
-
-Define the focused executable gate Chat 2 must run after assembly, including:
-- fresh Lust 5;
-- existing Lust preserved;
-- money 600 / Energy 3;
-- wages 35/37 and cap120;
-- exact ten Hard Work packages;
-- retired lumber historical +1 Energy exactly once;
-- 40 canonical ordinary endings;
-- Secret Debt/Palace/Activity isolation.
-
-No runtime changes.
-No full CI.
-
-After all three:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_ASSEMBLY`.
+Report:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
