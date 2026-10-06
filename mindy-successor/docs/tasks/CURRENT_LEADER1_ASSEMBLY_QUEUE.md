@@ -100,3 +100,11 @@ Do not decrement until each stage is Leader-merged and exact-main CI is green.
 
 Bootstrap from:
 `mindy-successor/docs/tasks/LEADER1_CONTEXT_RECOVERY_CURRENT.md`
+
+
+## LIVE QUEUE UPDATE — CHAT4 QA ACCEPTED
+
+- Strong Meta UI producer `fac645878ebd726f50fd1364ac72414796755a2d`: exact-head QA accepted via Chat4, workflow `37480616854` SUCCESS.
+- Chat4 next: Palace v18/v19 cumulative exact-head QA on `chat4/palace-cumulative-exact-head-qa-v44`.
+- Palace D39 live-consumer implementation remains separately owned by Chat3 and must be layered/verified later.
+- Broad burn-down remains **5**.
