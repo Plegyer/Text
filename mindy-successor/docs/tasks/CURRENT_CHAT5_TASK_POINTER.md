@@ -1,52 +1,69 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **START NOW**
+Status: **ACTIVE — WINDOWS RELEASE PREFLIGHT BUNDLE v37-v39**
 Owner: Chat 5
 
-Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
-
-Previous Activity QA bundle v31-v33 is complete and accepted with v19 baseline repair required.
+Previous cross-tranche readiness bundle v34-v36 is complete and accepted.
 
 Current branch:
-`chat5/final-cross-tranche-readiness-v34`
+`chat5/windows-release-preflight-v37`
 
-Complete ALL tasks in order.
+Complete all tasks in order without waiting for Leader.
 
-## Task A — v34
+## Task A — v37: packaged Windows release preflight refresh
+
 Create:
-`mindy-successor/docs/tasks/CHAT5_REMAINING_TRANCHE_DEPENDENCY_AUDIT_v34.md`
+`mindy-successor/docs/tasks/CHAT5_WINDOWS_RELEASE_PREFLIGHT_REFRESH_v37.md`
 
-Audit remaining order:
-1. Secret Debt + D51
-2. Palace
-3. Activity + Camp + D38
-4. D46 + D47 + legacy
-5. final closure
+Review the current Windows release checklist and final closure plan.
 
-Find any dependency that makes this order unsafe or incomplete.
+Cover:
+- dist:win;
+- installer artifact identity;
+- SHA-256;
+- installed launch;
+- path with spaces/non-ASCII;
+- no-source-tree launch;
+- offline launch;
+- save/reload;
+- backup recovery;
+- corrupt primary/backup handling;
+- compatible installer update;
+- media packaging.
 
-## Task B — v35
+Identify missing or duplicate gates.
+
+## Task B — v38: final release evidence ledger template
+
 Create:
-`mindy-successor/docs/tasks/CHAT5_FINAL_RELEASE_BLOCKER_REGISTER_v35.md`
+`mindy-successor/docs/tasks/CHAT5_FINAL_RELEASE_EVIDENCE_LEDGER_TEMPLATE_v38.md`
 
-Produce one concise register of only real unresolved release blockers, classified:
-- must fix before next assembly;
-- can fix during selective assembly;
-- final closure only.
+Provide one compact fill-in template for:
+- each remaining stage candidate SHA;
+- focused QA evidence;
+- full-CI evidence;
+- Leader merge SHA;
+- exact-main CI;
+- burn-down transition;
+- final installer filename/size/hash;
+- clean-machine evidence;
+- persistence/update/backup smoke;
+- manual RU/EN/presentation smoke.
 
-Do not list already-closed historical issues as active blockers.
+## Task C — v39: final release go/no-go checklist
 
-## Task C — v36
 Create:
-`mindy-successor/docs/tasks/CHAT5_FINAL_MERGE_AND_REGRESSION_SEQUENCE_v36.md`
+`mindy-successor/docs/tasks/CHAT5_FINAL_RELEASE_GO_NO_GO_v39.md`
 
-Define exact Leader/Chat2 cadence for each remaining stage:
-focused QA -> full CI -> Leader merge -> exact-main CI -> burn-down decrement.
+Define the minimum objective conditions for:
+- source-tree release candidate;
+- packaged release candidate;
+- final 1.0 GO;
+- automatic NO-GO conditions.
 
-Include final 1.0 gate after stage 5.
-
-No runtime changes.
-No full CI.
+Do not duplicate obsolete historical blockers.
+Do not run full CI.
+Do not modify runtime.
 
 After all three:
 `BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
