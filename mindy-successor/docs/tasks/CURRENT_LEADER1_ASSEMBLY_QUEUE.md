@@ -108,3 +108,23 @@ Bootstrap from:
 - Chat4 next: Palace v18/v19 cumulative exact-head QA on `chat4/palace-cumulative-exact-head-qa-v44`.
 - Palace D39 live-consumer implementation remains separately owned by Chat3 and must be layered/verified later.
 - Broad burn-down remains **5**.
+
+
+## LIVE QUEUE UPDATE — SECRET DEBT RECOVERY v2
+
+Secret Debt + D51 remains production stage **1/5** and is NOT closed.
+
+Chat5 v42 independently identified, and Leader verified, that the prior Chat2 v1 assembly branch was structurally sparse. The active assembly lane is now:
+`chat2/assembly-secret-debt-d51-current-main-recovery-v2`
+
+The same Chat2 conversation continues. The old v1 branch is retained only as source/evidence for already-authored Secret Debt/D51 work.
+
+No full CI exists yet for the recovery candidate. No Leader merge is allowed until recovery composition, focused QA, build gates and one full CI are green.
+
+Accepted/refilled support lanes:
+- Chat4 Strong Meta UI exact-head QA accepted; Palace base QA active.
+- Chat5 Secret Debt gap QA accepted; Activity+Camp+D38 preassembly active.
+- Chat6 final player-facing cumulative packet accepted; Palace D48 media producer active.
+- Chat3 D39 live-consumer producer active.
+
+Broad burn-down remains **5**.
