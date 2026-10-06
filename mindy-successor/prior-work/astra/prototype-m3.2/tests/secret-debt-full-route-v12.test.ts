@@ -536,7 +536,7 @@ test('Secret Debt ending rewards bind exact D30/D32 ownership IDs and standard t
   assert.equal(s.meta.appliedResultTransactions.length,1);
 
   const after=dispatch(s,{type:'completeEnding'},catalog);
-  assert.equal(after.meta.strongMeta.earnedRewardIds.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
+  assert.equal(after.meta.strongMeta.ownership.ownedRewardIds.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
   assert.equal(after.meta.appliedResultTransactions.length,1);
 });
 
