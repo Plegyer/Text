@@ -1,19 +1,14 @@
 # LEADER1 CONTEXT RECOVERY — CURRENT
 
-Status: **AUTHORITATIVE BOOTSTRAP FOR A FRESH LEADER 1**
-Updated: 2026-10-06
+Status: **AUTHORITATIVE FRESH LEADER 1 BOOTSTRAP**
+Updated: 2026-10-06 17:33 user-local conversation checkpoint
 
-Purpose:
-A fresh Leader 1 must be able to continue from GitHub without relying on chat memory.
+This is the first file a replacement Leader 1 should read.
+GitHub is the durable project memory. Do not rely on prior chat context.
 
-## First rule
+## Immediate bootstrap
 
-Do not trust stale prose status blindly.
-Always re-query live GitHub branches, commits, PRs and Actions before making a status claim or merge decision.
-Exact SHA + executable evidence outrank worker prose.
-
-## Read order
-
+Read in this order:
 1. `mindy-successor/docs/tasks/LEADER1_USER_COMMUNICATION_PROTOCOL.md`
 2. `mindy-successor/docs/tasks/LEADER1_WORKER_BUNDLE_PROTOCOL.md`
 3. `mindy-successor/docs/tasks/LEADER1_CONTEXT_RECOVERY_CURRENT.md`
@@ -21,37 +16,48 @@ Exact SHA + executable evidence outrank worker prose.
 5. `mindy-successor/docs/tasks/CURRENT_LEADER1_ASSEMBLY_QUEUE.md`
 6. `mindy-successor/docs/USER_DECISIONS_LOCKED_v1.md`
 7. `CURRENT_CHAT2_TASK_POINTER.md` through `CURRENT_CHAT6_TASK_POINTER.md`
-8. referenced freeze / QA / recovery / handoff docs from those pointers.
+8. any referenced recovery / QA / handoff / decision docs.
+
+Then re-query live GitHub before making any status, merge, or readiness claim.
+Exact live SHA + executable evidence outrank prose.
+
+## User communication rules
+
+The user is not a programmer and wants simple operational status.
+
+Use:
+- WORKS = the chat window itself is actively generating/doing work;
+- WAITS = the chat window is idle because a check / merge / dependency is pending;
+- ERROR = required check failed and repair is needed;
+- DONE = bundle finished; refill immediately.
+
+Important:
+A running GitHub Actions workflow does NOT mean the chat window is working.
+The user often visually checks the windows and says they "стоят". Treat that as UI-idle status.
+
+Do not routinely show hashes, run IDs, branch names, schemas, or test counts.
+Keep exact details in GitHub docs.
+
+The user also wants:
+- workers refilled immediately;
+- safe 2-3 task bundles for Chats 3-6;
+- a remaining-big-stages counter in major status updates.
 
 ## Governance
 
 - Leader 1 alone merges production candidates into `main`.
-- Chat 2 alone owns current-main assembly and full CI.
-- Chats 3/4/5/6 are producer / research / QA lanes.
+- Chat 2 alone owns current-main assembly + full CI.
+- Chats 3/4/5/6 are producer/research/QA/content lanes.
 - Producers do not merge main.
-- Flow:
-  producer/review -> Chat 2 selective current-main assembly -> focused QA -> full CI -> Leader merge -> exact-main CI.
-- Burn-down decrements only after Leader merge + exact-main CI SUCCESS.
+- Integration:
+  producer/review -> Chat2 selective current-main assembly -> focused QA -> full CI -> Leader merge -> exact-main CI.
+- Burn-down decreases only after Leader merge + exact-main CI SUCCESS.
 
-## User-facing communication semantics
+## Production burn-down
 
-The user wants simple operational status:
-- WORKS = the chat window itself is actively producing work.
-- WAITS = chat is idle because a check / merge / dependency is pending.
-- ERROR = required check failed and repair is needed.
-- DONE = task/bundle finished; refill immediately.
+D42 is CLOSED and exact-main green.
 
-A running GitHub Actions job does NOT mean the chat itself is working.
-The user may visually know a chat window is idle and say it "стоит"; respect that distinction.
-
-Do not routinely expose SHAs, run IDs, branch names, schemas or test counts to the user.
-Keep exact technical detail in GitHub docs.
-
-## Product burn-down
-
-D42 Night is CLOSED and exact-main green.
-
-Broad remaining stages: **5**
+Remaining big stages: **5**
 
 1. Secret Debt v12 + D51
 2. Palace + D39
@@ -59,158 +65,258 @@ Broad remaining stages: **5**
 4. D46 + D47 + legacy ending retirement
 5. final save/migration/UI/localization/presentation/regression closure
 
-Do not decrement until exact-main green for the corresponding merged stage.
+Do not decrement early.
 
-## Live branch checkpoint at this recovery write
+## Current main checkpoint
 
-Main:
-`33606e18474a21bd44520bce06a1b9ae3596443a`
+Main at handoff:
+`9c3b66f14adeba62fc8244e0964c143c8dc2f797`
 
-Chat 2:
-`chat2/assembly-secret-debt-d51-current-main-v1@a02d4931087e0884756a6888354b8a69e0327b02`
-Task: assemble Secret Debt + D51 continuously through focused QA, build gates and one full CI, then stop at READY_FOR_LEADER_MERGE.
+Most recent production closure remains D42:
+merge `a51bbee97b0f5e5b0a182da03407277eecc7a758`
+exact-main CI #1217 SUCCESS.
 
-Chat 3:
-`chat3/palace-d39-consumer-resolution-v42@098e381e301aaa07469e65583ac01823d08213a5`
-Task bundle v42-v44:
-- Source Method live-consumer mapping;
-- minimal Formal Introduction content-seam proposal;
-- D39 consumer decision packet.
+Later main commits are primarily Leader coordination/docs/control-plane until a new production merge occurs.
 
-Chat 4:
-`chat4/d39-consumer-independent-resolution-v38@9ce21e93540c67628140700f21bdb031a304f816`
-Task bundle v38-v40:
-- independently verify Formal Introduction blocker;
-- independently find Source Method consumer;
-- independent decision verification packet.
+## Chat 2 — DO NOT REPLACE CURRENT WINDOW
 
-Chat 5:
-`chat5/windows-release-preflight-v37@92e2d2bfd7603d7b6cbf021617eb1baf51a9d130`
-Task bundle v37-v39:
-- Windows packaged release preflight refresh;
-- final evidence ledger template;
-- final GO/NO-GO checklist.
+The user explicitly showed Chat 2 still alive and continuing work.
+Do not tell the user to replace/reinstall Chat 2 unless its own context actually ends.
 
-Chat 6:
-`chat6/strong-meta-ui-closure-v42@ce6753d482968581b0c2945f4b7c05b41a5d6e58`
-Fresh-context task bundle v42-v44:
-- Strong Meta player-facing selector;
-- modal ARIA-name closure;
-- focused QA + handoff.
+Branch:
+`chat2/assembly-secret-debt-d51-current-main-v1`
 
-These heads are only a checkpoint. Re-query live state first.
+Branch head at handoff:
+`12632711439cec09d776cae33f5a7d5621ddb60b`
 
-## Current important Palace blocker
+Latest known Chat2-authored production implementation head:
+`a02d4931087e0884756a6888354b8a69e0327b02`
 
-Chat 3 v39 proved:
-**no unique safe existing live consumer exists for D39 Formal Introduction.**
+Later branch commits are Leader pointer/recovery docs.
 
-Closest structural candidate is Lumber Foreman, but current authored topology either:
-- jumps too far into route state, or
-- strands normal progression.
+Recovery if Chat2 window is ever lost:
+`mindy-successor/docs/tasks/CHAT2_CONTEXT_RECOVERY_SECRET_DEBT_D51_2026-10-06.md`
 
-Do not bypass this with:
-- generic relationship tagging;
-- trust-stage shortcut;
-- fabricated counters/facts;
-- Palace/Activity/Secret Debt targets;
-- weakened normal career gates.
+Current pointer:
+`CONTINUE NOW — SECRET DEBT + D51 CURRENT-MAIN ASSEMBLY v1`
 
-Resolution path:
-1. Chat 3 produces minimal safe authored seam proposal + Source Method mapping.
-2. Chat 4 independently verifies.
-3. Leader chooses the convergent safe solution.
-4. If a genuine Product choice remains, ask the user in plain game terms.
-5. Only then allow Palace release assembly to call D39 live-consumer closure complete.
+Required finish:
+- finish remaining Secret Debt v12 composition;
+- D51 compatibility;
+- localization v27;
+- canonical Strong Meta reward reconciliation;
+- focused Secret Debt/D51/Night/save QA;
+- typecheck/validate/build;
+- one full CI;
+- freeze exact candidate and report READY_FOR_LEADER_MERGE.
 
-This blocker does NOT block current Secret Debt + D51 assembly. It blocks Palace release acceptance.
+No current Chat2 Actions run was visible at the handoff checkpoint.
+The user's screenshot showed the chat window itself actively continuing the assembly.
 
-## Important accepted technical locks
+## D39 Palace live-consumer decision — RESOLVED
+
+Authority:
+`mindy-successor/docs/tasks/LEADER1_D39_LIVE_CONSUMER_DECISION_2026-10-06.md`
+
+Leader decision is already made. Do not reopen unless implementation proves it unsafe.
+
+Formal Introduction:
+- first live consumer = Assassin handler;
+- neutral stage `formal-introduced`;
+- transition `formal-introduction`;
+- only existing introductory fact `introduced-at-work`;
+- no trust/approval/conflict/route/career/ending/resource/stat shortcut;
+- existing Assassin gates unchanged;
+- normal trust remains later and reachable.
+
+Source Method:
+- first live consumer = School Arcana/Reason Night Study info event;
+- effect-free `strongMetaKnowledge` gated information variant;
+- no mechanical delta;
+- no D49 macro-lore leak.
+
+This decision intentionally chose the narrower Assassin/School integration over the alternative Satyr/Tavern proposal.
+
+## Chat 3 — newly assigned producer
+
+Branch:
+`chat3/d39-consumer-producer-v45`
+
+Head at handoff:
+`c8515ffffbe81b4b4ab85c011e6b65ce09bb7431`
+
+At handoff the branch contains Leader seed/task commits only; no worker-authored v45 implementation yet.
+
+Pointer:
+`START NOW — D39 LIVE-CONSUMER PRODUCER v45-v47`
+
+Tasks:
+- v45 Source Method School effect-free variant;
+- v46 Assassin Formal Introduction neutral seam;
+- v47 focused QA + handoff.
+
+Expected final:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_PALACE_ASSEMBLY`
+
+## Chat 4 — newly assigned independent QA
+
+Branch:
+`chat4/qa-strong-meta-ui-v41`
+
+Head at handoff:
+`3dcf7b6bacaff4d8f8dd4a3f0dcac092997e0196`
+
+At handoff no Chat4-authored QA result exists on this new branch yet.
+
+Producer under exact-head QA:
+Chat6 implementation state
+`fac645878ebd726f50fd1364ac72414796755a2d`
+
+Pointer:
+`START NOW — STRONG META UI EXACT-HEAD QA v41-v43`
+
+Need:
+- exact head;
+- npm ci;
+- typecheck/validate/build;
+- Strong Meta selector;
+- registry/snapshot;
+- modal ARIA;
+- localization/accessibility;
+- save/reload adjacency.
+
+No full CI.
+
+## Chat 5 — newly assigned Secret Debt gap QA
+
+Branch:
+`chat5/qa-secret-debt-current-head-v40`
+
+Head at handoff:
+`cd3a271d2b2d54603207f314a02cc174dc572249`
+
+At handoff no Chat5-authored v40 result exists on this new branch yet.
+
+Frozen Chat2 implementation head under review:
+`a02d4931087e0884756a6888354b8a69e0327b02`
+
+Pointer:
+`START NOW — SECRET DEBT CURRENT-HEAD GAP QA v40-v42`
+
+Purpose:
+- identify exactly what Chat2 already composed;
+- identify what remains;
+- run exact-head focused QA where executable;
+- give Chat2 a concise remaining-work list;
+- do not mutate Chat2 branch;
+- no full CI.
+
+Expected final:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_REPAIR`
+
+## Chat 6 — newly assigned cumulative final player-facing packet
+
+Branch:
+`chat6/final-player-facing-cumulative-v45`
+
+Head at handoff:
+`bec6acc67860772092f42b5f1c61dc44a4a647dd`
+
+At handoff no Chat6-authored v45 result exists on this new branch yet.
+
+Pointer:
+`START NOW — FINAL PLAYER-FACING CUMULATIVE PACKET v45-v47`
+
+Consolidate:
+- Activity Network v36 correction;
+- v40 21-row localization repair;
+- Strong Meta selector UI/localization;
+- localized modal ARIA;
+- captions / retired Tavern cleanup / final localization packet.
+
+Expected final:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_FINAL_CONTENT_ASSEMBLY`
+
+## Accepted Chat6 Strong Meta UI producer
+
+Completed implementation state:
+`fac645878ebd726f50fd1364ac72414796755a2d`
+
+Handoff:
+`mindy-successor/docs/tasks/CHAT6_STRONG_META_UI_CLOSURE_HANDOFF_v44.md`
+
+It adds:
+- player-facing Strong Meta selector through existing selection APIs;
+- localized human-readable modal accessible names;
+- focused tests.
+
+It does NOT change core Strong Meta mechanics/schema.
+
+Important:
+Chat6 connector lane could not execute npm/Node commands.
+That is why Chat4 v41-v43 exact-head QA exists.
+Do not call this producer executable-green before Chat4 QA evidence.
+
+## Release-preflight state
+
+Chat5 Windows release preflight v37-v39 completed.
+Use:
+- `CHAT5_WINDOWS_RELEASE_PREFLIGHT_REFRESH_v37.md`
+- `CHAT5_FINAL_RELEASE_EVIDENCE_LEDGER_TEMPLATE_v38.md`
+- `CHAT5_FINAL_RELEASE_GO_NO_GO_v39.md`
+
+Current release state is expected NO-GO because burn-down > 0.
+Packaging happens only after burn-down 0 and exact-main green final source candidate.
+
+## Key locked product rules
 
 - 160 days, 4 x 40.
 - 12 progression stats; Lust separate.
 - 10 ordinary careers.
-- Hard Work = exactly 50 shifts, separate advanced endings.
+- Hard Work = exactly 50 shifts.
 - Advanced endings use explicit D16 commit; no auto-ending.
-- Strong Meta schema6:
-  max 1 Keystone + max 2 Specialists.
-- D24 cap200 is a normal Specialist and consumes one Specialist slot.
+- Strong Meta: max1 Keystone + max2 Specialists.
+- D24 cap200 consumes a Specialist slot.
 - ordinary Hard Work packages are outside Strong Meta slots.
 - automatic knowledge is slot-free.
-- current-run loadout snapshot is immutable.
-- School is integrated, not a stat shop.
-- Night has 12 D42 surfaces and private-space constraints.
-- Secret Debt:
-  forced Night absolute priority;
-  ordinary jobs locked while bound;
-  School/Activity available;
-  hidden wage cap140;
-  Bound Life exactly 50 shifts;
-  Takeover explicit;
-  no auto-ending.
-- D51 Energy compatibility:
-  only the Street -1 + bound-night -1 pair is compat-floor-2;
-  process both, then floor2;
-  unrelated later penalties may reduce below2;
-  no global Energy floor.
-- Activity:
-  entry 2 Energy;
-  Field Time 6;
-  Camp max 2 field nights;
-  explicit endings.
-- Palace:
-  one duty/day;
-  1 Energy;
-  support max1/day;
-  exactly15 duties;
-  true readiness all 12 progression stats >=91, Lust excluded;
-  retryable Prince confrontation;
-  explicit Return Home;
-  run-local progression.
-- D39 rewards:
-  Service Life -> Steady Practice Specialist;
-  Court Power -> Formal Introduction Specialist;
-  Inner Truth -> Source Method automatic knowledge;
+- current-run Strong Meta snapshot immutable.
+- School integrated, not stat shop.
+- D42 Night surfaces preserved.
+- Secret Debt forced Night absolute priority.
+- bound ordinary jobs locked; School/Activity available.
+- hidden wage cap140.
+- Bound Life exactly50 hidden shifts.
+- Takeover explicit.
+- D51 floor2 only for Street -1 + bound-night -1 pair; no global floor.
+- Activity entry2 Energy; Field Time6; Camp max2 field nights.
+- Palace 1 duty/day, 1 Energy, support max1/day, exactly15 duties.
+- Prince true readiness all12 progression stats >=91; Lust excluded.
+- confrontation retryable; Return Home explicit.
+- D39:
+  Service -> Steady Practice Specialist;
+  Court -> Formal Introduction Specialist;
+  Inner -> Source Method automatic knowledge;
   Return Home -> cap200 Specialist.
-- D40/D41 no Keystone.
-- canonical ordinary endings remain 40 after lumber-stay retirement.
-- lumber-stay historical compatibility yields +1 Energy exactly once, no modern Hard Work/package conversion.
+- canonical ordinary endings remain exactly40 after lumber-stay retirement.
+- historical lumber vitality gives +1 Energy exactly once; no Hard Work/package conversion.
 
-## Worker bundle policy
+## Immediate next-Leader checklist
 
-For Chats 3-6, prefer 2-3 sequential safe tasks per bundle so workers do not idle between small steps.
-They should continue automatically inside the bundle and stop only for a real blocker.
+1. Re-query all five current branches above.
+2. Do not replace Chat2; user says current window is alive.
+3. Determine actual UI chat activity from user/screenshot, not Git branch existence.
+4. If Chats 3-6 finished their bundles, verify and refill immediately.
+5. If Chat5 gap QA finishes before Chat2, use it to narrow Chat2's remaining work.
+6. When Chat2 reaches full-CI-green exact candidate:
+   - inspect exact SHA and CI;
+   - Leader merge only;
+   - run/verify exact-main CI;
+   - only then burn-down 5 -> 4.
+7. Next production stage is Palace; require D39 producer/QA evidence before Palace release acceptance.
+8. Keep this file, CURRENT_LEADER1_STATE.md, CURRENT_LEADER1_ASSEMBLY_QUEUE.md and current task pointers synchronized after major changes.
 
-Chat 2 may continue inside one production stage:
-compose -> focused QA -> repair -> typecheck/validate/build -> full CI.
-It intentionally stops only after a frozen full-CI-green candidate, waiting for Leader merge.
+## Memory rule
 
-## Durable-state rule for the next Leader
-
-Whenever a major state changes:
-- update `CURRENT_LEADER1_STATE.md`;
-- update `CURRENT_LEADER1_ASSEMBLY_QUEUE.md`;
-- update affected `CURRENT_CHAT*_TASK_POINTER.md`;
-- update this recovery file when the handoff picture materially changes.
-
-Never rely on ChatGPT cross-chat memory as project authority.
-GitHub is the durable project memory.
-
-
-## Newest checkpoint — 2026-10-06
-
-D39 blocker has a Leader decision:
-- Formal Introduction -> Assassin handler neutral first-professional seam.
-- Source Method -> School Arcana/Reason effect-free information variant.
-Authority:
-`mindy-successor/docs/tasks/LEADER1_D39_LIVE_CONSUMER_DECISION_2026-10-06.md`
-
-Current worker branches:
-- Chat2: `chat2/assembly-secret-debt-d51-current-main-v1`; recovery file available if window is lost.
-- Chat3: `chat3/d39-consumer-producer-v45`
-- Chat4: `chat4/qa-strong-meta-ui-v41`
-- Chat5: `chat5/qa-secret-debt-current-head-v40`
-- Chat6: `chat6/final-player-facing-cumulative-v45`
-
-Broad burn-down remains 5.
-Re-query every branch before status claims.
+ChatGPT Memory is disabled for this user at this checkpoint.
+Do not depend on cross-chat memory.
+GitHub project docs are the durable authority.
