@@ -1,66 +1,30 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — D39 CONSUMER INDEPENDENT RESOLUTION v38-v40**
+Status: **START NOW — STRONG META UI EXACT-HEAD QA v41-v43**
 Owner: Chat 4
 
-Previous D46/D47/legacy preassembly bundle v35-v37 is complete and accepted.
+Producer to verify:
+Chat6 Strong Meta UI closure implementation head
+`fac645878ebd726f50fd1364ac72414796755a2d`
 
-Current branch:
-`chat4/d39-consumer-independent-resolution-v38`
+QA branch:
+`chat4/qa-strong-meta-ui-v41`
 
-Complete ALL tasks in order without waiting for Leader.
+Complete ALL tasks in order.
 
-## Task A — v38: independent Formal Introduction resolution review
+## v41
+Exact-head guard + npm ci + typecheck + validate + build.
 
-Read:
-`mindy-successor/docs/tasks/CHAT3_D39_FORMAL_INTRODUCTION_CONSUMER_MAPPING_v39.md`
+## v42
+Run focused Strong Meta selector, registry/snapshot, modal ARIA, localization/accessibility and save/reload adjacency tests.
 
-Independently verify the blocker.
-
-Then find the smallest safe authored-content seam that would make Formal Introduction live without:
-- skipping trust;
-- skipping route choice;
-- fabricating counters/facts;
-- targeting Palace/Activity/Secret Debt;
-- weakening ordinary-career gates;
-- creating a generic bypass.
-
-Prefer one existing ordinary career/relationship and at most one new authored first-professional event/transition.
-
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_D39_FORMAL_INTRODUCTION_INDEPENDENT_RESOLUTION_v38.md`
-
-## Task B — v39: independent Source Method consumer review
-
-Find the safest existing information-only scene that can consume:
-`palace.inner-truth.source-method`
-
-Requirements:
-- provenance/cross-check/information only;
-- no resource/stat/counter/stage/ending change;
-- no D49 macro-truth leak;
-- preserve existing gates;
-- identify exact stable IDs.
-
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_D39_SOURCE_METHOD_INDEPENDENT_REVIEW_v39.md`
-
-## Task C — v40: decision verification packet
-
-Create:
-`mindy-successor/docs/tasks/CHAT4_D39_CONSUMER_DECISION_VERIFICATION_v40.md`
-
-State:
-- whether Chat3 v39 blocker is confirmed;
-- preferred minimal Formal Introduction seam;
-- preferred Source Method consumer;
-- exact regression risks;
-- exact focused tests required;
-- any reason Leader must reject the proposal.
-
-Research/review only.
-Do not alter production runtime.
+## v43
+Document exact evidence and disposition.
+Do not mutate producer.
 Do not run full CI.
 
-After all three:
-`BUNDLE_COMPLETE — READY_FOR_LEADER_DECISION`.
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_STRONG_META_UI_EXACT_HEAD_QA_v43.md`
+
+Report:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
