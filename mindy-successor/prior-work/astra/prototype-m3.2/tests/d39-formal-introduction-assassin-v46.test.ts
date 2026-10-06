@@ -12,9 +12,26 @@ import {
 } from '../src/core/strongMeta.ts';
 import type {Save,Stat} from '../src/core/schema.ts';
 
-const definitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
+const rawDefinitions=JSON.parse(readFileSync('content/definitions.json','utf8'));
 const relationshipPack=JSON.parse(readFileSync('content/packs/assassin-relationship.json','utf8'));
-const catalog=loadCatalog(definitions,[relationshipPack]);
+const assassinAction=rawDefinitions.actions.find((x:any)=>x.id==='assassin.shift');
+const assassinCareer=rawDefinitions.careers.find((x:any)=>x.id==='assassin');
+const assassinHandler=rawDefinitions.relationships.find((x:any)=>x.id==='assassin.handler');
+const definitions={
+  version:rawDefinitions.version,
+  flags:['story.arrived'],
+  actions:[assassinAction],
+  endings:[],
+  careers:[assassinCareer],
+  quests:[],
+  relationships:[assassinHandler],
+  lodgings:[],
+  nightChoices:[],
+  activities:[]
+};
+const testPack=structuredClone(relationshipPack);
+testPack.media=[{id:'stage.town',kind:'image',src:'assets/stage-town.svg',alt:'Town'}];
+const catalog=loadCatalog(definitions,[testPack]);
 
 function selectedFormal(){
   let meta=emptyStrongMetaState();
@@ -60,7 +77,7 @@ function introOffer(input:Save){
 }
 
 test('approved Assassin topology adds one neutral Formal Introduction stage and keeps normal trust separate',()=>{
-  const handler=definitions.relationships.find((x:any)=>x.id==='assassin.handler');
+  const handler=rawDefinitions.relationships.find((x:any)=>x.id==='assassin.handler');
   assert.ok(handler);
   assert.ok(handler.stages.includes('formal-introduced'));
   const formal=handler.transitions.find((x:any)=>x.id==='formal-introduction');
