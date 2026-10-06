@@ -18,9 +18,9 @@ import {
 } from '../src/core/strongMeta.ts';
 import {metaRewardSchema} from '../src/core/schema.ts';
 
-test('registry preserves v7 + D40 and adds nine D41 Specialists without changing capacity',()=>{
+test('registry preserves v7/D40/D41 and adds three D38 Specialists without changing capacity',()=>{
   validateStrongMetaRegistry();
-  assert.equal(Object.keys(strongMetaRegistry).length,20);
+  assert.equal(Object.keys(strongMetaRegistry).length,23);
   assert.equal(STRONG_META_KEYSTONE_CAPACITY,1);
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
   assert.equal(strongMetaRegistry[STRONG_META_IDS.palaceCap200].class,'specialist');
@@ -32,6 +32,28 @@ test('registry preserves v7 + D40 and adds nine D41 Specialists without changing
     assert.equal(strongMetaRegistry[id].class,'specialist',id);
     assert.equal(strongMetaRegistry[id].authority,'D41',id);
   }
+  for(const id of [STRONG_META_IDS.activitySurveyorsAtlas,STRONG_META_IDS.activityFieldArchive,STRONG_META_IDS.activityContactNetwork]){
+    assert.equal(strongMetaRegistry[id].class,'specialist',id);
+    assert.equal(strongMetaRegistry[id].authority,'D38',id);
+  }
+  assert.deepEqual(strongMetaRegistry[STRONG_META_IDS.activitySurveyorsAtlas].effect,{
+    kind:'activity-surveyors-atlas',
+    maxRegionsPerRun:4,
+    normalSurveyFieldTimeCost:1,
+    specialistSurveyFieldTimeCost:0
+  });
+  assert.deepEqual(strongMetaRegistry[STRONG_META_IDS.activityFieldArchive].effect,{
+    kind:'activity-field-archive',
+    maxSecuredPerRegion:1,
+    maxSecuredPerRun:4,
+    eligibilityTag:'activity-secure-eligible'
+  });
+  assert.deepEqual(strongMetaRegistry[STRONG_META_IDS.activityContactNetwork].effect,{
+    kind:'activity-contact-network',
+    maxIntroductionsPerRegion:1,
+    maxIntroductionsPerRun:4,
+    introductionTag:'activity-network-introduction'
+  });
 });
 
 test('ownership is separate from explicit Keystone/Specialist preference and deselection is exact',()=>{
@@ -170,7 +192,7 @@ test('unknown owned stable IDs survive canonicalization without becoming approve
   assert.equal(Object.hasOwn(strongMetaRegistry,'future.route.unknown'),false);
 });
 
-test('content metaReward schema accepts approved v7, D40, and D41 strong Meta reward IDs',()=>{
+test('content metaReward schema accepts approved v7, D38, D40, and D41 strong Meta reward IDs',()=>{
   assert.equal(metaRewardSchema.safeParse({
     kind:'strongMeta',
     rewardId:'strong.reward.cap200',
@@ -187,6 +209,12 @@ test('content metaReward schema accepts approved v7, D40, and D41 strong Meta re
     kind:'strongMeta',
     rewardId:'strong.reward.d41',
     reward:STRONG_META_IDS.lumberForewomanLedger
+  }).success,true);
+
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'strongMeta',
+    rewardId:'strong.reward.d38',
+    reward:STRONG_META_IDS.activitySurveyorsAtlas
   }).success,true);
 
   assert.equal(metaRewardSchema.safeParse({
