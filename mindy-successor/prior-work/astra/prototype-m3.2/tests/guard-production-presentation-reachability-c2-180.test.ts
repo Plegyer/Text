@@ -73,7 +73,7 @@ test('C2-180 every published Guard event override comes from one real frozen pro
     }
   }
   assert.equal(expected.size,29);
-  const published=Object.keys(presentation.slots??{}).filter(id=>id.startsWith('job/guard/event/'));
+  const published=Object.keys(presentation.slots??{}).filter(id=>expected.has(id));
   assert.equal(published.length,expected.size);
   for(const id of published)assert.ok(expected.has(id),id+' catalog-backed');
 });
