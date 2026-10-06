@@ -1,0 +1,1553 @@
+{
+  "manifestVersion": 57,
+  "title": "Final Save / Migration Golden Manifest",
+  "status": "PREPARED_FOR_FINAL_ASSEMBLED_TARGET",
+  "authorities": [
+    "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+    "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+    "CHAT3_FINAL_HISTORICAL_FIXTURE_RECOVERY_v56.md on chat3/final-historical-fixture-recovery-v54",
+    "CHAT4_FINAL_SAVE_MIGRATION_CLOSURE_PREFLIGHT_v21.md@1601be7b224f7b6687c4146c53d37499efb6a3f1"
+  ],
+  "dependencyClassifications": [
+    "current-main",
+    "frozen-producer",
+    "historical-reconstruction",
+    "final-assembly",
+    "content-only"
+  ],
+  "historicalFixtures": {
+    "F1": {
+      "classification": "authoritative_reconstruction",
+      "genuineUserSave": false,
+      "currentPath": "tests/fixtures/final-historical/f1-schema1-reconstructed.json",
+      "sourceBranch": "chat3/final-historical-fixture-recovery-v54",
+      "sourceCommit": "5233a0b31a6254183395b1ec038297377df99565",
+      "authority": [
+        "536f2e5a7084153375cbc4cb54c08c27e95545e7",
+        "0ae14e5949a1a1790d6f5a7b41f29e7db6c830e1"
+      ],
+      "unlocksCases": [
+        "case-01"
+      ]
+    },
+    "F2": {
+      "classification": "authoritative_reconstruction",
+      "genuineUserSave": false,
+      "currentPath": "tests/fixtures/final-historical/f2-pre-field-time-activity-envelope-reconstructed.json",
+      "sourceBranch": "chat3/final-historical-fixture-recovery-v54",
+      "sourceCommit": "5233a0b31a6254183395b1ec038297377df99565",
+      "authority": [
+        "1602583bf9b80515280df165c269bec4353bc19a",
+        "9b427d75dc22021cd3373aa7dd3521782e54152d"
+      ],
+      "unlocksCases": [
+        "case-17"
+      ]
+    },
+    "F3": {
+      "classification": "authoritative_reconstruction",
+      "genuineUserSave": false,
+      "currentPath": "tests/final-historical-reconstruction-v55.ts#reconstructPalaceAccessWithoutLedger",
+      "sourceBranch": "chat3/final-historical-fixture-recovery-v54",
+      "sourceCommit": "5233a0b31a6254183395b1ec038297377df99565",
+      "authority": [
+        "959fb3f4e61b4237ae3afb52f5d4dfe5733b4531",
+        "chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48"
+      ],
+      "unlocksCases": [
+        "case-13"
+      ]
+    },
+    "F4": {
+      "classification": "authoritative_reconstruction",
+      "genuineUserSave": false,
+      "currentPath": "tests/final-historical-reconstruction-v55.ts#reconstructLumberStayWithRunResult",
+      "sourceBranch": "chat3/final-historical-fixture-recovery-v54",
+      "sourceCommit": "5233a0b31a6254183395b1ec038297377df99565",
+      "authority": [
+        "chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb"
+      ],
+      "unlocksCases": [
+        "case-06"
+      ]
+    },
+    "F5": {
+      "classification": "authoritative_reconstruction",
+      "genuineUserSave": false,
+      "currentPath": "tests/final-historical-reconstruction-v55.ts#reconstructLumberStayPreRunResult",
+      "sourceBranch": "chat3/final-historical-fixture-recovery-v54",
+      "sourceCommit": "5233a0b31a6254183395b1ec038297377df99565",
+      "authority": [
+        "chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb"
+      ],
+      "unlocksCases": [
+        "case-06"
+      ]
+    }
+  },
+  "strongMetaSeparationRequired": [
+    "meta.strongMeta permanent ownership/knowledge",
+    "run.strongMetaSnapshot immutable current-run loadout",
+    "run.strongMetaRuntime counters tied to frozen snapshot",
+    "run.character.creation.activeHardWorkPackages separate from Strong Meta slots",
+    "legacy.lumber-stay.vitality slot-free and separate"
+  ],
+  "exactlyOnceDomainsRequired": [
+    "money",
+    "energy",
+    "calendar",
+    "reward",
+    "transaction",
+    "creation",
+    "rng_pending"
+  ],
+  "requiredCoverageDomains": [
+    "Activity",
+    "Camp",
+    "Secret Debt",
+    "Palace",
+    "D46",
+    "D47",
+    "lumber retirement",
+    "Strong Meta",
+    "NightFlow",
+    "D40",
+    "D41",
+    "D38"
+  ],
+  "forbiddenInferencePolicy": [
+    "readiness is not ending or route selection",
+    "generic debt is not Secret Debt",
+    "Street housing is not D51 provenance",
+    "Palace access is not Palace duty progress",
+    "palace.progression-complete alone is not fifteen committed duties",
+    "Prince readiness is not Prince defeat",
+    "Camp progress is not inferred from day/checkpoint/Field Time",
+    "earned Hard Work is not active D47 package selection",
+    "historical lumber-stay/vitality is not modern ending/Hard Work/Strong Meta slot"
+  ],
+  "contentPresentationSaveNeutrality": {
+    "mechanicalMutationAllowed": false,
+    "protected": [
+      "Save fields",
+      "mechanical IDs",
+      "RNG",
+      "pending identity",
+      "reward IDs",
+      "transaction IDs",
+      "conditions/effects",
+      "ending eligibility"
+    ]
+  },
+  "cases": [
+    {
+      "id": "case-01",
+      "name": "case 01: schema ladder reaches one final schema and parse twice is idempotent",
+      "domains": [
+        "schema",
+        "migration",
+        "rng_pending"
+      ],
+      "dependencyClass": "PARTIAL",
+      "runnable": "partial-now-final-release",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT4_FINAL_SAVE_MIGRATION_CLOSURE_PREFLIGHT_v21.md@1601be7b224f7b6687c4146c53d37499efb6a3f1",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "schema1-6 migration ladder",
+          "classification": "current-main"
+        },
+        {
+          "name": "F1 schema1 reconstructed raw",
+          "classification": "historical-reconstruction"
+        },
+        {
+          "name": "final public schema epoch",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "raw schema1/schema2/schema3/schema4/schema5 incomplete/schema5 complete/pre-late schema6"
+        ],
+        "afterReload": [
+          "after first parse capture final schema,pending,RNG,journal,transaction; serialize and parse again"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "transaction",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "unsupported or ambiguous schema/date rejects; supported late fields default deterministically"
+      ],
+      "stableIds": [
+        "schemaVersion",
+        "pending eventId/variantId",
+        "RNG state",
+        "RunResult transactionId"
+      ],
+      "rewardOwnershipChecks": [
+        "no reward/transaction may grow on second parse"
+      ],
+      "forbiddenInferences": [
+        "do not invent historical fields; do not wrap invalid historical date; do not label F1 genuine"
+      ],
+      "historicalFixtures": [
+        "F1"
+      ],
+      "postIntegrationRequirement": "Freeze final schema epoch and run every supported historical row through the actual assembled migration chain.",
+      "stopConditions": [
+        "second parse differs semantically",
+        "final schema epoch is not frozen",
+        "unsupported historical state is silently accepted"
+      ]
+    },
+    {
+      "id": "case-02",
+      "name": "case 02: legacy ended run receives exactly one RunResult transaction",
+      "domains": [
+        "RunResult",
+        "migration"
+      ],
+      "dependencyClass": "NOW",
+      "runnable": "current-main",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "ending-meta migration",
+          "classification": "current-main"
+        },
+        {
+          "name": "exactly-once reload helper",
+          "classification": "current-main"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "legacy ended+committed save without modern result/proof"
+        ],
+        "afterReload": [
+          "after first load; after second load"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "transaction",
+        "reward"
+      ],
+      "rejectionDefaultRules": [
+        "legacy ended state gets deterministic compatibility result/proof once"
+      ],
+      "stableIds": [
+        "resultId",
+        "transactionId",
+        "endingId",
+        "meta.appliedResultTransactions"
+      ],
+      "rewardOwnershipChecks": [
+        "reward list cannot grow on reload; transaction count exactly one"
+      ],
+      "forbiddenInferences": [
+        "do not mint a second transaction; do not replay completion reward"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "",
+      "stopConditions": [
+        "resultId or transactionId changes on second load",
+        "reward replays",
+        "transaction appears more than once"
+      ]
+    },
+    {
+      "id": "case-03",
+      "name": "case 03: Strong Meta migration and protected profile merge never rewrite the current run",
+      "domains": [
+        "Strong Meta",
+        "creation",
+        "profile merge"
+      ],
+      "dependencyClass": "NOW",
+      "runnable": "current-main",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "schema5 Strong Meta migration",
+          "classification": "current-main"
+        },
+        {
+          "name": "protected profile merge",
+          "classification": "current-main"
+        },
+        {
+          "name": "final reward registry union",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "schema5 incomplete creation; schema5 completed creation; imported older Meta plus richer current profile"
+        ],
+        "afterReload": [
+          "after migration; after protected merge; second parse"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "creation",
+        "reward"
+      ],
+      "rejectionDefaultRules": [
+        "incomplete creation stays snapshot-free; completed legacy creation gets compatibility snapshot"
+      ],
+      "stableIds": [
+        "meta.strongMeta",
+        "run.strongMetaSnapshot",
+        "run.strongMetaRuntime",
+        "activeHardWorkPackages"
+      ],
+      "rewardOwnershipChecks": [
+        "permanent ownership may union; run snapshot/runtime remain frozen; package snapshot remains separate"
+      ],
+      "forbiddenInferences": [
+        "do not rebuild current-run snapshot from newer profile; do not infer package selection from ownership"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Re-run after D38/Secret Debt/Palace reward registry composition on the final target.",
+      "stopConditions": [
+        "profile merge changes run.strongMetaSnapshot",
+        "profile merge changes run.strongMetaRuntime",
+        "Hard Work packages consume Strong Meta slots"
+      ]
+    },
+    {
+      "id": "case-04",
+      "name": "case 04: D40 selected-route repair is conservative and idempotent",
+      "domains": [
+        "D40",
+        "ending migration"
+      ],
+      "dependencyClass": "NOW",
+      "runnable": "current-main",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "D40 route-repair table",
+          "classification": "current-main"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "each unambiguous legacy route-specific stage; generic outcome-ready; existing selected fact; overlapping selected facts"
+        ],
+        "afterReload": [
+          "after first parse; after second parse"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "state_repair"
+      ],
+      "rejectionDefaultRules": [
+        "only exact one-to-one historical stage may add its matching selected fact"
+      ],
+      "stableIds": [
+        "ending-route-*-selected"
+      ],
+      "rewardOwnershipChecks": [
+        "no Specialist/completion ownership is granted from readiness repair"
+      ],
+      "forbiddenInferences": [
+        "do not infer route selection from generic readiness; do not erase existing selected facts"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "",
+      "stopConditions": [
+        "generic readiness creates a route",
+        "second parse adds another/different route fact"
+      ]
+    },
+    {
+      "id": "case-05",
+      "name": "case 05: D41 completed legacy Tavern migration canonicalizes once and Specialist ownership dedupes",
+      "domains": [
+        "D41",
+        "ending migration",
+        "Strong Meta"
+      ],
+      "dependencyClass": "NOW",
+      "runnable": "current-main",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "D41 legacy Tavern migration",
+          "classification": "current-main"
+        },
+        {
+          "name": "final Strong Meta registry",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "completed tavern-stay/tavern-guild/tavern-court; eligible-only; committed unfinished; old reward evidence; protected merge"
+        ],
+        "afterReload": [
+          "after canonicalization; second parse; protected profile merge"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "reward",
+        "transaction"
+      ],
+      "rejectionDefaultRules": [
+        "completed legacy IDs canonicalize; eligible-only removed; unfinished commit resets without completion"
+      ],
+      "stableIds": [
+        "tavern-stay",
+        "tavern-guild",
+        "tavern-court",
+        "ending.tavern.innkeeper",
+        "ending.tavern.sanctuary",
+        "ending.tavern.information-broker"
+      ],
+      "rewardOwnershipChecks": [
+        "canonical Specialist ownership at most once through canonical Strong Meta path"
+      ],
+      "forbiddenInferences": [
+        "do not turn eligibility or unfinished commit into completion"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Re-run after final Strong Meta registry composition.",
+      "stopConditions": [
+        "eligible-only becomes completion",
+        "unfinished commit becomes completion",
+        "Specialist ownership duplicates"
+      ]
+    },
+    {
+      "id": "case-06",
+      "name": "case 06: retired lumber-stay vitality migration preserves history without creating a modern ending",
+      "domains": [
+        "lumber retirement",
+        "RunResult",
+        "legacy perk"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_HISTORICAL_FIXTURE_RECOVERY_v56.md on chat3/final-historical-fixture-recovery-v54",
+        "chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb"
+      ],
+      "dependencies": [
+        {
+          "name": "lumber-stay retirement producer",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "F4/F5 historical reconstructions",
+          "classification": "historical-reconstruction"
+        },
+        {
+          "name": "final ending catalog",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "eligible-only; committed unfinished; completed with existing RunResult; completed pre-RunResult; vitality-only; both evidence; no evidence; protected merge"
+        ],
+        "afterReload": [
+          "after first migration; after second parse/profile merge"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "reward",
+        "transaction",
+        "energy"
+      ],
+      "rejectionDefaultRules": [
+        "eligible-only removed without reward; unfinished commit resumes active; historical completion preserved; pre-RunResult gets compatibility proof"
+      ],
+      "stableIds": [
+        "lumber-stay",
+        "vitality",
+        "legacy.lumber-stay.vitality",
+        "rr.legacy.lumber-stay",
+        "tx.legacy.lumber-stay"
+      ],
+      "rewardOwnershipChecks": [
+        "legacy perk owns +1 Energy slot-free; no Strong Meta/Hard Work conversion; no modern reward replay"
+      ],
+      "forbiddenInferences": [
+        "do not fabricate a modern ending; do not convert vitality into Strong Meta or Hard Work; do not relabel F4/F5 genuine"
+      ],
+      "historicalFixtures": [
+        "F4",
+        "F5"
+      ],
+      "postIntegrationRequirement": "Assemble retirement before final ending/reference validation and run against the final catalog.",
+      "stopConditions": [
+        "live lumber-stay remains in modern catalog",
+        "existing transaction changes",
+        "pre-RunResult reward replays",
+        "legacy perk consumes a slot"
+      ]
+    },
+    {
+      "id": "case-07",
+      "name": "case 07: NightFlow atomic reload matrix is exactly once at every phase",
+      "domains": [
+        "NightFlow",
+        "rng_pending"
+      ],
+      "dependencyClass": "NOW",
+      "runnable": "current-main",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "NightFlow persistence",
+          "classification": "current-main"
+        },
+        {
+          "name": "exactly-once reload suite",
+          "classification": "current-main"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "before lodging; after lodging payment; pending forced event; after voluntary choice; queued next-day modifier; after calendar commit/start-day completion"
+        ],
+        "afterReload": [
+          "reload at every checkpoint and continue once against uninterrupted control"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "money",
+        "energy",
+        "calendar",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "persist handled event/choice/provenance state; no phase rollback"
+      ],
+      "stableIds": [
+        "lodgingPaymentCommitted",
+        "selectedNightChoiceId",
+        "calendarAdvanceCommitted",
+        "handledEventIds",
+        "pending eventId/variantId"
+      ],
+      "rewardOwnershipChecks": [
+        "no duplicated lodging cost or next-day effect"
+      ],
+      "forbiddenInferences": [
+        "do not reroll pending variant; do not replay forced resolution"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "",
+      "stopConditions": [
+        "lodging charged twice",
+        "calendar advances twice",
+        "next-day modifier applies twice",
+        "pending identity changes"
+      ]
+    },
+    {
+      "id": "case-08",
+      "name": "case 08: pre-Secret-Debt saves default unseen and typed Secret Debt states roundtrip exactly",
+      "domains": [
+        "Secret Debt",
+        "migration"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT4_FINAL_SAVE_MIGRATION_CLOSURE_PREFLIGHT_v21.md@1601be7b224f7b6687c4146c53d37499efb6a3f1",
+        "chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e"
+      ],
+      "dependencies": [
+        {
+          "name": "typed Secret Debt state",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final schema carrier",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "schema6 save with carrier absent; unseen/refused/accepted/bound/paid-freedom/takeover"
+        ],
+        "afterReload": [
+          "after first parse; after serialize+parse"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "state_default"
+      ],
+      "rejectionDefaultRules": [
+        "absent carrier defaults exactly to unseen; typed state roundtrips exactly"
+      ],
+      "stableIds": [
+        "unseen",
+        "refused",
+        "accepted",
+        "bound",
+        "paid-freedom",
+        "takeover"
+      ],
+      "rewardOwnershipChecks": [
+        "no reward ownership is inferred from state defaulting"
+      ],
+      "forbiddenInferences": [
+        "do not infer Secret Debt from generic debt, Street housing, money, Lust, text or history"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Assemble typed Secret Debt into the final schema and capture the exact absent-carrier historical boundary.",
+      "stopConditions": [
+        "generic debt becomes Secret Debt",
+        "typed state changes on roundtrip"
+      ]
+    },
+    {
+      "id": "case-09",
+      "name": "case 09: Secret Debt lender acceptance and ten-day trap cannot replay or backdate forced Night",
+      "domains": [
+        "Secret Debt",
+        "NightFlow"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e"
+      ],
+      "dependencies": [
+        {
+          "name": "Secret Debt lender/trap runtime",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final NightFlow composition",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "before lender roll; pending lender encounter; immediately after accept; day 9 before Night; exact day 10 activation; immediately after activation"
+        ],
+        "afterReload": [
+          "reload at each checkpoint and compare uninterrupted control"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "money",
+        "calendar",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "acceptedDay/trapDay persist; exact trap boundary activates once"
+      ],
+      "stableIds": [
+        "secret-debt.lender-encounter",
+        "acceptedDay",
+        "trapDay",
+        "boundDay"
+      ],
+      "rewardOwnershipChecks": [
+        "no ending/reward ownership at trap activation"
+      ],
+      "forbiddenInferences": [
+        "do not reroll lender attempt; do not backdate bound-night penalty to preceding Night"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Compose Secret Debt with final NightFlow and run exact day-boundary reload matrix.",
+      "stopConditions": [
+        "+2000 applies twice",
+        "trap activates early/late",
+        "preceding Night receives retroactive bound penalty"
+      ]
+    },
+    {
+      "id": "case-10",
+      "name": "case 10: Secret Debt forced Night and D51 provenance queue are reload-safe",
+      "domains": [
+        "Secret Debt",
+        "D51",
+        "NightFlow"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e",
+        "chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf"
+      ],
+      "dependencies": [
+        {
+          "name": "Secret Debt forced Night",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "D51 provenance handling",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final NightFlow/start-day ownership",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "bound normal/cheap/Street; before forced choice; after forced choice/queued tags; before start-day processing"
+        ],
+        "afterReload": [
+          "reload before/after forced choice and before start-day processing"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "energy",
+        "calendar",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "forced before-lodging Debt Night has priority; queued tags persist and clear once"
+      ],
+      "stableIds": [
+        "secret-debt.forced-night",
+        "lodging.street.energy-penalty",
+        "secret-debt.bound-night"
+      ],
+      "rewardOwnershipChecks": [
+        "no reward ownership at Night boundary"
+      ],
+      "forbiddenInferences": [
+        "do not run voluntary/D42 Night in parallel; do not synthesize provenance from housing alone"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Assemble Secret Debt+D51 on the same Night/start-day path and execute as one integration case.",
+      "stopConditions": [
+        "forced Night does not preempt",
+        "provenance tag disappears before processing",
+        "calendar advances twice"
+      ]
+    },
+    {
+      "id": "case-11",
+      "name": "case 11: D51 compatibility is provenance-gated and never a global Energy floor",
+      "domains": [
+        "D51",
+        "Energy"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf"
+      ],
+      "dependencies": [
+        {
+          "name": "D51 provenance matrix",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final Energy basis",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "base Energy3+both tags; Energy4+both tags; Street only; bound only; both+unrelated third -1; Street housing without tag"
+        ],
+        "afterReload": [
+          "after start-day processing; reload after tags clear"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "energy"
+      ],
+      "rejectionDefaultRules": [
+        "compatibility floor applies only to the exact provenance pair"
+      ],
+      "stableIds": [
+        "lodging.street.energy-penalty",
+        "secret-debt.bound-night"
+      ],
+      "rewardOwnershipChecks": [
+        "Strong Meta/legacy Energy modifiers contribute to effective base but are not provenance tags"
+      ],
+      "forbiddenInferences": [
+        "do not implement global Math.max(2,...); do not infer Street tag from housing"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Run producer T1-T11 against final energyMax/start-day composition.",
+      "stopConditions": [
+        "unrelated third penalty is clamped away",
+        "Street without tag receives compatibility floor"
+      ]
+    },
+    {
+      "id": "case-12",
+      "name": "case 12: Secret Debt hidden-work repay Takeover and ending ledger never replay",
+      "domains": [
+        "Secret Debt",
+        "RunResult",
+        "Strong Meta"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51"
+      ],
+      "dependencies": [
+        {
+          "name": "Secret Debt full route",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "canonical Strong Meta reward binding",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "hidden shift 49->50; 74->75; after full 20000 repay; after Takeover; each ending committed/completed; second reload/profile merge"
+        ],
+        "afterReload": [
+          "reload across each atomic boundary; second load after ending completion"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "money",
+        "reward",
+        "transaction"
+      ],
+      "rejectionDefaultRules": [
+        "thresholds/repayment/transitions occur once; reward only on completion transaction"
+      ],
+      "stableIds": [
+        "secret-debt.hidden-work",
+        "secret-debt.repay",
+        "secret-debt.takeover",
+        "ending.secret-debt.paid-freedom",
+        "ending.secret-debt.bound-life",
+        "ending.secret-debt.takeover"
+      ],
+      "rewardOwnershipChecks": [
+        "canonical rewards secret-debt.paid-freedom.earned-reserve-match, secret-debt.bound-life.work-rhythm, secret-debt.takeover.network-retainer owned once; no generic duplicate"
+      ],
+      "forbiddenInferences": [
+        "do not apply Earned Reserve Match to bound hidden work; do not grant ending reward at commit"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Bind Secret Debt ending rewards to final Strong Meta registry and execute route checkpoints.",
+      "stopConditions": [
+        "hidden shift/wage repeats",
+        "repayment repeats",
+        "ending reward duplicates",
+        "generic unlock duplicates canonical ownership"
+      ]
+    },
+    {
+      "id": "case-13",
+      "name": "case 13: old Palace access without Rich6 ledger gets neutral progression while access is preserved",
+      "domains": [
+        "Palace",
+        "migration"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_HISTORICAL_FIXTURE_RECOVERY_v56.md on chat3/final-historical-fixture-recovery-v54",
+        "chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48"
+      ],
+      "dependencies": [
+        {
+          "name": "F3 access-without-ledger reconstruction",
+          "classification": "historical-reconstruction"
+        },
+        {
+          "name": "Rich6 Palace migration",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final Palace schema",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "accepted D23 access fact present; no run.progression.palace; no progression-complete"
+        ],
+        "afterReload": [
+          "after migration; second parse"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "state_default"
+      ],
+      "rejectionDefaultRules": [
+        "preserve access; create exact neutral Palace ledger; strip obsolete generic unlock if present"
+      ],
+      "stableIds": [
+        "palace.access-granted",
+        "run.progression.palace"
+      ],
+      "rewardOwnershipChecks": [
+        "no reward/ending ownership inferred from access"
+      ],
+      "forbiddenInferences": [
+        "do not infer duty count, advanced stage, Prince defeat or outcome readiness; do not manufacture F3 from arbitrary final fresh save"
+      ],
+      "historicalFixtures": [
+        "F3"
+      ],
+      "postIntegrationRequirement": "Build F3 from an accepted D23 access host on the assembled target, then migrate.",
+      "stopConditions": [
+        "access is lost",
+        "nonzero duty progress appears",
+        "Prince defeat/outcome readiness appears"
+      ]
+    },
+    {
+      "id": "case-14",
+      "name": "case 14: ambiguous Palace progression-complete without duty proof is never fabricated into fifteen duties",
+      "domains": [
+        "Palace",
+        "migration"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT4_FINAL_SAVE_MIGRATION_CLOSURE_PREFLIGHT_v21.md@1601be7b224f7b6687c4146c53d37499efb6a3f1",
+        "chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48"
+      ],
+      "dependencies": [
+        {
+          "name": "Palace completion compatibility policy",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "palace.progression-complete present without exact committed-duty proof"
+        ],
+        "afterReload": [
+          "after attempted load under final approved policy"
+        ]
+      },
+      "exactlyOnceDomains": [],
+      "rejectionDefaultRules": [
+        "must use one explicitly approved historical mapping OR explicit compatibility rejection"
+      ],
+      "stableIds": [
+        "palace.progression-complete",
+        "committedDutyIds"
+      ],
+      "rewardOwnershipChecks": [
+        "no ending/reward ownership may be inferred from ambiguous completion fact"
+      ],
+      "forbiddenInferences": [
+        "never synthesize 15 duties/counters from progression-complete alone"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Freeze one final approved policy: explicit documented mapping or explicit rejection.",
+      "stopConditions": [
+        "runtime neither maps explicitly nor rejects",
+        "15 duty IDs are fabricated"
+      ]
+    },
+    {
+      "id": "case-15",
+      "name": "case 15: Prince confrontation resumes exact authored phase and Return Home remains explicit",
+      "domains": [
+        "Palace",
+        "Prince",
+        "RunResult"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48"
+      ],
+      "dependencies": [
+        {
+          "name": "Prince narrative producer",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final Palace assembly",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "12x91 ready undefeated; pending phase1/2/3/4; back-out/failure; immediate post-success; Return Home eligible/uncommitted/committed/completed"
+        ],
+        "afterReload": [
+          "reload each pending phase and after success/ending completion"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "reward",
+        "transaction",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "pending quest/choice resumes exactly; readiness is non-terminal; Return Home explicit"
+      ],
+      "stableIds": [
+        "palace.confront-prince",
+        "palace.prince-confrontation",
+        "palace.prince-defeated",
+        "ending.palace.return-home"
+      ],
+      "rewardOwnershipChecks": [
+        "Return Home reward only on completed ending transaction"
+      ],
+      "forbiddenInferences": [
+        "do not infer Prince defeat from 12x91 readiness; do not auto-commit Return Home"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Assemble Prince narrative + final Palace ending path and serialize every authored phase.",
+      "stopConditions": [
+        "pending phase changes on reload",
+        "back-out writes defeat",
+        "Return Home auto-commits",
+        "transaction duplicates"
+      ]
+    },
+    {
+      "id": "case-16",
+      "name": "case 16: Activity entry route checkpoint and RNG reload do not recharge or reinterpret the envelope",
+      "domains": [
+        "Activity",
+        "rng_pending"
+      ],
+      "dependencyClass": "NOW",
+      "runnable": "current-main",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "Activity persisted envelope",
+          "classification": "current-main"
+        },
+        {
+          "name": "final Activity definitions",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "after 2-Energy entry; after route selection; after one option; before success/result; before escape"
+        ],
+        "afterReload": [
+          "reload each checkpoint and compare uninterrupted control"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "energy",
+        "rng_pending",
+        "reward"
+      ],
+      "rejectionDefaultRules": [
+        "definitionVersion/adapter mismatch rejects; compatible envelope resumes exactly"
+      ],
+      "stableIds": [
+        "definitionVersion",
+        "adapter",
+        "routeId",
+        "resolvedOptionIds",
+        "checkpoint",
+        "activity RNG",
+        "global RNG"
+      ],
+      "rewardOwnershipChecks": [
+        "result effects never replay on reload"
+      ],
+      "forbiddenInferences": [
+        "do not reinterpret incompatible definition/adapter; do not refund/recharge entry Energy"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Re-run against final Activity definitions/catalog after all content assembly.",
+      "stopConditions": [
+        "entry Energy refunded",
+        "route/checkpoint/RNG changes",
+        "incompatible version/adapter accepted"
+      ]
+    },
+    {
+      "id": "case-17",
+      "name": "case 17: legacy Activity Field Time and mini-game state migrate conservatively",
+      "domains": [
+        "Activity",
+        "migration",
+        "mini-games"
+      ],
+      "dependencyClass": "PARTIAL",
+      "runnable": "partial-now-final-release",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_HISTORICAL_FIXTURE_RECOVERY_v56.md on chat3/final-historical-fixture-recovery-v54",
+        "current-main@a06a0b1e5f71d6ddcd747c665fb80ae8f1ba8027"
+      ],
+      "dependencies": [
+        {
+          "name": "F2 pre-Field-Time envelope",
+          "classification": "historical-reconstruction"
+        },
+        {
+          "name": "Field Time/mini-game migration",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "F2 pre-Field-Time envelope lacking fieldTimeRemaining/miniGames; modern nonzero suspicion/status/choiceIds"
+        ],
+        "afterReload": [
+          "after migration; modern parse/serialize/parse"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "reward",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "old envelope receives only historically approved fallback/defaults; modern mini-game state roundtrips"
+      ],
+      "stableIds": [
+        "lumber.forest",
+        "counter.v1",
+        "fieldTimeRemaining",
+        "miniGames"
+      ],
+      "rewardOwnershipChecks": [
+        "migration must not replay result/progression transition"
+      ],
+      "forbiddenInferences": [
+        "do not insert later route/option fields into F2; do not label F2 genuine; do not invent mini-game progress"
+      ],
+      "historicalFixtures": [
+        "F2"
+      ],
+      "postIntegrationRequirement": "Embed F2 into a historically compatible full-save host on the final target and run the real migration.",
+      "stopConditions": [
+        "migration replays Activity result",
+        "modern suspicion/status changes",
+        "unapproved historical fields are fabricated"
+      ]
+    },
+    {
+      "id": "case-18",
+      "name": "case 18: old active Activity gets only the exact neutral Camp default and partial Camp state rejects",
+      "domains": [
+        "Activity",
+        "Camp",
+        "migration"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/activity-camp-baseline-repair-v19@8b5874faa23130208c83818af3f37431c1377caa"
+      ],
+      "dependencies": [
+        {
+          "name": "Camp persistence repair",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final Activity schema",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "old active envelope with both Camp fields absent; only version absent; only state absent; impossible phase/commit combo"
+        ],
+        "afterReload": [
+          "after load/default or rejection; second parse for valid old envelope"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "state_default"
+      ],
+      "rejectionDefaultRules": [
+        "both fields absent -> exact neutral Camp state; partial/incompatible state rejects"
+      ],
+      "stableIds": [
+        "campStateVersion",
+        "campState",
+        "idle",
+        "chosen",
+        "calendar_advanced",
+        "field_day_ready"
+      ],
+      "rewardOwnershipChecks": [
+        "no reward ownership at Camp migration"
+      ],
+      "forbiddenInferences": [
+        "do not infer Camp from day, checkpoint or Field Time"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Port executable-green Camp delta onto final Activity schema without wholesale historical overwrite.",
+      "stopConditions": [
+        "partial Camp state is defaulted instead of rejected",
+        "non-neutral Camp progress invented"
+      ]
+    },
+    {
+      "id": "case-19",
+      "name": "case 19: Camp atomic boundary reload matrix preserves two-night cap and exactly-once calendar and Field Time",
+      "domains": [
+        "Camp",
+        "Activity"
+      ],
+      "dependencyClass": "FUTURE",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/activity-camp-baseline-repair-v19@8b5874faa23130208c83818af3f37431c1377caa"
+      ],
+      "dependencies": [
+        {
+          "name": "Camp persistence/runtime",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final Activity composition",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "before Camp choice; chosen; calendar_advanced; field_day_ready; after first; after second; attempted third"
+        ],
+        "afterReload": [
+          "reload each boundary and compare uninterrupted control"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "calendar",
+        "energy"
+      ],
+      "rejectionDefaultRules": [
+        "third Camp rejects; phase commits persist exactly"
+      ],
+      "stableIds": [
+        "nightsUsed",
+        "boundaryDay",
+        "calendarAdvanceCommitted",
+        "fieldTimeRefreshCommitted"
+      ],
+      "rewardOwnershipChecks": [
+        "Camp itself grants no ending/Strong Meta reward"
+      ],
+      "forbiddenInferences": [
+        "do not charge city lodging; do not run ordinary city Night; do not globally refresh daily Energy"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Run the full two-night Camp matrix on final Activity schema.",
+      "stopConditions": [
+        "calendar increments twice for one Camp",
+        "Field Time refresh repeats",
+        "third Camp succeeds",
+        "daily Energy globally refreshes"
+      ]
+    },
+    {
+      "id": "case-20",
+      "name": "case 20: Camp cannot suppress Secret Debt forced Night or lose the next-day Debt consequence",
+      "domains": [
+        "Camp",
+        "Secret Debt",
+        "D51",
+        "NightFlow"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/activity-camp-baseline-repair-v19@8b5874faa23130208c83818af3f37431c1377caa",
+        "chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e",
+        "chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf"
+      ],
+      "dependencies": [
+        {
+          "name": "Camp",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "Secret Debt forced Night",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "D51 provenance",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "combined boundary ownership",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "bound Activity at Camp boundary non-Street/Street; before interception; after forced Night selection; before D51 start-day"
+        ],
+        "afterReload": [
+          "reload before/after interception and before start-day processing"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "calendar",
+        "energy",
+        "rng_pending"
+      ],
+      "rejectionDefaultRules": [
+        "Secret Debt forced Night preempts Camp before Camp calendar commit; D51 owns next-day pair once"
+      ],
+      "stableIds": [
+        "secret-debt.forced-night",
+        "secret-debt.bound-night",
+        "lodging.street.energy-penalty"
+      ],
+      "rewardOwnershipChecks": [
+        "no Camp/Debt reward ownership at boundary"
+      ],
+      "forbiddenInferences": [
+        "do not let Camp suppress forced Night; do not also advance Camp calendar/Field Time after preemption"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Execute only on the fully composed Activity+Camp+SecretDebt+D51 target.",
+      "stopConditions": [
+        "Camp advances calendar despite forced Night preemption",
+        "bound tag lost",
+        "D51 pair processes twice"
+      ]
+    },
+    {
+      "id": "case-21",
+      "name": "case 21: D38 Activity ending eligibility stays non-terminal and canonical Specialist reward ownership applies once",
+      "domains": [
+        "D38",
+        "Activity endings",
+        "Strong Meta"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat3/activity-ending-family-producer-v16-r1@3cf69d7cb3df1a58d68908159d0acc14736435c4",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51"
+      ],
+      "dependencies": [
+        {
+          "name": "D38 ending producer",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "canonical Strong Meta binding",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "Pathfinder/Preservation/Network eligibility; explicit commit; completion; second load; protected merge"
+        ],
+        "afterReload": [
+          "reload at eligibility, after commit, after completion, after profile merge"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "reward",
+        "transaction"
+      ],
+      "rejectionDefaultRules": [
+        "eligibility is non-terminal; commit alone grants no reward"
+      ],
+      "stableIds": [
+        "ending.activity.pathfinder",
+        "ending.activity.preservation",
+        "ending.activity.network",
+        "specialist.activity.surveyors-atlas",
+        "specialist.activity.field-archive",
+        "specialist.activity.contact-network"
+      ],
+      "rewardOwnershipChecks": [
+        "each Specialist ID owned exactly once in meta.strongMeta; no duplicate generic unlock"
+      ],
+      "forbiddenInferences": [
+        "do not auto-commit from eligibility; do not preserve a second generic ownership seam"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Bind D38 reward IDs through the final Strong Meta registry and execute all three endings.",
+      "stopConditions": [
+        "reward granted at eligibility/commit",
+        "canonical ownership duplicates",
+        "generic unlock duplicates canonical reward"
+      ]
+    },
+    {
+      "id": "case-22",
+      "name": "case 22: D46 existing Lust and D47 package snapshot preserve old lives and apply new packages once",
+      "domains": [
+        "D46",
+        "D47",
+        "creation",
+        "Hard Work"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced",
+        "chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4"
+      ],
+      "dependencies": [
+        {
+          "name": "D46 start balance",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "D47 package mapping",
+          "classification": "frozen-producer"
+        },
+        {
+          "name": "final creation/Strong Meta order",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "legacy Lust1; typed Lust17; fresh post-D46; migrated completed pre-D47; pre-finish package subset; post-finish subset; Prostitute package"
+        ],
+        "afterReload": [
+          "reload before finishCreation; reload after finishCreation"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "creation",
+        "reward"
+      ],
+      "rejectionDefaultRules": [
+        "old stored Lust unchanged; fresh Lust=5; no retroactive package application; selected snapshot persists"
+      ],
+      "stableIds": [
+        "activeHardWorkPackages",
+        "hardWorkPackagesApplied",
+        "hardWork:prostitute"
+      ],
+      "rewardOwnershipChecks": [
+        "D47 packages are outside Strong Meta slots; Prostitute +5 Lust is one package component applied once"
+      ],
+      "forbiddenInferences": [
+        "do not infer active packages from earned Hard Work; do not rewrite old Lust to 5; do not apply D47 retroactively"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Assemble D46+D47 with final creation ordering, then execute pre/post-finish reloads.",
+      "stopConditions": [
+        "stored old Lust changes",
+        "already-complete old life gains D47",
+        "package effects apply twice"
+      ]
+    },
+    {
+      "id": "case-23",
+      "name": "case 23: D23 package identity and content-presentation-only tranches are save-neutral",
+      "domains": [
+        "D23",
+        "content-only",
+        "presentation-only",
+        "Strong Meta"
+      ],
+      "dependencyClass": "FINAL_ASSEMBLY",
+      "runnable": "fully-assembled-release-target",
+      "authorities": [
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_DESIGN_v52.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT3_FINAL_SAVE_MIGRATION_GATE_PREP_v53.md on chat3/final-save-migration-gate-prep-v51",
+        "CHAT4_FINAL_SAVE_MIGRATION_CLOSURE_PREFLIGHT_v21.md@1601be7b224f7b6687c4146c53d37499efb6a3f1"
+      ],
+      "dependencies": [
+        {
+          "name": "D23 package identity",
+          "classification": "current-main"
+        },
+        {
+          "name": "D38 v17/Palace v19/localization/presentation",
+          "classification": "content-only"
+        },
+        {
+          "name": "final catalog",
+          "classification": "final-assembly"
+        }
+      ],
+      "checkpoints": {
+        "before": [
+          "New Start+ all ten active packages with representative pending/RNG/current-run snapshot; serialize before content layers"
+        ],
+        "afterReload": [
+          "load/serialize on final content catalog and compare mechanical snapshot"
+        ]
+      },
+      "exactlyOnceDomains": [
+        "rng_pending",
+        "transaction",
+        "creation"
+      ],
+      "rejectionDefaultRules": [
+        "only approved content-reference validation/presentation lookup may differ; mechanics must remain identical"
+      ],
+      "stableIds": [
+        "10 ordinary package identities",
+        "run.strongMetaSnapshot",
+        "pending mechanical identity",
+        "transactionId"
+      ],
+      "rewardOwnershipChecks": [
+        "Strong Meta slots remain separate from ten package identities; content/presentation adds no rewards"
+      ],
+      "forbiddenInferences": [
+        "do not let localization/presentation mutate Save fields,RNG,reward IDs,conditions/effects,ending eligibility or transactions"
+      ],
+      "historicalFixtures": [],
+      "postIntegrationRequirement": "Run mechanical before/after snapshot on final D38 v17 + Palace v19 + localization/presentation stack.",
+      "stopConditions": [
+        "any content/presentation-only tranche mutates mechanical save state",
+        "D23 counts bonus components instead of 10 identities"
+      ]
+    }
+  ]
+}
