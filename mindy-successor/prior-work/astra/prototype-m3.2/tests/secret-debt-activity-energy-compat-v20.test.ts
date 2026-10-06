@@ -90,7 +90,7 @@ function finishNight(s:Save,lodgingId:'lodging.normal'|'lodging.cheap'|'lodging.
     }
     throw new Error('Unexpected NightFlow phase: '+phase);
   }
-  return next;
+  return resolvePending(next);
 }
 
 function enterForest(s:Save){
@@ -137,6 +137,7 @@ test('T4 reload before forced-Night choice preserves exactly-once bound and Stre
   assert.equal(s.run.flow.night?.phase,'LodgingResolution');
   assert.deepEqual(s.run.dayState.nextDayModifiers.tags.filter(tag=>tag===BOUND_NIGHT_TAG),[BOUND_NIGHT_TAG]);
   s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
+  s=resolvePending(s);
 
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.historyState.eventHistory[SECRET_DEBT_FORCED_NIGHT_EVENT_ID]?.count,1);
@@ -153,6 +154,7 @@ test('T5 reload after forced-Night choice preserves queued -1 and Street adds it
   assert.equal(s.run.dayState.nextDayModifiers.energyDelta,-1);
   assert.deepEqual(s.run.dayState.nextDayModifiers.tags.filter(tag=>tag===BOUND_NIGHT_TAG),[BOUND_NIGHT_TAG]);
   s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
+  s=resolvePending(s);
 
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.deepEqual(s.run.dayState.nextDayModifiers,{energyDelta:0,statEffects:[],tags:[]});
@@ -186,7 +188,7 @@ test('T7 acceptance-to-trap activation morning gets Street -1 only and no retroa
   s=dispatch(s,{type:'chooseNightChoice',id:'night.sleep'},catalog);
 
   assert.equal(s.run.secretDebt.status,'bound');
-  assert.equal(s.run.secretDebt.boundDay,1);
+  assert.equal(s.run.secretDebt.boundDay,10);
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.pending?.eventId,'secret-debt.trap-activation');
   assert.equal(s.run.historyState.eventHistory[SECRET_DEBT_FORCED_NIGHT_EVENT_ID],undefined);
@@ -243,6 +245,7 @@ test('T11 unrelated third -1 applies after D51 pair floor and may reduce usable 
   s.run.dayState.nextDayModifiers.energyDelta-=1;
   s.run.dayState.nextDayModifiers.tags.push('test.unrelated-energy-penalty');
   s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
+  s=resolvePending(s);
 
   assert.equal(s.run.dayState.energyCurrent,1);
   assert.throws(()=>enterForest(s),/Energy/);
