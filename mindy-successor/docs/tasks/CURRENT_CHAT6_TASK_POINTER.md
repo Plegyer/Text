@@ -1,21 +1,23 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **START NOW — FINAL PLAYER-FACING RELEASE EVIDENCE v66-v67**
+Status: **BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_EVIDENCE**
 Owner: Chat 6
 
-Previous cross-contract QA v63-v65 is accepted.
-
-Current branch:
+Completed branch:
 `chat6/final-player-facing-release-evidence-v66`
 
-Task:
+Completed task:
 `mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_RELEASE_EVIDENCE_v66_v67_TASK.md`
 
-This is intentionally lightweight.
-Read the compact v65 handoff and Leader checkpoint first.
-Do not reread giant manifests unless one exact field must be verified.
+Release evidence ledger:
+`mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-release-evidence-v66.json`
 
-No production changes. No full CI. Do not merge main.
+Final handoff:
+`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_RELEASE_EVIDENCE_v67.md`
 
-Expected final:
+The final-assembly execution slots remain intentionally NOT-RUN until a fully assembled release candidate exists.
+
+No production runtime/mechanics/content changes. No full CI. Do not merge main.
+
+Expected final achieved:
 `BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_EVIDENCE`.
