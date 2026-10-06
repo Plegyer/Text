@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "authority": "D38",
+  "status": "READY_FOR_CHAT2_ASSEMBLY",
+  "bindings": [
+    {
+      "endingId": "ending.activity.pathfinder",
+      "rewardId": "specialist.activity.surveyors-atlas",
+      "metaReward": {
+        "kind": "strongMeta",
+        "rewardId": "specialist.activity.surveyors-atlas",
+        "reward": "specialist.activity.surveyors-atlas"
+      }
+    },
+    {
+      "endingId": "ending.activity.preservation",
+      "rewardId": "specialist.activity.field-archive",
+      "metaReward": {
+        "kind": "strongMeta",
+        "rewardId": "specialist.activity.field-archive",
+        "reward": "specialist.activity.field-archive"
+      }
+    },
+    {
+      "endingId": "ending.activity.network",
+      "rewardId": "specialist.activity.contact-network",
+      "metaReward": {
+        "kind": "strongMeta",
+        "rewardId": "specialist.activity.contact-network",
+        "reward": "specialist.activity.contact-network"
+      }
+    }
+  ]
+}
