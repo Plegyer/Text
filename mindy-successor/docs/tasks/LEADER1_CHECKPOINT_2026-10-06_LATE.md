@@ -394,3 +394,23 @@ Both new bundles are intentionally lightweight to preserve chat context.
 User must manually message each worker window to start.
 
 Broad burn-down remains **5**.
+
+
+## Live update — Chat3 v66 and Chat6 v69 accepted / Stage-1 support refills
+
+Chat3 final save/migration dry-run v65-v66 completed and is accepted.
+Current:
+- branch `chat3/secret-debt-d51-stage1-release-gate-v67`;
+- task `CHAT3_SECRET_DEBT_D51_STAGE1_RELEASE_GATE_v67_v68_TASK.md`;
+- purpose: compact exact save/migration release gate for Chat2 Secret Debt+D51 candidate.
+
+Chat6 final player-facing release dry-run v68-v69 completed and is accepted.
+Current:
+- branch `chat6/secret-debt-localization-recovery-manifest-v70`;
+- task `CHAT6_SECRET_DEBT_LOCALIZATION_RECOVERY_v70_v71_TASK.md`;
+- purpose: exact-key Secret Debt localization recovery manifest/validator for the remaining confirmed Chat2 blocker.
+
+Both new bundles are intentionally lightweight and support production Stage 1 directly.
+User must manually message each worker window to start.
+
+Broad burn-down remains **5**.
