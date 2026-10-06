@@ -634,3 +634,21 @@ Do not describe a running GitHub Actions check as the worker itself "working".
 - user-facing status: NEW TASK ASSIGNED.
 
 User communication rule remains: report only works / waits / error / done, and do not call a running GitHub Actions job “the chat working”.
+
+
+## AUTHORITATIVE LIVE UPDATE — D42 GREEN / CHAT5 CHAT6 REFILLED
+
+- D42 production head `e93f677da1b4ddcd538422fdbaa4550eb1440e8c` passed full CI #1215 / run `37455213872`.
+- PR #294 could not yet merge because current main contains newer Leader coordination docs.
+- Leader synced the Chat 2 pointer conflict only, creating docs-only head `d22c6779bd973b20ac0b43c202f9d65c0e9f6db9`.
+- exact-head repeat CI #1216 / run `37457386715` is running on that docs-only head.
+- No new D42 production change was made after the green #1215 production head.
+
+### Chat 5
+- Activity D38 exact-head QA v22 completed green; latest runs 2 and 3 SUCCESS.
+- Current task: `chat5/qa-retired-tavern-cleanup-v23`.
+
+### Chat 6
+- retired Tavern cleanup v31 completed at `eb03a847347339ade109b0ec9022b81cd4abadaf`.
+- Current task: `chat6/final-localization-assembly-packet-v32`.
+
