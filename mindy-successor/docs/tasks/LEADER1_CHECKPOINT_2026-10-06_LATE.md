@@ -287,3 +287,35 @@ Latest all-lane recheck:
 - Chat6: v60-v62 accepted, v63-v65 assigned.
 
 Broad burn-down remains **5**.
+
+
+## Live update — Chat6 context exhausted after v63-v65
+
+Chat6 previous context exhausted **after** successfully completing v63-v65.
+
+Accepted handoff:
+`CHAT6_FINAL_PLAYER_FACING_CROSS_CONTRACT_v65.md`
+
+Accepted results:
+- cross-contract fixture JSON valid;
+- validator linked to the fixture/final-target gate;
+- connector-backed static audit PASS;
+- exact contradictions found: 0;
+- no production mutation;
+- no full CI.
+
+Frequent Chat6 context exhaustion is attributed operationally to repeated ingestion of very large golden fixtures/manifests and long connector outputs. Future Chat6 bundles should therefore be compact and should reference frozen paths/SHAs rather than reread giant artifacts unless one exact field requires verification.
+
+Replacement recovery:
+`CHAT6_CONTEXT_RECOVERY_FINAL_PLAYER_FACING_RELEASE_EVIDENCE_2026-10-06.md`
+
+Current lightweight branch:
+`chat6/final-player-facing-release-evidence-v66`
+
+Current lightweight task:
+`CHAT6_FINAL_PLAYER_FACING_RELEASE_EVIDENCE_v66_v67_TASK.md`
+
+Expected:
+`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_EVIDENCE`
+
+User must launch the replacement Chat6 window manually.
