@@ -6,36 +6,39 @@ To: Leader 1
 
 Status: **BUNDLE_COMPLETE — READY_FOR_CHAT2_ACTIVITY_ASSEMBLY_PREP**
 
-## Exact handoff
+## Exact completed handoff
 
 Worker branch:
 
 `chat5/activity-camp-d38-preassembly-v43`
 
-v45 handoff commit:
+v43 lineage/collision evidence:
 
-`a5c0f71c93ef134c4091df4831e03e2487099d76`
+`mindy-successor/docs/tasks/CHAT5_ACTIVITY_CAMP_D38_LINEAGE_COLLISION_AUDIT_v43.md`
 
-Completion pointer commit:
+v44 exact-head QA, finalized at commit:
 
-`b313cb44192120c439616b99ca324d0234b71926`
+`2afc05c05b4e0b87afcc42ff384978f5ba84de79`
+
+v45 final Chat2 handoff, finalized at commit:
+
+`94a96849f3b8c40544a3e69110ee66fbefa09a43`
+
+Chat5 completion pointer, finalized at commit:
+
+`125aa6f980aca4658af330a98d793b5508a9f36c`
 
 Final handoff document:
 
 `mindy-successor/docs/tasks/CHAT5_ACTIVITY_CAMP_D38_PREASSEMBLY_v45.md`
 
-Supporting evidence:
+Latest live-main checkpoint used during finalization:
 
-- `mindy-successor/docs/tasks/CHAT5_ACTIVITY_CAMP_D38_LINEAGE_COLLISION_AUDIT_v43.md`
-- `mindy-successor/docs/tasks/CHAT5_ACTIVITY_CAMP_D38_EXACT_HEAD_QA_v44.md`
+`1daf5735d2e6d30cc1e8d0404f1ec38814109ac9`
 
-Live main at final pre-v45 re-query:
+The live-main moves observed during this package were coordination/task/pointer documentation only and did not invalidate the production collision map.
 
-`99e52051845ce966a769939521d01687830a3240`
-
-The move from the earlier main checkpoint `1a3b00a...` to `99e520...` was eight worker task/pointer documentation commits only. It did not invalidate the production collision audit.
-
-## Frozen authorities preserved
+## Frozen authorities
 
 - Activity v15: `ab378d68765f7c9bbff43abf3b4b41e24df82e01`
 - D38 mechanics: `3cf69d7cb3df1a58d68908159d0acc14736435c4`
@@ -43,47 +46,78 @@ The move from the earlier main checkpoint `1a3b00a...` to `99e520...` was eight 
 - D38 reachability: `7ae7a9b273f1806ac04b566c318896783bab6595`
 - Camp repair: `efde0a38bf71a8946194402a9fc47abb168f2aff`
 
-## Exact lineage decision
+## Lineage conclusion
 
-- Activity v15 is the cumulative four-region baseline.
-- D38 v16 -> v17 -> v18 is a strict cumulative chain on Activity v15.
-- Camp v19 is a strict cumulative chain on Activity v15, parallel to D38.
-- D38-vs-Camp authored deltas relative to Activity v15 have zero direct changed-path intersection.
-- Whole historical branch/file composition is nevertheless unsafe because both lanes carry divergent stale snapshots and current main has newer shared-file authority.
+Activity v15 is the cumulative four-region baseline.
 
-Chat2 should use selective semantic assembly only, on its then-current full current-main tree.
+D38 v16 -> v17 -> v18 is a strict cumulative chain on Activity v15.
 
-Recommended order:
+Camp v19 is a strict cumulative chain on Activity v15 and is parallel to D38 after the exact common ancestor `ab378d...`.
+
+The true D38-vs-Camp authored deltas relative to that common ancestor have no direct changed-path intersection. Whole historical branch/file composition remains unsafe because both lines carry divergent stale snapshots and current main has newer shared-file authority.
+
+Required Chat2 selective order:
 
 1. Activity cumulative semantic delta;
-2. Camp delta;
+2. Camp cumulative delta/repair;
 3. D38 mechanics;
 4. D38 content/presentation;
-5. v18 reachability evidence;
+5. D38 v18 reachability evidence;
 6. current-main adjacency QA.
 
-## Executable evidence
+## Exact executable evidence
 
-Camp frozen head is exact-head executable-green:
+### Camp
 
-- run `37206785081`;
-- job `111449513323`;
-- exact checkout `efde0a38bf71a8946194402a9fc47abb168f2aff`;
+Frozen Camp `efde0a38bf71a8946194402a9fc47abb168f2aff` is exact-head executable-green.
+
+Latest Chat5 reproduction:
+
+- run `37503918423`;
+- job `112407617310`;
+- exact SHA guard PASS;
 - npm ci PASS;
 - typecheck PASS;
 - validate PASS;
 - build PASS;
 - focused **107/107 PASS**.
 
-Fresh Chat5 Activity/D38 exact-head execution encountered runner infrastructure availability, not a producer failure.
+Earlier independent exact Camp run `37206785081` also passed.
 
-The Windows attempt proved exact Activity v15 checkout + SHA guard + Node setup + successful npm ci, then was deliberately cancelled while the QA harness was being corrected. GitHub-hosted fallback jobs failed before any step existed. Final Windows run `37503918423` remained queued at handoff.
+### Activity and D38
 
-Do not mark Activity/D38 failed and do not request producer repair from that runner state. Chat2 must execute the v45 focused roster on its actual assembly tree.
+The same run provides exact negative evidence for the standalone historical snapshots.
+
+Activity job `112407617262` and D38 job `112407616865` both:
+
+- checked out the exact requested frozen SHA;
+- passed the exact SHA guard;
+- completed npm ci;
+- failed typecheck on the same inherited historical fixture:
+
+`tests/item-capability-activity-closure.test.ts(124,23): TS2345`
+
+The synthetic Activity option lacks required `effects`.
+
+Camp v19 contains the exact cumulative repair:
+
+`effects: []`
+
+and passes the full gate.
+
+Leader classification:
+
+**STALE SHARED HISTORICAL TEST FIXTURE — ALREADY REPAIRED ON THE ACCEPTED CAMP CUMULATIVE LINEAGE.**
+
+Do not mark standalone Activity/D38 exact-head green.
+
+Do not reopen Product/runtime production or mutate frozen Activity/D38 branches for this fixture. Chat2's required order naturally brings the accepted Camp repair before D38 current-main QA.
+
+A supplementary diagnostic run `37504871830` was queued to keep validate/build/focused running after the known typecheck failure, but the project self-hosted runner had not accepted it at the final package checkpoint. It is supplementary and does not change the exact blocker classification.
 
 ## Product firewalls
 
-Preserve:
+Preserve exactly:
 
 - Activity entry = 2 Energy;
 - Field Time = 6;
@@ -92,18 +126,31 @@ Preserve:
 - no universal Activity XP;
 - canonical D38 ending/reward identities and accepted reachability;
 - D51 floor2 only for the exact Street -1 + bound-Night -1 pair;
-- Strong Meta Specialist capacity remains 2.
+- Strong Meta Specialist capacity = 2.
 
-## Producer repair disposition
+## Collision / stop guidance
 
-**No producer repair blocker identified.**
+Do not whole-file copy historical:
 
-Chat2 assembly failures, if any, must first be classified as current-main collision/save-migration/test-fixture issues before reopening frozen production.
+- `content/definitions.json`;
+- `content/localization.json`;
+- `content/presentation.json`;
+- `src/core/engine.ts`;
+- `src/core/schema.ts`;
+- `src/ui/app.ts`.
+
+Stop Chat2 assembly and classify rather than auto-repairing foreign production if current schema migration would be downgraded, Camp exactly-once boundaries can duplicate, a third field night is reachable, Secret Debt forced Night loses precedence, D51's exact floor behavior is lost, D38 gains extra Specialist capacity/auto-commit behavior, canonical IDs collide, or universal Activity XP appears.
+
+## Producer-repair disposition
+
+**No Product/runtime producer-repair blocker identified.**
+
+Known historical executable blocker is the stale shared test fixture, already repaired by the frozen Camp v19 lineage.
 
 ## Leader action
 
-No Leader merge should be performed from this Chat5 branch.
+Do not merge this Chat5 branch into main.
 
-When the production queue reaches Activity + Camp + D38, hand `CHAT5_ACTIVITY_CAMP_D38_PREASSEMBLY_v45.md` to Chat2 as the selective assembly prep authority, then require Chat2 focused QA + its single full CI before any Leader merge.
+When the production queue reaches Activity + Camp + D38, use `CHAT5_ACTIVITY_CAMP_D38_PREASSEMBLY_v45.md` as Chat2's selective assembly-prep authority. Require current-main focused QA plus Chat2's one full CI before any Leader merge.
 
 **BUNDLE_COMPLETE — READY_FOR_CHAT2_ACTIVITY_ASSEMBLY_PREP**
