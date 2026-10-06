@@ -1,7 +1,9 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE FINAL CROSS-TRANCHE READINESS v34-v36**
+Status: **START NOW**
 Owner: Chat 5
+
+Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
 
 Previous Activity QA bundle v31-v33 is complete and accepted with v19 baseline repair required.
 
