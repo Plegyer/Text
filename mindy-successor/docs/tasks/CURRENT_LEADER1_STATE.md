@@ -847,3 +847,17 @@ At the last live check, these new Chat3-6 branches contained Leader seed/task co
 Branch assignment does not imply the UI chat window is actively working.
 
 Next Leader must re-query all five lanes immediately.
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 CHAT4 REFILL
+
+Chat4 Strong Meta UI exact-head QA is accepted:
+- `chat4/qa-strong-meta-ui-v41@2a0295ede1b89f0553dac123d3abbfda919bd6d9`;
+- workflow run `37480616854`: SUCCESS;
+- requested build gates and focused UI/accessibility/save adjacency are green.
+
+Frozen Strong Meta UI producer `fac645878ebd726f50fd1364ac72414796755a2d` is READY_FOR_CHAT2_CONTENT_ASSEMBLY.
+
+Chat4 next bundle:
+`chat4/palace-cumulative-exact-head-qa-v44`
+for Palace v18/v19 exact-head executable QA and selective assembly guidance. D39 implementation remains Chat3-owned.
