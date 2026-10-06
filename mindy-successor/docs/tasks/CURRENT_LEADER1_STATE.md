@@ -759,3 +759,14 @@ Current bundle:
 - Current Chat 6 bundle:
   `chat6/final-player-facing-release-audit-v39` through v41.
 - Broad burn-down remains **5**.
+
+
+## AUTHORITATIVE LIVE UPDATE — WORKER CHECK AFTER USER REPORTS CHAT3 IDLE
+
+Broad burn-down remains **5**.
+
+- Chat 2: actively implementing Secret Debt + D51 on `chat2/assembly-secret-debt-d51-current-main-v1`; latest implementation commits include schema/content/action work through `a02d4931087e0884756a6888354b8a69e0327b02`.
+- Chat 3: previous v36-v38 bundle complete at `1b490b6c9067bdc5ddaa7ea7fe12dd8b2c8f255e`; refilled with `chat3/palace-d39-live-consumer-closure-v39` through v41.
+- Chat 4: Palace QA bundle v32-v34 complete at `ce31a0f5e383a7e0c27978b673692a78d9b0677e`; historical producer blockers classified, not waived. Refilled with `chat4/career-preassembly-acceptance-bundle-v35` through v37.
+- Chat 5: Activity QA bundle v31-v33 complete at `83b383ff725d7f44be3a63ba84f4974cab287e59`; inherited historical baseline failures are covered by accepted green v19 repair. Refilled with `chat5/final-cross-tranche-readiness-v34` through v36.
+- Chat 6: `chat6/final-player-facing-release-audit-v39` is active; v39 and v40 committed, v41 not yet committed at checkpoint.
