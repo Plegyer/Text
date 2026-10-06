@@ -29,7 +29,7 @@ Then:
    - Secret Debt producer `chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`;
    - D51 producer `chat3/secret-debt-activity-energy-compat-producer-v20@79a868bf30af2c162b2ea1323759dffad5e8dadf`;
    - exact-head QA v21: run `37205501396` **SUCCESS**, typecheck/validate/build PASS, focused **58/58 PASS**;
-   - Chat 3 v22 assembly preflight active.
+   - Chat 3 v22 Secret Debt+D51 preflight complete and accepted; current Chat 3 task is Activity cumulative preflight v24.
 
 5. **Palace cumulative**
    - mechanics/content through `chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`;
@@ -38,9 +38,9 @@ Then:
 6. **Activity cumulative + persistence + endings**
    - regions through v15 `ab378d68765f7c9bbff43abf3b4b41e24df82e01`;
    - Camp persistence `chat4/activity-camp-persistence-producer-v17@0cae33dd3518dbda7d6d84e4ea6661b02fe49886`;
-   - exact-head QA v18: **RED**, not assembly-ready; Camp-specific behavior 6/7 on frozen fixture, fixture-only repair proves **7/7 PASS**;
-   - inherited v15 typecheck + validate blockers identified;
-   - Chat 4 baseline repair v19 active;
+   - Camp executable-green repair: `chat4/activity-camp-baseline-repair-v19@efde0a38bf71a8946194402a9fc47abb168f2aff`;
+   - typecheck/validate/build PASS; focused 107/107 PASS;
+   - READY_FOR_CHAT2_ASSEMBLY.
    - D38 mechanics `3cf69d7cb3df1a58d68908159d0acc14736435c4`;
    - D38 content `df9ef5c3d04cfd8eb582c24838d971854e984218`;
    - reachability audit v18 PASS.
@@ -49,12 +49,15 @@ Then:
    - D46 `a0c5f855b63d3bb85556f5b2780aaaabb58fbced`, focused 59/59 PASS;
    - D47 `252dc26c514e24f4ab0f0cc0da7694254282e4c4`, exact-head QA 103/103 PASS;
    - lumber-stay retirement Product packet `4f4df720c9677b4b9becc0cb8538da26a276f944`;
-   - Chat 5 retirement producer v17 active.
+   - lumber-stay retirement producer v17 focused-green and READY_FOR_CHAT2_ASSEMBLY;
+   - D46+D47+legacy assembly preflight v18 complete;
+   - current Chat 5 task: Palace D39 reward preflight v19.
 
 8. **Global presentation / localization / final closure**
    - v23 presentation producer `f25069c369c449ce0efbfe57acf877f950b1dfea`;
    - exact-head QA run `37203184279`: SUCCESS, focused 36/36 PASS;
-   - Chat 6 final localization/accessibility closure audit v25 active;
+   - Chat 6 ending localization producer v26 complete and READY_FOR_CHAT2_CONTENT_ASSEMBLY;
+   - current Chat 6 task: Secret Debt ending localization v27;
    - final 23-case save/migration suite + reachability/UI/localization/regression closure.
 
 Broad burn-down remaining: **6**.
