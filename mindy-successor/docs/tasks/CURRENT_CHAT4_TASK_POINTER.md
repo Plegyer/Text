@@ -1,54 +1,66 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **START NOW**
+Status: **ACTIVE — D39 CONSUMER INDEPENDENT RESOLUTION v38-v40**
 Owner: Chat 4
 
-Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
-
-Previous Palace QA bundle v32-v34 is complete.
+Previous D46/D47/legacy preassembly bundle v35-v37 is complete and accepted.
 
 Current branch:
-`chat4/career-preassembly-acceptance-bundle-v35`
+`chat4/d39-consumer-independent-resolution-v38`
 
-Complete ALL tasks in order.
+Complete ALL tasks in order without waiting for Leader.
 
-## Task A — v35
+## Task A — v38: independent Formal Introduction resolution review
+
+Read:
+`mindy-successor/docs/tasks/CHAT3_D39_FORMAL_INTRODUCTION_CONSUMER_MAPPING_v39.md`
+
+Independently verify the blocker.
+
+Then find the smallest safe authored-content seam that would make Formal Introduction live without:
+- skipping trust;
+- skipping route choice;
+- fabricating counters/facts;
+- targeting Palace/Activity/Secret Debt;
+- weakening ordinary-career gates;
+- creating a generic bypass.
+
+Prefer one existing ordinary career/relationship and at most one new authored first-professional event/transition.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_D39_FORMAL_INTRODUCTION_INDEPENDENT_RESOLUTION_v38.md`
+
+## Task B — v39: independent Source Method consumer review
+
+Find the safest existing information-only scene that can consume:
+`palace.inner-truth.source-method`
+
+Requirements:
+- provenance/cross-check/information only;
+- no resource/stat/counter/stage/ending change;
+- no D49 macro-truth leak;
+- preserve existing gates;
+- identify exact stable IDs.
+
+Deliver:
+`mindy-successor/docs/tasks/CHAT4_D39_SOURCE_METHOD_INDEPENDENT_REVIEW_v39.md`
+
+## Task C — v40: decision verification packet
+
 Create:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_PREASSEMBLY_ACCEPTANCE_v35.md`
+`mindy-successor/docs/tasks/CHAT4_D39_CONSUMER_DECISION_VERIFICATION_v40.md`
 
-Combine accepted D46, D47 and lumber-retirement producers with the green exact-head QA v29-v31 and Chat3 v29-v32 planning.
+State:
+- whether Chat3 v39 blocker is confirmed;
+- preferred minimal Formal Introduction seam;
+- preferred Source Method consumer;
+- exact regression risks;
+- exact focused tests required;
+- any reason Leader must reject the proposal.
 
-State exact accepted sources, known merge-only risks, and stop conditions.
-
-## Task B — v36
-Create:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_CURRENT_MAIN_CONFLICT_MAP_v36.md`
-
-Map shared-file conflicts against the current post-D42 architecture:
-- engine/schema/content;
-- hardWorkMeta/Strong Meta;
-- definitions/localization/presentation;
-- save/migration;
-- Secret Debt/Palace/Activity ownership boundaries.
-
-Do not assume future main file contents; distinguish stable semantic conflicts from exact-base checks Chat 2 must redo.
-
-## Task C — v37
-Create:
-`mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_POST_ASSEMBLY_QA_v37.md`
-
-Define the focused executable gate Chat 2 must run after assembly, including:
-- fresh Lust 5;
-- existing Lust preserved;
-- money 600 / Energy 3;
-- wages 35/37 and cap120;
-- exact ten Hard Work packages;
-- retired lumber historical +1 Energy exactly once;
-- 40 canonical ordinary endings;
-- Secret Debt/Palace/Activity isolation.
-
-No runtime changes.
-No full CI.
+Research/review only.
+Do not alter production runtime.
+Do not run full CI.
 
 After all three:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_ASSEMBLY`.
+`BUNDLE_COMPLETE — READY_FOR_LEADER_DECISION`.
