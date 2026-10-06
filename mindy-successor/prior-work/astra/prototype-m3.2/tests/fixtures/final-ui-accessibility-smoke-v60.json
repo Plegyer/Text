@@ -1,0 +1,1944 @@
+{
+  "schemaVersion": 1,
+  "id": "chat6.final-ui-accessibility-smoke.v60",
+  "status": "POST_INTEGRATION_RENDERED_EXECUTION_REQUIRED",
+  "acceptedPackageHead": "45b21d3fd19d91f7b2787e3b56930aa2aa3e9af4",
+  "authorities": {
+    "goldenFixtureBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
+    "goldenValidatorBlob": "e40737f3c6d6da83d1e4692e4457c04936279d53",
+    "goldenQaV59Blob": "cf15ff960844f31625283771f94cee421dedd849",
+    "strongMetaUiHead": "fac645878ebd726f50fd1364ac72414796755a2d",
+    "strongMetaAppBlob": "43a3fdcd7a3a4cabb2ab84777feb9bb826cbdeb7",
+    "strongMetaCoreBlob": "89a0a3783f52a54195c6a3d3ee6d7358305fc406",
+    "d42LocalizationBlob": "9281d3880d01c54f352effa5e372ad5393cc3eaa",
+    "d42PresentationBlob": "e800d2b16f2bc868273e39d45718dcd0c7fe74a5",
+    "activityV36LocalizationBlob": "d631544c96c724375ac48d3c563dd1c1865bb5b5",
+    "palaceV19LocalizationBlob": "64922de3b6aab606f9b2932853e6bbd686766b6a",
+    "palaceV19PresentationBlob": "02c9a19eee0366131f793ed9e141b33a93f213b3",
+    "palaceD48LocalizationBlob": "ddbc1b465a06d4cb27b38276d9ca622779ecd6b5",
+    "palaceD48PresentationBlob": "195c6ac6b64d21c474a9d06528b3eb6849dcbe30",
+    "secretDebtProducerHead": "10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e",
+    "secretDebtLocalizationBlob": "c22e4cc9e9ea87615584b13801bb9547f45ccc72",
+    "tavernCleanupBlob": "d95d3e16b64d60e246f5923e2d0fc7840ddc8c04",
+    "lumberRetirementHead": "39912e7435c3707d98f96fe550d697c20ac0bedb",
+    "lumberLocalizationBlob": "b2b3681d298d1c5c307d3031cdcc3b728b8ae7fd"
+  },
+  "global": {
+    "finalIntegrationEnv": "FINAL_UI_ACCESSIBILITY_SMOKE_TARGET",
+    "rawInternalIdRegexes": [
+      "\\b(?:ending|unlock|action|event|presentation|relationship|job|legacy)\\.[a-z0-9_.-]+\\b",
+      "\\b(?:lumber-stay|tavern-stay|tavern-guild|tavern-court|palace\\.true\\.cap-200|secret-debt\\.bound-life\\.work-rhythm)\\b"
+    ],
+    "rawPanelAriaForbiddenToken": "aria-label=\"${esc(panel)}\"",
+    "localizedPanelAriaRequiredToken": "aria-label=\"${esc(panelAccessibleName(panel))}\""
+  },
+  "surfaces": [
+    {
+      "id": "character-creation-strong-meta-selector",
+      "prerequisiteState": "Character creation before finish; player owns at least one active Strong Meta reward.",
+      "expectedLocalization": {
+        "ui.strongMeta.title": {
+          "ru": "Сильное наследие",
+          "en": "Strong Meta"
+        },
+        "ui.strongMeta.help": {
+          "ru": "Выберите до одного Keystone и двух специализаций из заработанных наград.",
+          "en": "Choose up to one Keystone and two Specialists from rewards you own."
+        },
+        "ui.strongMeta.automaticKnowledgeNote": {
+          "ru": "Source Method и другие унаследованные знания применяются автоматически и никогда не занимают выбираемые слоты.",
+          "en": "Source Method and other inherited knowledge are automatic and never occupy selectable slots."
+        },
+        "ui.strongMeta.keystoneTitle": {
+          "ru": "Keystone",
+          "en": "Keystone"
+        },
+        "ui.strongMeta.specialistTitle": {
+          "ru": "Специализации",
+          "en": "Specialists"
+        },
+        "ui.strongMeta.selected": {
+          "ru": "Выбрано",
+          "en": "Selected"
+        },
+        "ui.strongMeta.available": {
+          "ru": "Доступно",
+          "en": "Available"
+        },
+        "ui.strongMeta.select": {
+          "ru": "Выбрать",
+          "en": "Select"
+        },
+        "ui.strongMeta.remove": {
+          "ru": "Убрать",
+          "en": "Remove"
+        },
+        "ui.strongMeta.keystoneCapacity": {
+          "ru": "Keystone: {selected}/{capacity}",
+          "en": "Keystone: {selected}/{capacity}"
+        },
+        "ui.strongMeta.specialistCapacity": {
+          "ru": "Специализации: {selected}/{capacity}",
+          "en": "Specialists: {selected}/{capacity}"
+        },
+        "ui.strongMeta.noneKeystones": {
+          "ru": "Пока нет заработанных Keystone-наград.",
+          "en": "No owned Keystone rewards yet."
+        },
+        "ui.strongMeta.noneSpecialists": {
+          "ru": "Пока нет заработанных Specialist-наград.",
+          "en": "No owned Specialist rewards yet."
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "Strong Meta section has aria-labelledby=strong-meta-new-start-title.",
+        "Reward buttons expose localized reward label plus localized Selected/Available state."
+      ],
+      "expectedPresentation": {
+        "maxKeystone": 1,
+        "maxSpecialists": 2,
+        "noAutoSelect": true
+      },
+      "requiredSourceTokens": [
+        "function strongMetaNewStartHTML()",
+        "data-strong-meta-selector=\"true\"",
+        "STRONG_META_KEYSTONE_CAPACITY",
+        "STRONG_META_SPECIALIST_CAPACITY",
+        "${hardWorkNewStartHTML()}${strongMetaNewStartHTML()}"
+      ],
+      "forbiddenSourceRegexes": [],
+      "forbiddenVisibleTokens": [
+        "strongMetaRegistry",
+        "setStrongMetaKeystone",
+        "setStrongMetaSpecialist"
+      ],
+      "sourceAuthority": [
+        "Strong Meta/modal UI closure",
+        "golden fixture v54"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "strong-meta-automatic-source-method",
+      "prerequisiteState": "Character creation; inherited Source Method knowledge is present in Strong Meta knowledge state.",
+      "expectedLocalization": {
+        "ui.strongMeta.automaticKnowledgeNote": {
+          "ru": "Source Method и другие унаследованные знания применяются автоматически и никогда не занимают выбираемые слоты.",
+          "en": "Source Method and other inherited knowledge are automatic and never occupy selectable slots."
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "Automatic knowledge is explanatory text only and is not rendered as a Keystone/Specialist selectable reward."
+      ],
+      "expectedPresentation": {
+        "automaticKnowledgeSlotFree": true
+      },
+      "requiredSourceTokens": [
+        "data-strong-meta-automatic-knowledge=\"true\"",
+        "selectable.filter(reward=>reward.class==='keystone')",
+        "selectable.filter(reward=>reward.class==='specialist')"
+      ],
+      "forbiddenSourceRegexes": [
+        "data-strong-meta-(?:keystone|specialist)=[^\\n>]*source-method"
+      ],
+      "forbiddenVisibleTokens": [
+        "palace.inner-truth.source-method"
+      ],
+      "sourceAuthority": [
+        "Strong Meta/modal UI closure",
+        "D39 Source Method automatic-knowledge contract"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "localized-modal-accessible-names",
+      "prerequisiteState": "Open each generic modal/panel: Work, School, Explore, Night, Heroine, Journal, Bag, Fates, Menu, Editor, Catalog.",
+      "expectedLocalization": {
+        "ui.work.title": {
+          "ru": "Куда устроимся?",
+          "en": "Where shall we work?"
+        },
+        "ui.school.title": {
+          "ru": "Школа",
+          "en": "School"
+        },
+        "ui.explore.title": {
+          "ru": "Окрестности и поручения",
+          "en": "Outskirts and errands"
+        },
+        "ui.sleep.title": {
+          "ru": "Ночь",
+          "en": "Night"
+        },
+        "ui.panel.stats": {
+          "ru": "Героиня",
+          "en": "Heroine"
+        },
+        "ui.panel.journal": {
+          "ru": "Дневник",
+          "en": "Journal"
+        },
+        "ui.bag.title": {
+          "ru": "Сумка и дела",
+          "en": "Bag and errands"
+        },
+        "ui.panel.legacy": {
+          "ru": "Судьбы",
+          "en": "Fates"
+        },
+        "ui.menu.title": {
+          "ru": "Меню",
+          "en": "Menu"
+        },
+        "ui.menu.editor": {
+          "ru": "Тексты и изображения",
+          "en": "Text and images"
+        },
+        "ui.menu.catalogInspector": {
+          "ru": "Инспектор событий",
+          "en": "Event inspector"
+        }
+      },
+      "expectedAccessibleNames": {
+        "work": {
+          "localizationKey": "ui.work.title",
+          "value": {
+            "ru": "Куда устроимся?",
+            "en": "Where shall we work?"
+          }
+        },
+        "school": {
+          "localizationKey": "ui.school.title",
+          "value": {
+            "ru": "Школа",
+            "en": "School"
+          }
+        },
+        "explore": {
+          "localizationKey": "ui.explore.title",
+          "value": {
+            "ru": "Окрестности и поручения",
+            "en": "Outskirts and errands"
+          }
+        },
+        "sleep": {
+          "localizationKey": "ui.sleep.title",
+          "value": {
+            "ru": "Ночь",
+            "en": "Night"
+          }
+        },
+        "stats": {
+          "localizationKey": "ui.panel.stats",
+          "value": {
+            "ru": "Героиня",
+            "en": "Heroine"
+          }
+        },
+        "journal": {
+          "localizationKey": "ui.panel.journal",
+          "value": {
+            "ru": "Дневник",
+            "en": "Journal"
+          }
+        },
+        "bag": {
+          "localizationKey": "ui.bag.title",
+          "value": {
+            "ru": "Сумка и дела",
+            "en": "Bag and errands"
+          }
+        },
+        "legacy": {
+          "localizationKey": "ui.panel.legacy",
+          "value": {
+            "ru": "Судьбы",
+            "en": "Fates"
+          }
+        },
+        "menu": {
+          "localizationKey": "ui.menu.title",
+          "value": {
+            "ru": "Меню",
+            "en": "Menu"
+          }
+        },
+        "editor": {
+          "localizationKey": "ui.menu.editor",
+          "value": {
+            "ru": "Тексты и изображения",
+            "en": "Text and images"
+          }
+        },
+        "catalog": {
+          "localizationKey": "ui.menu.catalogInspector",
+          "value": {
+            "ru": "Инспектор событий",
+            "en": "Event inspector"
+          }
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "Generic dialog aria-label resolves through panelAccessibleName(panel), never raw panel id."
+      ],
+      "requiredSourceTokens": [
+        "function panelAccessibleName",
+        "aria-label=\"${esc(panelAccessibleName(panel))}\""
+      ],
+      "forbiddenSourceRegexes": [
+        "aria-label=\\\"\\$\\{esc\\(panel\\)\\}\\\""
+      ],
+      "forbiddenVisibleTokens": [],
+      "sourceAuthority": [
+        "Strong Meta/modal UI closure",
+        "golden fixture v54 modal authority"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "secret-debt-status-actions-endings",
+      "prerequisiteState": "Exercise unseen/accepted/bound/paid-freedom/takeover Secret Debt states and expose hidden-work, repay, takeover, forced-night, and ending cards.",
+      "expectedLocalization": {
+        "ui.secretDebt.statusLabel": {
+          "ru": "Тайный долг",
+          "en": "Secret Debt"
+        },
+        "ui.secretDebt.principalLabel": {
+          "ru": "Тайный долг — основной долг",
+          "en": "Secret Debt principal"
+        },
+        "ui.condition.secretDebtStatus": {
+          "ru": "Тайный долг: {status}",
+          "en": "Secret Debt: {status}"
+        },
+        "secretDebt.status.bound": {
+          "ru": "связан",
+          "en": "bound"
+        },
+        "secretDebt.status.paid-freedom": {
+          "ru": "выплачен",
+          "en": "paid freedom"
+        },
+        "secretDebt.status.takeover": {
+          "ru": "контроль перехвачен",
+          "en": "takeover"
+        },
+        "action.secret-debt.hidden-work.label": {
+          "ru": "Тайный долг: скрытая смена",
+          "en": "Secret Debt: hidden work"
+        },
+        "action.secret-debt.repay.label": {
+          "ru": "Погасить Тайный долг: 20 000",
+          "en": "Repay Secret Debt: 20,000"
+        },
+        "action.secret-debt.takeover.label": {
+          "ru": "Перехватить контроль над долгом",
+          "en": "Take control of the debt route"
+        },
+        "event.secret-debt.forced-night.title": {
+          "ru": "Связанная ночь",
+          "en": "The bound night"
+        },
+        "ending.ending.secret-debt.paid-freedom.title": {
+          "ru": "Свобода через выплату",
+          "en": "Paid Freedom"
+        },
+        "ending.ending.secret-debt.paid-freedom.description": {
+          "ru": "Полностью выплатить 20 000 одним явным действием и выйти из связанного состояния.",
+          "en": "Repay the full 20,000 principal in one explicit action and leave the bound state."
+        },
+        "ending.ending.secret-debt.bound-life.title": {
+          "ru": "Связанная жизнь",
+          "en": "Bound Life"
+        },
+        "ending.ending.secret-debt.bound-life.description": {
+          "ru": "Завершить 50 скрытых дневных смен, оставаясь связанным долгом, а затем явно принять эту судьбу.",
+          "en": "Complete 50 hidden daytime shifts while still bound, then explicitly commit to this ending."
+        },
+        "ending.ending.secret-debt.takeover.title": {
+          "ru": "Перехват контроля",
+          "en": "Takeover"
+        },
+        "ending.ending.secret-debt.takeover.description": {
+          "ru": "Выполнить точные требования D44 и отдельным явным действием перехватить контроль над долговым маршрутом.",
+          "en": "Meet the exact D44 requirements and use the separate explicit action to take control of the debt route."
+        },
+        "ending.ending.secret-debt.paid-freedom.epilogue": {
+          "ru": "Ты закрываешь весь долг полной выплатой и выходишь из связанного состояния. Долговой маршрут завершён именно выплатой; никакой другой исход не подменяет этот выбор.",
+          "en": "You close the entire debt through full repayment and leave the bound state. The debt route ends through repayment itself; no other outcome substitutes for that choice."
+        },
+        "ending.ending.secret-debt.bound-life.epilogue": {
+          "ru": "После ровно пятидесяти скрытых дневных смен ты явно выбираешь исход «Связанная жизнь», пока долг остаётся активным. Это не автоматический финал: завершение наступает только после отдельного выбора этой судьбы.",
+          "en": "After exactly fifty hidden daytime shifts, you explicitly choose the Bound Life ending while the debt remains active. This is not an automatic ending: completion happens only after the separate ending choice."
+        },
+        "ending.ending.secret-debt.takeover.epilogue": {
+          "ru": "Выполнив высокие требования маршрута, ты отдельным явным действием перехватываешь контроль над долговой системой и выходишь из роли должницы. Этот исход фиксирует подготовленный захват управления, а не автоматическое завершение за сам факт долга.",
+          "en": "After meeting the route's high requirements, you use a separate explicit action to take control of the debt system and leave the debtor role. This ending records a prepared takeover, not an automatic result of being in debt."
+        },
+        "unlock.secret-debt.paid-freedom.earned-reserve-match.label": {
+          "ru": "Паритет заработанного резерва",
+          "en": "Earned Reserve Match"
+        },
+        "unlock.secret-debt.bound-life.work-rhythm.label": {
+          "ru": "Рабочий ритм",
+          "en": "Work Rhythm"
+        },
+        "unlock.secret-debt.takeover.network-retainer.label": {
+          "ru": "Сетевой гонорар",
+          "en": "Network Retainer"
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "Status, actions, forced-night title and ending labels are bilingual human-readable copy."
+      ],
+      "forbiddenVisibleTokens": [
+        "secret-debt.bound-life.work-rhythm",
+        "secret-debt.takeover.network-retainer",
+        "ending.ending.secret-debt",
+        "action.secret-debt"
+      ],
+      "sourceAuthority": [
+        "Secret Debt producer v12",
+        "v27 ending localization",
+        "v40 final player-facing repair"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "d42-night-player-facing",
+      "prerequisiteState": "Reach each accepted D42 Night content-gap choice and associated event/presentation state.",
+      "expectedLocalization": {
+        "event.assassin.night.handler-contact.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.assassin.night.handler-contact.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.assassin.night.handler-contact.title": {
+          "ru": "Встретиться с куратором вне задания",
+          "en": "Meet the Handler off-hours"
+        },
+        "event.assassin.night.handler-contact.variant.default.text": {
+          "ru": "Обсудите доверие, границы или лояльность вне рабочих записей. Встреча не создаёт доказательство маршрута, обязательную связь или приказ.",
+          "en": "Discuss trust, boundaries, or loyalty outside covert-work notes. The meeting creates no route evidence, mandatory bond, or order."
+        },
+        "event.guard.night.case-debrief.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.guard.night.case-debrief.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.guard.night.case-debrief.title": {
+          "ru": "Подготовить разбор дела",
+          "en": "Prepare a case debrief"
+        },
+        "event.guard.night.case-debrief.variant.default.text": {
+          "ru": "Сведите показания и заметки в профессиональный отчёт после дежурства. Сцена не создаёт доказательства, счётчики службы или готовность маршрута.",
+          "en": "Turn testimony and notes into a professional report after duty. The scene creates no evidence, duty counters, or route readiness."
+        },
+        "event.guard.night.partner.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.guard.night.partner.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.guard.night.partner.title": {
+          "ru": "Провести время с напарником вне службы",
+          "en": "Spend off-duty time with your Partner"
+        },
+        "event.guard.night.partner.variant.default.text": {
+          "ru": "Поговорите как люди, а не как участники дела. Существующие отказ и границы остаются в силе, а обычная служба от этой встречи не зависит.",
+          "en": "Talk as people rather than as participants in a case. Existing refusal and boundaries remain authoritative, and ordinary duty does not depend on this meeting."
+        },
+        "event.hunter.night.field-debrief.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.hunter.night.field-debrief.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.hunter.night.field-debrief.title": {
+          "ru": "Провести полевой разбор",
+          "en": "Hold a field debrief"
+        },
+        "event.hunter.night.field-debrief.variant.default.text": {
+          "ru": "Разберите следы, наблюдения и план следующего выхода как профессиональную работу. Этот выбор не выдаёт маршрут, отношения или готовность финала.",
+          "en": "Sort tracks, observations, and the next field plan as professional work. This choice grants no route, relationship state, or ending readiness."
+        },
+        "event.hunter.night.senior-guide.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.hunter.night.senior-guide.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.hunter.night.senior-guide.title": {
+          "ru": "Провести время со старшим проводником",
+          "en": "Spend off-duty time with the Senior Guide"
+        },
+        "event.hunter.night.senior-guide.variant.default.text": {
+          "ru": "Встретьтесь вне смены ради личного разговора или товарищеского общения. Дружбы достаточно; романтика не предполагается и не требуется.",
+          "en": "Meet off duty for a personal or companionable conversation. Friendship is enough; romance is neither assumed nor required."
+        },
+        "event.lumber.night.foreman-social.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.lumber.night.foreman-social.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.lumber.night.foreman-social.title": {
+          "ru": "Поговорить с бригадиром не о работе",
+          "en": "Spend personal time with the Foreman"
+        },
+        "event.lumber.night.foreman-social.variant.default.text": {
+          "ru": "После смены можно остаться на личный разговор, не превращая его в ещё один рабочий разбор. Это добровольное общение и не обещание романтики.",
+          "en": "Stay after the shift for a personal conversation rather than another work debrief. It is voluntary contact and does not promise romance."
+        },
+        "event.merchant.night.ledger-plan.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.merchant.night.ledger-plan.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.merchant.night.ledger-plan.title": {
+          "ru": "Сверить книги и спланировать поставки",
+          "en": "Review the ledger and plan suppliers"
+        },
+        "event.merchant.night.ledger-plan.variant.default.text": {
+          "ru": "Сверьте записи и следующий план поставок как профессиональную работу. Это не выдаёт доставку, сделку, деньги или готовность карьерного маршрута.",
+          "en": "Reconcile records and the next supplier plan as professional work. It grants no delivery, deal, money, or career-route readiness."
+        },
+        "event.merchant.night.supplier.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.merchant.night.supplier.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.merchant.night.supplier.title": {
+          "ru": "Поговорить с поставщиком вне дел",
+          "en": "Spend off-hours time with the Supplier"
+        },
+        "event.merchant.night.supplier.variant.default.text": {
+          "ru": "Встретьтесь вне книг и поставок ради личного разговора. Контакт может остаться дружеским и не становится скрытым условием карьерного продвижения.",
+          "en": "Meet outside ledgers and deliveries for a personal conversation. The contact may remain friendly and never becomes a hidden career gate."
+        },
+        "event.prostitute.night.client-private.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.prostitute.night.client-private.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.prostitute.night.client-private.title": {
+          "ru": "Выбрать добровольное продолжение наедине",
+          "en": "Choose a voluntary private-space continuation"
+        },
+        "event.prostitute.night.client-private.variant.default.text": {
+          "ru": "Обычная комната даёт приватное место, но не меняет режим отношений и не переносит сюда правила принудительной Ночи Тайного долга. Любая близость или романтика требуют отдельного явного выбора.",
+          "en": "Normal lodging provides privacy but does not change the relationship mode or import Secret Debt forced-Night rules. Any intimacy or romance requires a separate explicit choice."
+        },
+        "event.prostitute.night.personal-continuation.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.prostitute.night.personal-continuation.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.prostitute.night.personal-continuation.title": {
+          "ru": "Продолжить общение лично",
+          "en": "Continue the relationship personally"
+        },
+        "event.prostitute.night.personal-continuation.variant.default.text": {
+          "ru": "Личное продолжение доступно только после ранее выбранной дружбы или романтики. Уверенность, Похоть, Сексуальность и приватность сами по себе никогда не означают согласие.",
+          "en": "A personal continuation is available only after friendship or romance was explicitly chosen earlier. Confidence, Lust, Sexuality, and privacy never imply consent."
+        },
+        "event.satyr-maid.night.recurring-guest-private.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.satyr-maid.night.recurring-guest-private.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.satyr-maid.night.recurring-guest-private.title": {
+          "ru": "Поговорить с постоянным гостем наедине",
+          "en": "Continue privately with the recurring guest"
+        },
+        "event.satyr-maid.night.recurring-guest-private.variant.default.text": {
+          "ru": "Обычная комната даёт возможность поговорить без публики — о личном, границах или просьбе. Приватность не означает близость, романтику или согласие на них.",
+          "en": "Normal lodging offers a place to talk away from the crowd about personal context, boundaries, or a request. Privacy does not imply intimacy, romance, or consent to either."
+        },
+        "event.tavern.night.traveler-private.choice.continue.label": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "event.tavern.night.traveler-private.choice.continue.text": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        },
+        "event.tavern.night.traveler-private.title": {
+          "ru": "Поговорить с постоянным путешественником наедине",
+          "en": "Continue privately with the recurring traveler"
+        },
+        "event.tavern.night.traveler-private.variant.default.text": {
+          "ru": "Обычная комната позволяет спокойно обсудить личный контекст или безопасность. Встреча не решает за игрока вопрос конфиденциальности и не создаёт информационный маршрут.",
+          "en": "Normal lodging gives you a quiet place to discuss personal context or safety. The meeting does not resolve confidentiality for the player or create an information route."
+        },
+        "night.assassin.handler-contact.aria": {
+          "ru": "Ночной выбор: добровольный разговор с куратором или информатором",
+          "en": "Night choice: voluntary conversation with the Handler or informant"
+        },
+        "night.assassin.handler-contact.body": {
+          "ru": "Обсудите доверие, границы или лояльность вне рабочих записей. Встреча не создаёт доказательство маршрута, обязательную связь или приказ.",
+          "en": "Discuss trust, boundaries, or loyalty outside covert-work notes. The meeting creates no route evidence, mandatory bond, or order."
+        },
+        "night.assassin.handler-contact.label": {
+          "ru": "Встретиться с куратором вне задания",
+          "en": "Meet the Handler off-hours"
+        },
+        "night.guard.case-debrief.aria": {
+          "ru": "Ночной выбор: профессиональный разбор дела стражи",
+          "en": "Night choice: professional Guard case debrief"
+        },
+        "night.guard.case-debrief.body": {
+          "ru": "Сведите показания и заметки в профессиональный отчёт после дежурства. Сцена не создаёт доказательства, счётчики службы или готовность маршрута.",
+          "en": "Turn testimony and notes into a professional report after duty. The scene creates no evidence, duty counters, or route readiness."
+        },
+        "night.guard.case-debrief.label": {
+          "ru": "Подготовить разбор дела",
+          "en": "Prepare a case debrief"
+        },
+        "night.guard.partner.aria": {
+          "ru": "Ночной выбор: добровольная встреча с напарником стражи",
+          "en": "Night choice: voluntary off-duty meeting with the Guard Partner"
+        },
+        "night.guard.partner.body": {
+          "ru": "Поговорите как люди, а не как участники дела. Существующие отказ и границы остаются в силе, а обычная служба от этой встречи не зависит.",
+          "en": "Talk as people rather than as participants in a case. Existing refusal and boundaries remain authoritative, and ordinary duty does not depend on this meeting."
+        },
+        "night.guard.partner.label": {
+          "ru": "Провести время с напарником вне службы",
+          "en": "Spend off-duty time with your Partner"
+        },
+        "night.hunter.field-debrief.aria": {
+          "ru": "Ночной выбор: профессиональный полевой разбор охотницы",
+          "en": "Night choice: professional Hunter field debrief"
+        },
+        "night.hunter.field-debrief.body": {
+          "ru": "Разберите следы, наблюдения и план следующего выхода как профессиональную работу. Этот выбор не выдаёт маршрут, отношения или готовность финала.",
+          "en": "Sort tracks, observations, and the next field plan as professional work. This choice grants no route, relationship state, or ending readiness."
+        },
+        "night.hunter.field-debrief.label": {
+          "ru": "Провести полевой разбор",
+          "en": "Hold a field debrief"
+        },
+        "night.hunter.senior-guide.aria": {
+          "ru": "Ночной выбор: добровольная встреча со старшим проводником",
+          "en": "Night choice: voluntary meeting with the Senior Guide"
+        },
+        "night.hunter.senior-guide.body": {
+          "ru": "Встретьтесь вне смены ради личного разговора или товарищеского общения. Дружбы достаточно; романтика не предполагается и не требуется.",
+          "en": "Meet off duty for a personal or companionable conversation. Friendship is enough; romance is neither assumed nor required."
+        },
+        "night.hunter.senior-guide.label": {
+          "ru": "Провести время со старшим проводником",
+          "en": "Spend off-duty time with the Senior Guide"
+        },
+        "night.lumber.foreman-social.aria": {
+          "ru": "Ночной выбор: личный разговор с бригадиром",
+          "en": "Night choice: personal conversation with the Foreman"
+        },
+        "night.lumber.foreman-social.body": {
+          "ru": "После смены можно остаться на личный разговор, не превращая его в ещё один рабочий разбор. Это добровольное общение и не обещание романтики.",
+          "en": "Stay after the shift for a personal conversation rather than another work debrief. It is voluntary contact and does not promise romance."
+        },
+        "night.lumber.foreman-social.label": {
+          "ru": "Поговорить с бригадиром не о работе",
+          "en": "Spend personal time with the Foreman"
+        },
+        "night.merchant.ledger-plan.aria": {
+          "ru": "Ночной выбор: профессиональное планирование торговца",
+          "en": "Night choice: professional Merchant ledger planning"
+        },
+        "night.merchant.ledger-plan.body": {
+          "ru": "Сверьте записи и следующий план поставок как профессиональную работу. Это не выдаёт доставку, сделку, деньги или готовность карьерного маршрута.",
+          "en": "Reconcile records and the next supplier plan as professional work. It grants no delivery, deal, money, or career-route readiness."
+        },
+        "night.merchant.ledger-plan.label": {
+          "ru": "Сверить книги и спланировать поставки",
+          "en": "Review the ledger and plan suppliers"
+        },
+        "night.merchant.supplier.aria": {
+          "ru": "Ночной выбор: добровольная встреча с поставщиком",
+          "en": "Night choice: voluntary off-hours meeting with the Supplier"
+        },
+        "night.merchant.supplier.body": {
+          "ru": "Встретьтесь вне книг и поставок ради личного разговора. Контакт может остаться дружеским и не становится скрытым условием карьерного продвижения.",
+          "en": "Meet outside ledgers and deliveries for a personal conversation. The contact may remain friendly and never becomes a hidden career gate."
+        },
+        "night.merchant.supplier.label": {
+          "ru": "Поговорить с поставщиком вне дел",
+          "en": "Spend off-hours time with the Supplier"
+        },
+        "night.prostitute.client-private.aria": {
+          "ru": "Ночной выбор в обычной комнате: добровольное приватное продолжение",
+          "en": "Normal-lodging Night choice: voluntary private-space continuation"
+        },
+        "night.prostitute.client-private.body": {
+          "ru": "Обычная комната даёт приватное место, но не меняет режим отношений и не переносит сюда правила принудительной Ночи Тайного долга. Любая близость или романтика требуют отдельного явного выбора.",
+          "en": "Normal lodging provides privacy but does not change the relationship mode or import Secret Debt forced-Night rules. Any intimacy or romance requires a separate explicit choice."
+        },
+        "night.prostitute.client-private.label": {
+          "ru": "Выбрать добровольное продолжение наедине",
+          "en": "Choose a voluntary private-space continuation"
+        },
+        "night.prostitute.personal-continuation.aria": {
+          "ru": "Ночной выбор: добровольное личное продолжение с постоянным клиентом",
+          "en": "Night choice: voluntary personal continuation with the recurring client"
+        },
+        "night.prostitute.personal-continuation.body": {
+          "ru": "Личное продолжение доступно только после ранее выбранной дружбы или романтики. Уверенность, Похоть, Сексуальность и приватность сами по себе никогда не означают согласие.",
+          "en": "A personal continuation is available only after friendship or romance was explicitly chosen earlier. Confidence, Lust, Sexuality, and privacy never imply consent."
+        },
+        "night.prostitute.personal-continuation.label": {
+          "ru": "Продолжить общение лично",
+          "en": "Continue the relationship personally"
+        },
+        "night.satyr-maid.recurring-guest-private.aria": {
+          "ru": "Ночной выбор в обычной комнате: приватный разговор с постоянным гостем",
+          "en": "Normal-lodging Night choice: private conversation with the recurring guest"
+        },
+        "night.satyr-maid.recurring-guest-private.body": {
+          "ru": "Обычная комната даёт возможность поговорить без публики — о личном, границах или просьбе. Приватность не означает близость, романтику или согласие на них.",
+          "en": "Normal lodging offers a place to talk away from the crowd about personal context, boundaries, or a request. Privacy does not imply intimacy, romance, or consent to either."
+        },
+        "night.satyr-maid.recurring-guest-private.label": {
+          "ru": "Поговорить с постоянным гостем наедине",
+          "en": "Continue privately with the recurring guest"
+        },
+        "night.tavern.traveler-private.aria": {
+          "ru": "Ночной выбор в обычной комнате: приватный разговор с постоянным путешественником",
+          "en": "Normal-lodging Night choice: private conversation with the recurring traveler"
+        },
+        "night.tavern.traveler-private.body": {
+          "ru": "Обычная комната позволяет спокойно обсудить личный контекст или безопасность. Встреча не решает за игрока вопрос конфиденциальности и не создаёт информационный маршрут.",
+          "en": "Normal lodging gives you a quiet place to discuss personal context or safety. The meeting does not resolve confidentiality for the player or create an information route."
+        },
+        "night.tavern.traveler-private.label": {
+          "ru": "Поговорить с постоянным путешественником наедине",
+          "en": "Continue privately with the recurring traveler"
+        },
+        "presentation.static.assassin.night.handler-contact.alt": {
+          "ru": "Ограниченная добровольная встреча с куратором или информатором вне задания.",
+          "en": "A bounded voluntary off-hours meeting with the Handler or informant."
+        },
+        "presentation.static.assassin.night.handler-contact.caption": {
+          "ru": "Ограниченная добровольная встреча с куратором или информатором вне задания.",
+          "en": "A bounded voluntary off-hours meeting with the Handler or informant."
+        },
+        "presentation.static.guard.night.case-debrief.alt": {
+          "ru": "Стражница после дежурства готовит спокойный разбор дела и записи.",
+          "en": "A Guard prepares a calm case debrief and notes after duty."
+        },
+        "presentation.static.guard.night.case-debrief.caption": {
+          "ru": "Стражница после дежурства готовит спокойный разбор дела и записи.",
+          "en": "A Guard prepares a calm case debrief and notes after duty."
+        },
+        "presentation.static.guard.night.partner.alt": {
+          "ru": "Добровольная встреча стражницы с напарником после службы.",
+          "en": "A voluntary off-duty meeting between the Guard and her Partner."
+        },
+        "presentation.static.guard.night.partner.caption": {
+          "ru": "Добровольная встреча стражницы с напарником после службы.",
+          "en": "A voluntary off-duty meeting between the Guard and her Partner."
+        },
+        "presentation.static.hunter.night.field-debrief.alt": {
+          "ru": "Охотница разбирает полевые записи и маршрут после наступления темноты.",
+          "en": "A Hunter reviews field notes and route observations after dark."
+        },
+        "presentation.static.hunter.night.field-debrief.caption": {
+          "ru": "Охотница разбирает полевые записи и маршрут после наступления темноты.",
+          "en": "A Hunter reviews field notes and route observations after dark."
+        },
+        "presentation.static.hunter.night.senior-guide.alt": {
+          "ru": "Добровольная встреча охотницы со старшим проводником вне смены.",
+          "en": "A voluntary off-duty meeting between the Hunter and the Senior Guide."
+        },
+        "presentation.static.hunter.night.senior-guide.caption": {
+          "ru": "Добровольная встреча охотницы со старшим проводником вне смены.",
+          "en": "A voluntary off-duty meeting between the Hunter and the Senior Guide."
+        },
+        "presentation.static.lumber.night.foreman-social.alt": {
+          "ru": "Добровольный личный вечерний разговор с бригадиром лесорубов после смены.",
+          "en": "A voluntary personal evening conversation with the Lumber Foreman after the shift."
+        },
+        "presentation.static.lumber.night.foreman-social.caption": {
+          "ru": "Добровольный личный вечерний разговор с бригадиром лесорубов после смены.",
+          "en": "A voluntary personal evening conversation with the Lumber Foreman after the shift."
+        },
+        "presentation.static.merchant.night.ledger-plan.alt": {
+          "ru": "Торговка после закрытия рынка сверяет книги и план поставок.",
+          "en": "A Merchant reviews the ledger and supplier plan after the market closes."
+        },
+        "presentation.static.merchant.night.ledger-plan.caption": {
+          "ru": "Торговка после закрытия рынка сверяет книги и план поставок.",
+          "en": "A Merchant reviews the ledger and supplier plan after the market closes."
+        },
+        "presentation.static.merchant.night.supplier.alt": {
+          "ru": "Добровольный личный разговор торговки с поставщиком вне рабочего времени.",
+          "en": "A voluntary personal conversation with the Merchant Supplier outside work hours."
+        },
+        "presentation.static.merchant.night.supplier.caption": {
+          "ru": "Добровольный личный разговор торговки с поставщиком вне рабочего времени.",
+          "en": "A voluntary personal conversation with the Merchant Supplier outside work hours."
+        },
+        "presentation.static.prostitute.night.client-private.alt": {
+          "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
+          "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
+        },
+        "presentation.static.prostitute.night.client-private.caption": {
+          "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
+          "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
+        },
+        "presentation.static.prostitute.night.personal-continuation.alt": {
+          "ru": "Добровольное личное продолжение с постоянным клиентом после явного выбора режима отношений.",
+          "en": "An explicitly chosen personal continuation with the recurring client after a relationship mode was selected."
+        },
+        "presentation.static.prostitute.night.personal-continuation.caption": {
+          "ru": "Добровольное личное продолжение с постоянным клиентом после явного выбора режима отношений.",
+          "en": "An explicitly chosen personal continuation with the recurring client after a relationship mode was selected."
+        },
+        "presentation.static.satyr-maid.night.recurring-guest-private.alt": {
+          "ru": "Добровольный приватный разговор служанки с постоянным гостем в обычной комнате.",
+          "en": "A voluntary private-space conversation between the Satyr Maid and the recurring guest in normal lodging."
+        },
+        "presentation.static.satyr-maid.night.recurring-guest-private.caption": {
+          "ru": "Добровольный приватный разговор служанки с постоянным гостем в обычной комнате.",
+          "en": "A voluntary private-space conversation between the Satyr Maid and the recurring guest in normal lodging."
+        },
+        "presentation.static.tavern.night.traveler-private.alt": {
+          "ru": "Добровольный приватный разговор с постоянным путешественником в обычной комнате.",
+          "en": "A voluntary private-space conversation with the recurring traveler in normal lodging."
+        },
+        "presentation.static.tavern.night.traveler-private.caption": {
+          "ru": "Добровольный приватный разговор с постоянным путешественником в обычной комнате.",
+          "en": "A voluntary private-space conversation with the recurring traveler in normal lodging."
+        },
+        "ui.night.sequence.finish": {
+          "ru": "Завершить ночь",
+          "en": "Finish the night"
+        },
+        "ui.night.sequence.finishText": {
+          "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+          "en": "Finish the chosen Night scene without adding any further condition."
+        }
+      },
+      "expectedPresentation": {
+        "night/guard/guard-night-case-debrief": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-guard-result.svg",
+            "alt": "A professional Guard case debrief prepared after duty.",
+            "altKey": "presentation.static.guard.night.case-debrief.alt"
+          }
+        },
+        "night/hunter/hunter-night-field-debrief": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-hunter-result.svg",
+            "alt": "Hunter field notes and a professional debrief after dark.",
+            "altKey": "presentation.static.hunter.night.field-debrief.alt"
+          }
+        },
+        "night/merchant/merchant-night-ledger-plan": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-merchant-result.svg",
+            "alt": "A Merchant reviewing the ledger and supplier plan after the market closes.",
+            "altKey": "presentation.static.merchant.night.ledger-plan.alt"
+          }
+        },
+        "night/prostitute/prostitute-night-client-private": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-prostitute-result.svg",
+            "alt": "A voluntary private-space continuation with the recurring client.",
+            "altKey": "presentation.static.prostitute.night.client-private.alt"
+          }
+        },
+        "night/satyr-maid/satyr-maid-night-recurring-guest-private": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-satyr-maid-result.svg",
+            "alt": "A voluntary private-space conversation with the Satyr Maid recurring guest.",
+            "altKey": "presentation.static.satyr-maid.night.recurring-guest-private.alt"
+          }
+        },
+        "night/tavern/tavern-night-traveler-private": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-tavern-result.svg",
+            "alt": "A voluntary private-space conversation with the Tavern recurring traveler.",
+            "altKey": "presentation.static.tavern.night.traveler-private.alt"
+          }
+        },
+        "relationship/assassin-handler/assassin-night-handler-contact/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-assassin-result.svg",
+            "alt": "A bounded off-hours conversation with the Handler or informant.",
+            "altKey": "presentation.static.assassin.night.handler-contact.alt"
+          }
+        },
+        "relationship/guard-partner/guard-night-partner/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-guard-result.svg",
+            "alt": "Optional off-duty time with the Guard Partner.",
+            "altKey": "presentation.static.guard.night.partner.alt"
+          }
+        },
+        "relationship/hunter-senior-guide/hunter-night-senior-guide/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-hunter-result.svg",
+            "alt": "Optional off-duty time with the Senior Guide, without implied romance.",
+            "altKey": "presentation.static.hunter.night.senior-guide.alt"
+          }
+        },
+        "relationship/lumber-foreman/lumber-night-foreman-social/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/foreman-night-voluntary-v2.svg",
+            "alt": "A voluntary personal conversation with the Lumber Foreman after work.",
+            "altKey": "presentation.static.lumber.night.foreman-social.alt"
+          }
+        },
+        "relationship/merchant-supplier/merchant-night-supplier/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-merchant-result.svg",
+            "alt": "Optional off-hours conversation with the Merchant Supplier.",
+            "altKey": "presentation.static.merchant.night.supplier.alt"
+          }
+        },
+        "relationship/prostitute-recurring-client/prostitute-night-personal-continuation/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/career-prostitute-result.svg",
+            "alt": "An explicitly chosen personal continuation with the recurring client.",
+            "altKey": "presentation.static.prostitute.night.personal-continuation.alt"
+          }
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "All Night labels/body/aria and static-image alt/caption rows remain bilingual."
+      ],
+      "forbiddenVisibleTokens": [
+        "nightChoice.",
+        "presentation.static.",
+        "relationship/"
+      ],
+      "sourceAuthority": [
+        "D42 Night localization/presentation authority",
+        "golden fixture v54"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "activity-network-v36-ending",
+      "prerequisiteState": "Activity Network ending card/epilogue is visible.",
+      "expectedLocalization": {
+        "ending.ending.activity.network.title": {
+          "ru": "Нити через границы",
+          "en": "Threads Across the Boundaries"
+        },
+        "ending.ending.activity.network.description": {
+          "ru": "Полевые контакты, проводники и люди с доступом перестают быть случайными знакомствами и начинают работать как настоящая экспедиционная сеть. Это судьба исследовательницы, которая умеет проходить сложные места не в одиночку и не превращает доверие в универсальный пропуск.",
+          "en": "Field contacts, guides, and people with access stop being isolated acquaintances and become a real expedition network. This is the fate of an explorer who knows how to cross difficult ground without doing it alone, while never turning trust into a universal pass."
+        },
+        "ending.ending.activity.network.epilogue": {
+          "ru": "Контакты связывают разрозненные направления в единое рабочее пространство.",
+          "en": "The contacts tie disconnected routes into one practical working network."
+        },
+        "presentation.static.activity-ending-network.alt": {
+          "ru": "Нейтральная панорама Листограда как узла маршрутов и контактов; визуал не приписывает финал конкретной карьере или фракции.",
+          "en": "A neutral view of Listograd as a hub of routes and contacts; the image does not assign the ending to any specific career or faction."
+        },
+        "presentation.static.activity-ending-network.caption": {
+          "ru": "Нейтральный project-owned визуал сети, сходящейся в городе. Отдельный финальный арт с несколькими региональными контактами пока отсутствует.",
+          "en": "Neutral project-owned visual for a network converging on the city. A dedicated ending image showing several regional contacts is still missing."
+        }
+      },
+      "expectedPresentation": {
+        "ending/activity/network": {
+          "static": {
+            "kind": "image",
+            "src": "assets/stage-town.svg",
+            "alt": "Нейтральная панорама города как узла маршрутов и контактов.",
+            "altKey": "presentation.static.activity-ending-network.alt"
+          }
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "Activity Network static image resolves localized alt and caption."
+      ],
+      "forbiddenVisibleTokens": [
+        "У этой сети нет штаба, печати и списка членов. Есть условные фразы, надёжные адреса, люди, которые знают, кому передать записку, и достаточно доверия, чтобы однажды ответить на неё. Ни один контакт не открывает все двери, но вместе они превращают четыре разрозненных направления в пространство, где у вас почти всегда есть с кем начать разговор.",
+        "The network has no headquarters, seal, or membership roll. It has agreed phrases, reliable addresses, people who know where to pass a note, and enough trust for someone to answer it. No contact opens every door, but together they turn four disconnected directions into a world where you almost always know who to speak to first."
+      ],
+      "forbiddenExactLocalizationValues": {
+        "ending.ending.activity.network.epilogue": {
+          "ru": "У этой сети нет штаба, печати и списка членов. Есть условные фразы, надёжные адреса, люди, которые знают, кому передать записку, и достаточно доверия, чтобы однажды ответить на неё. Ни один контакт не открывает все двери, но вместе они превращают четыре разрозненных направления в пространство, где у вас почти всегда есть с кем начать разговор.",
+          "en": "The network has no headquarters, seal, or membership roll. It has agreed phrases, reliable addresses, people who know where to pass a note, and enough trust for someone to answer it. No contact opens every door, but together they turn four disconnected directions into a world where you almost always know who to speak to first."
+        }
+      },
+      "sourceAuthority": [
+        "Activity v17 predecessor",
+        "Activity Network v36 final wording"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "palace-invitation-progression-confrontation-endings",
+      "prerequisiteState": "Exercise Palace invitation, duty milestones, outcome-ready, Custodian confrontation, all four ending cards, and explicit Return Home choice.",
+      "expectedLocalization": {
+        "event.palace.invitation.day1-arrival.title": {
+          "ru": "Дворец — Запечатанное приглашение",
+          "en": "Palace — A Sealed Invitation"
+        },
+        "event.palace.invitation.day1-arrival.variant.default.text": {
+          "ru": "Первое утро ещё не успевает стать привычным, когда у двери появляется дворцовый посыльный и оставляет тяжёлый конверт. Печать официальная, формулировка точная: твоя работа во всех десяти обычных профессиях уже признана. Это не испытание, и письмо не притворяется, будто объясняет, зачем Дворцу понадобилась именно такая широта опыта.",
+          "en": "Before the first morning has settled into routine, a Palace courier leaves a heavy envelope at your door. The seal is official, the wording exact: your work across all ten ordinary professions has already been recognized. This is not a test, and the letter does not pretend to explain why such breadth matters."
+        },
+        "event.palace.invitation.day1-arrival.choice.open.label": {
+          "ru": "Сломать печать",
+          "en": "Break the seal"
+        },
+        "event.palace.invitation.day1-arrival.choice.open.text": {
+          "ru": "Внутри — официальный вызов с указанными временем и входом. К нему не приложены ни экзамен, ни жеребьёвка, ни покровитель, ни частная рекомендация.",
+          "en": "Inside is a formal summons with a time and entrance named. No examination, lottery, patron, or private recommendation is attached to it."
+        },
+        "event.palace.invitation.reveal.title": {
+          "ru": "Дворец — Приглашение подтверждено",
+          "en": "Palace — Invitation Confirmed"
+        },
+        "event.palace.invitation.reveal.variant.default.text": {
+          "ru": "Вторая страница снимает последнюю процедурную неопределённость. Hard Work завершён во всех десяти обычных карьерах, и все десять соответствующих пакетов активны в этой жизни. По постоянному дворцовому протоколу этого достаточно. Ни в одной сноске не появляется пророчество, предмет, роман или одиннадцатая профессия.",
+          "en": "The second page removes the last procedural doubt. You completed Hard Work in all ten ordinary careers, and all ten corresponding packages are active in this life. Under standing Palace protocol, that combination is sufficient. Nothing in the small print adds a prophecy, an item, a romance, or an eleventh profession."
+        },
+        "event.palace.invitation.reveal.choice.accept.text": {
+          "ru": "Ты подтверждаешь визит. Доступ во Дворец открывается на эту жизнь. Почему учреждение так ценит опыт из разных областей, по-прежнему неясно — ответ придётся искать внутри.",
+          "en": "You confirm the visit. Palace access opens for this life. The institution's deeper reason for valuing cross-domain experience remains unanswered—and must be learned inside."
+        },
+        "event.palace.progression.milestone-02-working-rhythm.title": {
+          "ru": "Дворец — Рабочий ритм",
+          "en": "Palace — Working Rhythm"
+        },
+        "event.palace.progression.milestone-02-working-rhythm.variant.default.text": {
+          "ru": "Ко второй обязанности совпадение перестаёт выглядеть совпадением. Отделы, занятые разными делами, используют одинаковые номера дел, одинаковые пометки передачи и одинаково тщательно фиксируют, кто что знал и когда. Контуры общей системы уже видны. Что именно она в конечном счёте защищает, всё ещё вне твоего допуска.",
+          "en": "By the second duty, coincidence stops looking like coincidence. Offices that handle different work use the same case marks, the same handoff notation, and the same habit of recording who knew what, and when. You can see the shape of a shared system. What that system is ultimately protecting remains outside your clearance."
+        },
+        "event.palace.progression.milestone-02-working-rhythm.choice.continue.text": {
+          "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+          "en": "You acknowledge what the work has established and continue from the stage already committed."
+        },
+        "event.palace.progression.milestone-05-trusted-service.title": {
+          "ru": "Дворец — Доверенная служба",
+          "en": "Palace — Trusted Service"
+        },
+        "event.palace.progression.milestone-05-trusted-service.variant.default.text": {
+          "ru": "Доверенная служба начинается там, где тебя просят проследить проблему через несколько столов, а не решить только свой кусок. Задержавшаяся запись меняет маршрут; небрежный маршрут меняет аудиенцию; неясная аудиенция меняет того, с кого спросят. Теперь Дворец проверяет широту опыта на практике, а не на бумаге. Жизнь в службе уже можно представить, но защищённая функция учреждения всё ещё скрыта.",
+          "en": "Trusted Service means being asked to follow a problem across desks instead of solving only the piece in front of you. A delayed record changes a route; a careless route changes an audience; an unclear audience changes who is held responsible. The Palace is testing breadth in practice now, not on paper. A life of service becomes imaginable, but the institution's protected purpose is still withheld."
+        },
+        "event.palace.progression.milestone-05-trusted-service.choice.continue.text": {
+          "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+          "en": "You acknowledge what the work has established and continue from the stage already committed."
+        },
+        "event.palace.progression.milestone-08-palace-network.title": {
+          "ru": "Дворец — Дворцовая сеть",
+          "en": "Palace — Palace Network"
+        },
+        "event.palace.progression.milestone-08-palace-network.variant.default.text": {
+          "ru": "Дворцовая сеть наконец делает власть достаточно обыденной, чтобы её можно было измерить. Назначения открывают двери. Правила доступа закрывают их. Аудит показывает слабые цепочки ответственности. Маршрутизация и формальное признание решают, какие факты попадут к каким столам. Если выбрать Придворную власть, речь будет об этих институциональных рычагах — не о власти над самой реальностью.",
+          "en": "The Palace Network finally makes power look ordinary enough to measure. Appointments open doors. Access rules close them. Audits expose weak chains of responsibility. Routing and formal recognition decide which facts reach which desks. Court Power, if you pursue it, would mean authority over these institutional levers—not command over reality itself."
+        },
+        "event.palace.progression.milestone-08-palace-network.choice.continue.text": {
+          "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+          "en": "You acknowledge what the work has established and continue from the stage already committed."
+        },
+        "event.palace.progression.milestone-12-crossroads.title": {
+          "ru": "Дворец — Перекрёсток",
+          "en": "Palace — Crossroads"
+        },
+        "event.palace.progression.milestone-12-crossroads.variant.default.text": {
+          "ru": "На Перекрёстке несколько проверенных записей упорно не укладываются в обычную карту. Прибытие зарегистрировано там, где его не объясняет ни дорога, ни ворота, ни корабль. Уход подтверждён двумя отделами, у которых не было общего писаря. Источники подтверждают аномалию; они пока не объясняют её механизм, причину или возможность повторения.",
+          "en": "At Crossroads, several authenticated records refuse to fit the ordinary map. An arrival is logged where no road, gate, or ship accounts for it. A departure is confirmed by two offices that never shared a clerk. The sources corroborate an anomaly; they do not yet explain its mechanism, its cause, or whether it can be repeated."
+        },
+        "event.palace.progression.milestone-12-crossroads.choice.continue.text": {
+          "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+          "en": "You acknowledge what the work has established and continue from the stage already committed."
+        },
+        "event.palace.progression.milestone-15-outcome-ready.title": {
+          "ru": "Дворец — Готовность к исходу",
+          "en": "Palace — Outcome Ready"
+        },
+        "event.palace.progression.milestone-15-outcome-ready.variant.default.text": {
+          "ru": "Пятнадцатая обязанность закрывает цикл и наконец даёт рассеянной работе имя. Дворцовый Свод — это порядок сопоставления проверенных свидетельств из разных областей. За ним находится защищённый Архив Порога: записи о редких переходах через реальный межмировой Порог. Твоё собственное прибытие хранится среди таких аномалий. Теперь ты знаешь достаточно, чтобы судить о Дворце и выбрать отношение к нему. Но ты всё ещё не знаешь, что изначально тебя переместило.",
+          "en": "The fifteenth duty closes the rotation and finally gives the scattered work a name. The Palace Concordance is the method that correlates authenticated evidence across domains. Behind it sits the protected Threshold Archive: records of rare crossings at a real inter-world Threshold. Your own arrival is filed among those anomalies. You now know enough to judge the Palace and choose your relationship to it. You still do not know what originally displaced you."
+        },
+        "event.palace.progression.milestone-15-outcome-ready.choice.continue.text": {
+          "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+          "en": "You acknowledge what the work has established and continue from the stage already committed."
+        },
+        "event.palace.outcome-finalize.service-life.title": {
+          "ru": "Дворец — Жизнь в службе",
+          "en": "Palace — Service Life"
+        },
+        "event.palace.outcome-finalize.service-life.variant.default.text": {
+          "ru": "«Жизнь в службе» больше не выглядит абстрактным обещанием остаться. Теперь видна работа, которая за этим стоит: сохранять передачи, оставлять ответственность названной, защищать профессиональные границы и не давать институциональной памяти исчезать вместе со сменой людей. Выбор преемственности не требует считать Дворец непогрешимым.",
+          "en": "Service Life is no longer an abstract promise of staying. You can see the work it would require: preserving handoffs, keeping responsibilities named, protecting professional boundaries, and making institutional memory survive changes of staff. Choosing continuity would not require pretending the Palace is infallible."
+        },
+        "event.palace.outcome-finalize.service-life.choice.finalize.label": {
+          "ru": "Сделать «Жизнь в службе» доступной",
+          "en": "Make Service Life eligible"
+        },
+        "event.palace.outcome-finalize.service-life.choice.finalize.text": {
+          "ru": "Ты сохраняешь «Жизнь в службе» как реальный выбор концовки: преемственность без слепой лояльности и ответственность без отказа от собственного суждения.",
+          "en": "You preserve Service Life as a real ending choice: continuity without blind loyalty, and responsibility without surrendering judgment."
+        },
+        "event.palace.outcome-finalize.court-power.title": {
+          "ru": "Дворец — Придворная власть",
+          "en": "Palace — Court Power"
+        },
+        "event.palace.outcome-finalize.court-power.variant.default.text": {
+          "ru": "Придворная власть теперь имеет точные границы. Это власть над назначениями, пересмотром доступа, аудитом, маршрутизацией, приоритетами, формальным признанием и процедурными исключениями внутри Дворца. Она способна менять действия учреждения. Она не заставляет Порог повиноваться титулу и не делает тебя правительницей мира.",
+          "en": "Court Power now has a precise shape. It is authority over appointments, access review, audits, routing, priorities, formal recognition, and procedural exceptions inside the Palace. It can change how the institution acts. It cannot make the Threshold obey by force of title, and it does not make you sovereign over the world."
+        },
+        "event.palace.outcome-finalize.court-power.choice.finalize.label": {
+          "ru": "Сделать «Придворную власть» доступной",
+          "en": "Make Court Power eligible"
+        },
+        "event.palace.outcome-finalize.court-power.choice.finalize.text": {
+          "ru": "Ты сохраняешь «Придворную власть» как реальный выбор концовки: подотчётная институциональная власть, а не монархия, магия, покровительство или роман.",
+          "en": "You preserve Court Power as a real ending choice: accountable institutional authority, not monarchy, magic, patronage, or romance."
+        },
+        "event.palace.outcome-finalize.inner-truth.title": {
+          "ru": "Дворец — Внутренняя истина",
+          "en": "Palace — Inner Truth"
+        },
+        "event.palace.outcome-finalize.inner-truth.variant.default.text": {
+          "ru": "«Внутренняя истина» приводит к глубочайшей проверенной функции Дворца. Учреждение охраняет Порог и ведёт Архив подтверждённых свидетельств о переходах. Чувствительные записи намеренно распределялись по разным областям, чтобы ни один отдел не мог в одиночку восстановить всю картину. Доказательства не сообщают, кто первым создал систему, что изначально переместило тебя и насколько искренна доктрина Принца.",
+          "en": "Inner Truth reaches the Palace's deepest verified function. The institution safeguards the Threshold and maintains an Archive of authenticated crossing evidence. Sensitive records were deliberately distributed across domains so no single office could reconstruct the whole picture alone. The evidence does not tell you who first built the system, what originally displaced you, or whether the Prince's doctrine is wholly sincere."
+        },
+        "event.palace.outcome-finalize.inner-truth.choice.finalize.label": {
+          "ru": "Сделать «Внутреннюю истину» доступной",
+          "en": "Make Inner Truth eligible"
+        },
+        "event.palace.outcome-finalize.inner-truth.choice.finalize.text": {
+          "ru": "Ты сохраняешь «Внутреннюю истину» как реальный выбор концовки: происхождение источников важнее удобной уверенности, противоречия остаются видимыми, а неизвестное — честно неизвестным.",
+          "en": "You preserve Inner Truth as a real ending choice: provenance before certainty, contradictions kept visible, and unknowns left honestly unresolved."
+        },
+        "ending.ending.palace.service-life.description": {
+          "ru": "Остаться и сделать дворцовую службу устойчивее: ясные передачи, названная ответственность, профессиональные границы и институциональная память без слепой лояльности.",
+          "en": "Choose to remain and make Palace service durable: clear handoffs, named responsibility, professional boundaries, and institutional memory without blind loyalty."
+        },
+        "ending.ending.palace.court-power.title": {
+          "ru": "Дворец — Придворная власть",
+          "en": "Palace — Court Power"
+        },
+        "ending.ending.palace.court-power.description": {
+          "ru": "Принять подотчётную власть над дворцовыми назначениями, доступом, аудитом, маршрутизацией, приоритетами, признанием и процедурными исключениями.",
+          "en": "Accept accountable authority over Palace appointments, access, audits, routing, priorities, recognition, and procedural exceptions."
+        },
+        "ending.ending.palace.inner-truth.description": {
+          "ru": "Выбрать работу проверки: сохранять происхождение источников, противоречия и честное неизвестное в Архиве Порога вместо удобного окончательного ответа.",
+          "en": "Choose the work of verification: preserve the Threshold Archive's provenance, contradictions, and honest unknowns instead of forcing a final answer."
+        },
+        "ending.ending.palace.return-home.description": {
+          "ru": "После завершения дворцовой прогрессии, достижения не менее 91 во всех двенадцати характеристиках и опровержения исключительного вето Хранителя решить, переходить ли через Порог в исходный мир.",
+          "en": "With Palace progression complete, all twelve progression stats at least 91, and the Custodian's exclusive veto defeated, choose whether to cross the Threshold back to your original world."
+        },
+        "action.palace.confront-prince.description": {
+          "ru": "Предъявить дворцовые записи Хранителю и оспорить его исключительное вето доказательствами, а не боем.",
+          "en": "Present the Palace record to the Custodian and challenge his exclusive veto through evidence, not combat."
+        },
+        "action.palace.confront-prince.scene.default.text": {
+          "ru": "Записей уже достаточно, чтобы быть услышанной. За плечами — пятнадцать обязанностей, в руках — проверенная цепочка свидетельств, а за дверью нет никакого скрытого испытания.",
+          "en": "The record is complete enough to be heard. You enter the audience with fifteen duties behind you, a verified chain of evidence in hand, and no hidden trial waiting beyond the door."
+        },
+        "event.palace.prince-confrontation.phase-01-audit-record.variant.default.text": {
+          "ru": "Принц принимает тебя как Хранитель, а не как противник на поединке. Сначала он требует записи, и только потом — вывод. Пятнадцать обязанностей дали тебе подтверждённую работу, связанные дела и очертания Свода. Они не дали права превращать каждое институциональное утверждение в факт.",
+          "en": "The Prince receives you as Custodian, not as a duelist. He asks for the record before he asks for your conclusion. Fifteen duties gave you authenticated work, linked cases, and the shape of the Concordance. They did not give you permission to turn every institutional claim into a fact."
+        },
+        "event.palace.prince-confrontation.phase-01-audit-record.choice.separate-record-from-claim.label": {
+          "ru": "Отделить запись от утверждения",
+          "en": "Separate record from claim"
+        },
+        "event.palace.prince-confrontation.phase-01-audit-record.choice.separate-record-from-claim.text": {
+          "ru": "Ты выкладываешь то, что дворцовые записи действительно устанавливают, а затем отмечаешь, где начинается толкование самого учреждения. Различие выдерживает проверку.",
+          "en": "You lay out what the Palace records establish, then mark where Palace interpretation begins. The distinction holds."
+        },
+        "event.palace.prince-confrontation.phase-01-audit-record.choice.unsupported-conclusion.label": {
+          "ru": "Утверждать больше, чем доказывают записи",
+          "en": "Claim more than the record proves"
+        },
+        "event.palace.prince-confrontation.phase-01-audit-record.choice.unsupported-conclusion.text": {
+          "ru": "Ты закрываешь пробел в доказательствах уверенностью. Принц указывает на неподтверждённый шаг и завершает попытку. Записи остаются у тебя для новой проверки.",
+          "en": "You close a gap in the evidence with certainty. The Prince points to the unsupported step and ends the attempt. The records remain yours to review."
+        },
+        "event.palace.prince-confrontation.phase-01-audit-record.choice.not-yet.text": {
+          "ru": "Ты отходишь, не связывая себя доводом, который пока не можешь защитить. Ничего не потеряно; можно вернуться к записям и попробовать снова.",
+          "en": "You withdraw before committing to an argument you cannot defend. Nothing is forfeited; you may return to the record and try again."
+        },
+        "event.palace.prince-confrontation.phase-02-name-contradiction.variant.default.text": {
+          "ru": "Принц формулирует доктрину Хранителя без украшений: раз Дворец контролирует доступ к Архиву Порога, последнее слово о смысле Архива должно оставаться за Хранителем. Первая половина — институциональный факт. Вторая — утверждение о знании. Твоя задача — не смешать их.",
+          "en": "The Prince states the Custodian doctrine without ornament: because the Palace controls access to the Threshold Archive, the Custodian must retain the final word on what the Archive means. The first half is an institutional fact. The second is a claim about knowledge. Your task is to keep them separate."
+        },
+        "event.palace.prince-confrontation.phase-02-name-contradiction.choice.authority-is-not-proof.text": {
+          "ru": "Ты признаёшь власть Хранителя над доступом и отвергаешь скачок от хранения к исключительной истине. Должность может контролировать дверь, не владея каждым верным выводом за ней.",
+          "en": "You accept the Custodian's power over access and reject the leap from custody to exclusive truth. An office can control a door without owning every valid conclusion beyond it."
+        },
+        "event.palace.prince-confrontation.phase-02-name-contradiction.choice.accept-exclusive-veto.text": {
+          "ru": "Ты позволяешь институциональному контролю заменить доказательство. Противоречие остаётся без ответа, и в этой попытке вето Принца сохраняется.",
+          "en": "You let institutional control substitute for evidence. The contradiction remains unanswered, and the Prince's veto stands for this attempt."
+        },
+        "event.palace.prince-confrontation.phase-02-name-contradiction.choice.not-yet.text": {
+          "ru": "Ты заканчиваешь разговор, не соглашаясь с доктриной. Право на новую попытку и сами дворцовые записи остаются неизменными.",
+          "en": "You end the exchange without conceding the doctrine. Your eligibility and the Palace record remain unchanged."
+        },
+        "event.palace.prince-confrontation.phase-03-define-boundary.variant.default.text": {
+          "ru": "Принц требует назвать следствие твоей позиции. Если ты заявляешь право вернуться, что именно ты отвергаешь? Связный ответ не может требовать, чтобы этот мир оказался ложным, его жители — расходным материалом, а Дворец — разрушенным. Твоё происхождение принадлежит тебе; чужая реальность — нет.",
+          "en": "The Prince presses on the consequence. If you claim a right to return, what exactly are you rejecting? A coherent answer cannot require this world to be false, its people to be disposable, or the Palace to be destroyed. Your origin is yours; everyone else's reality is not."
+        },
+        "event.palace.prince-confrontation.phase-03-define-boundary.choice.leave-without-erasing.text": {
+          "ru": "Ты проводишь границу ясно. Мир-преемник остаётся реальным. Отказ от вечного хранения не разрушает Дворец. Выбор собственного происхождения не переписывает чужую жизнь.",
+          "en": "You draw the boundary clearly. The successor world remains real. Refusing permanent custody does not destroy the Palace. Choosing your origin does not rewrite anyone else's life."
+        },
+        "event.palace.prince-confrontation.phase-03-define-boundary.choice.declare-world-unreal.label": {
+          "ru": "Назвать этот мир нереальным",
+          "en": "Call this world unreal"
+        },
+        "event.palace.prince-confrontation.phase-03-define-boundary.choice.declare-world-unreal.text": {
+          "ru": "Архив не подтверждает такого вывода. Довод ломается на самой границе, и попытка заканчивается без сигнала победы.",
+          "en": "The Archive does not support that claim. The argument fails at the boundary, and the attempt ends without a defeat signal."
+        },
+        "event.palace.prince-confrontation.phase-03-define-boundary.choice.not-yet.text": {
+          "ru": "Ты останавливаешься до финальной реконструкции. Ни одна концовка не выбрана, ничего постоянного не потеряно, а спор остаётся доступным для повторной попытки.",
+          "en": "You stop before the final reconstruction. No ending is chosen, nothing permanent is lost, and the confrontation remains retryable."
+        },
+        "event.palace.prince-confrontation.phase-04-reconstruct-return.variant.default.text": {
+          "ru": "Последняя проверка — реконструкция, а не бой. Ты связываешь подтверждённую аномалию собственного прибытия с согласующимися записями Архива и с границей, которую только что защитила. Эта цепочка способна установить след происхождения, не притворяясь, будто известна первоначальная причина твоего перемещения.",
+          "en": "The final test is reconstruction, not combat. You connect your authenticated arrival anomaly to corroborating Archive records and to the boundary you just defended. The chain can identify an origin trace without pretending to know the original cause of your displacement."
+        },
+        "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.present-origin-trace.text": {
+          "ru": "Цепочка выдерживает проверку и не зависит от личного толкования Принца. Его исключительное эпистемическое вето больше не может отвергать этот случай. «Возвращение домой» становится доступным — но воспользоваться им или нет, по-прежнему решаешь ты.",
+          "en": "The chain holds without relying on the Prince's private interpretation. His exclusive epistemic veto can no longer dismiss the case. The path to Return Home is now eligible—but whether to take it remains your decision."
+        },
+        "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.invent-original-cause.label": {
+          "ru": "Заполнить неизвестную причину догадкой",
+          "en": "Fill the missing cause with a guess"
+        },
+        "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.invent-original-cause.text": {
+          "ru": "Ты заменяешь неизвестную причину утверждением. Принц отвергает реконструкцию именно в этой точке. Попытка заканчивается, а записи остаются доступными для новой.",
+          "en": "You replace an unresolved cause with an assertion. The Prince rejects the reconstruction at that point. The attempt ends, and the record remains available for another try."
+        },
+        "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.not-yet.text": {
+          "ru": "Ты оставляешь причину неизвестной и прекращаешь попытку. Принц не побеждён, концовка не выбрана, и позже к спору можно вернуться.",
+          "en": "You leave the cause unresolved and stop the attempt. The Prince is not defeated, no ending is committed, and you may return later."
+        },
+        "ui.palace.confrontation.complete": {
+          "ru": "Мандат Хранителя оспорен. Проверенный след происхождения больше нельзя отвергнуть одним лишь исключительным вето. Принц не убит и Дворец не разрушен; «Возвращение домой» остаётся отдельным явным выбором.",
+          "en": "The Custodial Mandate has been overruled. The verified origin trace can no longer be dismissed by exclusive veto alone. The Prince is not killed and the Palace is not destroyed; Return Home remains a separate explicit choice."
+        },
+        "ui.palace.returnHome.explicitCommit": {
+          "ru": "Спор завершён, но переход не происходит автоматически. Если ты действительно хочешь покинуть этот мир и вернуться в исходный, выбери «Возвращение домой» отдельно.",
+          "en": "The confrontation is complete, but the crossing does not happen automatically. If you truly want to leave this world for your original one, choose Return Home separately."
+        },
+        "ending.ending.palace.service-life.epilogue": {
+          "ru": "Ты остаёшься. Не потому, что Дворец доказал своё совершенство, а потому, что теперь точно знаешь его слабые места. Передачи записывают, а не шепчут. Ответственность сохраняет имена. Новые люди получают записи вместо слухов, а границы становятся частью работы, а не личной милостью. Дворец остаётся несовершенным, политическим и реальным. Ты решаешь помочь ему выстоять, не требуя трона и не делая вид, будто разгадана каждая тайна.",
+          "en": "You stay. Not because the Palace proved itself perfect, but because you know exactly where it is fragile. Handoffs become written instead of whispered. Responsibilities keep names attached to them. New staff inherit records instead of rumours, and boundaries become part of the work rather than private favours. The Palace remains imperfect, political, and real. You choose to help it endure without claiming a throne or pretending every secret has been solved."
+        },
+        "ending.ending.palace.court-power.epilogue": {
+          "ru": "Ты принимаешь формальный мандат внутри Дворца. Двери открываются так, чтобы можно было ответить, почему они открылись; аудит имеет вес, потому что за провал кто-то отвечает. Назначения, маршруты и исключения становятся решениями, которые можно проследить, оспорить и исправить. Твоя власть значительна, но ограничена. Она не делает тебя монархом мира, а Порог не подчиняется титулу.",
+          "en": "You accept a formal mandate inside the Palace. Doors open because someone can account for why they opened; audits matter because someone is answerable when they fail. Appointments, routes, and exceptions become decisions that can be traced, challenged, and corrected. Your authority is substantial, but bounded. It does not make you monarch of the world, and the Threshold does not obey a title."
+        },
+        "ending.ending.palace.inner-truth.epilogue": {
+          "ru": "Ты остаёшься с вопросами, но не с туманом. Архив Порога перестраивают вокруг происхождения свидетельств: что наблюдали, что сообщили, что вывели и на что ответа пока нет. Чувствительные записи больше не могут прятаться за престижем секретности. Ты узнаёшь больше, чем узнает почти кто-либо, и всё равно не выдумываешь недостающую причину собственного перемещения. Истина становится точнее именно там, где остаётся неполной.",
+          "en": "You remain with the questions, but not with vagueness. The Threshold Archive is reorganized around provenance: what was observed, what was reported, what was inferred, and what still has no answer. Sensitive records can no longer hide behind the prestige of secrecy. You learn more than most people ever will, and still refuse to invent the missing cause of your own displacement. The truth becomes sharper precisely where it remains incomplete."
+        },
+        "ending.ending.palace.return-home.epilogue": {
+          "ru": "Ты выбираешь дом. След происхождения проверен; Порог отвечает реконструкции, а не разрешению Принца. Переход не стирает мир за спиной. Дворец остаётся, его споры не закончены, а люди продолжают жить жизни, которые никогда не были менее реальны, чем твоя. Затем свет, давление и расстояние Порога уступают место — и ты узнаёшь мир, из которого пришла.",
+          "en": "You choose home. The origin trace is verified; the Threshold answers the reconstruction rather than the Prince's permission. Crossing does not erase the world behind you. The Palace remains, its arguments unfinished and its people still living lives that were never less real than yours. Then the light, pressure, and distance of the Threshold give way—and you recognize the world you came from."
+        },
+        "presentation.static.palace.invitation.alt": {
+          "ru": "Нейтральный городской фон для сцены с дворцовым приглашением; изображение не содержит скрытого условия или подсказки.",
+          "en": "Neutral town backdrop for the Palace invitation scene; the image contains no hidden requirement or clue."
+        },
+        "presentation.static.palace.invitation.caption": {
+          "ru": "Письмо приходит в обычный городской день. Значение приглашения раскрывается только текстом сцены.",
+          "en": "The letter arrives during an ordinary day in town. Its significance is conveyed only by the scene text."
+        },
+        "presentation.static.palace.service.alt": {
+          "ru": "Нейтральный интерьер для дворцовой административной сцены без изображения конкретного кабинета, персонажа или скрытого доказательства.",
+          "en": "Neutral interior backdrop for a Palace administrative scene, without depicting a specific office, character, or hidden piece of evidence."
+        },
+        "presentation.static.palace.service.caption": {
+          "ru": "Фон обозначает внутреннее пространство; все факты о Дворце сообщаются только авторским текстом.",
+          "en": "The backdrop only establishes an interior setting; all factual Palace information comes from the authored text."
+        },
+        "presentation.static.palace.archive.alt": {
+          "ru": "Нейтральный интерьер сопровождает сцену об Архиве Порога; специальное изображение Архива пока отсутствует.",
+          "en": "A neutral interior accompanies the Threshold Archive scene; dedicated Archive artwork is not yet available."
+        },
+        "presentation.static.palace.archive.caption": {
+          "ru": "Изображение не показывает устройство Порога и не разрешает оставшиеся тайны.",
+          "en": "The image does not depict how the Threshold works and does not resolve the remaining mysteries."
+        },
+        "presentation.static.palace.custodian.alt": {
+          "ru": "Нейтральный интерьер для разговора с Хранителем; отдельного портрета или финального дизайна Принца в проекте пока нет.",
+          "en": "Neutral interior for the Custodian conversation; the project does not yet contain a dedicated portrait or final visual design for the Prince."
+        },
+        "presentation.static.palace.custodian.caption": {
+          "ru": "Принц остаётся человеком и должностным лицом; визуальный фон не добавляет ему сверхъестественных свойств.",
+          "en": "The Prince remains a human office-holder; the visual backdrop adds no supernatural qualities."
+        },
+        "presentation.static.palace.return-home.alt": {
+          "ru": "Нейтральный городской фон для выбора «Возвращение домой»; отдельного изображения Порога и исходного мира пока нет.",
+          "en": "Neutral town backdrop for the Return Home choice; dedicated Threshold and original-world artwork is not yet available."
+        },
+        "presentation.static.palace.return-home.caption": {
+          "ru": "Переход и исходный мир описываются текстом, чтобы временный фон не подменял канон.",
+          "en": "The crossing and original world are described in text so the temporary backdrop does not substitute for canon."
+        },
+        "presentation.static.palace.service-interior.alt": {
+          "ru": "Рабочий дворцовый интерьер со столами, записями и контролируемыми проходами; сцена показывает администрацию, а не скрытую магическую функцию.",
+          "en": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function."
+        },
+        "presentation.static.palace.service-interior.caption": {
+          "ru": "Дворцовая служба показана как административная работа; скрытая функция Порога здесь не раскрывается.",
+          "en": "Palace service is shown as administrative work; the Threshold's hidden function is not revealed here."
+        },
+        "presentation.static.palace.threshold-archive.alt": {
+          "ru": "Защищённый архив с несколькими группами записей и местами проверки источников; изображение не объясняет причину переходов.",
+          "en": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings."
+        },
+        "presentation.static.palace.threshold-archive.caption": {
+          "ru": "Архив сопоставляет разрозненные свидетельства; ни один носитель не содержит всей картины.",
+          "en": "The archive correlates distributed evidence; no single record contains the whole picture."
+        },
+        "presentation.static.palace.custodian-audience.alt": {
+          "ru": "Формальная встреча с человеческим Хранителем за столом с записями; сцена изображает проверку доказательств, а не бой.",
+          "en": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat."
+        },
+        "presentation.static.palace.custodian-audience.caption": {
+          "ru": "Хранитель — человек и должностное лицо; спор решается разбором свидетельств, а не физическим противостоянием.",
+          "en": "The Custodian is a human office-holder; the dispute is resolved through evidence review, not physical confrontation."
+        },
+        "presentation.static.palace.return-home-threshold.alt": {
+          "ru": "Человек пересекает ограниченный межмировой Порог, оставляя позади целый и продолжающий существовать мир.",
+          "en": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues."
+        },
+        "presentation.static.palace.return-home-threshold.caption": {
+          "ru": "Переход означает уход из реального мира, а не его исчезновение; причина перемещения не показана.",
+          "en": "The crossing means leaving a real world, not erasing it; the cause of the displacement is not shown."
+        }
+      },
+      "expectedPresentation": {
+        "ending/palace/court-power": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "ending/palace/inner-truth": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "ending/palace/return-home": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-return-home-threshold.svg",
+            "alt": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues.",
+            "altKey": "presentation.static.palace.return-home-threshold.alt"
+          }
+        },
+        "ending/palace/service-life": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-invitation-day1-arrival/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/stage-town.svg",
+            "alt": "Neutral town backdrop for a Palace invitation scene.",
+            "altKey": "presentation.static.palace.invitation.alt"
+          }
+        },
+        "job/palace/event/palace-invitation-reveal/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/stage-town.svg",
+            "alt": "Neutral town backdrop for a Palace invitation scene.",
+            "altKey": "presentation.static.palace.invitation.alt"
+          }
+        },
+        "job/palace/event/palace-outcome-finalize-court-power/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-outcome-finalize-inner-truth/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "job/palace/event/palace-outcome-finalize-service-life/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-01-audit-record/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-02-name-contradiction/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-03-define-boundary/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-04-reconstruct-return/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-02-working-rhythm/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-05-trusted-service/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-08-palace-network/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-12-crossroads/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-15-outcome-ready/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "location/town/palace/confront-prince/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        }
+      },
+      "expectedAccessibleNameOrState": [
+        "Invitation remains neutral town media.",
+        "Confrontation copy is evidence review rather than combat.",
+        "Return Home remains a separate explicit choice after confrontation."
+      ],
+      "requiredEndingDefinitionIds": [
+        "ending.palace.service-life",
+        "ending.palace.court-power",
+        "ending.palace.inner-truth",
+        "ending.palace.return-home"
+      ],
+      "forbiddenVisibleTokens": [
+        "palace.prince-defeated",
+        "palace.outcome.",
+        "ending.palace.return-home"
+      ],
+      "sourceAuthority": [
+        "Palace v19 player-facing authority",
+        "golden fixture v54"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "palace-d48-media-accessibility-firewall",
+      "prerequisiteState": "Render all Palace slots that use dedicated D48 media plus both invitation slots.",
+      "expectedLocalization": {
+        "presentation.static.palace.service-interior.alt": {
+          "ru": "Рабочий дворцовый интерьер со столами, записями и контролируемыми проходами; сцена показывает администрацию, а не скрытую магическую функцию.",
+          "en": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function."
+        },
+        "presentation.static.palace.service-interior.caption": {
+          "ru": "Дворцовая служба показана как административная работа; скрытая функция Порога здесь не раскрывается.",
+          "en": "Palace service is shown as administrative work; the Threshold's hidden function is not revealed here."
+        },
+        "presentation.static.palace.threshold-archive.alt": {
+          "ru": "Защищённый архив с несколькими группами записей и местами проверки источников; изображение не объясняет причину переходов.",
+          "en": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings."
+        },
+        "presentation.static.palace.threshold-archive.caption": {
+          "ru": "Архив сопоставляет разрозненные свидетельства; ни один носитель не содержит всей картины.",
+          "en": "The archive correlates distributed evidence; no single record contains the whole picture."
+        },
+        "presentation.static.palace.custodian-audience.alt": {
+          "ru": "Формальная встреча с человеческим Хранителем за столом с записями; сцена изображает проверку доказательств, а не бой.",
+          "en": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat."
+        },
+        "presentation.static.palace.custodian-audience.caption": {
+          "ru": "Хранитель — человек и должностное лицо; спор решается разбором свидетельств, а не физическим противостоянием.",
+          "en": "The Custodian is a human office-holder; the dispute is resolved through evidence review, not physical confrontation."
+        },
+        "presentation.static.palace.return-home-threshold.alt": {
+          "ru": "Человек пересекает ограниченный межмировой Порог, оставляя позади целый и продолжающий существовать мир.",
+          "en": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues."
+        },
+        "presentation.static.palace.return-home-threshold.caption": {
+          "ru": "Переход означает уход из реального мира, а не его исчезновение; причина перемещения не показана.",
+          "en": "The crossing means leaving a real world, not erasing it; the cause of the displacement is not shown."
+        }
+      },
+      "expectedPresentation": {
+        "ending/palace/court-power": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "ending/palace/inner-truth": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "ending/palace/return-home": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-return-home-threshold.svg",
+            "alt": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues.",
+            "altKey": "presentation.static.palace.return-home-threshold.alt"
+          }
+        },
+        "ending/palace/service-life": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-outcome-finalize-court-power/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-outcome-finalize-inner-truth/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "job/palace/event/palace-outcome-finalize-service-life/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-01-audit-record/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-02-name-contradiction/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-03-define-boundary/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-prince-confrontation-phase-04-reconstruct-return/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-02-working-rhythm/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-05-trusted-service/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-08-palace-network/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-service-interior.svg",
+            "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+            "altKey": "presentation.static.palace.service-interior.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-12-crossroads/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "job/palace/event/palace-progression-milestone-15-outcome-ready/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-threshold-archive.svg",
+            "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+            "altKey": "presentation.static.palace.threshold-archive.alt"
+          }
+        },
+        "location/town/palace/confront-prince/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/presentation/palace-custodian-audience.svg",
+            "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+            "altKey": "presentation.static.palace.custodian-audience.alt"
+          }
+        },
+        "job/palace/event/palace-invitation-day1-arrival/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/stage-town.svg",
+            "alt": "Neutral town backdrop for a Palace invitation scene.",
+            "altKey": "presentation.static.palace.invitation.alt"
+          }
+        },
+        "job/palace/event/palace-invitation-reveal/default": {
+          "static": {
+            "kind": "image",
+            "src": "assets/stage-town.svg",
+            "alt": "Neutral town backdrop for a Palace invitation scene.",
+            "altKey": "presentation.static.palace.invitation.alt"
+          }
+        }
+      },
+      "expectedMedia": {
+        "assets": [
+          "assets/presentation/palace-custodian-audience.svg",
+          "assets/presentation/palace-threshold-archive.svg",
+          "assets/presentation/palace-return-home-threshold.svg",
+          "assets/presentation/palace-service-interior.svg"
+        ],
+        "allowedSlots": [
+          "ending/palace/court-power",
+          "ending/palace/inner-truth",
+          "ending/palace/return-home",
+          "ending/palace/service-life",
+          "job/palace/event/palace-outcome-finalize-court-power/default",
+          "job/palace/event/palace-outcome-finalize-inner-truth/default",
+          "job/palace/event/palace-outcome-finalize-service-life/default",
+          "job/palace/event/palace-prince-confrontation-phase-01-audit-record/default",
+          "job/palace/event/palace-prince-confrontation-phase-02-name-contradiction/default",
+          "job/palace/event/palace-prince-confrontation-phase-03-define-boundary/default",
+          "job/palace/event/palace-prince-confrontation-phase-04-reconstruct-return/default",
+          "job/palace/event/palace-progression-milestone-02-working-rhythm/default",
+          "job/palace/event/palace-progression-milestone-05-trusted-service/default",
+          "job/palace/event/palace-progression-milestone-08-palace-network/default",
+          "job/palace/event/palace-progression-milestone-12-crossroads/default",
+          "job/palace/event/palace-progression-milestone-15-outcome-ready/default",
+          "location/town/palace/confront-prince/default"
+        ],
+        "allowedSlotsByAsset": {
+          "assets/presentation/palace-custodian-audience.svg": [
+            "job/palace/event/palace-prince-confrontation-phase-01-audit-record/default",
+            "job/palace/event/palace-prince-confrontation-phase-02-name-contradiction/default",
+            "job/palace/event/palace-prince-confrontation-phase-03-define-boundary/default",
+            "job/palace/event/palace-prince-confrontation-phase-04-reconstruct-return/default",
+            "location/town/palace/confront-prince/default"
+          ],
+          "assets/presentation/palace-threshold-archive.svg": [
+            "ending/palace/inner-truth",
+            "job/palace/event/palace-outcome-finalize-inner-truth/default",
+            "job/palace/event/palace-progression-milestone-12-crossroads/default",
+            "job/palace/event/palace-progression-milestone-15-outcome-ready/default"
+          ],
+          "assets/presentation/palace-return-home-threshold.svg": [
+            "ending/palace/return-home"
+          ],
+          "assets/presentation/palace-service-interior.svg": [
+            "ending/palace/court-power",
+            "ending/palace/service-life",
+            "job/palace/event/palace-outcome-finalize-court-power/default",
+            "job/palace/event/palace-outcome-finalize-service-life/default",
+            "job/palace/event/palace-progression-milestone-02-working-rhythm/default",
+            "job/palace/event/palace-progression-milestone-05-trusted-service/default",
+            "job/palace/event/palace-progression-milestone-08-palace-network/default"
+          ]
+        },
+        "invitationNeutralSlots": [
+          "job/palace/event/palace-invitation-day1-arrival/default",
+          "job/palace/event/palace-invitation-reveal/default"
+        ],
+        "invitationFinalSource": "assets/stage-town.svg"
+      },
+      "expectedAccessibleNameOrState": [
+        "Each D48 image has its exact localized alt/caption family; D48 assets appear only in the approved 17 Palace slots."
+      ],
+      "forbiddenVisibleTokens": [
+        "assets/presentation/palace-"
+      ],
+      "sourceAuthority": [
+        "Palace D48 media handoff",
+        "golden fixture v54"
+      ],
+      "rawIdScan": true,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "retired-tavern-historical-display",
+      "prerequisiteState": "Load migration/history state containing retired Tavern completion credit.",
+      "expectedLocalization": {
+        "ending.tavern-court.description": {
+          "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.information-broker и не открывает Дворец.",
+          "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.information-broker and grants no Palace access."
+        },
+        "ending.tavern-court.title": {
+          "ru": "Устаревший финал таверны (мигрируется)",
+          "en": "Retired Tavern ending (migrated)"
+        },
+        "ending.tavern-guild.description": {
+          "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.sanctuary.",
+          "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.sanctuary."
+        },
+        "ending.tavern-guild.title": {
+          "ru": "Устаревший финал таверны (мигрируется)",
+          "en": "Retired Tavern ending (migrated)"
+        },
+        "ending.tavern-stay.description": {
+          "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.innkeeper.",
+          "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.innkeeper."
+        },
+        "ending.tavern-stay.title": {
+          "ru": "Устаревший финал таверны (мигрируется)",
+          "en": "Retired Tavern ending (migrated)"
+        },
+        "unlock.court.label": {
+          "ru": "Придворная выдержка",
+          "en": "Court Composure"
+        },
+        "unlock.host.label": {
+          "ru": "Гостеприимство",
+          "en": "Hospitality"
+        },
+        "unlock.mediator.label": {
+          "ru": "Посредница",
+          "en": "Mediator"
+        }
+      },
+      "forbiddenLocalizationKeys": [
+        "presentation.static.ending.tavern-stay.alt",
+        "presentation.static.ending.tavern-stay.caption",
+        "presentation.static.ending.tavern-guild.alt",
+        "presentation.static.ending.tavern-guild.caption",
+        "presentation.static.ending.tavern-court.alt",
+        "presentation.static.ending.tavern-court.caption"
+      ],
+      "forbiddenEndingDefinitionIds": [
+        "tavern-stay",
+        "tavern-guild",
+        "tavern-court"
+      ],
+      "forbiddenPresentationSlots": [
+        "ending/tavern-stay",
+        "ending/tavern-guild",
+        "ending/tavern-court"
+      ],
+      "expectedAccessibleNameOrState": [
+        "Retired Tavern completion is shown only as migration/history copy; no live ending card returns."
+      ],
+      "forbiddenVisibleTokens": [],
+      "sourceAuthority": [
+        "retired Tavern migration/history retention"
+      ],
+      "rawIdScan": false,
+      "finalIntegrationOnly": true
+    },
+    {
+      "id": "retired-lumber-vitality-historical-display",
+      "prerequisiteState": "Load migrated save containing historical lumber-stay completion/perk.",
+      "expectedLocalization": {
+        "legacy.ending.lumber-stay.title": {
+          "ru": "Бригадир поневоле",
+          "en": "Reluctant Forewoman"
+        },
+        "legacy.ending.lumber-stay.description": {
+          "ru": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
+          "en": "Complete 24 lumber shifts. In the next life, daytime Energy maximum is +1."
+        },
+        "legacy.perk.lumber-stay-vitality.label": {
+          "ru": "Исторический запас сил · +1 к дневному максимуму Энергии",
+          "en": "Historical Vitality Reserve · +1 daily Energy maximum"
+        },
+        "ui.ending.state.historical": {
+          "ru": "историческая",
+          "en": "historical"
+        },
+        "ui.legacy.historicalTitle": {
+          "ru": "Исторические судьбы",
+          "en": "Historical fates"
+        }
+      },
+      "forbiddenLocalizationKeys": [
+        "ending.lumber-stay.title",
+        "ending.lumber-stay.description",
+        "presentation.static.ending.lumber-stay.alt",
+        "presentation.static.ending.lumber-stay.caption",
+        "unlock.vitality.label"
+      ],
+      "forbiddenEndingDefinitionIds": [
+        "lumber-stay"
+      ],
+      "forbiddenEndingRewardIds": [
+        "vitality"
+      ],
+      "forbiddenPresentationSlots": [
+        "ending/lumber-stay"
+      ],
+      "expectedAccessibleNameOrState": [
+        "Historical lumber fate/perk appears under historical UI only; no live lumber-stay ending or vitality reward returns."
+      ],
+      "requiredSourceTokens": [
+        "data-legacy-ending-id",
+        "legacy.ending.lumber-stay.title"
+      ],
+      "forbiddenSourceRegexes": [
+        "presentationIdForEnding\\(retiredLumberStayId\\)"
+      ],
+      "forbiddenVisibleTokens": [],
+      "sourceAuthority": [
+        "lumber-stay retirement compatibility authority"
+      ],
+      "rawIdScan": false,
+      "finalIntegrationOnly": true
+    }
+  ],
+  "postIntegrationRenderedChecks": [
+    "Actually mount the assembled UI in both RU and EN and exercise each surface prerequisite state.",
+    "Confirm focusable controls and dialog accessible names in the rendered DOM, not only source/localization presence.",
+    "Confirm images expose the expected alt text and captions in the rendered Palace/D42/Activity surfaces.",
+    "Confirm automatic Source Method knowledge has no selectable button in the rendered creation UI.",
+    "Confirm historical-only retired surfaces are distinguishable from live endings and cannot be committed."
+  ]
+}

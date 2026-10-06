@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "id": "CHAT4_D46_D47_LEGACY_GOLDEN_GATE_v54",
+  "status": "FUTURE_POST_INTEGRATION_FOCUSED_GATE",
+  "manifest": "mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53.json",
+  "executionOrder": [
+    "npm ci",
+    "npm run typecheck",
+    "npm run validate",
+    "npm run build",
+    "phase-d46-d47",
+    "phase-migration-ending",
+    "phase-lumber-retirement",
+    "phase-strong-meta-palace",
+    "phase-secret-debt-activity-night",
+    "phase-localization-presentation"
+  ],
+  "phases": [
+    {
+      "id": "phase-d46-d47",
+      "requiredTests": [
+        "tests/economy-start-balance-v14.test.ts",
+        "tests/hard-work-bonus-mapping-v13.test.ts",
+        "tests/ordinary-hard-work-meta-production.test.ts",
+        "tests/ordinary-hard-work-lifecycle-parity.test.ts",
+        "tests/lumber-hard-work-invariant.test.ts",
+        "tests/hard-work-stat-cap-d24.test.ts"
+      ],
+      "owns": [
+        "fresh-life Lust 5",
+        "existing-save Lust preservation",
+        "ordinary wage bases 35/37",
+        "ordinary wage cap 120 and non-ordinary isolation",
+        "D47 exact ten package mapping",
+        "whole-package-only selection",
+        "exactly-once package application",
+        "50-shift Hard Work boundary"
+      ]
+    },
+    {
+      "id": "phase-migration-ending",
+      "requiredTests": [
+        "tests/hard-work-meta-migration-v5.test.ts",
+        "tests/migration.test.ts",
+        "tests/ending-meta.test.ts",
+        "tests/qa-exactly-once-reload.test.ts",
+        "tests/qa-one-save-state-drift-sentinel-v2.test.ts"
+      ],
+      "owns": [
+        "stored Lust migration preservation",
+        "RunResult transaction idempotence",
+        "save/reload exactly-once semantics",
+        "profile/save drift protection"
+      ]
+    },
+    {
+      "id": "phase-lumber-retirement",
+      "requiredTests": [
+        "tests/lumber-stay-retirement-v17.test.ts",
+        "tests/presentation-ending-parity-v9.test.ts",
+        "tests/advanced-endings-tranche-a-v11.test.ts",
+        "tests/d40-advanced-endings-tranche-b-v11.test.ts"
+      ],
+      "owns": [
+        "40 canonical ordinary endings",
+        "no live lumber-stay ending",
+        "no live vitality acquisition",
+        "historical RunResult/transaction preservation",
+        "profile merge/idempotence",
+        "legacy Energy +1 dedupe",
+        "presentation/localization retirement parity"
+      ]
+    },
+    {
+      "id": "phase-strong-meta-palace",
+      "requiredTests": [
+        "tests/strong-meta-registry-v7.test.ts",
+        "tests/strong-meta-engine-integration-v7.test.ts",
+        "tests/ordinary-hard-work-meta-production.test.ts",
+        "tests/hard-work-palace-meta-smoke.test.ts",
+        "tests/palace-d23-consumer-integration-v8.test.ts"
+      ],
+      "owns": [
+        "Hard Work packages remain outside Keystone/Specialist slots",
+        "Strong Meta capacities and snapshot remain unchanged",
+        "Palace D23 counts ten package identities, not stat components",
+        "legacy lumber perk does not create Palace qualification"
+      ]
+    },
+    {
+      "id": "phase-secret-debt-activity-night",
+      "requiredTests": [
+        "tests/secret-debt-full-route-v12.test.ts",
+        "tests/secret-debt-activity-energy-compat-v20.test.ts",
+        "tests/activity.test.ts",
+        "tests/school-night-study-adapter.test.ts",
+        "tests/night-flow.test.ts",
+        "tests/night-content-gap-v10.test.ts",
+        "tests/shared-night-ui-localization-production-v1.test.ts"
+      ],
+      "applicability": "Required when these accepted tranches are present on the live Chat2 integration base; by golden-gate time they are expected to be present.",
+      "owns": [
+        "D46 ordinary wage cap does not capture Secret Debt hidden wage",
+        "legacy Energy source does not alter D51 provenance semantics",
+        "Activity remains unaffected",
+        "Night/forced-Night remains unaffected",
+        "School Night Study remains unaffected"
+      ]
+    },
+    {
+      "id": "phase-localization-presentation",
+      "requiredTests": [
+        "tests/localization.test.ts",
+        "tests/presentation-source-integrity-v9.test.ts",
+        "tests/presentation-locale-accessibility-v9.test.ts",
+        "tests/presentation-ending-parity-v9.test.ts"
+      ],
+      "owns": [
+        "retired live lumber-stay keys absent",
+        "historical compatibility keys present",
+        "retired presentation slot absent",
+        "all unrelated localization/presentation entries preserved"
+      ]
+    }
+  ],
+  "mandatoryAssertions": [
+    {
+      "id": "A01",
+      "assert": "freshSave Lust == 5"
+    },
+    {
+      "id": "A02",
+      "assert": "valid stored/migrated Lust is preserved exactly"
+    },
+    {
+      "id": "A03",
+      "assert": "starting money remains 600 before legitimate inherited modifiers"
+    },
+    {
+      "id": "A04",
+      "assert": "base Energy remains 3 before legitimate inherited modifiers"
+    },
+    {
+      "id": "A05",
+      "assert": "lumber.shift wage.base == 35"
+    },
+    {
+      "id": "A06",
+      "assert": "the other nine ordinary *.shift wage.base values == 37"
+    },
+    {
+      "id": "A07",
+      "assert": "each ordinary final wage <= 120"
+    },
+    {
+      "id": "A08",
+      "assert": "Palace, Secret Debt and other non-ordinary wages bypass the D46 ordinary cap"
+    },
+    {
+      "id": "A09",
+      "assert": "all ten Hard Work endings require completed_shifts >= 50"
+    },
+    {
+      "id": "A10",
+      "assert": "D47 package map equals the ten exact package identities/components in v53"
+    },
+    {
+      "id": "A11",
+      "assert": "Prostitute selected package changes fresh Lust 5 -> 10 exactly once"
+    },
+    {
+      "id": "A12",
+      "assert": "D47 packages apply only once and only at creation completion"
+    },
+    {
+      "id": "A13",
+      "assert": "D47 packages consume zero Strong Meta slots"
+    },
+    {
+      "id": "A14",
+      "assert": "live ending id lumber-stay is absent"
+    },
+    {
+      "id": "A15",
+      "assert": "canonical ordinary ending count == 40"
+    },
+    {
+      "id": "A16",
+      "assert": "live generic unlock vitality cannot be newly acquired"
+    },
+    {
+      "id": "A17",
+      "assert": "historical lumber evidence normalizes to exactly one legacy.lumber-stay.vitality"
+    },
+    {
+      "id": "A18",
+      "assert": "legacy.lumber-stay.vitality contributes exactly +1 Energy once"
+    },
+    {
+      "id": "A19",
+      "assert": "duplicate historical evidence cannot stack legacy Energy"
+    },
+    {
+      "id": "A20",
+      "assert": "historical existing lumber-stay RunResult and transaction proof are preserved exactly"
+    },
+    {
+      "id": "A21",
+      "assert": "eligible-only retired lumber-stay is removed without reward"
+    },
+    {
+      "id": "A22",
+      "assert": "committed-but-unfinished retired lumber-stay is cancelled without reward replay"
+    },
+    {
+      "id": "A23",
+      "assert": "ended pre-RunResult lumber-stay gets deterministic compatibility proof without duplicate reward"
+    },
+    {
+      "id": "A24",
+      "assert": "profile merge dedupes legacy perk and strips vitality from generic unlocks"
+    },
+    {
+      "id": "A25",
+      "assert": "historical lumber evidence never fabricates hardWork:lumber"
+    },
+    {
+      "id": "A26",
+      "assert": "historical lumber evidence never contributes Palace D23 career/package credit"
+    },
+    {
+      "id": "A27",
+      "assert": "Strong Meta capacities/snapshot/runtime are unchanged"
+    },
+    {
+      "id": "A28",
+      "assert": "Secret Debt/D51 behavior is unchanged when present"
+    },
+    {
+      "id": "A29",
+      "assert": "Activity and Night behavior is unchanged"
+    },
+    {
+      "id": "A30",
+      "assert": "presentation slot ending/lumber-stay is absent while historical copy remains displayable"
+    },
+    {
+      "id": "A31",
+      "assert": "live localization keys ending.lumber-stay.*, unlock.vitality.label and presentation.static.ending.lumber-stay.* are absent"
+    },
+    {
+      "id": "A32",
+      "assert": "historical localization keys legacy.ending.lumber-stay.*, legacy.perk.lumber-stay-vitality.label, ui.legacy.historicalTitle, ui.ending.state.historical are present"
+    }
+  ],
+  "postIntegrationRecheck": {
+    "freezeExactIntegratedHead": true,
+    "rerunAllPhasesOnExactHead": true,
+    "compareLiveBaseToManifestBeforeExecution": true,
+    "requireNoWholeFileHistoricalSnapshots": true,
+    "requireNoUnownedSharedFileDeletion": true,
+    "requireCurrentAuthoritativeTestsInAdditionToRoster": true,
+    "rule": "If the live integration base has a newer authoritative test for the same semantic owner, run it in addition to this roster; never replace it with the historical file."
+  },
+  "stopConditions": [
+    "A legitimate existing save Lust value is rewritten to 5.",
+    "A fresh/new life starts at Lust 1 or any value other than 5.",
+    "Any D46 wage base is not 35/37 as specified.",
+    "Any ordinary shift can pay more than 120.",
+    "Any non-ordinary wage is captured by the D46 ordinary helper.",
+    "Any D47 package identity/component differs from v53.",
+    "A D47 package auto-applies merely because it was earned.",
+    "A D47 package applies more than once after reload/re-entry.",
+    "A D47 package consumes Keystone/Specialist capacity.",
+    "Hard Work becomes eligible before 50 completed shifts.",
+    "Live lumber-stay or vitality acquisition reappears.",
+    "Duplicate historical evidence yields more than +1 legacy Energy.",
+    "Historical evidence fabricates hardWork:lumber or Palace qualification.",
+    "Existing historical lumber RunResult/transaction proof is rewritten or replayed.",
+    "Canonical ordinary ending count differs from 40 after retirement.",
+    "Any unlisted current-main system is removed by whole-file historical replacement.",
+    "Secret Debt/D51, Activity, Night, Palace, Strong Meta or current migration tests regress.",
+    "Retired live localization/presentation identifiers remain player-facing.",
+    "Historical compatibility localization/UI becomes unavailable for old saves."
+  ],
+  "thirdValueRules": [
+    "For every manifest-owned scalar/keyed field: old expected value -> desired value is allowed; desired already present is idempotent; any third value requires STOP/review.",
+    "For exact-ID deletion: present historical live ID -> delete; already absent -> idempotent; renamed/replaced current ID -> STOP/review rather than wildcard deletion.",
+    "For shared files: authority snapshot and live base are never treated as binary choices; preserve unowned live-base semantics and apply only listed semantic operations.",
+    "For test expectations: if a current accepted semantic authority intentionally changes a value after these authorities, STOP and obtain Leader disposition rather than forcing the golden historical value."
+  ]
+}
