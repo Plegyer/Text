@@ -1,0 +1,157 @@
+name: Leader1 Chat2 Stage1 Focused Gate v59
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-focused-gate-v59
+    paths:
+      - '.github/workflows/leader1-chat2-stage1-focused-gate-v59.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  focused-gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.before }}
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected="${{ github.event.before }}"
+          $actual=(git rev-parse HEAD).Trim()
+          if($actual -ne $expected){throw "Exact-source guard failed: $actual"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        id: npmci
+        continue-on-error: true
+        run: npm ci
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        run: npm run typecheck
+      - name: Validate
+        id: validate
+        continue-on-error: true
+        run: npm run validate
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: npm run build
+      - name: Core
+        id: core
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/secret-debt-full-route-v12.test.ts
+          tests/secret-debt-activity-energy-compat-v20.test.ts
+          tests/secret-debt-ending-localization-producer-v27.test.ts
+          tests/prostitute-boundaries.test.ts
+      - name: Night
+        id: night
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/night-flow.test.ts
+          tests/night-content-gap-v10.test.ts
+          tests/qa-exactly-once-reload.test.ts
+          tests/shared-night-ui-localization-production-v1.test.ts
+      - name: Activity
+        id: activity
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/activity.test.ts
+          tests/school-night-study-adapter.test.ts
+      - name: Strong Meta
+        id: strongmeta
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/strong-meta-d30-runtime-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/ending-meta.test.ts
+          tests/ordinary-hard-work-meta-production.test.ts
+      - name: Palace
+        id: palace
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/qa-one-save-state-drift-sentinel-v2.test.ts
+      - name: Localization
+        id: localization
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/localization.test.ts
+          tests/presentation-source-integrity-v9.test.ts
+          tests/presentation-locale-accessibility-v9.test.ts
+      - name: Write evidence
+        if: always()
+        shell: powershell
+        run: |
+          $result=[ordered]@{
+            testedSha="${{ github.event.before }}"
+            workflowSha="${{ github.sha }}"
+            npmCi="${{ steps.npmci.outcome }}"
+            typecheck="${{ steps.typecheck.outcome }}"
+            validate="${{ steps.validate.outcome }}"
+            build="${{ steps.build.outcome }}"
+            core="${{ steps.core.outcome }}"
+            night="${{ steps.night.outcome }}"
+            activity="${{ steps.activity.outcome }}"
+            strongmeta="${{ steps.strongmeta.outcome }}"
+            palace="${{ steps.palace.outcome }}"
+            localization="${{ steps.localization.outcome }}"
+          }
+          $result|ConvertTo-Json|Set-Content -Encoding UTF8 "$env:RUNNER_TEMP\focused-v59.json"
+      - name: Checkout evidence
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-focused-gate-v59
+          path: evidence-repo
+          persist-credentials: true
+      - name: Publish evidence
+        if: always()
+        shell: powershell
+        working-directory: .
+        run: |
+          Copy-Item "$env:RUNNER_TEMP\focused-v59.json" "evidence-repo/mindy-successor/docs/tasks/CHAT2_STAGE1_FOCUSED_GATE_RESULT_v59.json" -Force
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_FOCUSED_GATE_RESULT_v59.json
+          git commit -m "qa(chat2): publish Stage1 focused gate v59 result"
+          git push origin HEAD:leader1/chat2-stage1-focused-gate-v59
+      - name: Aggregate
+        if: always()
+        shell: powershell
+        run: |
+          $values=@(
+            "${{ steps.npmci.outcome }}",
+            "${{ steps.typecheck.outcome }}",
+            "${{ steps.validate.outcome }}",
+            "${{ steps.build.outcome }}",
+            "${{ steps.core.outcome }}",
+            "${{ steps.night.outcome }}",
+            "${{ steps.activity.outcome }}",
+            "${{ steps.strongmeta.outcome }}",
+            "${{ steps.palace.outcome }}",
+            "${{ steps.localization.outcome }}"
+          )
+          if($values -contains "failure"){throw "Stage1 focused gate v59 failed."}
