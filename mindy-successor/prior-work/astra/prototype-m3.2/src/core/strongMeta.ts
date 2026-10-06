@@ -1,6 +1,6 @@
 import {z} from 'zod';
 
-export const STRONG_META_REGISTRY_VERSION='strong-meta-v3' as const;
+export const STRONG_META_REGISTRY_VERSION='strong-meta-v4' as const;
 export const STRONG_META_CONTRACT_VERSION=1 as const;
 export const STRONG_META_KEYSTONE_CAPACITY=1 as const;
 export const STRONG_META_SPECIALIST_CAPACITY=2 as const;
@@ -25,7 +25,10 @@ export const STRONG_META_IDS={
   farmSupplierAccount:'specialist.undead-farm.supplier-account',
   tavernHouseLedger:'specialist.tavern.house-ledger',
   tavernSafehouseNetwork:'specialist.tavern.safehouse-network',
-  hunterMasterKit:'specialist.hunter.master-kit'
+  hunterMasterKit:'specialist.hunter.master-kit',
+  activitySurveyorsAtlas:'specialist.activity.surveyors-atlas',
+  activityFieldArchive:'specialist.activity.field-archive',
+  activityContactNetwork:'specialist.activity.contact-network'
 } as const;
 
 export type ApprovedStrongRewardId=typeof STRONG_META_IDS[keyof typeof STRONG_META_IDS];
@@ -36,7 +39,8 @@ export const approvedStrongRewardIdSchema=z.enum([
   STRONG_META_IDS.prostituteMutualAidRoster,STRONG_META_IDS.lumberForewomanLedger,STRONG_META_IDS.lumberForestCompactRoute,
   STRONG_META_IDS.satyrHouseLedger,STRONG_META_IDS.satyrGuestNetwork,STRONG_META_IDS.farmFieldPreservation,
   STRONG_META_IDS.farmSupplierAccount,STRONG_META_IDS.tavernHouseLedger,STRONG_META_IDS.tavernSafehouseNetwork,
-  STRONG_META_IDS.hunterMasterKit
+  STRONG_META_IDS.hunterMasterKit,STRONG_META_IDS.activitySurveyorsAtlas,STRONG_META_IDS.activityFieldArchive,
+  STRONG_META_IDS.activityContactNetwork
 ]);
 export type StrongRewardClass='keystone'|'specialist';
 export type StrongRewardLifecycle='active'|'retired';
@@ -85,13 +89,31 @@ const farmSupplierAccountEffectSchema=z.object({kind:z.literal('undead-farm-supp
 const tavernHouseLedgerEffectSchema=z.object({kind:z.literal('tavern-house-ledger'),maxUsesPerRun:z.literal(5),totalPerRunCap:z.literal(125),unitAmount:z.literal(25)}).strict();
 const tavernSafehouseNetworkEffectSchema=z.object({kind:z.literal('tavern-safehouse-network'),maxUsesPerRun:z.literal(4),perCalendarYearCap:z.literal(1),totalPerRunCap:z.literal(4)}).strict();
 const hunterMasterKitEffectSchema=z.object({kind:z.literal('hunter-master-kit'),maxUsesPerRun:z.literal(1)}).strict();
+const activitySurveyorsAtlasEffectSchema=z.object({
+  kind:z.literal('activity-surveyors-atlas'),
+  maxRegionsPerRun:z.literal(4),
+  normalSurveyFieldTimeCost:z.literal(1),
+  specialistSurveyFieldTimeCost:z.literal(0)
+}).strict();
+const activityFieldArchiveEffectSchema=z.object({
+  kind:z.literal('activity-field-archive'),
+  maxSecuredPerRegion:z.literal(1),
+  maxSecuredPerRun:z.literal(4),
+  eligibilityTag:z.literal('activity-secure-eligible')
+}).strict();
+const activityContactNetworkEffectSchema=z.object({
+  kind:z.literal('activity-contact-network'),
+  maxIntroductionsPerRegion:z.literal(1),
+  maxIntroductionsPerRun:z.literal(4),
+  introductionTag:z.literal('activity-network-introduction')
+}).strict();
 
 export const resolvedStrongRewardSchema=z.discriminatedUnion('class',[
   z.object({
     id:strongRewardIdSchema,
     class:z.literal('specialist'),
     definitionVersion:z.number().int().min(1),
-    effect:z.union([cap200EffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema,lumberForewomanLedgerEffectSchema,lumberForestCompactRouteEffectSchema,satyrHouseLedgerEffectSchema,satyrGuestNetworkEffectSchema,farmFieldPreservationEffectSchema,farmSupplierAccountEffectSchema,tavernHouseLedgerEffectSchema,tavernSafehouseNetworkEffectSchema,hunterMasterKitEffectSchema])
+    effect:z.union([cap200EffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema,lumberForewomanLedgerEffectSchema,lumberForestCompactRouteEffectSchema,satyrHouseLedgerEffectSchema,satyrGuestNetworkEffectSchema,farmFieldPreservationEffectSchema,farmSupplierAccountEffectSchema,tavernHouseLedgerEffectSchema,tavernSafehouseNetworkEffectSchema,hunterMasterKitEffectSchema,activitySurveyorsAtlasEffectSchema,activityFieldArchiveEffectSchema,activityContactNetworkEffectSchema])
   }).strict(),
   z.object({
     id:strongRewardIdSchema,
@@ -133,6 +155,20 @@ export const strongMetaSnapshotSchema=z.object({
 }).strict();
 export type ResolvedStrongMetaSnapshot=z.infer<typeof strongMetaSnapshotSchema>;
 
+export const D38_ACTIVITY_REGION_IDS=['lumber.forest','trade.corridor','anomalous.reach','restricted.sites'] as const;
+export const d38ActivityRegionIdSchema=z.enum(D38_ACTIVITY_REGION_IDS);
+export type D38ActivityRegionId=z.infer<typeof d38ActivityRegionIdSchema>;
+
+export const activityD38RuntimeSchema=z.object({
+  surveyorsAtlasUsedRegionIds:z.array(d38ActivityRegionIdSchema).max(4).default([]),
+  fieldArchiveSecured:z.array(z.object({
+    regionId:d38ActivityRegionIdSchema,
+    resultId:z.string().min(1).max(160)
+  }).strict()).max(4).default([]),
+  contactNetworkUsedRegionIds:z.array(d38ActivityRegionIdSchema).max(4).default([])
+}).strict();
+export type ActivityD38Runtime=z.infer<typeof activityD38RuntimeSchema>;
+
 export const strongMetaRuntimeSchema=z.object({
   reserveMatchPaid:nonNegativeInt,
   workRhythmBonusDaysTriggered:z.number().int().min(0).max(160),
@@ -140,7 +176,12 @@ export const strongMetaRuntimeSchema=z.object({
   workRhythmAppliedDay:calendarDay.nullable(),
   networkRetainerLastProcessedDay:calendarDay.nullable(),
   networkRetainerPaidDays:z.number().int().min(0).max(160),
-  networkRetainerTotalPaid:nonNegativeInt
+  networkRetainerTotalPaid:nonNegativeInt,
+  activityD38:activityD38RuntimeSchema.default({
+    surveyorsAtlasUsedRegionIds:[],
+    fieldArchiveSecured:[],
+    contactNetworkUsedRegionIds:[]
+  })
 }).strict();
 export type StrongMetaRuntime=z.infer<typeof strongMetaRuntimeSchema>;
 
@@ -149,7 +190,7 @@ export type StrongRewardDefinition=Readonly<{
   class:StrongRewardClass;
   lifecycle:StrongRewardLifecycle;
   definitionVersion:1;
-  authority:'D24'|'D30'|'D32'|'D40'|'D41';
+  authority:'D24'|'D30'|'D32'|'D38'|'D40'|'D41';
   effect:ResolvedStrongReward['effect'];
 }>;
 
@@ -173,7 +214,10 @@ export const strongMetaRegistry:Readonly<Record<ApprovedStrongRewardId,StrongRew
   [STRONG_META_IDS.farmSupplierAccount]:{id:STRONG_META_IDS.farmSupplierAccount,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'undead-farm-supplier-account',maxUsesPerRun:1}},
   [STRONG_META_IDS.tavernHouseLedger]:{id:STRONG_META_IDS.tavernHouseLedger,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'tavern-house-ledger',maxUsesPerRun:5,totalPerRunCap:125,unitAmount:25}},
   [STRONG_META_IDS.tavernSafehouseNetwork]:{id:STRONG_META_IDS.tavernSafehouseNetwork,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'tavern-safehouse-network',maxUsesPerRun:4,perCalendarYearCap:1,totalPerRunCap:4}},
-  [STRONG_META_IDS.hunterMasterKit]:{id:STRONG_META_IDS.hunterMasterKit,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'hunter-master-kit',maxUsesPerRun:1}}
+  [STRONG_META_IDS.hunterMasterKit]:{id:STRONG_META_IDS.hunterMasterKit,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D41',effect:{kind:'hunter-master-kit',maxUsesPerRun:1}},
+  [STRONG_META_IDS.activitySurveyorsAtlas]:{id:STRONG_META_IDS.activitySurveyorsAtlas,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D38',effect:{kind:'activity-surveyors-atlas',maxRegionsPerRun:4,normalSurveyFieldTimeCost:1,specialistSurveyFieldTimeCost:0}},
+  [STRONG_META_IDS.activityFieldArchive]:{id:STRONG_META_IDS.activityFieldArchive,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D38',effect:{kind:'activity-field-archive',maxSecuredPerRegion:1,maxSecuredPerRun:4,eligibilityTag:'activity-secure-eligible'}},
+  [STRONG_META_IDS.activityContactNetwork]:{id:STRONG_META_IDS.activityContactNetwork,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D38',effect:{kind:'activity-contact-network',maxIntroductionsPerRegion:1,maxIntroductionsPerRun:4,introductionTag:'activity-network-introduction'}}
 };
 
 const approvedIdSet=new Set<string>(Object.keys(strongMetaRegistry));
@@ -210,7 +254,12 @@ export function emptyStrongMetaRuntime():StrongMetaRuntime{
     workRhythmAppliedDay:null,
     networkRetainerLastProcessedDay:null,
     networkRetainerPaidDays:0,
-    networkRetainerTotalPaid:0
+    networkRetainerTotalPaid:0,
+    activityD38:{
+      surveyorsAtlasUsedRegionIds:[],
+      fieldArchiveSecured:[],
+      contactNetworkUsedRegionIds:[]
+    }
   };
 }
 
@@ -397,6 +446,32 @@ export function validateStrongMetaRuntimeAgainstSnapshot(snapshot:ResolvedStrong
     if(runtime.networkRetainerPaidDays>retainer.eligibleDayCount)throw new Error('Network Retainer runtime exceeds resolved day window.');
     if(runtime.networkRetainerTotalPaid>retainer.perRunTotalCap)throw new Error('Network Retainer runtime exceeds resolved total cap.');
   }
+
+  const d38=runtime.activityD38;
+  const ensureUnique=(values:readonly string[],label:string)=>{
+    if(new Set(values).size!==values.length)throw new Error(`D38 Activity runtime contains duplicate ${label} entries.`);
+  };
+  ensureUnique(d38.surveyorsAtlasUsedRegionIds,'Surveyor\'s Atlas region');
+  ensureUnique(d38.contactNetworkUsedRegionIds,'Contact Network region');
+  ensureUnique(d38.fieldArchiveSecured.map(record=>record.regionId),'Field Archive region');
+  ensureUnique(d38.fieldArchiveSecured.map(record=>record.resultId),'Field Archive result');
+
+  const atlas=effects.get('activity-surveyors-atlas');
+  if(!atlas&&d38.surveyorsAtlasUsedRegionIds.length)throw new Error('Surveyor\'s Atlas runtime state exists without resolved reward.');
+  if(atlas&&atlas.kind==='activity-surveyors-atlas'&&d38.surveyorsAtlasUsedRegionIds.length>atlas.maxRegionsPerRun)throw new Error('Surveyor\'s Atlas runtime exceeds resolved region cap.');
+
+  const archive=effects.get('activity-field-archive');
+  if(!archive&&d38.fieldArchiveSecured.length)throw new Error('Field Archive runtime state exists without resolved reward.');
+  if(archive&&archive.kind==='activity-field-archive'){
+    if(d38.fieldArchiveSecured.length>archive.maxSecuredPerRun)throw new Error('Field Archive runtime exceeds resolved total cap.');
+    for(const region of D38_ACTIVITY_REGION_IDS){
+      if(d38.fieldArchiveSecured.filter(record=>record.regionId===region).length>archive.maxSecuredPerRegion)throw new Error('Field Archive runtime exceeds resolved per-region cap.');
+    }
+  }
+
+  const network=effects.get('activity-contact-network');
+  if(!network&&d38.contactNetworkUsedRegionIds.length)throw new Error('Contact Network runtime state exists without resolved reward.');
+  if(network&&network.kind==='activity-contact-network'&&d38.contactNetworkUsedRegionIds.length>network.maxIntroductionsPerRun)throw new Error('Contact Network runtime exceeds resolved region cap.');
 }
 
 export function strongMetaCurrentEnergyBonus(
@@ -411,6 +486,10 @@ export function strongMetaCurrentEnergyBonus(
 
 export function hasResolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):boolean{
   return !!snapshot?.resolvedRewards.some(reward=>reward.id===id);
+}
+
+export function resolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):ResolvedStrongReward|undefined{
+  return resolvedReward(snapshot,id);
 }
 
 function resolvedReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):ResolvedStrongReward|undefined{
@@ -501,7 +580,7 @@ export function applyNetworkRetainerAtStartDay(input:Readonly<{
 
 export function validateStrongMetaRegistry():void{
   const ids=Object.keys(strongMetaRegistry);
-  if(ids.length!==20)throw new Error('Strong Meta registry must contain four v7 rewards, seven D40 Specialists, and nine D41 Specialists.');
+  if(ids.length!==23)throw new Error('Strong Meta registry must contain four v7 rewards, three D38 Specialists, seven D40 Specialists, and nine D41 Specialists.');
   for(const [key,definition] of Object.entries(strongMetaRegistry)){
     if(key!==definition.id)throw new Error(`Strong Meta registry key mismatch: ${key}`);
     if(!strongRewardIdPattern.test(key))throw new Error(`Invalid Strong Meta reward ID: ${key}`);
@@ -509,7 +588,7 @@ export function validateStrongMetaRegistry():void{
   if(new Set(ids).size!==ids.length)throw new Error('Duplicate Strong Meta reward ID.');
   const specialists=Object.values(strongMetaRegistry).filter(x=>x.class==='specialist');
   const keystones=Object.values(strongMetaRegistry).filter(x=>x.class==='keystone');
-  if(specialists.length!==17)throw new Error('Strong Meta Specialist registry drift.');
+  if(specialists.length!==20)throw new Error('Strong Meta Specialist registry drift.');
   if(keystones.length!==3)throw new Error('Strong Meta Keystone registry drift.');
   for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster]){
     const definition=strongMetaRegistry[id];
@@ -519,12 +598,22 @@ export function validateStrongMetaRegistry():void{
     const definition=strongMetaRegistry[id];
     if(definition.class!=='specialist'||definition.authority!=='D41')throw new Error(`D41 Specialist registry drift: ${id}`);
   }
+  for(const id of [STRONG_META_IDS.activitySurveyorsAtlas,STRONG_META_IDS.activityFieldArchive,STRONG_META_IDS.activityContactNetwork]){
+    const definition=strongMetaRegistry[id];
+    if(definition.class!=='specialist'||definition.authority!=='D38')throw new Error(`D38 Specialist registry drift: ${id}`);
+  }
   const reserve=strongMetaRegistry[STRONG_META_IDS.earnedReserveMatch].effect;
   const rhythm=strongMetaRegistry[STRONG_META_IDS.workRhythm].effect;
   const retainer=strongMetaRegistry[STRONG_META_IDS.networkRetainer].effect;
   if(reserve.kind!=='earned-reserve-match'||reserve.matchRatio!==1||reserve.perRunCap!==1000)throw new Error('D32 Reserve Match parameter drift.');
   if(rhythm.kind!=='work-rhythm'||rhythm.energyDelta!==1||rhythm.maxBonusDays!==20)throw new Error('D32 Work Rhythm parameter drift.');
   if(retainer.kind!=='network-retainer'||retainer.paymentAmount!==25||retainer.eligibleDayCount!==40||retainer.perRunTotalCap!==1000)throw new Error('D32 Network Retainer parameter drift.');
+  const atlas=strongMetaRegistry[STRONG_META_IDS.activitySurveyorsAtlas].effect;
+  const archive=strongMetaRegistry[STRONG_META_IDS.activityFieldArchive].effect;
+  const contact=strongMetaRegistry[STRONG_META_IDS.activityContactNetwork].effect;
+  if(atlas.kind!=='activity-surveyors-atlas'||atlas.maxRegionsPerRun!==4||atlas.normalSurveyFieldTimeCost!==1||atlas.specialistSurveyFieldTimeCost!==0)throw new Error('D38 Surveyor\'s Atlas parameter drift.');
+  if(archive.kind!=='activity-field-archive'||archive.maxSecuredPerRegion!==1||archive.maxSecuredPerRun!==4||archive.eligibilityTag!=='activity-secure-eligible')throw new Error('D38 Field Archive parameter drift.');
+  if(contact.kind!=='activity-contact-network'||contact.maxIntroductionsPerRegion!==1||contact.maxIntroductionsPerRun!==4||contact.introductionTag!=='activity-network-introduction')throw new Error('D38 Contact Network parameter drift.');
 }
 
 validateStrongMetaRegistry();
