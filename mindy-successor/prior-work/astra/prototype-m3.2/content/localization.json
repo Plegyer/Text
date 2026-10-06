@@ -13353,6 +13353,246 @@
     "ui.night.sequence.finishText": {
       "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
       "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.assassin.night.handler-contact.title": {
+      "ru": "Встретиться с куратором вне задания",
+      "en": "Meet the Handler off-hours"
+    },
+    "event.assassin.night.handler-contact.variant.default.text": {
+      "ru": "Обсудите доверие, границы или лояльность вне рабочих записей. Встреча не создаёт доказательство маршрута, обязательную связь или приказ.",
+      "en": "Discuss trust, boundaries, or loyalty outside covert-work notes. The meeting creates no route evidence, mandatory bond, or order."
+    },
+    "event.assassin.night.handler-contact.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.assassin.night.handler-contact.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.hunter.night.field-debrief.title": {
+      "ru": "Провести полевой разбор",
+      "en": "Hold a field debrief"
+    },
+    "event.hunter.night.field-debrief.variant.default.text": {
+      "ru": "Разберите следы, наблюдения и план следующего выхода как профессиональную работу. Этот выбор не выдаёт маршрут, отношения или готовность финала.",
+      "en": "Sort tracks, observations, and the next field plan as professional work. This choice grants no route, relationship state, or ending readiness."
+    },
+    "event.hunter.night.field-debrief.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.hunter.night.field-debrief.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.hunter.night.senior-guide.title": {
+      "ru": "Провести время со старшим проводником",
+      "en": "Spend off-duty time with the Senior Guide"
+    },
+    "event.hunter.night.senior-guide.variant.default.text": {
+      "ru": "Встретьтесь вне смены ради личного разговора или товарищеского общения. Дружбы достаточно; романтика не предполагается и не требуется.",
+      "en": "Meet off duty for a personal or companionable conversation. Friendship is enough; romance is neither assumed nor required."
+    },
+    "event.hunter.night.senior-guide.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.hunter.night.senior-guide.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.guard.night.case-debrief.title": {
+      "ru": "Подготовить разбор дела",
+      "en": "Prepare a case debrief"
+    },
+    "event.guard.night.case-debrief.variant.default.text": {
+      "ru": "Сведите показания и заметки в профессиональный отчёт после дежурства. Сцена не создаёт доказательства, счётчики службы или готовность маршрута.",
+      "en": "Turn testimony and notes into a professional report after duty. The scene creates no evidence, duty counters, or route readiness."
+    },
+    "event.guard.night.case-debrief.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.guard.night.case-debrief.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.guard.night.partner.title": {
+      "ru": "Провести время с напарником вне службы",
+      "en": "Spend off-duty time with your Partner"
+    },
+    "event.guard.night.partner.variant.default.text": {
+      "ru": "Поговорите как люди, а не как участники дела. Существующие отказ и границы остаются в силе, а обычная служба от этой встречи не зависит.",
+      "en": "Talk as people rather than as participants in a case. Existing refusal and boundaries remain authoritative, and ordinary duty does not depend on this meeting."
+    },
+    "event.guard.night.partner.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.guard.night.partner.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.merchant.night.ledger-plan.title": {
+      "ru": "Сверить книги и спланировать поставки",
+      "en": "Review the ledger and plan suppliers"
+    },
+    "event.merchant.night.ledger-plan.variant.default.text": {
+      "ru": "Сверьте записи и следующий план поставок как профессиональную работу. Это не выдаёт доставку, сделку, деньги или готовность карьерного маршрута.",
+      "en": "Reconcile records and the next supplier plan as professional work. It grants no delivery, deal, money, or career-route readiness."
+    },
+    "event.merchant.night.ledger-plan.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.merchant.night.ledger-plan.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.merchant.night.supplier.title": {
+      "ru": "Поговорить с поставщиком вне дел",
+      "en": "Spend off-hours time with the Supplier"
+    },
+    "event.merchant.night.supplier.variant.default.text": {
+      "ru": "Встретьтесь вне книг и поставок ради личного разговора. Контакт может остаться дружеским и не становится скрытым условием карьерного продвижения.",
+      "en": "Meet outside ledgers and deliveries for a personal conversation. The contact may remain friendly and never becomes a hidden career gate."
+    },
+    "event.merchant.night.supplier.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.merchant.night.supplier.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.lumber.night.foreman-social.title": {
+      "ru": "Поговорить с бригадиром не о работе",
+      "en": "Spend personal time with the Foreman"
+    },
+    "event.lumber.night.foreman-social.variant.default.text": {
+      "ru": "После смены можно остаться на личный разговор, не превращая его в ещё один рабочий разбор. Это добровольное общение и не обещание романтики.",
+      "en": "Stay after the shift for a personal conversation rather than another work debrief. It is voluntary contact and does not promise romance."
+    },
+    "event.lumber.night.foreman-social.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.lumber.night.foreman-social.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.prostitute.night.personal-continuation.title": {
+      "ru": "Продолжить общение лично",
+      "en": "Continue the relationship personally"
+    },
+    "event.prostitute.night.personal-continuation.variant.default.text": {
+      "ru": "Личное продолжение доступно только после ранее выбранной дружбы или романтики. Уверенность, Похоть, Сексуальность и приватность сами по себе никогда не означают согласие.",
+      "en": "A personal continuation is available only after friendship or romance was explicitly chosen earlier. Confidence, Lust, Sexuality, and privacy never imply consent."
+    },
+    "event.prostitute.night.personal-continuation.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.prostitute.night.personal-continuation.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.prostitute.night.client-private.title": {
+      "ru": "Выбрать добровольное продолжение наедине",
+      "en": "Choose a voluntary private-space continuation"
+    },
+    "event.prostitute.night.client-private.variant.default.text": {
+      "ru": "Обычная комната даёт приватное место, но не меняет режим отношений и не переносит сюда правила принудительной Ночи Тайного долга. Любая близость или романтика требуют отдельного явного выбора.",
+      "en": "Normal lodging provides privacy but does not change the relationship mode or import Secret Debt forced-Night rules. Any intimacy or romance requires a separate explicit choice."
+    },
+    "event.prostitute.night.client-private.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.prostitute.night.client-private.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.satyr-maid.night.recurring-guest-private.title": {
+      "ru": "Поговорить с постоянным гостем наедине",
+      "en": "Continue privately with the recurring guest"
+    },
+    "event.satyr-maid.night.recurring-guest-private.variant.default.text": {
+      "ru": "Обычная комната даёт возможность поговорить без публики — о личном, границах или просьбе. Приватность не означает близость, романтику или согласие на них.",
+      "en": "Normal lodging offers a place to talk away from the crowd about personal context, boundaries, or a request. Privacy does not imply intimacy, romance, or consent to either."
+    },
+    "event.satyr-maid.night.recurring-guest-private.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.satyr-maid.night.recurring-guest-private.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "event.tavern.night.traveler-private.title": {
+      "ru": "Поговорить с постоянным путешественником наедине",
+      "en": "Continue privately with the recurring traveler"
+    },
+    "event.tavern.night.traveler-private.variant.default.text": {
+      "ru": "Обычная комната позволяет спокойно обсудить личный контекст или безопасность. Встреча не решает за игрока вопрос конфиденциальности и не создаёт информационный маршрут.",
+      "en": "Normal lodging gives you a quiet place to discuss personal context or safety. The meeting does not resolve confidentiality for the player or create an information route."
+    },
+    "event.tavern.night.traveler-private.choice.continue.label": {
+      "ru": "Завершить ночь",
+      "en": "Finish the night"
+    },
+    "event.tavern.night.traveler-private.choice.continue.text": {
+      "ru": "Завершить выбранную ночную сцену без дополнительных условий.",
+      "en": "Finish the chosen Night scene without adding any further condition."
+    },
+    "presentation.static.lumber.night.foreman-social.caption": {
+      "ru": "Добровольный личный вечерний разговор с бригадиром лесорубов после смены.",
+      "en": "A voluntary personal evening conversation with the Lumber Foreman after the shift."
+    },
+    "presentation.static.hunter.night.field-debrief.caption": {
+      "ru": "Охотница разбирает полевые записи и маршрут после наступления темноты.",
+      "en": "A Hunter reviews field notes and route observations after dark."
+    },
+    "presentation.static.hunter.night.senior-guide.caption": {
+      "ru": "Добровольная встреча охотницы со старшим проводником вне смены.",
+      "en": "A voluntary off-duty meeting between the Hunter and the Senior Guide."
+    },
+    "presentation.static.guard.night.case-debrief.caption": {
+      "ru": "Стражница после дежурства готовит спокойный разбор дела и записи.",
+      "en": "A Guard prepares a calm case debrief and notes after duty."
+    },
+    "presentation.static.guard.night.partner.caption": {
+      "ru": "Добровольная встреча стражницы с напарником после службы.",
+      "en": "A voluntary off-duty meeting between the Guard and her Partner."
+    },
+    "presentation.static.merchant.night.ledger-plan.caption": {
+      "ru": "Торговка после закрытия рынка сверяет книги и план поставок.",
+      "en": "A Merchant reviews the ledger and supplier plan after the market closes."
+    },
+    "presentation.static.merchant.night.supplier.caption": {
+      "ru": "Добровольный личный разговор торговки с поставщиком вне рабочего времени.",
+      "en": "A voluntary personal conversation with the Merchant Supplier outside work hours."
+    },
+    "presentation.static.assassin.night.handler-contact.caption": {
+      "ru": "Ограниченная добровольная встреча с куратором или информатором вне задания.",
+      "en": "A bounded voluntary off-hours meeting with the Handler or informant."
+    },
+    "presentation.static.prostitute.night.personal-continuation.caption": {
+      "ru": "Добровольное личное продолжение с постоянным клиентом после явного выбора режима отношений.",
+      "en": "An explicitly chosen personal continuation with the recurring client after a relationship mode was selected."
+    },
+    "presentation.static.satyr-maid.night.recurring-guest-private.caption": {
+      "ru": "Добровольный приватный разговор служанки с постоянным гостем в обычной комнате.",
+      "en": "A voluntary private-space conversation between the Satyr Maid and the recurring guest in normal lodging."
+    },
+    "presentation.static.tavern.night.traveler-private.caption": {
+      "ru": "Добровольный приватный разговор с постоянным путешественником в обычной комнате.",
+      "en": "A voluntary private-space conversation with the recurring traveler in normal lodging."
+    },
+    "presentation.static.prostitute.night.client-private.caption": {
+      "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
+      "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
     }
   }
 }
