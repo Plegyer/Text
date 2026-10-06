@@ -1,7 +1,11 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT + D51 CURRENT-MAIN ASSEMBLY v1**
+Status: **START NOW — SECRET DEBT + D51 CURRENT-MAIN ASSEMBLY v1**
 Owner: Chat 2 / sole current-main assembly + full-CI lane
+
+Do not wait for Leader.
+Do not remain idle.
+Begin the assembly now and continue through focused QA, build gates, and one full CI without stopping between substeps.
 
 D42 is CLOSED:
 - merged main commit: `a51bbee97b0f5e5b0a182da03407277eecc7a758`
@@ -20,8 +24,9 @@ Assemble selectively from accepted sources:
 - Secret Debt+D51 preflight v22:
   `chat3/secret-debt-d51-assembly-preflight-v22@49fb8209ddfbc869ebe34ab155ead1afbf8c5c2c`
 - v27 exact-head QA v24: GREEN.
+- Chat 4 v26-v28 Secret Debt+D51 final packet/save matrix/QA checklist: complete and accepted.
 
-Work continuously through these internal steps without waiting for Leader:
+Work continuously:
 1. selective mechanics/schema/content compose onto actual current main;
 2. canonical Strong Meta reward binding reconciliation;
 3. D51 Street+bound-night Energy compatibility compose;
