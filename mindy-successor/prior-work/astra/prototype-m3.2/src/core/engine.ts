@@ -25,7 +25,24 @@ import {
   type ApprovedStrongRewardId
 } from './strongMeta.ts';
 import {markPalaceCreationQualification} from './palace.ts';
-import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';
+import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';import {
+  SECRET_DEBT_LENDER_EVENT_ID,
+  SECRET_DEBT_HIDDEN_WORK_ACTION_ID,
+  SECRET_DEBT_REPAY_ACTION_ID,
+  SECRET_DEBT_TAKEOVER_ACTION_ID,
+  acceptSecretDebtMutable,
+  activateSecretDebtIfDueMutable,
+  applySecretDebtHiddenShiftMutable,
+  markSecretDebtLenderAttemptMutable,
+  refuseSecretDebtMutable,
+  repaySecretDebtMutable,
+  resolveSecretDebtTakeoverMutable,
+  secretDebtBound,
+  secretDebtLenderEligible,
+  totalPaidSchoolLessons,
+  validateSecretDebtState
+} from './secretDebt.ts';
+
 
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
@@ -250,6 +267,11 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'calendarElapsedDays': return compare(s.run.calendar.elapsedDays,c.op,c.value);
     case 'housingTier': return s.run.housingState.current===c.value;
     case 'schoolCounter': return compare(s.run.progression.school.tracks[c.track]?.counters[c.counter]??0,c.op,c.value);
+    case 'schoolPaidLessons': return compare(totalPaidSchoolLessons(s),c.op,c.value);
+    case 'lust': return compare(s.run.character.lust,c.op,c.value);
+    case 'secretDebtStatus': return s.run.secretDebt.status===c.value;
+    case 'secretDebtShifts': return compare(s.run.secretDebt.hiddenShifts,c.op,c.value);
+    case 'secretDebtLenderEligible': return secretDebtLenderEligible(s);
     case 'careerStage': return readDomainState(s,'career',c.career,cat)?.stage===c.stage;
     case 'careerShifts': return compare(readDomainState(s,'career',c.career,cat)?.shifts??0,c.op,c.value);
     case 'careerCounter': return compare(readDomainState(s,'career',c.career,cat)?.counters[c.counter]??0,c.op,c.value);
@@ -296,17 +318,28 @@ export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCare
 
 export type ActionAvailabilityOptions=Readonly<{ordinaryCareersDomainLocked?:boolean}>;
 
+function ordinaryCareerDomainForAction(action:Action):OrdinaryHardWorkCareer|null{
+  const shiftCareer=ordinaryCareerForShiftAction(action);
+  if(shiftCareer)return shiftCareer;
+  return ordinaryCareerSet.has(action.id)?action.id as OrdinaryHardWorkCareer:null;
+}
+
 export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
   const normalGateSatisfied=eligible(action.conditions,s,cat);
+  const domainCareer=ordinaryCareerDomainForAction(action);
+  const domainLocked=secretDebtBound(s)||(options.ordinaryCareersDomainLocked??false);
+  if(domainCareer&&domainLocked)return false;
+
   const career=ordinaryCareerForShiftAction(action);
   if(!career)return normalGateSatisfied;
   return ordinaryCareerAvailableWithHardWork({
     career,
     normalGateSatisfied,
-    ordinaryCareersDomainLocked:options.ordinaryCareersDomainLocked??false,
+    ordinaryCareersDomainLocked:false,
     earnedHardWork:s.meta.hardWorkProgress
   });
 }
+
 
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
@@ -343,6 +376,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       historyState:{eventHistory:{},actionCounts:{},dayActionCount:0,journal:['Белый суслик, открытый люк и совершенно незнакомое небо. Ваша новая жизнь начинается в Листограде.'],journalRefs:[null]},
       strongMetaSnapshot:null,
       strongMetaRuntime:emptyStrongMetaRuntime(),
+      secretDebt:{status:'unseen',acceptedDay:null,trapDay:null,boundDay:null,resolvedDay:null,debt:0,hiddenShifts:0,grantApplied:false,lastLenderAttemptDay:null},
       legacyCompat:{source:'m3.2' as const,metrics:defaultLegacyMetrics(),flags:{}}
     }
   } as unknown as Save;
@@ -414,7 +448,7 @@ function addUnique(target:string[],value:string){if(!target.includes(value))targ
 function removeValue(target:string[],value:string){const i=target.indexOf(value);if(i>=0)target.splice(i,1);}
 function effectPhase(e:Effect){
   if(['modifyStat','modifyResource','modifyEnergy','addItem','removeItem','setHousing','metric','item','housing','flag'].includes(e.kind))return 1;
-  if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact'].includes(e.kind))return 2;
+  if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact','secretDebtAccept','secretDebtRefuse'].includes(e.kind))return 2;
   if(['advanceCareer','advanceQuest','advanceRelationship'].includes(e.kind))return 3;
   return 4;
 }
@@ -471,6 +505,8 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
     case 'setRelationshipChoice': ensureDomainState(s,'relationship',e.relationship,cat).choices[e.choice]=e.value;return;
     case 'addWorldFact': addUnique(s.run.progression.worldFacts,e.fact);return;
     case 'removeWorldFact': removeValue(s.run.progression.worldFacts,e.fact);return;
+    case 'secretDebtAccept': acceptSecretDebtMutable(s);return;
+    case 'secretDebtRefuse': refuseSecretDebtMutable(s);return;
 
     case 'advanceCareer': if(!allowTransitions)throw new Error('Nested career transition запрещён');applyTransition(s,'career',e.career,e.transition,cat);return;
     case 'advanceQuest': if(!allowTransitions)throw new Error('Nested quest transition запрещён');applyTransition(s,'quest',e.quest,e.transition,cat);return;
@@ -675,6 +711,7 @@ function attemptChance(s:Save,e:StoryEvent,trace:ResolverTrace){
   const r=s.run.flow.reaction;
   if(r.attemptedEventIds.includes(e.id)){trace.steps.push(`reject:${e.id}:already-attempted`);return false;}
   r.attemptedEventIds.push(e.id);
+  if(e.id===SECRET_DEBT_LENDER_EVENT_ID)markSecretDebtLenderAttemptMutable(s);
   const roll=random(s),chance=eventChance(e,s),pass=roll<chance;
   trace.steps.push(`chance:${e.id}:${roll.toFixed(8)}<${chance.toFixed(8)}:${pass?'pass':'fail'}`);
   return pass;
@@ -863,6 +900,9 @@ function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.pending||s.run.flow.night||s.run.flow.activity)throw new Error('Завершите текущую сцену, ночь или Activity.');
   const ending=cat.definitions.endings.find(e=>e.id===endingId);
   if(!ending||!s.run.endings.eligible.includes(endingId))throw new Error('Эта судьба сейчас недоступна.');
+  if(endingId.startsWith('ending.secret-debt.')&&!eligible(ending.conditions,s,cat)){
+    throw new Error('Эта Secret Debt судьба больше не соответствует текущему исходу маршрута.');
+  }
   const before=cloneSave(s);
   s.run.endings.committed=endingId;
   s.run.status='ending_committed';
@@ -1034,7 +1074,29 @@ function applyPendingNightPolicy(s:Save,cat:Catalog,point:NightPoint){
   n.suppressVoluntaryMenu ||= policy.suppressVoluntaryMenu;
   n.consumesNight ||= policy.consumesNight;
 }
-function finishNightMutable(s:Save,cat:Catalog,secretDebtBound=false){
+const D51_STREET_ENERGY_PROVENANCE_TAG='lodging.street.energy-penalty' as const;
+const D51_BOUND_NIGHT_ENERGY_PROVENANCE_TAG='secret-debt.bound-night' as const;
+const D51_BOUND_STREET_COMPATIBILITY_FLOOR=2 as const;
+const D51_BOUND_STREET_LOCKED_DELTA=-2 as const;
+
+function nextDayEnergyAfterD51Compatibility(s:Save,queued:Save['run']['dayState']['nextDayModifiers']){
+  const base=energyMax(s);
+  const hasBoundStreetPair=
+    queued.tags.includes(D51_STREET_ENERGY_PROVENANCE_TAG)
+    && queued.tags.includes(D51_BOUND_NIGHT_ENERGY_PROVENANCE_TAG);
+  if(!hasBoundStreetPair)return Math.max(1,base+queued.energyDelta);
+
+  // D51 processes the two locked -1 penalties first, floors only that pair at 2,
+  // then applies every unrelated queued Energy modifier independently.
+  const unrelatedDelta=queued.energyDelta-D51_BOUND_STREET_LOCKED_DELTA;
+  const afterLockedPair=Math.max(
+    D51_BOUND_STREET_COMPATIBILITY_FLOOR,
+    base+D51_BOUND_STREET_LOCKED_DELTA
+  );
+  return Math.max(1,afterLockedPair+unrelatedDelta);
+}
+
+function finishNightMutable(s:Save,cat:Catalog){
   const n=nightState(s);
   if(s.run.pending)throw new Error('Нельзя завершить ночь с активной сценой.');
   const before=cloneSave(s);
@@ -1053,10 +1115,12 @@ function finishNightMutable(s:Save,cat:Catalog,secretDebtBound=false){
     n.calendarAdvanceCommitted=true;
   }
   n.phase='StartDay';
+  activateSecretDebtIfDueMutable(s);
+  const liveSecretDebtBound=secretDebtBound(s);
   const queued=s.run.dayState.nextDayModifiers;
   for(const effect of queued.statEffects)setMetric(s,effect.stat,getMetric(s,effect.stat)+effect.delta);
-  applyStrongMetaStartDayMutable(s,secretDebtBound);
-  s.run.metrics.energy=Math.max(1,energyMax(s)+queued.energyDelta);
+  applyStrongMetaStartDayMutable(s,liveSecretDebtBound);
+  s.run.metrics.energy=nextDayEnergyAfterD51Compatibility(s,queued);
   s.run.dayState.nextDayModifiers={energyDelta:0,statEffects:[],tags:[]};
   s.run.housingState.paidForCurrentNight=false;
   for(const q of [...s.run.flow.reaction.queued])if(q.kind==='optional')removeQueuedInstance(s,q.instanceId);
@@ -1138,6 +1202,9 @@ function chooseLodgingMutable(s:Save,cat:Catalog,lodging:LodgingDefinition){
   n.lodgingPaymentCommitted=true;
   applyEffectsMutable(s,lodging.effects,cat,true);
   queueNextDay(s,lodging.nextDayEnergyDelta,lodging.nextDayEffects,`lodging.${lodging.id}`);
+  if(lodging.id==='lodging.street'&&lodging.nextDayEnergyDelta===-1){
+    addUnique(s.run.dayState.nextDayModifiers.tags,D51_STREET_ENERGY_PROVENANCE_TAG);
+  }
   n.phase='PostLodgingForcedCheck';
   runNightPointMutable(s,cat,'after_lodging',before);
 }
@@ -1360,7 +1427,18 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
-  applyActionEffectsMutable(s,a.effects,cat);
+  if(a.id===SECRET_DEBT_HIDDEN_WORK_ACTION_ID){
+    const result=applySecretDebtHiddenShiftMutable(s);
+    log(s,`Заработано: ${result.wage} монет.`);
+  }else if(a.id===SECRET_DEBT_REPAY_ACTION_ID){
+    repaySecretDebtMutable(s);
+    log(s,'Долг погашен полностью: 20000 монет.');
+  }else if(a.id===SECRET_DEBT_TAKEOVER_ACTION_ID){
+    resolveSecretDebtTakeoverMutable(s);
+    log(s,'Вы перехватили контроль над долговым маршрутом.');
+  }else{
+    applyActionEffectsMutable(s,a.effects,cat);
+  }
   if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
   let ordinaryWage=0;
   if(a.wage){
@@ -1552,6 +1630,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
   validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
+  validateSecretDebtState(s);
   if(s.run.strongMetaRuntime.workRhythmAppliedDay!==null&&s.run.strongMetaRuntime.workRhythmAppliedDay>s.run.day)throw new Error('Work Rhythm applied day cannot be in the future.');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
