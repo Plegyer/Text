@@ -84,3 +84,19 @@ Assembly order:
 5. final closure
 
 Chats 3-6 now work from auto-continue bundles instead of one-task refill.
+
+
+## FINAL HANDOFF QUEUE — NEXT LEADER1
+
+Broad burn-down: **5**
+
+1. Secret Debt + D51 — ACTIVE in Chat2.
+2. Palace + D39 — NEXT; D39 live-consumer Product/content decision already resolved; Chat3 producer implementation is assigned.
+3. Activity + Camp + D38.
+4. D46 + D47 + legacy retirement.
+5. Final closure.
+
+Do not decrement until each stage is Leader-merged and exact-main CI is green.
+
+Bootstrap from:
+`mindy-successor/docs/tasks/LEADER1_CONTEXT_RECOVERY_CURRENT.md`
