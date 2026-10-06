@@ -11,6 +11,8 @@ import {
 import {schoolNightStudyChoices} from '../src/core/school.ts';
 import {STRONG_META_KNOWLEDGE_IDS,emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
 
+const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
+
 const pack=JSON.parse(
   readFileSync(
     'content/packs/school-life-content-v1.json',
@@ -216,4 +218,32 @@ test('Source Method uses a future-run snapshot for an effect-free reload-stable 
     reads:{meta:['strongMetaKnowledge']},
     writes:{}
   });
+});
+
+test('Source Method player-facing copy stays below the D49 macro-lore ceiling in RU and EN',()=>{
+  const event=pack.events.find(
+    (e:any)=>e.id==='school-life-content-v1.night-study.arcana-reason'
+  );
+  assert.ok(event);
+  const variant=event.variants.find(
+    (v:any)=>v.id==='source-method-crosscheck'
+  );
+  assert.ok(variant);
+  assert.deepEqual(variant.conditions,[{
+    kind:'strongMetaKnowledge',
+    knowledge:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod,
+    present:true
+  }]);
+
+  const key='event.school-life-content-v1.night-study.arcana-reason.variant.source-method-crosscheck.text';
+  const localized=localization.strings[key];
+  assert.equal(typeof localized?.ru,'string');
+  assert.equal(typeof localized?.en,'string');
+
+  const forbiddenEnglish=/\b(?:palace|threshold|crossing|origin|return|prince|archive)\b/i;
+  const forbiddenRussian=/(?:дворец|порог|пересеч|переход|происхожд|возвращ|принц|архив)/i;
+  for(const copy of [variant.text,localized.en]){
+    assert.equal(forbiddenEnglish.test(copy),false,copy);
+  }
+  assert.equal(forbiddenRussian.test(localized.ru),false,localized.ru);
 });
