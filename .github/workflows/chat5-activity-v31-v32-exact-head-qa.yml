@@ -1,9 +1,7 @@
 name: Chat 5 Activity v31-v32 exact-head QA
 
 on:
-  push:
-    branches:
-      - chat5/activity-exact-head-qa-bundle-v31
+  workflow_dispatch:
 
 jobs:
   regions-v15-diagnostics:
