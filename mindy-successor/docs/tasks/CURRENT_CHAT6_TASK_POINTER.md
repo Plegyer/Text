@@ -1,19 +1,21 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **START NOW — FINAL PLAYER-FACING GOLDEN MANIFEST v54-v56**
+Status: **BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_GOLDEN_GATE**
 Owner: Chat 6
 
-Previous final player-facing preassembly v51-v53 is accepted and frozen.
-
-Current branch:
+Branch:
 `chat6/final-player-facing-golden-manifest-v54`
 
-Task:
-`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_MANIFEST_v54_v56_TASK.md`
+v51-v53 remains accepted and frozen; it was not redone.
 
-Complete all v54-v56 tasks in order.
-Test/manifest/player-facing closure preparation only.
-No runtime/mechanics changes. No full CI. Do not merge main.
+Completed v54-v56:
+- exact final player-facing golden fixture + human companion;
+- machine-auditable v55 validator/focused final-gate contract;
+- v56 replacement-chat/final-closure handoff.
 
-Expected final:
-`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_GOLDEN_GATE`.
+Final handoff:
+`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_MANIFEST_v56.md`
+
+No runtime/mechanics changes. No full CI. Main not merged.
+
+`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_GOLDEN_GATE`
