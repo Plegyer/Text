@@ -32,6 +32,7 @@ import {catalog,rawPacks,started} from './helpers.ts';
 
 function setBound(s:Save,day=10,hiddenShifts=0){
   s.run.calendar.elapsedDays=day;
+  s.run.day=day;
   s.run.secretDebt={
     status:'bound',
     acceptedDay:0,
@@ -519,7 +520,7 @@ test('Secret Debt ending rewards bind exact D30/D32 ownership IDs and standard t
   for(const [endingId,rewardId] of expected){
     const ending=catalog.definitions.endings.find(item=>item.id===endingId);
     assert.ok(ending);
-    assert.deepEqual(ending.metaRewards,[{kind:'unlock',rewardId,unlock:rewardId}]);
+    assert.deepEqual(ending.metaRewards,[{kind:'strongMeta',rewardId,reward:rewardId}]);
   }
 
   let s=setBound(started(),10,0);
@@ -529,12 +530,12 @@ test('Secret Debt ending rewards bind exact D30/D32 ownership IDs and standard t
   s=resolvePending(s);
   s=dispatch(s,{type:'completeEnding'},catalog);
 
-  assert.equal(s.meta.unlocks.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
+  assert.equal(s.meta.strongMeta.earnedRewardIds.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
   assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[SECRET_DEBT_REWARD_IDS.paidFreedom]);
   assert.equal(s.meta.appliedResultTransactions.length,1);
 
   const after=dispatch(s,{type:'completeEnding'},catalog);
-  assert.equal(after.meta.unlocks.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
+  assert.equal(after.meta.strongMeta.earnedRewardIds.filter(id=>id===SECRET_DEBT_REWARD_IDS.paidFreedom).length,1);
   assert.equal(after.meta.appliedResultTransactions.length,1);
 });
 
