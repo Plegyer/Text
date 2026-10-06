@@ -1,51 +1,37 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — PALACE D39 REWARD IMPLEMENTATION PREFLIGHT v19**
+Status: **ACTIVE — PALACE D39 REWARD PRODUCER v20**
 Owner: Chat 5
 
-Previous D46+D47+legacy preflight v18 is complete and accepted.
+Previous D39 implementation preflight v19 is complete and accepted.
 
 New branch:
-`chat5/palace-d39-reward-implementation-preflight-v19`
+`chat5/palace-d39-reward-producer-v20`
 
-Problem:
-Palace assembly preflight found that the three accepted D39 non-True Palace rewards are Product-locked but do not yet have a complete implementation source for current Strong Meta.
+Implement the accepted D39 Palace rewards using the existing current Strong Meta / ending transaction architecture.
 
-D39 accepted rewards:
+Required rewards:
+1. Service Life -> Steady Practice (Specialist)
+2. Court Power -> Formal Introduction (Specialist)
+3. Inner Truth -> Source Method (automatic knowledge/content, no slot)
 
-1. Service Life -> Steady Practice
-   `palace.service-life.steady-practice`
-   class: Specialist
+Follow v19 exactly.
 
-2. Court Power -> Formal Introduction
-   `palace.court-power.formal-introduction`
-   class: Specialist
+Requirements:
+- normal Specialist capacity only;
+- no extra Palace slot;
+- no same-life activation after earning;
+- completeEnding grants exactly once;
+- Source Method never appears as Specialist/Keystone/preference;
+- no Palace access bypass;
+- no Secret Debt/Activity/Hard Work gate bypass;
+- no new Product behavior.
 
-3. Inner Truth -> Source Method
-   `palace.inner-truth.source-method`
-   class: automatic knowledge/content, no slot
-
-Task:
-prepare the exact implementation packet for current Strong Meta / ending reward lifecycle.
-
-Specify:
-- reward registry entries;
-- ownership/migration semantics;
-- future-run activation;
-- Specialist slot behavior;
-- Source Method automatic inheritance;
-- exactly-once ending transaction binding;
-- save/load and profile merge behavior;
-- tests needed for each reward;
-- exact files Chat 2 must modify during Palace assembly;
-- interactions that must remain forbidden.
-
-Do not invent new Product behavior.
-Do not modify production runtime in this preflight.
-Do not run full CI.
+Add focused executable tests for reward lifecycle and mechanics.
+No full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT5_PALACE_D39_REWARD_IMPLEMENTATION_PREFLIGHT_v19.md`
+`mindy-successor/docs/tasks/CHAT5_PALACE_D39_REWARD_PRODUCER_v20.md`
 
-Report:
-`READY_FOR_PALACE_ASSEMBLY`.
+Freeze exact SHA and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
