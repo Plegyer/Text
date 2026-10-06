@@ -395,3 +395,50 @@ Do not re-open D41. The sole integration lane is now D42.
 ## User communication
 
 Follow `mindy-successor/docs/tasks/LEADER1_USER_COMMUNICATION_PROTOCOL.md` for all user-facing updates.
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 RESUME
+
+This section supersedes older active-lane notes where they conflict.
+
+- Subscription pause ended; live Git was re-queried before resuming work.
+- D40 and D41 remain the last merged production gates.
+- Broad burn-down remains **6**.
+- Current production merge baseline remains D41 at `f36de067ae2e82518360dbe045f71c700e200805`.
+- Main contains only later Leader coordination/task documents; no newer production merge has occurred.
+
+### Chat 2
+- D42 triage completed by Chat 4.
+- Triage result: 8 stale tests + 5 localization/accessibility gaps + 0 runtime regressions.
+- Chat 2 has been released from WAITING into final D42 repair.
+- Current pointer: authorized localization/test repair only, then focused gate + one full CI.
+
+### Chat 3
+- Secret Debt+D51 preflight v22 complete.
+- Palace preflight v23 complete.
+- Current task: Activity cumulative assembly preflight v24.
+- Branch exists but no worker-authored v24 commit yet at resume check.
+
+### Chat 4
+- Camp baseline repair v19 is executable-green:
+  typecheck/validate/build PASS, focused 107/107 PASS.
+- D42 full-suite triage v20 complete.
+- Current task: final save/migration closure preflight v21.
+
+### Chat 5
+- lumber-stay retirement v17 focused-green and ready.
+- D46+D47+legacy preflight v18 complete.
+- Current task: Palace D39 reward implementation preflight v19.
+- Branch exists but no worker-authored v19 commit yet at resume check.
+
+### Chat 6
+- ending localization closure v26 complete and focused-green.
+- all 40 canonical ordinary-career endings have bilingual title/description/epilogue coverage.
+- Current task: Secret Debt ending localization producer v27.
+
+### Important accepted queued candidates
+- D51 producer exact-head QA green.
+- Camp repair v19 green.
+- lumber-stay retirement v17 green.
+- localization v26 green.
+- presentation v23 exact-head QA green.
