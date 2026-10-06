@@ -1,20 +1,18 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **START NOW — FINAL SAVE / MIGRATION DRY-RUN v65-v66**
+Status: **START NOW — SECRET DEBT + D51 STAGE-1 RELEASE GATE v67-v68**
 Owner: Chat 3
 
-Previous final save/migration release evidence v63-v64 is accepted.
+Previous final save/migration dry-run v65-v66 is accepted.
 
 Current branch:
-`chat3/final-save-migration-dryrun-v65`
+`chat3/secret-debt-d51-stage1-release-gate-v67`
 
 Task:
-`mindy-successor/docs/tasks/CHAT3_FINAL_SAVE_MIGRATION_DRYRUN_v65_v66_TASK.md`
+`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_D51_STAGE1_RELEASE_GATE_v67_v68_TASK.md`
 
-This is intentionally lightweight.
-Read compact handoffs only; do not reread giant manifests unless one exact field needs verification.
-
+This is a lightweight Stage-1 support bundle for Chat2.
 No production changes. No full CI. Do not merge main.
 
 Expected final:
-`BUNDLE_COMPLETE — READY_FOR_FINAL_SAVE_MIGRATION_DRYRUN`.
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_SECRET_DEBT_D51_STAGE1_SAVE_GATE`.
