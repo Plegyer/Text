@@ -351,3 +351,26 @@ Because the user reports Chat2 is not visible, a fallback recovery file now exis
 Use it only if the original Chat2 conversation is genuinely irretrievable. Do not replace a still-live Chat2 window.
 
 Broad burn-down remains **5**.
+
+
+## Live update — Chat6 v66-v67 accepted / v68-v69 assigned
+
+Chat6 final player-facing release evidence v66-v67 completed and is accepted.
+
+Accepted handoff:
+`CHAT6_FINAL_PLAYER_FACING_RELEASE_EVIDENCE_v67.md`
+
+Accepted ledger:
+`tests/fixtures/final-player-facing-release-evidence-v66.json`
+
+Ledger JSON parses and reports:
+`BUNDLE_LEDGER_READY_FINAL_ASSEMBLY_NOT_RUN`
+
+The ledger intentionally keeps all final assembled-candidate gates as PASS/FAIL/NOT-RUN and does not promote historical QA to final PASS.
+
+Current lightweight Chat6 assignment:
+- branch `chat6/final-player-facing-release-dryrun-v68`;
+- task `CHAT6_FINAL_PLAYER_FACING_RELEASE_DRYRUN_v68_v69_TASK.md`;
+- expected `BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_DRYRUN`.
+
+User must manually message Chat6 to start.
