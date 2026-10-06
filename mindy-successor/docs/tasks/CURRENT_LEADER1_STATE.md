@@ -442,3 +442,61 @@ This section supersedes older active-lane notes where they conflict.
 - lumber-stay retirement v17 green.
 - localization v26 green.
 - presentation v23 exact-head QA green.
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 WORKERS REFILLED / CHAT6 RECOVERY
+
+This section supersedes older active-worker notes where they conflict.
+
+### Chat 2
+- D42 repair progressed to production head `8e3f854a2607d103d1b22bd5da564089efedfc15`.
+- latest full CI run `37446088333`: only **2 failures** remain.
+- both are Guard presentation/source expectation tests (expected 29, actual 28).
+- Chat 2 is intentionally WAITING for Chat 4 v22 triage before another repair.
+- no D42 merge yet.
+
+### Chat 3
+Completed:
+- Activity cumulative assembly preflight v24 at `e21a6f923c6dae27efbbd0aa81e3dead59d00b38`
+- disposition: READY_FOR_CHAT2_PREFLIGHT.
+
+Current task:
+- `chat3/activity-d38-reward-implementation-preflight-v25`
+- prepare canonical Strong Meta implementation packet for three D38 Activity Specialists.
+
+### Chat 4
+Completed:
+- final save/migration closure preflight v21 at `1601be7b224f7b6687c4146c53d37499efb6a3f1`
+- disposition: READY_FOR_FINAL_CLOSURE.
+
+Current task:
+- `chat4/d42-postrepair-failure-triage-v22`
+- classify the final 2 D42 Guard test failures and authorize the smallest repair.
+
+### Chat 5
+Completed:
+- Palace D39 reward implementation preflight v19 at `a3f8bcff2f8e702a65e441a6ba2c3b893de869dd`
+- disposition: READY_FOR_PALACE_ASSEMBLY.
+
+Current task:
+- `chat5/palace-d39-reward-producer-v20`
+- implement D39 rewards on a producer branch with focused QA, no full CI.
+
+### Chat 6
+Completed:
+- Secret Debt ending localization v27 at `b6cc4ca6990936f4d801004806b25e4d920f9abf`
+- disposition: READY_FOR_CHAT2_CONTENT_ASSEMBLY.
+
+Previous Chat 6 context is considered exhausted.
+Recovery file:
+- `mindy-successor/docs/tasks/CHAT6_CONTEXT_RECOVERY_FINAL_LOCALIZATION_v28_2026-10-06.md`
+
+Current task:
+- `chat6/final-localization-presentation-closure-v28`
+- final 1.0 localization/presentation audit, no runtime changes.
+
+### Accepted closure/preflight results
+- Activity cumulative preflight v24 complete.
+- Final save/migration 23-case closure plan v21 complete.
+- Palace D39 implementation packet v19 complete.
+- Secret Debt ending localization v27 complete.
