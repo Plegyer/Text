@@ -1,34 +1,36 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY D38 REWARD EXACT-HEAD QA v22**
+Status: **ACTIVE — RETIRED TAVERN CLEANUP EXACT-HEAD QA v23**
 Owner: Chat 5
 
+Previous Activity D38 exact-head QA v22 is green and accepted.
+
 Producer under verification:
-`chat3/activity-d38-reward-producer-v26@7770b6bf7f930e8af17331e8b22613523bb2e768`
+`chat6/retired-tavern-localization-cleanup-v31@eb03a847347339ade109b0ec9022b81cd4abadaf`
 
 QA branch:
-`chat5/qa-activity-d38-reward-v22`
+`chat5/qa-retired-tavern-cleanup-v23`
 
 Task:
-run executable exact-head verification of the frozen D38 reward producer.
+run executable exact-head verification of the retired Tavern localization cleanup.
 
 Workflow must explicitly checkout:
-`7770b6bf7f930e8af17331e8b22613523bb2e768`
+`eb03a847347339ade109b0ec9022b81cd4abadaf`
 
 Required checks:
+- exact SHA guard;
+- production firewall;
+- npm ci;
 - typecheck;
 - validate;
 - build;
-- D38 focused reward suite;
-- Strong Meta registry/integration;
-- ending transaction lifecycle;
-- save/reload persistence;
-- no generic unlock ownership;
-- no extra Specialist slot;
-- Secret Debt / Palace / ordinary-career firewalls.
+- v31 cleanup focused test;
+- D41 migration/history compatibility tests;
+- presentation/source-integrity adjacency;
+- verify no live Tavern ending/presentation is reintroduced.
 
 No full CI.
 Do not mutate the frozen producer.
 
 If green, document run/job evidence and report:
-`READY_FOR_CHAT2_ASSEMBLY`.
+`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
