@@ -783,3 +783,31 @@ Broad burn-down remains **5**.
 - Chat 5 current bundle: `chat5/windows-release-preflight-v37` through v39.
 
 - Broad burn-down remains **5**.
+
+
+## AUTHORITATIVE LIVE UPDATE — ALL WORKERS IDLE, REFILLED, D39 DECIDED
+
+Broad burn-down remains **5**.
+
+Observed before refill:
+- Chat2 stale at assembly head `a02d4931087e0884756a6888354b8a69e0327b02`; no full/focused Actions running.
+- Chat3 v42-v44 decision bundle complete.
+- Chat4 v38-v40 independent D39 decision verification complete.
+- Chat5 v37-v39 Windows release preflight complete.
+- Chat6 v42-v44 Strong Meta UI closure complete.
+
+Leader D39 decision:
+`LEADER1_D39_LIVE_CONSUMER_DECISION_2026-10-06.md`
+- Formal Introduction first authored consumer: Assassin handler neutral `formal-introduced` seam.
+- Source Method first live consumer: School Arcana/Reason Night Study effect-free information variant.
+
+Current assignments:
+- Chat2: CONTINUE Secret Debt+D51 assembly; recovery published at
+  `CHAT2_CONTEXT_RECOVERY_SECRET_DEBT_D51_2026-10-06.md`.
+- Chat3: `chat3/d39-consumer-producer-v45` through v47.
+- Chat4: `chat4/qa-strong-meta-ui-v41` through v43; exact-head QA of Chat6 UI closure.
+- Chat5: `chat5/qa-secret-debt-current-head-v40` through v42; frozen-head gap/QA of Chat2 at a02d...
+- Chat6: `chat6/final-player-facing-cumulative-v45` through v47.
+
+Worker UI semantics remain:
+a branch/pointer assignment does not mean a chat window is actively generating.
