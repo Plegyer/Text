@@ -262,3 +262,28 @@ Expected final:
 `BUNDLE_COMPLETE — READY_FOR_FINAL_SAVE_MIGRATION_GOLDEN_EXECUTION_QA`
 
 The new window must not repeat v57-v59.
+
+
+## Live update — Chat6 v60-v62 accepted / all lanes rechecked
+
+Chat6 final UI/accessibility smoke v60-v62 is accepted:
+- handoff: `CHAT6_FINAL_UI_ACCESSIBILITY_SMOKE_v62.md`;
+- smoke fixture JSON parses;
+- validator references the smoke fixture and final-target gate;
+- production runtime/mechanics/content mutation: none;
+- full CI: not run.
+
+Chat6 current assignment:
+- branch `chat6/final-player-facing-cross-contract-v63`;
+- task `CHAT6_FINAL_PLAYER_FACING_CROSS_CONTRACT_v63_v65_TASK.md`;
+- status from GitHub: assigned, no worker handoff yet;
+- user must manually message the Chat6 window to start/continue.
+
+Latest all-lane recheck:
+- Chat2: recovery branch advanced beyond the frozen bad head; malformed schema splice is repaired, but `content/localization.json` still contains zero `secret-debt` keys. Stage 1 remains blocked before focused/full CI.
+- Chat3: replacement branch `chat3/final-save-migration-golden-qa-v60` contains only recovery/task/pointer commits at the latest check; v62 handoff absent. User must launch replacement Chat3 window.
+- Chat4: `chat4/cross-golden-legacy-consistency-v56` still contains only task/pointer commits; v58 handoff absent. User must launch/continue Chat4 window.
+- Chat5: `chat5/activity-camp-d38-golden-assembly-v46` still contains only task/pointer commits; v48 handoff absent. User must launch/continue Chat5 window.
+- Chat6: v60-v62 accepted, v63-v65 assigned.
+
+Broad burn-down remains **5**.
