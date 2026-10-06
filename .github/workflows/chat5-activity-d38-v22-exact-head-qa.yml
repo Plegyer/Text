@@ -1,0 +1,56 @@
+name: Chat 5 Activity D38 v22 exact-head QA
+
+on:
+  push:
+    branches:
+      - chat5/qa-activity-d38-reward-v22
+
+jobs:
+  focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout frozen D38 producer
+        uses: actions/checkout@v4
+        with:
+          ref: 7770b6bf7f930e8af17331e8b22613523bb2e768
+      - name: Verify exact producer head
+        shell: pwsh
+        run: |
+          $head = git rev-parse HEAD
+          Write-Host $head
+          if ($head -ne "7770b6bf7f930e8af17331e8b22613523bb2e768") { throw "Wrong producer head: $head" }
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: D38 reward and Strong Meta lifecycle
+        run: >
+          node --experimental-strip-types --test
+          tests/activity-d38-strong-meta-v26.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/ending-meta.test.ts
+          tests/qa-exactly-once-reload.test.ts
+          tests/migration.test.ts
+      - name: Secret Debt Palace ordinary-career firewalls
+        run: >
+          node --experimental-strip-types --test
+          tests/chat3-secret-debt-separation-v2.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/ordinary-hard-work-meta-production.test.ts
+          tests/ordinary-hard-work-lifecycle-parity.test.ts
