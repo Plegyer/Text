@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "final-player-facing-release-evidence-v66",
+  "owner": "Chat 6",
+  "date": "2026-10-06",
+  "status": "BUNDLE_LEDGER_READY_FINAL_ASSEMBLY_NOT_RUN",
+  "workingDirectory": "mindy-successor/prior-work/astra/prototype-m3.2",
+  "scope": {
+    "productionRuntimeMechanicsContentMutation": false,
+    "fullCI": {
+      "status": "NOT-RUN",
+      "note": "This Chat 6 evidence lane must not run full CI; final full CI belongs to the release/Chat 2 lane after focused closure."
+    },
+    "mergeMain": false
+  },
+  "acceptedAuthorities": {
+    "playerFacingGolden": {
+      "implementationHead": "62b4da9028c96f7c999a9156d596590ddae74ebd",
+      "fixtureBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
+      "qaCommit": "45b21d3fd19d91f7b2787e3b56930aa2aa3e9af4",
+      "handoff": "mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_QA_v59.md@45b21d3fd19d91f7b2787e3b56930aa2aa3e9af4",
+      "acceptedEvidenceStatus": "PASS"
+    },
+    "uiAccessibilitySmoke": {
+      "acceptedCommit": "f25be675ae5ba7355f31d02b0c73ca75b18d5a3e",
+      "fixtureBlob": "62f1b14b1f6890b4641c2acb2cd26860c8b99ed8",
+      "handoff": "mindy-successor/docs/tasks/CHAT6_FINAL_UI_ACCESSIBILITY_SMOKE_v62.md@f25be675ae5ba7355f31d02b0c73ca75b18d5a3e",
+      "acceptedEvidenceStatus": "PASS"
+    },
+    "crossContract": {
+      "acceptedBranchHead": "55ae02cbac93430fe6dd6653e031db77b9e7ba71",
+      "handoffBlob": "3ef543c658a042f4f9e8b4ba39254b4f402f216f",
+      "handoff": "mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_CROSS_CONTRACT_v65.md@55ae02cbac93430fe6dd6653e031db77b9e7ba71",
+      "acceptedEvidenceStatus": "PASS",
+      "contradictionsFound": 0
+    },
+    "saveMigrationGolden": {
+      "acceptedCommit": "5d93d3f5b3ca34e2512d183e83e09404d5072701",
+      "fixtureBlob": "6ad4ed97ec6058960f90c6b6b80edfda0b9a6279",
+      "handoff": "mindy-successor/docs/tasks/CHAT3_FINAL_SAVE_MIGRATION_GOLDEN_MANIFEST_v59.md@5d93d3f5b3ca34e2512d183e83e09404d5072701",
+      "manifestStructuralStatus": "PASS"
+    },
+    "d46D47Legacy": {
+      "acceptedHandoffCommit": "13424ebeefa55c91af7ca39e70a3843b80a75f99",
+      "operationsBlob": "17282cf11436d54d49915f44ed84de56a0eebf7c",
+      "gateBlob": "dae0b2bf197f66c1b1fe834e643caf541c6ef4c7",
+      "acceptedContractValidatorStatus": "PASS"
+    }
+  },
+  "commands": {
+    "playerFacingGolden": {
+      "packageQa": "node --experimental-strip-types --test tests/final-player-facing-golden-package-qa-v57.test.ts tests/final-player-facing-golden-manifest-v55.test.ts",
+      "finalTarget": "FINAL_PLAYER_FACING_GOLDEN_TARGET=1 node --experimental-strip-types --test tests/final-player-facing-golden-package-qa-v57.test.ts tests/final-player-facing-golden-manifest-v55.test.ts"
+    },
+    "uiAccessibilitySmoke": {
+      "standalone": "node --experimental-strip-types --test tests/final-ui-accessibility-smoke-v61.test.ts",
+      "finalTarget": "FINAL_UI_ACCESSIBILITY_SMOKE_TARGET=1 node --experimental-strip-types --test tests/final-ui-accessibility-smoke-v61.test.ts tests/final-player-facing-golden-manifest-v55.test.ts"
+    },
+    "crossContract": {
+      "standalone": "node --experimental-strip-types --test tests/final-player-facing-cross-contract-v64.test.ts",
+      "finalTarget": "FINAL_PLAYER_FACING_CROSS_CONTRACT_TARGET=1 node --experimental-strip-types --test tests/final-player-facing-cross-contract-v64.test.ts tests/final-ui-accessibility-smoke-v61.test.ts tests/final-player-facing-golden-manifest-v55.test.ts"
+    },
+    "saveMigration": {
+      "manifestIntegrity": [
+        "npm ci",
+        "node --experimental-strip-types --test tests/final-historical-fixtures-v55.test.ts tests/final-save-migration-golden-v57.test.ts"
+      ],
+      "finalPrerequisites": [
+        "npm ci",
+        "npm run typecheck",
+        "npm run validate",
+        "npm run build"
+      ],
+      "finalClosure": "node --experimental-strip-types --test tests/final-save-migration-closure-v21.test.ts"
+    },
+    "renderedRuEn": {
+      "instruction": "Execute final-ui-accessibility-smoke-v60.json postIntegrationRenderedChecks against the actually mounted UI in both RU and EN."
+    }
+  },
+  "finalGateStatus": {
+    "playerFacingGolden": "NOT-RUN",
+    "uiAccessibilitySmoke": "NOT-RUN",
+    "crossContract": "NOT-RUN",
+    "saveMigration23CaseClosure": "NOT-RUN",
+    "renderedRU": "NOT-RUN",
+    "renderedEN": "NOT-RUN",
+    "legacy32MandatoryAssertions": "NOT-RUN"
+  },
+  "requiredEvidence": {
+    "saveMigration": {
+      "exactCaseCount": 23,
+      "requirement": "Final closure must execute all 23 exact case names frozen in final-save-migration-golden-v57; manifest validation alone is insufficient."
+    },
+    "d42": {
+      "localizationTargets": 110,
+      "presentationTargets": 12,
+      "finalRequirement": "All preserved exactly."
+    },
+    "d48": {
+      "dedicatedPalaceAssets": 4,
+      "palacePresentationReplacements": 17,
+      "finalRequirement": "Exactly four dedicated assets; D48 remains confined to the 17 approved Palace replacement slots."
+    },
+    "legacy": {
+      "mandatoryAssertions": 32,
+      "canonicalOrdinaryEndingCount": 40,
+      "finalRequirement": "Report all 32 mandatory assertions PASS/FAIL on the final assembled candidate."
+    },
+    "retiredSurfaces": {
+      "tavern": {
+        "liveEndingIds": [
+          "tavern-stay",
+          "tavern-guild",
+          "tavern-court"
+        ],
+        "liveRequirement": "ABSENT",
+        "historicalCompatibilityRequirement": "PRESENT_AND_EXACT"
+      },
+      "lumber": {
+        "retiredLiveEnding": "lumber-stay",
+        "retiredLiveReward": "vitality",
+        "liveRequirement": "ABSENT",
+        "historicalCompatibilityIdentity": "legacy.lumber-stay.vitality",
+        "historicalCompatibilityRequirement": "PRESENT_DEDUPED",
+        "historicalEnergyEffect": "+1 Energy once only"
+      }
+    },
+    "strongMeta": {
+      "maxKeystones": 1,
+      "maxSpecialists": 2,
+      "automaticKnowledgeSelectable": false,
+      "automaticKnowledgeConsumesSlot": false,
+      "hardWorkPackagesConsumeStrongMetaSlot": false,
+      "currentRunSnapshot": "ENGINE_OWNED_IMMUTABLE"
+    },
+    "activityNetwork": {
+      "finalAuthority": "v36",
+      "authorityLocalizationBlob": "d631544c96c724375ac48d3c563dd1c1865bb5b5",
+      "predecessorV17MustNotWin": true
+    },
+    "palace": {
+      "explicitReturnHomeRequired": true,
+      "returnHomeMustNotAutoCommit": true,
+      "princeSuccessMustNotAutoCommitReturnHome": true
+    },
+    "playerFacingAccessibility": {
+      "rawInternalIdsAllowed": false,
+      "requirement": "Accepted player-facing and accessibility surfaces must use localized human-readable copy; raw internal/panel/stable IDs may not replace visible or accessible names."
+    }
+  },
+  "renderedChecks": {
+    "matrixFixture": "mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-ui-accessibility-smoke-v60.json@62f1b14b1f6890b4641c2acb2cd26860c8b99ed8",
+    "ru": {
+      "status": "NOT-RUN",
+      "evidence": null
+    },
+    "en": {
+      "status": "NOT-RUN",
+      "evidence": null
+    }
+  },
+  "stopConditions": {
+    "policy": "STOP on any condition in any referenced authority; do not resolve by chronology, generic last-write-wins, or by weakening accepted assertions.",
+    "refs": [
+      "mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_QA_v59.md@45b21d3fd19d91f7b2787e3b56930aa2aa3e9af4",
+      "mindy-successor/docs/tasks/CHAT6_FINAL_UI_ACCESSIBILITY_SMOKE_v62.md@f25be675ae5ba7355f31d02b0c73ca75b18d5a3e",
+      "mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_CROSS_CONTRACT_v65.md@55ae02cbac93430fe6dd6653e031db77b9e7ba71",
+      "mindy-successor/docs/tasks/CHAT3_FINAL_SAVE_MIGRATION_GOLDEN_MANIFEST_v59.md@5d93d3f5b3ca34e2512d183e83e09404d5072701"
+    ]
+  },
+  "goNoGo": {
+    "goRequires": [
+      "playerFacingGolden=PASS",
+      "uiAccessibilitySmoke=PASS",
+      "crossContract=PASS",
+      "saveMigration23CaseClosure=PASS",
+      "renderedRU=PASS",
+      "renderedEN=PASS",
+      "legacy32MandatoryAssertions=PASS",
+      "all requiredEvidence invariants satisfied",
+      "no referenced STOP condition triggered"
+    ],
+    "otherwise": "NO-GO"
+  }
+}
