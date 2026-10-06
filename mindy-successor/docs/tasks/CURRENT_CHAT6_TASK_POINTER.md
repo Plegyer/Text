@@ -1,7 +1,9 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE FINAL PLAYER-FACING RELEASE AUDIT v39-v41**
+Status: **CONTINUE NOW**
 Owner: Chat 6
+
+Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
 
 Previous Activity Network copy-fix bundle v36-v38 is complete and accepted.
 
