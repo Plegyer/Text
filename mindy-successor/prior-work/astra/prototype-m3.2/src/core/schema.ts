@@ -189,7 +189,7 @@ const capabilityReads=z.object({
   relationships:z.array(id).optional(),
   activities:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
-  meta:z.array(z.enum(['unlock','endingCompleted','hardWork'])).optional()
+  meta:z.array(z.enum(['unlock','endingCompleted','hardWork','strongMetaKnowledge','strongMetaFormalIntroduction'])).optional()
 }).strict();
 const capabilityWrites=z.object({
   stats:z.array(z.enum(stats)).optional(),
