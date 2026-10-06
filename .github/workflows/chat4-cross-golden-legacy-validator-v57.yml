@@ -1,0 +1,43 @@
+name: Chat4 cross-golden legacy validator v57
+
+on:
+  push:
+    branches:
+      - chat4/cross-golden-legacy-consistency-v56
+    paths:
+      - '.github/workflows/chat4-cross-golden-legacy-validator-v57.yml'
+  workflow_dispatch:
+
+jobs:
+  cross-contract:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact cross-contract head
+        uses: actions/checkout@v4
+        with:
+          ref: 95b1b087aa277eb6444a473206df1bd000e2f3d2
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "95b1b087aa277eb6444a473206df1bd000e2f3d2"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Cross-golden validator head moved: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+
+      - name: Run cross-golden legacy validator only
+        run: >
+          node --experimental-strip-types --test
+          tests/chat4-cross-golden-legacy-contract-v57.test.ts
