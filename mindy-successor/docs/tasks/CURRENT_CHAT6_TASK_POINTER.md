@@ -1,41 +1,38 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — GLOBAL CAPTION CLOSURE PRODUCER v29**
+Status: **ACTIVE — RETIRED TAVERN LOCALIZATION COMPAT AUDIT v30**
 Owner: Chat 6
 
-Accepted audit:
-`chat6/final-localization-presentation-closure-v28@d57381dc7fa4af028cea3effdb4146a75cc9c60a`
+Previous global caption closure v29 is complete.
 
 New branch:
-`chat6/global-caption-closure-producer-v29`
+`chat6/retired-tavern-localization-compat-audit-v30`
 
-v28 found exactly two required P1 presentation-caption gaps and no new authoring blocker.
+v28 identified six stale retired Tavern presentation-localization rows as cleanup candidates.
 
-Add bilingual captions only for:
+Audit whether these six rows can be safely removed from the final 1.0 assembled target:
+- tavern-stay alt/caption
+- tavern-guild alt/caption
+- tavern-court alt/caption
 
-1. `media.stage.room.caption`
-   - RU: `Сцена дешёвой общей комнаты для ночлега.`
-   - EN: `Cheap shared-room lodging scene.`
+Check:
+- live presentation consumers;
+- migration/history display consumers;
+- old RunResult/ending compatibility;
+- unlock-label consumers;
+- localization fallback paths.
 
-2. `media.base.town.caption`
-   - RU: `Условная иллюстрация фэнтезийного города.`
-   - EN: `A stylized illustration of the fantasy town.`
+Separate:
+- safe-to-delete rows;
+- must-keep compatibility rows;
+- rows that require final assembled-head verification.
 
-These must match the already accepted alt semantics.
-
-Do not:
-- change runtime;
-- change mechanics;
-- change presentation routing;
-- touch D42 mechanics;
-- delete retired Tavern compatibility localization;
-- change Palace/Activity/Secret Debt content.
-
-Add focused localization/presentation parity test.
-No full CI.
+Do not delete anything in this audit.
+Do not change runtime.
+Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT6_GLOBAL_CAPTION_CLOSURE_PRODUCER_v29.md`
+`mindy-successor/docs/tasks/CHAT6_RETIRED_TAVERN_LOCALIZATION_COMPAT_AUDIT_v30.md`
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+Report:
+`READY_FOR_LEADER_REVIEW`.
