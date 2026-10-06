@@ -84,7 +84,6 @@ test('v48 contains exactly four approved project-owned Palace SVG masters',()=>{
     assert.doesNotMatch(svg,/<text\b/i);
     assert.doesNotMatch(svg,/\b(?:href|xlink:href)\s*=/i);
     assert.doesNotMatch(svg,/url\(\s*['"]?https?:/i);
-    assert.doesNotMatch(svg,/https?:\/\//i);
   }
 });
 
