@@ -1,40 +1,34 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — PALACE CUMULATIVE ASSEMBLY REFRESH v21**
+Status: **ACTIVE — ACTIVITY D38 REWARD EXACT-HEAD QA v22**
 Owner: Chat 5
 
-Previous Palace D39 reward producer v20 is complete and focused-green.
+Producer under verification:
+`chat3/activity-d38-reward-producer-v26@7770b6bf7f930e8af17331e8b22613523bb2e768`
 
-New branch:
-`chat5/palace-cumulative-assembly-refresh-v21`
+QA branch:
+`chat5/qa-activity-d38-reward-v22`
 
-Goal:
-refresh the Palace assembly plan now that the D39 reward implementation source exists.
+Task:
+run executable exact-head verification of the frozen D38 reward producer.
 
-Use:
-- Palace mechanics/narrative v18;
-- Palace final prose/media v19;
-- D39 reward producer v20;
-- D43/D45/D48/D49 Product authorities;
-- current Strong Meta rules;
-- Secret Debt forced-Night firewall.
+Workflow must explicitly checkout:
+`7770b6bf7f930e8af17331e8b22613523bb2e768`
 
-Produce one exact selective Chat 2 assembly packet:
-- composition order;
-- shared-file conflicts;
-- exact D39 reward bindings;
-- save/migration risks;
-- Prince/Return Home checks;
-- presentation/localization merge rules;
-- focused test bundle;
-- explicit stop conditions.
+Required checks:
+- typecheck;
+- validate;
+- build;
+- D38 focused reward suite;
+- Strong Meta registry/integration;
+- ending transaction lifecycle;
+- save/reload persistence;
+- no generic unlock ownership;
+- no extra Specialist slot;
+- Secret Debt / Palace / ordinary-career firewalls.
 
-Research/preflight only.
-Do not modify production runtime.
-Do not run full CI.
+No full CI.
+Do not mutate the frozen producer.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT5_PALACE_CUMULATIVE_ASSEMBLY_REFRESH_v21.md`
-
-Report:
-`READY_FOR_CHAT2_PREFLIGHT`.
+If green, document run/job evidence and report:
+`READY_FOR_CHAT2_ASSEMBLY`.
