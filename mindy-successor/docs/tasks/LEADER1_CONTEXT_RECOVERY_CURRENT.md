@@ -335,3 +335,26 @@ Chat4 was immediately refilled:
 - branch `chat4/palace-cumulative-exact-head-qa-v44`;
 - task: Palace v18/v19 cumulative exact-head QA + collision-safe assembly handoff;
 - this lane must not implement or wait for Chat3's D39 live-consumer producer.
+
+
+## Live update — Secret Debt branch-tree repair + worker refills
+
+Leader independently confirmed the Chat2 v1 branch-tree blocker reported by Chat5:
+- v1 current/recovery history was structurally sparse after commit `0463e2a18ba619b3bdf9636b37876c4cbbbd2829`;
+- sparse v1 source history is preserved for authored Secret Debt/D51 hunks only;
+- the CURRENT Chat2 conversation must NOT be replaced.
+
+Chat2 has been redirected, in the same live window, to:
+`chat2/assembly-secret-debt-d51-current-main-recovery-v2`
+
+The recovery v2 branch was created from a full current-main tree. Current main differs from the D42 production merge only by Leader docs/control-plane files. Chat2 must selectively replay existing Secret Debt/D51 work, finish runtime/UI/localization, focused QA, build gates and one full CI there.
+
+Chat5 Secret Debt gap QA v42 is accepted. It found no Product ambiguity; primary blocker was the sparse branch tree. Chat5 was refilled with:
+`chat5/activity-camp-d38-preassembly-v43`.
+
+Chat6 cumulative player-facing packet v45-v47 is accepted for later final content assembly. Chat6 was refilled with:
+`chat6/palace-d48-media-producer-v48`.
+
+Chat3 is actively progressing D39 live-consumer producer and had reached the v46 Formal Introduction implementation when last checked; v47 handoff was not yet present.
+
+Broad remaining big stages remain **5**.
