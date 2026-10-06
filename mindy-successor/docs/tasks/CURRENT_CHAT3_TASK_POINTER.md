@@ -1,43 +1,58 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — D46 + D47 + LEGACY FINAL ASSEMBLY PACKET v29**
+Status: **ACTIVE — AUTO-CONTINUE RELEASE CAREER CLOSURE BUNDLE v30-v32**
 Owner: Chat 3
 
-Previous Activity final assembly packet v28 is complete and accepted.
+Completed and accepted:
+- Activity final assembly packet v28
+- D46+D47+legacy final assembly packet v29
 
-New branch:
-`chat3/d46-d47-legacy-final-assembly-packet-v29`
+Current branch:
+`chat3/release-career-closure-bundle-v30`
 
-Goal:
-produce one final compact Chat 2 assembly packet for the D46 + D47 + legacy ending retirement tranche.
+IMPORTANT:
+Complete ALL tasks below in order in the same work session.
+Do not stop after the first deliverable.
+Only stop for a genuine Product ambiguity/blocker.
 
-Use accepted/frozen sources:
-- D46 economy/start-balance producer:
-  `chat4/economy-start-balance-producer-v14@a0c5f855b63d3bb85556f5b2780aaaabb58fbced`
-- D47 Hard Work package producer:
-  `chat5/hard-work-bonus-mapping-producer-v13@252dc26c514e24f4ab0f0cc0da7694254282e4c4`
-- lumber-stay retirement producer v17:
-  `chat5/lumber-stay-retirement-producer-v17@52bfd82b374ed045b06c9c78f5f3065cd7226bdb`
-- accepted assembly preflight v18.
+## Task A — v30
+Create:
+`CHAT3_D46_D47_LEGACY_MIGRATION_MATRIX_v30.md`
 
-Deliver one exact selective integration plan:
-1. composition order;
-2. shared-file conflicts;
-3. start money / Energy / wage invariants;
-4. Hard Work package bindings;
-5. lumber-stay/vitality migration;
-6. canonical 40-ending count;
-7. save/migration risks;
-8. focused test bundle;
-9. stop conditions;
-10. what must not be copied wholesale.
+Produce the exact save/migration/reload matrix for the future assembled D46+D47+lumber-retirement tranche:
+- fresh profile;
+- existing saves preserving stored Lust;
+- historical lumber-stay/vitality;
+- duplicate historical evidence;
+- earned vs selected Hard Work packages;
+- current-run package snapshot;
+- exactly-once package application;
+- canonical 40-ending count.
 
-Research/assembly packet only.
-Do not modify production runtime.
-Do not run full CI.
+## Task B — v31
+Create:
+`CHAT3_ORDINARY_CAREER_END_TO_END_RELEASE_CHECKLIST_v31.md`
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT3_D46_D47_LEGACY_FINAL_ASSEMBLY_PACKET_v29.md`
+Cover all ten ordinary careers end-to-end:
+fresh start -> wage -> shift progression -> 50 Hard Work -> explicit ending -> completeEnding -> future package selection/application.
 
-Report:
-`READY_FOR_CHAT2_PREFLIGHT`.
+Include D42/Secret Debt/Palace isolation checks.
+
+## Task C — v32
+Create:
+`CHAT3_FINAL_ECONOMY_HARDWORK_CONFLICT_AUDIT_v32.md`
+
+Cross-check D46/D47/legacy against:
+- Strong Meta;
+- Palace D23/D24;
+- Secret Debt hidden work/wages;
+- Activity;
+- current save migration chain;
+- D40/D41 ending identities.
+
+Research/audit only.
+No production runtime changes.
+No full CI.
+
+After all three deliverables are committed, report:
+`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
