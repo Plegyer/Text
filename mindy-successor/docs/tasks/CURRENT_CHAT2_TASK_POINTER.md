@@ -1,58 +1,22 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — D42 FINAL REPAIR AFTER TRIAGE**
+Status: **WAITING — D42 FINAL TWO-FAILURE TRIAGE**
 Owner: Chat 2 / sole current-main assembly + full-CI lane
 
 Current assembly branch:
 `chat2/assembly-d42-night-current-main-20261004-v1`
 
-Current production head before repair:
-`3d92dbbe0c5bfa0e8676178fb05765012f41f8e1`
+Current production head:
+`8e3f854a2607d103d1b22bd5da564089efedfc15`
 
-Leader hold/pointer commit after that head is coordination only.
+Latest full CI:
+- run `37446088333`
+- only **2 failures remain**
+- both are Guard presentation/source expectation tests.
 
-Authoritative triage:
-`chat4/d42-full-suite-triage-v20@91464f14cb87c5f7d6185af3a4c7d73ed08099fd`
+Do not make another repair until Chat 4 completes:
+`chat4/d42-postrepair-failure-triage-v22`
 
-Triage verdict:
-- 8 stale pre-D42 test expectations
-- 5 missing D42 localization/accessibility items
-- 0 runtime regressions
-- 0 unrelated blockers
-
-## Allowed repair
-
-Production content:
-- complete all 12 D42 bilingual caption pairs;
-- add missing bilingual event.* localization for all 12 D42 after-choice events;
-- apply the two already-approved EN private-conversation wording alignments.
-
-Tests only:
-- update stale Guard / Merchant / Prostitute counts;
-- narrow Tavern historical comparison to allow only the accepted D42 additive Night surface;
-- narrow ordinary-Prostitute firewall to allow accepted voluntary after-choice Night while still forbidding Secret Debt semantics;
-- allow only the exact D42 Foreman anti-repeat fact condition.
-
-## Forbidden
-
-Do not change:
-- Night runtime behavior;
-- Night save schema;
-- D42 conditions/effects/nightPolicy;
-- Secret Debt forced-Night priority;
-- private-space housing gates;
-- consent semantics;
-- calendar ownership;
-- Palace;
-- D40/D41 mechanics;
-- presentation engine.
-
-## Gate
-
-1. apply only the triage-authorized repair;
-2. run focused D42/localization/presentation/firewall tests;
-3. run typecheck / validate / build;
-4. run one full CI;
-5. if green, freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+When Chat 4 reports `READY_FOR_CHAT2_REPAIR`, apply only the smallest authorized repair, rerun focused checks, then run one full CI.
 
 Do not merge main.
