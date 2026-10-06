@@ -1,0 +1,56 @@
+name: Leader1 Chat2 D51 Debug v56
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-focused-gate-v54
+    paths:
+      - '.github/workflows/leader1-chat2-d51-debug-v56.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  debug:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-focused-gate-v54
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: npm ci
+      - name: Run D51 debug
+        id: debug
+        continue-on-error: true
+        shell: powershell
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: |
+          node --experimental-strip-types tests/leader1-d51-debug-v56.test.ts *>&1 | Tee-Object "$env:RUNNER_TEMP\d51-debug-v56.log"
+          exit $LASTEXITCODE
+      - name: Checkout evidence branch
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-focused-gate-v54
+          path: evidence-repo
+          persist-credentials: true
+      - name: Publish debug log
+        if: always()
+        shell: powershell
+        run: |
+          $dest = "evidence-repo/mindy-successor/docs/tasks/CHAT2_STAGE1_D51_DEBUG_v56.log"
+          Copy-Item "$env:RUNNER_TEMP\d51-debug-v56.log" $dest -Force
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_D51_DEBUG_v56.log
+          git commit -m "qa(chat2): publish D51 debug v56"
+          git push origin HEAD:leader1/chat2-stage1-focused-gate-v54
