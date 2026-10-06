@@ -1,0 +1,51 @@
+name: Chat 3 D39 live consumer v47 hosted focused QA
+
+on:
+  push:
+    branches:
+      - chat2/qa-d39-live-consumer-v47-20261006
+  workflow_dispatch:
+
+concurrency:
+  group: chat3-d39-live-consumer-v47-hosted-qa
+  cancel-in-progress: true
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused D39 consumer tests
+        run: >-
+          node --experimental-strip-types --test
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/d39-formal-introduction-assassin-v46.test.ts
+          tests/school-life-content-reload.test.ts
+          tests/school-night-study-adapter.test.ts
+          tests/school-production-v11-content-quality.test.ts
+          tests/assassin-runtime-invariants.test.ts
+          tests/assassin-natural-acceptance.test.ts
+          tests/assassin-boundaries.test.ts
+          tests/assassin-production-presentation.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/ending-meta.test.ts
