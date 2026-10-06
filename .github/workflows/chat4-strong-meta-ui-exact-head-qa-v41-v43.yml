@@ -1,0 +1,92 @@
+name: chat4 strong meta ui exact-head qa v41-v43
+
+on:
+  push:
+    branches:
+      - chat4/qa-strong-meta-ui-v41
+    paths:
+      - '.github/workflows/chat4-strong-meta-ui-exact-head-qa-v41-v43.yml'
+  workflow_dispatch:
+
+jobs:
+  exact-head-qa:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact producer head
+        uses: actions/checkout@v4
+        with:
+          ref: fac645878ebd726f50fd1364ac72414796755a2d
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: pwsh
+        run: |
+          $expected = "fac645878ebd726f50fd1364ac72414796755a2d"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Exact-head guard failed: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        run: npm run typecheck
+
+      - name: Validate
+        id: validate
+        continue-on-error: true
+        run: npm run validate
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: npm run build
+
+      - name: Strong Meta selector registry snapshot save-reload
+        id: strongmeta
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/strong-meta-player-ui-v42.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/strong-meta-registry-v7.test.ts
+
+      - name: Modal ARIA localization accessibility
+        id: aria
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/modal-aria-localization-v43.test.ts
+          tests/strong-meta-ui-localization-v42-v43.test.ts
+          tests/presentation-locale-accessibility-parity-v7.test.ts
+
+      - name: Aggregate exact-head result
+        shell: pwsh
+        run: |
+          $typecheck = "${{ steps.typecheck.outcome }}"
+          $validate = "${{ steps.validate.outcome }}"
+          $build = "${{ steps.build.outcome }}"
+          $strongmeta = "${{ steps.strongmeta.outcome }}"
+          $aria = "${{ steps.aria.outcome }}"
+          Write-Host "typecheck=$typecheck"
+          Write-Host "validate=$validate"
+          Write-Host "build=$build"
+          Write-Host "strongmeta=$strongmeta"
+          Write-Host "aria=$aria"
+          if (@($typecheck,$validate,$build,$strongmeta,$aria) -contains "failure") {
+            throw "One or more exact-head QA gates failed."
+          }
