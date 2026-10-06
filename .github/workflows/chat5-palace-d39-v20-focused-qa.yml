@@ -1,0 +1,37 @@
+name: Chat 5 Palace D39 v20 focused QA
+
+on:
+  push:
+    branches:
+      - chat5/palace-d39-v20-focused-qa-20261006
+
+jobs:
+  focused:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact producer
+        uses: actions/checkout@v4
+        with:
+          ref: d76ba0dcaa9915177a28d8a04f557a981dc4a395
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: D39 lifecycle and Strong Meta
+        run: node --experimental-strip-types --test tests/palace-d39-reward-producer-v20.test.ts tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/ending-meta.test.ts
+      - name: Palace and cross-system isolation
+        run: node --experimental-strip-types --test tests/palace-d23-consumer-integration-v8.test.ts tests/hard-work-palace-meta-smoke.test.ts tests/chat3-secret-debt-separation-v2.test.ts
