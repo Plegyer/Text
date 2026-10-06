@@ -13593,6 +13593,62 @@
     "presentation.static.prostitute.night.client-private.caption": {
       "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
       "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
+    },
+    "ui.strongMeta.title": {
+      "ru": "Сильное наследие",
+      "en": "Strong Meta"
+    },
+    "ui.strongMeta.help": {
+      "ru": "Выберите до одного Keystone и двух специализаций из заработанных наград.",
+      "en": "Choose up to one Keystone and two Specialists from rewards you own."
+    },
+    "ui.strongMeta.automaticKnowledgeNote": {
+      "ru": "Source Method и другие унаследованные знания применяются автоматически и никогда не занимают выбираемые слоты.",
+      "en": "Source Method and other inherited knowledge are automatic and never occupy selectable slots."
+    },
+    "ui.strongMeta.keystoneTitle": {
+      "ru": "Keystone",
+      "en": "Keystone"
+    },
+    "ui.strongMeta.specialistTitle": {
+      "ru": "Специализации",
+      "en": "Specialists"
+    },
+    "ui.strongMeta.selected": {
+      "ru": "Выбрано",
+      "en": "Selected"
+    },
+    "ui.strongMeta.available": {
+      "ru": "Доступно",
+      "en": "Available"
+    },
+    "ui.strongMeta.select": {
+      "ru": "Выбрать",
+      "en": "Select"
+    },
+    "ui.strongMeta.remove": {
+      "ru": "Убрать",
+      "en": "Remove"
+    },
+    "ui.strongMeta.keystoneCapacity": {
+      "ru": "Keystone: {selected}/{capacity}",
+      "en": "Keystone: {selected}/{capacity}"
+    },
+    "ui.strongMeta.specialistCapacity": {
+      "ru": "Специализации: {selected}/{capacity}",
+      "en": "Specialists: {selected}/{capacity}"
+    },
+    "ui.strongMeta.noneKeystones": {
+      "ru": "Пока нет заработанных Keystone-наград.",
+      "en": "No owned Keystone rewards yet."
+    },
+    "ui.strongMeta.noneSpecialists": {
+      "ru": "Пока нет заработанных Specialist-наград.",
+      "en": "No owned Specialist rewards yet."
+    },
+    "ui.menu.catalogInspector": {
+      "ru": "Инспектор событий",
+      "en": "Event inspector"
     }
   }
 }
