@@ -811,3 +811,39 @@ Current assignments:
 
 Worker UI semantics remain:
 a branch/pointer assignment does not mean a chat window is actively generating.
+
+
+## FINAL HANDOFF CHECKPOINT — NEXT LEADER1
+
+This section supersedes older active-worker notes where they conflict.
+
+Authoritative bootstrap:
+`mindy-successor/docs/tasks/LEADER1_CONTEXT_RECOVERY_CURRENT.md`
+
+Explicit transition:
+`mindy-successor/docs/tasks/LEADER1_TRANSITION_2026-10-06.md`
+
+Broad burn-down: **5**
+
+Production lane:
+- Chat2 remains on Secret Debt + D51 current-main assembly.
+- Do NOT replace the current Chat2 window unless its context actually ends.
+- User supplied a screenshot showing Chat2 actively continuing work.
+- latest known Chat2 production implementation: `a02d4931087e0884756a6888354b8a69e0327b02`
+- branch includes later Leader recovery/docs commits; re-query before judging progress.
+
+D39 live-consumer decision is resolved:
+`LEADER1_D39_LIVE_CONSUMER_DECISION_2026-10-06.md`
+- Formal Introduction -> Assassin handler neutral first-professional seam.
+- Source Method -> School Arcana/Reason effect-free information variant.
+
+Current worker assignments at handoff:
+- Chat3: `chat3/d39-consumer-producer-v45`
+- Chat4: `chat4/qa-strong-meta-ui-v41`
+- Chat5: `chat5/qa-secret-debt-current-head-v40`
+- Chat6: `chat6/final-player-facing-cumulative-v45`
+
+At the last live check, these new Chat3-6 branches contained Leader seed/task commits only.
+Branch assignment does not imply the UI chat window is actively working.
+
+Next Leader must re-query all five lanes immediately.
