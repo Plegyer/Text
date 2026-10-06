@@ -229,19 +229,18 @@ Existing event:
 
 `satyr-maid.recurring-guest.service`
 
-should require:
+must accept either pre-trust stage:
 
-`relationshipStage == professional-introduced`
-
-instead of `introduced`.
+- `introduced`;
+- `professional-introduced`.
 
 Existing transition:
 
 `satyr-maid.recurring-guest.build-trust`
 
-should move from:
+must accept both:
 
-`professional-introduced -> professional-trust`
+`introduced | professional-introduced -> professional-trust`
 
 while preserving its existing conditions:
 
@@ -253,6 +252,8 @@ Preserve the existing effect:
 `professional-trust-earned`.
 
 Therefore Formal Introduction cannot create trust and cannot reduce the two-meeting trust requirement.
+
+Keeping legacy `introduced` as an accepted pre-trust source is required for in-progress save compatibility: a pre-D39 save may already have shown the normal intro event, recorded the first meeting, and still be at stage `introduced`. No migration or stage rewrite is needed; that save must continue naturally into `professional-trust`.
 
 ## 8. Resulting state paths
 
@@ -333,10 +334,11 @@ Add one focused consumer test covering:
 6. one relationship use consumed exactly once;
 7. later normal intro still writes exactly one first work-contact + one meeting;
 8. trust still requires meeting #2;
-9. later Night/request/route chain remains reachable;
-10. refusal path remains valid;
-11. no Palace/Activity/Secret-Debt relationship becomes targetable;
-12. save/reload preserves the consumed relationship ID without replay.
+9. a pre-change save at stage `introduced` with first meeting already recorded still reaches `professional-trust` without migration;
+10. later Night/request/route chain remains reachable;
+11. refusal path remains valid;
+12. no Palace/Activity/Secret-Debt relationship becomes targetable;
+13. save/reload preserves the consumed relationship ID without replay.
 
 At implementation time also run:
 
