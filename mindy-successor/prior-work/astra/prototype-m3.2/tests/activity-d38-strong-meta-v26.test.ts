@@ -240,6 +240,53 @@ test('Surveyor Atlas usage survives save-like cloning and cannot be replayed aft
   validateStrongMetaRuntimeAgainstSnapshot(snapshot,runtime);
 });
 
+
+test('D38 usage survives actual schema6 save/reload when the matching Specialist is in the immutable run snapshot',()=>{
+  const cat=lifecycleCatalog();
+  let meta=stateOwned(STRONG_META_IDS.activitySurveyorsAtlas);
+  meta=setPreferredStrongMetaSpecialist(meta,STRONG_META_IDS.activitySurveyorsAtlas,true);
+  let s=ready(freshSave({strongMeta:meta}),cat);
+  s.run.strongMetaRuntime=commitActivityD38SurveyUse({
+    ...d38Context(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,'lumber.forest'),
+    authoredFieldTimeCost:1,
+    tags:[ACTIVITY_D38_TAGS.surveyDiscovery]
+  });
+
+  const restored=parseSave(JSON.stringify(s),cat);
+  assert.deepEqual(restored.run.strongMetaRuntime.activityD38.surveyorsAtlasUsedRegionIds,['lumber.forest']);
+  assert.equal(activityD38SurveyFieldTimeCost({
+    ...d38Context(restored.run.strongMetaSnapshot,restored.run.strongMetaRuntime,'lumber.forest'),
+    authoredFieldTimeCost:1,
+    tags:[ACTIVITY_D38_TAGS.surveyDiscovery]
+  }),1);
+});
+
+test('new life resets run-local D38 usage while preserving permanent ownership and explicit future preference',()=>{
+  const cat=lifecycleCatalog();
+  let meta=stateOwned(STRONG_META_IDS.activitySurveyorsAtlas);
+  meta=setPreferredStrongMetaSpecialist(meta,STRONG_META_IDS.activitySurveyorsAtlas,true);
+  let s=ready(freshSave({strongMeta:meta}),cat);
+  s.run.strongMetaRuntime=commitActivityD38SurveyUse({
+    ...d38Context(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,'trade.corridor'),
+    authoredFieldTimeCost:1,
+    tags:[ACTIVITY_D38_TAGS.surveyDiscovery]
+  });
+  assert.deepEqual(s.run.strongMetaRuntime.activityD38.surveyorsAtlasUsedRegionIds,['trade.corridor']);
+
+  s=dispatch(s,{type:'commitEnding',id:'ending.activity.network'},cat);
+  s=dispatch(s,{type:'completeEnding'},cat);
+  s=dispatch(s,{type:'newLife'},cat);
+
+  assert.equal(s.meta.strongMeta.ownership.ownedRewardIds.includes(STRONG_META_IDS.activitySurveyorsAtlas),true);
+  assert.equal(s.meta.strongMeta.preferredSelection.specialistIds.includes(STRONG_META_IDS.activitySurveyorsAtlas),true);
+  assert.deepEqual(s.run.strongMetaRuntime.activityD38,{
+    surveyorsAtlasUsedRegionIds:[],
+    fieldArchiveSecured:[],
+    contactNetworkUsedRegionIds:[]
+  });
+  assert.equal(s.run.strongMetaSnapshot,null);
+});
+
 test('Field Archive secures only authored eligible carried results and makes only the secured result survive escape/failure',()=>{
   const snapshot=snapshotFor(STRONG_META_IDS.activityFieldArchive);
   let runtime=emptyStrongMetaRuntime();
