@@ -1,0 +1,42 @@
+name: Chat4 D46 D47 legacy golden contract v54
+
+on:
+  push:
+    branches:
+      - chat4/d46-d47-legacy-golden-manifest-v53
+    paths:
+      - '.github/workflows/chat4-d46-d47-legacy-golden-contract-v54.yml'
+  workflow_dispatch:
+
+jobs:
+  manifest-contract:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout Chat4 golden-manifest branch
+        uses: actions/checkout@v4
+        with:
+          ref: chat4/d46-d47-legacy-golden-manifest-v53
+          fetch-depth: 1
+
+      - name: Exact branch-head guard
+        shell: powershell
+        run: |
+          $expected = "a7420b808a2f0577ed9a379d0c1e322da79ffae2"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Golden contract head moved: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+
+      - name: Run golden contract validator only
+        run: >
+          node --experimental-strip-types --test
+          tests/chat4-d46-d47-legacy-golden-contract-v54.test.ts
