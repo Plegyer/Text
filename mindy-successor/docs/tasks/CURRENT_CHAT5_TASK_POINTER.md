@@ -1,31 +1,21 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **START NOW — SECRET DEBT CURRENT-HEAD GAP QA v40-v42**
+Status: **START NOW — ACTIVITY + CAMP + D38 PREASSEMBLY v43-v45**
 Owner: Chat 5
 
-Frozen Chat2 head under review:
-`a02d4931087e0884756a6888354b8a69e0327b02`
-
-QA branch:
-`chat5/qa-secret-debt-current-head-v40`
-
-Do not mutate Chat2's producer/assembly branch.
-
-## v40 — gap audit
-Compare the frozen head against accepted Secret Debt v12 + D51 + localization v27 + current pointer.
-Identify exactly what is already composed and what remains.
-
-## v41 — exact-head focused QA
-Run exact-head guard, npm ci, typecheck, validate, build and focused Secret Debt/D51/Night/save tests where executable.
-Classify failures; do not repair production in this lane.
-
-## v42 — unblock handoff
-Create:
+Previous Secret Debt gap QA is accepted:
 `mindy-successor/docs/tasks/CHAT5_SECRET_DEBT_CURRENT_HEAD_GAP_QA_v42.md`
 
-Give Chat2 a concise remaining-work list and any exact blockers.
+Current branch:
+`chat5/activity-camp-d38-preassembly-v43`
 
+Task:
+`mindy-successor/docs/tasks/CHAT5_ACTIVITY_CAMP_D38_PREASSEMBLY_v43_v45_TASK.md`
+
+Complete all v43-v45 tasks in order.
+Do not fabricate a cumulative candidate and do not mutate frozen producers.
 No full CI.
+Do not merge main.
 
-Report:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_REPAIR`.
+Expected final:
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_ACTIVITY_ASSEMBLY_PREP`.
