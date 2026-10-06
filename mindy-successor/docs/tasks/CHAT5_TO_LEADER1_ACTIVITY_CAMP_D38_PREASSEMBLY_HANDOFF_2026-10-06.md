@@ -18,11 +18,11 @@ v43 lineage/collision evidence:
 
 v44 exact-head QA, finalized at commit:
 
-`2afc05c05b4e0b87afcc42ff384978f5ba84de79`
+`61253fa027980afdf5c679dc5fe3ad5a1b1e1e81`
 
 v45 final Chat2 handoff, finalized at commit:
 
-`94a96849f3b8c40544a3e69110ee66fbefa09a43`
+`01d15529e39544227eb816d158345d873d023e64`
 
 Chat5 completion pointer, finalized at commit:
 
@@ -107,13 +107,19 @@ and passes the full gate.
 
 Leader classification:
 
-**STALE SHARED HISTORICAL TEST FIXTURE — ALREADY REPAIRED ON THE ACCEPTED CAMP CUMULATIVE LINEAGE.**
+**HISTORICAL ACTIVITY EXECUTABLE-BASELINE DEBT — ALREADY REPAIRED ON THE ACCEPTED CAMP v19 CUMULATIVE LINEAGE.**
 
 Do not mark standalone Activity/D38 exact-head green.
 
 Do not reopen Product/runtime production or mutate frozen Activity/D38 branches for this fixture. Chat2's required order naturally brings the accepted Camp repair before D38 current-main QA.
 
-A supplementary diagnostic run `37504871830` was queued to keep validate/build/focused running after the known typecheck failure, but the project self-hosted runner had not accepted it at the final package checkpoint. It is supplementary and does not change the exact blocker classification.
+Supplementary diagnostic run `37504871830` completed:
+
+- Activity v15: typecheck FAIL, validate FAIL, build PASS, focused 13/18 PASS;
+- D38 v18: typecheck FAIL, validate FAIL, build PASS, focused 13/19 PASS;
+- Camp v19: typecheck/validate/build PASS, focused 107/107 PASS.
+
+The Activity/D38 validation and focused failures share inherited Activity catalog debt: missing Forest typed-read capability declarations prevent shared catalog initialization. Camp v19 contains the accepted research-grade/school-reflection manifest closure, the synthetic `effects: []` typing repair, and cumulative regional focused-fixture repairs. No D38-specific runtime/content assertion is exposed as failing before that shared baseline is repaired.
 
 ## Product firewalls
 
@@ -145,7 +151,7 @@ Stop Chat2 assembly and classify rather than auto-repairing foreign production i
 
 **No Product/runtime producer-repair blocker identified.**
 
-Known historical executable blocker is the stale shared test fixture, already repaired by the frozen Camp v19 lineage.
+Known historical executable-baseline debt is already repaired by the frozen Camp v19 lineage; the diagnostic run did not expose a D38-specific Product/runtime blocker.
 
 ## Leader action
 
