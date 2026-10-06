@@ -13,7 +13,8 @@ permissions:
 
 jobs:
   palace-v18-exact-head:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
@@ -22,10 +23,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: 67f948d185883d8e706dad522e5010bff8e2bd48
+          fetch-depth: 1
+      - name: Exact v18 SHA guard
+        shell: cmd
+        working-directory: .
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
+          echo %HEADSHA%
+          if not "%HEADSHA%"=="67f948d185883d8e706dad522e5010bff8e2bd48" exit /b 1
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.18.0
+          node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: npm ci
@@ -37,28 +46,39 @@ jobs:
       - name: Build
         run: npm run build
       - name: Focused Palace v15-v18 QA
-        run: >-
+        run: >
           node --experimental-strip-types --test
+          tests/palace-d23-consumer-integration-v8.test.ts
           tests/palace-rich6-runtime-v15.test.ts
           tests/palace-player-facing-ui-v16.test.ts
           tests/palace-player-facing-ui-renderer-v16.test.ts
           tests/palace-prince-narrative-producer-v18.test.ts
           tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
 
   palace-v19-exact-head:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
     steps:
-      - name: Checkout exact v19 prose/media head
+      - name: Checkout exact v19 prose media head
         uses: actions/checkout@v4
         with:
           ref: 6cf19169b92fa709e8ae51cf73ff72ef2c0fac19
+          fetch-depth: 1
+      - name: Exact v19 SHA guard
+        shell: cmd
+        working-directory: .
+        run: |
+          for /f "delims=" %%i in ('git rev-parse HEAD') do set HEADSHA=%%i
+          echo %HEADSHA%
+          if not "%HEADSHA%"=="6cf19169b92fa709e8ae51cf73ff72ef2c0fac19" exit /b 1
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.18.0
+          node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
       - name: npm ci
@@ -70,7 +90,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Focused Palace v18-v19 QA
-        run: >-
+        run: >
           node --experimental-strip-types --test
           tests/palace-prince-narrative-producer-v18.test.ts
           tests/palace-prince-narrative-renderer-v18.test.ts
