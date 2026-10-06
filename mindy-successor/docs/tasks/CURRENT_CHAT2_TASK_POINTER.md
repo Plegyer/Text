@@ -1,45 +1,51 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **ACTIVE — D42 FINAL TWO-TEST REPAIR**
-Owner: Chat 2 / sole current-main assembly + full-CI lane
+Status: **ACTIVE — D42 FINAL TWO ASSERTIONS**
+Owner: Chat 2
 
-Current assembly branch:
+Current branch:
 `chat2/assembly-d42-night-current-main-20261004-v1`
 
-Authoritative production head under repair:
-`8e3f854a2607d103d1b22bd5da564089efedfc15`
+Latest production head:
+`0176fa77394524f3af64e49447be12edf8bf1847`
 
-Leader hold commits after it are coordination only.
+Latest full CI:
+run `37454323411` — FAILURE with exactly 2 tests.
 
-Authoritative final triage:
-`chat4/d42-postrepair-failure-triage-v22@339edc2b9da00332782df8b7b29f722fdd00a192`
+Both remaining failures are stale assertions only. Production D42 behavior is correct.
 
-Verdict:
-- only 2 failures remain;
-- both are stale Guard test assertions;
-- production D42 behavior/content/presentation is correct;
-- **zero production changes are needed**.
+Required exact repair:
 
-Required repair:
-1. in `tests/guard-presentation-v16-c2-169-179.test.ts`
-   - keep total Guard source-domain expected set at 29;
-   - restore old generic `job/guard/event/*` namespace count to 28;
-   - explicitly acknowledge `night/guard/guard-night-case-debrief` as the 29th Guard-source presentation outside the generic job namespace.
-2. in `tests/guard-production-presentation-reachability-c2-180.test.ts`
-   - keep total Guard source-domain expected set at 29;
-   - generic `job/guard/event/*` count remains 28;
-   - explicitly assert the D42 Night presentation ID exists in the expected set.
+1. `tests/guard-presentation-v16-c2-169-179.test.ts`
+   Keep:
+   `assert.equal(expected.size,29)`
+   Change:
+   `assert.equal(published.length,29)`
+   to:
+   `assert.equal(published.length,28)`
+   and explicitly assert:
+   `expected.has('night/guard/guard-night-case-debrief')`.
+
+2. `tests/guard-production-presentation-reachability-c2-180.test.ts`
+   Keep:
+   `assert.equal(expected.size,29)`
+   Replace:
+   `assert.equal(published.length,expected.size)`
+   with:
+   `assert.equal(published.length,28)`
+   and explicitly assert:
+   `expected.has('night/guard/guard-night-case-debrief')`.
 
 Do not change production files.
 
-Then:
-- run both Guard suites;
-- run D42 Night focused suite;
-- run presentation/source-integrity focused checks;
-- run typecheck / validate / build;
-- run one full CI.
+Then run:
+- the two Guard suites;
+- D42 Night focused suite;
+- presentation/source-integrity focused checks;
+- typecheck / validate / build;
+- one full CI.
 
-If full CI is green:
-freeze exact SHA and report `READY_FOR_LEADER_MERGE`.
+If green, freeze exact SHA and report:
+`READY_FOR_LEADER_MERGE`.
 
 Do not merge main.
