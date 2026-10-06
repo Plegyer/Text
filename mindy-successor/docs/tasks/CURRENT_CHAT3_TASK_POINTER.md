@@ -1,35 +1,47 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — D38 AUTHORED TAG MAPPING v27**
+Status: **ACTIVE — ACTIVITY FINAL ASSEMBLY PACKET v28**
 Owner: Chat 3
 
-Previous D38 reward producer v26 is complete and accepted as a producer candidate.
+Previous work completed:
+- Activity cumulative assembly preflight v24
+- D38 reward implementation preflight v25
+- D38 reward producer v26
+- D38 authored tag mapping v27
 
 New branch:
-`chat3/activity-d38-authored-tag-mapping-v27`
+`chat3/activity-final-assembly-packet-v28`
 
 Goal:
-prepare the exact authored Activity content mapping needed to wire the three D38 rewards during Chat 2 assembly.
+produce one final, compact Chat 2 assembly packet for the entire Activity tranche so Chat 2 does not have to reconstruct v24-v27 separately.
 
-Inspect the accepted Activity region/content sources and identify exact existing authored candidates for:
+Use:
+- Activity regions through v15
+- executable-green Camp repair v19
+- D38 mechanics v16
+- D38 content/presentation v17
+- D38 reward producer v26
+- authored tag mapping v27
+- Secret Debt/D51 firewalls
+- Palace coexistence rules
+- current Strong Meta rules
 
-- Surveyor's Atlas tag: `activity-survey-discovery`
-- Field Archive tag: `activity-secure-eligible`
-- Contact Network tag: `activity-network-introduction`
+Deliver one exact integration order:
+1. what Chat 2 adds first;
+2. what must be manually composed;
+3. exact D38 tags to apply;
+4. exact D38 reward bindings;
+5. Camp/save rules;
+6. exact focused test set;
+7. stop conditions;
+8. what must not be copied wholesale.
 
-For each proposed tagged option/result/contact:
-- give exact source file + stable ID;
-- explain why it matches the accepted reward semantics;
-- prove it does not bypass normal region/capability/relationship conditions;
-- state whether no safe existing candidate exists.
-
-Do not invent new scenes.
-Do not modify runtime.
-Do not add tags in production yet.
+Research/assembly packet only.
+Do not modify production runtime.
 Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_D38_AUTHORED_TAG_MAPPING_v27.md`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_FINAL_ASSEMBLY_PACKET_v28.md`
 
 Report:
-`READY_FOR_ACTIVITY_ASSEMBLY`.
+`READY_FOR_CHAT2_PREFLIGHT`.
