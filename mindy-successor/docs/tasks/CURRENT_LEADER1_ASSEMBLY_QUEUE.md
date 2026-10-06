@@ -68,3 +68,19 @@ Rules:
 - Exact SHA + focused evidence before assembly.
 - Full CI before Leader merge.
 - Exact-main CI after every production merge.
+
+
+## AUTHORITATIVE QUEUE UPDATE — AFTER D42
+
+D42 is merged and exact-main green.
+
+Broad burn-down: **5**
+
+Assembly order:
+1. Secret Debt v12 + D51 — ACTIVE in Chat 2
+2. Palace
+3. Activity + Camp + D38
+4. D46 + D47 + legacy ending retirement
+5. final closure
+
+Chats 3-6 now work from auto-continue bundles instead of one-task refill.
