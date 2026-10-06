@@ -861,3 +861,28 @@ Frozen Strong Meta UI producer `fac645878ebd726f50fd1364ac72414796755a2d` is REA
 Chat4 next bundle:
 `chat4/palace-cumulative-exact-head-qa-v44`
 for Palace v18/v19 exact-head executable QA and selective assembly guidance. D39 implementation remains Chat3-owned.
+
+
+## AUTHORITATIVE LIVE UPDATE — CHAT2 FULL-TREE RECOVERY / CHAT5+6 REFILL
+
+Chat5 v42 gap QA is accepted. Leader independently verified its central finding:
+- Chat2 v1 current head lineage is sparse;
+- first bad recovery commit `0463e2a18ba619b3bdf9636b37876c4cbbbd2829` collapsed the full D42 tree to a tiny docs-only tree;
+- later Secret Debt commits accumulated on that sparse tree;
+- this is branch infrastructure damage, not a Secret Debt semantic failure.
+
+Do not replace the current Chat2 conversation. Continue the SAME window on:
+`chat2/assembly-secret-debt-d51-current-main-recovery-v2`
+
+Recovery authority:
+`mindy-successor/docs/tasks/CHAT2_SECRET_DEBT_D51_RECOVERY_v2_TASK.md`
+
+The old v1 branch is source/evidence only. Replay safe Secret Debt artifacts and shared-file hunks selectively; never wholesale-copy sparse shared files.
+
+Worker state after refill:
+- Chat3: D39 producer active; v46 implementation observed, v47 handoff pending.
+- Chat4: Strong Meta UI QA accepted; Palace cumulative exact-head QA v44-v46 assigned.
+- Chat5: Secret Debt gap QA accepted; Activity+Camp+D38 preassembly v43-v45 assigned.
+- Chat6: final player-facing cumulative v45-v47 accepted; Palace D48 media v48-v50 assigned.
+
+Burn-down remains **5** until Secret Debt+D51 is Leader-merged and exact-main CI succeeds.
