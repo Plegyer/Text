@@ -1,20 +1,19 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **START NOW — FINAL PLAYER-FACING RELEASE DRY-RUN v68-v69**
+Status: **START NOW — SECRET DEBT LOCALIZATION RECOVERY v70-v71**
 Owner: Chat 6
 
-Previous final player-facing release evidence v66-v67 is accepted.
+Previous final player-facing release dry-run v68-v69 is accepted.
 
 Current branch:
-`chat6/final-player-facing-release-dryrun-v68`
+`chat6/secret-debt-localization-recovery-manifest-v70`
 
 Task:
-`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_RELEASE_DRYRUN_v68_v69_TASK.md`
+`mindy-successor/docs/tasks/CHAT6_SECRET_DEBT_LOCALIZATION_RECOVERY_v70_v71_TASK.md`
 
-This is intentionally lightweight.
-Read compact handoffs only; do not reread giant manifests unless one exact field needs verification.
-
+This is a lightweight Stage-1 support bundle for Chat2.
+Focus only on exact Secret Debt localization recovery.
 No production changes. No full CI. Do not merge main.
 
 Expected final:
-`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_RELEASE_DRYRUN`.
+`BUNDLE_COMPLETE — READY_FOR_CHAT2_SECRET_DEBT_LOCALIZATION_RECOVERY`.
