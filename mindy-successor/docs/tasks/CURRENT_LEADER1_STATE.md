@@ -652,3 +652,21 @@ User communication rule remains: report only works / waits / error / done, and d
 - retired Tavern cleanup v31 completed at `eb03a847347339ade109b0ec9022b81cd4abadaf`.
 - Current task: `chat6/final-localization-assembly-packet-v32`.
 
+
+
+## AUTHORITATIVE LIVE UPDATE — D42 MERGED / EXACT-MAIN PENDING
+
+- D42 PR #294 is merged.
+- Leader merge commit on main:
+  `a51bbee97b0f5e5b0a182da03407277eecc7a758`
+- pre-merge exact candidate CI #1216: SUCCESS.
+- exact-main CI #1217 / run `37458386606`: IN PROGRESS at checkpoint time.
+- burn-down remains formally 6 until #1217 is green.
+- if #1217 succeeds, decrement burn-down 6 -> 5.
+
+### Chat 3
+- Activity final assembly packet v28 completed at
+  `742661162991108d22138eec495657b0dcdece0f`
+- disposition: READY_FOR_CHAT2_PREFLIGHT.
+- current task:
+  `chat3/d46-d47-legacy-final-assembly-packet-v29`
