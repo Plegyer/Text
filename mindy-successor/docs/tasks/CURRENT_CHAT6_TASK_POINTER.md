@@ -1,18 +1,18 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **START NOW — FINAL PLAYER-FACING GOLDEN QA v57-v59**
+Status: **START NOW — FINAL UI / ACCESSIBILITY SMOKE v60-v62**
 Owner: Chat 6
 
-Previous final player-facing golden manifest v54-v56 is accepted.
+Previous final player-facing golden QA v57-v59 is accepted.
 
 Current branch:
-`chat6/final-player-facing-golden-qa-v57`
+`chat6/final-ui-accessibility-smoke-v60`
 
 Task:
-`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_QA_v57_v59_TASK.md`
+`mindy-successor/docs/tasks/CHAT6_FINAL_UI_ACCESSIBILITY_SMOKE_v60_v62_TASK.md`
 
-Complete all v57-v59 tasks in order.
-QA/test/fixture hardening only. No production runtime/mechanics changes. No full CI. Do not merge main.
+Complete v60-v62 in order.
+UI/accessibility smoke preparation only. No production runtime/mechanics/content changes. No full CI. Do not merge main.
 
 Expected final:
-`BUNDLE_COMPLETE — READY_FOR_FINAL_PLAYER_FACING_GOLDEN_EXECUTION`.
+`BUNDLE_COMPLETE — READY_FOR_FINAL_UI_ACCESSIBILITY_SMOKE_EXECUTION`.
