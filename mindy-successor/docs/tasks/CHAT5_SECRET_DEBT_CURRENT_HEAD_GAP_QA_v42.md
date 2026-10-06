@@ -438,8 +438,6 @@ These should come from the restored current-main tree, not be individually copie
 
 `Chat 5 Secret Debt current-head v41 exact QA`
 
-### Attempt 1 — self-hosted Windows
-
 Run:
 
 `37480918808`
@@ -448,53 +446,108 @@ Job:
 
 `112328488957`
 
-Status during this review:
+Runner:
 
-queued; no self-hosted runner began execution.
+self-hosted Windows X64
 
-No test result can be inferred from this run.
+Node:
 
-### Attempt 2 — hosted Windows diagnostic
+`22.18.0`
 
-Run:
-
-`37481166457`
-
-Job:
-
-`112329339477`
-
-The job failed before exposing any workflow steps/log payload through the connector.
-
-This is infrastructure evidence only.
-
-It is not a producer/test failure.
-
-## Exact-head static guard
-
-Independent GitHub commit/tree inspection verifies the frozen target exactly:
+Exact checkout:
 
 `a02d4931087e0884756a6888354b8a69e0327b02`
 
-Tree:
+Exact SHA guard:
 
-- 21 entries;
-- 10 blobs.
+**PASS**
 
-Project path exists, but:
+## Tree inventory
 
-`mindy-successor/prior-work/astra/prototype-m3.2/package.json`
+The run explicitly reports:
 
-does not exist.
+`package.json MISSING`
 
-Therefore the requested command gate is **structurally non-executable** on the frozen head:
+## npm ci
 
-- `npm ci` — cannot run as project install;
-- `npm run typecheck` — no package/scripts;
-- `npm run validate` — no package/scripts;
-- `npm run build` — no package/scripts.
+Result:
 
-Even direct execution of the three present tests cannot form a valid focused gate because required imports/runtime files such as `engine.ts`, `strongMeta.ts`, localization and current catalog infrastructure are absent.
+**FAIL / diagnostic**
+
+Reason:
+
+no `package-lock.json` / npm installable project manifest exists in the frozen tree.
+
+## typecheck
+
+Result:
+
+**FAIL / NOT EXECUTABLE**
+
+Exact failure:
+
+`ENOENT ... prototype-m3.2/package.json`
+
+## validate
+
+Result:
+
+**FAIL / NOT EXECUTABLE**
+
+Exact failure:
+
+`ENOENT ... prototype-m3.2/package.json`
+
+## build
+
+Result:
+
+**FAIL / NOT EXECUTABLE**
+
+Exact failure:
+
+`ENOENT ... prototype-m3.2/package.json`
+
+The GitHub job conclusion is SUCCESS only because these commands intentionally used `continue-on-error` so the entire diagnostic sequence and roster inventory could be captured.
+
+Do **not** report v41 as a green source QA run.
+
+## Direct focused diagnostic
+
+Attempted the three Secret Debt-family tests that are physically present:
+
+- `secret-debt-full-route-v12.test.ts`
+- `secret-debt-activity-energy-compat-v20.test.ts`
+- `secret-debt-ending-localization-producer-v27.test.ts`
+
+Observed:
+
+- tests: **3**
+- pass: **0**
+- fail: **3**
+
+All fail before semantic assertions.
+
+Exact missing-module blockers include:
+
+- `src/core/engine.ts`
+- `src/core/localization.ts`
+
+Therefore these are structural missing-tree failures, not Secret Debt semantic regressions.
+
+## Required final focused roster inventory
+
+The run checks all 21 Chat4-v28 focused files.
+
+Present:
+
+- `secret-debt-full-route-v12.test.ts`
+- `secret-debt-activity-energy-compat-v20.test.ts`
+- `secret-debt-ending-localization-producer-v27.test.ts`
+
+Missing:
+
+- the other **18 / 21** current focused files.
 
 Classification:
 
