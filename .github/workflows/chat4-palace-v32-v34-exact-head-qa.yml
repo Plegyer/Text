@@ -37,15 +37,24 @@ jobs:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
-      - name: npm ci
+      - id: install
+        name: npm ci
         run: npm ci
-      - name: Typecheck
+      - id: typecheck
+        name: Typecheck
+        continue-on-error: true
         run: npm run typecheck
-      - name: Validate
+      - id: validate
+        name: Validate
+        continue-on-error: true
         run: npm run validate
-      - name: Build
+      - id: build
+        name: Build
+        continue-on-error: true
         run: npm run build
-      - name: Focused Palace v15-v18 QA
+      - id: focused
+        name: Focused Palace v15-v18 QA
+        continue-on-error: true
         run: >
           node --experimental-strip-types --test
           tests/palace-d23-consumer-integration-v8.test.ts
@@ -55,6 +64,19 @@ jobs:
           tests/palace-prince-narrative-producer-v18.test.ts
           tests/palace-prince-narrative-renderer-v18.test.ts
           tests/chat3-secret-debt-separation-v2.test.ts
+      - name: Aggregate exact-head verdict
+        if: always()
+        shell: cmd
+        working-directory: .
+        run: |
+          echo typecheck=${{ steps.typecheck.outcome }}
+          echo validate=${{ steps.validate.outcome }}
+          echo build=${{ steps.build.outcome }}
+          echo focused=${{ steps.focused.outcome }}
+          if not "${{ steps.typecheck.outcome }}"=="success" exit /b 1
+          if not "${{ steps.validate.outcome }}"=="success" exit /b 1
+          if not "${{ steps.build.outcome }}"=="success" exit /b 1
+          if not "${{ steps.focused.outcome }}"=="success" exit /b 1
 
   palace-v19-exact-head:
     runs-on: [self-hosted, Windows, X64]
@@ -81,17 +103,39 @@ jobs:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
-      - name: npm ci
+      - id: install
+        name: npm ci
         run: npm ci
-      - name: Typecheck
+      - id: typecheck
+        name: Typecheck
+        continue-on-error: true
         run: npm run typecheck
-      - name: Validate
+      - id: validate
+        name: Validate
+        continue-on-error: true
         run: npm run validate
-      - name: Build
+      - id: build
+        name: Build
+        continue-on-error: true
         run: npm run build
-      - name: Focused Palace v18-v19 QA
+      - id: focused
+        name: Focused Palace v18-v19 QA
+        continue-on-error: true
         run: >
           node --experimental-strip-types --test
           tests/palace-prince-narrative-producer-v18.test.ts
           tests/palace-prince-narrative-renderer-v18.test.ts
           tests/palace-final-prose-media-v19.test.ts
+      - name: Aggregate exact-head verdict
+        if: always()
+        shell: cmd
+        working-directory: .
+        run: |
+          echo typecheck=${{ steps.typecheck.outcome }}
+          echo validate=${{ steps.validate.outcome }}
+          echo build=${{ steps.build.outcome }}
+          echo focused=${{ steps.focused.outcome }}
+          if not "${{ steps.typecheck.outcome }}"=="success" exit /b 1
+          if not "${{ steps.validate.outcome }}"=="success" exit /b 1
+          if not "${{ steps.build.outcome }}"=="success" exit /b 1
+          if not "${{ steps.focused.outcome }}"=="success" exit /b 1
