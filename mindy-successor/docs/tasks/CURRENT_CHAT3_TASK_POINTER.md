@@ -1,7 +1,9 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE PALACE D39 LIVE-CONSUMER CLOSURE v39-v41**
+Status: **START NOW**
 Owner: Chat 3
+
+Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
 
 Previous final gameplay smoke bundle v36-v38 is complete and accepted.
 
