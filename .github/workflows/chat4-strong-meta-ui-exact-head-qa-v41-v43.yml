@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 1
 
       - name: Exact SHA guard
-        shell: pwsh
+        shell: powershell
         run: |
           $expected = "fac645878ebd726f50fd1364ac72414796755a2d"
           $actual = (git rev-parse HEAD).Trim()
@@ -75,7 +75,7 @@ jobs:
           tests/presentation-locale-accessibility-parity-v7.test.ts
 
       - name: Aggregate exact-head result
-        shell: pwsh
+        shell: powershell
         run: |
           $typecheck = "${{ steps.typecheck.outcome }}"
           $validate = "${{ steps.validate.outcome }}"
