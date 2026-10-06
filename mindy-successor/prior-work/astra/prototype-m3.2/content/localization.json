@@ -13593,6 +13593,38 @@
     "presentation.static.prostitute.night.client-private.caption": {
       "ru": "Добровольное приватное продолжение с постоянным клиентом в обычной комнате без подразумеваемого согласия.",
       "en": "A voluntary private-space continuation with the recurring client in normal lodging without implied consent."
+    },
+    "presentation.static.palace.service-interior.alt": {
+      "ru": "Рабочий дворцовый интерьер со столами, записями и контролируемыми проходами; сцена показывает администрацию, а не скрытую магическую функцию.",
+      "en": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function."
+    },
+    "presentation.static.palace.service-interior.caption": {
+      "ru": "Дворцовая служба показана как административная работа; скрытая функция Порога здесь не раскрывается.",
+      "en": "Palace service is shown as administrative work; the Threshold's hidden function is not revealed here."
+    },
+    "presentation.static.palace.threshold-archive.alt": {
+      "ru": "Защищённый архив с несколькими группами записей и местами проверки источников; изображение не объясняет причину переходов.",
+      "en": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings."
+    },
+    "presentation.static.palace.threshold-archive.caption": {
+      "ru": "Архив сопоставляет разрозненные свидетельства; ни один носитель не содержит всей картины.",
+      "en": "The archive correlates distributed evidence; no single record contains the whole picture."
+    },
+    "presentation.static.palace.custodian-audience.alt": {
+      "ru": "Формальная встреча с человеческим Хранителем за столом с записями; сцена изображает проверку доказательств, а не бой.",
+      "en": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat."
+    },
+    "presentation.static.palace.custodian-audience.caption": {
+      "ru": "Хранитель — человек и должностное лицо; спор решается разбором свидетельств, а не физическим противостоянием.",
+      "en": "The Custodian is a human office-holder; the dispute is resolved through evidence review, not physical confrontation."
+    },
+    "presentation.static.palace.return-home-threshold.alt": {
+      "ru": "Человек пересекает ограниченный межмировой Порог, оставляя позади целый и продолжающий существовать мир.",
+      "en": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues."
+    },
+    "presentation.static.palace.return-home-threshold.caption": {
+      "ru": "Переход означает уход из реального мира, а не его исчезновение; причина перемещения не показана.",
+      "en": "The crossing means leaving a real world, not erasing it; the cause of the displacement is not shown."
     }
   }
 }
