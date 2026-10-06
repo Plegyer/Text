@@ -414,3 +414,32 @@ Both new bundles are intentionally lightweight and support production Stage 1 di
 User must manually message each worker window to start.
 
 Broad burn-down remains **5**.
+
+
+## Critical-path correction — stop artifact treadmill, close Stage 1
+
+Leader review found the coordination strategy had drifted into repeated QA/evidence/dry-run packets that did not reduce production burn-down.
+
+Until Secret Debt + D51 Stage 1 closes:
+- do NOT create new peripheral QA/evidence/dry-run bundles merely to keep Chats 3/4/6 busy;
+- support work is allowed only if it directly unblocks the current Chat2 candidate;
+- the primary action is Chat2 production repair -> typecheck/validate/build -> focused v28 -> one full CI -> Leader merge -> exact-main CI.
+
+Exact live Chat2 localization comparison against accepted v12+v27 authorities found:
+- expected Secret Debt localization keys: 37;
+- exact matches: 9;
+- missing: 22;
+- authority mismatches: 6.
+
+Leader published:
+- `CHAT2_SECRET_DEBT_LOCALIZATION_EXACT_RECOVERY_v53.json`
+- `CHAT2_SECRET_DEBT_STAGE1_FINISH_NOW_v53.md`
+
+Current Chat2 pointer now says:
+`RUN NOW — STAGE 1 FINAL REPAIR + GATES`
+
+The earlier assumption that localization was fully repaired from seeing 15 Secret Debt keys was incorrect; full authority comparison proved the remaining 22 missing + 6 mismatched rows.
+
+Current Chat6 v70-v71 branch did not publish a worker-authored handoff before this correction; its intended output has been superseded by the Leader-generated exact recovery manifest above.
+
+Broad burn-down remains **5** until Stage 1 is Leader-merged and exact-main CI is green.
