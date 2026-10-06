@@ -1,57 +1,81 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE ACTIVITY NETWORK COPY FIX BUNDLE v36-v38**
+Status: **ACTIVE — AUTO-CONTINUE FINAL PLAYER-FACING RELEASE AUDIT v39-v41**
 Owner: Chat 6
 
-Previous release-localization bundle v33-v35 is complete.
-
-v35 found one concrete route-semantic contradiction:
-`ending.activity.network.epilogue`
-claims all four directions are connected, while the accepted route can complete with only 3 of 4 regional anchors.
+Previous Activity Network copy-fix bundle v36-v38 is complete and accepted.
 
 Current branch:
-`chat6/activity-network-copy-fix-v36`
+`chat6/final-player-facing-release-audit-v39`
 
-Complete ALL tasks below in order.
+Complete ALL tasks below in order without waiting for Leader.
+Only stop for a real Product/content ambiguity.
 
-## Task A — v36
-Create a localization-only content correction producer.
+## Task A — v39: final player-facing UI localization audit
 
-Change only the RU/EN epilogue for:
-`ending.activity.network.epilogue`
+Create:
+`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_UI_LOCALIZATION_AUDIT_v39.md`
 
-Required semantic correction:
-remove the unconditional numeric claim of **four** directions while preserving the idea that the heroine's contact network connects previously separate routes/areas into a practical working network.
+Audit accepted live player-facing UI strings beyond ending prose:
+- Night;
+- Secret Debt;
+- Activity;
+- Palace;
+- School;
+- Strong Meta / reward selection;
+- save/load/migration notices;
+- ending screen;
+- generic buttons/status labels;
+- presentation alt/captions.
 
-Safe target wording:
+Find:
+- raw localization keys visible to player;
+- missing RU/EN pairs;
+- fallback-only player text;
+- stale retired live labels;
+- contradictory button/status wording.
 
+Classify findings P0/P1/P2.
+
+## Task B — v40: content-only closure producer if needed
+
+If v39 finds P0/P1 issues that can be fixed only by localization/presentation text:
+- fix only those exact keys/rows;
+- add focused localization tests;
+- change no runtime/mechanics/routing.
+
+If no P0/P1 content-only issue exists:
+create:
+`mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_UI_CLOSURE_NOOP_v40.md`
+documenting why no producer is required.
+
+Any runtime/UI-logic issue must be documented for Leader, not changed by Chat 6.
+
+## Task C — v41: final manual copy/presentation smoke matrix
+
+Create:
+`mindy-successor/docs/tasks/CHAT6_FINAL_MANUAL_COPY_PRESENTATION_SMOKE_MATRIX_v41.md`
+
+Provide a compact manual release checklist covering:
+- all ending families;
+- Night surfaces;
+- Secret Debt;
+- Activity;
+- Palace;
+- generic ending screen;
+- alt/caption accessibility;
+- RU/EN switch parity;
+- retired-content absence;
+- no raw keys/fallback labels.
+
+Include the accepted v36 Activity Network epilogue correction:
 RU:
 `Контакты связывают разрозненные направления в единое рабочее пространство.`
-
 EN:
 `The contacts tie disconnected routes into one practical working network.`
-
-Do not change mechanics, requirements, rewards, title, description, or lore.
-
-Add a focused test proving:
-- bilingual epilogue exists;
-- no unconditional four-region claim remains;
-- Activity Network mechanics are unchanged.
-
-## Task B — v37
-Create:
-`mindy-successor/docs/tasks/CHAT6_ACTIVITY_NETWORK_COPY_FIX_QA_NOTE_v37.md`
-
-Document exact diff, source authority, and assembly guidance.
-
-## Task C — v38
-Create:
-`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_MANIFEST_DELTA_v38.md`
-
-Update the final localization assembly guidance to include the v36 corrected epilogue as the authoritative final value.
 
 No runtime changes.
 No full CI.
 
-Freeze exact producer SHA and report:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+After all three tasks are committed, report:
+`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
