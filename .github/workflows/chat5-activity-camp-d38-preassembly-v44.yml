@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   exact-head-focused:
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: ubuntu-latest
     timeout-minutes: 25
     strategy:
       fail-fast: false
@@ -64,11 +64,11 @@ jobs:
           fetch-depth: 1
 
       - name: Verify exact frozen SHA
-        shell: cmd
+        shell: bash
         run: |
-          for /f "delims=" %%i in ('git rev-parse HEAD') do set ACTUAL=%%i
-          if not "%ACTUAL%"=="${{ matrix.sha }}" exit /b 1
-          echo ${{ matrix.label }} exact head: %ACTUAL%
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "${{ matrix.sha }}"
+          echo "${{ matrix.label }} exact head: $actual"
 
       - name: Setup Node
         uses: actions/setup-node@v4
