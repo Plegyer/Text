@@ -1,42 +1,45 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT ENDING LOCALIZATION PRODUCER v27**
+Status: **ACTIVE — FINAL LOCALIZATION/PRESENTATION CLOSURE v28**
 Owner: Chat 6
 
-Previous v26 ordinary-ending localization closure is complete and accepted.
+This task is intended for a fresh Chat 6 context.
+
+Completed and accepted:
+- v25 localization/accessibility audit;
+- v26 ordinary-ending localization closure;
+- v27 Secret Debt ending localization closure.
 
 New branch:
-`chat6/secret-debt-ending-localization-producer-v27`
+`chat6/final-localization-presentation-closure-v28`
 
 Goal:
-close the remaining Secret Debt ending localization gap identified by v25 before Secret Debt assembly.
+perform one final 1.0 localization/presentation closure audit over all accepted/frozen content layers and current D42 assembly state.
 
-Secret Debt endings:
-- `ending.secret-debt.paid-freedom`
-- `ending.secret-debt.bound-life`
-- `ending.secret-debt.takeover`
-
-Task:
-add final bilingual RU/EN epilogue coverage for all three live Secret Debt endings, and verify title/description/runtime-key coverage remains complete.
-
-Preserve:
-- Paid Freedom as explicit full-debt exit;
-- Bound Life as exactly 50 hidden shifts;
-- Takeover as the explicit high-threshold route;
-- no auto-ending;
-- no romance/consent implications;
-- no Palace implication;
-- no Strong Meta wording beyond the already accepted reward identity;
-- no mechanics/reward/gate changes.
-
-Add focused localization coverage tests.
+Check:
+- RU/EN missing keys;
+- ending title/description/epilogue coverage;
+- D42 Night event/caption coverage;
+- Secret Debt v27 coverage;
+- Palace v19 copy/media/accessibility;
+- Activity D38 v17 copy/presentation;
+- global presentation v23 mappings;
+- retired Tavern/lumber-stay stale live surfaces;
+- missing alt/caption pairs;
+- localization keys whose live consumer no longer exists;
+- live consumers with only fallback text.
 
 Do not change runtime.
-Do not change Secret Debt mechanics.
+Do not change mechanics.
 Do not run full CI.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT6_SECRET_DEBT_ENDING_LOCALIZATION_PRODUCER_v27.md`
+If only content/localization repairs are needed, list them exactly and separate them into:
+- P0 release blocker;
+- P1 required closure;
+- P2 polish/cleanup.
 
-Freeze exact SHA and report:
-`READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
+Deliver:
+`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_PRESENTATION_CLOSURE_v28.md`
+
+Report:
+`READY_FOR_LEADER_REVIEW`.
