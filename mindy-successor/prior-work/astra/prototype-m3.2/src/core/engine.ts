@@ -1630,7 +1630,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
   validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
-  validateSecretDebtState(s);
+  validateSecretDebtState(s.run.secretDebt);
   if(s.run.strongMetaRuntime.workRhythmAppliedDay!==null&&s.run.strongMetaRuntime.workRhythmAppliedDay>s.run.day)throw new Error('Work Rhythm applied day cannot be in the future.');
   for(const stat of stats)if(s.run.character.stats[stat]>effectiveProgressionStatCap(s))throw new Error(`Характеристика ${stat} превышает эффективный потолок.`);
   if(s.run.metrics.energy>energyMax(s))throw new Error('Некорректный запас энергии.');
