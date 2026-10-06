@@ -1,48 +1,66 @@
 # CURRENT CHAT6 TASK POINTER
 
-Status: **ACTIVE — FINAL LOCALIZATION ASSEMBLY PACKET v32**
+Status: **ACTIVE — AUTO-CONTINUE RELEASE LOCALIZATION BUNDLE v33-v35**
 Owner: Chat 6
 
-Previous localization/presentation work completed:
+This bundle is for a FRESH Chat 6 context.
+
+Completed:
 - v26 ordinary ending localization
-- v27 Secret Debt ending localization
-- v28 final localization/presentation audit
-- v29 two-key global caption closure
-- v30 retired Tavern compatibility audit
-- v31 retired Tavern presentation localization cleanup
+- v27 Secret Debt localization
+- v28 final presentation/localization audit
+- v29 global caption closure
+- v30 Tavern compatibility audit
+- v31 Tavern cleanup
+- v32 final localization assembly packet
 
-New branch:
-`chat6/final-localization-assembly-packet-v32`
+Current branch:
+`chat6/release-localization-bundle-v33`
 
-Goal:
-produce one compact final Chat 2 content-assembly packet for all accepted localization/presentation layers.
+IMPORTANT:
+Complete ALL tasks below in order.
+Do not stop after the first deliverable.
+Only stop for a real content/Product ambiguity.
 
-Include exact merge-by-key guidance for:
-- v26 ordinary ending localization;
-- v27 Secret Debt ending localization;
-- v29 generic captions;
-- v31 retired Tavern cleanup;
-- accepted D42 localization/captions;
-- Palace v19;
-- Activity D38 v17;
-- global presentation v23.
+## Task A — v33
+Create machine-readable manifest:
+`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_PRESENTATION_MANIFEST_v33.json`
 
-Specify:
-1. exact composition order;
-2. shared localization/presentation conflicts;
-3. rows/slots to add;
-4. rows to remove;
-5. rows that must remain for migration compatibility;
-6. focused localization/presentation test bundle;
-7. stop conditions;
-8. what must never be copied wholesale.
+It must enumerate, by source tranche:
+- localization keys to add/replace;
+- localization keys to delete;
+- keys that must remain for migration;
+- presentation slots to add;
+- known dependency order;
+- source exact SHAs.
 
-Research/assembly packet only.
-Do not modify runtime.
-Do not run full CI.
+No whole-file snapshots.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT6_FINAL_LOCALIZATION_ASSEMBLY_PACKET_v32.md`
+## Task B — v34
+Create:
+`CHAT6_PLAYER_FACING_FALLBACK_AUDIT_v34.md`
 
-Report:
-`READY_FOR_CHAT2_PREFLIGHT`.
+Audit all accepted live player-facing families for raw-key/fallback-text risk:
+- ordinary endings;
+- Secret Debt endings;
+- D42 Night;
+- Activity endings;
+- Palace endings;
+- generic ending screen;
+- generic Night room/rest surfaces.
+
+Classify any finding P0/P1/P2.
+
+## Task C — v35
+Create:
+`CHAT6_FINAL_COPY_CONSISTENCY_AUDIT_v35.md`
+
+Check RU/EN consistency and route semantics across final ending titles/descriptions/epilogues.
+Do not rewrite accepted mechanics or lore.
+List only concrete contradictions or confirm clean.
+
+No runtime changes.
+No full CI.
+
+After all three are committed, report:
+`BUNDLE_COMPLETE — READY_FOR_LEADER_REVIEW`.
