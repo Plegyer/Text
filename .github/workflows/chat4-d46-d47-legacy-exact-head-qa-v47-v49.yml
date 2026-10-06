@@ -1,0 +1,151 @@
+name: Chat4 D46 D47 legacy exact-head QA v47-v49
+
+on:
+  push:
+    branches:
+      - chat4/d46-d47-legacy-exact-head-qa-v47
+    paths:
+      - '.github/workflows/chat4-d46-d47-legacy-exact-head-qa-v47-v49.yml'
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: d46-producer
+            sha: a0c5f855b63d3bb85556f5b2780aaaabb58fbced
+            tests: >-
+              tests/economy-start-balance-v14.test.ts
+              tests/hard-work-stat-cap-d24.test.ts
+              tests/ordinary-hard-work-meta-production.test.ts
+              tests/ordinary-hard-work-lifecycle-parity.test.ts
+              tests/hard-work-meta-migration-v5.test.ts
+              tests/migration.test.ts
+              tests/ending-meta.test.ts
+              tests/palace-d23-consumer-integration-v8.test.ts
+              tests/strong-meta-registry-v7.test.ts
+          - label: d46-reachability-audit
+            sha: bb79be1f39c55e6297287cd071e1e8268005148a
+            tests: >-
+              tests/economy-start-balance-v14.test.ts
+              tests/hard-work-stat-cap-d24.test.ts
+              tests/ordinary-hard-work-meta-production.test.ts
+              tests/ordinary-hard-work-lifecycle-parity.test.ts
+              tests/hard-work-meta-migration-v5.test.ts
+              tests/migration.test.ts
+              tests/ending-meta.test.ts
+              tests/palace-d23-consumer-integration-v8.test.ts
+              tests/strong-meta-registry-v7.test.ts
+          - label: d47-producer
+            sha: 252dc26c514e24f4ab0f0cc0da7694254282e4c4
+            tests: >-
+              tests/economy-start-balance-v14.test.ts
+              tests/hard-work-bonus-mapping-v13.test.ts
+              tests/hard-work-stat-cap-d24.test.ts
+              tests/ordinary-hard-work-meta-production.test.ts
+              tests/ordinary-hard-work-lifecycle-parity.test.ts
+              tests/hard-work-meta-migration-v5.test.ts
+              tests/migration.test.ts
+              tests/ending-meta.test.ts
+              tests/palace-d23-consumer-integration-v8.test.ts
+              tests/strong-meta-registry-v7.test.ts
+              tests/strong-meta-engine-integration-v7.test.ts
+          - label: lumber-implementation
+            sha: cbeae73e8559d43fcce24213d6f5606b682b3e7d
+            tests: >-
+              tests/lumber-stay-retirement-v17.test.ts
+              tests/presentation-ending-parity-v9.test.ts
+              tests/lumber-hard-work-invariant.test.ts
+              tests/ordinary-hard-work-lifecycle-parity.test.ts
+              tests/hard-work-meta-migration-v5.test.ts
+              tests/migration.test.ts
+              tests/ending-meta.test.ts
+              tests/advanced-endings-tranche-a-v11.test.ts
+              tests/d40-advanced-endings-tranche-b-v11.test.ts
+              tests/palace-d23-consumer-integration-v8.test.ts
+              tests/strong-meta-registry-v7.test.ts
+          - label: lumber-verified-target
+            sha: 39912e7435c3707d98f96fe550d697c20ac0bedb
+            tests: >-
+              tests/lumber-stay-retirement-v17.test.ts
+              tests/presentation-ending-parity-v9.test.ts
+              tests/lumber-hard-work-invariant.test.ts
+              tests/ordinary-hard-work-lifecycle-parity.test.ts
+              tests/hard-work-meta-migration-v5.test.ts
+              tests/migration.test.ts
+              tests/ending-meta.test.ts
+              tests/advanced-endings-tranche-a-v11.test.ts
+              tests/d40-advanced-endings-tranche-b-v11.test.ts
+              tests/palace-d23-consumer-integration-v8.test.ts
+              tests/strong-meta-registry-v7.test.ts
+
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact frozen target
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.sha }}
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "${{ matrix.sha }}"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "label=${{ matrix.label }}"
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Exact-head guard failed: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        run: npm run typecheck
+
+      - name: Validate
+        id: validate
+        continue-on-error: true
+        run: npm run validate
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: npm run build
+
+      - name: Focused D46 D47 legacy migration ending adjacency
+        id: focused
+        continue-on-error: true
+        run: node --experimental-strip-types --test ${{ matrix.tests }}
+
+      - name: Aggregate target result
+        shell: powershell
+        run: |
+          $typecheck = "${{ steps.typecheck.outcome }}"
+          $validate = "${{ steps.validate.outcome }}"
+          $build = "${{ steps.build.outcome }}"
+          $focused = "${{ steps.focused.outcome }}"
+          Write-Host "label=${{ matrix.label }}"
+          Write-Host "typecheck=$typecheck"
+          Write-Host "validate=$validate"
+          Write-Host "build=$build"
+          Write-Host "focused=$focused"
+          if (@($typecheck,$validate,$build,$focused) -contains "failure") {
+            throw "Exact-head QA failed for ${{ matrix.label }}"
+          }
