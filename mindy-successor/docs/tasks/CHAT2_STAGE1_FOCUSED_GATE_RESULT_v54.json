@@ -1,0 +1,14 @@
+﻿{
+    "testedSha":  "e59478e336b92ce6e56173990c0da107454a78c6",
+    "workflowSha":  "ac22fc61dc2531efa06779b91c20d6668726f0a7",
+    "npmCi":  "success",
+    "typecheck":  "failure",
+    "validate":  "success",
+    "build":  "success",
+    "core":  "failure",
+    "night":  "success",
+    "activity":  "success",
+    "strongmeta":  "success",
+    "palace":  "success",
+    "localization":  "success"
+}
