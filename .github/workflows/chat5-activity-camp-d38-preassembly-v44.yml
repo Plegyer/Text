@@ -8,7 +8,7 @@ on:
       - '.github/workflows/chat5-activity-camp-d38-preassembly-v44.yml'
 
 concurrency:
-  group: chat5-activity-camp-d38-preassembly-v44
+  group: chat5-activity-camp-d38-preassembly-v44-hosted
   cancel-in-progress: true
 
 jobs:
