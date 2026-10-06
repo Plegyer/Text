@@ -153,10 +153,10 @@ export const effectSchema = z.discriminatedUnion('kind',[
 
   z.object({kind:z.literal('addWorldFact'),fact:id}).strict(),
   z.object({kind:z.literal('removeWorldFact'),fact:id}).strict(),
-  z.object({
-    kind:z.literal('addNextDayModifier'),  z.object({kind:z.literal('secretDebtAccept')}).strict(),
+  z.object({kind:z.literal('secretDebtAccept')}).strict(),
   z.object({kind:z.literal('secretDebtRefuse')}).strict(),
-
+  z.object({
+    kind:z.literal('addNextDayModifier'),
     energyDelta:z.number().int().min(-10).max(10).default(0),
     statEffects:z.array(statDelta).max(12).default([]),
     tag:id.optional()
@@ -214,8 +214,8 @@ const capabilityWrites=z.object({
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
-  nextDay:z.boolean().optional()  secretDebt:z.boolean().optional()
-
+  nextDay:z.boolean().optional(),
+  secretDebt:z.boolean().optional()
 }).strict();
 const capabilitiesSchema=z.object({reads:capabilityReads,writes:capabilityWrites}).strict();
 
@@ -578,7 +578,7 @@ export const historyStateSchema=z.object({
   journalRefs:z.array(eventChoicePresentationRefSchema.nullable()).max(160).default([])
 }).strict();
 
-export const legacyCompatSchema=z.object({export const secretDebtStateSchema=z.object({
+export const secretDebtStateSchema=z.object({
   status:z.enum(secretDebtStatuses),
   acceptedDay:z.number().int().min(0).nullable(),
   trapDay:z.number().int().min(0).nullable(),
@@ -592,7 +592,7 @@ export const legacyCompatSchema=z.object({export const secretDebtStateSchema=z.o
 export type SecretDebtState=z.infer<typeof secretDebtStateSchema>;
 const defaultSecretDebtState:SecretDebtState={status:'unseen',acceptedDay:null,trapDay:null,boundDay:null,resolvedDay:null,debt:0,hiddenShifts:0,grantApplied:false,lastLenderAttemptDay:null};
 
-
+export const legacyCompatSchema=z.object({
   source:z.literal('m3.2'),
   metrics:legacyMetricRecord,
   flags:z.record(z.string(),z.boolean()),
