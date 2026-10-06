@@ -680,3 +680,32 @@ User communication rule remains: report only works / waits / error / done, and d
 - Chat 5: retired Tavern cleanup QA v23 completed green; current task now `chat5/qa-palace-d39-reward-v24`. User-facing status: NEW TASK ASSIGNED.
 - Chat 6: current task `chat6/final-localization-assembly-packet-v32`; no worker-authored commit yet. User-facing status: STANDING WITH TASK ASSIGNED.
 - Burn-down remains 6 until exact-main D42 CI #1217 succeeds; then 5.
+
+
+## AUTHORITATIVE LIVE UPDATE — D42 CLOSED / BURN-DOWN 5 / BUNDLED WORKERS
+
+D42 is CLOSED:
+- main merge: `a51bbee97b0f5e5b0a182da03407277eecc7a758`
+- exact-main CI #1217 / run `37458386606`: SUCCESS
+- broad burn-down decremented **6 -> 5**
+
+Remaining big stages:
+1. Secret Debt v12 + D51
+2. Palace
+3. Activity + Camp + D38
+4. D46 + D47 + legacy ending retirement
+5. final save/migration/UI/localization/presentation/regression closure
+
+Worker assignment policy changed:
+- Chats 3-6 now receive 2-3 task AUTO-CONTINUE bundles where safe.
+- Chat 2 still stops at Leader merge gates, but within one tranche must continue compose -> focused QA -> build -> full CI without waiting.
+
+Current:
+- Chat 2: `chat2/assembly-secret-debt-d51-current-main-v1`
+- Chat 3: `chat3/release-career-closure-bundle-v30`
+- Chat 4: `chat4/secret-debt-d51-final-assembly-packet-v26` expanded through v28
+- Chat 5: `chat5/cross-system-independent-review-bundle-v25`
+- Chat 6: fresh context recovery + `chat6/release-localization-bundle-v33`
+
+Protocol:
+`mindy-successor/docs/tasks/LEADER1_WORKER_BUNDLE_PROTOCOL.md`
