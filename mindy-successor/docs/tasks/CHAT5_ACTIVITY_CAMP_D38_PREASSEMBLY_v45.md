@@ -154,7 +154,15 @@ Classification:
 
 This is not a Product/runtime reason to reopen Activity or D38 producer code.
 
-A supplementary diagnostic run `37504871830` was queued to continue validate/build/focused after the known typecheck failure, but the project self-hosted runner did not accept a new job at the final checkpoint. It is supplementary only; the blocker classification above is already exact.
+Supplementary diagnostic run `37504871830` completed and sharpened the classification:
+
+- Activity v15: typecheck FAIL, validate FAIL, build PASS, focused 13/18 PASS;
+- D38 v18: typecheck FAIL, validate FAIL, build PASS, focused 13/19 PASS;
+- Camp v19: typecheck/validate/build PASS, focused 107/107 PASS.
+
+Activity/D38 validate and focused failures are rooted in inherited Activity baseline catalog debt: the historical Forest pack lacks the typed-read declaration for `activity.forest-frontier.result.research-grade`, so affected focused files fail while loading the shared catalog. Camp v19 carries the accepted manifest repairs for that research-grade read and `forest.frontier.school-reflection-recorded`, plus the synthetic `effects: []` typing repair and later regional focused-fixture repairs.
+
+Thus the exact lineage class is **historical Activity executable-baseline debt already repaired by Camp v19**, not a D38-specific runtime/content failure.
 
 ## Collision map
 
@@ -286,7 +294,7 @@ Stop and classify rather than auto-repairing foreign production if:
 
 No Product/runtime producer repair blocker was identified.
 
-The standalone Activity v15 and D38 v18 snapshots do have one exact executable blocker: the stale shared synthetic test fixture above. That fixture is already repaired by the frozen Camp v19 cumulative lineage and must be preserved by Chat2's assembly order.
+The standalone Activity v15 and D38 v18 snapshots are not executable-green because they predate the accepted Camp v19 cumulative baseline-repair series: synthetic option typing, Forest typed-read manifest closure, and cumulative regional test-fixture repairs. Camp v19 is exact-head green and must be preserved by Chat2's assembly order.
 
 Therefore:
 
