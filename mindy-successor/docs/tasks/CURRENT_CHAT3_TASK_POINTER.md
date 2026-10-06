@@ -1,41 +1,37 @@
 # CURRENT CHAT3 TASK POINTER
 
-Status: **ACTIVE — ACTIVITY CUMULATIVE ASSEMBLY PREFLIGHT v24**
+Status: **ACTIVE — ACTIVITY D38 REWARD IMPLEMENTATION PREFLIGHT v25**
 Owner: Chat 3
 
-Previous Palace preflight v23 is complete and accepted.
+Previous Activity cumulative preflight v24 is complete and accepted.
 
 New branch:
-`chat3/activity-cumulative-assembly-preflight-v24`
+`chat3/activity-d38-reward-implementation-preflight-v25`
 
-Prepare the exact future Chat 2 assembly plan for the full Activity tranche.
+Goal:
+prepare the exact current-Strong-Meta implementation packet for the three accepted D38 Activity rewards.
 
-Frozen/accepted sources:
-- regions through Restricted Sites v15:
-  `chat3/restricted-sites-production-v15@ab378d68765f7c9bbff43abf3b4b41e24df82e01`
-- executable-green Camp repair:
-  `chat4/activity-camp-baseline-repair-v19@efde0a38bf71a8946194402a9fc47abb168f2aff`
-- D38 mechanics:
-  `chat3/activity-ending-family-producer-v16-r1@3cf69d7cb3df1a58d68908159d0acc14736435c4`
-- D38 content/presentation:
-  `chat3/activity-ending-content-presentation-v17@df9ef5c3d04cfd8eb582c24838d971854e984218`
+Accepted rewards:
+- `specialist.activity.surveyors-atlas`
+- `specialist.activity.field-archive`
+- `specialist.activity.contact-network`
 
-Produce:
-- exact composition order;
-- overlap/conflict map;
-- Camp + D38 compatibility;
-- save/migration risks;
-- Secret Debt Night priority firewall;
-- exact focused tests Chat 2 should run;
-- presentation/localization dependencies;
-- files that must be manually composed rather than copied wholesale.
+Task:
+- map exact current Strong Meta registry additions;
+- define run-local usage counters/state;
+- define ending lifecycle binding through normal completeEnding transaction;
+- preserve 0..2 Specialist capacity;
+- preserve no activation in earning life;
+- specify save/reload/profile-merge behavior;
+- specify exact files Chat 2 must modify later;
+- specify focused tests for all three rewards and cross-system firewalls.
 
-Research/preflight only.
-Do not modify runtime.
+Do not implement production runtime in this preflight.
+Do not invent new Product behavior.
 Do not run full CI.
 
 Deliver:
-`mindy-successor/docs/tasks/CHAT3_ACTIVITY_CUMULATIVE_ASSEMBLY_PREFLIGHT_v24.md`
+`mindy-successor/docs/tasks/CHAT3_ACTIVITY_D38_REWARD_IMPLEMENTATION_PREFLIGHT_v25.md`
 
 Report:
-`READY_FOR_CHAT2_PREFLIGHT`.
+`READY_FOR_ACTIVITY_ASSEMBLY`.
