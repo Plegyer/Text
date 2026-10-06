@@ -173,34 +173,34 @@ test('Steady Practice binds first two careers at shift 8 and prevents exactly th
   let s=finishCreation(freshSave({strongMeta:selectedSpecialist(STRONG_META_IDS.palaceSteadyPractice)}),cat);
   s.run.character.stats.dexterity=10;
 
-  for(let i=0;i<7;i++)s=dispatch(s,{type:'act',id:'lumber.shift'},cat);
+  for(let i=0;i<7;i++)s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   assert.deepEqual(s.run.strongMetaRuntime.steadyPracticeBoundCareerIds,[]);
   assert.equal(s.run.character.stats.dexterity,3);
 
-  s=dispatch(s,{type:'act',id:'lumber.shift'},cat);
+  s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   assert.deepEqual(s.run.strongMetaRuntime.steadyPracticeBoundCareerIds,['lumber']);
   assert.equal(s.run.strongMetaRuntime.steadyPracticeProtectionsUsedByCareer.lumber,1);
   assert.equal(s.run.character.stats.dexterity,3);
 
-  s=dispatch(s,{type:'act',id:'lumber.shift'},cat);
-  s=dispatch(s,{type:'act',id:'lumber.shift'},cat);
+  s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
+  s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   assert.equal(s.run.strongMetaRuntime.steadyPracticeProtectionsUsedByCareer.lumber,3);
   assert.equal(s.run.character.stats.dexterity,3);
 
-  s=dispatch(s,{type:'act',id:'lumber.shift'},cat);
+  s=dispatch(s,{type:'action',id:'lumber.shift'},cat);
   assert.equal(s.run.character.stats.dexterity,2);
 
   s.run.progression.worldFacts.push('guard.open');
   s.run.character.stats.reason=10;
   s=applyEffects(s,[{kind:'incrementCareerCounter',career:'guard',counter:'completed_shifts',amount:7}],cat);
-  s=dispatch(s,{type:'act',id:'guard.shift'},cat);
+  s=dispatch(s,{type:'action',id:'guard.shift'},cat);
   assert.deepEqual(s.run.strongMetaRuntime.steadyPracticeBoundCareerIds,['lumber','guard']);
   assert.equal(s.run.strongMetaRuntime.steadyPracticeProtectionsUsedByCareer.guard,1);
   assert.equal(s.run.character.stats.reason,10);
 
   s.run.character.stats.charm=10;
   s=applyEffects(s,[{kind:'incrementCareerCounter',career:'satyr-maid',counter:'completed_shifts',amount:7}],cat);
-  s=dispatch(s,{type:'act',id:'satyr-maid.shift'},cat);
+  s=dispatch(s,{type:'action',id:'satyr-maid.shift'},cat);
   assert.deepEqual(s.run.strongMetaRuntime.steadyPracticeBoundCareerIds,['lumber','guard']);
   assert.equal(s.run.character.stats.charm,9);
 
