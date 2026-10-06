@@ -1,46 +1,37 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — SECRET DEBT LOCALIZATION QA RETRY v24**
+Status: **ACTIVE — GLOBAL CAPTION CLOSURE EXACT-HEAD QA v25**
 Owner: Chat 4
 
-Previous v23 QA was blocked by runner infrastructure / shell setup, not by a producer failure.
+Previous Secret Debt localization QA v24 is green and accepted.
 
-Frozen producer:
-`chat6/secret-debt-ending-localization-producer-v27@b6cc4ca6990936f4d801004806b25e4d920f9abf`
+Producer under verification:
+`chat6/global-caption-closure-producer-v29@6b56569e6a5dfff69af646c4ab5bd19c56632b60`
 
-Frozen mechanics adjacency source:
-`chat4/secret-debt-full-route-producer-v12@10a2ecebf02ce64bdaf54d74dbbb66d6bae6e59e`
+Frozen implementation head:
+`e9f0805068a8144a3b3cebaf07803b7090732bfd`
 
-New branch:
-`chat4/qa-secret-debt-localization-v24`
+QA branch:
+`chat4/qa-global-caption-closure-v25`
 
 Task:
-repair the QA workflow only and rerun exact-source executable verification.
+run executable exact-head verification of the two-key global caption closure.
 
-Important runner fix:
-- use Windows PowerShell available on HOME-PC;
-- do not require `pwsh` if it is unavailable.
+Workflow must explicitly checkout:
+`e9f0805068a8144a3b3cebaf07803b7090732bfd`
 
-Required executable proof:
-A. exact v27 checkout:
+Required:
 - exact SHA guard;
 - production firewall;
 - npm ci;
 - typecheck;
 - validate;
 - build;
-- v27 localization focused test;
-- localization/runtime-key adjacency tests.
+- `global-caption-closure-producer-v29.test.ts`;
+- localization/presentation parity adjacency.
 
-B. exact v12 checkout:
-- Secret Debt v12 route suite;
-- ordinary Prostitute separation suite.
-
-Do not mutate frozen v27 or v12.
 No full CI.
+Do not mutate the frozen producer.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT4_SECRET_DEBT_LOCALIZATION_EXACT_HEAD_QA_v24.md`
-
-If green, report:
+If green, document run/job evidence and report:
 `READY_FOR_CHAT2_CONTENT_ASSEMBLY`.
