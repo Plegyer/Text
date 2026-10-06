@@ -1,7 +1,9 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **ACTIVE — AUTO-CONTINUE CAREER PREASSEMBLY ACCEPTANCE v35-v37**
+Status: **START NOW**
 Owner: Chat 4
+
+Do not wait for Leader. Begin/continue the current bundle now and work through all remaining tasks unless a real blocker appears.
 
 Previous Palace QA bundle v32-v34 is complete.
 
