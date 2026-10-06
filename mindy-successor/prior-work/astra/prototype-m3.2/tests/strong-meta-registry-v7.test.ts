@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   STRONG_META_IDS,
+  STRONG_META_KNOWLEDGE_IDS,
   STRONG_META_KEYSTONE_CAPACITY,
   STRONG_META_SPECIALIST_CAPACITY,
   canonicalStrongMetaState,
@@ -18,15 +19,20 @@ import {
 } from '../src/core/strongMeta.ts';
 import {metaRewardSchema} from '../src/core/schema.ts';
 
-test('registry preserves v7 + D40 and adds nine D41 Specialists without changing capacity',()=>{
+test('registry preserves v7/D40/D41 and adds two D39 Specialists without changing capacity',()=>{
   validateStrongMetaRegistry();
-  assert.equal(Object.keys(strongMetaRegistry).length,20);
+  assert.equal(Object.keys(strongMetaRegistry).length,22);
   assert.equal(STRONG_META_KEYSTONE_CAPACITY,1);
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
   assert.equal(strongMetaRegistry[STRONG_META_IDS.palaceCap200].class,'specialist');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.earnedReserveMatch].class,'keystone');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.workRhythm].class,'keystone');
   assert.equal(strongMetaRegistry[STRONG_META_IDS.networkRetainer].class,'keystone');
+  for(const id of [STRONG_META_IDS.palaceSteadyPractice,STRONG_META_IDS.palaceFormalIntroduction]){
+    assert.equal(strongMetaRegistry[id].class,'specialist',id);
+    assert.equal(strongMetaRegistry[id].authority,'D39',id);
+  }
+  assert.equal(Object.hasOwn(strongMetaRegistry,STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod),false);
   for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster])assert.equal(strongMetaRegistry[id].class,'specialist',id);
   for(const id of [STRONG_META_IDS.lumberForewomanLedger,STRONG_META_IDS.lumberForestCompactRoute,STRONG_META_IDS.satyrHouseLedger,STRONG_META_IDS.satyrGuestNetwork,STRONG_META_IDS.farmFieldPreservation,STRONG_META_IDS.farmSupplierAccount,STRONG_META_IDS.tavernHouseLedger,STRONG_META_IDS.tavernSafehouseNetwork,STRONG_META_IDS.hunterMasterKit]){
     assert.equal(strongMetaRegistry[id].class,'specialist',id);
@@ -170,11 +176,23 @@ test('unknown owned stable IDs survive canonicalization without becoming approve
   assert.equal(Object.hasOwn(strongMetaRegistry,'future.route.unknown'),false);
 });
 
-test('content metaReward schema accepts approved v7, D40, and D41 strong Meta reward IDs',()=>{
+test('content metaReward schema accepts approved v7/D39/D40/D41 strong Meta and D39 knowledge IDs',()=>{
   assert.equal(metaRewardSchema.safeParse({
     kind:'strongMeta',
     rewardId:'strong.reward.cap200',
     reward:STRONG_META_IDS.palaceCap200
+  }).success,true);
+
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'strongMeta',
+    rewardId:'strong.reward.d39',
+    reward:STRONG_META_IDS.palaceSteadyPractice
+  }).success,true);
+
+  assert.equal(metaRewardSchema.safeParse({
+    kind:'knowledge',
+    rewardId:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod,
+    knowledge:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod
   }).success,true);
 
   assert.equal(metaRewardSchema.safeParse({

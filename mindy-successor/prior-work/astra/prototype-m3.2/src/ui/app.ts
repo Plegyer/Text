@@ -317,6 +317,8 @@ function explain(c:Condition):string{
  case 'metaUnlock':return fmt(tr('ui.condition.metaUnlock','Наследие {unlock}: {state}'),{unlock:c.unlock,state:c.present?yes():no()});
  case 'metaEndingCompleted':return fmt(tr('ui.condition.metaEndingCompleted','Судьба {ending}: {state}'),{ending:c.ending,state:c.present?tr('ui.condition.state.completed','пройдена'):tr('ui.condition.state.notCompleted','не пройдена')});
  case 'metaHardWork':return fmt(tr('ui.condition.metaHardWork','Тяжкий труд {career}: {state}'),{career:c.career,state:c.present?tr('ui.condition.state.finished','завершён'):tr('ui.condition.state.notFinished','не завершён')});
+ case 'strongMetaKnowledge':return fmt(tr('ui.condition.strongMetaKnowledge','Наследуемое знание {knowledge}: {state}'),{knowledge:c.knowledge,state:c.present?yes():no()});
+ case 'strongMetaFormalIntroductionAvailable':return fmt(tr('ui.condition.formalIntroduction','Формальное представление: {relationship}'),{relationship:relationshipLabel(c.relationship)});
  case 'metric':return `${genericValueLabel(c.key)} ${cmp(c.op,c.value)}`;
  case 'visits':{
   const action=catalog.definitions.actions.find(a=>a.id===c.action);

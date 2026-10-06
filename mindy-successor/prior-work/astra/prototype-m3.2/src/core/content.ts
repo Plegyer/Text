@@ -1,4 +1,4 @@
-import {definitionsSchema,packSchema, type Catalog,type Condition, type Effect, type Definitions, type Pack, type MachineDefinition, type ReactionTrigger} from './schema.ts';
+import {definitionsSchema,ordinaryHardWorkCareers,packSchema, type Catalog,type Condition, type Effect, type Definitions, type Pack, type MachineDefinition, type ReactionTrigger} from './schema.ts';
 
 function unique(ids:string[],label:string){if(new Set(ids).size!==ids.length)throw new Error(`Повтор ID: ${label}`);}
 function visit(c:Condition,fn:(c:Condition)=>void,depth=0){
@@ -42,6 +42,7 @@ function contradictions(conditions:Condition[]){
   }
 }
 
+const ordinaryCareerSet=new Set<string>(ordinaryHardWorkCareers);
 type MachineKind='career'|'quest'|'relationship';
 type MachineMaps={career:Map<string,MachineDefinition>;quest:Map<string,MachineDefinition>;relationship:Map<string,MachineDefinition>};
 
@@ -63,8 +64,14 @@ function checkMachineReference(c:Condition,maps:MachineMaps){
   if(c.kind==='questCounter'||c.kind==='questFact'||c.kind==='questChoice')machineFor(maps,'quest',c.quest);
   if(c.kind==='relationshipStage'){const m=machineFor(maps,'relationship',c.relationship);if(!m.stages.includes(c.stage))throw new Error(`Неизвестный stage relationship.${c.relationship}.${c.stage}`);}
   if(c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')machineFor(maps,'relationship',c.relationship);
+  if(c.kind==='strongMetaFormalIntroductionAvailable'){
+    if(!ordinaryCareerSet.has(c.career))throw new Error(`Formal Introduction requires an ordinary career: ${c.career}`);
+    machineFor(maps,'career',c.career);
+    const relationship=machineFor(maps,'relationship',c.relationship);
+    if(!relationship.transitions.some(t=>t.id===c.transition))throw new Error(`Неизвестный Formal Introduction transition relationship.${c.relationship}.${c.transition}`);
+  }
 }
-function isAdvance(e:Effect){return e.kind==='advanceCareer'||e.kind==='advanceQuest'||e.kind==='advanceRelationship';}
+function isAdvance(e:Effect){return e.kind==='advanceCareer'||e.kind==='advanceQuest'||e.kind==='advanceRelationship'||e.kind==='useStrongMetaFormalIntroduction';}
 function checkEffectReference(e:Effect,maps:MachineMaps){
   if(e.kind==='incrementCareerCounter'||e.kind==='addCareerFact'||e.kind==='setCareerChoice')machineFor(maps,'career',e.career);
   if(e.kind==='advanceCareer'){
@@ -80,6 +87,12 @@ function checkEffectReference(e:Effect,maps:MachineMaps){
   if(e.kind==='advanceRelationship'){
     const m=machineFor(maps,'relationship',e.relationship);
     if(!m.transitions.some(t=>t.id===e.transition))throw new Error(`Неизвестный transition relationship.${e.relationship}.${e.transition}`);
+  }
+  if(e.kind==='useStrongMetaFormalIntroduction'){
+    if(!ordinaryCareerSet.has(e.career))throw new Error(`Formal Introduction requires an ordinary career: ${e.career}`);
+    machineFor(maps,'career',e.career);
+    const m=machineFor(maps,'relationship',e.relationship);
+    if(!m.transitions.some(t=>t.id===e.transition))throw new Error(`Неизвестный Formal Introduction transition relationship.${e.relationship}.${e.transition}`);
   }
 }
 function validateMachine(kind:MachineKind,m:MachineDefinition,maps:MachineMaps,checkConditions:(cs:Condition[])=>void,checkEffects:(es:Effect[])=>void){
@@ -124,6 +137,12 @@ function checkTypedRead(c:Condition,p:Pack){
   if(c.kind==='metaUnlock')needCapability(has(r?.meta,'unlock'),`read meta.unlock`);
   if(c.kind==='metaEndingCompleted')needCapability(has(r?.meta,'endingCompleted'),`read meta.endingCompleted`);
   if(c.kind==='metaHardWork')needCapability(has(r?.meta,'hardWork'),`read meta.hardWork`);
+  if(c.kind==='strongMetaKnowledge')needCapability(has(r?.meta,'strongMetaKnowledge'),`read Strong Meta knowledge`);
+  if(c.kind==='strongMetaFormalIntroductionAvailable'){
+    needCapability(has(r?.meta,'strongMetaFormalIntroduction'),`read Formal Introduction runtime`);
+    needCapability(has(r?.careers,c.career),`read career ${c.career}`);
+    needCapability(has(r?.relationships,c.relationship),`read relationship ${c.relationship}`);
+  }
 }
 function checkTypedWrite(e:Effect,p:Pack){
   const w=p.capabilities?.writes;
@@ -134,7 +153,7 @@ function checkTypedWrite(e:Effect,p:Pack){
   if(e.kind==='setHousing')needCapability(w?.housing===true,'write housing');
   if(e.kind==='incrementCareerCounter'||e.kind==='addCareerFact'||e.kind==='setCareerChoice'||e.kind==='advanceCareer')needCapability(has(w?.careers,e.career),`write career ${e.career}`);
   if(e.kind==='incrementQuestCounter'||e.kind==='addQuestFact'||e.kind==='setQuestChoice'||e.kind==='advanceQuest')needCapability(has(w?.quests,e.quest),`write quest ${e.quest}`);
-  if(e.kind==='incrementRelationshipCounter'||e.kind==='addRelationshipFact'||e.kind==='setRelationshipChoice'||e.kind==='advanceRelationship')needCapability(has(w?.relationships,e.relationship),`write relationship ${e.relationship}`);
+  if(e.kind==='incrementRelationshipCounter'||e.kind==='addRelationshipFact'||e.kind==='setRelationshipChoice'||e.kind==='advanceRelationship'||e.kind==='useStrongMetaFormalIntroduction')needCapability(has(w?.relationships,e.relationship),`write relationship ${e.relationship}`);
   if(e.kind==='addWorldFact'||e.kind==='removeWorldFact')needCapability(has(w?.worldFacts,e.fact),`write worldFact ${e.fact}`);
   if(e.kind==='addNextDayModifier')needCapability(w?.nextDay===true,'write nextDay modifier');
 }
