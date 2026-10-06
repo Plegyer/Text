@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-<title id="title">Tavern guild ending</title><desc id="desc">A tavern table with a ledger, mug, and guild emblem.</desc>
-<rect width="960" height="540" fill="#24302d"/><rect y="340" width="960" height="200" fill="#57422f"/>
-<rect x="210" y="155" width="330" height="190" rx="14" fill="#d8c7a5"/><path d="M375 155v190" stroke="#987b52" stroke-width="6"/>
-<path d="M600 235h82v72h-82z" fill="#c59b55"/><path d="M682 250h28c22 0 22 42 0 42h-28" fill="none" stroke="#c59b55" stroke-width="12"/>
-<circle cx="710" cy="145" r="62" fill="#7f9a82"/><path d="M680 145h60M710 115v60" stroke="#24302d" stroke-width="12" stroke-linecap="round"/>
-</svg>

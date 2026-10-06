@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" data-forest-route="forest.route.logging-road">
-<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#29424a"/><stop offset="1" stop-color="#9a7655"/></linearGradient><radialGradient id="light"><stop stop-color="#efce91" stop-opacity=".5"/><stop offset="1" stop-color="#efce91" stop-opacity="0"/></radialGradient></defs>
-<rect width="1200" height="675" fill="url(#bg)"/><circle cx="650" cy="220" r="325" fill="url(#light)"/>
-<path d="M0 335Q170 220 350 335T720 300T1200 245V675H0Z" fill="#3d6150"/><path d="M0 455Q250 330 520 445T1200 380V675H0Z" fill="#315043"/>
-<g fill="#263f38"><rect x="65" y="130" width="38" height="500"/><circle cx="84" cy="120" r="110"/><rect x="1070" y="115" width="42" height="515"/><circle cx="1090" cy="105" r="130"/></g>
-<path d="M355 675L520 370H675L890 675Z" fill="#a98a64"/><path d="M440 675L560 405H642L790 675Z" fill="#c09a6d" opacity=".7"/>
-<g transform="translate(170 440)"><rect width="255" height="48" rx="24" fill="#76513e"/><circle cx="23" cy="24" r="22" fill="#c69b67"/><circle cx="232" cy="24" r="22" fill="#b88455"/></g>
-<g stroke="#72543f" stroke-width="12"><path d="M860 420l70-70M930 350l65 80"/></g>
-<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/></svg>

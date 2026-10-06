@@ -1,9 +1,0 @@
-course,cost_wu,effects,status
-LiteracyAndNumbers,6,"+4 Reason; +2 Wits",BALANCE_DRAFT
-Arcana,10,"+4 Magic; +4 Reason; +2 Creativity",BALANCE_DRAFT
-RhetoricAndSocial,6,"+3 Charm; +3 Sociability; +2 Wits",BALANCE_DRAFT
-EtiquetteAndPresentation,8,"+3 Manners; +3 Grooming; +2 Charm",BALANCE_DRAFT
-FieldCraft,8,"+3 Dexterity; +3 Wits; +2 Creativity",BALANCE_DRAFT
-PhysicalTraining,8,"+3 Strength; +3 Endurance; +2 Dexterity",BALANCE_DRAFT
-ArtsAndPerformance,10,"+3 Creativity; +3 Charm; +2 Sociability; +2 Dexterity",BALANCE_DRAFT
-BodyConfidence,8,"+3 Sexuality; +3 Grooming; +2 Endurance",BALANCE_DRAFT

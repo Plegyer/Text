@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
- data-presentation-id="job/artist-geisha/shift/winter/default" data-sequence-id="artist-geisha-winter-rehearsal-loop-a" data-frame-index="1" data-frame-count="4" data-loop-duration-ms="3200" data-source-kind="project-owned">
-<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#364251"/><stop offset="1" stop-color="#8b6e74"/></linearGradient><radialGradient id="lamp"><stop stop-color="#efcf9b" stop-opacity=".5"/><stop offset="1" stop-color="#efcf9b" stop-opacity="0"/></radialGradient></defs>
-<rect width="1200" height="675" fill="url(#bg)"/><rect x="90" y="80" width="1020" height="500" rx="18" fill="#4a414b"/><rect x="125" y="115" width="950" height="410" fill="#66535c"/>
-<circle cx="770" cy="270" r="290" fill="url(#lamp)"/><path d="M110 485h980v160H110z" fill="#5a443e"/><path d="M150 520h900" stroke="#b99a82" stroke-width="8" opacity=".55"/>
-<g transform="translate(610 210)"><ellipse cx="18" cy="350" rx="110" ry="20" fill="#1a1a22" opacity=".45"/><circle cx="18" cy="51" r="31" fill="#dfae91"/><path d="M-14 45Q-2 4 45 15L60 47 39 35 18 25Z" fill="#3e3440"/><path d="M-34 102Q18 74 70 103L82 242H-44Z" fill="#8c687f"/><path d="M-28 150L-105 205M65 150L122 195" stroke="#b98aa3" stroke-width="22" stroke-linecap="round"/><path d="M-5 242L-20 340H14L24 265 52 340H84L68 242Z" fill="#554353"/></g>
-<g transform="translate(800 380) rotate(0 0 0)"><path d="M0 0q70-55 120 15-58 45-120 25z" fill="#d0b49a"/><path d="M12 8l92 20M30 0l55 36M55-5l20 45" stroke="#876a62" stroke-width="5"/></g>
-<g fill="#d7e2e8" opacity=".85"><circle cx="190" cy="155" r="5"/><circle cx="330" cy="115" r="4"/><circle cx="995" cy="145" r="5"/><circle cx="885" cy="95" r="4"/></g>
-<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/></svg>

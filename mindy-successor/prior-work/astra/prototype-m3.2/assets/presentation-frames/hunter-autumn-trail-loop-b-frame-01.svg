@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
- data-presentation-id="job/hunter/shift/autumn/default" data-sequence-id="hunter-autumn-trail-loop-b" data-frame-index="1" data-frame-count="4" data-loop-duration-ms="2800" data-source-kind="project-owned">
-<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#39463f"/><stop offset="1" stop-color="#9b6b50"/></linearGradient></defs>
-<rect width="1200" height="675" fill="url(#bg)"/><path d="M0 350Q180 240 365 342T765 305T1200 260V675H0Z" fill="#45594a"/><path d="M0 478Q255 346 525 464T1200 392V675H0Z" fill="#35473d"/><path d="M438 675L560 394H648L810 675Z" fill="#8a7355"/>
-<g transform="translate(255 445)"><path d="M0 75q60-95 120 0" fill="none" stroke="#72523b" stroke-width="13"/><g fill="#a66c43"><circle cx="25" cy="22" r="10"/><circle cx="63" cy="12" r="9"/><circle cx="100" cy="27" r="9"/></g></g>
-<g transform="translate(695 235)"><ellipse cx="20" cy="345" rx="105" ry="19" fill="#152019" opacity=".45"/><circle cx="20" cy="48" r="30" fill="#d9a87e"/><path d="M-12 42Q-2 4 44 14L58 43 38 33 19 24Z" fill="#49373a"/><path d="M-24 92Q18 72 60 93L64 220H-26Z" fill="#60765f"/><path d="M-8 220L-29 332H0L20 248 42 332H71L61 220Z" fill="#333b36"/><path d="M-16 123L-68 191M54 123L104 188" stroke="#d5a57c" stroke-width="14" stroke-linecap="round"/></g>
-<g transform="translate(805 405)"><rect width="88" height="82" rx="12" fill="#715943"/><path d="M18 8q25-35 50 0" fill="none" stroke="#5a4434" stroke-width="9"/><path d="M20 32h48M20 52h39" stroke="#987c59" stroke-width="6"/></g>
-<g fill="#26382f"><rect x="72" y="125" width="38" height="500"/><circle cx="92" cy="112" r="108"/><rect x="1052" y="115" width="40" height="510"/><circle cx="1072" cy="104" r="120"/></g>
-<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/></svg>

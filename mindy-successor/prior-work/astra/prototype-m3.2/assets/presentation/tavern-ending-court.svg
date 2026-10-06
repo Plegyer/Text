@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-<title id="title">Tavern court ending</title><desc id="desc">A sealed invitation beside a tavern mug.</desc>
-<rect width="960" height="540" fill="#2d2940"/><rect y="350" width="960" height="190" fill="#5a3d31"/>
-<rect x="210" y="145" width="390" height="220" rx="12" fill="#e5d8ba"/><path d="M210 145l195 135 195-135" fill="none" stroke="#b8a47f" stroke-width="8"/>
-<circle cx="405" cy="285" r="38" fill="#8e4055"/><path d="M390 285h30M405 270v30" stroke="#e5d8ba" stroke-width="6"/>
-<path d="M665 250h85v72h-85z" fill="#c89d58"/><path d="M750 264h28c22 0 22 42 0 42h-28" fill="none" stroke="#c89d58" stroke-width="12"/>
-</svg>

@@ -1,9 +1,0 @@
-node_modules/
-dist/
-release/
-coverage/
-*.tmp
-*.log
-.DS_Store
-.cache/
-test-artifacts/

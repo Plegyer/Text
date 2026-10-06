@@ -1,8 +1,0 @@
-job,gate,calendar_fallback,theoretical_fresh_earliest_day,starter_3_hardwork_day,mid_meta_fixture_day,late_meta_fixture_day,status
-Tavern,"Charm>=45 AND Sociability>=35",Year2,10,10,6,3,BALANCE_CANDIDATE
-Hunter,"Dexterity>=25 AND Endurance>=20 AND Wits>=15",Year2,22,22,5,2,BALANCE_CANDIDATE
-Guard,"Strength>=30 AND Endurance>=30 AND Manners>=20",Year2,13,13,6,3,BALANCE_CANDIDATE
-Merchant,"Wits>=20 AND Reason>=20 AND Sociability>=15",Year2,21,21,4,2,BALANCE_CANDIDATE
-ArtistGeisha,"Creativity>=35 AND Manners>=25 AND Grooming>=30",Year3,33,32,24,12,BALANCE_CANDIDATE
-Assassin,"Dexterity>=30 AND Wits>=25 AND Reason>=20",Year3,32,32,13,2,BALANCE_CANDIDATE
-Prostitute,"Sexuality>=55 AND Charm>=40 AND Sociability>=35",Year3,31,31,16,10,BALANCE_CANDIDATE

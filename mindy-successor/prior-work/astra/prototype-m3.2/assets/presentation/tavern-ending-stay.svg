@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-<title id="title">Tavern stay ending</title><desc id="desc">A quiet tavern counter with a mug and keys.</desc>
-<rect width="960" height="540" fill="#2b1f1a"/><rect y="330" width="960" height="210" fill="#4a2f24"/>
-<rect x="120" y="140" width="720" height="210" rx="18" fill="#6c4632"/><rect x="160" y="185" width="640" height="115" rx="12" fill="#3b281f"/>
-<path d="M420 250h90v70h-90z" fill="#d1a85b"/><path d="M510 265h32c24 0 24 40 0 40h-32" fill="none" stroke="#d1a85b" stroke-width="14"/>
-<circle cx="610" cy="285" r="16" fill="#d8c6a1"/><path d="M626 285h82m-34 0v25m22-25v18" stroke="#d8c6a1" stroke-width="10" stroke-linecap="round"/>
-</svg>
