@@ -1,37 +1,35 @@
 # CURRENT CHAT5 TASK POINTER
 
-Status: **ACTIVE — PALACE D39 REWARD PRODUCER v20**
+Status: **ACTIVE — PALACE D39 REWARD EXACT-HEAD QA v24**
 Owner: Chat 5
 
-Previous D39 implementation preflight v19 is complete and accepted.
+Previous retired Tavern cleanup exact-head QA v23 is complete and green.
 
-New branch:
-`chat5/palace-d39-reward-producer-v20`
+Producer under verification:
+`chat5/palace-d39-reward-producer-v20@b5ab23a88ee0e18c6250251de15818ff799ff3f6`
 
-Implement the accepted D39 Palace rewards using the existing current Strong Meta / ending transaction architecture.
+QA branch:
+`chat5/qa-palace-d39-reward-v24`
 
-Required rewards:
-1. Service Life -> Steady Practice (Specialist)
-2. Court Power -> Formal Introduction (Specialist)
-3. Inner Truth -> Source Method (automatic knowledge/content, no slot)
+Task:
+run independent exact-head executable verification of the frozen Palace D39 reward producer.
 
-Follow v19 exactly.
+Workflow must explicitly checkout the frozen producer implementation head documented by v20 and verify:
+- exact SHA guard;
+- production firewall;
+- npm ci;
+- typecheck;
+- validate;
+- build;
+- D39 reward lifecycle tests;
+- Strong Meta registry/integration;
+- Palace D23 adjacency;
+- Secret Debt isolation;
+- save/load defaults and future-life activation;
+- Source Method remains automatic knowledge, not Specialist/Keystone.
 
-Requirements:
-- normal Specialist capacity only;
-- no extra Palace slot;
-- no same-life activation after earning;
-- completeEnding grants exactly once;
-- Source Method never appears as Specialist/Keystone/preference;
-- no Palace access bypass;
-- no Secret Debt/Activity/Hard Work gate bypass;
-- no new Product behavior.
-
-Add focused executable tests for reward lifecycle and mechanics.
 No full CI.
+Do not mutate the frozen producer.
 
-Deliver:
-`mindy-successor/docs/tasks/CHAT5_PALACE_D39_REWARD_PRODUCER_v20.md`
-
-Freeze exact SHA and report:
+If green, document exact run/job evidence and report:
 `READY_FOR_CHAT2_ASSEMBLY`.
