@@ -604,3 +604,33 @@ When reporting worker state, distinguish:
 - ERROR = last required check failed and a repair task is needed;
 - DONE = worker finished current task and should immediately receive another task.
 Do not describe a running GitHub Actions check as the worker itself "working".
+
+
+## AUTHORITATIVE LIVE UPDATE — 2026-10-06 SIMPLE STATUS SNAPSHOT
+
+### Chat 2
+- current D42 head: `e93f677da1b4ddcd538422fdbaa4550eb1440e8c`
+- CI #1215 / run `37455213872` was in progress at last check.
+- worker status for user-facing purposes: WAITING FOR CHECK.
+
+### Chat 3
+- current task: `chat3/activity-d38-authored-tag-mapping-v27`
+- branch contains only Leader task commits at last check.
+- user-facing status: NOT STARTED / STANDING.
+
+### Chat 4
+- current task: `chat4/qa-secret-debt-localization-v24`
+- QA retry run `37456034960` in progress at last check.
+- user-facing status: WAITING FOR CHECK.
+
+### Chat 5
+- previous Palace cumulative refresh v21 complete and accepted.
+- current task: `chat5/qa-activity-d38-reward-v22`
+- user-facing status: NEW TASK ASSIGNED.
+
+### Chat 6
+- retired Tavern compatibility audit v30 complete and accepted.
+- current task: `chat6/retired-tavern-localization-cleanup-v31`
+- user-facing status: NEW TASK ASSIGNED.
+
+User communication rule remains: report only works / waits / error / done, and do not call a running GitHub Actions job “the chat working”.
