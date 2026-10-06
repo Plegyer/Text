@@ -1,0 +1,97 @@
+name: Leader1 Chat2 Stage1 Diagnostics v55
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-focused-gate-v54
+    paths:
+      - '.github/workflows/leader1-chat2-stage1-diagnostics-v55.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnostics:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout exact tested Chat2 SHA
+        uses: actions/checkout@v4
+        with:
+          ref: e59478e336b92ce6e56173990c0da107454a78c6
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "e59478e336b92ce6e56173990c0da107454a78c6"
+          $actual = (git rev-parse HEAD).Trim()
+          if ($actual -ne $expected) { throw "Exact-source guard failed: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: npm ci
+
+      - name: Capture typecheck
+        id: typecheck
+        continue-on-error: true
+        shell: powershell
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: |
+          npm run typecheck *>&1 | Tee-Object "$env:RUNNER_TEMP\typecheck-v55.log"
+          exit $LASTEXITCODE
+
+      - name: Capture core phase
+        id: core
+        continue-on-error: true
+        shell: powershell
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: |
+          node --experimental-strip-types --test tests/secret-debt-full-route-v12.test.ts tests/secret-debt-activity-energy-compat-v20.test.ts tests/secret-debt-ending-localization-producer-v27.test.ts tests/prostitute-boundaries.test.ts *>&1 | Tee-Object "$env:RUNNER_TEMP\core-v55.log"
+          exit $LASTEXITCODE
+
+      - name: Write diagnostic summary
+        if: always()
+        shell: powershell
+        run: |
+          $result = [ordered]@{
+            testedSha = "e59478e336b92ce6e56173990c0da107454a78c6"
+            typecheck = "${{ steps.typecheck.outcome }}"
+            core = "${{ steps.core.outcome }}"
+          }
+          $result | ConvertTo-Json | Set-Content -Encoding UTF8 "$env:RUNNER_TEMP\diag-v55.json"
+
+      - name: Checkout evidence branch
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-focused-gate-v54
+          path: evidence-repo
+          persist-credentials: true
+
+      - name: Publish diagnostic evidence
+        if: always()
+        shell: powershell
+        run: |
+          $base = "evidence-repo/mindy-successor/docs/tasks"
+          Copy-Item "$env:RUNNER_TEMP\diag-v55.json" "$base/CHAT2_STAGE1_DIAGNOSTIC_RESULT_v55.json" -Force
+          if (Test-Path "$env:RUNNER_TEMP\typecheck-v55.log") {
+            Copy-Item "$env:RUNNER_TEMP\typecheck-v55.log" "$base/CHAT2_STAGE1_TYPECHECK_v55.log" -Force
+          }
+          if (Test-Path "$env:RUNNER_TEMP\core-v55.log") {
+            Copy-Item "$env:RUNNER_TEMP\core-v55.log" "$base/CHAT2_STAGE1_CORE_v55.log" -Force
+          }
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_DIAGNOSTIC_RESULT_v55.json mindy-successor/docs/tasks/CHAT2_STAGE1_TYPECHECK_v55.log mindy-successor/docs/tasks/CHAT2_STAGE1_CORE_v55.log
+          git commit -m "qa(chat2): publish Stage1 diagnostics v55"
+          git push origin HEAD:leader1/chat2-stage1-focused-gate-v54
