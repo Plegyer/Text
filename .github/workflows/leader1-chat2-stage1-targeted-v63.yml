@@ -1,0 +1,89 @@
+name: Leader1 Chat2 Stage1 Targeted v63
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-targeted-v63
+    paths:
+      - '.github/workflows/leader1-chat2-stage1-targeted-v63.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  targeted:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.before }}
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected="${{ github.event.before }}"
+          $actual=(git rev-parse HEAD).Trim()
+          if($actual -ne $expected){throw "Exact-source guard failed: $actual"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        id: npmci
+        continue-on-error: true
+        run: npm ci
+      - name: Typecheck
+        id: typecheck
+        continue-on-error: true
+        run: npm run typecheck
+      - name: Six repaired regressions
+        id: tests
+        continue-on-error: true
+        run: >
+          node --experimental-strip-types --test
+          tests/chat3-content-depth-v4.test.ts
+          tests/chat3-forest-poverty-parity-v6.test.ts
+          tests/chat3-poverty-promotion-long-run-v11.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
+          tests/poverty-long-run-distribution.test.ts
+          tests/poverty-street-reload.test.ts
+      - name: Write evidence
+        if: always()
+        shell: powershell
+        run: |
+          $result=[ordered]@{
+            testedSha="${{ github.event.before }}"
+            npmCi="${{ steps.npmci.outcome }}"
+            typecheck="${{ steps.typecheck.outcome }}"
+            repairedTests="${{ steps.tests.outcome }}"
+          }
+          $result|ConvertTo-Json|Set-Content -Encoding UTF8 "$env:RUNNER_TEMP\targeted-v63.json"
+      - name: Checkout evidence
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-targeted-v63
+          path: evidence-repo
+          persist-credentials: true
+      - name: Publish evidence
+        if: always()
+        shell: powershell
+        working-directory: .
+        run: |
+          Copy-Item "$env:RUNNER_TEMP\targeted-v63.json" "evidence-repo/mindy-successor/docs/tasks/CHAT2_STAGE1_TARGETED_RESULT_v63.json" -Force
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_TARGETED_RESULT_v63.json
+          git commit -m "qa(chat2): publish Stage1 targeted v63 result"
+          git push origin HEAD:leader1/chat2-stage1-targeted-v63
+      - name: Aggregate
+        if: always()
+        shell: powershell
+        run: |
+          if("${{ steps.npmci.outcome }}" -ne "success" -or "${{ steps.typecheck.outcome }}" -ne "success" -or "${{ steps.tests.outcome }}" -ne "success"){throw "Targeted Stage1 v63 failed."}
