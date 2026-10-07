@@ -141,9 +141,19 @@
       "maxShows": 1,
       "conditions": [
         {
-          "kind": "relationshipStage",
-          "relationship": "assassin.handler",
-          "stage": "introduced"
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "introduced"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "formal-introduced"
+            }
+          ]
         },
         {
           "kind": "relationshipFact",
