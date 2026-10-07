@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.progression",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "palace"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "palace"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.progression.milestone-02-working-rhythm",
+      "title": "Palace — Working Rhythm",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-02-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Two duties are enough to expose a pattern without explaining it. Different Palace desks use the same identifiers, handoff rules, and responsibility marks even when their tasks look unrelated. Whatever the shared system ultimately tracks is still withheld.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-02-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-05-trusted-service",
+      "title": "Palace — Trusted Service",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-05-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Trusted Service brings work that crosses a single desk. The Palace values someone who can follow consequences across roles, not merely perform one specialty. Continuity of service now looks like a real future, while the institution's protected purpose remains outside your clearance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-05-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-08-palace-network",
+      "title": "Palace — Palace Network",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-08-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Palace Network makes authority concrete. Appointments, access, routing, audit, priorities, and formal recognition move work through the institution. Court Power would mean responsibility for those levers—not power over reality itself. The deepest reason for the network is still protected.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-08-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-12-crossroads",
+      "title": "Palace — Crossroads",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 12
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-12-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "At Crossroads, separate authenticated records begin to agree on something ordinary travel cannot explain: arrivals and departures that do not fit the routes recorded around them. The sources corroborate an anomaly without yet proving its mechanism, its cause, or a route home.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-12-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-15-outcome-ready",
+      "title": "Palace — Outcome Ready",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-15-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The full rotation finally names what the earlier fragments served. The Palace Concordance joins authenticated evidence across domains; its protected Threshold Archive records rare crossings at a real inter-world Threshold. Your own arrival is classified among those anomalies. You now know enough to choose a relationship to the Palace, while the original cause of your displacement remains unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "The milestone is acknowledged. Palace progression continues from the already committed stage.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-15-resolved"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
