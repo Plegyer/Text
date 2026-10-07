@@ -1,160 +1,119 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **STAGE 2 - D39 RUNTIME SEMANTIC UNION NOW**
+Status: **STAGE 2 - D39 RUNTIME REPAIR REQUIRED**
 Owner: Chat 2 / sole production assembly + full-CI lane
 
 Work branch:
 `chat2/assembly-palace-d39-d48-current-main-v76`
 
-Exact current base:
-`324502bf103d36730fc73443de239d8466cf703c`
+Exact repair base:
+`5ae81e33e4a699443ea2ac1e33241ba905bb81fb`
 
-Palace v19 is closed on this base. Leader executable evidence:
-- source closure: `7031ebc99af5410a7f515429c3773c2e975f20d2`
-- evidence: `LEADER1_PALACE_V19_CLOSURE_RESULT_v82.json`
-- run `37644658481`: typecheck PASS, validate PASS, build PASS, focused Palace v8-v19 PASS.
+Do not apply D39 live consumers, Strong Meta UI, or D48 in this repair.
 
-Do not redo Palace v19.
+## Why this repair exists
 
-## This task only
+Leader exact-source gate on `5ae81e33e4a699443ea2ac1e33241ba905bb81fb`:
+- run: `37646730445`
+- npm ci: reached successfully
+- typecheck: **FAIL**
+- validate/build/focused tests: not reached
 
-Apply Stage 2 locked step 4:
-**D39 runtime semantic union + canonical Palace ending reward bindings.**
+The failure is a semantic-union defect, not a Palace v19 defect.
 
-Do NOT apply D39 live consumers yet.
-Do NOT apply Strong Meta UI closure yet.
-Do NOT apply D48 yet.
+Leader also repaired the four Palace ending bindings on `5ae81e33e4a699443ea2ac1e33241ba905bb81fb` so they now use the canonical plural `metaRewards` arrays. Preserve that exact repair.
 
-## D39 runtime authority
+## Repair 1 — schema.ts D39 condition union
 
-Accepted producer:
-`chat5/palace-d39-reward-producer-v20`
+Current target imported `approvedStrongKnowledgeIdSchema` and added the Formal Introduction effect/capability IDs, but it omitted D39 condition variants.
 
-Executable implementation head:
-`b28b19628c0374c405cd32afedb0f16c105e2403`
+Add to `Condition`:
+- `{kind:'strongMetaKnowledge';knowledge:string;present:boolean}`
+- `{kind:'strongMetaFormalIntroductionAvailable';career:string;relationship:string;transition:string}`
 
-Producer base:
-`09a97e0deef5bbccdbcdfbc4fc955f59b369345c`
+Add to `conditionSchema`:
+- `strongMetaKnowledge` using `approvedStrongKnowledgeIdSchema`
+- `strongMetaFormalIntroductionAvailable` using typed career/relationship/transition IDs
 
-Read:
-`CHAT5_PALACE_D39_REWARD_PRODUCER_v20.md`
+Accepted authority:
+`chat5/palace-d39-reward-producer-v20@b28b19628c0374c405cd32afedb0f16c105e2403`
 
-The accepted runtime delta is limited to:
-- `src/core/strongMeta.ts`
-- `src/core/schema.ts`
-- `src/core/engine.ts`
-- `src/core/content.ts`
-- two exhaustive fallback cases in `src/ui/app.ts`
-- focused D39/Strong Meta tests
+## Repair 2 — schema.ts knowledge MetaReward
 
-Semantic union only. Never wholesale replace these shared owners from the old producer baseline.
+Current `metaRewardSchema` omits D39 knowledge reward support even though engine handles it.
 
-Preserve all current Stage1 Secret Debt/D51, Palace v15-v19, Night/Activity, current Strong Meta registry entries, and current UI composition.
+Add exactly:
+`{kind:'knowledge', rewardId, knowledge:approvedStrongKnowledgeIdSchema}`
 
-## Locked D39 semantics
+Preserve existing unlock/hardWork/strongMeta variants.
 
-Strong Meta:
-- max 1 Keystone
-- max 2 Specialists
-- no extra/free Palace Specialist slot
-- ordinary Hard Work packages remain outside slots
-- current-run Strong Meta snapshot is immutable
+## Repair 3 — content.ts structural semantic union
 
-Service Life reward:
-`palace.service-life.steady-practice`
-- Specialist
-- first 2 distinct ordinary careers bind at exactly 8 completed shifts
-- each bound career gets exactly 3 qualifying D31 seasonal -1 protections
-- max 6 protected points/run
-- non-D31 stat loss remains real
+Current Chat2 merge corrupted `content.ts` around machine-reference validation:
+- duplicate `isAdvance`
+- duplicate `checkEffectReference`
+- relationship-condition code using `c` was moved into an effect function
+- parts of effect validation are outside their intended function
+- Formal Introduction typed read requirements are incomplete
 
-Court Power reward:
-`palace.court-power.formal-introduction`
-- Specialist
-- 3 uses/run
-- 1 use/relationship ID
-- atomic successful authored transition only
-- failed/invalid transition consumes nothing
-- no generic relationship auto-tagging
+Reconcile this section against accepted producer authority **semantically**, while preserving all current Secret Debt/D51/current-main validation logic.
 
-Inner Truth knowledge:
-`palace.inner-truth.source-method`
-- automatic knowledge
-- slot-free
-- never selectable
-- no same-life activation
-- future run snapshot only
-- no direct resource/progression mechanic
+Required resulting behavior:
+- `checkMachineReference` retains relationshipStage / relationshipCounter / relationshipFact / relationshipChoice validation
+- it additionally validates `strongMetaFormalIntroductionAvailable` career + relationship + transition
+- exactly one `isAdvance`, including `useStrongMetaFormalIntroduction`
+- exactly one `checkEffectReference`
+- `advanceRelationship` validation remains intact
+- `useStrongMetaFormalIntroduction` validates ordinary career, career machine, relationship machine, transition
+- `checkTypedRead` for `strongMetaKnowledge` requires meta capability `strongMetaKnowledge`
+- `checkTypedRead` for `strongMetaFormalIntroductionAvailable` requires:
+  - meta `strongMetaFormalIntroduction`
+  - referenced career read
+  - referenced relationship read
+- `checkTypedWrite` keeps `useStrongMetaFormalIntroduction` under relationship writes
 
-Return Home:
-`palace.true.cap-200`
-- Specialist slot behavior unchanged
+Do NOT wholesale replace current `content.ts`; preserve Secret Debt/D51 and later shared validation.
 
-## Canonical Palace ending bindings
+## Already correct / preserve
 
-In current v19 `content/definitions.json`, apply exactly:
+Do not regress:
+- `strongMeta.ts` registry v4
+- Keystone cap 1
+- Specialist cap 2
+- Steady Practice D39 runtime
+- Formal Introduction D39 runtime
+- Source Method automatic knowledge registry
+- engine D39 runtime transaction implementation
+- app.ts two D39 condition labels
+- Palace v15-v19 behavior
+- exact four Palace `metaRewards` arrays now present on repair base
+- no live consumers yet
 
-`ending.palace.service-life`
--> strongMeta `palace.service-life.steady-practice`
+## Four canonical Palace bindings that MUST remain
 
-`ending.palace.court-power`
--> strongMeta `palace.court-power.formal-introduction`
+- `ending.palace.service-life` -> strongMeta `palace.service-life.steady-practice`
+- `ending.palace.court-power` -> strongMeta `palace.court-power.formal-introduction`
+- `ending.palace.inner-truth` -> knowledge `palace.inner-truth.source-method`
+- `ending.palace.return-home` -> strongMeta `palace.true.cap-200`
 
-`ending.palace.inner-truth`
--> knowledge `palace.inner-truth.source-method`
-
-`ending.palace.return-home`
--> strongMeta `palace.true.cap-200`
-
-Use canonical D39 transaction lifecycle. Do not use generic unlocks and do not create a Palace-specific grant path.
-
-## Compatibility rules
-
-Preserve:
-- schema-6 compatibility/defaults
-- protected profile merge behavior
-- exactly-once permanent ownership
-- reward grant only at `completeEnding`
-- no same-life activation
-- Palace mechanics/content/presentation unchanged
-- the three repaired Palace outcome capability reads
-- Secret Debt/D51 state and validators
-- current `src/ui/app.ts` Palace + Secret Debt + Night/Activity composition
-
-If the target already has later Strong Meta IDs that producer v20 lacks, union them; never erase them.
+Do not reintroduce singular `metaReward`.
 
 ## Verification
 
-Run on the exact resulting Chat2 head:
+Run if executable environment is available:
 1. `npm ci`
 2. `npm run typecheck`
 3. `npm run validate`
 4. `npm run build`
-5. focused:
-   - `tests/palace-d39-reward-producer-v20.test.ts`
-   - `tests/strong-meta-registry-v7.test.ts`
-   - `tests/strong-meta-engine-integration-v7.test.ts`
-   - `tests/ending-meta.test.ts`
-   - `tests/palace-d23-consumer-integration-v8.test.ts`
-   - Palace v15/v16/v18/v19 focused tests
-   - Secret Debt separation smoke
+5. focused D39 + Palace + Secret Debt bundle from the previous pointer
 
-Do NOT run Stage2 full CI yet.
+If environment is unavailable, report NOT RUN and exact SHA. Leader will run exact-source Actions.
 
-If runner is unavailable, do not fabricate green. Report exact head for Leader executable QA.
+Do not run Stage2 full CI yet.
 
-## Stop condition
+## Stop marker
 
 Stop at:
-`D39_RUNTIME_READY_FOR_LIVE_CONSUMERS`
+`D39_RUNTIME_REPAIR_READY_FOR_LEADER`
 
-Report:
-- exact head SHA
-- files changed
-- Strong Meta registry version/counts/capacities
-- proof of four exact Palace metaReward bindings
-- proof Source Method is automatic/slot-free
-- proof current-run snapshot remains immutable
-- proof no same-life activation
-- verification results
-- confirmation that D39 live consumer content was NOT applied.
+Report exact head, changed files, proof the four bindings remain canonical, and whether checks ran.
