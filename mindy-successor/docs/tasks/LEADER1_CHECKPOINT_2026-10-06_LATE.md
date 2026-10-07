@@ -593,3 +593,54 @@ At this checkpoint diagnostic evidence has not yet been published.
 Do not merge Stage1.
 Do not run another full CI before the concrete failing tests are classified/repaired.
 User should keep the self-hosted GitHub runner PowerShell window open.
+
+
+## 2026-10-07 — STAGE 1 CLOSED
+
+Stage 1 scope:
+- Secret Debt v12
+- D51 compatibility
+- current-main poverty/Secret Debt regression adaptation
+- exact localization recovery
+
+Final production merge:
+`main@ff1dfe3ec3554eaecf068de655e7473dd3387b63`
+
+Pre-merge exact candidate:
+`chat2/assembly-secret-debt-d51-current-main-recovery-v2@c79090173f83945a71d31bb21a1eb4780feef174`
+
+Evidence:
+- targeted v63: PASS
+- focused v64: PASS
+- full CI v65: PASS
+- exact-main CI v67: PASS
+
+Exact-main evidence:
+`leader1/stage1-exact-main-ci-v67`
+`mindy-successor/docs/tasks/STAGE1_EXACT_MAIN_CI_RESULT_v67.json`
+
+Exact-main result:
+- testedMainSha = `ff1dfe3ec3554eaecf068de655e7473dd3387b63`
+- npm ci = PASS
+- full CI = PASS
+
+Stage 1 is CLOSED.
+Broad burn-down is now **4**.
+
+Next stage:
+**Stage 2 — Palace + D39 + D48 / Strong Meta UI composition**
+
+Locked Stage 2 order:
+1. Palace v18 selective composition onto current main
+2. Chat4 narrow Palace capability/test-typing repair
+3. Palace v19
+4. D39 runtime semantic union
+5. D39 live consumers
+6. Strong Meta UI
+7. D48 overlay
+8. focused gate
+9. Chat2 full CI
+10. Leader merge
+11. exact-main CI
+
+Do not start Chat3/4/5/6 peripheral work before Palace v18 produces a concrete blocker/head.
