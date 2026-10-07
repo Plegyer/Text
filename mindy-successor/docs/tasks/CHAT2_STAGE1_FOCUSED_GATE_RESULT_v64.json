@@ -1,0 +1,14 @@
+﻿{
+    "testedSha":  "c79090173f83945a71d31bb21a1eb4780feef174",
+    "npmCi":  "success",
+    "typecheck":  "success",
+    "validate":  "success",
+    "build":  "success",
+    "core":  "success",
+    "night":  "success",
+    "activity":  "success",
+    "strongmeta":  "success",
+    "palace":  "success",
+    "localization":  "success",
+    "povertySecretDebt":  "success"
+}
