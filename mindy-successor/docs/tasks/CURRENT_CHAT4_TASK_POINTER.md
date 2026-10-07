@@ -1,20 +1,32 @@
 # CURRENT CHAT4 TASK POINTER
 
-Status: **START NOW — LEGACY / D46 / D47 RELEASE DRY-RUN v61-v62**
+Status: **STAGE 2 — PALACE v18 NARROW REPAIR NOW**
 Owner: Chat 4
 
-Previous legacy release evidence v59-v60 is accepted.
+Work branch:
 
-Current branch:
-`chat4/legacy-release-dryrun-v61`
+`chat4/stage2-palace-v18-narrow-repair-v73`
+
+Exact frozen base:
+
+`ed76c89829541c955e4129d6e0114c0d2fe7e562`
 
 Task:
-`mindy-successor/docs/tasks/CHAT4_LEGACY_RELEASE_DRYRUN_v61_v62_TASK.md`
 
-This is intentionally lightweight.
-Read compact handoffs only; do not reread giant manifests unless one exact field needs verification.
+`CHAT4_STAGE2_PALACE_V18_NARROW_REPAIR_v73.md`
 
-No production changes. No full CI. Do not merge main.
+Scope is ONLY:
 
-Expected final:
-`BUNDLE_COMPLETE — READY_FOR_D46_D47_LEGACY_RELEASE_DRYRUN`.
+1. add exactly three missing outcome-ready facts to Palace outcome-finalize read capabilities;
+2. strict typing adaptation in historical Palace tests.
+
+No mechanics changes.
+No Palace v19.
+No D39.
+No Strong Meta UI.
+No D48.
+No main merge.
+
+Stop at:
+
+`PALACE_V18_REPAIR_READY_FOR_CHAT2`
