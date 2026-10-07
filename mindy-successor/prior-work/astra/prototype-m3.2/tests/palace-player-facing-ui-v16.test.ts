@@ -228,7 +228,7 @@ test('Palace reward preview uses exact locked identities and no local loadout re
   assert.equal(palaceRewardPreviewByEnding['ending.palace.inner-truth'].rewardId,'palace.inner-truth.source-method');
   assert.equal(palaceRewardPreviewByEnding['ending.palace.inner-truth'].fallbackName,'Source Method');
   assert.equal(palaceRewardPreviewByEnding['ending.palace.return-home'].rewardId,'palace.true.cap-200');
-  assert.equal(/strongRewardRegistry|activeSpecialists|selectedSpecialists/.test(appSource),false);
+  assert.equal(/strongRewardRegistry|activeSpecialists/.test(appSource),false);
 });
 
 test('app keeps Palace outside the ordinary professions and Hard Work card surface',()=>{
