@@ -4261,6 +4261,148 @@
         }
       ],
       "mode": "normal"
+    },
+    {
+      "id": "secret-debt.hidden-work",
+      "label": "Secret Debt: hidden work",
+      "description": "Perform one bound daytime shift. The wage uses the D44 capped formula and the shift never raises Lust.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "secretDebtStatus",
+          "value": "bound"
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "spring",
+          "text": "A constrained spring shift is completed under the debt arrangement. You keep the work procedural and separate from any question of consent.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "spring"
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "summer",
+          "text": "The summer shift is physically wearing and leaves less room for detached analysis, but the work remains a paid daytime transaction.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "summer"
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "autumn",
+          "text": "An autumn hidden shift ends with the same ledger entry as any other: work completed, wage recorded, no intimacy inferred.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "autumn"
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "winter",
+          "text": "The winter shift is isolating and socially narrowing, while the wage remains tied to the same bounded D44 formula.",
+          "conditions": [
+            {
+              "kind": "calendarSeason",
+              "value": "winter"
+            }
+          ],
+          "media": []
+        },
+        {
+          "id": "default",
+          "text": "A hidden daytime shift is completed under the active debt route. It is paid work and does not change Lust.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "secret-debt.repay",
+      "label": "Secret Debt: repay 20000",
+      "description": "Pay the full principal in one explicit action. Partial repayment is never offered.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "secretDebtStatus",
+          "value": "bound"
+        },
+        {
+          "kind": "resource",
+          "resource": "money",
+          "op": "gte",
+          "value": 20000
+        }
+      ],
+      "effects": [],
+      "mode": "story"
+    },
+    {
+      "id": "secret-debt.takeover",
+      "label": "Secret Debt: take control",
+      "description": "Use the explicit D44 control route only after the complete hidden-work, build, Lust and paid-School requirements are met.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "secretDebtStatus",
+          "value": "bound"
+        },
+        {
+          "kind": "secretDebtShifts",
+          "op": "gte",
+          "value": 75
+        },
+        {
+          "kind": "stat",
+          "stat": "endurance",
+          "op": "gte",
+          "value": 75
+        },
+        {
+          "kind": "stat",
+          "stat": "sexuality",
+          "op": "gte",
+          "value": 75
+        },
+        {
+          "kind": "stat",
+          "stat": "wits",
+          "op": "gte",
+          "value": 35
+        },
+        {
+          "kind": "lust",
+          "op": "gte",
+          "value": 30
+        },
+        {
+          "kind": "schoolPaidLessons",
+          "op": "gte",
+          "value": 10
+        }
+      ],
+      "effects": [],
+      "mode": "story"
     }
   ],
   "endings": [
@@ -6095,6 +6237,71 @@
         }
       ],
       "epilogue": "Prostitute Network / Protection route completed. Final authored epilogue remains presentation-owned."
+    },
+    {
+      "id": "ending.secret-debt.paid-freedom",
+      "title": "Paid Freedom",
+      "description": "The full 20000 principal has been repaid and the debt route has been exited.",
+      "conditions": [
+        {
+          "kind": "secretDebtStatus",
+          "value": "paid-freedom"
+        }
+      ],
+      "reward": "secret-debt.paid-freedom.earned-reserve-match",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "secret-debt.paid-freedom.earned-reserve-match",
+          "reward": "secret-debt.paid-freedom.earned-reserve-match"
+        }
+      ],
+      "epilogue": "The debt is closed by payment. Future lives remember the Earned Reserve Match ownership seam."
+    },
+    {
+      "id": "ending.secret-debt.bound-life",
+      "title": "Bound Life",
+      "description": "Fifty hidden daytime shifts have been completed while the debt remains active.",
+      "conditions": [
+        {
+          "kind": "secretDebtStatus",
+          "value": "bound"
+        },
+        {
+          "kind": "secretDebtShifts",
+          "op": "gte",
+          "value": 50
+        }
+      ],
+      "reward": "secret-debt.bound-life.work-rhythm",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "secret-debt.bound-life.work-rhythm",
+          "reward": "secret-debt.bound-life.work-rhythm"
+        }
+      ],
+      "epilogue": "You choose the Bound Life outcome after surviving the hidden-work rhythm. Future lives remember the Work Rhythm ownership seam."
+    },
+    {
+      "id": "ending.secret-debt.takeover",
+      "title": "Takeover",
+      "description": "The explicit control action has resolved the debt route through the D44 Takeover build.",
+      "conditions": [
+        {
+          "kind": "secretDebtStatus",
+          "value": "takeover"
+        }
+      ],
+      "reward": "secret-debt.takeover.network-retainer",
+      "metaRewards": [
+        {
+          "kind": "strongMeta",
+          "rewardId": "secret-debt.takeover.network-retainer",
+          "reward": "secret-debt.takeover.network-retainer"
+        }
+      ],
+      "epilogue": "You leave the route in control rather than in debt. Future lives remember the Network Retainer ownership seam."
     }
   ],
   "careers": [
