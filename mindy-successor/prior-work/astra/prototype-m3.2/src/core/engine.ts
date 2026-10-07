@@ -1576,6 +1576,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
+  const ordinaryCareer=ordinaryCareerForShiftAction(a);
   if(a.id===SECRET_DEBT_HIDDEN_WORK_ACTION_ID){
     const result=applySecretDebtHiddenShiftMutable(s);
     log(s,`Заработано: ${result.wage} монет.`);
@@ -1588,14 +1589,27 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }else{
     applyActionEffectsMutable(s,a.effects,cat);
   }
-  if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
+  if(ordinaryCareer){
+    const completedShifts=readDomainState(s,'career',ordinaryCareer,cat)?.counters.completed_shifts??0;
+    s.run.strongMetaRuntime=bindSteadyPracticeCareer({
+      snapshot:s.run.strongMetaSnapshot,
+      runtime:s.run.strongMetaRuntime,
+      career:ordinaryCareer,
+      completedShifts
+    });
+  }
+  if(a.seasonal){
+    const seasonal=a.seasonal[calendar(s.run.day).season];
+    if(ordinaryCareer)applySteadyPracticeSeasonalEffectsMutable(s,seasonal,cat,ordinaryCareer);
+    else applyEffectsMutable(s,seasonal,cat,true);
+  }
   let ordinaryWage=0;
   if(a.wage){
     const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
     ordinaryWage=wage;
   }
-  if(ordinaryCareerForShiftAction(a)){
+  if(ordinaryCareer){
     const matchBonus=applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,false);
     if(matchBonus>0)log(s,`Strong Meta: заработанный резерв добавил ${matchBonus} монет.`);
   }

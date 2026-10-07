@@ -415,11 +415,18 @@ test('D39 reward ownership remains an explicit external seam rather than a dupli
   assert.equal(palaceRewardIntegrationSeams['ending.palace.inner-truth'].rewardId,'palace.inner-truth.source-method');
   assert.equal(palaceRewardIntegrationSeams['ending.palace.return-home'].rewardId,'palace.true.cap-200');
 
+  const expectedMetaRewards={
+    'ending.palace.service-life':[{kind:'strongMeta',rewardId:'palace.service-life.steady-practice',reward:'palace.service-life.steady-practice'}],
+    'ending.palace.court-power':[{kind:'strongMeta',rewardId:'palace.court-power.formal-introduction',reward:'palace.court-power.formal-introduction'}],
+    'ending.palace.inner-truth':[{kind:'knowledge',rewardId:'palace.inner-truth.source-method',knowledge:'palace.inner-truth.source-method'}],
+    'ending.palace.return-home':[{kind:'strongMeta',rewardId:'palace.true.cap-200',reward:'palace.true.cap-200'}]
+  } as const;
+
   for(const endingId of Object.keys(palaceRewardIntegrationSeams)){
     const ending=catalog.definitions.endings.find(item=>item.id===endingId);
     assert.ok(ending,endingId);
     assert.equal(ending.reward,palaceRewardIntegrationSeams[endingId as keyof typeof palaceRewardIntegrationSeams].rewardId,endingId);
-    assert.deepEqual(ending.metaRewards,[],endingId);
+    assert.deepEqual(ending.metaRewards,expectedMetaRewards[endingId as keyof typeof expectedMetaRewards],endingId);
   }
 });
 
