@@ -360,6 +360,82 @@ export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:Action
 }
 
 
+function palaceActionVariant(a:Action,s:Save,cat:Catalog){
+  return a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((left,right)=>right.conditions.length-left.conditions.length)[0];
+}
+
+function executePalaceStructuralDutyMutable(s:Save,a:Action,cat:Catalog){
+  const definition=palaceDutyDefinition(a.id);
+  if(!definition||!palaceStructuralDutyAvailable(s,a.id))throw new Error('Эта Palace duty сейчас недоступна.');
+  if(s.run.dayState.energyCurrent<PALACE_STRUCTURAL_DUTY_ENERGY_COST)throw new Error('Не хватает Energy для Palace duty.');
+
+  const before=cloneSave(s);
+  const beforeMetrics={...s.run.metrics};
+  const palace=s.run.progression.palace;
+  const wage=palaceStructuralWage(s);
+
+  s.run.dayState.energyCurrent-=PALACE_STRUCTURAL_DUTY_ENERGY_COST;
+  s.run.resources.money=Math.min(1_000_000,s.run.resources.money+wage);
+  palace.counters[PALACE_DUTY_COUNTER]=definition.ordinal;
+  palace.shifts=definition.ordinal;
+  palace.lastStructuralDutyDay=s.run.calendar.elapsedDays;
+  palace.committedDutyIds.push(definition.id);
+
+  if(definition.transition)applyTransition(s,'career','palace',definition.transition,cat);
+
+  s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
+  s.run.historyState.dayActionCount=Math.min(1000,s.run.historyState.dayActionCount+1);
+  log(s,`Заработано: ${wage} монет.`);
+  log(s,`${a.label}. Осталось энергии: ${s.run.dayState.energyCurrent}.`);
+
+  const variant=palaceActionVariant(a,s,cat);
+  s.run.flow.lastAction={
+    id:a.id,
+    title:a.label,
+    text:variant?.text??a.description,
+    media:variant?.media??['stage.town'],
+    presentationId:presentationIdForActionResult(cat,a.id,variant?.media??['stage.town']),
+    deltas:delta(beforeMetrics,s.run.metrics)
+  };
+
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'actionCompleted',action:a.id}],true);
+}
+
+function executePalaceSupportMutable(s:Save,a:Action,cat:Catalog){
+  const definition=palaceSupportDefinition(a.id);
+  if(!definition||!palaceSupportActionAvailable(s,a.id))throw new Error('Это Palace support action сейчас недоступно.');
+  if(s.run.dayState.energyCurrent<PALACE_SUPPORT_ENERGY_COST)throw new Error('Не хватает Energy для Palace support.');
+
+  const before=cloneSave(s);
+  const beforeMetrics={...s.run.metrics};
+  const palace=s.run.progression.palace;
+
+  s.run.dayState.energyCurrent-=PALACE_SUPPORT_ENERGY_COST;
+  palace.lastSupportActionDay=s.run.calendar.elapsedDays;
+  palace.completedSupportIds.push(definition.id);
+  addUnique(palace.facts,definition.id);
+  if(definition.writesPrep)markPalaceRoutePrepared(s,definition.route);
+
+  s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
+  s.run.historyState.dayActionCount=Math.min(1000,s.run.historyState.dayActionCount+1);
+  log(s,`${a.label}. Осталось энергии: ${s.run.dayState.energyCurrent}.`);
+
+  const variant=palaceActionVariant(a,s,cat);
+  s.run.flow.lastAction={
+    id:a.id,
+    title:a.label,
+    text:variant?.text??a.description,
+    media:variant?.media??['stage.town'],
+    presentationId:presentationIdForActionResult(cat,a.id,variant?.media??['stage.town']),
+    deltas:delta(beforeMetrics,s.run.metrics)
+  };
+
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'actionCompleted',action:a.id}],true);
+}
+
+
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
