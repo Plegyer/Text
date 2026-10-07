@@ -98,14 +98,6 @@ function checkEffectReference(e:Effect,maps:MachineMaps){
 function validateMachine(kind:MachineKind,m:MachineDefinition,maps:MachineMaps,checkConditions:(cs:Condition[])=>void,checkEffects:(es:Effect[])=>void){
   unique(m.stages,`${kind}.${m.id} stages`);
   unique(m.transitions.map(t=>t.id),`${kind}.${m.id} transitions`);
-  if(e.kind==='advanceRelationship'){
-    const m=machineFor(maps,'relationship',e.relationship);
-    if(!m.transitions.some(t=>t.id===e.transition))throw new Error(`Неизвестный transition relationship.${e.relationship}.${e.transition}`);
-  }
-}
-function validateMachine(kind:MachineKind,m:MachineDefinition,maps:MachineMaps,checkConditions:(cs:Condition[])=>void,checkEffects:(es:Effect[])=>void){
-  unique(m.stages,`${kind}.${m.id} stages`);
-  unique(m.transitions.map(t=>t.id),`${kind}.${m.id} transitions`);
   if(!m.stages.includes(m.initialStage))throw new Error(`Initial stage отсутствует: ${kind}.${m.id}.${m.initialStage}`);
   for(const t of m.transitions){
     for(const from of t.from)if(!m.stages.includes(from))throw new Error(`Неизвестный from stage ${kind}.${m.id}.${from}`);
