@@ -1,0 +1,62 @@
+name: Chat4 Palace v18 narrow repair QA v73
+
+on:
+  push:
+    branches:
+      - chat4/stage2-palace-v18-narrow-repair-v73
+    paths:
+      - '.github/workflows/chat4-palace-v18-narrow-repair-v73.yml'
+  workflow_dispatch:
+
+jobs:
+  exact-repair:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact repair tree
+        uses: actions/checkout@v4
+        with:
+          ref: 5a33f34ad0805d2a476f98ee45707ef93773a074
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "5a33f34ad0805d2a476f98ee45707ef93773a074"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Exact repair guard failed: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Build
+        run: npm run build
+
+      - name: Focused Palace v8 v15 v16 v18
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
