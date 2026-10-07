@@ -1,0 +1,24 @@
+﻿{
+    "schemaVersion":  1,
+    "id":  "leader1.palace-v18-repair-closure.v75",
+    "status":  "PASS",
+    "sourceSha":  "116b40651610a03c4d720bd8bafc7efbf17bb274",
+    "chat4RepairSourceSha":  "5a33f34ad0805d2a476f98ee45707ef93773a074",
+    "frozenBaseSha":  "ed76c89829541c955e4129d6e0114c0d2fe7e562",
+    "checks":  {
+                   "typecheck":  "PASS",
+                   "validate":  "PASS",
+                   "build":  "PASS",
+                   "focusedPalace":  "PASS"
+               },
+    "focusedFiles":  [
+                         "tests/palace-d23-consumer-integration-v8.test.ts",
+                         "tests/palace-rich6-runtime-v15.test.ts",
+                         "tests/palace-player-facing-ui-v16.test.ts",
+                         "tests/palace-player-facing-ui-renderer-v16.test.ts",
+                         "tests/palace-prince-narrative-producer-v18.test.ts",
+                         "tests/palace-prince-narrative-renderer-v18.test.ts"
+                     ],
+    "note":  "Chat4 repair plus Leader test-only selector disambiguation; no production mechanics change.",
+    "runId":  "37642074223"
+}
