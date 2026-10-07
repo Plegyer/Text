@@ -42,3 +42,18 @@ Stop at:
 `PALACE_V18_READY_FOR_CHAT4_REPAIR`
 
 Do not merge main.
+
+
+## LIVE UNBLOCK
+
+Localization is already resolved by Leader1.
+
+Do not touch/rebuild `content/localization.json` in this tranche.
+
+Current branch localization blob:
+`0f2a0ef46e68379b654227a0dd35c81417e3795c`
+
+Exact union manifest:
+`CHAT2_PALACE_LOCALIZATION_UNION_v70.json`
+
+Continue v15 -> v16 -> v18 reconstruction on the remaining owners.
