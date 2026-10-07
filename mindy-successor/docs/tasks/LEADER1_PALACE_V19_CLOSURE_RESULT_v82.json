@@ -1,0 +1,18 @@
+﻿{
+    "schemaVersion":  1,
+    "id":  "leader1.palace-v19-closure.v82",
+    "status":  "PASS",
+    "sourceSha":  "7031ebc99af5410a7f515429c3773c2e975f20d2",
+    "originalV19Sha":  "1e7c1459f673b4e8756b07245f80a98bbe7ed177",
+    "repairs":  [
+                    "v19 test catalog typing",
+                    "historical v8/v18 prose assertion compatibility"
+                ],
+    "checks":  {
+                   "typecheck":  "PASS",
+                   "validate":  "PASS",
+                   "build":  "PASS",
+                   "focusedPalaceV8V19":  "PASS"
+               },
+    "runId":  "37644658481"
+}
