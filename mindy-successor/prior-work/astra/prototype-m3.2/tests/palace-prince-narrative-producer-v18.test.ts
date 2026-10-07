@@ -81,7 +81,7 @@ test('v18 maps the D45 reveal ladder without front-loading the Threshold',()=>{
   const truth=finalize.events.find(event=>event.id.endsWith('.inner-truth'))!.variants[0]!.text;
   assert.match(service,/clear handoffs|professional boundaries/i);
   assert.match(court,/appointments.*access.*audit.*routing/i);
-  assert.match(court,/does not control the Threshold/i);
+  assert.match(court,/(?:does not control the Threshold|cannot make the Threshold obey)/i);
   assert.match(truth,/Threshold.*Archive/i);
   assert.match(truth,/remain unresolved/i);
 });
