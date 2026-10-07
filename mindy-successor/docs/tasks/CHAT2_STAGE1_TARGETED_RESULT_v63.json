@@ -1,0 +1,6 @@
+﻿{
+    "testedSha":  "c79090173f83945a71d31bb21a1eb4780feef174",
+    "npmCi":  "success",
+    "typecheck":  "success",
+    "repairedTests":  "success"
+}
