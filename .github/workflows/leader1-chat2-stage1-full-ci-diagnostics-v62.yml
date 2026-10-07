@@ -1,0 +1,71 @@
+name: Leader1 Chat2 Stage1 Full CI Diagnostics v62
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-full-ci-v60
+    paths:
+      - '.github/workflows/leader1-chat2-stage1-full-ci-diagnostics-v62.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose-built-tests:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 63e28896260887ed753b7fba0ea29949d73c2ebb
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected="63e28896260887ed753b7fba0ea29949d73c2ebb"
+          $actual=(git rev-parse HEAD).Trim()
+          if($actual -ne $expected){throw "Exact-source guard failed: $actual"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: npm ci
+      - name: Build
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: npm run build
+      - name: Capture npm test after build
+        id: tests
+        continue-on-error: true
+        shell: powershell
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+        run: |
+          npm test *>&1 | Tee-Object "$env:RUNNER_TEMP\full-ci-built-tests-v62.log"
+          exit $LASTEXITCODE
+      - name: Checkout evidence branch
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-full-ci-v60
+          path: evidence-repo
+          persist-credentials: true
+      - name: Publish diagnostic log
+        if: always()
+        shell: powershell
+        run: |
+          $base="evidence-repo/mindy-successor/docs/tasks"
+          Copy-Item "$env:RUNNER_TEMP\full-ci-built-tests-v62.log" "$base/CHAT2_STAGE1_FULL_CI_BUILT_TESTS_v62.log" -Force
+          $summary=[ordered]@{
+            testedSha="63e28896260887ed753b7fba0ea29949d73c2ebb"
+            build="success"
+            npmTest="${{ steps.tests.outcome }}"
+          }
+          $summary|ConvertTo-Json|Set-Content -Encoding UTF8 "$base/CHAT2_STAGE1_FULL_CI_DIAGNOSTIC_v62.json"
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_FULL_CI_BUILT_TESTS_v62.log mindy-successor/docs/tasks/CHAT2_STAGE1_FULL_CI_DIAGNOSTIC_v62.json
+          git commit -m "qa(chat2): publish built test diagnostics v62"
+          git push origin HEAD:leader1/chat2-stage1-full-ci-v60
