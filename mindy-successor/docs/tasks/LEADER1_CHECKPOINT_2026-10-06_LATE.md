@@ -644,3 +644,29 @@ Locked Stage 2 order:
 11. exact-main CI
 
 Do not start Chat3/4/5/6 peripheral work before Palace v18 produces a concrete blocker/head.
+
+
+## 2026-10-07 — Stage2 Palace localization connector blocker resolved
+
+Chat2 correctly stopped because `fetch_file` returned empty content for the ~900k localization file.
+
+Leader1 used `fetch_blob` on current Stage1 localization blob `c180f641844d0094ebd533d8939d0339469baadf` and recovered the full file.
+
+Exact historical localization union from pre-v15 base to accepted v18:
+- 202 keys changed
+- 198 added
+- 4 modified
+- 0 removed
+- 0 conflicts with current Stage1 localization
+
+Manifest:
+`CHAT2_PALACE_LOCALIZATION_UNION_v70.json`
+
+Applied on Chat2 work branch only:
+`d61dd0abdf4bd93e6376df8adab39dc262beee7b`
+
+Verified resulting blob:
+`0f2a0ef46e68379b654227a0dd35c81417e3795c`
+with 202/202 Palace exact and 0 non-Palace changes.
+
+Stage2 burn-down remains 4.
