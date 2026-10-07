@@ -567,3 +567,29 @@ Worker lane status:
 Do not start new peripheral Chat3/4/5/6 work until Stage1 full CI disposition is known.
 
 Broad burn-down remains **5** until Leader1 merges the exact Stage1 candidate to main and exact-main CI is green.
+
+
+## 2026-10-07 — Stage1 full CI v60 failed; diagnostic v61 running
+
+Exact Stage1 candidate:
+`63e28896260887ed753b7fba0ea29949d73c2ebb`
+
+Focused gate v59 is fully green.
+
+Full CI v60 evidence:
+`CHAT2_STAGE1_FULL_CI_RESULT_v60.json`
+- npm ci: PASS
+- full CI (`npm run check`): FAIL
+
+Because focused v59 already proved typecheck/validate/build green on the same exact SHA, Leader1 launched a narrow diagnostic on the same candidate:
+- QA branch: `leader1/chat2-stage1-full-ci-v60`
+- workflow: `leader1-chat2-stage1-full-ci-diagnostics-v61.yml`
+- action: `npm test` only, with full log persisted to GitHub
+- expected evidence:
+  - `CHAT2_STAGE1_FULL_CI_DIAGNOSTIC_v61.json`
+  - `CHAT2_STAGE1_FULL_CI_TESTS_v61.log`
+
+At this checkpoint diagnostic evidence has not yet been published.
+Do not merge Stage1.
+Do not run another full CI before the concrete failing tests are classified/repaired.
+User should keep the self-hosted GitHub runner PowerShell window open.
