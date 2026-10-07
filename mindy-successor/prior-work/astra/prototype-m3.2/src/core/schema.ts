@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import {approvedStrongRewardIdSchema,strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema} from './strongMeta.ts';
+import {approvedStrongKnowledgeIdSchema,approvedStrongRewardIdSchema,strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema} from './strongMeta.ts';
 
 export const stats = ['strength','endurance','dexterity','reason','magic','creativity','wits','charm','sociability','manners','grooming','sexuality'] as const;
 export const legacyStats = ['strength','endurance','dexterity','perception','intelligence','magic','empathy','persuasion','composure','organization','lust'] as const;
@@ -150,6 +150,7 @@ export const effectSchema = z.discriminatedUnion('kind',[
   z.object({kind:z.literal('addRelationshipFact'),relationship:id,fact:id}).strict(),
   z.object({kind:z.literal('setRelationshipChoice'),relationship:id,choice:id,value:textId}).strict(),
   z.object({kind:z.literal('advanceRelationship'),relationship:id,transition:id}).strict(),
+  z.object({kind:z.literal('useStrongMetaFormalIntroduction'),career:id,relationship:id,transition:id}).strict(),
 
   z.object({kind:z.literal('addWorldFact'),fact:id}).strict(),
   z.object({kind:z.literal('removeWorldFact'),fact:id}).strict(),
@@ -202,7 +203,7 @@ const capabilityReads=z.object({
   relationships:z.array(id).optional(),
   activities:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
-  meta:z.array(z.enum(['unlock','endingCompleted','hardWork'])).optional()
+  meta:z.array(z.enum(['unlock','endingCompleted','hardWork','strongMetaKnowledge','strongMetaFormalIntroduction'])).optional()
 }).strict();
 const capabilityWrites=z.object({
   stats:z.array(z.enum(stats)).optional(),
