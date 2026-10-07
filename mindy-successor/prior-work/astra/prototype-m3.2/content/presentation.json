@@ -3715,6 +3715,158 @@
         "alt": "A voluntary private-space continuation with the recurring client.",
         "altKey": "presentation.static.prostitute.night.client-private.alt"
       }
+    },
+    "job/palace/event/palace-invitation-day1-arrival/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Neutral town backdrop for a Palace invitation scene.",
+        "altKey": "presentation.static.palace.invitation.alt"
+      }
+    },
+    "job/palace/event/palace-invitation-reveal/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Neutral town backdrop for a Palace invitation scene.",
+        "altKey": "presentation.static.palace.invitation.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-02-working-rhythm/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-05-trusted-service/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-08-palace-network/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "job/palace/event/palace-outcome-finalize-service-life/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "job/palace/event/palace-outcome-finalize-court-power/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "ending/palace/service-life": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "ending/palace/court-power": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior backdrop for a Palace administrative scene.",
+        "altKey": "presentation.static.palace.service.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-12-crossroads/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior accompanying a Threshold Archive scene.",
+        "altKey": "presentation.static.palace.archive.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-15-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior accompanying a Threshold Archive scene.",
+        "altKey": "presentation.static.palace.archive.alt"
+      }
+    },
+    "job/palace/event/palace-outcome-finalize-inner-truth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior accompanying a Threshold Archive scene.",
+        "altKey": "presentation.static.palace.archive.alt"
+      }
+    },
+    "ending/palace/inner-truth": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior accompanying a Threshold Archive scene.",
+        "altKey": "presentation.static.palace.archive.alt"
+      }
+    },
+    "location/town/palace/confront-prince/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior for a conversation with the Custodian.",
+        "altKey": "presentation.static.palace.custodian.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-01-audit-record/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior for a conversation with the Custodian.",
+        "altKey": "presentation.static.palace.custodian.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-02-name-contradiction/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior for a conversation with the Custodian.",
+        "altKey": "presentation.static.palace.custodian.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-03-define-boundary/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior for a conversation with the Custodian.",
+        "altKey": "presentation.static.palace.custodian.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-04-reconstruct-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Neutral interior for a conversation with the Custodian.",
+        "altKey": "presentation.static.palace.custodian.alt"
+      }
+    },
+    "ending/palace/return-home": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Neutral town backdrop for the Return Home choice.",
+        "altKey": "presentation.static.palace.return-home.alt"
+      }
     }
   }
 }
