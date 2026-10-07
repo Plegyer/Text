@@ -30,8 +30,14 @@ Rule: read this file, then re-query live GitHub refs before acting. Exact source
   - npm ci / typecheck / validate / build: PASS
   - focused D39 live-consumer bundle: 114/114 PASS
   - evidence: `LEADER1_D39_LIVE_CONSUMER_CLOSURE_RESULT_v91.json`
-- [ ] **Strong Meta UI composition — CURRENT ITEM**
-- [ ] D48 Palace media overlay
+- [x] Strong Meta UI composition
+  - accepted source: `63081de1641362b7b2b06202b7a09e554caa8ecf`
+  - production UI source: `5c1cecf31c9d7ac240bb96e4701ec6818e6830a4`
+  - run: `37658731567` SUCCESS
+  - npm ci / typecheck / validate / build: PASS
+  - focused Strong Meta UI + adjacency: 65/65 PASS
+  - evidence: `LEADER1_STRONG_META_UI_CLOSURE_RESULT_v93.json`
+- [ ] **D48 Palace media overlay — CURRENT ITEM**
 - [ ] Stage 2 focused gate
 - [ ] Chat2 Stage 2 full CI
 - [ ] Leader production merge to `main`
@@ -53,13 +59,13 @@ Branch:
 `chat2/assembly-palace-d39-d48-current-main-v76`
 
 Accepted production source before current item:
-`c58ea7e64f1f1b08ca9d5e70384fe41a0d9dff38`
+`63081de1641362b7b2b06202b7a09e554caa8ecf`
 
-Current control-plane tip after assigning Strong Meta UI:
-`76b86819ce92781633aa7a83fe9c59b2b86be698`
+Current control-plane tip after assigning D48:
+`0d66e0b0f7db194185771dd05533ca5e0e8bfb4c`
 
 Current worker status:
-- Chat2: Strong Meta UI assigned; requires explicit/manual user resume before calling it active
+- Chat2: D48 assigned; requires explicit/manual user resume before calling it active
 - Chat3: stands
 - Chat4: done / stands
 - Chat5: stands
@@ -67,32 +73,36 @@ Current worker status:
 
 Never say a worker is active only because a pointer exists.
 
-## Current item — Strong Meta UI composition
+## Current item — D48 Palace media overlay
 
 Frozen implementation authority:
-`chat6/strong-meta-ui-closure-v42@fac645878ebd726f50fd1364ac72414796755a2d`
-
-Implementation boundary before v42/v43 code:
-`ce6753d482968581b0c2945f4b7c05b41a5d6e58`
-
-Selective implementation delta only:
-- `src/ui/app.ts`
-- `content/localization.json`
-- `tests/strong-meta-player-ui-v42.test.ts`
-- `tests/modal-aria-localization-v43.test.ts`
-- `tests/strong-meta-ui-localization-v42-v43.test.ts`
-
-Semantic union only. Never wholesale replace current `src/ui/app.ts` or `content/localization.json`.
-
-Stop marker:
-`STRONG_META_UI_READY_FOR_D48`
-
-## Locked next authority
-
-D48:
 `chat6/palace-d48-media-producer-v48@e0277dc302df178e73184bf1623d0e91e5237b45`
 
-Do not apply D48 before Strong Meta UI is accepted.
+Producer seed:
+`ee3ea8581f890bc7e5e6ed148e74f5a73b9398c7`
+
+Selective implementation delta only:
+- four project-owned Palace SVG masters;
+- `content/presentation.json`;
+- `content/localization.json`;
+- `tests/palace-d48-media-v50.test.ts`.
+
+Semantic union only. Never wholesale replace presentation/localization.
+
+Locked composition:
+- exactly 17 Palace v19 slots receive D48 overlays;
+- both invitation slots remain on `assets/stage-town.svg`;
+- exactly 8 D48 localization rows;
+- no non-Palace D48 mappings;
+- no mechanics/runtime changes.
+
+Stop marker:
+`D48_READY_FOR_STAGE2_FOCUSED_GATE`
+
+## Locked next step
+
+After D48 executable acceptance:
+**Stage 2 focused gate**, then Chat2 Stage 2 full CI, Leader production merge, exact-main CI.
 
 ## Governance that must not drift
 

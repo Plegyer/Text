@@ -11,4 +11,4 @@ Old handoffs/checkpoints are archive and may contain stale active-status prose.
 Current broad burn-down: **4**
 
 Current critical path:
-**Stage 2 — Strong Meta UI composition**
+**Stage 2 — D48 Palace media overlay**

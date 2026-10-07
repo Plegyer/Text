@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "leader1.strong-meta-ui-closure.v93",
+  "status": "PASS",
+  "sourceSha": "63081de1641362b7b2b06202b7a09e554caa8ecf",
+  "productionUiSourceSha": "5c1cecf31c9d7ac240bb96e4701ec6818e6830a4",
+  "frozenAuthoritySha": "fac645878ebd726f50fd1364ac72414796755a2d",
+  "previousRun": {
+    "runId": "37658205479",
+    "status": "FAIL",
+    "reason": "stale Palace v16 test rejected accepted selectedSpecialists UI helper"
+  },
+  "repair": "one test-only Palace v16 compatibility assertion",
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "validate": "PASS",
+    "build": "PASS",
+    "focusedStrongMetaUiAdjacency": "PASS",
+    "focusedTests": "65/65 PASS"
+  },
+  "runId": "37658731567"
+}
