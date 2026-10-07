@@ -1,0 +1,92 @@
+name: Leader1 Chat2 Stage1 Full CI v65
+
+on:
+  push:
+    branches:
+      - leader1/chat2-stage1-full-ci-v65
+    paths:
+      - '.github/workflows/leader1-chat2-stage1-full-ci-v65.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  full-ci:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact Chat2 candidate
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.before }}
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected="${{ github.event.before }}"
+          $actual=(git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if($actual -ne $expected){throw "Exact-source guard failed: $actual"}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        id: npmci
+        continue-on-error: true
+        run: npm ci
+
+      - name: Full CI
+        id: check
+        continue-on-error: true
+        run: npm run check
+
+      - name: Write evidence
+        if: always()
+        shell: powershell
+        run: |
+          $result=[ordered]@{
+            testedSha="${{ github.event.before }}"
+            workflowSha="${{ github.sha }}"
+            npmCi="${{ steps.npmci.outcome }}"
+            fullCi="${{ steps.check.outcome }}"
+          }
+          $result|ConvertTo-Json|Set-Content -Encoding UTF8 "$env:RUNNER_TEMP\full-ci-v65.json"
+
+      - name: Checkout evidence branch
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/chat2-stage1-full-ci-v65
+          path: evidence-repo
+          persist-credentials: true
+
+      - name: Publish evidence
+        if: always()
+        shell: powershell
+        working-directory: .
+        run: |
+          Copy-Item "$env:RUNNER_TEMP\full-ci-v65.json" "evidence-repo/mindy-successor/docs/tasks/CHAT2_STAGE1_FULL_CI_RESULT_v65.json" -Force
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/CHAT2_STAGE1_FULL_CI_RESULT_v65.json
+          git commit -m "qa(chat2): publish Stage1 full CI v65 result"
+          git push origin HEAD:leader1/chat2-stage1-full-ci-v65
+
+      - name: Aggregate
+        if: always()
+        shell: powershell
+        run: |
+          if("${{ steps.npmci.outcome }}" -ne "success" -or "${{ steps.check.outcome }}" -ne "success"){
+            throw "Stage1 full CI v65 failed."
+          }
