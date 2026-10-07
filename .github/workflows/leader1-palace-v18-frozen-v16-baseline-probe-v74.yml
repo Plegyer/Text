@@ -41,5 +41,8 @@ jobs:
       - name: npm ci
         run: npm ci
 
-      - name: Frozen v16 renderer probe
+      - name: Build
+        run: npm run build
+
+      - name: Capability-only v16 renderer probe
         run: node --experimental-strip-types --test tests/palace-player-facing-ui-renderer-v16.test.ts
