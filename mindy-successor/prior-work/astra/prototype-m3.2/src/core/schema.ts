@@ -56,6 +56,8 @@ export type Condition =
   | {kind:'metaUnlock';unlock:string;present:boolean}
   | {kind:'metaEndingCompleted';ending:string;present:boolean}
   | {kind:'metaHardWork';career:string;present:boolean}
+  | {kind:'strongMetaKnowledge';knowledge:string;present:boolean}
+  | {kind:'strongMetaFormalIntroductionAvailable';career:string;relationship:string;transition:string}
   // M3.2 migration leaves. Do not author new target content with these.
   | {kind:'metric';key:Metric;op:CompareOp;value:number}
   | {kind:'visits';action:string;value:number}
@@ -110,6 +112,8 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('metaUnlock'),unlock:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('metaEndingCompleted'),ending:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('metaHardWork'),career:id,present:z.boolean()}).strict(),
+  z.object({kind:z.literal('strongMetaKnowledge'),knowledge:approvedStrongKnowledgeIdSchema,present:z.boolean()}).strict(),
+  z.object({kind:z.literal('strongMetaFormalIntroductionAvailable'),career:id,relationship:id,transition:id}).strict(),
 
   z.object({kind:z.literal('metric'),key:metricEnum,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('visits'),action:id,value:n}).strict(),
@@ -435,7 +439,8 @@ export type OrdinaryHardWorkCareer=typeof ordinaryHardWorkCareers[number];
 export const metaRewardSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('unlock'),rewardId:rewardId,unlock:id}).strict(),
   z.object({kind:z.literal('hardWork'),rewardId:rewardId,career:z.enum(ordinaryHardWorkCareers)}).strict(),
-  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:approvedStrongRewardIdSchema}).strict()
+  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:approvedStrongRewardIdSchema}).strict(),
+  z.object({kind:z.literal('knowledge'),rewardId:rewardId,knowledge:approvedStrongKnowledgeIdSchema}).strict()
 ]);
 export type MetaReward=z.infer<typeof metaRewardSchema>;
 
