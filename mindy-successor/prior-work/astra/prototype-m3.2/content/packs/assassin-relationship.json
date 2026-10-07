@@ -10,6 +10,9 @@
       ],
       "relationships": [
         "assassin.handler"
+      ],
+      "meta": [
+        "strongMetaFormalIntroduction"
       ]
     },
     "writes": {
@@ -85,6 +88,27 @@
               "kind": "addRelationshipFact",
               "relationship": "assassin.handler",
               "fact": "introduced-at-work"
+            }
+          ]
+        },
+        {
+          "id": "formal-introduction",
+          "label": "Use Formal Introduction",
+          "text": "Use the inherited professional introduction to make contact without granting trust or route progress.",
+          "conditions": [
+            {
+              "kind": "strongMetaFormalIntroductionAvailable",
+              "career": "assassin",
+              "relationship": "assassin.handler",
+              "transition": "formal-introduction"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "useStrongMetaFormalIntroduction",
+              "career": "assassin",
+              "relationship": "assassin.handler",
+              "transition": "formal-introduction"
             }
           ]
         }
