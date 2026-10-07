@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 
 import {dispatch,energyMax,parseSave} from '../src/core/engine.ts';
 import {catalog,started} from './helpers.ts';
+import {SECRET_DEBT_LENDER_EVENT_ID} from '../src/core/secretDebt.ts';
 
 const streetPack=JSON.parse(readFileSync('content/packs/poverty-street-production.json','utf8'));
 const EVENT_ID='poverty-street-production.pressure-winter';
@@ -84,6 +85,9 @@ test('street event history and cooldown persist across reload into the next Nigh
   s=dispatch(s,{type:'chooseLodging',id:'lodging.street'},catalog);
 
   assert.notEqual(s.run.pending?.eventId,EVENT_ID);
+  if(s.run.pending?.eventId===SECRET_DEBT_LENDER_EVENT_ID){
+    s=dispatch(s,{type:'choice',id:'refuse'},catalog);
+  }
   assert.deepEqual(s.run.history[EVENT_ID],history);
   assert.equal(s.run.flow.night?.phase,'VoluntaryNightChoice');
 });
