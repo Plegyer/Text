@@ -318,3 +318,34 @@ Freeze the cumulative v18 assembled SHA and report:
 Include exact changed files and gate results.
 
 Do not proceed to v19, D39, Strong Meta UI or D48 before Leader1 clears the Chat4 repair.
+
+
+## Leader1 localization unblock v70
+
+The large-file connector issue is resolved.
+
+Current Stage-1 localization source was read by blob SHA:
+`c180f641844d0094ebd533d8939d0339469baadf`
+
+Exact Palace cumulative localization union was derived from historical pre-v15 base -> accepted v18:
+- total Palace keys changed: **202**
+- added: **198**
+- modified: **4**
+- removed: **0**
+- conflicts against current Stage-1 localization: **0**
+
+Manifest:
+`CHAT2_PALACE_LOCALIZATION_UNION_v70.json`
+
+Leader1 already applied this union to the Chat2 work branch:
+commit `d61dd0abdf4bd93e6376df8adab39dc262beee7b`
+
+Resulting localization blob:
+`0f2a0ef46e68379b654227a0dd35c81417e3795c`
+
+Verification:
+- Palace authority mismatches: **0**
+- changes outside Palace key set: **0**
+
+Chat2 must **not redo or replace localization** during v15/v16/v18 reconstruction.
+Continue with schema/engine/palace/definitions/app and direct-add Palace-only files.
