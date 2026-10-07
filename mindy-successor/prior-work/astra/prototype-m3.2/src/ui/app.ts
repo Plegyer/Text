@@ -569,6 +569,84 @@ function endingPresentationState(endingId:string){
  if(r.endings.eligible.includes(endingId))return 'eligible' as const;
  return 'locked' as const;
 }
+function palaceRouteLabel(route:string){
+ return tr(`ui.palace.route.${route}.label`,route);
+}
+function palaceRouteStateLabel(routeState:string){
+ return tr(`ui.palace.routeState.${routeState}`,routeState);
+}
+function palaceWorkPanelHTML(){
+ const model=palacePlayerUiModel(state);
+ if(!model)return '';
+ const stage=careerStageLabel('palace',model.stage);
+ const dutyStatus=model.outcomeReady
+  ?tr('ui.palace.duty.complete','Структурная служба завершена.')
+  :model.structuralDutyUsedToday
+   ?tr('ui.palace.duty.usedToday','Сегодняшняя структурная обязанность уже выполнена.')
+   :tr('ui.palace.duty.availableToday','Сегодня можно выполнить одну структурную обязанность.');
+ const supportStatus=model.supportUsedToday
+  ?tr('ui.palace.support.usedToday','Сегодняшнее действие поддержки уже использовано.')
+  :tr('ui.palace.support.availableToday','Сегодня можно выполнить одно доступное действие поддержки.');
+ const routes=model.routes.map(route=>{
+  const label=palaceRouteLabel(route.route);
+  const routeState=palaceRouteStateLabel(route.state);
+  return `<li data-palace-route="${esc(route.route)}" tabindex="0" aria-label="${esc(fmt(tr('ui.palace.routeAria','Маршрут {route}: {state}.'),{route:label,state:routeState}))}"><strong>${esc(label)}</strong>: <span data-palace-route-state="${esc(route.state)}">${esc(routeState)}</span></li>`;
+ }).join('');
+ const nextDuty=model.nextDutyId?actionList([model.nextDutyId]):'';
+ const supportActions=model.availableSupportIds.length?actionList(model.availableSupportIds):'';
+ const outcome=model.outcomeReady
+  ?`<p class="palace-outcome-ready" role="status">${esc(tr('ui.palace.outcomeReady','Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.'))}</p>`
+  :'';
+ const revealedTerms=model.outcomeReady
+  ?`<section class="palace-revealed-terms" data-palace-reveal="outcome-ready" aria-label="${esc(tr('ui.palace.revealTerms.title','Что установлено'))}">
+    <h4>${esc(tr('ui.palace.revealTerms.title','Что установлено'))}</h4>
+    <dl>
+      <dt>${esc(tr('ui.palace.term.concordance.label','Дворцовый Свод'))}</dt><dd>${esc(tr('ui.palace.term.concordance.description','Порядок, который сопоставляет проверенные сведения из разных дворцовых областей.'))}</dd>
+      <dt>${esc(tr('ui.palace.term.thresholdArchive.label','Архив Порога'))}</dt><dd>${esc(tr('ui.palace.term.thresholdArchive.description','Защищённые записи о редких переходах между мирами.'))}</dd>
+      <dt>${esc(tr('ui.palace.term.threshold.label','Порог'))}</dt><dd>${esc(tr('ui.palace.term.threshold.description','Реальная межмировая граница; её существование не делает этот мир менее реальным.'))}</dd>
+      <dt>${esc(tr('ui.palace.term.custodian.label','Хранитель'))}</dt><dd>${esc(tr('ui.palace.term.custodian.description','Должность Принца, отвечающая за финальный доступ и хранение; сама должность не доказывает исключительное право на истину.'))}</dd>
+    </dl>
+   </section>`
+  :'';
+ const confrontation=model.princeDefeated
+  ?`<section class="palace-confrontation" data-palace-confrontation="completed"><h4>${esc(tr('ui.palace.confrontation.title','Спор с Принцем'))}</h4><p role="status">${esc(tr('ui.palace.confrontation.complete','Мандат Хранителя оспорен: подтверждённый след происхождения больше нельзя отвергнуть исключительным вето. Возвращение домой остаётся отдельным явным выбором судьбы.'))}</p></section>`
+  :model.princeConfrontationAvailable
+   ?`<section class="palace-confrontation" data-palace-confrontation="ready"><h4>${esc(tr('ui.palace.confrontation.title','Спор с Принцем'))}</h4><p>${esc(tr('ui.palace.confrontation.ready','Все условия выполнены. Можно предъявить записи Дворца и оспорить исключительное вето Хранителя; это не бой и не автоматический выбор Возвращения домой.'))}</p>${actionList(['palace.confront-prince'])}</section>`
+   :'';
+ const dutyEconomy=model.nextDutyId
+  ?`<p class="palace-duty-economy"><strong>${esc(tr('ui.palace.dutyCostLabel','Стоимость обязанности'))}:</strong> ${model.structuralDutyEnergyCost} ${esc(tr('ui.work.energy','энергии'))} · <strong>${esc(tr('ui.palace.wagePreviewLabel','Доход этой обязанности'))}:</strong> ${model.wagePreview} ${esc(tr('ui.work.coins','монет'))}</p>`
+  :'';
+ const summaryAria=fmt(tr('ui.palace.summaryAria','Дворец: этап {stage}; структурные обязанности {count} из {total}.'),{stage,count:model.dutyCount,total:model.dutyTotal});
+ return `<section class="career-progress palace-progress" data-palace-access="granted" data-palace-stage="${esc(model.stage)}" tabindex="0" aria-label="${esc(summaryAria)}">
+  <h3>${esc(tr('ui.palace.title','Дворец'))}</h3>
+  <p class="palace-access"><strong>${esc(tr('ui.palace.accessLabel','Доступ'))}:</strong> ${esc(tr('ui.palace.accessGranted','открыт в этой жизни'))}</p>
+  <p class="palace-stage"><strong>${esc(tr('ui.palace.stageLabel','Этап'))}:</strong> ${esc(stage)}</p>
+  <p class="palace-duty-progress" data-palace-duty-progress="${model.dutyCount}/${model.dutyTotal}"><strong>${esc(tr('ui.palace.dutyProgressLabel','Структурные обязанности'))}:</strong> ${esc(fmt(tr('ui.palace.dutyProgress','{count} / {total}'),{count:model.dutyCount,total:model.dutyTotal}))}</p>
+  <p class="palace-duty-lock" data-palace-duty-used-today="${model.structuralDutyUsedToday?'true':'false'}">${esc(dutyStatus)}</p>
+  ${dutyEconomy}
+  ${outcome}
+  ${revealedTerms}
+  ${model.nextDutyId?`<h4>${esc(tr('ui.palace.nextDutyTitle','Следующая структурная обязанность'))}</h4>${nextDuty}`:''}
+  <div class="palace-support" data-palace-support-used-today="${model.supportUsedToday?'true':'false'}">
+   <h4>${esc(tr('ui.palace.supportTitle','Поддержка и подготовка исходов'))}</h4>
+   <p>${esc(supportStatus)} ${esc(fmt(tr('ui.palace.supportCost','Стоимость: {energy} энергии · оплата: 0 монет · счётчик обязанностей не меняется.'),{energy:model.supportEnergyCost}))}</p>
+   ${routes?`<ul class="palace-route-list">${routes}</ul>`:''}
+   ${supportActions}
+  </div>
+  ${confrontation}
+ </section>`;
+}
+function genericEndingCardHTML(e:Catalog['definitions']['endings'][number]){
+ const presentationState=endingPresentationState(e.id);
+ const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);
+ return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}">
+  <span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span>
+  <h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3>
+  <p>${esc(tr(`ending.${e.id}.description`,e.description))}</p>
+  <small>${e.conditions.map(condition=>`${meets(condition,state,catalog)?'✓':'○'} ${esc(explain(condition))}`).join(' · ')}</small>
+  <button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button>
+ </article>`;
+}
 function palaceEndingRewardHTML(endingId:PalaceEndingId){
  const reward=palaceRewardPreviewByEnding[endingId];
  const name=tr(reward.nameKey,reward.fallbackName);
@@ -584,8 +662,37 @@ function palaceEndingRewardHTML(endingId:PalaceEndingId){
   <p>${esc(note)}</p>
  </div>`;
 }
+function palaceEligibleEndingsHTML(){
+ const model=palacePlayerUiModel(state);
+ if(!model)return '';
+ const cards=model.eligibleEndingIds.map(id=>{
+  const ending=catalog.definitions.endings.find(item=>item.id===id);
+  if(!ending)return '';
+  const title=tr(`ending.${ending.id}.title`,ending.title);
+  const description=tr(`ending.${ending.id}.description`,ending.description);
+  const presentationState=endingPresentationState(id);
+  const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);
+  const trueFlag=id==='ending.palace.return-home'?' data-palace-true-ending="runtime-eligible"':'';
+  const returnHomeNote=id==='ending.palace.return-home'
+   ?`<p class="palace-return-home-explicit" data-palace-return-home-commit="explicit">${esc(tr('ui.palace.returnHome.explicitCommit','Спор с Принцем завершён, но возвращение не происходит автоматически. Выберите эту судьбу явно, только если хотите уйти в исходный мир.'))}</p>`
+   :'';
+  return `<article class="ending palace-ending" data-ending-id="${esc(id)}" data-ending-state="${presentationState}"${trueFlag} tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${title} — ${stateLabel}`}))}">
+   <span class="ending-state">${esc(stateLabel)}</span>
+   <h3>${esc(title)}</h3>
+   <p>${esc(description)}</p>
+   ${returnHomeNote}
+   ${palaceEndingRewardHTML(id)}
+   <button data-ending="${esc(id)}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button>
+  </article>`;
+ }).join('');
+ const empty=cards?'':`<p class="palace-ending-empty">${esc(tr('ui.palace.endings.noneReady','Дворцовые судьбы появятся здесь только после выполнения их реальных условий.'))}</p>`;
+ return `<section class="palace-endings" data-palace-endings="eligible-only">
+  <h3>${esc(tr('ui.palace.endings.title','Дворцовые судьбы'))}</h3>
+  ${empty}${cards}
+ </section>`;
+}
 function panelContent(){
- if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}${state.run.secretDebt.status==='bound'?`<h3>${esc(tr('ui.secretDebt.hiddenWorkTitle','Скрытая работа по долгу'))}</h3><p>${esc(tr('ui.secretDebt.hiddenWorkHelp','Обычные профессии временно закрыты, но оплачиваемая скрытая смена доступна за 1 Energy.'))}</p>${actionList(['secret-debt.hidden-work'])}`:''}`;
+ if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}${palaceWorkPanelHTML()}${state.run.secretDebt.status==='bound'?`<h3>${esc(tr('ui.secretDebt.hiddenWorkTitle','Скрытая работа по долгу'))}</h3><p>${esc(tr('ui.secretDebt.hiddenWorkHelp','Обычные профессии временно закрыты, но оплачиваемая скрытая смена доступна за 1 Energy.'))}</p>${actionList(['secret-debt.hidden-work'])}`:''}`;
  if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
  if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','hunter.expedition'])}${activityEntryList(['assassin.infiltration'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>${esc(tr('ui.sleep.title','Ночь'))}</h2><p>${esc(tr('ui.sleep.help','Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.'))}</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>${esc(tr('ui.sleep.startButton','Начать ночную последовательность'))}</button>`;
