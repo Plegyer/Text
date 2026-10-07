@@ -25,11 +25,13 @@ import {
 import {
   ordinaryHardWorkCareers,
   stats,
+  type Pack,
   type Save
 } from '../src/core/schema.ts';
 import {catalog,rawPacks} from './helpers.ts';
 
 const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
+const packs=rawPacks as Pack[];
 const all=[...ordinaryHardWorkCareers];
 
 function allocateTen(input:Save){
@@ -383,8 +385,8 @@ test('bound-like final Energy is spent normally and Palace leaves next-day penal
 });
 
 test('milestone and finalize packs use latched exactly-once standard resolver primitives',()=>{
-  const milestone=rawPacks.find(pack=>pack.id==='palace.progression');
-  const finalize=rawPacks.find(pack=>pack.id==='palace.outcome-finalize');
+  const milestone=packs.find(pack=>pack.id==='palace.progression');
+  const finalize=packs.find(pack=>pack.id==='palace.outcome-finalize');
   assert.ok(milestone);
   assert.ok(finalize);
 
@@ -425,7 +427,7 @@ test('Palace remains outside ordinary Hard Work and no hardWork:palace is introd
   assert.equal((ordinaryHardWorkCareers as readonly string[]).includes('palace'),false);
   const serialized=JSON.stringify({
     endings:catalog.definitions.endings.filter(ending=>ending.id.startsWith('ending.palace.')),
-    palace:catalog.definitions.careers.find(career=>career.id==='palace')
+    palace:(catalog.definitions.careers??[]).find(career=>career.id==='palace')
   }).toLowerCase();
   assert.equal(serialized.includes('hardwork:palace'),false);
 });
