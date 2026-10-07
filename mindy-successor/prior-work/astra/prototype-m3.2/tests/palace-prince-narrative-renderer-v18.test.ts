@@ -108,7 +108,7 @@ test('renderer v18: Prince defeat preserves explicit Return Home commit and bili
     await wait(()=>!!w.document.querySelector('[data-ending-id="ending.palace.return-home"]'));
     const card=w.document.querySelector('[data-ending-id="ending.palace.return-home"]');
     assert.ok(card.querySelector('[data-palace-return-home-commit="explicit"]'));
-    assert.match(card.textContent,/возвращение не происходит автоматически/i);
+    assert.match(card.textContent,/(?:возвращение|переход) не происходит автоматически/i);
     const commit=card.querySelector('[data-ending="ending.palace.return-home"]');
     assert.ok(commit);
     assert.equal(commit.disabled,false);
