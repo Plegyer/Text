@@ -1,4 +1,4 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap, createDefaultPalaceProgressionState } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
@@ -24,7 +24,19 @@ import {
   validateStrongMetaRuntimeAgainstSnapshot,
   type ApprovedStrongRewardId
 } from './strongMeta.ts';
-import {markPalaceCreationQualification} from './palace.ts';
+import {
+  PALACE_DUTY_COUNTER,
+  PALACE_STRUCTURAL_DUTY_ENERGY_COST,
+  PALACE_SUPPORT_ENERGY_COST,
+  assertPalaceProgressionState,
+  markPalaceCreationQualification,
+  markPalaceRoutePrepared,
+  palaceDutyDefinition,
+  palaceStructuralDutyAvailable,
+  palaceStructuralWage,
+  palaceSupportActionAvailable,
+  palaceSupportDefinition
+} from './palace.ts';
 import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';import {
   SECRET_DEBT_LENDER_EVENT_ID,
   SECRET_DEBT_HIDDEN_WORK_ACTION_ID,
@@ -230,11 +242,16 @@ function domainMap(s:Save,kind:DomainKind):Record<string,DomainState>{
   return (kind==='career'?s.run.progression.careers:kind==='quest'?s.run.progression.quests:s.run.progression.relationships) as Record<string,DomainState>;
 }
 function readDomainState(s:Save,kind:DomainKind,id:string,cat?:Catalog):DomainState|undefined{
+  if(kind==='career'&&id==='palace')return s.run.progression.palace;
   const existing=domainMap(s,kind)[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)return undefined;
   return {stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
 }
 function ensureDomainState(s:Save,kind:DomainKind,id:string,cat:Catalog):DomainState{
+  if(kind==='career'&&id==='palace'){
+    if(!machineDefinition(cat,kind,id))throw new Error('Неизвестная career state machine: palace');
+    return s.run.progression.palace;
+  }
   const map=domainMap(s,kind),existing=map[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)throw new Error(`Неизвестная ${kind} state machine: ${id}`);
   const created={stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
@@ -326,6 +343,8 @@ function ordinaryCareerDomainForAction(action:Action):OrdinaryHardWorkCareer|nul
 
 export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
   const normalGateSatisfied=eligible(action.conditions,s,cat);
+  if(palaceDutyDefinition(action.id))return normalGateSatisfied&&palaceStructuralDutyAvailable(s,action.id);
+  if(palaceSupportDefinition(action.id))return normalGateSatisfied&&palaceSupportActionAvailable(s,action.id);
   const domainCareer=ordinaryCareerDomainForAction(action);
   const domainLocked=secretDebtBound(s)||(options.ordinaryCareersDomainLocked??false);
   if(domainCareer&&domainLocked)return false;
@@ -369,7 +388,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
-      progression:{careers:{},quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
+      progression:{careers:{},palace:createDefaultPalaceProgressionState(),quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
       endings:{eligible:[],committed:null,result:null},
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
