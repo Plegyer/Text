@@ -62,17 +62,14 @@ function checkMachineReference(c:Condition,maps:MachineMaps){
   if(c.kind==='careerShifts'||c.kind==='careerCounter'||c.kind==='careerFact'||c.kind==='careerChoice')machineFor(maps,'career',c.career);
   if(c.kind==='questStage'){const m=machineFor(maps,'quest',c.quest);if(!m.stages.includes(c.stage))throw new Error(`Неизвестный stage quest.${c.quest}.${c.stage}`);}
   if(c.kind==='questCounter'||c.kind==='questFact'||c.kind==='questChoice')machineFor(maps,'quest',c.quest);
+  if(c.kind==='relationshipStage'){const m=machineFor(maps,'relationship',c.relationship);if(!m.stages.includes(c.stage))throw new Error(`Неизвестный stage relationship.${c.relationship}.${c.stage}`);}
+  if(c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')machineFor(maps,'relationship',c.relationship);
   if(c.kind==='strongMetaFormalIntroductionAvailable'){
     if(!ordinaryCareerSet.has(c.career))throw new Error(`Formal Introduction requires an ordinary career: ${c.career}`);
     machineFor(maps,'career',c.career);
     const relationship=machineFor(maps,'relationship',c.relationship);
     if(!relationship.transitions.some(t=>t.id===c.transition))throw new Error(`Неизвестный Formal Introduction transition relationship.${c.relationship}.${c.transition}`);
   }
-}
-function isAdvance(e:Effect){return e.kind==='advanceCareer'||e.kind==='advanceQuest'||e.kind==='advanceRelationship'||e.kind==='useStrongMetaFormalIntroduction';}
-function checkEffectReference(e:Effect,maps:MachineMaps){
-  if(c.kind==='relationshipStage'){const m=machineFor(maps,'relationship',c.relationship);if(!m.stages.includes(c.stage))throw new Error(`Неизвестный stage relationship.${c.relationship}.${c.stage}`);}
-  if(c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')machineFor(maps,'relationship',c.relationship);
 }
 function isAdvance(e:Effect){return e.kind==='advanceCareer'||e.kind==='advanceQuest'||e.kind==='advanceRelationship'||e.kind==='useStrongMetaFormalIntroduction';}
 function checkEffectReference(e:Effect,maps:MachineMaps){
@@ -87,6 +84,10 @@ function checkEffectReference(e:Effect,maps:MachineMaps){
     if(!m.transitions.some(t=>t.id===e.transition))throw new Error(`Неизвестный transition quest.${e.quest}.${e.transition}`);
   }
   if(e.kind==='incrementRelationshipCounter'||e.kind==='addRelationshipFact'||e.kind==='setRelationshipChoice')machineFor(maps,'relationship',e.relationship);
+  if(e.kind==='advanceRelationship'){
+    const m=machineFor(maps,'relationship',e.relationship);
+    if(!m.transitions.some(t=>t.id===e.transition))throw new Error(`Неизвестный transition relationship.${e.relationship}.${e.transition}`);
+  }
   if(e.kind==='useStrongMetaFormalIntroduction'){
     if(!ordinaryCareerSet.has(e.career))throw new Error(`Formal Introduction requires an ordinary career: ${e.career}`);
     machineFor(maps,'career',e.career);
@@ -145,6 +146,11 @@ function checkTypedRead(c:Condition,p:Pack){
   if(c.kind==='relationshipStage'||c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')needCapability(has(r?.relationships,c.relationship),`read relationship ${c.relationship}`);
   if(c.kind==='worldFact')needCapability(has(r?.worldFacts,c.fact),`read worldFact ${c.fact}`);
   if(c.kind==='strongMetaKnowledge')needCapability(has(r?.meta,'strongMetaKnowledge'),`read Strong Meta knowledge`);
+  if(c.kind==='strongMetaFormalIntroductionAvailable'){
+    needCapability(has(r?.meta,'strongMetaFormalIntroduction'),`read Formal Introduction runtime`);
+    needCapability(has(r?.careers,c.career),`read career ${c.career}`);
+    needCapability(has(r?.relationships,c.relationship),`read relationship ${c.relationship}`);
+  }
   if(c.kind==='metaUnlock')needCapability(has(r?.meta,'unlock'),`read meta.unlock`);
   if(c.kind==='metaEndingCompleted')needCapability(has(r?.meta,'endingCompleted'),`read meta.endingCompleted`);
   if(c.kind==='metaHardWork')needCapability(has(r?.meta,'hardWork'),`read meta.hardWork`);
