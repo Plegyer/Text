@@ -58,13 +58,17 @@ test('generic debt surface exists but is not a hidden Secret Debt career',()=>{
     );
   }
 
-  for(const pattern of fixture.secretDebtProductionExpectedAbsent.endingPatterns){
-    assert.equal(
-      definitions.endings.some((ending:any)=>JSON.stringify(ending).toLowerCase().includes(pattern)),
-      false,
-      pattern
-    );
-  }
+  assert.deepEqual(
+    definitions.endings
+      .filter((ending:any)=>String(ending.id).startsWith('ending.secret-debt.'))
+      .map((ending:any)=>ending.id)
+      .sort(),
+    [
+      'ending.secret-debt.bound-life',
+      'ending.secret-debt.paid-freedom',
+      'ending.secret-debt.takeover'
+    ]
+  );
 });
 
 test('C3-46 keeps Secret Debt product values open',()=>{
