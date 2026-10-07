@@ -1,0 +1,81 @@
+name: Leader1 D39 runtime closure v86
+
+on:
+  push:
+    branches:
+      - leader1/d39-runtime-closure-v86
+    paths:
+      - '.github/workflows/leader1-d39-runtime-closure-v86.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 68f762ae6e87083e37badc418f9c903f7617419a
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "68f762ae6e87083e37badc418f9c903f7617419a"
+          $actual = (git rev-parse HEAD).Trim()
+          if ($actual -ne $expected) { throw "Exact source guard failed: $actual" }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run validate
+      - run: npm run build
+      - name: Focused D39 plus Palace
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/ending-meta.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/palace-final-prose-media-v19.test.ts
+      - name: Publish evidence
+        shell: powershell
+        working-directory: .
+        run: |
+          $path = "mindy-successor/docs/tasks/LEADER1_D39_RUNTIME_CLOSURE_RESULT_v86.json"
+          $temp = Join-Path $env:RUNNER_TEMP "d39-runtime-v86.json"
+          $obj = [ordered]@{
+            schemaVersion = 1
+            id = "leader1.d39-runtime-closure.v86"
+            status = "PASS"
+            sourceSha = "68f762ae6e87083e37badc418f9c903f7617419a"
+            checks = [ordered]@{
+              typecheck = "PASS"
+              validate = "PASS"
+              build = "PASS"
+              focusedD39Palace = "PASS"
+            }
+            runId = "${{ github.run_id }}"
+          }
+          $obj | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 $temp
+          git fetch origin leader1/d39-runtime-closure-v86
+          git checkout -B leader1/d39-runtime-closure-v86 origin/leader1/d39-runtime-closure-v86
+          Copy-Item $temp $path
+          git config user.name "Leader1 QA"
+          git config user.email "actions@users.noreply.github.com"
+          git add $path
+          git commit -m "qa(leader1): publish D39 runtime closure v86"
+          git push origin HEAD:leader1/d39-runtime-closure-v86
