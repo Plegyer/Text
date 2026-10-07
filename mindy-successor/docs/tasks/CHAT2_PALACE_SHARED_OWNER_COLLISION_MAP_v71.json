@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "chat2.palace.shared-owner-collision-map.v71",
+  "status": "LEADER_VERIFIED_SUPPORT_ONLY_DO_NOT_REPLACE_CHAT2_HEAD",
+  "stage": "Stage2 Palace v15-v16-v18 cumulative reconstruction",
+  "productionBase": "Stage1 exact-main production tree ff1dfe3ec3554eaecf068de655e7473dd3387b63",
+  "currentMainControlHead": "8e0f8ce2fc6d40d0cd36e7e3416a5b5789ec072e",
+  "authorities": {
+    "preV15": "6fdf47c3a002e854d325fd40d24193d8374953df",
+    "v15": "40623a9de8b5a11ac9493b865c9f3fadd0435e1c",
+    "v16": "65b9e668ff7112c86681905d62f723b6cf95cec0",
+    "v18": "67f948d185883d8e706dad522e5010bff8e2bd48"
+  },
+  "localization": {
+    "status": "ALREADY_APPLIED_ON_CHAT2_BRANCH",
+    "oldStage1Blob": "c180f641844d0094ebd533d8939d0339469baadf",
+    "mergedBlob": "0f2a0ef46e68379b654227a0dd35c81417e3795c",
+    "exactPalaceKeys": 202,
+    "nonPalaceChanges": 0,
+    "manifest": "CHAT2_PALACE_LOCALIZATION_UNION_v70.json"
+  },
+  "definitions": {
+    "currentBlob": "e76625fb6e534a2280687e8c3ae3703187a88981",
+    "historicalBaseBlob": "a0277129aaaefe3ff9111d158835119715c5911a",
+    "finalV18Blob": "32189ef0bfd9850bcfaf404978fefa04e2f4c473",
+    "stableIdConflicts": 0,
+    "safeObjects": {
+      "actions": [
+        "palace.duty.01-service-rotation",
+        "palace.duty.02-logistics-support",
+        "palace.duty.03-records-review",
+        "palace.duty.04-service-rotation",
+        "palace.duty.05-logistics-support",
+        "palace.duty.06-coordination",
+        "palace.duty.07-records-review",
+        "palace.duty.08-service-rotation",
+        "palace.duty.09-formal-interface",
+        "palace.duty.10-coordination",
+        "palace.duty.11-logistics-support",
+        "palace.duty.12-records-review",
+        "palace.duty.13-evidence-review",
+        "palace.duty.14-formal-interface",
+        "palace.duty.15-coordination",
+        "palace.outcome-prep.service-life.01-continuity",
+        "palace.outcome-prep.service-life.02-boundaries",
+        "palace.outcome-prep.court-power.01-responsibility",
+        "palace.outcome-prep.court-power.02-network",
+        "palace.outcome-prep.inner-truth.01-evidence",
+        "palace.outcome-prep.inner-truth.02-contradiction",
+        "palace.confront-prince"
+      ],
+      "careers": [
+        "palace"
+      ],
+      "quests": [
+        "palace.prince-confrontation"
+      ],
+      "endings": [
+        "ending.palace.service-life",
+        "ending.palace.court-power",
+        "ending.palace.inner-truth",
+        "ending.palace.return-home"
+      ]
+    },
+    "rule": "Merge by stable ID only. Preserve all non-Palace current definitions."
+  },
+  "schema": {
+    "historicalBaseBlob": "1fc25c0fbcd8b68dfbfc5421084e2fd05c71a023",
+    "v15ThroughV18Blob": "412899550152193033850a85eaf45dafbac73466",
+    "currentStage1Blob": "3ec49aaa45990f7bb62a8d2ee0b3f0112215915b",
+    "palaceIdentifiersAlreadyPresent": 0,
+    "classification": "CURRENT_DIVERGED_FOR_STAGE1_BUT_PALACE_DELTA_ABSENT",
+    "rule": "Surgical union of typed run.progression.palace state only; preserve Secret Debt/current schema."
+  },
+  "engine": {
+    "historicalBaseBlob": "75fc8ad177523c9da8ea784168032ac160d6ede9",
+    "v15ThroughV18Blob": "3e47bc32d7021cc76ea1cb5f590cade258d283f5",
+    "currentStage1Blob": "16499cf3bd600ccaf1363cbcb6e77e2072d3fd7b",
+    "palaceIdentifiersAlreadyPresent": 0,
+    "classification": "CURRENT_DIVERGED_FOR_STAGE1_BUT_PALACE_DELTA_ABSENT",
+    "rule": "Port Palace duty/support/machine-state semantics only. Do not replace current engine."
+  },
+  "palaceTs": {
+    "historicalBaseBlob": "b5b3d4a5ab006a2694b1a2b3f336e71ea55d63ec",
+    "currentStage1Blob": "b5b3d4a5ab006a2694b1a2b3f336e71ea55d63ec",
+    "v15Blob": "028b0dec1437cf96e952490c6ea362544cadd0f3",
+    "v18Blob": "11cb0f8a64ad141c41cc22e20732d65889f20c00",
+    "classification": "CURRENT_EXACTLY_EQUALS_HISTORICAL_PRE_V15_BASE",
+    "rule": "No third-owner collision exists; still follow semantic-union policy rather than blind whole-file replacement."
+  },
+  "app": {
+    "historicalBaseBlob": "86d73e921348c7865cd089dec22087734fe70001",
+    "v16Blob": "c28b2f0421464bfff58b9e8695413741a22a3c13",
+    "v18Blob": "1e444168484734663dfab49db97ac0de440e53c5",
+    "currentStage1Blob": "20213e6340c57b94923605598b459b1f2aef0eba",
+    "palaceIdentifiersAlreadyPresent": 0,
+    "classification": "CURRENT_DIVERGED_FOR_STAGE1_BUT_PALACE_UI_DELTA_ABSENT",
+    "rule": "Surgical Palace UI union only; preserve Secret Debt/Night/Activity/Strong Meta/shared UI."
+  },
+  "stopConditions": [
+    "Any Palace stable ID already appears with a third value not equal to historical base/final authority.",
+    "Any shared-file edit removes or rewrites current Secret Debt/D51 behavior.",
+    "Any whole-file replacement is proposed for schema.ts, engine.ts, definitions.json, localization.json or app.ts.",
+    "Palace mechanics differ from locked v15/v18 invariants."
+  ]
+}
