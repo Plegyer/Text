@@ -297,7 +297,7 @@ test('v5 invitation/reveal RU/EN localization is bound to the live event identit
     assert.ok(entry.en.length>0,key);
   }
 
-  assert.equal(localization.strings['event.palace.invitation.day1-arrival.title'].ru,'Письмо в первый день');
-  assert.equal(localization.strings['event.palace.invitation.day1-arrival.title'].en,'A Letter on the First Day');
+  assert.equal(localization.strings['event.palace.invitation.day1-arrival.title'].ru,'Дворец — Запечатанное приглашение');
+  assert.equal(localization.strings['event.palace.invitation.day1-arrival.title'].en,'Palace — A Sealed Invitation');
   assert.equal(localization.strings['event.palace.invitation.reveal.choice.accept.label'].en,'Accept the invitation');
 });

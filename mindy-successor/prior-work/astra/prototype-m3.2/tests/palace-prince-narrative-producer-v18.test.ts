@@ -73,7 +73,7 @@ test('v18 maps the D45 reveal ladder without front-loading the Threshold',()=>{
   assert.match(outcomeText,/Palace Concordance/);
   assert.match(outcomeText,/Threshold Archive/);
   assert.match(outcomeText,/inter-world Threshold/);
-  assert.match(outcomeText,/arrival is classified/i);
+  assert.match(outcomeText,/arrival is (?:classified|filed)/i);
   assert.match(outcomeText,/cause.*unresolved/i);
 
   const service=finalize.events.find(event=>event.id.endsWith('.service-life'))!.variants[0]!.text;

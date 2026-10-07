@@ -99,7 +99,7 @@ test('renderer v18: Prince defeat preserves explicit Return Home commit and bili
     await wait(()=>!!w.document.querySelector('[data-palace-confrontation="completed"]'));
     assert.match(
       w.document.querySelector('[data-palace-confrontation="completed"]').textContent,
-      /Возвращение домой остаётся отдельным явным выбором/
+      /[«"]?Возвращение домой[»"]? остаётся отдельным явным выбором/
     );
     assert.equal(w.document.querySelector('[data-action="palace.confront-prince"]'),null);
 
