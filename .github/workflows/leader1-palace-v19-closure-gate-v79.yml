@@ -1,0 +1,85 @@
+name: Leader1 Palace v19 closure gate v79
+
+on:
+  push:
+    branches:
+      - leader1/palace-v19-prose-test-compat-v79
+    paths:
+      - '.github/workflows/leader1-palace-v19-closure-gate-v79.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact repaired v19 source
+        uses: actions/checkout@v4
+        with:
+          ref: efa9b6fba7bc2d7248596a960b73893bffa2c480
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "efa9b6fba7bc2d7248596a960b73893bffa2c480"
+          $actual = (git rev-parse HEAD).Trim()
+          if ($actual -ne $expected) { throw "Exact source guard failed: $actual" }
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Focused Palace v8-v19
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/palace-final-prose-media-v19.test.ts
+      - name: Publish evidence
+        shell: powershell
+        working-directory: .
+        run: |
+          $path = "mindy-successor/docs/tasks/LEADER1_PALACE_V19_CLOSURE_RESULT_v79.json"
+          $temp = Join-Path $env:RUNNER_TEMP "palace-v19-v79.json"
+          $obj = [ordered]@{
+            schemaVersion = 1
+            id = "leader1.palace-v19-closure.v79"
+            status = "PASS"
+            sourceSha = "efa9b6fba7bc2d7248596a960b73893bffa2c480"
+            originalV19Sha = "1e7c1459f673b4e8756b07245f80a98bbe7ed177"
+            repairs = @("v19 test catalog typing","historical prose assertion compatibility")
+            checks = [ordered]@{
+              typecheck = "PASS"
+              validate = "PASS"
+              build = "PASS"
+              focusedPalaceV8V19 = "PASS"
+            }
+            runId = "${{ github.run_id }}"
+          }
+          $obj | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 $temp
+          git fetch origin leader1/palace-v19-prose-test-compat-v79
+          git checkout -B leader1/palace-v19-prose-test-compat-v79 origin/leader1/palace-v19-prose-test-compat-v79
+          Copy-Item $temp $path
+          git config user.name "Leader1 QA"
+          git config user.email "actions@users.noreply.github.com"
+          git add $path
+          git commit -m "qa(leader1): publish Palace v19 closure v79"
+          git push origin HEAD:leader1/palace-v19-prose-test-compat-v79
