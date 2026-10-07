@@ -16,20 +16,20 @@ jobs:
         working-directory: mindy-successor/prior-work/astra/prototype-m3.2
 
     steps:
-      - name: Checkout exact frozen Palace v18 base
+      - name: Checkout exact capability-only Palace v18 repair
         uses: actions/checkout@v4
         with:
-          ref: ed76c89829541c955e4129d6e0114c0d2fe7e562
+          ref: 20f194b93bfd458300f81f9ef7bb1cd850102c7c
           fetch-depth: 1
 
       - name: Exact SHA guard
         shell: powershell
         run: |
-          $expected = "ed76c89829541c955e4129d6e0114c0d2fe7e562"
+          $expected = "20f194b93bfd458300f81f9ef7bb1cd850102c7c"
           $actual = (git rev-parse HEAD).Trim()
           Write-Host "expected=$expected"
           Write-Host "actual=$actual"
-          if ($actual -ne $expected) { throw "Exact frozen-base guard failed: $actual" }
+          if ($actual -ne $expected) { throw "Exact capability-only guard failed: $actual" }
 
       - name: Setup Node
         uses: actions/setup-node@v4
