@@ -1,119 +1,163 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **STAGE 2 - D39 RUNTIME REPAIR REQUIRED**
+Status: **STAGE 2 - D39 LIVE CONSUMERS NOW**
 Owner: Chat 2 / sole production assembly + full-CI lane
 
 Work branch:
 `chat2/assembly-palace-d39-d48-current-main-v76`
 
-Exact repair base:
-`5ae81e33e4a699443ea2ac1e33241ba905bb81fb`
+Exact production base:
+`68f762ae6e87083e37badc418f9c903f7617419a`
 
-Do not apply D39 live consumers, Strong Meta UI, or D48 in this repair.
+D39 runtime is CLOSED on this exact base.
 
-## Why this repair exists
+Leader executable evidence:
+- source: `68f762ae6e87083e37badc418f9c903f7617419a`
+- evidence: `LEADER1_D39_RUNTIME_CLOSURE_RESULT_v86.json`
+- run: `37648362110`
+- npm ci: PASS
+- typecheck: PASS
+- validate: PASS
+- build: PASS
+- focused D39 + Palace: PASS (103/103 after closure fixes)
 
-Leader exact-source gate on `5ae81e33e4a699443ea2ac1e33241ba905bb81fb`:
-- run: `37646730445`
-- npm ci: reached successfully
-- typecheck: **FAIL**
-- validate/build/focused tests: not reached
+Do not redo D39 runtime.
 
-The failure is a semantic-union defect, not a Palace v19 defect.
+## This task only
 
-Leader also repaired the four Palace ending bindings on `5ae81e33e4a699443ea2ac1e33241ba905bb81fb` so they now use the canonical plural `metaRewards` arrays. Preserve that exact repair.
+Apply locked Stage 2 step 5:
+**D39 live consumers.**
 
-## Repair 1 — schema.ts D39 condition union
+Do NOT apply Strong Meta UI yet.
+Do NOT apply D48 yet.
+Do NOT run Stage2 full CI yet.
 
-Current target imported `approvedStrongKnowledgeIdSchema` and added the Formal Introduction effect/capability IDs, but it omitted D39 condition variants.
+## Frozen live-consumer authority
 
-Add to `Condition`:
-- `{kind:'strongMetaKnowledge';knowledge:string;present:boolean}`
-- `{kind:'strongMetaFormalIntroductionAvailable';career:string;relationship:string;transition:string}`
+Producer branch:
+`chat3/d39-consumer-producer-v45`
 
-Add to `conditionSchema`:
-- `strongMetaKnowledge` using `approvedStrongKnowledgeIdSchema`
-- `strongMetaFormalIntroductionAvailable` using typed career/relationship/transition IDs
+Frozen production implementation head:
+`090f36174cbc4ae9db46ae0bdbc9b1e4a2ce1386`
 
-Accepted authority:
-`chat5/palace-d39-reward-producer-v20@b28b19628c0374c405cd32afedb0f16c105e2403`
+Current branch head is docs-only ahead at `c1c3f0ae9275b6e76c872733df0195bf73366ac1`; do not use that docs commit as production authority.
 
-## Repair 2 — schema.ts knowledge MetaReward
+Runtime dependency boundary in producer:
+`a3e6234af618b10cabd5c8c74ceb365d53232c4d`
 
-Current `metaRewardSchema` omits D39 knowledge reward support even though engine handles it.
+Selective live-consumer delta from that boundary to frozen production head contains exactly:
+- `content/definitions.json`
+- `content/localization.json`
+- `content/packs/assassin-relationship.json`
+- `content/packs/school-life-content-v1.json`
+- `tests/d39-formal-introduction-assassin-v46.test.ts`
+- `tests/school-life-content-reload.test.ts`
 
-Add exactly:
-`{kind:'knowledge', rewardId, knowledge:approvedStrongKnowledgeIdSchema}`
+Do not import producer runtime files. Current D39 runtime is newer/current-main composed and already accepted.
 
-Preserve existing unlock/hardWork/strongMeta variants.
+## Source Method consumer
 
-## Repair 3 — content.ts structural semantic union
+Knowledge:
+`palace.inner-truth.source-method`
 
-Current Chat2 merge corrupted `content.ts` around machine-reference validation:
-- duplicate `isAdvance`
-- duplicate `checkEffectReference`
-- relationship-condition code using `c` was moved into an effect function
-- parts of effect validation are outside their intended function
-- Formal Introduction typed read requirements are incomplete
+Existing event:
+`school-life-content-v1.night-study.arcana-reason`
 
-Reconcile this section against accepted producer authority **semantically**, while preserving all current Secret Debt/D51/current-main validation logic.
+Add variant:
+`source-method-crosscheck`
 
-Required resulting behavior:
-- `checkMachineReference` retains relationshipStage / relationshipCounter / relationshipFact / relationshipChoice validation
-- it additionally validates `strongMetaFormalIntroductionAvailable` career + relationship + transition
-- exactly one `isAdvance`, including `useStrongMetaFormalIntroduction`
-- exactly one `checkEffectReference`
-- `advanceRelationship` validation remains intact
-- `useStrongMetaFormalIntroduction` validates ordinary career, career machine, relationship machine, transition
-- `checkTypedRead` for `strongMetaKnowledge` requires meta capability `strongMetaKnowledge`
-- `checkTypedRead` for `strongMetaFormalIntroductionAvailable` requires:
-  - meta `strongMetaFormalIntroduction`
-  - referenced career read
-  - referenced relationship read
-- `checkTypedWrite` keeps `useStrongMetaFormalIntroduction` under relationship writes
+Condition:
+- kind `strongMetaKnowledge`
+- knowledge `palace.inner-truth.source-method`
+- present true
 
-Do NOT wholesale replace current `content.ts`; preserve Secret Debt/D51 and later shared validation.
+Existing choice remains `continue`.
+Existing choice effects remain empty.
+Source Method changes presentation only; it must not create scene reachability or mechanics.
 
-## Already correct / preserve
+Pack declares only required Meta read:
+`strongMetaKnowledge`
 
-Do not regress:
-- `strongMeta.ts` registry v4
-- Keystone cap 1
-- Specialist cap 2
-- Steady Practice D39 runtime
-- Formal Introduction D39 runtime
-- Source Method automatic knowledge registry
-- engine D39 runtime transaction implementation
-- app.ts two D39 condition labels
-- Palace v15-v19 behavior
-- exact four Palace `metaRewards` arrays now present on repair base
-- no live consumers yet
+Preserve D49 firewall: no Palace/Threshold/crossing/origin/return/Prince/archive macro-answer leakage beyond accepted producer copy.
 
-## Four canonical Palace bindings that MUST remain
+## Formal Introduction consumer
 
-- `ending.palace.service-life` -> strongMeta `palace.service-life.steady-practice`
-- `ending.palace.court-power` -> strongMeta `palace.court-power.formal-introduction`
-- `ending.palace.inner-truth` -> knowledge `palace.inner-truth.source-method`
-- `ending.palace.return-home` -> strongMeta `palace.true.cap-200`
+Relationship:
+`assassin.handler`
 
-Do not reintroduce singular `metaReward`.
+Add neutral stage:
+`formal-introduced`
+
+Add transition:
+`formal-introduction`
+- from `introduced`
+- to `formal-introduced`
+- no conditions
+- exactly one effect: add relationship fact `introduced-at-work`
+
+Existing `build-trust` must accept both:
+- `introduced`
+- `formal-introduced`
+
+Do not change its target/conditions/effects.
+Normal trust remains separate and grants `professional-trust-earned` only through normal trust transition.
+
+Existing event:
+`assassin.relationship.intro`
+
+Preserve its current career gate and baseline `professional` choice unchanged.
+
+Add opt-in `formal-introduction` choice:
+condition `strongMetaFormalIntroductionAvailable`
+effect `useStrongMetaFormalIntroduction`
+for career `assassin`, relationship `assassin.handler`, transition `formal-introduction`.
+
+Assassin pack adds only required Meta read:
+`strongMetaFormalIntroduction`
+
+No shortcut to trust/conflict/route/career/ending/resources/stats.
+
+## Semantic merge rules
+
+`definitions.json`:
+- merge only Assassin relationship stage/transition compatibility by stable ID
+- preserve all Palace v19/D39 canonical `metaRewards`
+- preserve all non-Assassin definitions
+
+`localization.json`:
+- merge only D39 consumer keys by key
+- preserve all Palace v19, Secret Debt/D51 and non-D39 localization
+- no whole-file replacement
+
+Packs:
+- semantic union only
+- preserve all current capabilities/content unrelated to D39 consumer additions
+
+Tests:
+- carry the two frozen consumer tests
+- adapt only typing/current-main compatibility if necessary; do not weaken mechanics assertions
 
 ## Verification
 
-Run if executable environment is available:
+Run on exact resulting head:
 1. `npm ci`
 2. `npm run typecheck`
 3. `npm run validate`
 4. `npm run build`
-5. focused D39 + Palace + Secret Debt bundle from the previous pointer
+5. focused:
+   - `tests/d39-formal-introduction-assassin-v46.test.ts`
+   - `tests/school-life-content-reload.test.ts`
+   - `tests/school-night-study-adapter.test.ts`
+   - Assassin focused tests
+   - `tests/palace-d39-reward-producer-v20.test.ts`
+   - Strong Meta focused tests
+   - Palace v15-v19 smoke
 
-If environment is unavailable, report NOT RUN and exact SHA. Leader will run exact-source Actions.
-
-Do not run Stage2 full CI yet.
+If runner is unavailable, report NOT RUN; do not fabricate green.
 
 ## Stop marker
 
 Stop at:
-`D39_RUNTIME_REPAIR_READY_FOR_LEADER`
+`D39_LIVE_CONSUMERS_READY_FOR_STRONG_META_UI`
 
-Report exact head, changed files, proof the four bindings remain canonical, and whether checks ran.
+Report exact head, changed files, Source Method lifecycle proof, Formal Introduction no-shortcut proof, and verification result.
