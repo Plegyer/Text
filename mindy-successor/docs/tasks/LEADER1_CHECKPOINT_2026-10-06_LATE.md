@@ -720,3 +720,41 @@ Known future Chat4 repair only:
 2. strict typing adaptation in historical Palace tests only, no mechanics changes
 
 Do not create peripheral Stage2 work for Chat3/5/6 while Chat2 is on the v15->v16->v18 critical path.
+
+
+## 2026-10-07 — Palace v18 frozen for Chat4 narrow repair
+
+Chat2 Stage2 cumulative Palace v15 -> v16 -> v18 reconstruction is frozen at:
+
+`ed76c89829541c955e4129d6e0114c0d2fe7e562`
+
+Leader1 final static audit:
+- engine Palace delta accepted; Secret Debt/D51 preserved
+- schema Palace delta only; no Stage1 deletion
+- definitions: exactly 28 Palace IDs changed, 0 non-Palace IDs
+- localization: 202/202 Palace exact, 0 non-Palace changes
+- invitation exact v18
+- outcome/progression/confrontation packs exact v18
+- palaceUi exact v18
+- app Palace UI composed with current Secret Debt hidden-work UI
+- Leader1 repaired one missed Palace-specific action-button label hunk before freeze
+
+Freeze doc:
+`CHAT2_PALACE_V18_FROZEN_HEAD_v72.md`
+
+Next required lane:
+`chat4/stage2-palace-v18-narrow-repair-v73`
+
+Task:
+`CHAT4_STAGE2_PALACE_V18_NARROW_REPAIR_v73.md`
+
+Chat4 scope only:
+1. add exactly three missing outcome-ready facts to `palace-outcome-finalize.json -> capabilities.reads.worldFacts`
+2. strict typing adaptation in historical Palace tests
+
+Expected stop:
+`PALACE_V18_REPAIR_READY_FOR_CHAT2`
+
+Do not start Palace v19/D39/Strong Meta UI/D48 before Chat4 repair handoff.
+
+Broad burn-down remains **4**.
