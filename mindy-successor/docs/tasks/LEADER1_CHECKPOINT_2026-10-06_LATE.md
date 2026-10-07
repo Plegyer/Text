@@ -670,3 +670,53 @@ Verified resulting blob:
 with 202/202 Palace exact and 0 non-Palace changes.
 
 Stage2 burn-down remains 4.
+
+
+## 2026-10-07 — Stage2 Palace live assembly review
+
+Stage 1 remains CLOSED. Broad burn-down remains **4**.
+
+Active worker:
+- Chat2 is manually active on `chat2/assembly-palace-d39-d48-current-main-v68`.
+- Chat3/4/5/6 remain intentionally idle.
+
+Leader1 support artifacts:
+- `CHAT2_PALACE_LOCALIZATION_UNION_v70.json`
+- `CHAT2_PALACE_SHARED_OWNER_COLLISION_MAP_v71.json`
+
+Localization:
+- Stage1 source blob recovered via blob API: `c180f641844d0094ebd533d8939d0339469baadf`
+- Palace union applied on Chat2 branch only.
+- resulting blob: `0f2a0ef46e68379b654227a0dd35c81417e3795c`
+- 202/202 Palace keys exact; 0 non-Palace changes.
+
+Live Palace reconstruction checks already verified:
+- `content/packs/palace-outcome-finalize.json`: exact v18 authority blob
+- `content/packs/palace-progression.json`: exact v18 authority blob
+- `content/packs/palace-prince-confrontation.json`: exact v18 authority blob
+- `src/ui/palaceUi.ts`: exact v18 authority blob
+- `src/core/palace.ts`: exact v18 authority blob
+- `src/core/schema.ts`: Palace delta added with no deletions; Secret Debt schema preserved
+- `content/definitions.json`: semantic audit shows only 28 Palace IDs changed (22 actions, 1 career, 1 quest, 4 endings); 0 non-Palace IDs changed
+
+Engine live review at Chat2 head `d66a5dc6d876e7487a23a979dd0a97d5e2b58562`:
+- Palace engine changes are a strict subset of accepted v15 delta
+- no extra additions
+- no suspicious deletions
+- Secret Debt markers unchanged
+- D51/bound-night markers unchanged
+- one accepted v15 invariant line still absent at this snapshot:
+  `assertPalaceProgressionState(s);`
+- exact authority location is parseSave immediately after `attachLegacyFacade(parsed)` + removal of legacy `meta.unlocks['palace']`, before stat/energy invariants
+- do not interrupt Chat2 yet; it is still assembling
+
+Chat4 next-step authority pre-read:
+`CHAT4_PALACE_CUMULATIVE_EXACT_HEAD_QA_v46.md`
+
+Chat4 must NOT be launched until Chat2 freezes `PALACE_V18_READY_FOR_CHAT4_REPAIR`.
+
+Known future Chat4 repair only:
+1. add exactly three outcome-ready facts to `palace-outcome-finalize.json -> capabilities.reads.worldFacts`
+2. strict typing adaptation in historical Palace tests only, no mechanics changes
+
+Do not create peripheral Stage2 work for Chat3/5/6 while Chat2 is on the v15->v16->v18 critical path.
