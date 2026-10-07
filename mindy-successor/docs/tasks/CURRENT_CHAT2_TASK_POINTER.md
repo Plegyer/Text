@@ -1,48 +1,160 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **STAGE 2 - PALACE v19 SELECTIVE CONTENT COMPOSITION NOW**
+Status: **STAGE 2 - D39 RUNTIME SEMANTIC UNION NOW**
 Owner: Chat 2 / sole production assembly + full-CI lane
 
 Work branch:
 `chat2/assembly-palace-d39-d48-current-main-v76`
 
-Exact base:
-`2bb94f64d3f7236161394c09ed3bbba475155fd8`
+Exact current base:
+`324502bf103d36730fc73443de239d8466cf703c`
 
-This base already contains frozen Palace v15-v18 plus the accepted Chat4 narrow repair and Leader v16 renderer selector compatibility fix. Exact closure source `116b40651610a03c4d720bd8bafc7efbf17bb274` passed typecheck, validate, build and the six focused Palace v8/v15/v16/v18 test files. Evidence: `LEADER1_PALACE_V18_REPAIR_CLOSURE_RESULT_v75.json` on `leader1/palace-v18-repair-closure-v75`.
+Palace v19 is closed on this base. Leader executable evidence:
+- source closure: `7031ebc99af5410a7f515429c3773c2e975f20d2`
+- evidence: `LEADER1_PALACE_V19_CLOSURE_RESULT_v82.json`
+- run `37644658481`: typecheck PASS, validate PASS, build PASS, focused Palace v8-v19 PASS.
 
-v19 authority:
-`chat6/palace-final-prose-media-v19@6cf19169b92fa709e8ae51cf73ff72ef2c0fac19`
+Do not redo Palace v19.
 
-Mechanical base:
-`chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`
+## This task only
 
-Read `CHAT6_PALACE_FINAL_PROSE_MEDIA_v19.md` and `LEADER1_FREEZE_PALACE_PROSE_MEDIA_v19_2026-10-04.md`.
+Apply Stage 2 locked step 4:
+**D39 runtime semantic union + canonical Palace ending reward bindings.**
 
-Apply ONLY v18 -> v19 authored content/presentation delta. No runtime TypeScript, engine or schema changes.
+Do NOT apply D39 live consumers yet.
+Do NOT apply Strong Meta UI closure yet.
+Do NOT apply D48 yet.
 
-Selective merge:
-- Palace packs: prose/text fields only; preserve all mechanics.
-- `palace-outcome-finalize.json` MUST retain repaired reads `palace.outcome.service-life-ready`, `palace.outcome.court-power-ready`, `palace.outcome.inner-truth-ready`.
-- `definitions.json`: Palace action/ending text by stable ID only; zero non-Palace changes; no whole-file replacement.
-- `localization.json`: Palace v19 keys only; preserve Stage1 Secret Debt/D51 and all non-Palace key/value pairs; no whole-file replacement.
-- `presentation.json`: merge exactly 19 Palace v19 slot overrides; preserve all non-Palace mappings; no whole-file replacement.
-- Carry `tests/palace-final-prose-media-v19.test.ts` and `mindy-successor/research/palace_missing_media_v1.csv`.
-- Do not add D48 assets yet.
-- Do not apply D39, Strong Meta UI or D48 in this task.
+## D39 runtime authority
 
-Preserve locked Palace mechanics: D23; exactly 15 duties; max 1 duty/day; duty cost 1 Energy; support max1/day; Prince readiness all 12 progression stats >=91; Lust excluded; confrontation 0 money/0 Energy, deterministic 4 phases, retryable, no RNG; only phase-4 success writes `palace.prince-defeated`; no automatic ending; explicit Return Home; successor world real; displacement cause unresolved.
+Accepted producer:
+`chat5/palace-d39-reward-producer-v20`
 
-Verification:
-1. npm ci
-2. npm run typecheck
-3. npm run validate
-4. npm run build
-5. focused Palace v8/v15/v16/v18 plus `tests/palace-final-prose-media-v19.test.ts`.
+Executable implementation head:
+`b28b19628c0374c405cd32afedb0f16c105e2403`
 
-Do NOT run Stage2 full CI yet. If execution is unavailable, do not fabricate green.
+Producer base:
+`09a97e0deef5bbccdbcdfbc4fc955f59b369345c`
+
+Read:
+`CHAT5_PALACE_D39_REWARD_PRODUCER_v20.md`
+
+The accepted runtime delta is limited to:
+- `src/core/strongMeta.ts`
+- `src/core/schema.ts`
+- `src/core/engine.ts`
+- `src/core/content.ts`
+- two exhaustive fallback cases in `src/ui/app.ts`
+- focused D39/Strong Meta tests
+
+Semantic union only. Never wholesale replace these shared owners from the old producer baseline.
+
+Preserve all current Stage1 Secret Debt/D51, Palace v15-v19, Night/Activity, current Strong Meta registry entries, and current UI composition.
+
+## Locked D39 semantics
+
+Strong Meta:
+- max 1 Keystone
+- max 2 Specialists
+- no extra/free Palace Specialist slot
+- ordinary Hard Work packages remain outside slots
+- current-run Strong Meta snapshot is immutable
+
+Service Life reward:
+`palace.service-life.steady-practice`
+- Specialist
+- first 2 distinct ordinary careers bind at exactly 8 completed shifts
+- each bound career gets exactly 3 qualifying D31 seasonal -1 protections
+- max 6 protected points/run
+- non-D31 stat loss remains real
+
+Court Power reward:
+`palace.court-power.formal-introduction`
+- Specialist
+- 3 uses/run
+- 1 use/relationship ID
+- atomic successful authored transition only
+- failed/invalid transition consumes nothing
+- no generic relationship auto-tagging
+
+Inner Truth knowledge:
+`palace.inner-truth.source-method`
+- automatic knowledge
+- slot-free
+- never selectable
+- no same-life activation
+- future run snapshot only
+- no direct resource/progression mechanic
+
+Return Home:
+`palace.true.cap-200`
+- Specialist slot behavior unchanged
+
+## Canonical Palace ending bindings
+
+In current v19 `content/definitions.json`, apply exactly:
+
+`ending.palace.service-life`
+-> strongMeta `palace.service-life.steady-practice`
+
+`ending.palace.court-power`
+-> strongMeta `palace.court-power.formal-introduction`
+
+`ending.palace.inner-truth`
+-> knowledge `palace.inner-truth.source-method`
+
+`ending.palace.return-home`
+-> strongMeta `palace.true.cap-200`
+
+Use canonical D39 transaction lifecycle. Do not use generic unlocks and do not create a Palace-specific grant path.
+
+## Compatibility rules
+
+Preserve:
+- schema-6 compatibility/defaults
+- protected profile merge behavior
+- exactly-once permanent ownership
+- reward grant only at `completeEnding`
+- no same-life activation
+- Palace mechanics/content/presentation unchanged
+- the three repaired Palace outcome capability reads
+- Secret Debt/D51 state and validators
+- current `src/ui/app.ts` Palace + Secret Debt + Night/Activity composition
+
+If the target already has later Strong Meta IDs that producer v20 lacks, union them; never erase them.
+
+## Verification
+
+Run on the exact resulting Chat2 head:
+1. `npm ci`
+2. `npm run typecheck`
+3. `npm run validate`
+4. `npm run build`
+5. focused:
+   - `tests/palace-d39-reward-producer-v20.test.ts`
+   - `tests/strong-meta-registry-v7.test.ts`
+   - `tests/strong-meta-engine-integration-v7.test.ts`
+   - `tests/ending-meta.test.ts`
+   - `tests/palace-d23-consumer-integration-v8.test.ts`
+   - Palace v15/v16/v18/v19 focused tests
+   - Secret Debt separation smoke
+
+Do NOT run Stage2 full CI yet.
+
+If runner is unavailable, do not fabricate green. Report exact head for Leader executable QA.
+
+## Stop condition
 
 Stop at:
-`PALACE_V19_READY_FOR_D39`
+`D39_RUNTIME_READY_FOR_LIVE_CONSUMERS`
 
-Report exact head, changed files, proof the three repaired reads remain, zero non-Palace definitions/localization changes, 19 Palace presentation slots, and verification results.
+Report:
+- exact head SHA
+- files changed
+- Strong Meta registry version/counts/capacities
+- proof of four exact Palace metaReward bindings
+- proof Source Method is automatic/slot-free
+- proof current-run snapshot remains immutable
+- proof no same-life activation
+- verification results
+- confirmation that D39 live consumer content was NOT applied.
