@@ -1726,6 +1726,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const s=attachLegacyFacade(parsed);
   repairD40SelectedRouteFactsMutable(s);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  assertPalaceProgressionState(s);
   if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
   validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
   validateSecretDebtState(s.run.secretDebt);
