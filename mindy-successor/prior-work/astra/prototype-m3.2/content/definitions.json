@@ -5337,7 +5337,7 @@
     {
       "id": "palace.confront-prince",
       "label": "Confront the Prince",
-      "description": "Present the Palace record and challenge the Custodian's exclusive veto without combat.",
+      "description": "Present the Palace record to the Custodian and challenge his exclusive veto through evidence, not combat.",
       "cost": {
         "money": 0,
         "energy": 0
@@ -7360,7 +7360,7 @@
     {
       "id": "ending.palace.service-life",
       "title": "Palace — Service Life",
-      "description": "Outcome Ready plus completed Service Life preparation: choose continuity, clear handoffs, and professional boundaries without blind loyalty.",
+      "description": "Choose to remain and make Palace service durable: clear handoffs, named responsibility, professional boundaries, and institutional memory without blind loyalty.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -7385,12 +7385,12 @@
       ],
       "reward": "palace.service-life.steady-practice",
       "metaRewards": [],
-      "epilogue": "You remain in Palace service as a continuity figure: responsibilities, handoffs, and institutional memory become less dependent on personal favour. The Palace remains imperfect and real, and you choose to help it keep working without claiming a throne or a final answer to every secret."
+      "epilogue": "You stay. Not because the Palace proved itself perfect, but because you know exactly where it is fragile. Handoffs become written instead of whispered. Responsibilities keep names attached to them. New staff inherit records instead of rumours, and boundaries become part of the work rather than private favours. The Palace remains imperfect, political, and real. You choose to help it endure without claiming a throne or pretending every secret has been solved."
     },
     {
       "id": "ending.palace.court-power",
       "title": "Palace — Court Power",
-      "description": "Outcome Ready plus completed Court Power preparation: accept accountable authority over Palace appointments, access, audit, routing, and priorities.",
+      "description": "Accept accountable authority over Palace appointments, access, audits, routing, priorities, recognition, and procedural exceptions.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -7415,12 +7415,12 @@
       ],
       "reward": "palace.court-power.formal-introduction",
       "metaRewards": [],
-      "epilogue": "You accept a formal Palace mandate and make access, responsibility, and review more traceable. Court politics remain real and constrained; your authority does not become sovereignty over the world or magical control of the Threshold."
+      "epilogue": "You accept a formal mandate inside the Palace. Doors open because someone can account for why they opened; audits matter because someone is answerable when they fail. Appointments, routes, and exceptions become decisions that can be traced, challenged, and corrected. Your authority is substantial, but bounded. It does not make you monarch of the world, and the Threshold does not obey a title."
     },
     {
       "id": "ending.palace.inner-truth",
       "title": "Palace — Inner Truth",
-      "description": "Outcome Ready plus completed Inner Truth preparation: preserve a method for checking the Threshold Archive's sources, contradictions, and unresolved claims.",
+      "description": "Choose the work of verification: preserve the Threshold Archive's provenance, contradictions, and honest unknowns instead of forcing a final answer.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -7445,12 +7445,12 @@
       ],
       "reward": "palace.inner-truth.source-method",
       "metaRewards": [],
-      "epilogue": "You secure the Threshold Archive's provenance chain and record what is observed, reported, inferred, and still unknown. The Palace can no longer use secrecy as a substitute for evidence, but the original cause of your displacement remains genuinely unresolved."
+      "epilogue": "You remain with the questions, but not with vagueness. The Threshold Archive is reorganized around provenance: what was observed, what was reported, what was inferred, and what still has no answer. Sensitive records can no longer hide behind the prestige of secrecy. You learn more than most people ever will, and still refuse to invent the missing cause of your own displacement. The truth becomes sharper precisely where it remains incomplete."
     },
     {
       "id": "ending.palace.return-home",
       "title": "Palace — Return Home",
-      "description": "True Return Home: Palace progression complete, all 12 progression stats at least 91, and the Custodian's exclusive veto defeated through the Prince confrontation.",
+      "description": "With Palace progression complete, all twelve progression stats at least 91, and the Custodian's exclusive veto defeated, choose whether to cross the Threshold back to your original world.",
       "conditions": [
         {
           "kind": "worldFact",
@@ -7547,7 +7547,7 @@
       ],
       "reward": "palace.true.cap-200",
       "metaRewards": [],
-      "epilogue": "You explicitly choose the world you came from. The verified origin trace carries you across the Threshold; the successor world does not vanish or become unreal behind you. The Palace and its unfinished politics remain real and continue without being rewritten."
+      "epilogue": "You choose home. The origin trace is verified; the Threshold answers the reconstruction rather than the Prince's permission. Crossing does not erase the world behind you. The Palace remains, its arguments unfinished and its people still living lives that were never less real than yours. Then the light, pressure, and distance of the Threshold give way—and you recognize the world you came from."
     }
   ],
   "careers": [
