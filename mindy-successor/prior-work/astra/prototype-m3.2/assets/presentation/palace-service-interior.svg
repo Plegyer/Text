@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" data-palace-family="service-interior">
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#2b3a45"/><stop offset="1" stop-color="#7a6855"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#edc98d" stop-opacity=".42"/><stop offset="1" stop-color="#edc98d" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<rect x="65" y="82" width="1070" height="455" rx="12" fill="#55544d"/>
+<path d="M85 118H1115M300 82V537M900 82V537" stroke="#374047" stroke-width="17"/>
+<circle cx="600" cy="285" r="325" fill="url(#light)"/>
+<g fill="#3b4548">
+  <rect x="105" y="150" width="160" height="300" rx="6"/>
+  <rect x="935" y="150" width="160" height="300" rx="6"/>
+</g>
+<g fill="#9d8769">
+  <rect x="130" y="180" width="110" height="17"/><rect x="130" y="230" width="110" height="17"/><rect x="130" y="280" width="110" height="17"/>
+  <rect x="960" y="180" width="110" height="17"/><rect x="960" y="230" width="110" height="17"/><rect x="960" y="280" width="110" height="17"/>
+</g>
+<path d="M0 537H1200V675H0Z" fill="#403d39"/>
+<g fill="#715b48">
+  <path d="M300 420h230l-18 132H320z"/>
+  <path d="M670 420h230l-20 132H690z"/>
+</g>
+<g fill="#d4c5a3">
+  <rect x="335" y="438" width="72" height="46"/><rect x="420" y="445" width="70" height="48"/>
+  <rect x="706" y="438" width="70" height="45"/><rect x="790" y="444" width="70" height="49"/>
+</g>
+<g stroke="#887a65" stroke-width="5"><path d="M347 455h47M432 462h45M718 455h46M802 461h45"/></g>
+<g transform="translate(205 315)" fill="#667881">
+  <circle cx="0" cy="0" r="23" fill="#d2a57d"/><path d="M-34 44Q0 29 34 44L36 133H-36Z"/>
+</g>
+<g transform="translate(995 315)" fill="#64747a">
+  <circle cx="0" cy="0" r="23" fill="#d0a37b"/><path d="M-34 44Q0 29 34 44L36 133H-36Z"/>
+</g>
+<path d="M520 185h160v190H520Z" fill="#354147" stroke="#8f7a60" stroke-width="8"/>
+<path d="M555 220h90M555 265h90M555 310h90" stroke="#a79170" stroke-width="12"/>
+<path d="M480 565h240" stroke="#b29166" stroke-width="13" stroke-linecap="round"/>
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/>
+</svg>
