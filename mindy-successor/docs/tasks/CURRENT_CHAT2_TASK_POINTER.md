@@ -1,38 +1,44 @@
 # CURRENT CHAT2 TASK POINTER
 
-Status: **STAGE 2 — PALACE v18 ASSEMBLY NOW**
+Status: **STAGE 2 RECOVERY — RECONSTRUCT PALACE v15 -> v16 -> v18**
 Owner: Chat 2 / sole current-main production assembly + full-CI lane
 
-Stage 1 Secret Debt + D51 is CLOSED.
-
+Stage 1 is CLOSED.
 Broad burn-down: **4**.
-
-Current task:
-
-`CHAT2_STAGE2_PALACE_V18_ASSEMBLY_v68.md`
 
 Work branch:
 
 `chat2/assembly-palace-d39-d48-current-main-v68`
 
-Primary authority:
+Read first:
 
-`chat6/palace-prince-narrative-producer-v18@67f948d185883d8e706dad522e5010bff8e2bd48`
+`CHAT2_STAGE2_PALACE_BASE_RECONSTRUCTION_v69.md`
 
-Preassembly authority:
+Then use:
 
-`chat3/palace-full-stack-preassembly-v48`
+`CHAT2_STAGE2_PALACE_V18_ASSEMBLY_v68.md`
 
-`CHAT3_PALACE_FULL_STACK_PREASSEMBLY_v50.md`
+Exact cumulative authority:
 
-Execute only Palace v18 selective composition.
+- v15 `40623a9de8b5a11ac9493b865c9f3fadd0435e1c`
+- v16 `65b9e668ff7112c86681905d62f723b6cf95cec0`
+- v18 `67f948d185883d8e706dad522e5010bff8e2bd48`
 
-Do not yet apply v19, D39, Strong Meta UI or D48.
+Required order:
+
+`v15 semantic reconstruction -> v16 UI union -> v18 delta`
+
+Do not use historical shared files wholesale.
+
+Do not yet apply:
+
+- Palace v19;
+- D39 runtime/consumers;
+- Strong Meta UI;
+- D48.
 
 Stop at:
 
 `PALACE_V18_READY_FOR_CHAT4_REPAIR`
-
-with exact SHA + gate results.
 
 Do not merge main.
