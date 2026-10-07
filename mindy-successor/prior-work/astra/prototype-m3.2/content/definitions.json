@@ -4403,6 +4403,1060 @@
       ],
       "effects": [],
       "mode": "story"
+    },
+    {
+      "id": "palace.duty.01-service-rotation",
+      "label": "Service Rotation",
+      "description": "Complete a bounded service handoff and close the loop.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "entered-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Receive a bounded task, confirm ownership, complete the handoff, and record what is finished.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.02-logistics-support",
+      "label": "Logistics Support",
+      "description": "Resolve a route or handoff mismatch through a safe baseline path.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "entered-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Check the route, separate access from assumption, and complete the handoff without turning the task into a detour.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.03-records-review",
+      "label": "Records Review",
+      "description": "Compare a register with a concrete handoff and verify the discrepancy.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 2
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Compare the record with the handoff, mark what is verified, and leave unchecked assumptions clearly identified.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.04-service-rotation",
+      "label": "Service Rotation",
+      "description": "Handle competing routine requests while preserving queue and boundaries.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 3
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Order the requests, keep responsibility visible, and finish the routine work without converting urgency into personal favour.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.05-logistics-support",
+      "label": "Logistics Support",
+      "description": "Reroute a delayed handoff through a safe baseline route.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 4
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "A delayed handoff needs a new path. You verify the route, choose a safe transfer point, and close the delay without inventing access.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.06-coordination",
+      "label": "Coordination",
+      "description": "Coordinate two bounded workstreams with one shared verification point.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 5
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Assign responsibilities, keep both workstreams traceable, and bring them back together at one checked handoff.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.07-records-review",
+      "label": "Records Review",
+      "description": "Review material evidence while separating observation from explanation.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 6
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You record what can be observed directly, what is only reported, and what still needs explanation.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.08-service-rotation",
+      "label": "Service Rotation",
+      "description": "Close a longer service chain and make the next owner explicit.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 7
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You reconcile the open tasks, close what is complete, and name the owner of every remaining step.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.09-formal-interface",
+      "label": "Formal Interface",
+      "description": "Handle a formal-facing exchange without confusing protocol with authorization.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 8
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You keep the exchange formal and clear, using protocol to structure the work without treating presentation as authority.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.10-coordination",
+      "label": "Coordination",
+      "description": "Coordinate a shared result while keeping credit and correction traceable.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 9
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You reconcile corrections, preserve who contributed what, and close the shared result without erasing responsibility.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.11-logistics-support",
+      "label": "Logistics Support",
+      "description": "Plan a constrained handoff using verified route and access information.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 10
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You separate route evidence, official attention, and actual access, then complete the constrained handoff on the verified path.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.12-records-review",
+      "label": "Records Review",
+      "description": "Reconcile multiple records while preserving unresolved source disagreement.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 11
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You build one checked summary, mark where sources agree, and preserve the disagreements that the records do not settle.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.13-evidence-review",
+      "label": "Evidence Review",
+      "description": "Separate direct observation, sourced testimony, and unresolved interpretation.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 12
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You sort the material into observed, sourced, and unresolved claims without declaring a final answer that the evidence does not support.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.14-formal-interface",
+      "label": "Formal Interface",
+      "description": "Present a checked position while keeping performance and certainty separate.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 13
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You present the checked position clearly, distinguish protocol from evidence, and leave uncertainty visible where it remains.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.duty.15-coordination",
+      "label": "Coordination",
+      "description": "Close the ordinary Palace work chain without choosing an ending.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "eq",
+          "value": 14
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "You coordinate the final general-work handoff across several roles, close the remaining obligations, and leave the next life decision to the player.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-prep.service-life.01-continuity",
+      "label": "Service Life — Continuity",
+      "description": "Review whether Palace service can remain sustainable through clear responsibilities.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "trusted-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "palace-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "crossroads"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.service-life",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.service-life.01-continuity",
+          "present": false
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Review the work pattern as a professional system: what repeats cleanly, what needs an owner, and what should remain a boundary.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-prep.service-life.02-boundaries",
+      "label": "Service Life — Boundaries",
+      "description": "Confirm a bounded service pattern without excluding other Palace outcomes.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "trusted-service"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "palace-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "crossroads"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.service-life",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.service-life.02-boundaries",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.service-life.01-continuity",
+          "present": true
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Set clear professional limits for continued service and record the arrangement without treating it as an ending commitment.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-prep.court-power.01-responsibility",
+      "label": "Court Power — Responsibility",
+      "description": "Review influence as accountable professional responsibility.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "palace-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "crossroads"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.court-power",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.court-power.01-responsibility",
+          "present": false
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Map which decisions can be accepted, traced, corrected, or refused without relying on personal favour.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-prep.court-power.02-network",
+      "label": "Court Power — Network",
+      "description": "Resolve a professional network and credit decision without requiring patronage.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "palace-network"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "crossroads"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.court-power",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.court-power.02-network",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.court-power.01-responsibility",
+          "present": true
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Trace the professional network, preserve responsibility for decisions, and record a route toward accountable influence.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-prep.inner-truth.01-evidence",
+      "label": "Inner Truth — Evidence",
+      "description": "Sort evidence by observation, source, and unresolved interpretation.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "crossroads"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.inner-truth",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.inner-truth.01-evidence",
+          "present": false
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Cross-check the available material, separating direct observation from sourced reports and leaving unresolved claims unresolved.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-prep.inner-truth.02-contradiction",
+      "label": "Inner Truth — Contradiction",
+      "description": "Compare plausible accounts without forcing a final mystery answer.",
+      "cost": {
+        "money": 0,
+        "energy": 1
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "crossroads"
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.inner-truth",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.inner-truth.02-contradiction",
+          "present": false
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "palace.outcome-prep.inner-truth.01-evidence",
+          "present": true
+        }
+      ],
+      "effects": [],
+      "mode": "normal",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "Compare the competing accounts, record the contradiction, and preserve uncertainty where the evidence cannot settle it.",
+          "conditions": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "palace.confront-prince",
+      "label": "Confront the Prince",
+      "description": "Present the Palace record and challenge the Custodian's exclusive veto without combat.",
+      "cost": {
+        "money": 0,
+        "energy": 0
+      },
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "stat",
+          "stat": "strength",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "endurance",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "dexterity",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "reason",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "magic",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "creativity",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "wits",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "charm",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "sociability",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "manners",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "grooming",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "sexuality",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prince-defeated",
+          "present": false
+        },
+        {
+          "kind": "questStage",
+          "quest": "palace.prince-confrontation",
+          "stage": "ready"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "advanceQuest",
+          "quest": "palace.prince-confrontation",
+          "transition": "begin"
+        }
+      ],
+      "mode": "story",
+      "scenes": [
+        {
+          "id": "default",
+          "text": "The Palace record is complete enough to challenge the Custodian's exclusive veto. You enter the confrontation with evidence already gathered, not with a weapon or a new hidden requirement.",
+          "conditions": [],
+          "media": []
+        }
+      ]
     }
   ],
   "endings": [
@@ -6302,6 +7356,198 @@
         }
       ],
       "epilogue": "You leave the route in control rather than in debt. Future lives remember the Network Retainer ownership seam."
+    },
+    {
+      "id": "ending.palace.service-life",
+      "title": "Palace — Service Life",
+      "description": "Outcome Ready plus completed Service Life preparation: choose continuity, clear handoffs, and professional boundaries without blind loyalty.",
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.service-life-ready",
+          "present": true
+        }
+      ],
+      "reward": "palace.service-life.steady-practice",
+      "metaRewards": [],
+      "epilogue": "You remain in Palace service as a continuity figure: responsibilities, handoffs, and institutional memory become less dependent on personal favour. The Palace remains imperfect and real, and you choose to help it keep working without claiming a throne or a final answer to every secret."
+    },
+    {
+      "id": "ending.palace.court-power",
+      "title": "Palace — Court Power",
+      "description": "Outcome Ready plus completed Court Power preparation: accept accountable authority over Palace appointments, access, audit, routing, and priorities.",
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.court-power-ready",
+          "present": true
+        }
+      ],
+      "reward": "palace.court-power.formal-introduction",
+      "metaRewards": [],
+      "epilogue": "You accept a formal Palace mandate and make access, responsibility, and review more traceable. Court politics remain real and constrained; your authority does not become sovereignty over the world or magical control of the Threshold."
+    },
+    {
+      "id": "ending.palace.inner-truth",
+      "title": "Palace — Inner Truth",
+      "description": "Outcome Ready plus completed Inner Truth preparation: preserve a method for checking the Threshold Archive's sources, contradictions, and unresolved claims.",
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.inner-truth-ready",
+          "present": true
+        }
+      ],
+      "reward": "palace.inner-truth.source-method",
+      "metaRewards": [],
+      "epilogue": "You secure the Threshold Archive's provenance chain and record what is observed, reported, inferred, and still unknown. The Palace can no longer use secrecy as a substitute for evidence, but the original cause of your displacement remains genuinely unresolved."
+    },
+    {
+      "id": "ending.palace.return-home",
+      "title": "Palace — Return Home",
+      "description": "True Return Home: Palace progression complete, all 12 progression stats at least 91, and the Custodian's exclusive veto defeated through the Prince confrontation.",
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "stat",
+          "stat": "strength",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "endurance",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "dexterity",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "reason",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "magic",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "creativity",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "wits",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "charm",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "sociability",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "manners",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "grooming",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "stat",
+          "stat": "sexuality",
+          "op": "gte",
+          "value": 91
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prince-defeated",
+          "present": true
+        }
+      ],
+      "reward": "palace.true.cap-200",
+      "metaRewards": [],
+      "epilogue": "You explicitly choose the world you came from. The verified origin trace carries you across the Threshold; the successor world does not vanish or become unreal behind you. The Palace and its unfinished politics remain real and continue without being rewritten."
     }
   ],
   "careers": [
@@ -7965,6 +9211,111 @@
           "effects": []
         }
       ]
+    },
+    {
+      "id": "palace",
+      "label": "Palace",
+      "initialStage": "entered-service",
+      "stages": [
+        "entered-service",
+        "working-rhythm",
+        "trusted-service",
+        "palace-network",
+        "crossroads",
+        "outcome-ready"
+      ],
+      "transitions": [
+        {
+          "id": "duty-02-working-rhythm",
+          "from": [
+            "entered-service"
+          ],
+          "to": "working-rhythm",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "palace",
+              "counter": "palace-duty-count",
+              "op": "eq",
+              "value": 2
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "duty-05-trusted-service",
+          "from": [
+            "working-rhythm"
+          ],
+          "to": "trusted-service",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "palace",
+              "counter": "palace-duty-count",
+              "op": "eq",
+              "value": 5
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "duty-08-palace-network",
+          "from": [
+            "trusted-service"
+          ],
+          "to": "palace-network",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "palace",
+              "counter": "palace-duty-count",
+              "op": "eq",
+              "value": 8
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "duty-12-crossroads",
+          "from": [
+            "palace-network"
+          ],
+          "to": "crossroads",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "palace",
+              "counter": "palace-duty-count",
+              "op": "eq",
+              "value": 12
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "duty-15-outcome-ready",
+          "from": [
+            "crossroads"
+          ],
+          "to": "outcome-ready",
+          "conditions": [
+            {
+              "kind": "careerCounter",
+              "career": "palace",
+              "counter": "palace-duty-count",
+              "op": "eq",
+              "value": 15
+            }
+          ],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.progression-complete"
+            }
+          ]
+        }
+      ]
     }
   ],
   "quests": [
@@ -8237,6 +9588,195 @@
               "present": true
             }
           ],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "palace.prince-confrontation",
+      "label": "Palace Prince confrontation",
+      "initialStage": "ready",
+      "stages": [
+        "ready",
+        "audit-record",
+        "name-contradiction",
+        "define-boundary",
+        "reconstruct-return",
+        "defeated"
+      ],
+      "transitions": [
+        {
+          "id": "begin",
+          "from": [
+            "ready"
+          ],
+          "to": "audit-record",
+          "conditions": [
+            {
+              "kind": "worldFact",
+              "fact": "palace.access-granted",
+              "present": true
+            },
+            {
+              "kind": "careerStage",
+              "career": "palace",
+              "stage": "outcome-ready"
+            },
+            {
+              "kind": "worldFact",
+              "fact": "palace.progression-complete",
+              "present": true
+            },
+            {
+              "kind": "stat",
+              "stat": "strength",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "endurance",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "dexterity",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "reason",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "magic",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "creativity",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "wits",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "charm",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "sociability",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "manners",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "grooming",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "stat",
+              "stat": "sexuality",
+              "op": "gte",
+              "value": 91
+            },
+            {
+              "kind": "worldFact",
+              "fact": "palace.prince-defeated",
+              "present": false
+            }
+          ],
+          "effects": []
+        },
+        {
+          "id": "audit-pass",
+          "from": [
+            "audit-record"
+          ],
+          "to": "name-contradiction",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "audit-reset",
+          "from": [
+            "audit-record"
+          ],
+          "to": "ready",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "contradiction-pass",
+          "from": [
+            "name-contradiction"
+          ],
+          "to": "define-boundary",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "contradiction-reset",
+          "from": [
+            "name-contradiction"
+          ],
+          "to": "ready",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "boundary-pass",
+          "from": [
+            "define-boundary"
+          ],
+          "to": "reconstruct-return",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "boundary-reset",
+          "from": [
+            "define-boundary"
+          ],
+          "to": "ready",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "proof-complete",
+          "from": [
+            "reconstruct-return"
+          ],
+          "to": "defeated",
+          "conditions": [],
+          "effects": []
+        },
+        {
+          "id": "proof-reset",
+          "from": [
+            "reconstruct-return"
+          ],
+          "to": "ready",
+          "conditions": [],
           "effects": []
         }
       ]
