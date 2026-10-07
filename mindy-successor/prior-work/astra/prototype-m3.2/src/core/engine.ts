@@ -1516,6 +1516,8 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
   if(!a||!actionAvailable(a,s,cat))throw new Error('Условия действия не выполнены.');
+  if(palaceDutyDefinition(a.id)){executePalaceStructuralDutyMutable(s,a,cat);return s;}
+  if(palaceSupportDefinition(a.id)){executePalaceSupportMutable(s,a,cat);return s;}
   if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
   const before={...s.run.metrics};
   const cost=actionCost(a,s);
