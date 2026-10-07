@@ -891,6 +891,7 @@ export function resolveReactions(input:Save,facts:ReactionFact[],cat:Catalog,{ne
 function collectDomainFacts(before:Save,after:Save,cat:Catalog,kind:DomainKind,facts:ReactionFact[]){
   const beforeMap=domainMap(before,kind),afterMap=domainMap(after,kind);
   const ids=new Set([...Object.keys(beforeMap),...Object.keys(afterMap)]);
+  if(kind==='career'&&machineDefinition(cat,'career','palace'))ids.add('palace');
   for(const id of ids){
     const a=readDomainState(before,kind,id,cat),b=readDomainState(after,kind,id,cat);if(!a||!b)continue;
     if(a.stage!==b.stage){
