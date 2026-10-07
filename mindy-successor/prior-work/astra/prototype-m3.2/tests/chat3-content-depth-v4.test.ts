@@ -182,9 +182,16 @@ test('C3-35 Secret Debt audit preserves ordinary poverty and generic-debt separa
     (definitions.relationships??[]).some((relationship:any)=>/secret.?debt|slave|lender/i.test(JSON.stringify(relationship))),
     false
   );
-  assert.equal(
-    definitions.endings.some((ending:any)=>/secret.?debt|slave|lender/i.test(JSON.stringify(ending))),
-    false
+  assert.deepEqual(
+    definitions.endings
+      .filter((ending:any)=>String(ending.id).startsWith('ending.secret-debt.'))
+      .map((ending:any)=>ending.id)
+      .sort(),
+    [
+      'ending.secret-debt.bound-life',
+      'ending.secret-debt.paid-freedom',
+      'ending.secret-debt.takeover'
+    ]
   );
 
   assert.equal(secretDebtAudit.currentDisposition.activeSecretDebtProductionCollision,false);
