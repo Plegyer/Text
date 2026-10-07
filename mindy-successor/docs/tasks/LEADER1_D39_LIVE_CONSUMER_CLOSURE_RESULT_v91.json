@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "leader1.d39-live-consumer-closure.v91",
+  "status": "PASS",
+  "sourceSha": "c58ea7e64f1f1b08ca9d5e70384fe41a0d9dff38",
+  "previousFailedSourceSha": "42a34904fe9ab2d04d53902a82e53643d3255642",
+  "repair": "assassin.relationship.trust accepts introduced or formal-introduced",
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "validate": "PASS",
+    "build": "PASS",
+    "focusedD39LiveConsumers": "PASS",
+    "focusedTests": "114/114 PASS"
+  },
+  "runId": "37657002423"
+}

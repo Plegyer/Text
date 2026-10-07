@@ -24,8 +24,13 @@ Rule: read this file, then re-query live GitHub refs before acting. Exact source
   - run: `37648362110` SUCCESS
   - typecheck / validate / build / focused D39+Palace: PASS
   - evidence: `LEADER1_D39_RUNTIME_CLOSURE_RESULT_v86.json`
-- [ ] **D39 live consumers — CURRENT ITEM**
-- [ ] Strong Meta UI composition
+- [x] D39 live consumers
+  - accepted source: `c58ea7e64f1f1b08ca9d5e70384fe41a0d9dff38`
+  - run: `37657002423` SUCCESS
+  - npm ci / typecheck / validate / build: PASS
+  - focused D39 live-consumer bundle: 114/114 PASS
+  - evidence: `LEADER1_D39_LIVE_CONSUMER_CLOSURE_RESULT_v91.json`
+- [ ] **Strong Meta UI composition — CURRENT ITEM**
 - [ ] D48 Palace media overlay
 - [ ] Stage 2 focused gate
 - [ ] Chat2 Stage 2 full CI
@@ -48,52 +53,46 @@ Branch:
 `chat2/assembly-palace-d39-d48-current-main-v76`
 
 Accepted production source before current item:
-`68f762ae6e87083e37badc418f9c903f7617419a`
+`c58ea7e64f1f1b08ca9d5e70384fe41a0d9dff38`
 
-Current control-plane tip after assigning D39 live consumers:
-`365a150c92376dfbde79fdaf907a07bc8f071563`
+Current control-plane tip after assigning Strong Meta UI:
+`76b86819ce92781633aa7a83fe9c59b2b86be698`
 
-Worker status at notebook creation:
-- Chat2: task assigned, requires explicit/manual user resume before calling it active
+Current worker status:
+- Chat2: Strong Meta UI assigned; requires explicit/manual user resume before calling it active
 - Chat3: stands
 - Chat4: done / stands
 - Chat5: stands
-- Chat6: stands
+- Chat6: producer work complete / stands
 
 Never say a worker is active only because a pointer exists.
 
-## Current item — D39 live consumers
+## Current item — Strong Meta UI composition
 
-Frozen production authority:
-`chat3/d39-consumer-producer-v45@090f36174cbc4ae9db46ae0bdbc9b1e4a2ce1386`
+Frozen implementation authority:
+`chat6/strong-meta-ui-closure-v42@fac645878ebd726f50fd1364ac72414796755a2d`
 
-The live Chat3 branch is docs-only ahead at:
-`c1c3f0ae9275b6e76c872733df0195bf73366ac1`
+Implementation boundary before v42/v43 code:
+`ce6753d482968581b0c2945f4b7c05b41a5d6e58`
 
-Use `090f361...` as production authority.
-
-Selective consumer delta only:
-- `content/definitions.json`
+Selective implementation delta only:
+- `src/ui/app.ts`
 - `content/localization.json`
-- `content/packs/assassin-relationship.json`
-- `content/packs/school-life-content-v1.json`
-- `tests/d39-formal-introduction-assassin-v46.test.ts`
-- `tests/school-life-content-reload.test.ts`
+- `tests/strong-meta-player-ui-v42.test.ts`
+- `tests/modal-aria-localization-v43.test.ts`
+- `tests/strong-meta-ui-localization-v42-v43.test.ts`
 
-Do not re-import producer runtime files.
+Semantic union only. Never wholesale replace current `src/ui/app.ts` or `content/localization.json`.
 
 Stop marker:
-`D39_LIVE_CONSUMERS_READY_FOR_STRONG_META_UI`
+`STRONG_META_UI_READY_FOR_D48`
 
-## Locked next authorities
-
-Strong Meta UI:
-`chat6/strong-meta-ui-closure-v42@fac645878ebd726f50fd1364ac72414796755a2d`
+## Locked next authority
 
 D48:
 `chat6/palace-d48-media-producer-v48@e0277dc302df178e73184bf1623d0e91e5237b45`
 
-Do not apply either before D39 live consumers are accepted.
+Do not apply D48 before Strong Meta UI is accepted.
 
 ## Governance that must not drift
 
@@ -103,7 +102,7 @@ Do not apply either before D39 live consumers are accepted.
 - Burn-down decrements only after Leader merge + exact-main CI green.
 - Never fabricate green when executable evidence is unavailable.
 - Semantic union shared owners; do not wholesale replace newer shared files from old producer branches.
-- Preserve Stage1 Secret Debt/D51, Palace v15-v19, Night/Activity and all already accepted current-main behavior.
+- Preserve Stage1 Secret Debt/D51, Palace v15-v19, Night/Activity, D39 runtime/live consumers, and all already accepted current-main behavior.
 - Do not wake peripheral workers unless the current critical-path step has a concrete need.
 
 ## Palace product locks
@@ -121,19 +120,23 @@ Do not apply either before D39 live consumers are accepted.
 - successor world is real
 - original displacement cause remains unknown
 
-## D39 product locks
+## D39 / Strong Meta product locks
 
 - Strong Meta: max 1 Keystone, max 2 Specialists
 - no Palace extra/free Specialist slot
 - current-run Strong Meta snapshot immutable
 - Source Method is automatic slot-free knowledge, future-life only
+- Source Method must never be selectable in UI
+- ordinary Hard Work remains outside Strong Meta slots
+- owned/imported Strong Meta rewards never auto-select
+- `palace.true.cap-200` remains a normal Specialist
 - Formal Introduction is a normal Specialist, 3 uses/run, max 1/relationship
 - first live Formal Introduction consumer is `assassin.handler`
 - neutral stage `formal-introduced`
 - transition `formal-introduction`
 - fact `introduced-at-work`
 - no trust/conflict/route/career/ending/resource/stat shortcut
-- normal Assassin trust remains reachable
+- normal Assassin trust remains reachable from both `introduced` and `formal-introduced`
 - Source Method first consumer is School Arcana/Reason Night Study presentation-only variant
 - no D49 macro-lore leakage
 
