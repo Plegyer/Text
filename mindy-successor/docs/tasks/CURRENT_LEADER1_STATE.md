@@ -1,3 +1,11 @@
+> **AUTHORITATIVE REDIRECT — 2026-10-07**
+>
+> This file contains historical state. For current Leader 1 recovery, read first:
+> `mindy-successor/docs/tasks/LEADER1_HANDOFF_2026-10-07_STAGE2_PALACE_CHAT4.md`
+>
+> Current broad burn-down: **4**. Current critical path: **Chat4 Palace v18 narrow repair**.
+> Re-query live GitHub before acting.
+
 # CURRENT LEADER1 STATE
 
 Status: **ACTIVE — AUTHORITATIVE LEADER RECOVERY CHECKPOINT**
