@@ -3,12 +3,14 @@ import assert from 'node:assert/strict';
 import {existsSync,readFileSync} from 'node:fs';
 
 import {presentationSchema,presentationSlots,resolvePresentation} from '../src/core/presentation.ts';
-import {stats} from '../src/core/schema.ts';
+import {stats,type Pack} from '../src/core/schema.ts';
 import {catalog,rawPacks} from './helpers.ts';
 
 const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
 const presentation=presentationSchema.parse(JSON.parse(readFileSync('content/presentation.json','utf8')));
 const strings=localization.strings;
+const packs=rawPacks as Pack[];
+const quests=catalog.definitions.quests??[];
 
 const palaceSlotIds=[
   'job/palace/event/palace-invitation-day1-arrival/default',
@@ -34,8 +36,8 @@ const palaceSlotIds=[
 
 test('v19 Palace final prose keeps the frozen confrontation mechanics exact',()=>{
   const action=catalog.definitions.actions.find(item=>item.id==='palace.confront-prince')!;
-  const quest=catalog.definitions.quests.find(item=>item.id==='palace.prince-confrontation')!;
-  const pack=rawPacks.find(item=>item.id==='palace.prince-confrontation')!;
+  const quest=quests.find(item=>item.id==='palace.prince-confrontation')!;
+  const pack=packs.find(item=>item.id==='palace.prince-confrontation')!;
 
   assert.ok(action);
   assert.ok(quest);
@@ -77,28 +79,28 @@ test('v19 Palace final prose keeps the frozen confrontation mechanics exact',()=
 });
 
 test('v19 Palace prose preserves D45 ambiguity and non-combat meaning',()=>{
-  const progression=rawPacks.find(item=>item.id==='palace.progression')!;
-  const prince=rawPacks.find(item=>item.id==='palace.prince-confrontation')!;
-  const invitation=rawPacks.find(item=>item.id==='palace.invitation')!;
+  const progression=packs.find(item=>item.id==='palace.progression')!;
+  const prince=packs.find(item=>item.id==='palace.prince-confrontation')!;
+  const invitation=packs.find(item=>item.id==='palace.invitation')!;
 
   const inviteText=JSON.stringify(invitation);
   assert.doesNotMatch(inviteText,/Threshold Archive|inter-world Threshold/i);
 
   const milestones=new Map(progression.events.map(event=>[event.id,event]));
   assert.doesNotMatch(
-    milestones.get('palace.progression.milestone-12-crossroads')!.variants[0].text,
+    milestones.get('palace.progression.milestone-12-crossroads')!.variants[0]!.text,
     /Threshold Archive|inter-world Threshold/i
   );
   assert.match(
-    milestones.get('palace.progression.milestone-15-outcome-ready')!.variants[0].text,
+    milestones.get('palace.progression.milestone-15-outcome-ready')!.variants[0]!.text,
     /Palace Concordance/
   );
   assert.match(
-    milestones.get('palace.progression.milestone-15-outcome-ready')!.variants[0].text,
+    milestones.get('palace.progression.milestone-15-outcome-ready')!.variants[0]!.text,
     /Threshold Archive/
   );
   assert.match(
-    milestones.get('palace.progression.milestone-15-outcome-ready')!.variants[0].text,
+    milestones.get('palace.progression.milestone-15-outcome-ready')!.variants[0]!.text,
     /do not know what originally displaced you/i
   );
 
