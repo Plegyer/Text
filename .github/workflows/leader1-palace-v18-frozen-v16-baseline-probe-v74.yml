@@ -1,0 +1,45 @@
+name: Leader1 Palace v18 frozen v16 baseline probe v74
+
+on:
+  push:
+    branches:
+      - leader1/palace-v18-frozen-v16-baseline-probe-v74
+    paths:
+      - '.github/workflows/leader1-palace-v18-frozen-v16-baseline-probe-v74.yml'
+
+jobs:
+  baseline-v16-renderer:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact frozen Palace v18 base
+        uses: actions/checkout@v4
+        with:
+          ref: ed76c89829541c955e4129d6e0114c0d2fe7e562
+          fetch-depth: 1
+
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "ed76c89829541c955e4129d6e0114c0d2fe7e562"
+          $actual = (git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if ($actual -ne $expected) { throw "Exact frozen-base guard failed: $actual" }
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Frozen v16 renderer probe
+        run: node --experimental-strip-types --test tests/palace-player-facing-ui-renderer-v16.test.ts
