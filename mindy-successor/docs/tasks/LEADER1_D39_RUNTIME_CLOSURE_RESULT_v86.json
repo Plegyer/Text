@@ -1,0 +1,13 @@
+﻿{
+    "schemaVersion":  1,
+    "id":  "leader1.d39-runtime-closure.v86",
+    "status":  "PASS",
+    "sourceSha":  "68f762ae6e87083e37badc418f9c903f7617419a",
+    "checks":  {
+                   "typecheck":  "PASS",
+                   "validate":  "PASS",
+                   "build":  "PASS",
+                   "focusedD39Palace":  "PASS"
+               },
+    "runId":  "37648362110"
+}
