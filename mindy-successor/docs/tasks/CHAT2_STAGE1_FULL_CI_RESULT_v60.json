@@ -1,0 +1,6 @@
+﻿{
+    "testedSha":  "63e28896260887ed753b7fba0ea29949d73c2ebb",
+    "workflowSha":  "d56576ad666681a29469f94b1b0e9516a1d9e045",
+    "npmCi":  "success",
+    "fullCi":  "failure"
+}
