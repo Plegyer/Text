@@ -494,6 +494,33 @@ export const resourceStateSchema=z.object({money:n,inventory:inventoryRecord}).s
 export const housingStateSchema=z.object({current:z.enum(targetHousing),paidForCurrentNight:z.boolean()}).strict();
 
 const careerState=z.object({stage:id,shifts:n,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
+export const palaceStages=['entered-service','working-rhythm','trusted-service','palace-network','crossroads','outcome-ready'] as const;
+export type PalaceStage=typeof palaceStages[number];
+export const palaceRoutePrepFacts=['service-life','court-power','inner-truth'] as const;
+export type PalaceRoutePrepFact=typeof palaceRoutePrepFacts[number];
+export const palaceProgressionStateSchema=careerState.extend({
+  stage:z.enum(palaceStages),
+  lastStructuralDutyDay:z.number().int().min(-1).max(159),
+  lastSupportActionDay:z.number().int().min(-1).max(159),
+  committedDutyIds:z.array(id).max(15),
+  completedSupportIds:z.array(id).max(16),
+  routePrepFacts:z.array(z.enum(palaceRoutePrepFacts)).max(3)
+}).strict();
+export type PalaceProgressionState=z.infer<typeof palaceProgressionStateSchema>;
+export function createDefaultPalaceProgressionState():PalaceProgressionState{
+  return {
+    stage:'entered-service',
+    shifts:0,
+    counters:{'palace-duty-count':0},
+    choices:{},
+    facts:[],
+    lastStructuralDutyDay:-1,
+    lastSupportActionDay:-1,
+    committedDutyIds:[],
+    completedSupportIds:[],
+    routePrepFacts:[]
+  };
+}
 const questState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const relationshipState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const schoolTrackState=z.object({
@@ -507,6 +534,7 @@ const schoolTrackState=z.object({
 export const schoolProgressionStateSchema=z.object({tracks:z.record(z.string(),schoolTrackState)}).strict();
 export const progressionStateSchema=z.object({
   careers:z.record(z.string(),careerState),
+  palace:palaceProgressionStateSchema.default(createDefaultPalaceProgressionState),
   quests:z.record(z.string(),questState),
   relationships:z.record(z.string(),relationshipState),
   school:schoolProgressionStateSchema.default({tracks:{}}),
