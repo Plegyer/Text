@@ -5,7 +5,14 @@ import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,pala
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
 import {
   STRONG_META_IDS,
+  STRONG_META_KNOWLEDGE_IDS,
   STRONG_META_REGISTRY_VERSION,
+  applySteadyPracticeSeasonalLoss,
+  bindSteadyPracticeCareer,
+  formalIntroductionUseAvailable,
+  grantStrongMetaKnowledge,
+  hasAutomaticStrongMetaKnowledge,
+  consumeFormalIntroductionUse,
   applyEarnedReserveMatch,
   applyNetworkRetainerAtStartDay,
   applyWorkRhythmAtStartDay,
@@ -22,6 +29,7 @@ import {
   strongMetaCurrentEnergyBonus,
   validateResolvedStrongMetaSnapshot,
   validateStrongMetaRuntimeAgainstSnapshot,
+  type ApprovedStrongKnowledgeId,
   type ApprovedStrongRewardId
 } from './strongMeta.ts';
 import {
@@ -306,6 +314,8 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'metaUnlock': return s.meta.unlocks.includes(c.unlock)===c.present;
     case 'metaEndingCompleted': return s.meta.completedEndings.includes(c.ending)===c.present;
     case 'metaHardWork': return s.meta.hardWorkProgress.includes(c.career)===c.present;
+    case 'strongMetaKnowledge': return hasAutomaticStrongMetaKnowledge(s.run.strongMetaSnapshot,c.knowledge as ApprovedStrongKnowledgeId)===c.present;
+    case 'strongMetaFormalIntroductionAvailable': return strongMetaFormalIntroductionAvailable(s,cat,c.career,c.relationship,c.transition);
 
     // Legacy M3.2 leaves.
     case 'metric': return compare(getMetric(s,c.key),c.op,c.value);
@@ -436,6 +446,22 @@ function executePalaceSupportMutable(s:Save,a:Action,cat:Catalog){
 }
 
 
+function strongMetaFormalIntroductionAvailable(s:Save,cat:Catalog|undefined,career:string,relationship:string,transition:string):boolean{
+  if(!cat||!ordinaryCareerSet.has(career))return false;
+  if(/^(?:palace|activity|secret-debt)\./.test(relationship))return false;
+  if(!formalIntroductionUseAvailable(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,relationship))return false;
+  const shift=cat.definitions.actions.find(action=>action.id===`${career}.shift`);
+  if(!shift||!actionAvailable(shift,s,cat))return false;
+  const careerState=readDomainState(s,'career',career,cat);
+  if((careerState?.counters.completed_shifts??0)<1)return false;
+  const relationshipState=readDomainState(s,'relationship',relationship,cat);
+  if(!relationshipState)return false;
+  const def=machineDefinition(cat,'relationship',relationship);
+  const target=def?.transitions.find(item=>item.id===transition);
+  if(!target||!target.from.includes(relationshipState.stage))return false;
+  return eligible(target.conditions,s,cat);
+}
+
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
   return a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`]?0:a.cost.money;
@@ -544,7 +570,7 @@ function removeValue(target:string[],value:string){const i=target.indexOf(value)
 function effectPhase(e:Effect){
   if(['modifyStat','modifyResource','modifyEnergy','addItem','removeItem','setHousing','metric','item','housing','flag'].includes(e.kind))return 1;
   if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact','secretDebtAccept','secretDebtRefuse'].includes(e.kind))return 2;
-  if(['advanceCareer','advanceQuest','advanceRelationship'].includes(e.kind))return 3;
+  if(['advanceCareer','advanceQuest','advanceRelationship','useStrongMetaFormalIntroduction'].includes(e.kind))return 3;
   return 4;
 }
 function transitionFor(cat:Catalog,kind:DomainKind,id:string,transitionId:string){
@@ -607,6 +633,14 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
     case 'advanceQuest': if(!allowTransitions)throw new Error('Nested quest transition запрещён');applyTransition(s,'quest',e.quest,e.transition,cat);return;
     case 'advanceRelationship': if(!allowTransitions)throw new Error('Nested relationship transition запрещён');applyTransition(s,'relationship',e.relationship,e.transition,cat);return;
 
+    case 'useStrongMetaFormalIntroduction': {
+      if(!allowTransitions)throw new Error('Nested Formal Introduction transition запрещён');
+      if(!strongMetaFormalIntroductionAvailable(s,cat,e.career,e.relationship,e.transition))throw new Error('Formal Introduction сейчас недоступно.');
+      applyTransition(s,'relationship',e.relationship,e.transition,cat);
+      s.run.strongMetaRuntime=consumeFormalIntroductionUse(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,e.relationship);
+      return;
+    }
+
     case 'addNextDayModifier':
       s.run.dayState.nextDayModifiers.energyDelta+=e.energyDelta;
       for(const se of e.statEffects)s.run.dayState.nextDayModifiers.statEffects.push(se);
@@ -638,6 +672,22 @@ function applyActionEffectsMutable(s:Save,effects:Effect[],cat:Catalog){
     return readDomainState(s,'career',effect.career,cat)?.stage!==t.to;
   });
   applyEffectsMutable(s,applicable,cat,true);
+}
+function applySteadyPracticeSeasonalEffectsMutable(s:Save,effects:Effect[],cat:Catalog,career:OrdinaryHardWorkCareer){
+  const adjusted:Effect[]=[];
+  for(const effect of effects){
+    if(effect.kind==='modifyStat'&&effect.delta===-1){
+      const protectedLoss=applySteadyPracticeSeasonalLoss({
+        snapshot:s.run.strongMetaSnapshot,
+        runtime:s.run.strongMetaRuntime,
+        career,
+        delta:effect.delta
+      });
+      s.run.strongMetaRuntime=protectedLoss.runtime;
+      adjusted.push({...effect,delta:protectedLoss.delta});
+    }else adjusted.push(effect);
+  }
+  applyEffectsMutable(s,adjusted,cat,true);
 }
 export function applyEffects(input:Save,effects:Effect[],cat:Catalog):Save{
   const s=cloneSave(input);applyEffectsMutable(s,effects,cat,true);return s;
@@ -982,6 +1032,7 @@ function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
   if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
   else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
   else if(reward.kind==='strongMeta')meta.strongMeta=grantStrongMetaReward(meta.strongMeta,reward.reward as ApprovedStrongRewardId);
+  else if(reward.kind==='knowledge')meta.strongMeta=grantStrongMetaKnowledge(meta.strongMeta,reward.knowledge as ApprovedStrongKnowledgeId);
 }
 function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.status==='ended'){
