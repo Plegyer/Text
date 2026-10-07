@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.prince-confrontation",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "quests": [
+        "palace.prince-confrontation"
+      ]
+    },
+    "writes": {
+      "quests": [
+        "palace.prince-confrontation"
+      ],
+      "worldFacts": [
+        "palace.prince-defeated"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.prince-confrontation.phase-01-audit-record",
+      "title": "Palace — Audit the Record",
+      "sourceDomain": "palace",
+      "trigger": [
+        "palace.confront-prince"
+      ],
+      "reactionTriggers": [],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1000000,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "palace.prince-confrontation",
+          "stage": "audit-record"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Custodian does not begin with a duel. The Prince asks what the fifteen duties actually proved. The record supports a real Palace institution, a Concordance that joins evidence across roles, and a protected function that ordinary service alone did not explain.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "separate-record-from-claim",
+          "label": "Separate the record from the Palace's claims",
+          "text": "You distinguish authenticated work and records from the conclusions the institution draws from them.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-01",
+              "value": "record-separated"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "audit-pass"
+            }
+          ]
+        },
+        {
+          "id": "unsupported-conclusion",
+          "label": "Claim the records prove more than they do",
+          "text": "You overstate the evidence. The Prince ends this attempt; the record remains available for another try.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-01",
+              "value": "unsupported"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "audit-reset"
+            }
+          ]
+        },
+        {
+          "id": "not-yet",
+          "label": "Not yet",
+          "text": "You stop before making a claim you are not ready to defend. Nothing is lost, and the confrontation can be started again.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-01",
+              "value": "back-out"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "audit-reset"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.prince-confrontation.phase-02-name-contradiction",
+      "title": "Palace — Name the Contradiction",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "palace.prince-confrontation"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 99,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1000000,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "palace.prince-confrontation",
+          "stage": "name-contradiction"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Prince states the Custodian doctrine plainly: because the Palace controls access to the Threshold Archive, only the Custodian can finally judge what the records mean. The institutional power is real. The leap from control to exclusive truth is the point you must examine.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "authority-is-not-proof",
+          "label": "Authority is not proof",
+          "text": "You accept that the Custodian controls access while rejecting the claim that access control makes one interpretation uniquely true.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-02",
+              "value": "authority-not-proof"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "contradiction-pass"
+            }
+          ]
+        },
+        {
+          "id": "accept-exclusive-veto",
+          "label": "Treat custody as proof",
+          "text": "You let institutional control stand in for evidence. The attempt ends without changing the Prince's mandate.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-02",
+              "value": "accepted-veto"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "contradiction-reset"
+            }
+          ]
+        },
+        {
+          "id": "not-yet",
+          "label": "Not yet",
+          "text": "You withdraw from the argument. The Palace record and your eligibility remain unchanged for a later attempt.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-02",
+              "value": "back-out"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "contradiction-reset"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.prince-confrontation.phase-03-define-boundary",
+      "title": "Palace — Define the Boundary",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "palace.prince-confrontation"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 98,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1000000,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "palace.prince-confrontation",
+          "stage": "define-boundary"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Prince presses the consequence of your claim. Returning cannot depend on declaring this world false, erasing the lives lived here, or destroying the Palace. A valid return must separate personal origin from ownership of everyone else's reality.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "leave-without-erasing",
+          "label": "Leave without erasing this world",
+          "text": "You state the boundary: the successor world remains real, refusing permanent custody does not destroy the Palace, and choosing your origin does not rewrite anyone else's life.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-03",
+              "value": "world-remains-real"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "boundary-pass"
+            }
+          ]
+        },
+        {
+          "id": "declare-world-unreal",
+          "label": "Claim this world is unreal",
+          "text": "That claim is not supported by the Palace record. The attempt closes without a defeat signal.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-03",
+              "value": "unsupported-unreal"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "boundary-reset"
+            }
+          ]
+        },
+        {
+          "id": "not-yet",
+          "label": "Not yet",
+          "text": "You step away before the final reconstruction. No ending is chosen, and the confrontation remains retryable.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-03",
+              "value": "back-out"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "boundary-reset"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.prince-confrontation.phase-04-reconstruct-return",
+      "title": "Palace — Reconstruct the Return Claim",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "questTransition",
+          "quest": "palace.prince-confrontation"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 97,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1000000,
+      "conditions": [
+        {
+          "kind": "questStage",
+          "quest": "palace.prince-confrontation",
+          "stage": "reconstruct-return"
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The final task is reconstruction, not combat. You connect the authenticated arrival anomaly, the Threshold Archive's corroborating records, and the boundary you just established into an origin trace. You do not pretend to know what originally caused your displacement.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "present-origin-trace",
+          "label": "Present the verified origin trace",
+          "text": "The reconstruction is coherent without relying on the Prince's private interpretation. His exclusive epistemic veto can no longer stand. Return Home becomes a separate choice; it is not committed here.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-04",
+              "value": "origin-trace-established"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.prince-defeated"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "proof-complete"
+            }
+          ]
+        },
+        {
+          "id": "invent-original-cause",
+          "label": "Fill the unknown cause with a guess",
+          "text": "You replace an unresolved question with an assertion. The Prince rejects the reconstruction, and the attempt returns to a retryable state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-04",
+              "value": "invented-cause"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "proof-reset"
+            }
+          ]
+        },
+        {
+          "id": "not-yet",
+          "label": "Not yet",
+          "text": "You keep the unresolved cause unresolved and stop the attempt. The Prince is not defeated, and you may return later.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "setQuestChoice",
+              "quest": "palace.prince-confrontation",
+              "choice": "phase-04",
+              "value": "back-out"
+            },
+            {
+              "kind": "advanceQuest",
+              "quest": "palace.prince-confrontation",
+              "transition": "proof-reset"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
