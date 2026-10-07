@@ -134,7 +134,17 @@ test('C3-57 ordinary poverty remains separate from Secret Debt',()=>{
 
   assert.equal(definitions.careers.some((career:any)=>/secret.?debt|slave|lender/i.test(JSON.stringify(career))),false);
   assert.equal((definitions.relationships??[]).some((relationship:any)=>/secret.?debt|slave|lender/i.test(JSON.stringify(relationship))),false);
-  assert.equal(definitions.endings.some((ending:any)=>/secret.?debt|slave|lender/i.test(JSON.stringify(ending))),false);
+  assert.deepEqual(
+    definitions.endings
+      .filter((ending:any)=>String(ending.id).startsWith('ending.secret-debt.'))
+      .map((ending:any)=>ending.id)
+      .sort(),
+    [
+      'ending.secret-debt.bound-life',
+      'ending.secret-debt.paid-freedom',
+      'ending.secret-debt.takeover'
+    ]
+  );
   assert.equal(secretDebt.findings.ordinaryPovertyIndependent,true);
   assert.equal(secretDebt.invariants.noNewDebtValues,true);
 });

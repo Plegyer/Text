@@ -117,6 +117,9 @@ function checkTypedRead(c:Condition,p:Pack){
   if(c.kind==='calendarYear'||c.kind==='calendarSeason'||c.kind==='calendarDayInYear'||c.kind==='calendarElapsedDays')needCapability(r?.calendar===true,'read calendar');
   if(c.kind==='housingTier')needCapability(r?.housing===true,'read housing');
   if(c.kind==='schoolCounter')needCapability(has(r?.schoolTracks,c.track),`read School track ${c.track}`);
+  if(c.kind==='schoolPaidLessons')needCapability(r?.schoolPaidLessons===true,'read paid School lesson total');
+  if(c.kind==='lust')needCapability(r?.lust===true,'read Lust');
+  if(c.kind==='secretDebtStatus'||c.kind==='secretDebtShifts'||c.kind==='secretDebtLenderEligible')needCapability(r?.secretDebt===true,'read Secret Debt state');
   if(c.kind==='careerStage'||c.kind==='careerShifts'||c.kind==='careerCounter'||c.kind==='careerFact'||c.kind==='careerChoice')needCapability(has(r?.careers,c.career),`read career ${c.career}`);
   if(c.kind==='questStage'||c.kind==='questCounter'||c.kind==='questFact'||c.kind==='questChoice')needCapability(has(r?.quests,c.quest),`read quest ${c.quest}`);
   if(c.kind==='relationshipStage'||c.kind==='relationshipCounter'||c.kind==='relationshipFact'||c.kind==='relationshipChoice')needCapability(has(r?.relationships,c.relationship),`read relationship ${c.relationship}`);
@@ -137,6 +140,11 @@ function checkTypedWrite(e:Effect,p:Pack){
   if(e.kind==='incrementRelationshipCounter'||e.kind==='addRelationshipFact'||e.kind==='setRelationshipChoice'||e.kind==='advanceRelationship')needCapability(has(w?.relationships,e.relationship),`write relationship ${e.relationship}`);
   if(e.kind==='addWorldFact'||e.kind==='removeWorldFact')needCapability(has(w?.worldFacts,e.fact),`write worldFact ${e.fact}`);
   if(e.kind==='addNextDayModifier')needCapability(w?.nextDay===true,'write nextDay modifier');
+  if(e.kind==='secretDebtAccept'){
+    needCapability(w?.secretDebt===true,'write Secret Debt state');
+    needCapability(has(w?.resources,'money'),'write Secret Debt lender grant');
+  }
+  if(e.kind==='secretDebtRefuse')needCapability(w?.secretDebt===true,'write Secret Debt state');
 }
 function freeEffect(e:Effect){
   if(e.kind==='housing'||e.kind==='setHousing'||e.kind==='removeItem'||e.kind==='removeWorldFact')return false;

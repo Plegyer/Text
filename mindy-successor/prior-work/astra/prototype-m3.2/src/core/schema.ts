@@ -17,7 +17,10 @@ export type Stat = typeof stats[number];
 export type ResourceId = typeof targetResources[number];
 export type LegacyMetric = typeof metrics[number];
 export type Metric = LegacyMetric;
-export type CompareOp = 'gte'|'lte'|'eq';
+export type CompareOp = 'gte'|'lte'|'eq';export const secretDebtStatuses = ['unseen','refused','accepted','bound','paid-freedom','takeover'] as const;
+export type SecretDebtStatus = typeof secretDebtStatuses[number];
+
+
 
 export type Condition =
   // Target v2 leaves.
@@ -31,6 +34,11 @@ export type Condition =
   | {kind:'calendarElapsedDays';op:CompareOp;value:number}
   | {kind:'housingTier';value:typeof targetHousing[number]}
   | {kind:'schoolCounter';track:string;counter:string;op:CompareOp;value:number}
+  | {kind:'schoolPaidLessons';op:CompareOp;value:number}
+  | {kind:'lust';op:CompareOp;value:number}
+  | {kind:'secretDebtStatus';value:SecretDebtStatus}
+  | {kind:'secretDebtShifts';op:CompareOp;value:number}
+  | {kind:'secretDebtLenderEligible'}
   | {kind:'careerStage';career:string;stage:string}
   | {kind:'careerShifts';career:string;op:CompareOp;value:number}
   | {kind:'careerCounter';career:string;counter:string;op:CompareOp;value:number}
@@ -80,6 +88,11 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('calendarElapsedDays'),op:compareOp,value:n.max(159)}).strict(),
   z.object({kind:z.literal('housingTier'),value:z.enum(targetHousing)}).strict(),
   z.object({kind:z.literal('schoolCounter'),track:id,counter:id,op:compareOp,value:n}).strict(),
+  z.object({kind:z.literal('schoolPaidLessons'),op:compareOp,value:n}).strict(),
+  z.object({kind:z.literal('lust'),op:compareOp,value:n.max(100)}).strict(),
+  z.object({kind:z.literal('secretDebtStatus'),value:z.enum(secretDebtStatuses)}).strict(),
+  z.object({kind:z.literal('secretDebtShifts'),op:compareOp,value:n}).strict(),
+  z.object({kind:z.literal('secretDebtLenderEligible')}).strict(),
   z.object({kind:z.literal('careerStage'),career:id,stage:id}).strict(),
   z.object({kind:z.literal('careerShifts'),career:id,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('careerCounter'),career:id,counter:id,op:compareOp,value:n}).strict(),
@@ -140,6 +153,8 @@ export const effectSchema = z.discriminatedUnion('kind',[
 
   z.object({kind:z.literal('addWorldFact'),fact:id}).strict(),
   z.object({kind:z.literal('removeWorldFact'),fact:id}).strict(),
+  z.object({kind:z.literal('secretDebtAccept')}).strict(),
+  z.object({kind:z.literal('secretDebtRefuse')}).strict(),
   z.object({
     kind:z.literal('addNextDayModifier'),
     energyDelta:z.number().int().min(-10).max(10).default(0),
@@ -179,6 +194,9 @@ const capabilityReads=z.object({
   calendar:z.boolean().optional(),
   housing:z.boolean().optional(),
   schoolTracks:z.array(id).optional(),
+  schoolPaidLessons:z.boolean().optional(),
+  lust:z.boolean().optional(),
+  secretDebt:z.boolean().optional(),
   careers:z.array(id).optional(),
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
@@ -196,7 +214,8 @@ const capabilityWrites=z.object({
   quests:z.array(id).optional(),
   relationships:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
-  nextDay:z.boolean().optional()
+  nextDay:z.boolean().optional(),
+  secretDebt:z.boolean().optional()
 }).strict();
 const capabilitiesSchema=z.object({reads:capabilityReads,writes:capabilityWrites}).strict();
 
@@ -559,6 +578,20 @@ export const historyStateSchema=z.object({
   journalRefs:z.array(eventChoicePresentationRefSchema.nullable()).max(160).default([])
 }).strict();
 
+export const secretDebtStateSchema=z.object({
+  status:z.enum(secretDebtStatuses),
+  acceptedDay:z.number().int().min(0).nullable(),
+  trapDay:z.number().int().min(0).nullable(),
+  boundDay:z.number().int().min(0).nullable(),
+  resolvedDay:z.number().int().min(0).nullable(),
+  debt:z.number().int().min(0),
+  hiddenShifts:z.number().int().min(0),
+  grantApplied:z.boolean(),
+  lastLenderAttemptDay:z.number().int().min(0).nullable()
+}).strict();
+export type SecretDebtState=z.infer<typeof secretDebtStateSchema>;
+const defaultSecretDebtState:SecretDebtState={status:'unseen',acceptedDay:null,trapDay:null,boundDay:null,resolvedDay:null,debt:0,hiddenShifts:0,grantApplied:false,lastLenderAttemptDay:null};
+
 export const legacyCompatSchema=z.object({
   source:z.literal('m3.2'),
   metrics:legacyMetricRecord,
@@ -581,6 +614,7 @@ export const runSchema=z.object({
   historyState:historyStateSchema,
   strongMetaSnapshot:strongMetaSnapshotSchema.nullable(),
   strongMetaRuntime:strongMetaRuntimeSchema,
+  secretDebt:secretDebtStateSchema.default(defaultSecretDebtState),
   legacyCompat:legacyCompatSchema.optional()
 }).strict();
 

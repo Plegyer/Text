@@ -5,6 +5,7 @@ import {dispatch,eligible} from '../src/core/engine.ts';
 import {catalog,started} from './helpers.ts';
 import {povertyPendingLocalizationKey} from '../src/ui/povertyDepth.ts';
 import type {Save} from '../src/core/schema.ts';
+import {SECRET_DEBT_LENDER_EVENT_ID} from '../src/core/secretDebt.ts';
 
 const PREFIXES=['poverty-street-production.','poverty-street-production-v2.','poverty-cheap-production.','poverty-cheap-production-v2.','poverty-recovery-production.','poverty-pressure-production.','poverty-closure-production-v14.'];
 const isOrdinary=(id:string)=>PREFIXES.some(prefix=>id.startsWith(prefix));
@@ -24,6 +25,10 @@ function resolveOrdinary(input:Save){
   if(++guard>12)throw new Error('ordinary poverty Night scene cascade exceeded guard');
   const event=catalog.events.find(entry=>entry.id===state.run.pending!.eventId);
   assert.ok(event);
+  if(event.id===SECRET_DEBT_LENDER_EVENT_ID){
+    state=dispatch(state,{type:'choice',id:'refuse'},catalog);
+    continue;
+  }
   assert.ok(isOrdinary(event.id),'unexpected Night event '+event.id);
   const allowed=state.run.pending.allowedChoiceIds??event.choices.map(choice=>choice.id);
   const choices=event.choices.filter(choice=>allowed.includes(choice.id)&&eligible(choice.conditions,state,catalog));

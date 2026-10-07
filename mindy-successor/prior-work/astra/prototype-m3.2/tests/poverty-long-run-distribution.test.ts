@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {dispatch,eligible} from '../src/core/engine.ts';
 import {catalog,started} from './helpers.ts';
 import type {Save} from '../src/core/schema.ts';
+import {SECRET_DEBT_LENDER_EVENT_ID} from '../src/core/secretDebt.ts';
 
 const ORDINARY_PREFIXES=[
   'poverty-street-production.',
@@ -39,6 +40,10 @@ function resolveOrdinaryNightScenes(input:Save){
     if(++guard>12)throw new Error('ordinary poverty Night scene cascade exceeded guard');
     const event=catalog.events.find(entry=>entry.id===s.run.pending!.eventId);
     assert.ok(event);
+    if(event.id===SECRET_DEBT_LENDER_EVENT_ID){
+      s=dispatch(s,{type:'choice',id:'refuse'},catalog);
+      continue;
+    }
     assert.ok(isOrdinaryPovertyEvent(event.id),`unexpected Night event ${event.id}`);
     const allowed=s.run.pending.allowedChoiceIds??event.choices.map(choice=>choice.id);
     const choices=event.choices.filter(choice=>
