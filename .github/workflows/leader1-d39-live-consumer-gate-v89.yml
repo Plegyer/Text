@@ -1,0 +1,49 @@
+name: Leader1 D39 live consumer gate v89
+on:
+  push:
+    branches: [qa-d39-live-v89]
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 42a34904fe9ab2d04d53902a82e53643d3255642
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "42a34904fe9ab2d04d53902a82e53643d3255642"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run validate
+      - run: npm run build
+      - name: Focused D39 live consumers
+        run: >
+          node --experimental-strip-types --test
+          tests/d39-formal-introduction-assassin-v46.test.ts
+          tests/school-life-content-reload.test.ts
+          tests/school-night-study-adapter.test.ts
+          tests/assassin-boundaries.test.ts
+          tests/assassin-natural-acceptance.test.ts
+          tests/assassin-production-presentation.test.ts
+          tests/assassin-runtime-invariants.test.ts
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/strong-meta-d30-runtime-v7.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/palace-final-prose-media-v19.test.ts
