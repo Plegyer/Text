@@ -1,0 +1,91 @@
+name: Leader1 D39 runtime closure v83
+
+on:
+  push:
+    branches:
+      - leader1/d39-runtime-closure-v83
+    paths:
+      - '.github/workflows/leader1-d39-runtime-closure-v83.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact D39 runtime source
+        uses: actions/checkout@v4
+        with:
+          ref: 5ae81e33e4a699443ea2ac1e33241ba905bb81fb
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          $expected = "5ae81e33e4a699443ea2ac1e33241ba905bb81fb"
+          $actual = (git rev-parse HEAD).Trim()
+          if ($actual -ne $expected) { throw "Exact source guard failed: $actual" }
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: npm ci
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: D39 runtime and Palace focused gate
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/strong-meta-registry-v7.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/ending-meta.test.ts
+          tests/palace-d23-consumer-integration-v8.test.ts
+          tests/hard-work-palace-meta-smoke.test.ts
+          tests/chat3-secret-debt-separation-v2.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/palace-final-prose-media-v19.test.ts
+      - name: Publish evidence
+        shell: powershell
+        working-directory: .
+        run: |
+          $path = "mindy-successor/docs/tasks/LEADER1_D39_RUNTIME_CLOSURE_RESULT_v83.json"
+          $temp = Join-Path $env:RUNNER_TEMP "d39-runtime-v83.json"
+          $obj = [ordered]@{
+            schemaVersion = 1
+            id = "leader1.d39-runtime-closure.v83"
+            status = "PASS"
+            sourceSha = "5ae81e33e4a699443ea2ac1e33241ba905bb81fb"
+            chat2ReportedHead = "c7ce0e8ace1e83e9afc70c3683140182e4ace609"
+            leaderRepair = "canonical four Palace metaRewards arrays"
+            checks = [ordered]@{
+              typecheck = "PASS"
+              validate = "PASS"
+              build = "PASS"
+              focusedD39Palace = "PASS"
+            }
+            runId = "${{ github.run_id }}"
+          }
+          $obj | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8 $temp
+          git fetch origin leader1/d39-runtime-closure-v83
+          git checkout -B leader1/d39-runtime-closure-v83 origin/leader1/d39-runtime-closure-v83
+          Copy-Item $temp $path
+          git config user.name "Leader1 QA"
+          git config user.email "actions@users.noreply.github.com"
+          git add $path
+          git commit -m "qa(leader1): publish D39 runtime closure v83"
+          git push origin HEAD:leader1/d39-runtime-closure-v83
