@@ -528,3 +528,42 @@ Evidence file expected:
 At this checkpoint v59 is queued/running on the self-hosted runner; no green claim yet.
 Do not call terminal/DNS limitation a blocker again: Leader1 has a working push-trigger Actions execution path.
 Do not run full CI until v59 is fully green.
+
+
+## 2026-10-07 live status — Stage1 focused green, full CI launched
+
+Leader1 rechecked all active lanes.
+
+Stage1 focused gate v59:
+- QA branch: `leader1/chat2-stage1-focused-gate-v59`
+- exact tested Chat2 SHA: `63e28896260887ed753b7fba0ea29949d73c2ebb`
+- npm ci PASS
+- typecheck PASS
+- validate PASS
+- build PASS
+- Secret Debt/D51 core PASS
+- Night PASS
+- Activity PASS
+- Strong Meta PASS
+- Palace PASS
+- localization/presentation PASS
+
+This is the first fully green exact focused gate for the recovered Stage1 candidate.
+
+Exactly one Stage1 full CI has now been launched:
+- QA branch: `leader1/chat2-stage1-full-ci-v60`
+- exact tested candidate: `63e28896260887ed753b7fba0ea29949d73c2ebb`
+- command: `npm ci` then `npm run check`
+- evidence expected: `CHAT2_STAGE1_FULL_CI_RESULT_v60.json`
+- at this checkpoint evidence has not yet been published; do not claim green.
+
+Worker lane status:
+- Chat2 user window can remain idle; Leader1 currently owns the gate/full-CI execution path.
+- Chat3 v67-v68 is COMPLETE; handoff exists: `CHAT3_SECRET_DEBT_D51_STAGE1_RELEASE_GATE_v68.md`.
+- Chat4 v61-v62 is COMPLETE; handoff exists: `CHAT4_LEGACY_RELEASE_DRYRUN_v62.md`.
+- Chat5 current v46-v48 package has no worker handoff and is idle.
+- Chat6 v70-v71 has no worker handoff; its localization-recovery intent was superseded by Leader1 exact localization recovery and successful 37/37 repair.
+
+Do not start new peripheral Chat3/4/5/6 work until Stage1 full CI disposition is known.
+
+Broad burn-down remains **5** until Leader1 merges the exact Stage1 candidate to main and exact-main CI is green.
