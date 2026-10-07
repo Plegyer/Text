@@ -7385,7 +7385,12 @@
       ],
       "reward": "palace.service-life.steady-practice",
       "metaRewards": [],
-      "epilogue": "You stay. Not because the Palace proved itself perfect, but because you know exactly where it is fragile. Handoffs become written instead of whispered. Responsibilities keep names attached to them. New staff inherit records instead of rumours, and boundaries become part of the work rather than private favours. The Palace remains imperfect, political, and real. You choose to help it endure without claiming a throne or pretending every secret has been solved."
+      "epilogue": "You stay. Not because the Palace proved itself perfect, but because you know exactly where it is fragile. Handoffs become written instead of whispered. Responsibilities keep names attached to them. New staff inherit records instead of rumours, and boundaries become part of the work rather than private favours. The Palace remains imperfect, political, and real. You choose to help it endure without claiming a throne or pretending every secret has been solved.",
+      "metaReward": {
+        "kind": "strongMeta",
+        "rewardId": "palace.service-life.steady-practice",
+        "reward": "palace.service-life.steady-practice"
+      }
     },
     {
       "id": "ending.palace.court-power",
@@ -7415,7 +7420,12 @@
       ],
       "reward": "palace.court-power.formal-introduction",
       "metaRewards": [],
-      "epilogue": "You accept a formal mandate inside the Palace. Doors open because someone can account for why they opened; audits matter because someone is answerable when they fail. Appointments, routes, and exceptions become decisions that can be traced, challenged, and corrected. Your authority is substantial, but bounded. It does not make you monarch of the world, and the Threshold does not obey a title."
+      "epilogue": "You accept a formal mandate inside the Palace. Doors open because someone can account for why they opened; audits matter because someone is answerable when they fail. Appointments, routes, and exceptions become decisions that can be traced, challenged, and corrected. Your authority is substantial, but bounded. It does not make you monarch of the world, and the Threshold does not obey a title.",
+      "metaReward": {
+        "kind": "strongMeta",
+        "rewardId": "palace.court-power.formal-introduction",
+        "reward": "palace.court-power.formal-introduction"
+      }
     },
     {
       "id": "ending.palace.inner-truth",
@@ -7445,7 +7455,12 @@
       ],
       "reward": "palace.inner-truth.source-method",
       "metaRewards": [],
-      "epilogue": "You remain with the questions, but not with vagueness. The Threshold Archive is reorganized around provenance: what was observed, what was reported, what was inferred, and what still has no answer. Sensitive records can no longer hide behind the prestige of secrecy. You learn more than most people ever will, and still refuse to invent the missing cause of your own displacement. The truth becomes sharper precisely where it remains incomplete."
+      "epilogue": "You remain with the questions, but not with vagueness. The Threshold Archive is reorganized around provenance: what was observed, what was reported, what was inferred, and what still has no answer. Sensitive records can no longer hide behind the prestige of secrecy. You learn more than most people ever will, and still refuse to invent the missing cause of your own displacement. The truth becomes sharper precisely where it remains incomplete.",
+      "metaReward": {
+        "kind": "knowledge",
+        "rewardId": "palace.inner-truth.source-method",
+        "knowledge": "palace.inner-truth.source-method"
+      }
     },
     {
       "id": "ending.palace.return-home",
@@ -7547,7 +7562,12 @@
       ],
       "reward": "palace.true.cap-200",
       "metaRewards": [],
-      "epilogue": "You choose home. The origin trace is verified; the Threshold answers the reconstruction rather than the Prince's permission. Crossing does not erase the world behind you. The Palace remains, its arguments unfinished and its people still living lives that were never less real than yours. Then the light, pressure, and distance of the Threshold give way—and you recognize the world you came from."
+      "epilogue": "You choose home. The origin trace is verified; the Threshold answers the reconstruction rather than the Prince's permission. Crossing does not erase the world behind you. The Palace remains, its arguments unfinished and its people still living lives that were never less real than yours. Then the light, pressure, and distance of the Threshold give way—and you recognize the world you came from.",
+      "metaReward": {
+        "kind": "strongMeta",
+        "rewardId": "palace.true.cap-200",
+        "reward": "palace.true.cap-200"
+      }
     }
   ],
   "careers": [
