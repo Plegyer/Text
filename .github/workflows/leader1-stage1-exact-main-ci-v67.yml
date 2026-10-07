@@ -1,0 +1,92 @@
+name: Leader1 Stage1 Exact Main CI v67
+
+on:
+  push:
+    branches:
+      - leader1/stage1-exact-main-ci-v67
+    paths:
+      - '.github/workflows/leader1-stage1-exact-main-ci-v67.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  exact-main-ci:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+
+    steps:
+      - name: Checkout exact merged main
+        uses: actions/checkout@v4
+        with:
+          ref: ff1dfe3ec3554eaecf068de655e7473dd3387b63
+          fetch-depth: 1
+
+      - name: Exact main SHA guard
+        shell: powershell
+        run: |
+          $expected="ff1dfe3ec3554eaecf068de655e7473dd3387b63"
+          $actual=(git rev-parse HEAD).Trim()
+          Write-Host "expected=$expected"
+          Write-Host "actual=$actual"
+          if($actual -ne $expected){throw "Exact-main SHA guard failed: $actual"}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+
+      - name: npm ci
+        id: npmci
+        continue-on-error: true
+        run: npm ci
+
+      - name: Exact main full CI
+        id: check
+        continue-on-error: true
+        run: npm run check
+
+      - name: Write evidence
+        if: always()
+        shell: powershell
+        run: |
+          $result=[ordered]@{
+            testedMainSha="ff1dfe3ec3554eaecf068de655e7473dd3387b63"
+            workflowSha="${{ github.sha }}"
+            npmCi="${{ steps.npmci.outcome }}"
+            fullCi="${{ steps.check.outcome }}"
+          }
+          $result|ConvertTo-Json|Set-Content -Encoding UTF8 "$env:RUNNER_TEMP\exact-main-v67.json"
+
+      - name: Checkout evidence branch
+        if: always()
+        uses: actions/checkout@v4
+        with:
+          ref: leader1/stage1-exact-main-ci-v67
+          path: evidence-repo
+          persist-credentials: true
+
+      - name: Publish evidence
+        if: always()
+        shell: powershell
+        working-directory: .
+        run: |
+          Copy-Item "$env:RUNNER_TEMP\exact-main-v67.json" "evidence-repo/mindy-successor/docs/tasks/STAGE1_EXACT_MAIN_CI_RESULT_v67.json" -Force
+          Set-Location evidence-repo
+          git config user.name "Leader1 QA"
+          git config user.email "leader1-qa@users.noreply.github.com"
+          git add mindy-successor/docs/tasks/STAGE1_EXACT_MAIN_CI_RESULT_v67.json
+          git commit -m "qa(stage1): publish exact-main CI v67 result"
+          git push origin HEAD:leader1/stage1-exact-main-ci-v67
+
+      - name: Aggregate
+        if: always()
+        shell: powershell
+        run: |
+          if("${{ steps.npmci.outcome }}" -ne "success" -or "${{ steps.check.outcome }}" -ne "success"){
+            throw "Stage1 exact-main CI v67 failed."
+          }
