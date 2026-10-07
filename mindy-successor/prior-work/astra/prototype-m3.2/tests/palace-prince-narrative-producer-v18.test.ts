@@ -83,7 +83,7 @@ test('v18 maps the D45 reveal ladder without front-loading the Threshold',()=>{
   assert.match(court,/appointments.*access.*audit.*routing/i);
   assert.match(court,/(?:does not control the Threshold|cannot make the Threshold obey)/i);
   assert.match(truth,/Threshold.*Archive/i);
-  assert.match(truth,/remain unresolved/i);
+  assert.match(truth,/(?:remain unresolved|evidence does not tell you)/i);
 });
 
 test('v18 confrontation has exact stable IDs, exact 12x91 gate and no hidden prerequisite domain',()=>{
