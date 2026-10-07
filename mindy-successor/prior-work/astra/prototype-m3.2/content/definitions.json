@@ -10959,13 +10959,15 @@
         "professional-trust",
         "conflict-open",
         "utility-ready",
-        "route-resolved"
+        "route-resolved",
+        "formal-introduced"
       ],
       "transitions": [
         {
           "id": "build-trust",
           "from": [
-            "introduced"
+            "introduced",
+            "formal-introduced"
           ],
           "to": "professional-trust",
           "conditions": [
@@ -11091,6 +11093,21 @@
             }
           ],
           "effects": []
+        },
+        {
+          "id": "formal-introduction",
+          "from": [
+            "introduced"
+          ],
+          "to": "formal-introduced",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "introduced-at-work"
+            }
+          ]
         }
       ]
     }
