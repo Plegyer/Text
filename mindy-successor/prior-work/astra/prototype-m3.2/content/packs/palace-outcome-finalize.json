@@ -13,7 +13,10 @@
         "palace.progression-complete",
         "palace.prep.service-life",
         "palace.prep.court-power",
-        "palace.prep.inner-truth"
+        "palace.prep.inner-truth",
+        "palace.outcome.service-life-ready",
+        "palace.outcome.court-power-ready",
+        "palace.outcome.inner-truth-ready"
       ]
     },
     "writes": {

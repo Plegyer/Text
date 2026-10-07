@@ -194,9 +194,11 @@ test('renderer: eligible Palace ending shows exact future-life reward preview an
     assert.equal(committed.run.endings.committed,'ending.palace.service-life');
 
     w.document.querySelector('[data-panel="legacy"]').click();
-    await wait(()=>!!w.document.querySelector('[data-ending-id="ending.palace.service-life"]'));
+    await wait(()=>!!w.document.querySelector('[data-palace-endings="eligible-only"] [data-ending-id="ending.palace.service-life"]'));
+    const committedCard=w.document.querySelector('[data-palace-endings="eligible-only"] [data-ending-id="ending.palace.service-life"]');
+    assert.ok(committedCard);
     assert.equal(
-      w.document.querySelector('[data-ending-id="ending.palace.service-life"]').getAttribute('data-ending-state'),
+      committedCard.getAttribute('data-ending-state'),
       committed.run.status==='ended'?'completed':'committed'
     );
     assert.deepEqual(errors,[]);

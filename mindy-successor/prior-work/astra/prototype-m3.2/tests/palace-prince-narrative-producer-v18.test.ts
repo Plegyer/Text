@@ -17,11 +17,13 @@ import {
   palaceDutyDefinitions,
   palacePrinceConfrontationReady
 } from '../src/core/palace.ts';
-import {stats,type Save} from '../src/core/schema.ts';
+import {stats,type Pack,type Save} from '../src/core/schema.ts';
 import {catalog,rawPacks,started} from './helpers.ts';
 
 const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
 const strings=localization.strings;
+const packs=rawPacks as Pack[];
+const quests=catalog.definitions.quests??[];
 
 function outcomeReady(statsValue=91,lust=1){
   const s=started();
@@ -47,11 +49,11 @@ function choose(s:Save,id:string){
 }
 
 test('v18 maps the D45 reveal ladder without front-loading the Threshold',()=>{
-  const invitation=rawPacks.find(pack=>pack.id==='palace.invitation')!;
-  const progression=rawPacks.find(pack=>pack.id==='palace.progression')!;
-  const finalize=rawPacks.find(pack=>pack.id==='palace.outcome-finalize')!;
+  const invitation=packs.find(pack=>pack.id==='palace.invitation')!;
+  const progression=packs.find(pack=>pack.id==='palace.progression')!;
+  const finalize=packs.find(pack=>pack.id==='palace.outcome-finalize')!;
 
-  const invitationText=invitation.events.map(event=>event.variants[0].text).join(' ');
+  const invitationText=invitation.events.map(event=>event.variants[0]!.text).join(' ');
   assert.match(invitationText,/ten ordinary professions|ten ordinary Hard Work/i);
   assert.doesNotMatch(invitationText,/Threshold Archive|inter-world Threshold/i);
 
@@ -61,22 +63,22 @@ test('v18 maps the D45 reveal ladder without front-loading the Threshold',()=>{
     'palace.progression.milestone-05-trusted-service',
     'palace.progression.milestone-08-palace-network'
   ]){
-    assert.doesNotMatch(byId.get(id)!.variants[0].text,/Threshold Archive|inter-world Threshold/i,id);
+    assert.doesNotMatch(byId.get(id)!.variants[0]!.text,/Threshold Archive|inter-world Threshold/i,id);
   }
-  assert.match(byId.get('palace.progression.milestone-12-crossroads')!.variants[0].text,/authenticated records/i);
-  assert.match(byId.get('palace.progression.milestone-12-crossroads')!.variants[0].text,/anomaly/i);
-  assert.doesNotMatch(byId.get('palace.progression.milestone-12-crossroads')!.variants[0].text,/Threshold Archive|inter-world Threshold/i);
+  assert.match(byId.get('palace.progression.milestone-12-crossroads')!.variants[0]!.text,/authenticated records/i);
+  assert.match(byId.get('palace.progression.milestone-12-crossroads')!.variants[0]!.text,/anomaly/i);
+  assert.doesNotMatch(byId.get('palace.progression.milestone-12-crossroads')!.variants[0]!.text,/Threshold Archive|inter-world Threshold/i);
 
-  const outcomeText=byId.get('palace.progression.milestone-15-outcome-ready')!.variants[0].text;
+  const outcomeText=byId.get('palace.progression.milestone-15-outcome-ready')!.variants[0]!.text;
   assert.match(outcomeText,/Palace Concordance/);
   assert.match(outcomeText,/Threshold Archive/);
   assert.match(outcomeText,/inter-world Threshold/);
   assert.match(outcomeText,/arrival is classified/i);
   assert.match(outcomeText,/cause.*unresolved/i);
 
-  const service=finalize.events.find(event=>event.id.endsWith('.service-life'))!.variants[0].text;
-  const court=finalize.events.find(event=>event.id.endsWith('.court-power'))!.variants[0].text;
-  const truth=finalize.events.find(event=>event.id.endsWith('.inner-truth'))!.variants[0].text;
+  const service=finalize.events.find(event=>event.id.endsWith('.service-life'))!.variants[0]!.text;
+  const court=finalize.events.find(event=>event.id.endsWith('.court-power'))!.variants[0]!.text;
+  const truth=finalize.events.find(event=>event.id.endsWith('.inner-truth'))!.variants[0]!.text;
   assert.match(service,/clear handoffs|professional boundaries/i);
   assert.match(court,/appointments.*access.*audit.*routing/i);
   assert.match(court,/does not control the Threshold/i);
@@ -86,7 +88,7 @@ test('v18 maps the D45 reveal ladder without front-loading the Threshold',()=>{
 
 test('v18 confrontation has exact stable IDs, exact 12x91 gate and no hidden prerequisite domain',()=>{
   const action=catalog.definitions.actions.find(item=>item.id===PALACE_CONFRONT_PRINCE_ACTION)!;
-  const quest=catalog.definitions.quests.find(item=>item.id===PALACE_PRINCE_CONFRONTATION_QUEST)!;
+  const quest=quests.find(item=>item.id===PALACE_PRINCE_CONFRONTATION_QUEST)!;
   assert.ok(action);
   assert.ok(quest);
   assert.equal(action.mode,'story');
@@ -207,7 +209,7 @@ test('v18 four-phase success writes Prince defeat exactly once and never auto-co
 });
 
 test('v18 confrontation pack is four-phase, latched, deterministic and retry-capable',()=>{
-  const pack=rawPacks.find(item=>item.id==='palace.prince-confrontation');
+  const pack=packs.find(item=>item.id==='palace.prince-confrontation');
   assert.ok(pack);
   assert.equal(pack.events.length,4);
   for(const event of pack.events){
@@ -241,7 +243,7 @@ test('v18 RU EN localization covers D45 terms, confrontation and explicit Return
     'ui.palace.confrontationButton',
     'ui.palace.returnHome.explicitCommit'
   ];
-  const pack=rawPacks.find(item=>item.id==='palace.prince-confrontation')!;
+  const pack=packs.find(item=>item.id==='palace.prince-confrontation')!;
   for(const event of pack.events){
     required.push(
       `event.${event.id}.title`,
@@ -265,8 +267,8 @@ test('v18 keeps D23, Secret Debt, Hard Work and Strong Meta firewalls intact',()
   const action=catalog.definitions.actions.find(item=>item.id===PALACE_CONFRONT_PRINCE_ACTION)!;
   const all=JSON.stringify({
     action,
-    quest:catalog.definitions.quests.find(item=>item.id===PALACE_PRINCE_CONFRONTATION_QUEST),
-    pack:rawPacks.find(item=>item.id==='palace.prince-confrontation')
+    quest:quests.find(item=>item.id===PALACE_PRINCE_CONFRONTATION_QUEST),
+    pack:packs.find(item=>item.id==='palace.prince-confrontation')
   }).toLowerCase();
 
   assert.equal(all.includes('hardwork:palace'),false);
