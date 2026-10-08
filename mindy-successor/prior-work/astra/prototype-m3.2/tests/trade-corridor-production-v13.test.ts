@@ -395,7 +395,12 @@ test('Forest + Trade Corridor alone cannot satisfy the D38 common 3-of-4 anchor 
   }
 
   const tradeMarkerPrefix='activity.trade-corridor.';
-  for(const ending of definitions.endings){
+  const activityEndings=definitions.endings.filter((ending:any)=>ending.id.startsWith('ending.activity.'));
+  assert.deepEqual(
+    activityEndings.map((ending:any)=>ending.id).sort(),
+    ['ending.activity.network','ending.activity.pathfinder','ending.activity.preservation']
+  );
+  for(const ending of definitions.endings.filter((ending:any)=>!ending.id.startsWith('ending.activity.'))){
     assert.equal(
       JSON.stringify(ending.conditions).includes(tradeMarkerPrefix),
       false,

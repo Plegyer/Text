@@ -419,8 +419,12 @@ test('v14 exposes D38 seams but does not implement or auto-commit a standalone A
     'activity.anomalous-reach.contact-thread-open',
     'activity.anomalous-reach.minigame.pattern-ritual-complete'
   ];
-  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.')),false);
-  for(const ending of definitions.endings){
+  assert.deepEqual(
+    catalog.definitions.endings.filter(e=>e.id.startsWith('ending.activity.')).map(e=>e.id).sort(),
+    ['ending.activity.network','ending.activity.pathfinder','ending.activity.preservation']
+  );
+  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.anomalous')),false);
+  for(const ending of definitions.endings.filter((ending:any)=>!ending.id.startsWith('ending.activity.'))){
     const raw=JSON.stringify(ending.conditions);
     for(const marker of markerTerms)assert.equal(raw.includes(marker),false,ending.id+' / '+marker);
   }

@@ -374,7 +374,11 @@ test('secured evidence + successful infiltration + anchor publishes research-gra
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.anchor-secured'));
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.result.evidence-secured'));
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.result.research-grade'));
-  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.')),false);
+  assert.deepEqual(
+    catalog.definitions.endings.filter(e=>e.id.startsWith('ending.activity.')).map(e=>e.id).sort(),
+    ['ending.activity.network','ending.activity.pathfinder','ending.activity.preservation']
+  );
+  assert.equal(s.run.endings.committed,null);
 });
 
 test('all four production region definitions coexist and keep 2-Energy entry contracts',()=>{
@@ -515,7 +519,10 @@ test('D38 four-region readiness matrix has positive and negative cases while com
   oneNetworkRegion.delete('activity.trade-corridor.mark.network');
   assert.equal(specialistReady('network',oneNetworkRegion),false);
 
-  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.')),false);
+  assert.deepEqual(
+    catalog.definitions.endings.filter(e=>e.id.startsWith('ending.activity.')).map(e=>e.id).sort(),
+    ['ending.activity.network','ending.activity.pathfinder','ending.activity.preservation']
+  );
 });
 
 test('legacy Assassin infiltration remains unlimited and separate from Restricted Sites suspicion',()=>{

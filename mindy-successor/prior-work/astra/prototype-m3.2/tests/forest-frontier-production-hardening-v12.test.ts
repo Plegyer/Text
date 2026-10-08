@@ -267,7 +267,13 @@ test('Forest result feedback exposes career/relationship/School seams and D38 ma
     'activity.forest-frontier.mark.network',
     'activity.forest-frontier.result.research-grade'
   ];
-  for(const ending of definitions.endings){
+  const activityEndings=definitions.endings.filter((ending:any)=>ending.id.startsWith('ending.activity.'));
+  assert.deepEqual(
+    activityEndings.map((ending:any)=>ending.id).sort(),
+    ['ending.activity.network','ending.activity.pathfinder','ending.activity.preservation']
+  );
+  assert.equal(definitions.endings.some((ending:any)=>ending.id.startsWith('ending.activity.forest')),false);
+  for(const ending of definitions.endings.filter((ending:any)=>!ending.id.startsWith('ending.activity.'))){
     const conditions=JSON.stringify(ending.conditions);
     for(const marker of newMarkerTerms)assert.equal(conditions.includes(marker),false,ending.id+' / '+marker);
   }
