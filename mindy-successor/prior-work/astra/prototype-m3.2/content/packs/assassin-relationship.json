@@ -10,6 +10,9 @@
       ],
       "relationships": [
         "assassin.handler"
+      ],
+      "meta": [
+        "strongMetaFormalIntroduction"
       ]
     },
     "writes": {
@@ -87,6 +90,27 @@
               "fact": "introduced-at-work"
             }
           ]
+        },
+        {
+          "id": "formal-introduction",
+          "label": "Use Formal Introduction",
+          "text": "Use the inherited professional introduction to make contact without granting trust or route progress.",
+          "conditions": [
+            {
+              "kind": "strongMetaFormalIntroductionAvailable",
+              "career": "assassin",
+              "relationship": "assassin.handler",
+              "transition": "formal-introduction"
+            }
+          ],
+          "effects": [
+            {
+              "kind": "useStrongMetaFormalIntroduction",
+              "career": "assassin",
+              "relationship": "assassin.handler",
+              "transition": "formal-introduction"
+            }
+          ]
         }
       ]
     },
@@ -117,9 +141,19 @@
       "maxShows": 1,
       "conditions": [
         {
-          "kind": "relationshipStage",
-          "relationship": "assassin.handler",
-          "stage": "introduced"
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "introduced"
+            },
+            {
+              "kind": "relationshipStage",
+              "relationship": "assassin.handler",
+              "stage": "formal-introduced"
+            }
+          ]
         },
         {
           "kind": "relationshipFact",

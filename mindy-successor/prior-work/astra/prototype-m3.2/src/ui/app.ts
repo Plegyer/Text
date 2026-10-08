@@ -1,3 +1,4 @@
+import {isPalaceEndingId,palacePlayerUiModel,palaceRewardPreviewByEnding,type PalaceEndingId} from './palaceUi.ts';
 import {mountEditor} from './editor.ts';
 import {applyPresentation,emptyPresentation,resolvePresentation,presentationIdForActionResult,presentationIdForActivityRoute,presentationIdForEvent,presentationIdForEnding,presentationIdForNightContentGapChoice,presentationIdForHunterItem,presentationIdForHunterRelationshipStage,presentationIdForHunterStage,presentationIdForHunterState,presentationIdForGuardItem,presentationIdForGuardRelationshipStage,presentationIdForGuardStage,presentationIdForGuardState,presentationIdForArtistGeishaNightChoice,presentationIdForSatyrMaidStage,presentationIdForUndeadFarmStage,presentationIdForTavernNightChoice,presentationIdForTavernRelationshipStage,presentationIdForTavernStage,presentationIdForTavernState,ARTIST_GEISHA_NIGHT_CHOICE_IDS,TAVERN_NIGHT_CHOICE_IDS,type Presentation} from '../core/presentation.ts';
 import {loadCatalog} from '../core/content.ts';
@@ -7,6 +8,7 @@ import {SCHOOL_COURSES,type SchoolCourse} from '../core/school.ts';
 import {labels,hints} from './labels.ts';
 import {povertyPendingLocalizationKey} from './povertyDepth.ts';
 import {emptyLocalization,localizationSchema,normalizeLocale,resolveLocalizedText,type Locale,type LocalizationBundle} from '../core/localization.ts';
+import {STRONG_META_KEYSTONE_CAPACITY,STRONG_META_SPECIALIST_CAPACITY,strongMetaRegistry,type StrongRewardDefinition} from '../core/strongMeta.ts';
 import {forestActivityNarrativeKey} from './forestNarrative.ts';
 import {hardWorkNewStartCopy,hardWorkNewStartSummary,hardWorkPackageCardModel} from './hardWorkNewStart.ts';
 declare global {interface Window {gameStorage?:{load:()=>Promise<{text:string;recovered:boolean}|null>;save:(text:string)=>Promise<void>}}}
@@ -77,6 +79,25 @@ const statHint=(id:string)=>tr(`stat.${id}.hint`,hints[id]??'');
 const resourceLabel=(id:string)=>tr(`resource.${id}.label`,labels[id]??id);
 const itemLabel=(id:string)=>tr(`item.${id}.label`,labels[id]??id);
 const genericValueLabel=(id:string)=>tr(`stat.${id}.label`,tr(`resource.${id}.label`,tr(`item.${id}.label`,labels[id]??id)));
+const strongMetaFallbackLabel=(id:string)=>id.split('.').at(-1)?.split('-').filter(Boolean).map(part=>part[0]!.toUpperCase()+part.slice(1)).join(' ')||'Reward';
+const strongMetaRewardLabel=(id:string)=>tr(`unlock.${id}.label`,strongMetaFallbackLabel(id));
+function panelAccessibleName(id:string):string{
+ const fallback=(ru:string,en:string)=>locale==='en'?en:ru;
+ switch(id){
+  case 'work':return tr('ui.work.title',fallback('Куда устроимся?','Where shall we work?'));
+  case 'school':return tr('ui.school.title',fallback('Школа','School'));
+  case 'explore':return tr('ui.explore.title',fallback('Окрестности и поручения','Outskirts and errands'));
+  case 'sleep':return tr('ui.sleep.title',fallback('Ночь','Night'));
+  case 'stats':return tr('ui.panel.stats',fallback('Героиня','Heroine'));
+  case 'journal':return tr('ui.panel.journal',fallback('Дневник','Journal'));
+  case 'bag':return tr('ui.bag.title',fallback('Сумка и дела','Bag and errands'));
+  case 'legacy':return tr('ui.panel.legacy',fallback('Судьбы','Fates'));
+  case 'editor':return tr('ui.menu.editor',fallback('Тексты и изображения','Texts and images'));
+  case 'catalog':return tr('ui.menu.catalogInspector',fallback('Инспектор событий','Event inspector'));
+  case 'menu':return tr('ui.menu.title',fallback('Меню','Menu'));
+  default:return fallback('Раздел','Panel');
+ }
+}
 const schoolStatLabel=(stat:string)=>statLabel(stat);
 const seasonLabel=(id:string,fallback:string)=>tr(`season.${id}.label`,fallback);
 const relationshipLabel=(id:string)=>tr(`relationship.${id}.label`,id);
@@ -322,6 +343,8 @@ function explain(c:Condition):string{
  case 'metaUnlock':return fmt(tr('ui.condition.metaUnlock','Наследие {unlock}: {state}'),{unlock:c.unlock,state:c.present?yes():no()});
  case 'metaEndingCompleted':return fmt(tr('ui.condition.metaEndingCompleted','Судьба {ending}: {state}'),{ending:c.ending,state:c.present?tr('ui.condition.state.completed','пройдена'):tr('ui.condition.state.notCompleted','не пройдена')});
  case 'metaHardWork':return fmt(tr('ui.condition.metaHardWork','Тяжкий труд {career}: {state}'),{career:c.career,state:c.present?tr('ui.condition.state.finished','завершён'):tr('ui.condition.state.notFinished','не завершён')});
+ case 'strongMetaKnowledge':return fmt(tr('ui.condition.strongMetaKnowledge','Наследуемое знание {knowledge}: {state}'),{knowledge:c.knowledge,state:c.present?yes():no()});
+ case 'strongMetaFormalIntroductionAvailable':return fmt(tr('ui.condition.formalIntroduction','Формальное представление: {relationship}'),{relationship:relationshipLabel(c.relationship)});
  case 'metric':return `${genericValueLabel(c.key)} ${cmp(c.op,c.value)}`;
  case 'visits':{
   const action=catalog.definitions.actions.find(a=>a.id===c.action);
@@ -415,7 +438,7 @@ function actionList(ids:string[]){return `<div class="activity-list">${ids.map(i
  const availability=
   lateCareer?`<p class="career-availability" data-career-availability="${availabilityState}" tabindex="0" role="status" aria-label="${esc(fmt(tr('ui.work.lateCareer.stateAria','{career}: {state}'),{career:label,state:availabilityLabel}))}">${esc(availabilityLabel)}</p>`:'';
  const inheritedAccessHelp=inheritedAccess?`<p class="career-inherited-access" data-hard-work-inherited-access="${esc(ordinaryCareer!)}"><strong>${esc(hardWorkNewStartCopy(locale).earlyAccessTitle)}:</strong> ${esc(hardWorkNewStartCopy(locale).earlyAccessBody)}</p>`:'';
- return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''} ${a.id==='hunter.shift'?'data-hunter-presentation="true"':''} ${a.id==='guard.shift'?'data-guard-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${undeadFarmStageStatus}${tavernStatus}${hunterStatus}${guardStatus}<p>${esc(description)}</p>${inheritedAccessHelp}<small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
+ return `<article class="activity" ${lateCareer?`data-late-career="${esc(a.id)}"`:''} ${satyrStage?`data-satyr-maid-stage="${esc(satyrStage)}"`:''} ${undeadFarmStage?`data-undead-farm-stage="${esc(undeadFarmStage)}"`:''} ${a.id==='tavern.shift'?'data-tavern-presentation="true"':''} ${a.id==='hunter.shift'?'data-hunter-presentation="true"':''} ${a.id==='guard.shift'?'data-guard-presentation="true"':''}><div><h3>${esc(label)}</h3>${availability}${satyrStageStatus}${undeadFarmStageStatus}${tavernStatus}${hunterStatus}${guardStatus}<p>${esc(description)}</p>${inheritedAccessHelp}<small>${a.cost.energy} ${esc(tr('ui.work.energy','энергии'))}${actionCost(a,state)?` · ${actionCost(a,state)} ${esc(tr('ui.work.coins','монет'))}`:''}${forecast!==null?` · ${esc(tr('ui.work.income','доход ≈'))} ${forecast}`:''}</small><div class="effect-tags">${statsEffects.map(e=>e.kind==='metric'?`<span class="${e.delta>0?'gain':'loss'}">${esc(labels[e.key])} ${e.delta>0?'+':''}${e.delta}</span>`:'').join('')}</div>${miss.length?`<p class="requirement">${esc(miss.map(explain).join(' · '))}</p>`:''}${careerLocked?`<p class="requirement" id="${esc(helpId)}" tabindex="0">${esc(lockHelp)}</p>`:''}</div>${a.mode==='brew'?`<div><button data-action="${a.id}" data-recipe="gentle" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeReliable','Надёжно'))}</button><button data-action="${a.id}" data-recipe="bold" ${disabled(a)?'disabled':''}>${esc(tr('ui.work.recipeFast','Быстро'))}</button></div>`:`<button data-action="${a.id}" ${careerButtonAria?`aria-label="${esc(careerButtonAria)}"`:''} ${careerLocked?`aria-describedby="${esc(helpId)}" aria-disabled="true"`:lateCareer?'aria-disabled="false"':''} ${disabled(a)?'disabled':''}>${professions.includes(a.id)?esc(tr('ui.work.button','Работать')):a.id==='palace.confront-prince'?esc(tr('ui.palace.confrontationButton','Противостоять')):a.id.startsWith('palace.')?esc(tr('ui.palace.actionButton','Выполнить')):esc(tr('ui.generic.selectButton','Выбрать'))}</button>`}</article>`;
  }).join('')}</div>`;}
 function schoolCourseDisabled(course:SchoolCourse){
  return busy||locked||state.run.status!=='active'||!state.run.creation.complete||!state.run.flags['story.arrived']||
@@ -510,9 +533,33 @@ function hardWorkNewStartHTML(){
  const packageList=cards||`<p class="muted" data-hard-work-none-earned="true">${esc(summary.copy.noneEarned)}</p>`;
  return `<section class="hard-work-new-start" aria-labelledby="hard-work-new-start-title"><h2 id="hard-work-new-start-title">${esc(summary.copy.sectionTitle)}</h2><p>${esc(summary.copy.sectionDescription)}</p><div class="hard-work-package-list">${packageList}</div><aside class="hard-work-palace-help" data-palace-qualified="${summary.palaceQualified}" aria-label="${esc(summary.palaceRequirement)}"><strong>${esc(summary.palaceProgress)}</strong><p>${esc(summary.palaceRequirement)}</p></aside><p class="hard-work-cap-help" data-progression-stat-cap="${state.run.character.progressionStatCap}">${esc(summary.capText)}</p></section>`;
 }
+function strongMetaNewStartHTML(){
+ const preferred=state.meta.strongMeta.preferredSelection;
+ const owned=new Set(state.meta.strongMeta.ownership.ownedRewardIds);
+ const selectable=Object.values(strongMetaRegistry).filter(reward=>reward.lifecycle==='active'&&owned.has(reward.id));
+ const keystones=selectable.filter(reward=>reward.class==='keystone');
+ const specialists=selectable.filter(reward=>reward.class==='specialist');
+ const selectedSpecialists=new Set(preferred.specialistIds);
+ const selectedState=tr('ui.strongMeta.selected',locale==='en'?'Selected':'Выбрано');
+ const availableState=tr('ui.strongMeta.available',locale==='en'?'Available':'Доступно');
+ const selectText=tr('ui.strongMeta.select',locale==='en'?'Select':'Выбрать');
+ const removeText=tr('ui.strongMeta.remove',locale==='en'?'Remove':'Убрать');
+ const rewardCard=(reward:StrongRewardDefinition,selected:boolean,disabled:boolean,kind:'keystone'|'specialist')=>{
+  const label=strongMetaRewardLabel(reward.id);
+  const stateText=selected?selectedState:availableState;
+  const dataAttr=kind==='keystone'?`data-strong-meta-keystone="${esc(reward.id)}"`:`data-strong-meta-specialist="${esc(reward.id)}"`;
+  return `<article class="hard-work-package strong-meta-reward ${selected?'selected':''}" data-strong-meta-reward="${esc(reward.id)}" data-strong-meta-class="${kind}" data-selected="${selected}"><div class="hard-work-package-heading"><h3>${esc(label)}</h3><span class="hard-work-package-state">${esc(stateText)}</span></div><button type="button" ${dataAttr} aria-pressed="${selected}" aria-label="${esc(label+' — '+stateText)}" ${busy||locked||disabled?'disabled':''}>${esc(selected?removeText:selectText)}</button></article>`;
+ };
+ const keystoneCards=keystones.map(reward=>rewardCard(reward,preferred.keystoneId===reward.id,false,'keystone')).join('');
+ const specialistFull=preferred.specialistIds.length>=STRONG_META_SPECIALIST_CAPACITY;
+ const specialistCards=specialists.map(reward=>{const selected=selectedSpecialists.has(reward.id);return rewardCard(reward,selected,!selected&&specialistFull,'specialist');}).join('');
+ const keystoneCapacity=fmt(tr('ui.strongMeta.keystoneCapacity',locale==='en'?'Keystone: {selected}/{capacity}':'Keystone: {selected}/{capacity}'),{selected:preferred.keystoneId?1:0,capacity:STRONG_META_KEYSTONE_CAPACITY});
+ const specialistCapacity=fmt(tr('ui.strongMeta.specialistCapacity',locale==='en'?'Specialists: {selected}/{capacity}':'Специализации: {selected}/{capacity}'),{selected:preferred.specialistIds.length,capacity:STRONG_META_SPECIALIST_CAPACITY});
+ return `<section class="hard-work-new-start strong-meta-new-start" data-strong-meta-selector="true" aria-labelledby="strong-meta-new-start-title"><h2 id="strong-meta-new-start-title">${esc(tr('ui.strongMeta.title',locale==='en'?'Strong Meta':'Сильное наследие'))}</h2><p>${esc(tr('ui.strongMeta.help',locale==='en'?'Choose up to one Keystone and two Specialists from rewards you own.':'Выберите до одного Keystone и двух специализаций из заработанных наград.'))}</p><p class="muted" data-strong-meta-automatic-knowledge="true">${esc(tr('ui.strongMeta.automaticKnowledgeNote',locale==='en'?'Source Method and other inherited knowledge are automatic and never occupy selectable slots.':'Source Method и другие унаследованные знания применяются автоматически и никогда не занимают выбираемые слоты.'))}</p><div class="hard-work-package-list strong-meta-keystones"><h3>${esc(tr('ui.strongMeta.keystoneTitle',locale==='en'?'Keystone':'Keystone'))}</h3><p class="muted" data-strong-meta-keystone-capacity="true">${esc(keystoneCapacity)}</p>${keystoneCards||`<p class="muted" data-strong-meta-none-keystone="true">${esc(tr('ui.strongMeta.noneKeystones',locale==='en'?'No owned Keystone rewards yet.':'Пока нет заработанных Keystone-наград.'))}</p>`}</div><div class="hard-work-package-list strong-meta-specialists"><h3>${esc(tr('ui.strongMeta.specialistTitle',locale==='en'?'Specialists':'Специализации'))}</h3><p class="muted" data-strong-meta-specialist-capacity="true">${esc(specialistCapacity)}</p>${specialistCards||`<p class="muted" data-strong-meta-none-specialist="true">${esc(tr('ui.strongMeta.noneSpecialists',locale==='en'?'No owned Specialist rewards yet.':'Пока нет заработанных Specialist-наград.'))}</p>`}</div></section>`;
+}
 function central(){
  const r=state.run,p=r.pending;
- if(!r.creation.complete)return `<section class="creation"><div class="creation-art">${mediaHTML('location/town/default')}<div><span class="eyebrow">${esc(tr('ui.creation.eyebrow','До первого шага'))}</span><h1>${esc(tr('ui.creation.title','Кем вы войдёте в этот мир?'))}</h1><p>${esc(tr('ui.creation.body','Новый город ещё ничего о вас не знает.'))}</p></div></div><div class="creation-form"><h2>${esc(tr('ui.creation.heroineTitle','Ваша героиня'))}</h2><p>${esc(tr('ui.creation.freePoints','25 лет · свободных очков: {points}').replace('{points}',''))}<strong id="points">${r.creation.remaining}</strong></p><div class="creation-stats">${stats.map(k=>`<div class="allocate" title="${esc(statHint(k))}"><span>${esc(statLabel(k))}</span><button data-stat="${k}" data-delta="-1" aria-label="${esc(fmt(tr('ui.creation.decreaseStatAria','Уменьшить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.allocated[k]?'disabled':''}>−</button><strong>${r.metrics[k]}</strong><button data-stat="${k}" data-delta="1" aria-label="${esc(fmt(tr('ui.creation.increaseStatAria','Увеличить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.remaining?'disabled':''}>+</button></div>`).join('')}</div>${hardWorkNewStartHTML()}<button id="create" class="primary" ${r.creation.remaining||busy||locked?'disabled':''}>${esc(tr('ui.creation.startButton','Начать историю'))}</button></div></section>`;
+ if(!r.creation.complete)return `<section class="creation"><div class="creation-art">${mediaHTML('location/town/default')}<div><span class="eyebrow">${esc(tr('ui.creation.eyebrow','До первого шага'))}</span><h1>${esc(tr('ui.creation.title','Кем вы войдёте в этот мир?'))}</h1><p>${esc(tr('ui.creation.body','Новый город ещё ничего о вас не знает.'))}</p></div></div><div class="creation-form"><h2>${esc(tr('ui.creation.heroineTitle','Ваша героиня'))}</h2><p>${esc(tr('ui.creation.freePoints','25 лет · свободных очков: {points}').replace('{points}',''))}<strong id="points">${r.creation.remaining}</strong></p><div class="creation-stats">${stats.map(k=>`<div class="allocate" title="${esc(statHint(k))}"><span>${esc(statLabel(k))}</span><button data-stat="${k}" data-delta="-1" aria-label="${esc(fmt(tr('ui.creation.decreaseStatAria','Уменьшить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.allocated[k]?'disabled':''}>−</button><strong>${r.metrics[k]}</strong><button data-stat="${k}" data-delta="1" aria-label="${esc(fmt(tr('ui.creation.increaseStatAria','Увеличить {stat}'),{stat:statLabel(k)}))}" ${busy||locked||!r.creation.remaining?'disabled':''}>+</button></div>`).join('')}</div>${hardWorkNewStartHTML()}${strongMetaNewStartHTML()}<button id="create" class="primary" ${r.creation.remaining||busy||locked?'disabled':''}>${esc(tr('ui.creation.startButton','Начать историю'))}</button></div></section>`;
  if(p){const e=catalog.events.find(e=>e.id===p.eventId)!,v=e.variants.find(v=>v.id===p.variantId)!;const satyrState=satyrRelationshipEventState(e.id);const satyrStateLabel=satyrState?tr(`ui.satyrMaid.relationshipState.${satyrState}`,satyrState):'';const farmState=undeadFarmKeeperEventState(e.id);const farmStateLabel=farmState?tr(`ui.undeadFarm.relationshipState.${farmState}`,farmState):'';const hunterState=hunterRelationshipEventState(e.id);const hunterStateLabel=hunterState?tr(`ui.hunter.relationshipEvent.${hunterState}`,hunterState):'';const guardState=guardRelationshipEventState(e.id);const guardStateLabel=guardState?tr(`ui.guard.relationshipEvent.${guardState}`,guardState):'';const relationshipAria=satyrState?fmt(tr('ui.satyrMaid.relationshipStateAria','Состояние цепочки: {state}'),{state:satyrStateLabel}):farmState?fmt(tr('ui.undeadFarm.relationshipStateAria','Состояние цепочки хранителя фермы: {state}'),{state:farmStateLabel}):hunterState?fmt(tr('ui.hunter.relationshipEventAria','Профессиональная сцена со старшим проводником: {state}'),{state:hunterStateLabel}):guardState?fmt(tr('ui.guard.relationshipEventAria','Профессиональная сцена с напарницей стражи: {state}'),{state:guardStateLabel}):'';
  return `<section class="stage scene" ${satyrState?`data-satyr-relationship-state="${esc(satyrState)}"`:''} ${farmState?`data-undead-farm-keeper-state="${esc(farmState)}"`:''} ${hunterState?`data-hunter-relationship-event="${esc(hunterState)}"`:''} ${guardState?`data-guard-relationship-event="${esc(guardState)}"`:''}>${mediaHTML(p.presentationId??presentationIdForEvent(catalog,e.id,v.id))}<div class="stage-title"><span class="eyebrow">${esc(tr('ui.event.eyebrow','Встреча'))}</span><h1>${esc(eventTitle(e.id,e.title))}</h1></div></section><section class="dialogue" ${relationshipAria?`tabindex="0" role="region" aria-label="${esc(relationshipAria)}"`:''}><p>${esc(pendingEventVariantText(e.id,v.id,v.text))}</p><div class="choices">${e.choices.map(c=>{const satyrChoiceState=satyrRelationshipChoiceState(e.id,c.id);const farmChoiceState=undeadFarmKeeperChoiceState(e.id,c.id);const hunterChoiceState=hunterRelationshipChoiceState(e.id,c.id);const guardChoiceState=guardRelationshipChoiceState(e.id,c.id);const choiceLabel=eventChoiceLabel(e.id,c.id,c.label);return `<button data-choice="${c.id}" ${satyrChoiceState?`data-satyr-choice-state="${esc(satyrChoiceState)}"`:''} ${farmChoiceState?`data-undead-farm-choice-state="${esc(farmChoiceState)}"`:''} ${hunterChoiceState?`data-hunter-choice-state="${esc(hunterChoiceState)}"`:''} ${guardChoiceState?`data-guard-choice-state="${esc(guardChoiceState)}"`:''} ${satyrChoiceState||farmChoiceState||hunterChoiceState||guardChoiceState?`aria-label="${esc(choiceLabel)}"`:''} ${busy||locked||!eligible(c.conditions,state)?'disabled':''}>${esc(choiceLabel)}</button>`;}).join('')}</div></section>`;}
  if(r.status!=='active'){
@@ -568,8 +615,130 @@ function endingPresentationState(endingId:string){
  if(r.endings.eligible.includes(endingId))return 'eligible' as const;
  return 'locked' as const;
 }
+function palaceRouteLabel(route:string){
+ return tr(`ui.palace.route.${route}.label`,route);
+}
+function palaceRouteStateLabel(routeState:string){
+ return tr(`ui.palace.routeState.${routeState}`,routeState);
+}
+function palaceWorkPanelHTML(){
+ const model=palacePlayerUiModel(state);
+ if(!model)return '';
+ const stage=careerStageLabel('palace',model.stage);
+ const dutyStatus=model.outcomeReady
+  ?tr('ui.palace.duty.complete','Структурная служба завершена.')
+  :model.structuralDutyUsedToday
+   ?tr('ui.palace.duty.usedToday','Сегодняшняя структурная обязанность уже выполнена.')
+   :tr('ui.palace.duty.availableToday','Сегодня можно выполнить одну структурную обязанность.');
+ const supportStatus=model.supportUsedToday
+  ?tr('ui.palace.support.usedToday','Сегодняшнее действие поддержки уже использовано.')
+  :tr('ui.palace.support.availableToday','Сегодня можно выполнить одно доступное действие поддержки.');
+ const routes=model.routes.map(route=>{
+  const label=palaceRouteLabel(route.route);
+  const routeState=palaceRouteStateLabel(route.state);
+  return `<li data-palace-route="${esc(route.route)}" tabindex="0" aria-label="${esc(fmt(tr('ui.palace.routeAria','Маршрут {route}: {state}.'),{route:label,state:routeState}))}"><strong>${esc(label)}</strong>: <span data-palace-route-state="${esc(route.state)}">${esc(routeState)}</span></li>`;
+ }).join('');
+ const nextDuty=model.nextDutyId?actionList([model.nextDutyId]):'';
+ const supportActions=model.availableSupportIds.length?actionList(model.availableSupportIds):'';
+ const outcome=model.outcomeReady
+  ?`<p class="palace-outcome-ready" role="status">${esc(tr('ui.palace.outcomeReady','Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.'))}</p>`
+  :'';
+ const revealedTerms=model.outcomeReady
+  ?`<section class="palace-revealed-terms" data-palace-reveal="outcome-ready" aria-label="${esc(tr('ui.palace.revealTerms.title','Что установлено'))}">
+    <h4>${esc(tr('ui.palace.revealTerms.title','Что установлено'))}</h4>
+    <dl>
+      <dt>${esc(tr('ui.palace.term.concordance.label','Дворцовый Свод'))}</dt><dd>${esc(tr('ui.palace.term.concordance.description','Порядок, который сопоставляет проверенные сведения из разных дворцовых областей.'))}</dd>
+      <dt>${esc(tr('ui.palace.term.thresholdArchive.label','Архив Порога'))}</dt><dd>${esc(tr('ui.palace.term.thresholdArchive.description','Защищённые записи о редких переходах между мирами.'))}</dd>
+      <dt>${esc(tr('ui.palace.term.threshold.label','Порог'))}</dt><dd>${esc(tr('ui.palace.term.threshold.description','Реальная межмировая граница; её существование не делает этот мир менее реальным.'))}</dd>
+      <dt>${esc(tr('ui.palace.term.custodian.label','Хранитель'))}</dt><dd>${esc(tr('ui.palace.term.custodian.description','Должность Принца, отвечающая за финальный доступ и хранение; сама должность не доказывает исключительное право на истину.'))}</dd>
+    </dl>
+   </section>`
+  :'';
+ const confrontation=model.princeDefeated
+  ?`<section class="palace-confrontation" data-palace-confrontation="completed"><h4>${esc(tr('ui.palace.confrontation.title','Спор с Принцем'))}</h4><p role="status">${esc(tr('ui.palace.confrontation.complete','Мандат Хранителя оспорен: подтверждённый след происхождения больше нельзя отвергнуть исключительным вето. Возвращение домой остаётся отдельным явным выбором судьбы.'))}</p></section>`
+  :model.princeConfrontationAvailable
+   ?`<section class="palace-confrontation" data-palace-confrontation="ready"><h4>${esc(tr('ui.palace.confrontation.title','Спор с Принцем'))}</h4><p>${esc(tr('ui.palace.confrontation.ready','Все условия выполнены. Можно предъявить записи Дворца и оспорить исключительное вето Хранителя; это не бой и не автоматический выбор Возвращения домой.'))}</p>${actionList(['palace.confront-prince'])}</section>`
+   :'';
+ const dutyEconomy=model.nextDutyId
+  ?`<p class="palace-duty-economy"><strong>${esc(tr('ui.palace.dutyCostLabel','Стоимость обязанности'))}:</strong> ${model.structuralDutyEnergyCost} ${esc(tr('ui.work.energy','энергии'))} · <strong>${esc(tr('ui.palace.wagePreviewLabel','Доход этой обязанности'))}:</strong> ${model.wagePreview} ${esc(tr('ui.work.coins','монет'))}</p>`
+  :'';
+ const summaryAria=fmt(tr('ui.palace.summaryAria','Дворец: этап {stage}; структурные обязанности {count} из {total}.'),{stage,count:model.dutyCount,total:model.dutyTotal});
+ return `<section class="career-progress palace-progress" data-palace-access="granted" data-palace-stage="${esc(model.stage)}" tabindex="0" aria-label="${esc(summaryAria)}">
+  <h3>${esc(tr('ui.palace.title','Дворец'))}</h3>
+  <p class="palace-access"><strong>${esc(tr('ui.palace.accessLabel','Доступ'))}:</strong> ${esc(tr('ui.palace.accessGranted','открыт в этой жизни'))}</p>
+  <p class="palace-stage"><strong>${esc(tr('ui.palace.stageLabel','Этап'))}:</strong> ${esc(stage)}</p>
+  <p class="palace-duty-progress" data-palace-duty-progress="${model.dutyCount}/${model.dutyTotal}"><strong>${esc(tr('ui.palace.dutyProgressLabel','Структурные обязанности'))}:</strong> ${esc(fmt(tr('ui.palace.dutyProgress','{count} / {total}'),{count:model.dutyCount,total:model.dutyTotal}))}</p>
+  <p class="palace-duty-lock" data-palace-duty-used-today="${model.structuralDutyUsedToday?'true':'false'}">${esc(dutyStatus)}</p>
+  ${dutyEconomy}
+  ${outcome}
+  ${revealedTerms}
+  ${model.nextDutyId?`<h4>${esc(tr('ui.palace.nextDutyTitle','Следующая структурная обязанность'))}</h4>${nextDuty}`:''}
+  <div class="palace-support" data-palace-support-used-today="${model.supportUsedToday?'true':'false'}">
+   <h4>${esc(tr('ui.palace.supportTitle','Поддержка и подготовка исходов'))}</h4>
+   <p>${esc(supportStatus)} ${esc(fmt(tr('ui.palace.supportCost','Стоимость: {energy} энергии · оплата: 0 монет · счётчик обязанностей не меняется.'),{energy:model.supportEnergyCost}))}</p>
+   ${routes?`<ul class="palace-route-list">${routes}</ul>`:''}
+   ${supportActions}
+  </div>
+  ${confrontation}
+ </section>`;
+}
+function genericEndingCardHTML(e:Catalog['definitions']['endings'][number]){
+ const presentationState=endingPresentationState(e.id);
+ const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);
+ return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}">
+  <span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span>
+  <h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3>
+  <p>${esc(tr(`ending.${e.id}.description`,e.description))}</p>
+  <small>${e.conditions.map(condition=>`${meets(condition,state,catalog)?'✓':'○'} ${esc(explain(condition))}`).join(' · ')}</small>
+  <button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button>
+ </article>`;
+}
+function palaceEndingRewardHTML(endingId:PalaceEndingId){
+ const reward=palaceRewardPreviewByEnding[endingId];
+ const name=tr(reward.nameKey,reward.fallbackName);
+ const layer=tr(reward.layerKey,reward.fallbackLayer);
+ const automatic=endingId==='ending.palace.inner-truth';
+ const note=automatic
+  ?tr('ui.palace.reward.automaticNote','Награда выдаётся после завершения этой судьбы и в будущих жизнях наследуется автоматически как знание; слот loadout не требуется.')
+  :tr('ui.palace.reward.specialistNote','Награда выдаётся после завершения этой судьбы. В будущей New Start+ жизни её выбор и активация остаются в интерфейсе Strong Meta; отдельного дворцового слота нет.');
+ const aria=fmt(tr('ui.palace.rewardAria','Награда будущих жизней: {name}; слой {layer}; идентификатор {id}.'),{name,layer,id:reward.rewardId});
+ return `<div class="palace-future-reward" data-palace-reward-id="${esc(reward.rewardId)}" tabindex="0" aria-label="${esc(aria)}">
+  <p><strong>${esc(tr('ui.palace.futureRewardLabel','Награда будущих жизней'))}:</strong> ${esc(name)} · ${esc(layer)}</p>
+  <p><code>${esc(reward.rewardId)}</code></p>
+  <p>${esc(note)}</p>
+ </div>`;
+}
+function palaceEligibleEndingsHTML(){
+ const model=palacePlayerUiModel(state);
+ if(!model)return '';
+ const cards=model.eligibleEndingIds.map(id=>{
+  const ending=catalog.definitions.endings.find(item=>item.id===id);
+  if(!ending)return '';
+  const title=tr(`ending.${ending.id}.title`,ending.title);
+  const description=tr(`ending.${ending.id}.description`,ending.description);
+  const presentationState=endingPresentationState(id);
+  const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);
+  const trueFlag=id==='ending.palace.return-home'?' data-palace-true-ending="runtime-eligible"':'';
+  const returnHomeNote=id==='ending.palace.return-home'
+   ?`<p class="palace-return-home-explicit" data-palace-return-home-commit="explicit">${esc(tr('ui.palace.returnHome.explicitCommit','Спор с Принцем завершён, но возвращение не происходит автоматически. Выберите эту судьбу явно, только если хотите уйти в исходный мир.'))}</p>`
+   :'';
+  return `<article class="ending palace-ending" data-ending-id="${esc(id)}" data-ending-state="${presentationState}"${trueFlag} tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${title} — ${stateLabel}`}))}">
+   <span class="ending-state">${esc(stateLabel)}</span>
+   <h3>${esc(title)}</h3>
+   <p>${esc(description)}</p>
+   ${returnHomeNote}
+   ${palaceEndingRewardHTML(id)}
+   <button data-ending="${esc(id)}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button>
+  </article>`;
+ }).join('');
+ const empty=cards?'':`<p class="palace-ending-empty">${esc(tr('ui.palace.endings.noneReady','Дворцовые судьбы появятся здесь только после выполнения их реальных условий.'))}</p>`;
+ return `<section class="palace-endings" data-palace-endings="eligible-only">
+  <h3>${esc(tr('ui.palace.endings.title','Дворцовые судьбы'))}</h3>
+  ${empty}${cards}
+ </section>`;
+}
 function panelContent(){
- if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}${state.run.secretDebt.status==='bound'?`<h3>${esc(tr('ui.secretDebt.hiddenWorkTitle','Скрытая работа по долгу'))}</h3><p>${esc(tr('ui.secretDebt.hiddenWorkHelp','Обычные профессии временно закрыты, но оплачиваемая скрытая смена доступна за 1 Energy.'))}</p>${actionList(['secret-debt.hidden-work'])}`:''}`;
+ if(panel==='work')return `<h2>${esc(tr('ui.work.title','Куда устроимся?'))}</h2>${actionList(professions)}${palaceWorkPanelHTML()}${state.run.secretDebt.status==='bound'?`<h3>${esc(tr('ui.secretDebt.hiddenWorkTitle','Скрытая работа по долгу'))}</h3><p>${esc(tr('ui.secretDebt.hiddenWorkHelp','Обычные профессии временно закрыты, но оплачиваемая скрытая смена доступна за 1 Energy.'))}</p>${actionList(['secret-debt.hidden-work'])}`:''}`;
  if(panel==='school')return `<h2>${esc(tr('ui.school.title','Школа'))}</h2><p>${esc(tr('ui.school.help','Восемь оплачиваемых курсов. Урок списывает tuition + 1 Energy атомарно.'))}</p>${schoolList()}`;
  if(panel==='explore')return `<h2>${esc(tr('ui.explore.title','Окрестности и поручения'))}</h2>${activityEntryList(['lumber.forest','hunter.expedition'])}${activityEntryList(['assassin.infiltration'])}<details><summary>${esc(tr('ui.explore.errandsSummary','Обычные поручения'))}</summary>${actionList(['forest-search','tavern-talk','forage','landlord','visit','oddjob'])}</details>`;
  if(panel==='sleep')return `<h2>${esc(tr('ui.sleep.title','Ночь'))}</h2><p>${esc(tr('ui.sleep.help','Сначала выбирается ночлег, затем — добровольное вечернее действие, после чего начинается следующий день.'))}</p><button data-end-day class="primary" ${busy||locked||!!state.run.pending||!!state.run.flow.night||!!state.run.flow.activity?'disabled':''}>${esc(tr('ui.sleep.startButton','Начать ночную последовательность'))}</button>`;
@@ -580,15 +749,15 @@ function panelContent(){
   return `<h2>${esc(tr('ui.panel.journal','Дневник'))}</h2>${entries.length?[...entries].reverse().map(t=>`<p class="journal-entry">${esc(t)}</p>`).join(''):`<p>${esc(tr('ui.journal.empty','Пока записей нет.'))}</p>`}`;
  }
  if(panel==='bag')return `<h2>${esc(tr('ui.bag.title','Сумка и дела'))}</h2>${Object.entries(state.run.inventory).map(([k,v])=>`<p>${esc(itemLabel(k))}: ${v}</p>`).join('')}<p>${esc(tr('ui.bag.debtLabel','Долг'))}: ${state.run.metrics.debt}</p><p>${esc(tr('ui.secretDebt.principalLabel','Тайный долг — основной долг'))}: ${state.run.secretDebt.debt}</p><p>${esc(tr('ui.secretDebt.statusLabel','Тайный долг'))}: ${esc(tr(`secretDebt.status.${state.run.secretDebt.status}`,state.run.secretDebt.status))}</p>${state.run.secretDebt.status==='bound'?actionList(['secret-debt.repay','secret-debt.takeover']):''}${actionList(['repay','rent-room'])}`;
- if(panel==='legacy')return `<h2>${esc(tr('ui.panel.legacy','Судьбы'))}</h2><p>${esc(tr('ui.legacy.help','Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.'))}</p>${catalog.definitions.endings.map(e=>{const presentationState=endingPresentationState(e.id);const stateLabel=tr(`ui.ending.state.${presentationState}`,presentationState);return `<article class="ending" data-ending-id="${esc(e.id)}" data-ending-state="${presentationState}" tabindex="0" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:`${tr(`ending.${e.id}.title`,e.title)} — ${stateLabel}`}))}"><span class="ending-state" aria-label="${esc(fmt(tr('ui.ending.stateAria','Состояние судьбы: {state}'),{state:stateLabel}))}">${esc(stateLabel)}</span><h3>${esc(tr(`ending.${e.id}.title`,e.title))}</h3><p>${esc(tr(`ending.${e.id}.description`,e.description))}</p><small>${e.conditions.map(c=>`${meets(c,state,catalog)?'✓':'○'} ${esc(explain(c))}`).join(' · ')}</small><button data-ending="${e.id}" ${busy||locked||state.run.status==='ended'||state.run.status==='ending_committed'||!!state.run.pending||!state.run.availableEndings.includes(e.id)||!eligible(e.conditions,state)?'disabled':''}>${esc(tr('ui.legacy.acceptButton','Принять судьбу'))}</button></article>`;}).join('')}<h3>${esc(tr('ui.legacy.inheritanceTitle','Наследие'))}</h3><p>${state.meta.unlocks.map(k=>esc(tr(`unlock.${k}.label`,labels[k]??k))).join(' · ')||esc(tr('ui.legacy.emptyInheritance','Ещё впереди'))}</p>${state.run.status!=='active'?`<button id="new-life">${esc(tr('ui.legacy.nextLifeButton','Следующая жизнь'))}</button>`:''}`;
+ if(panel==='legacy')return `<h2>${esc(tr('ui.panel.legacy','Судьбы'))}</h2><p>${esc(tr('ui.legacy.help','Достижение судьбы не завершает жизнь. Принятие выдаёт её наследие.'))}</p>${catalog.definitions.endings.filter(e=>!isPalaceEndingId(e.id)).map(genericEndingCardHTML).join('')}${palaceEligibleEndingsHTML()}<h3>${esc(tr('ui.legacy.inheritanceTitle','Наследие'))}</h3><p>${state.meta.unlocks.map(k=>esc(tr(`unlock.${k}.label`,labels[k]??k))).join(' · ')||esc(tr('ui.legacy.emptyInheritance','Ещё впереди'))}</p>${state.run.status!=='active'?`<button id="new-life">${esc(tr('ui.legacy.nextLifeButton','Следующая жизнь'))}</button>`:''}`;
  if(panel==='editor')return '<div id="editor" class="editor"></div>';
  if(panel==='catalog')return `<h2>Инспектор событий</h2>${catalog.events.map(e=>`<details><summary>${esc(e.title)}</summary><pre>${esc(JSON.stringify(e,null,2))}</pre></details>`).join('')}`;
- return `<h2>${esc(tr('ui.menu.title','Меню'))}</h2><div class="menu-buttons"><button id="language-toggle">${esc(fmt(tr('ui.menu.languageButton','Язык: {language}'),{language:tr(locale==='ru'?'ui.language.ru':'ui.language.en',locale==='ru'?'Русский':'English')}))}</button><button id="export">${esc(tr('ui.menu.exportSave','Экспорт сохранения'))}</button><button id="import">${esc(tr('ui.menu.importSave','Импорт сохранения'))}</button><input type="file" id="file" accept=".json" hidden><button data-panel="editor">${esc(tr('ui.menu.editor','Тексты и изображения'))}</button><button id="animation-toggle">${esc(fmt(tr('ui.menu.animationToggle','Анимация GIF: {state}'),{state:tr(animationsEnabled?'ui.menu.animationOn':'ui.menu.animationOff',animationsEnabled?'включена':'выключена')}))}</button><button data-panel="catalog">Инспектор событий</button><button id="restart" ${busy||locked?'disabled':''}>${esc(tr('ui.menu.restart','Новая героиня с сохранением наследия'))}</button></div><p class="muted">${esc(tr('ui.menu.footer','M3 · Игровая оболочка. Иллюстрации — заменяемые эскизы. Новая героиня начинает со статами 1 и десятью очками. У загруженной старой жизни характеристики сохранены.'))}</p>`;
+ return `<h2>${esc(tr('ui.menu.title','Меню'))}</h2><div class="menu-buttons"><button id="language-toggle">${esc(fmt(tr('ui.menu.languageButton','Язык: {language}'),{language:tr(locale==='ru'?'ui.language.ru':'ui.language.en',locale==='ru'?'Русский':'English')}))}</button><button id="export">${esc(tr('ui.menu.exportSave','Экспорт сохранения'))}</button><button id="import">${esc(tr('ui.menu.importSave','Импорт сохранения'))}</button><input type="file" id="file" accept=".json" hidden><button data-panel="editor">${esc(tr('ui.menu.editor','Тексты и изображения'))}</button><button id="animation-toggle">${esc(fmt(tr('ui.menu.animationToggle','Анимация GIF: {state}'),{state:tr(animationsEnabled?'ui.menu.animationOn':'ui.menu.animationOff',animationsEnabled?'включена':'выключена')}))}</button><button data-panel="catalog">${esc(tr('ui.menu.catalogInspector','Инспектор событий'))}</button><button id="restart" ${busy||locked?'disabled':''}>${esc(tr('ui.menu.restart','Новая героиня с сохранением наследия'))}</button></div><p class="muted">${esc(tr('ui.menu.footer','M3 · Игровая оболочка. Иллюстрации — заменяемые эскизы. Новая героиня начинает со статами 1 и десятью очками. У загруженной старой жизни характеристики сохранены.'))}</p>`;
 }
 function render(){
  if(!state||!catalog)return;const d=calendar(state.run.day);
  document.documentElement.lang=locale;
- app.innerHTML=`<div class="game-shell"><header class="hud"><button class="wordmark" id="home">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</button><div class="date"><strong>${esc(seasonLabel(d.season,labels[d.season]??d.season))} · ${esc(tr('ui.hud.day','День'))} ${d.date}</strong><span>${esc(tr('ui.hud.year','Год'))} ${d.year} ${esc(tr('ui.hud.of','из'))} ${state.run.limitDays/40}</span></div><div class="energy" aria-label="${esc(tr('ui.hud.energy','Энергия'))}"><strong>${esc(tr('ui.hud.energy','Энергия'))} ${state.run.metrics.energy}/${energyMax(state)}</strong><span>${Array.from({length:energyMax(state)},(_,i)=>`<i class="${i<state.run.metrics.energy?'filled':''}"></i>`).join('')}</span></div><div class="coins"><strong>${state.run.metrics.money}</strong><span>${esc(tr('ui.hud.coins','монет'))}</span></div><button data-panel="menu" aria-label="${esc(tr('ui.hud.menu','Меню'))}">☰</button></header><main class="play-area">${central()}</main><footer class="dock">${[['work','ui.panel.work','Работа'],['school','ui.panel.school','Школа'],['explore','ui.panel.explore','Окрестности'],['sleep','ui.panel.sleep','Ночлег'],['stats','ui.panel.stats','Героиня'],['journal','ui.panel.journal','Дневник'],['bag','ui.panel.bag','Сумка'],['legacy','ui.panel.legacy','Судьбы']].map(([id,key,fallback])=>`<button data-panel="${id}" ${!state.run.creation.complete||!state.run.flags['story.arrived']||state.run.status!=='active'&&!['stats','journal','bag','legacy'].includes(id)?'disabled':''}>${esc(tr(key,fallback))}</button>`).join('')}</footer>${panel?`<div class="overlay"><section class="panel" role="dialog" aria-modal="true" aria-label="${esc(panel)}"><button class="close" id="close" aria-label="${esc(tr('ui.generic.closeButton','Закрыть'))}">×</button>${panelContent()}</section></div>`:''}${message?`<div class="toast ${error?'error':''}" role="status">${esc(message)}<button id="dismiss" aria-label="${esc(tr('ui.generic.dismissButton','Закрыть уведомление'))}">×</button></div>`:''}</div>`;
+ app.innerHTML=`<div class="game-shell"><header class="hud"><button class="wordmark" id="home">${esc(tr('ui.town.eyebrow','По ту сторону люка'))}</button><div class="date"><strong>${esc(seasonLabel(d.season,labels[d.season]??d.season))} · ${esc(tr('ui.hud.day','День'))} ${d.date}</strong><span>${esc(tr('ui.hud.year','Год'))} ${d.year} ${esc(tr('ui.hud.of','из'))} ${state.run.limitDays/40}</span></div><div class="energy" aria-label="${esc(tr('ui.hud.energy','Энергия'))}"><strong>${esc(tr('ui.hud.energy','Энергия'))} ${state.run.metrics.energy}/${energyMax(state)}</strong><span>${Array.from({length:energyMax(state)},(_,i)=>`<i class="${i<state.run.metrics.energy?'filled':''}"></i>`).join('')}</span></div><div class="coins"><strong>${state.run.metrics.money}</strong><span>${esc(tr('ui.hud.coins','монет'))}</span></div><button data-panel="menu" aria-label="${esc(tr('ui.hud.menu','Меню'))}">☰</button></header><main class="play-area">${central()}</main><footer class="dock">${[['work','ui.panel.work','Работа'],['school','ui.panel.school','Школа'],['explore','ui.panel.explore','Окрестности'],['sleep','ui.panel.sleep','Ночлег'],['stats','ui.panel.stats','Героиня'],['journal','ui.panel.journal','Дневник'],['bag','ui.panel.bag','Сумка'],['legacy','ui.panel.legacy','Судьбы']].map(([id,key,fallback])=>`<button data-panel="${id}" ${!state.run.creation.complete||!state.run.flags['story.arrived']||state.run.status!=='active'&&!['stats','journal','bag','legacy'].includes(id)?'disabled':''}>${esc(tr(key,fallback))}</button>`).join('')}</footer>${panel?`<div class="overlay"><section class="panel" role="dialog" aria-modal="true" aria-label="${esc(panelAccessibleName(panel))}"><button class="close" id="close" aria-label="${esc(tr('ui.generic.closeButton','Закрыть'))}">×</button>${panelContent()}</section></div>`:''}${message?`<div class="toast ${error?'error':''}" role="status">${esc(message)}<button id="dismiss" aria-label="${esc(tr('ui.generic.dismissButton','Закрыть уведомление'))}">×</button></div>`:''}</div>`;
  app.querySelectorAll<HTMLButtonElement>('[data-panel]').forEach(b=>b.onclick=()=>{panel=b.dataset.panel!;render();app.querySelector<HTMLButtonElement>('#close')?.focus();});
  app.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(b=>b.onclick=()=>void perform({type:'action',id:b.dataset.action!,recipe:b.dataset.recipe as 'gentle'|'bold'|undefined}));
  app.querySelectorAll<HTMLButtonElement>('[data-school-course]').forEach(b=>b.onclick=()=>void perform({type:'schoolLesson',id:b.dataset.schoolCourse as Parameters<typeof perform>[0] extends {type:'schoolLesson';id:infer I}?I:never}));
@@ -600,6 +769,8 @@ function render(){
  app.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b=>b.onclick=()=>void perform({type:'choice',id:b.dataset.choice!}));
  app.querySelectorAll<HTMLButtonElement>('[data-stat]').forEach(b=>b.onclick=()=>void perform({type:'allocate',stat:b.dataset.stat as typeof stats[number],delta:Number(b.dataset.delta) as 1|-1}));
  app.querySelectorAll<HTMLButtonElement>('[data-hard-work-package]').forEach(b=>b.onclick=()=>void perform({type:'setHardWorkPackageActive',career:b.dataset.hardWorkPackage as OrdinaryHardWorkCareer,active:b.getAttribute('aria-pressed')!=='true'}));
+ app.querySelectorAll<HTMLButtonElement>('[data-strong-meta-keystone]').forEach(b=>b.onclick=()=>void perform({type:'setStrongMetaKeystone',id:b.getAttribute('aria-pressed')==='true'?null:b.dataset.strongMetaKeystone!}));
+ app.querySelectorAll<HTMLButtonElement>('[data-strong-meta-specialist]').forEach(b=>b.onclick=()=>void perform({type:'setStrongMetaSpecialist',id:b.dataset.strongMetaSpecialist!,active:b.getAttribute('aria-pressed')!=='true'}));
  app.querySelectorAll<HTMLButtonElement>('[data-ending]').forEach(b=>b.onclick=()=>{if(confirm(tr('ui.confirm.acceptEnding','Принять судьбу и завершить эту жизнь?')))void perform({type:'accept',id:b.dataset.ending!});});
  const on=(id:string,fn:()=>void)=>{const b=app.querySelector<HTMLButtonElement>('#'+id);if(b)b.onclick=fn;};
  on('home',()=>{panel='';screen='town';mediaIndex=0;render();});on('to-town',()=>{screen='town';mediaIndex=0;render();});on('close',()=>{panel='';render();});on('dismiss',()=>{message='';render();});

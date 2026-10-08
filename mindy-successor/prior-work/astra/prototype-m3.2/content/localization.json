@@ -12867,28 +12867,28 @@
       "en": "The lesson remains context and grants no career gate, item, or universal access right."
     },
     "event.palace.invitation.day1-arrival.title": {
-      "ru": "Письмо в первый день",
-      "en": "A Letter on the First Day"
+      "ru": "Дворец — Запечатанное приглашение",
+      "en": "Palace — A Sealed Invitation"
     },
     "event.palace.invitation.day1-arrival.variant.default.text": {
-      "ru": "Утро новой жизни ещё не успевает стать привычным, когда у двери появляется посыльный с плотным конвертом и дворцовой печатью. На этот раз письмо не намекает и не проверяет тебя: приглашение уже выдано.",
-      "en": "The morning of a new life has barely begun when a courier appears at the door with a heavy envelope bearing the Palace seal. This time the letter is neither a hint nor a test: the invitation has already been issued."
+      "ru": "Первое утро ещё не успевает стать привычным, когда у двери появляется дворцовый посыльный и оставляет тяжёлый конверт. Печать официальная, формулировка точная: твоя работа во всех десяти обычных профессиях уже признана. Это не испытание, и письмо не притворяется, будто объясняет, зачем Дворцу понадобилась именно такая широта опыта.",
+      "en": "Before the first morning has settled into routine, a Palace courier leaves a heavy envelope at your door. The seal is official, the wording exact: your work across all ten ordinary professions has already been recognized. This is not a test, and the letter does not pretend to explain why such breadth matters."
     },
     "event.palace.invitation.day1-arrival.choice.open.label": {
-      "ru": "Вскрыть конверт",
-      "en": "Open the envelope"
+      "ru": "Сломать печать",
+      "en": "Break the seal"
     },
     "event.palace.invitation.day1-arrival.choice.open.text": {
-      "ru": "Печать ломается легко. Внутри — официальное приглашение и время, когда тебя ждут у дворцового входа.",
-      "en": "The seal breaks cleanly. Inside is an official invitation and the time when you are expected at the Palace entrance."
+      "ru": "Внутри — официальный вызов с указанными временем и входом. К нему не приложены ни экзамен, ни жеребьёвка, ни покровитель, ни частная рекомендация.",
+      "en": "Inside is a formal summons with a time and entrance named. No examination, lottery, patron, or private recommendation is attached to it."
     },
     "event.palace.invitation.reveal.title": {
-      "ru": "Приглашение без нового испытания",
-      "en": "An Invitation Without Another Test"
+      "ru": "Дворец — Приглашение подтверждено",
+      "en": "Palace — Invitation Confirmed"
     },
     "event.palace.invitation.reveal.variant.default.text": {
-      "ru": "Формулировка короткая: накопленный опыт десяти обычных профессий признан, а выбранные в этой жизни наследия делают приглашение действительным сейчас. Ни экзамена, ни случайной проверки, ни дополнительного пропуска не требуется.",
-      "en": "The wording is brief: experience from all ten ordinary professions has been recognized, and the legacies selected for this life make the invitation valid now. No exam, random check, or additional pass is required."
+      "ru": "Вторая страница снимает последнюю процедурную неопределённость. Hard Work завершён во всех десяти обычных карьерах, и все десять соответствующих пакетов активны в этой жизни. По постоянному дворцовому протоколу этого достаточно. Ни в одной сноске не появляется пророчество, предмет, роман или одиннадцатая профессия.",
+      "en": "The second page removes the last procedural doubt. You completed Hard Work in all ten ordinary careers, and all ten corresponding packages are active in this life. Under standing Palace protocol, that combination is sufficient. Nothing in the small print adds a prophecy, an item, a romance, or an eleventh profession."
     },
     "event.palace.invitation.reveal.choice.accept.label": {
       "ru": "Принять приглашение",
@@ -12911,8 +12911,8 @@
       "en": "Record the route without auto-committing an ending."
     },
     "event.palace.invitation.reveal.choice.accept.text": {
-      "ru": "Ты подтверждаешь визит. Этого достаточно, чтобы открыть доступ к дворцовой работе в этой жизни.",
-      "en": "You confirm the visit. That is enough to open access to Palace work in this life."
+      "ru": "Ты подтверждаешь визит. Доступ во Дворец открывается на эту жизнь. Почему учреждение так ценит опыт из разных областей, по-прежнему неясно — ответ придётся искать внутри.",
+      "en": "You confirm the visit. Palace access opens for this life. The institution's deeper reason for valuing cross-domain experience remains unanswered—and must be learned inside."
     },
     "ending.ending.satyr-maid.personal-network.title": {
       "ru": "Служанка у сатиров — личная сеть",
@@ -13741,6 +13741,958 @@
     "unlock.secret-debt.takeover.network-retainer.label": {
       "ru": "Сетевое содержание",
       "en": "Network Retainer"
+    },
+    "action.palace.confront-prince.description": {
+      "ru": "Предъявить дворцовые записи Хранителю и оспорить его исключительное вето доказательствами, а не боем.",
+      "en": "Present the Palace record to the Custodian and challenge his exclusive veto through evidence, not combat."
+    },
+    "action.palace.confront-prince.label": {
+      "ru": "Противостоять Принцу",
+      "en": "Confront the Prince"
+    },
+    "action.palace.confront-prince.scene.default.text": {
+      "ru": "Записей уже достаточно, чтобы быть услышанной. За плечами — пятнадцать обязанностей, в руках — проверенная цепочка свидетельств, а за дверью нет никакого скрытого испытания.",
+      "en": "The record is complete enough to be heard. You enter the audience with fifteen duties behind you, a verified chain of evidence in hand, and no hidden trial waiting beyond the door."
+    },
+    "action.palace.duty.01-service-rotation.description": {
+      "ru": "Выполнить ограниченное служебное поручение и закрыть передачу работы.",
+      "en": "Complete a bounded service handoff and close the loop."
+    },
+    "action.palace.duty.01-service-rotation.label": {
+      "ru": "Дворец: служебная ротация",
+      "en": "Palace: Service Rotation"
+    },
+    "action.palace.duty.01-service-rotation.scene.default.text": {
+      "ru": "Ты принимаешь ограниченную задачу, подтверждаешь ответственность, завершаешь передачу и отмечаешь, что именно закрыто.",
+      "en": "You receive a bounded task, confirm ownership, complete the handoff, and record what is finished."
+    },
+    "action.palace.duty.02-logistics-support.description": {
+      "ru": "Разобрать несоответствие маршрута или передачи по безопасной базовой схеме.",
+      "en": "Resolve a route or handoff mismatch through a safe baseline path."
+    },
+    "action.palace.duty.02-logistics-support.label": {
+      "ru": "Дворец: логистическая поддержка",
+      "en": "Palace: Logistics Support"
+    },
+    "action.palace.duty.02-logistics-support.scene.default.text": {
+      "ru": "Ты проверяешь маршрут, отделяешь доступ от предположений и завершаешь передачу без лишнего обхода.",
+      "en": "You check the route, separate access from assumption, and complete the handoff without turning the task into a detour."
+    },
+    "action.palace.duty.03-records-review.description": {
+      "ru": "Сверить реестр с фактической передачей и проверить расхождение.",
+      "en": "Compare a register with a concrete handoff and verify the discrepancy."
+    },
+    "action.palace.duty.03-records-review.label": {
+      "ru": "Дворец: проверка записей",
+      "en": "Palace: Records Review"
+    },
+    "action.palace.duty.03-records-review.scene.default.text": {
+      "ru": "Ты сверяешь запись с передачей, отмечаешь подтверждённое и отдельно оставляешь непроверенные предположения.",
+      "en": "You compare the record with the handoff, mark what is verified, and leave unchecked assumptions clearly identified."
+    },
+    "action.palace.duty.04-service-rotation.description": {
+      "ru": "Разобрать несколько обычных запросов, сохранив очередь и профессиональные границы.",
+      "en": "Handle competing routine requests while preserving queue and boundaries."
+    },
+    "action.palace.duty.04-service-rotation.label": {
+      "ru": "Дворец: служебная ротация",
+      "en": "Palace: Service Rotation"
+    },
+    "action.palace.duty.04-service-rotation.scene.default.text": {
+      "ru": "Ты упорядочиваешь запросы, сохраняешь видимой ответственность и не превращаешь срочность в личную услугу.",
+      "en": "You order the requests, keep responsibility visible, and finish the routine work without converting urgency into personal favour."
+    },
+    "action.palace.duty.05-logistics-support.description": {
+      "ru": "Перенаправить задержанную передачу по безопасному базовому маршруту.",
+      "en": "Reroute a delayed handoff through a safe baseline route."
+    },
+    "action.palace.duty.05-logistics-support.label": {
+      "ru": "Дворец: логистическая поддержка",
+      "en": "Palace: Logistics Support"
+    },
+    "action.palace.duty.05-logistics-support.scene.default.text": {
+      "ru": "Задержанной передаче нужен новый путь. Ты проверяешь маршрут, выбираешь безопасную точку передачи и закрываешь задержку без выдуманного доступа.",
+      "en": "A delayed handoff needs a new path. You verify the route, choose a safe transfer point, and close the delay without inventing access."
+    },
+    "action.palace.duty.06-coordination.description": {
+      "ru": "Согласовать два ограниченных рабочих потока через общую точку проверки.",
+      "en": "Coordinate two bounded workstreams with one shared verification point."
+    },
+    "action.palace.duty.06-coordination.label": {
+      "ru": "Дворец: координация",
+      "en": "Palace: Coordination"
+    },
+    "action.palace.duty.06-coordination.scene.default.text": {
+      "ru": "Ты распределяешь ответственность, сохраняешь оба потока проверяемыми и сводишь их в одной подтверждённой передаче.",
+      "en": "You assign responsibilities, keep both workstreams traceable, and bring them back together at one checked handoff."
+    },
+    "action.palace.duty.07-records-review.description": {
+      "ru": "Проверить материальные свидетельства, отделяя наблюдение от объяснения.",
+      "en": "Review material evidence while separating observation from explanation."
+    },
+    "action.palace.duty.07-records-review.label": {
+      "ru": "Дворец: проверка записей",
+      "en": "Palace: Records Review"
+    },
+    "action.palace.duty.07-records-review.scene.default.text": {
+      "ru": "Ты записываешь, что видно напрямую, что известно только со слов и что всё ещё требует объяснения.",
+      "en": "You record what can be observed directly, what is only reported, and what still needs explanation."
+    },
+    "action.palace.duty.08-service-rotation.description": {
+      "ru": "Закрыть длинную цепочку обслуживания и явно назначить следующий шаг.",
+      "en": "Close a longer service chain and make the next owner explicit."
+    },
+    "action.palace.duty.08-service-rotation.label": {
+      "ru": "Дворец: служебная ротация",
+      "en": "Palace: Service Rotation"
+    },
+    "action.palace.duty.08-service-rotation.scene.default.text": {
+      "ru": "Ты сверяешь открытые задачи, закрываешь завершённое и назначаешь ответственного за каждый оставшийся шаг.",
+      "en": "You reconcile the open tasks, close what is complete, and name the owner of every remaining step."
+    },
+    "action.palace.duty.09-formal-interface.description": {
+      "ru": "Провести формальный рабочий обмен, не подменяя полномочия протоколом.",
+      "en": "Handle a formal-facing exchange without confusing protocol with authorization."
+    },
+    "action.palace.duty.09-formal-interface.label": {
+      "ru": "Дворец: формальное взаимодействие",
+      "en": "Palace: Formal Interface"
+    },
+    "action.palace.duty.09-formal-interface.scene.default.text": {
+      "ru": "Ты сохраняешь обмен формальным и ясным, используя протокол как структуру работы, но не как замену полномочиям.",
+      "en": "You keep the exchange formal and clear, using protocol to structure the work without treating presentation as authority."
+    },
+    "action.palace.duty.10-coordination.description": {
+      "ru": "Согласовать общий результат, сохранив проверяемыми авторство и исправления.",
+      "en": "Coordinate a shared result while keeping credit and correction traceable."
+    },
+    "action.palace.duty.10-coordination.label": {
+      "ru": "Дворец: координация",
+      "en": "Palace: Coordination"
+    },
+    "action.palace.duty.10-coordination.scene.default.text": {
+      "ru": "Ты сводишь исправления, сохраняешь вклад каждого и закрываешь общий результат без размывания ответственности.",
+      "en": "You reconcile corrections, preserve who contributed what, and close the shared result without erasing responsibility."
+    },
+    "action.palace.duty.11-logistics-support.description": {
+      "ru": "Спланировать ограниченную передачу по проверенным данным о маршруте и доступе.",
+      "en": "Plan a constrained handoff using verified route and access information."
+    },
+    "action.palace.duty.11-logistics-support.label": {
+      "ru": "Дворец: логистическая поддержка",
+      "en": "Palace: Logistics Support"
+    },
+    "action.palace.duty.11-logistics-support.scene.default.text": {
+      "ru": "Ты отделяешь сведения о маршруте, официальное внимание и реальный доступ, затем проводишь передачу по проверенному пути.",
+      "en": "You separate route evidence, official attention, and actual access, then complete the constrained handoff on the verified path."
+    },
+    "action.palace.duty.12-records-review.description": {
+      "ru": "Свести несколько записей, не скрывая неразрешённые противоречия источников.",
+      "en": "Reconcile multiple records while preserving unresolved source disagreement."
+    },
+    "action.palace.duty.12-records-review.label": {
+      "ru": "Дворец: проверка записей",
+      "en": "Palace: Records Review"
+    },
+    "action.palace.duty.12-records-review.scene.default.text": {
+      "ru": "Ты собираешь одну проверенную сводку, отмечаешь совпадения источников и сохраняешь расхождения, которые записи не позволяют снять.",
+      "en": "You build one checked summary, mark where sources agree, and preserve the disagreements that the records do not settle."
+    },
+    "action.palace.duty.13-evidence-review.description": {
+      "ru": "Отделить прямое наблюдение, сведения источников и неразрешённое толкование.",
+      "en": "Separate direct observation, sourced testimony, and unresolved interpretation."
+    },
+    "action.palace.duty.13-evidence-review.label": {
+      "ru": "Дворец: разбор свидетельств",
+      "en": "Palace: Evidence Review"
+    },
+    "action.palace.duty.13-evidence-review.scene.default.text": {
+      "ru": "Ты делишь материал на наблюдаемое, сообщённое источниками и неразрешённое, не объявляя окончательный ответ там, где доказательств недостаточно.",
+      "en": "You sort the material into observed, sourced, and unresolved claims without declaring a final answer that the evidence does not support."
+    },
+    "action.palace.duty.14-formal-interface.description": {
+      "ru": "Представить проверенную позицию, не смешивая подачу, протокол и достоверность.",
+      "en": "Present a checked position while keeping performance and certainty separate."
+    },
+    "action.palace.duty.14-formal-interface.label": {
+      "ru": "Дворец: формальное взаимодействие",
+      "en": "Palace: Formal Interface"
+    },
+    "action.palace.duty.14-formal-interface.scene.default.text": {
+      "ru": "Ты ясно представляешь проверенную позицию, отделяешь протокол от доказательств и оставляешь неопределённость видимой там, где она сохраняется.",
+      "en": "You present the checked position clearly, distinguish protocol from evidence, and leave uncertainty visible where it remains."
+    },
+    "action.palace.duty.15-coordination.description": {
+      "ru": "Закрыть обычную дворцовую рабочую цепочку, не выбирая концовку.",
+      "en": "Close the ordinary Palace work chain without choosing an ending."
+    },
+    "action.palace.duty.15-coordination.label": {
+      "ru": "Дворец: координация",
+      "en": "Palace: Coordination"
+    },
+    "action.palace.duty.15-coordination.scene.default.text": {
+      "ru": "Ты координируешь итоговую передачу между несколькими ролями, закрываешь обычные обязательства и оставляешь дальнейший выбор игроку.",
+      "en": "You coordinate the final general-work handoff across several roles, close the remaining obligations, and leave the next life decision to the player."
+    },
+    "action.palace.outcome-prep.court-power.01-responsibility.description": {
+      "ru": "Рассмотреть влияние как проверяемую профессиональную ответственность.",
+      "en": "Review influence as accountable professional responsibility."
+    },
+    "action.palace.outcome-prep.court-power.01-responsibility.label": {
+      "ru": "Дворец: ответственность влияния",
+      "en": "Palace: Accountable Influence"
+    },
+    "action.palace.outcome-prep.court-power.01-responsibility.scene.default.text": {
+      "ru": "Ты отмечаешь, какие решения можно принять, проверить, исправить или отклонить без опоры на личное покровительство.",
+      "en": "You map which decisions can be accepted, traced, corrected, or refused without relying on personal favour."
+    },
+    "action.palace.outcome-prep.court-power.02-network.description": {
+      "ru": "Разобрать сеть ответственности и влияния без обязательного покровительства.",
+      "en": "Resolve a professional network and credit decision without requiring patronage."
+    },
+    "action.palace.outcome-prep.court-power.02-network.label": {
+      "ru": "Дворец: профессиональная сеть",
+      "en": "Palace: Professional Network"
+    },
+    "action.palace.outcome-prep.court-power.02-network.scene.default.text": {
+      "ru": "Ты прослеживаешь профессиональные связи, сохраняешь ответственность за решения и фиксируешь путь к подотчётному влиянию.",
+      "en": "You trace the professional network, preserve responsibility for decisions, and record a route toward accountable influence."
+    },
+    "action.palace.outcome-prep.inner-truth.01-evidence.description": {
+      "ru": "Разделить свидетельства на наблюдение, источник и неразрешённое толкование.",
+      "en": "Sort evidence by observation, source, and unresolved interpretation."
+    },
+    "action.palace.outcome-prep.inner-truth.01-evidence.label": {
+      "ru": "Дворец: проверка свидетельств",
+      "en": "Palace: Evidence Check"
+    },
+    "action.palace.outcome-prep.inner-truth.01-evidence.scene.default.text": {
+      "ru": "Ты перекрёстно проверяешь материал, отделяешь прямое наблюдение от сообщений источников и оставляешь неразрешённое неразрешённым.",
+      "en": "You cross-check the available material, separating direct observation from sourced reports and leaving unresolved claims unresolved."
+    },
+    "action.palace.outcome-prep.inner-truth.02-contradiction.description": {
+      "ru": "Сравнить правдоподобные версии, не навязывая окончательный ответ тайны.",
+      "en": "Compare plausible accounts without forcing a final mystery answer."
+    },
+    "action.palace.outcome-prep.inner-truth.02-contradiction.label": {
+      "ru": "Дворец: противоречие источников",
+      "en": "Palace: Source Contradiction"
+    },
+    "action.palace.outcome-prep.inner-truth.02-contradiction.scene.default.text": {
+      "ru": "Ты сравниваешь конкурирующие версии, фиксируешь противоречие и сохраняешь неопределённость там, где доказательства не дают решения.",
+      "en": "You compare the competing accounts, record the contradiction, and preserve uncertainty where the evidence cannot settle it."
+    },
+    "action.palace.outcome-prep.service-life.01-continuity.description": {
+      "ru": "Проверить, может ли служба оставаться устойчивой благодаря ясной ответственности.",
+      "en": "Review whether Palace service can remain sustainable through clear responsibilities."
+    },
+    "action.palace.outcome-prep.service-life.01-continuity.label": {
+      "ru": "Дворец: устойчивость службы",
+      "en": "Palace: Service Continuity"
+    },
+    "action.palace.outcome-prep.service-life.01-continuity.scene.default.text": {
+      "ru": "Ты разбираешь рабочий уклад как систему: что повторяется надёжно, чему нужен ответственный и где должна оставаться граница.",
+      "en": "You review the work pattern as a professional system: what repeats cleanly, what needs an owner, and what should remain a boundary."
+    },
+    "action.palace.outcome-prep.service-life.02-boundaries.description": {
+      "ru": "Закрепить профессиональные границы продолжения службы, не исключая другие исходы.",
+      "en": "Confirm a bounded service pattern without excluding other Palace outcomes."
+    },
+    "action.palace.outcome-prep.service-life.02-boundaries.label": {
+      "ru": "Дворец: границы службы",
+      "en": "Palace: Service Boundaries"
+    },
+    "action.palace.outcome-prep.service-life.02-boundaries.scene.default.text": {
+      "ru": "Ты задаёшь ясные профессиональные пределы для продолжения службы и фиксируешь договорённость, не превращая её в выбор концовки.",
+      "en": "You set clear professional limits for continued service and record the arrangement without treating it as an ending commitment."
+    },
+    "career.palace.label": {
+      "ru": "Дворец",
+      "en": "Palace"
+    },
+    "career.palace.stage.crossroads.label": {
+      "ru": "Перекрёсток",
+      "en": "Crossroads"
+    },
+    "career.palace.stage.entered-service.label": {
+      "ru": "Начало службы",
+      "en": "Entered Service"
+    },
+    "career.palace.stage.outcome-ready.label": {
+      "ru": "Готовность к исходу",
+      "en": "Outcome Ready"
+    },
+    "career.palace.stage.palace-network.label": {
+      "ru": "Дворцовая сеть",
+      "en": "Palace Network"
+    },
+    "career.palace.stage.trusted-service.label": {
+      "ru": "Доверенная служба",
+      "en": "Trusted Service"
+    },
+    "career.palace.stage.working-rhythm.label": {
+      "ru": "Рабочий ритм",
+      "en": "Working Rhythm"
+    },
+    "ending.ending.palace.court-power.description": {
+      "ru": "Принять подотчётную власть над дворцовыми назначениями, доступом, аудитом, маршрутизацией, приоритетами, признанием и процедурными исключениями.",
+      "en": "Accept accountable authority over Palace appointments, access, audits, routing, priorities, recognition, and procedural exceptions."
+    },
+    "ending.ending.palace.court-power.title": {
+      "ru": "Дворец — Придворная власть",
+      "en": "Palace — Court Power"
+    },
+    "ending.ending.palace.inner-truth.description": {
+      "ru": "Выбрать работу проверки: сохранять происхождение источников, противоречия и честное неизвестное в Архиве Порога вместо удобного окончательного ответа.",
+      "en": "Choose the work of verification: preserve the Threshold Archive's provenance, contradictions, and honest unknowns instead of forcing a final answer."
+    },
+    "ending.ending.palace.inner-truth.title": {
+      "ru": "Дворец — Внутренняя истина",
+      "en": "Palace — Inner Truth"
+    },
+    "ending.ending.palace.return-home.description": {
+      "ru": "После завершения дворцовой прогрессии, достижения не менее 91 во всех двенадцати характеристиках и опровержения исключительного вето Хранителя решить, переходить ли через Порог в исходный мир.",
+      "en": "With Palace progression complete, all twelve progression stats at least 91, and the Custodian's exclusive veto defeated, choose whether to cross the Threshold back to your original world."
+    },
+    "ending.ending.palace.return-home.title": {
+      "ru": "Дворец — Возвращение домой",
+      "en": "Palace — Return Home"
+    },
+    "ending.ending.palace.service-life.description": {
+      "ru": "Остаться и сделать дворцовую службу устойчивее: ясные передачи, названная ответственность, профессиональные границы и институциональная память без слепой лояльности.",
+      "en": "Choose to remain and make Palace service durable: clear handoffs, named responsibility, professional boundaries, and institutional memory without blind loyalty."
+    },
+    "ending.ending.palace.service-life.title": {
+      "ru": "Дворец — Жизнь в службе",
+      "en": "Palace — Service Life"
+    },
+    "event.palace.outcome-finalize.court-power.choice.finalize.label": {
+      "ru": "Сделать «Придворную власть» доступной",
+      "en": "Make Court Power eligible"
+    },
+    "event.palace.outcome-finalize.court-power.choice.finalize.text": {
+      "ru": "Ты сохраняешь «Придворную власть» как реальный выбор концовки: подотчётная институциональная власть, а не монархия, магия, покровительство или роман.",
+      "en": "You preserve Court Power as a real ending choice: accountable institutional authority, not monarchy, magic, patronage, or romance."
+    },
+    "event.palace.outcome-finalize.court-power.title": {
+      "ru": "Дворец — Придворная власть",
+      "en": "Palace — Court Power"
+    },
+    "event.palace.outcome-finalize.court-power.variant.default.text": {
+      "ru": "Придворная власть теперь имеет точные границы. Это власть над назначениями, пересмотром доступа, аудитом, маршрутизацией, приоритетами, формальным признанием и процедурными исключениями внутри Дворца. Она способна менять действия учреждения. Она не заставляет Порог повиноваться титулу и не делает тебя правительницей мира.",
+      "en": "Court Power now has a precise shape. It is authority over appointments, access review, audits, routing, priorities, formal recognition, and procedural exceptions inside the Palace. It can change how the institution acts. It cannot make the Threshold obey by force of title, and it does not make you sovereign over the world."
+    },
+    "event.palace.outcome-finalize.inner-truth.choice.finalize.label": {
+      "ru": "Сделать «Внутреннюю истину» доступной",
+      "en": "Make Inner Truth eligible"
+    },
+    "event.palace.outcome-finalize.inner-truth.choice.finalize.text": {
+      "ru": "Ты сохраняешь «Внутреннюю истину» как реальный выбор концовки: происхождение источников важнее удобной уверенности, противоречия остаются видимыми, а неизвестное — честно неизвестным.",
+      "en": "You preserve Inner Truth as a real ending choice: provenance before certainty, contradictions kept visible, and unknowns left honestly unresolved."
+    },
+    "event.palace.outcome-finalize.inner-truth.title": {
+      "ru": "Дворец — Внутренняя истина",
+      "en": "Palace — Inner Truth"
+    },
+    "event.palace.outcome-finalize.inner-truth.variant.default.text": {
+      "ru": "«Внутренняя истина» приводит к глубочайшей проверенной функции Дворца. Учреждение охраняет Порог и ведёт Архив подтверждённых свидетельств о переходах. Чувствительные записи намеренно распределялись по разным областям, чтобы ни один отдел не мог в одиночку восстановить всю картину. Доказательства не сообщают, кто первым создал систему, что изначально переместило тебя и насколько искренна доктрина Принца.",
+      "en": "Inner Truth reaches the Palace's deepest verified function. The institution safeguards the Threshold and maintains an Archive of authenticated crossing evidence. Sensitive records were deliberately distributed across domains so no single office could reconstruct the whole picture alone. The evidence does not tell you who first built the system, what originally displaced you, or whether the Prince's doctrine is wholly sincere."
+    },
+    "event.palace.outcome-finalize.service-life.choice.finalize.label": {
+      "ru": "Сделать «Жизнь в службе» доступной",
+      "en": "Make Service Life eligible"
+    },
+    "event.palace.outcome-finalize.service-life.choice.finalize.text": {
+      "ru": "Ты сохраняешь «Жизнь в службе» как реальный выбор концовки: преемственность без слепой лояльности и ответственность без отказа от собственного суждения.",
+      "en": "You preserve Service Life as a real ending choice: continuity without blind loyalty, and responsibility without surrendering judgment."
+    },
+    "event.palace.outcome-finalize.service-life.title": {
+      "ru": "Дворец — Жизнь в службе",
+      "en": "Palace — Service Life"
+    },
+    "event.palace.outcome-finalize.service-life.variant.default.text": {
+      "ru": "«Жизнь в службе» больше не выглядит абстрактным обещанием остаться. Теперь видна работа, которая за этим стоит: сохранять передачи, оставлять ответственность названной, защищать профессиональные границы и не давать институциональной памяти исчезать вместе со сменой людей. Выбор преемственности не требует считать Дворец непогрешимым.",
+      "en": "Service Life is no longer an abstract promise of staying. You can see the work it would require: preserving handoffs, keeping responsibilities named, protecting professional boundaries, and making institutional memory survive changes of staff. Choosing continuity would not require pretending the Palace is infallible."
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.choice.not-yet.label": {
+      "ru": "Пока нет",
+      "en": "Not yet"
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.choice.not-yet.text": {
+      "ru": "Ты отходишь, не связывая себя доводом, который пока не можешь защитить. Ничего не потеряно; можно вернуться к записям и попробовать снова.",
+      "en": "You withdraw before committing to an argument you cannot defend. Nothing is forfeited; you may return to the record and try again."
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.choice.separate-record-from-claim.label": {
+      "ru": "Отделить запись от утверждения",
+      "en": "Separate record from claim"
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.choice.separate-record-from-claim.text": {
+      "ru": "Ты выкладываешь то, что дворцовые записи действительно устанавливают, а затем отмечаешь, где начинается толкование самого учреждения. Различие выдерживает проверку.",
+      "en": "You lay out what the Palace records establish, then mark where Palace interpretation begins. The distinction holds."
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.choice.unsupported-conclusion.label": {
+      "ru": "Утверждать больше, чем доказывают записи",
+      "en": "Claim more than the record proves"
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.choice.unsupported-conclusion.text": {
+      "ru": "Ты закрываешь пробел в доказательствах уверенностью. Принц указывает на неподтверждённый шаг и завершает попытку. Записи остаются у тебя для новой проверки.",
+      "en": "You close a gap in the evidence with certainty. The Prince points to the unsupported step and ends the attempt. The records remain yours to review."
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.title": {
+      "ru": "Дворец — Проверить записи",
+      "en": "Palace — Audit the Record"
+    },
+    "event.palace.prince-confrontation.phase-01-audit-record.variant.default.text": {
+      "ru": "Принц принимает тебя как Хранитель, а не как противник на поединке. Сначала он требует записи, и только потом — вывод. Пятнадцать обязанностей дали тебе подтверждённую работу, связанные дела и очертания Свода. Они не дали права превращать каждое институциональное утверждение в факт.",
+      "en": "The Prince receives you as Custodian, not as a duelist. He asks for the record before he asks for your conclusion. Fifteen duties gave you authenticated work, linked cases, and the shape of the Concordance. They did not give you permission to turn every institutional claim into a fact."
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.choice.accept-exclusive-veto.label": {
+      "ru": "Принять хранение за доказательство",
+      "en": "Treat custody as proof"
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.choice.accept-exclusive-veto.text": {
+      "ru": "Ты позволяешь институциональному контролю заменить доказательство. Противоречие остаётся без ответа, и в этой попытке вето Принца сохраняется.",
+      "en": "You let institutional control substitute for evidence. The contradiction remains unanswered, and the Prince's veto stands for this attempt."
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.choice.authority-is-not-proof.label": {
+      "ru": "Власть — не доказательство",
+      "en": "Authority is not proof"
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.choice.authority-is-not-proof.text": {
+      "ru": "Ты признаёшь власть Хранителя над доступом и отвергаешь скачок от хранения к исключительной истине. Должность может контролировать дверь, не владея каждым верным выводом за ней.",
+      "en": "You accept the Custodian's power over access and reject the leap from custody to exclusive truth. An office can control a door without owning every valid conclusion beyond it."
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.choice.not-yet.label": {
+      "ru": "Пока нет",
+      "en": "Not yet"
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.choice.not-yet.text": {
+      "ru": "Ты заканчиваешь разговор, не соглашаясь с доктриной. Право на новую попытку и сами дворцовые записи остаются неизменными.",
+      "en": "You end the exchange without conceding the doctrine. Your eligibility and the Palace record remain unchanged."
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.title": {
+      "ru": "Дворец — Назвать противоречие",
+      "en": "Palace — Name the Contradiction"
+    },
+    "event.palace.prince-confrontation.phase-02-name-contradiction.variant.default.text": {
+      "ru": "Принц формулирует доктрину Хранителя без украшений: раз Дворец контролирует доступ к Архиву Порога, последнее слово о смысле Архива должно оставаться за Хранителем. Первая половина — институциональный факт. Вторая — утверждение о знании. Твоя задача — не смешать их.",
+      "en": "The Prince states the Custodian doctrine without ornament: because the Palace controls access to the Threshold Archive, the Custodian must retain the final word on what the Archive means. The first half is an institutional fact. The second is a claim about knowledge. Your task is to keep them separate."
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.choice.declare-world-unreal.label": {
+      "ru": "Назвать этот мир нереальным",
+      "en": "Call this world unreal"
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.choice.declare-world-unreal.text": {
+      "ru": "Архив не подтверждает такого вывода. Довод ломается на самой границе, и попытка заканчивается без сигнала победы.",
+      "en": "The Archive does not support that claim. The argument fails at the boundary, and the attempt ends without a defeat signal."
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.choice.leave-without-erasing.label": {
+      "ru": "Уйти, не стирая этот мир",
+      "en": "Leave without erasing this world"
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.choice.leave-without-erasing.text": {
+      "ru": "Ты проводишь границу ясно. Мир-преемник остаётся реальным. Отказ от вечного хранения не разрушает Дворец. Выбор собственного происхождения не переписывает чужую жизнь.",
+      "en": "You draw the boundary clearly. The successor world remains real. Refusing permanent custody does not destroy the Palace. Choosing your origin does not rewrite anyone else's life."
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.choice.not-yet.label": {
+      "ru": "Пока нет",
+      "en": "Not yet"
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.choice.not-yet.text": {
+      "ru": "Ты останавливаешься до финальной реконструкции. Ни одна концовка не выбрана, ничего постоянного не потеряно, а спор остаётся доступным для повторной попытки.",
+      "en": "You stop before the final reconstruction. No ending is chosen, nothing permanent is lost, and the confrontation remains retryable."
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.title": {
+      "ru": "Дворец — Определить границу",
+      "en": "Palace — Define the Boundary"
+    },
+    "event.palace.prince-confrontation.phase-03-define-boundary.variant.default.text": {
+      "ru": "Принц требует назвать следствие твоей позиции. Если ты заявляешь право вернуться, что именно ты отвергаешь? Связный ответ не может требовать, чтобы этот мир оказался ложным, его жители — расходным материалом, а Дворец — разрушенным. Твоё происхождение принадлежит тебе; чужая реальность — нет.",
+      "en": "The Prince presses on the consequence. If you claim a right to return, what exactly are you rejecting? A coherent answer cannot require this world to be false, its people to be disposable, or the Palace to be destroyed. Your origin is yours; everyone else's reality is not."
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.invent-original-cause.label": {
+      "ru": "Заполнить неизвестную причину догадкой",
+      "en": "Fill the missing cause with a guess"
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.invent-original-cause.text": {
+      "ru": "Ты заменяешь неизвестную причину утверждением. Принц отвергает реконструкцию именно в этой точке. Попытка заканчивается, а записи остаются доступными для новой.",
+      "en": "You replace an unresolved cause with an assertion. The Prince rejects the reconstruction at that point. The attempt ends, and the record remains available for another try."
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.not-yet.label": {
+      "ru": "Пока нет",
+      "en": "Not yet"
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.not-yet.text": {
+      "ru": "Ты оставляешь причину неизвестной и прекращаешь попытку. Принц не побеждён, концовка не выбрана, и позже к спору можно вернуться.",
+      "en": "You leave the cause unresolved and stop the attempt. The Prince is not defeated, no ending is committed, and you may return later."
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.present-origin-trace.label": {
+      "ru": "Предъявить проверенный след происхождения",
+      "en": "Present the verified origin trace"
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.choice.present-origin-trace.text": {
+      "ru": "Цепочка выдерживает проверку и не зависит от личного толкования Принца. Его исключительное эпистемическое вето больше не может отвергать этот случай. «Возвращение домой» становится доступным — но воспользоваться им или нет, по-прежнему решаешь ты.",
+      "en": "The chain holds without relying on the Prince's private interpretation. His exclusive epistemic veto can no longer dismiss the case. The path to Return Home is now eligible—but whether to take it remains your decision."
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.title": {
+      "ru": "Дворец — Восстановить обоснование возвращения",
+      "en": "Palace — Reconstruct the Return Claim"
+    },
+    "event.palace.prince-confrontation.phase-04-reconstruct-return.variant.default.text": {
+      "ru": "Последняя проверка — реконструкция, а не бой. Ты связываешь подтверждённую аномалию собственного прибытия с согласующимися записями Архива и с границей, которую только что защитила. Эта цепочка способна установить след происхождения, не притворяясь, будто известна первоначальная причина твоего перемещения.",
+      "en": "The final test is reconstruction, not combat. You connect your authenticated arrival anomaly to corroborating Archive records and to the boundary you just defended. The chain can identify an origin trace without pretending to know the original cause of your displacement."
+    },
+    "event.palace.progression.milestone-02-working-rhythm.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-02-working-rhythm.choice.continue.text": {
+      "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+      "en": "You acknowledge what the work has established and continue from the stage already committed."
+    },
+    "event.palace.progression.milestone-02-working-rhythm.title": {
+      "ru": "Дворец — Рабочий ритм",
+      "en": "Palace — Working Rhythm"
+    },
+    "event.palace.progression.milestone-02-working-rhythm.variant.default.text": {
+      "ru": "Ко второй обязанности совпадение перестаёт выглядеть совпадением. Отделы, занятые разными делами, используют одинаковые номера дел, одинаковые пометки передачи и одинаково тщательно фиксируют, кто что знал и когда. Контуры общей системы уже видны. Что именно она в конечном счёте защищает, всё ещё вне твоего допуска.",
+      "en": "By the second duty, coincidence stops looking like coincidence. Offices that handle different work use the same case marks, the same handoff notation, and the same habit of recording who knew what, and when. You can see the shape of a shared system. What that system is ultimately protecting remains outside your clearance."
+    },
+    "event.palace.progression.milestone-05-trusted-service.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-05-trusted-service.choice.continue.text": {
+      "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+      "en": "You acknowledge what the work has established and continue from the stage already committed."
+    },
+    "event.palace.progression.milestone-05-trusted-service.title": {
+      "ru": "Дворец — Доверенная служба",
+      "en": "Palace — Trusted Service"
+    },
+    "event.palace.progression.milestone-05-trusted-service.variant.default.text": {
+      "ru": "Доверенная служба начинается там, где тебя просят проследить проблему через несколько столов, а не решить только свой кусок. Задержавшаяся запись меняет маршрут; небрежный маршрут меняет аудиенцию; неясная аудиенция меняет того, с кого спросят. Теперь Дворец проверяет широту опыта на практике, а не на бумаге. Жизнь в службе уже можно представить, но защищённая функция учреждения всё ещё скрыта.",
+      "en": "Trusted Service means being asked to follow a problem across desks instead of solving only the piece in front of you. A delayed record changes a route; a careless route changes an audience; an unclear audience changes who is held responsible. The Palace is testing breadth in practice now, not on paper. A life of service becomes imaginable, but the institution's protected purpose is still withheld."
+    },
+    "event.palace.progression.milestone-08-palace-network.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-08-palace-network.choice.continue.text": {
+      "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+      "en": "You acknowledge what the work has established and continue from the stage already committed."
+    },
+    "event.palace.progression.milestone-08-palace-network.title": {
+      "ru": "Дворец — Дворцовая сеть",
+      "en": "Palace — Palace Network"
+    },
+    "event.palace.progression.milestone-08-palace-network.variant.default.text": {
+      "ru": "Дворцовая сеть наконец делает власть достаточно обыденной, чтобы её можно было измерить. Назначения открывают двери. Правила доступа закрывают их. Аудит показывает слабые цепочки ответственности. Маршрутизация и формальное признание решают, какие факты попадут к каким столам. Если выбрать Придворную власть, речь будет об этих институциональных рычагах — не о власти над самой реальностью.",
+      "en": "The Palace Network finally makes power look ordinary enough to measure. Appointments open doors. Access rules close them. Audits expose weak chains of responsibility. Routing and formal recognition decide which facts reach which desks. Court Power, if you pursue it, would mean authority over these institutional levers—not command over reality itself."
+    },
+    "event.palace.progression.milestone-12-crossroads.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-12-crossroads.choice.continue.text": {
+      "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+      "en": "You acknowledge what the work has established and continue from the stage already committed."
+    },
+    "event.palace.progression.milestone-12-crossroads.title": {
+      "ru": "Дворец — Перекрёсток",
+      "en": "Palace — Crossroads"
+    },
+    "event.palace.progression.milestone-12-crossroads.variant.default.text": {
+      "ru": "На Перекрёстке несколько проверенных записей упорно не укладываются в обычную карту. Прибытие зарегистрировано там, где его не объясняет ни дорога, ни ворота, ни корабль. Уход подтверждён двумя отделами, у которых не было общего писаря. Источники подтверждают аномалию; они пока не объясняют её механизм, причину или возможность повторения.",
+      "en": "At Crossroads, several authenticated records refuse to fit the ordinary map. An arrival is logged where no road, gate, or ship accounts for it. A departure is confirmed by two offices that never shared a clerk. The sources corroborate an anomaly; they do not yet explain its mechanism, its cause, or whether it can be repeated."
+    },
+    "event.palace.progression.milestone-15-outcome-ready.choice.continue.label": {
+      "ru": "Продолжить",
+      "en": "Continue"
+    },
+    "event.palace.progression.milestone-15-outcome-ready.choice.continue.text": {
+      "ru": "Ты принимаешь то, что работа уже позволила установить, и продолжаешь с уже зафиксированного этапа.",
+      "en": "You acknowledge what the work has established and continue from the stage already committed."
+    },
+    "event.palace.progression.milestone-15-outcome-ready.title": {
+      "ru": "Дворец — Готовность к исходу",
+      "en": "Palace — Outcome Ready"
+    },
+    "event.palace.progression.milestone-15-outcome-ready.variant.default.text": {
+      "ru": "Пятнадцатая обязанность закрывает цикл и наконец даёт рассеянной работе имя. Дворцовый Свод — это порядок сопоставления проверенных свидетельств из разных областей. За ним находится защищённый Архив Порога: записи о редких переходах через реальный межмировой Порог. Твоё собственное прибытие хранится среди таких аномалий. Теперь ты знаешь достаточно, чтобы судить о Дворце и выбрать отношение к нему. Но ты всё ещё не знаешь, что изначально тебя переместило.",
+      "en": "The fifteenth duty closes the rotation and finally gives the scattered work a name. The Palace Concordance is the method that correlates authenticated evidence across domains. Behind it sits the protected Threshold Archive: records of rare crossings at a real inter-world Threshold. Your own arrival is filed among those anomalies. You now know enough to judge the Palace and choose your relationship to it. You still do not know what originally displaced you."
+    },
+    "ui.palace.accessGranted": {
+      "ru": "открыт в этой жизни",
+      "en": "open for this life"
+    },
+    "ui.palace.accessLabel": {
+      "ru": "Доступ",
+      "en": "Access"
+    },
+    "ui.palace.actionButton": {
+      "ru": "Выполнить",
+      "en": "Perform"
+    },
+    "ui.palace.confrontation.complete": {
+      "ru": "Мандат Хранителя оспорен. Проверенный след происхождения больше нельзя отвергнуть одним лишь исключительным вето. Принц не убит и Дворец не разрушен; «Возвращение домой» остаётся отдельным явным выбором.",
+      "en": "The Custodial Mandate has been overruled. The verified origin trace can no longer be dismissed by exclusive veto alone. The Prince is not killed and the Palace is not destroyed; Return Home remains a separate explicit choice."
+    },
+    "ui.palace.confrontation.ready": {
+      "ru": "Все условия выполнены. Можно предъявить записи Дворца и оспорить исключительное вето Хранителя; это не бой и не автоматический выбор Возвращения домой.",
+      "en": "All conditions are satisfied. You can present the Palace record and challenge the Custodian's exclusive veto; this is not combat and does not automatically choose Return Home."
+    },
+    "ui.palace.confrontation.title": {
+      "ru": "Спор с Принцем",
+      "en": "Prince confrontation"
+    },
+    "ui.palace.confrontationButton": {
+      "ru": "Противостоять",
+      "en": "Confront"
+    },
+    "ui.palace.duty.availableToday": {
+      "ru": "Сегодня можно выполнить одну структурную обязанность.",
+      "en": "One structural duty is available today."
+    },
+    "ui.palace.duty.complete": {
+      "ru": "Структурная служба завершена.",
+      "en": "Structural service is complete."
+    },
+    "ui.palace.duty.usedToday": {
+      "ru": "Сегодняшняя структурная обязанность уже выполнена.",
+      "en": "Today's structural duty is already complete."
+    },
+    "ui.palace.dutyCostLabel": {
+      "ru": "Стоимость обязанности",
+      "en": "Duty cost"
+    },
+    "ui.palace.dutyProgress": {
+      "ru": "{count} / {total}",
+      "en": "{count} / {total}"
+    },
+    "ui.palace.dutyProgressLabel": {
+      "ru": "Структурные обязанности",
+      "en": "Structural duties"
+    },
+    "ui.palace.endings.noneReady": {
+      "ru": "Дворцовые судьбы появятся здесь только после выполнения их реальных условий.",
+      "en": "Palace endings appear here only after their actual runtime conditions are satisfied."
+    },
+    "ui.palace.endings.title": {
+      "ru": "Дворцовые судьбы",
+      "en": "Palace endings"
+    },
+    "ui.palace.futureRewardLabel": {
+      "ru": "Награда будущих жизней",
+      "en": "Future-life reward"
+    },
+    "ui.palace.nextDutyTitle": {
+      "ru": "Следующая структурная обязанность",
+      "en": "Next structural duty"
+    },
+    "ui.palace.outcomeReady": {
+      "ru": "Outcome Ready: структурная дворцовая прогрессия этой жизни завершена.",
+      "en": "Outcome Ready: this life's structural Palace progression is complete."
+    },
+    "ui.palace.returnHome.explicitCommit": {
+      "ru": "Спор завершён, но переход не происходит автоматически. Если ты действительно хочешь покинуть этот мир и вернуться в исходный, выбери «Возвращение домой» отдельно.",
+      "en": "The confrontation is complete, but the crossing does not happen automatically. If you truly want to leave this world for your original one, choose Return Home separately."
+    },
+    "ui.palace.revealTerms.title": {
+      "ru": "Что установлено",
+      "en": "What is established"
+    },
+    "ui.palace.reward.automaticNote": {
+      "ru": "Награда выдаётся после завершения этой судьбы и в будущих жизнях наследуется автоматически как знание; слот loadout не требуется.",
+      "en": "The reward is granted after this ending is completed and is inherited automatically as knowledge in later lives; it uses no loadout slot."
+    },
+    "ui.palace.reward.cap200.name": {
+      "ru": "Предел характеристик 200",
+      "en": "Cap 200"
+    },
+    "ui.palace.reward.formalIntroduction.name": {
+      "ru": "Формальное представление",
+      "en": "Formal Introduction"
+    },
+    "ui.palace.reward.layer.automaticKnowledge": {
+      "ru": "Автоматическое знание/контент",
+      "en": "Automatic knowledge/content"
+    },
+    "ui.palace.reward.layer.specialist": {
+      "ru": "Специалист",
+      "en": "Specialist"
+    },
+    "ui.palace.reward.sourceMethod.name": {
+      "ru": "Метод источников",
+      "en": "Source Method"
+    },
+    "ui.palace.reward.specialistNote": {
+      "ru": "Награда выдаётся после завершения этой судьбы. В будущей New Start+ жизни её выбор и активация остаются в интерфейсе Strong Meta; отдельного дворцового слота нет.",
+      "en": "The reward is granted after this ending is completed. In a later New Start+ life, selection and activation remain owned by the Strong Meta interface; there is no separate Palace slot."
+    },
+    "ui.palace.reward.steadyPractice.name": {
+      "ru": "Устойчивая практика",
+      "en": "Steady Practice"
+    },
+    "ui.palace.rewardAria": {
+      "ru": "Награда будущих жизней: {name}; слой {layer}; идентификатор {id}.",
+      "en": "Future-life reward: {name}; layer {layer}; identifier {id}."
+    },
+    "ui.palace.route.court-power.label": {
+      "ru": "Придворное влияние",
+      "en": "Court Power"
+    },
+    "ui.palace.route.inner-truth.label": {
+      "ru": "Внутренняя истина",
+      "en": "Inner Truth"
+    },
+    "ui.palace.route.service-life.label": {
+      "ru": "Жизнь в службе",
+      "en": "Service Life"
+    },
+    "ui.palace.routeAria": {
+      "ru": "Маршрут {route}: {state}.",
+      "en": "Route {route}: {state}."
+    },
+    "ui.palace.routeState.available": {
+      "ru": "доступна подготовка",
+      "en": "preparation available"
+    },
+    "ui.palace.routeState.in-progress": {
+      "ru": "подготовка начата",
+      "en": "preparation in progress"
+    },
+    "ui.palace.routeState.prepared": {
+      "ru": "подготовка завершена",
+      "en": "preparation complete"
+    },
+    "ui.palace.routeState.ready": {
+      "ru": "исход готов к выбору",
+      "en": "ending ready to choose"
+    },
+    "ui.palace.stageLabel": {
+      "ru": "Этап",
+      "en": "Stage"
+    },
+    "ui.palace.summaryAria": {
+      "ru": "Дворец: этап {stage}; структурные обязанности {count} из {total}.",
+      "en": "Palace: stage {stage}; structural duties {count} of {total}."
+    },
+    "ui.palace.support.availableToday": {
+      "ru": "Сегодня можно выполнить одно доступное действие поддержки.",
+      "en": "One available Palace support action may be taken today."
+    },
+    "ui.palace.support.usedToday": {
+      "ru": "Сегодняшнее действие поддержки уже использовано.",
+      "en": "Today's Palace support action has already been used."
+    },
+    "ui.palace.supportCost": {
+      "ru": "Стоимость: {energy} энергии · оплата: 0 монет · счётчик обязанностей не меняется.",
+      "en": "Cost: {energy} Energy · pay: 0 coins · structural duty progress does not change."
+    },
+    "ui.palace.supportTitle": {
+      "ru": "Поддержка и подготовка исходов",
+      "en": "Support and outcome preparation"
+    },
+    "ui.palace.term.concordance.description": {
+      "ru": "Порядок, который сопоставляет проверенные сведения из разных дворцовых областей.",
+      "en": "A practice that correlates authenticated evidence across Palace domains."
+    },
+    "ui.palace.term.concordance.label": {
+      "ru": "Дворцовый Свод",
+      "en": "Palace Concordance"
+    },
+    "ui.palace.term.custodian.description": {
+      "ru": "Должность Принца, отвечающая за финальный доступ и хранение; сама должность не доказывает исключительное право на истину.",
+      "en": "The Prince's office for final access and custody; the office itself does not prove exclusive authority over truth."
+    },
+    "ui.palace.term.custodian.label": {
+      "ru": "Хранитель",
+      "en": "Custodian"
+    },
+    "ui.palace.term.threshold.description": {
+      "ru": "Реальная межмировая граница; её существование не делает этот мир менее реальным.",
+      "en": "A real inter-world boundary; its existence does not make this world less real."
+    },
+    "ui.palace.term.threshold.label": {
+      "ru": "Порог",
+      "en": "Threshold"
+    },
+    "ui.palace.term.thresholdArchive.description": {
+      "ru": "Защищённые записи о редких переходах между мирами.",
+      "en": "Protected records of rare crossings between worlds."
+    },
+    "ui.palace.term.thresholdArchive.label": {
+      "ru": "Архив Порога",
+      "en": "Threshold Archive"
+    },
+    "ui.palace.title": {
+      "ru": "Дворец",
+      "en": "Palace"
+    },
+    "ui.palace.wagePreviewLabel": {
+      "ru": "Доход этой обязанности",
+      "en": "Duty wage"
+    },
+    "ending.ending.palace.service-life.epilogue": {
+      "ru": "Ты остаёшься. Не потому, что Дворец доказал своё совершенство, а потому, что теперь точно знаешь его слабые места. Передачи записывают, а не шепчут. Ответственность сохраняет имена. Новые люди получают записи вместо слухов, а границы становятся частью работы, а не личной милостью. Дворец остаётся несовершенным, политическим и реальным. Ты решаешь помочь ему выстоять, не требуя трона и не делая вид, будто разгадана каждая тайна.",
+      "en": "You stay. Not because the Palace proved itself perfect, but because you know exactly where it is fragile. Handoffs become written instead of whispered. Responsibilities keep names attached to them. New staff inherit records instead of rumours, and boundaries become part of the work rather than private favours. The Palace remains imperfect, political, and real. You choose to help it endure without claiming a throne or pretending every secret has been solved."
+    },
+    "ending.ending.palace.court-power.epilogue": {
+      "ru": "Ты принимаешь формальный мандат внутри Дворца. Двери открываются так, чтобы можно было ответить, почему они открылись; аудит имеет вес, потому что за провал кто-то отвечает. Назначения, маршруты и исключения становятся решениями, которые можно проследить, оспорить и исправить. Твоя власть значительна, но ограничена. Она не делает тебя монархом мира, а Порог не подчиняется титулу.",
+      "en": "You accept a formal mandate inside the Palace. Doors open because someone can account for why they opened; audits matter because someone is answerable when they fail. Appointments, routes, and exceptions become decisions that can be traced, challenged, and corrected. Your authority is substantial, but bounded. It does not make you monarch of the world, and the Threshold does not obey a title."
+    },
+    "ending.ending.palace.inner-truth.epilogue": {
+      "ru": "Ты остаёшься с вопросами, но не с туманом. Архив Порога перестраивают вокруг происхождения свидетельств: что наблюдали, что сообщили, что вывели и на что ответа пока нет. Чувствительные записи больше не могут прятаться за престижем секретности. Ты узнаёшь больше, чем узнает почти кто-либо, и всё равно не выдумываешь недостающую причину собственного перемещения. Истина становится точнее именно там, где остаётся неполной.",
+      "en": "You remain with the questions, but not with vagueness. The Threshold Archive is reorganized around provenance: what was observed, what was reported, what was inferred, and what still has no answer. Sensitive records can no longer hide behind the prestige of secrecy. You learn more than most people ever will, and still refuse to invent the missing cause of your own displacement. The truth becomes sharper precisely where it remains incomplete."
+    },
+    "ending.ending.palace.return-home.epilogue": {
+      "ru": "Ты выбираешь дом. След происхождения проверен; Порог отвечает реконструкции, а не разрешению Принца. Переход не стирает мир за спиной. Дворец остаётся, его споры не закончены, а люди продолжают жить жизни, которые никогда не были менее реальны, чем твоя. Затем свет, давление и расстояние Порога уступают место — и ты узнаёшь мир, из которого пришла.",
+      "en": "You choose home. The origin trace is verified; the Threshold answers the reconstruction rather than the Prince's permission. Crossing does not erase the world behind you. The Palace remains, its arguments unfinished and its people still living lives that were never less real than yours. Then the light, pressure, and distance of the Threshold give way—and you recognize the world you came from."
+    },
+    "presentation.static.palace.invitation.alt": {
+      "ru": "Нейтральный городской фон для сцены с дворцовым приглашением; изображение не содержит скрытого условия или подсказки.",
+      "en": "Neutral town backdrop for the Palace invitation scene; the image contains no hidden requirement or clue."
+    },
+    "presentation.static.palace.invitation.caption": {
+      "ru": "Письмо приходит в обычный городской день. Значение приглашения раскрывается только текстом сцены.",
+      "en": "The letter arrives during an ordinary day in town. Its significance is conveyed only by the scene text."
+    },
+    "presentation.static.palace.service.alt": {
+      "ru": "Нейтральный интерьер для дворцовой административной сцены без изображения конкретного кабинета, персонажа или скрытого доказательства.",
+      "en": "Neutral interior backdrop for a Palace administrative scene, without depicting a specific office, character, or hidden piece of evidence."
+    },
+    "presentation.static.palace.service.caption": {
+      "ru": "Фон обозначает внутреннее пространство; все факты о Дворце сообщаются только авторским текстом.",
+      "en": "The backdrop only establishes an interior setting; all factual Palace information comes from the authored text."
+    },
+    "presentation.static.palace.archive.alt": {
+      "ru": "Нейтральный интерьер сопровождает сцену об Архиве Порога; специальное изображение Архива пока отсутствует.",
+      "en": "A neutral interior accompanies the Threshold Archive scene; dedicated Archive artwork is not yet available."
+    },
+    "presentation.static.palace.archive.caption": {
+      "ru": "Изображение не показывает устройство Порога и не разрешает оставшиеся тайны.",
+      "en": "The image does not depict how the Threshold works and does not resolve the remaining mysteries."
+    },
+    "presentation.static.palace.custodian.alt": {
+      "ru": "Нейтральный интерьер для разговора с Хранителем; отдельного портрета или финального дизайна Принца в проекте пока нет.",
+      "en": "Neutral interior for the Custodian conversation; the project does not yet contain a dedicated portrait or final visual design for the Prince."
+    },
+    "presentation.static.palace.custodian.caption": {
+      "ru": "Принц остаётся человеком и должностным лицом; визуальный фон не добавляет ему сверхъестественных свойств.",
+      "en": "The Prince remains a human office-holder; the visual backdrop adds no supernatural qualities."
+    },
+    "presentation.static.palace.return-home.alt": {
+      "ru": "Нейтральный городской фон для выбора «Возвращение домой»; отдельного изображения Порога и исходного мира пока нет.",
+      "en": "Neutral town backdrop for the Return Home choice; dedicated Threshold and original-world artwork is not yet available."
+    },
+    "presentation.static.palace.return-home.caption": {
+      "ru": "Переход и исходный мир описываются текстом, чтобы временный фон не подменял канон.",
+      "en": "The crossing and original world are described in text so the temporary backdrop does not substitute for canon."
+    },
+    "ui.condition.formalIntroduction": {
+      "ru": "Формальное представление: {relationship}",
+      "en": "Formal introduction: {relationship}"
+    },
+    "event.school-life-content-v1.night-study.arcana-reason.variant.source-method-crosscheck.text": {
+      "ru": "Проследи каждое утверждение до того, что действительно наблюдалось, и до того, кто это сообщил. Независимое совпадение усиливает вывод; расхождение остаётся отмеченным как неразрешённое, а не превращается в готовый ответ.",
+      "en": "Trace each claim back to what was actually observed and who supplied it. Independent agreement strengthens a conclusion; a mismatch stays marked as unresolved instead of being turned into an answer."
+    },
+    "event.assassin.relationship.intro.choice.formal-introduction.label": {
+      "ru": "Использовать формальное представление",
+      "en": "Use Formal Introduction"
+    },
+    "event.assassin.relationship.intro.choice.formal-introduction.text": {
+      "ru": "Используй унаследованное профессиональное представление, чтобы установить рабочий контакт без доверия и продвижения по маршруту.",
+      "en": "Use the inherited professional introduction to make contact without granting trust or route progress."
+    },
+    "ui.strongMeta.title": {
+      "ru": "Сильное наследие",
+      "en": "Strong Meta"
+    },
+    "ui.strongMeta.help": {
+      "ru": "Выберите до одного Keystone и двух специализаций из заработанных наград.",
+      "en": "Choose up to one Keystone and two Specialists from rewards you own."
+    },
+    "ui.strongMeta.automaticKnowledgeNote": {
+      "ru": "Source Method и другие унаследованные знания применяются автоматически и никогда не занимают выбираемые слоты.",
+      "en": "Source Method and other inherited knowledge are automatic and never occupy selectable slots."
+    },
+    "ui.strongMeta.keystoneTitle": {
+      "ru": "Keystone",
+      "en": "Keystone"
+    },
+    "ui.strongMeta.specialistTitle": {
+      "ru": "Специализации",
+      "en": "Specialists"
+    },
+    "ui.strongMeta.selected": {
+      "ru": "Выбрано",
+      "en": "Selected"
+    },
+    "ui.strongMeta.available": {
+      "ru": "Доступно",
+      "en": "Available"
+    },
+    "ui.strongMeta.select": {
+      "ru": "Выбрать",
+      "en": "Select"
+    },
+    "ui.strongMeta.remove": {
+      "ru": "Убрать",
+      "en": "Remove"
+    },
+    "ui.strongMeta.keystoneCapacity": {
+      "ru": "Keystone: {selected}/{capacity}",
+      "en": "Keystone: {selected}/{capacity}"
+    },
+    "ui.strongMeta.specialistCapacity": {
+      "ru": "Специализации: {selected}/{capacity}",
+      "en": "Specialists: {selected}/{capacity}"
+    },
+    "ui.strongMeta.noneKeystones": {
+      "ru": "Пока нет заработанных Keystone-наград.",
+      "en": "No owned Keystone rewards yet."
+    },
+    "ui.strongMeta.noneSpecialists": {
+      "ru": "Пока нет заработанных Specialist-наград.",
+      "en": "No owned Specialist rewards yet."
+    },
+    "ui.menu.catalogInspector": {
+      "ru": "Инспектор событий",
+      "en": "Event inspector"
+    },
+    "presentation.static.palace.service-interior.alt": {
+      "ru": "Рабочий дворцовый интерьер со столами, записями и контролируемыми проходами; сцена показывает администрацию, а не скрытую магическую функцию.",
+      "en": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function."
+    },
+    "presentation.static.palace.service-interior.caption": {
+      "ru": "Дворцовая служба показана как административная работа; скрытая функция Порога здесь не раскрывается.",
+      "en": "Palace service is shown as administrative work; the Threshold's hidden function is not revealed here."
+    },
+    "presentation.static.palace.threshold-archive.alt": {
+      "ru": "Защищённый архив с несколькими группами записей и местами проверки источников; изображение не объясняет причину переходов.",
+      "en": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings."
+    },
+    "presentation.static.palace.threshold-archive.caption": {
+      "ru": "Архив сопоставляет разрозненные свидетельства; ни один носитель не содержит всей картины.",
+      "en": "The archive correlates distributed evidence; no single record contains the whole picture."
+    },
+    "presentation.static.palace.custodian-audience.alt": {
+      "ru": "Формальная встреча с человеческим Хранителем за столом с записями; сцена изображает проверку доказательств, а не бой.",
+      "en": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat."
+    },
+    "presentation.static.palace.custodian-audience.caption": {
+      "ru": "Хранитель — человек и должностное лицо; спор решается разбором свидетельств, а не физическим противостоянием.",
+      "en": "The Custodian is a human office-holder; the dispute is resolved through evidence review, not physical confrontation."
+    },
+    "presentation.static.palace.return-home-threshold.alt": {
+      "ru": "Человек пересекает ограниченный межмировой Порог, оставляя позади целый и продолжающий существовать мир.",
+      "en": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues."
+    },
+    "presentation.static.palace.return-home-threshold.caption": {
+      "ru": "Переход означает уход из реального мира, а не его исчезновение; причина перемещения не показана.",
+      "en": "The crossing means leaving a real world, not erasing it; the cause of the displacement is not shown."
     }
   }
 }

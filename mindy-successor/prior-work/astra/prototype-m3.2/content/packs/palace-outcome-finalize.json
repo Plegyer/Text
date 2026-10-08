@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.outcome-finalize",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "palace"
+      ],
+      "worldFacts": [
+        "palace.access-granted",
+        "palace.progression-complete",
+        "palace.prep.service-life",
+        "palace.prep.court-power",
+        "palace.prep.inner-truth",
+        "palace.outcome.service-life-ready",
+        "palace.outcome.court-power-ready",
+        "palace.outcome.inner-truth-ready"
+      ]
+    },
+    "writes": {
+      "worldFacts": [
+        "palace.outcome.service-life-ready",
+        "palace.outcome.court-power-ready",
+        "palace.outcome.inner-truth-ready"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.outcome-finalize.service-life",
+      "title": "Palace — Service Life",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.progression-complete"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.prep.service-life"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.service-life",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.service-life-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Service Life is no longer an abstract promise of staying. You can see the work it would require: preserving handoffs, keeping responsibilities named, protecting professional boundaries, and making institutional memory survive changes of staff. Choosing continuity would not require pretending the Palace is infallible.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "finalize",
+          "label": "Make Service Life eligible",
+          "text": "You preserve Service Life as a real ending choice: continuity without blind loyalty, and responsibility without surrendering judgment.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.outcome.service-life-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-finalize.court-power",
+      "title": "Palace — Court Power",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.progression-complete"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.prep.court-power"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.court-power",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.court-power-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Court Power now has a precise shape. It is authority over appointments, access review, audits, routing, priorities, formal recognition, and procedural exceptions inside the Palace. It can change how the institution acts. It cannot make the Threshold obey by force of title, and it does not make you sovereign over the world.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "finalize",
+          "label": "Make Court Power eligible",
+          "text": "You preserve Court Power as a real ending choice: accountable institutional authority, not monarchy, magic, patronage, or romance.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.outcome.court-power-ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.outcome-finalize.inner-truth",
+      "title": "Palace — Inner Truth",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.progression-complete"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "palace.prep.inner-truth"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "palace.access-granted",
+          "present": true
+        },
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.progression-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.prep.inner-truth",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "palace.outcome.inner-truth-ready",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Inner Truth reaches the Palace's deepest verified function. The institution safeguards the Threshold and maintains an Archive of authenticated crossing evidence. Sensitive records were deliberately distributed across domains so no single office could reconstruct the whole picture alone. The evidence does not tell you who first built the system, what originally displaced you, or whether the Prince's doctrine is wholly sincere.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "finalize",
+          "label": "Make Inner Truth eligible",
+          "text": "You preserve Inner Truth as a real ending choice: provenance before certainty, contradictions kept visible, and unknowns left honestly unresolved.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "palace.outcome.inner-truth-ready"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

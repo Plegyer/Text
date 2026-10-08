@@ -9,7 +9,9 @@ import {
   resolveReactions
 } from '../src/core/engine.ts';
 import {schoolNightStudyChoices} from '../src/core/school.ts';
-import {emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
+import {STRONG_META_KNOWLEDGE_IDS,emptyResolvedStrongMetaSnapshot} from '../src/core/strongMeta.ts';
+
+const localization=JSON.parse(readFileSync('content/localization.json','utf8'));
 
 const pack=JSON.parse(
   readFileSync(
@@ -156,4 +158,92 @@ test('all School-life authored choices are effect-free',()=>{
       assert.deepEqual(choice.effects,[],event.id);
     }
   }
+});
+
+test('Source Method uses a future-run snapshot for an effect-free reload-stable Arcana/Reason variant',()=>{
+  const cat=loadCatalog(definitions(),[pack]);
+
+  const sameLife=ready();
+  sameLife.meta.strongMeta.knowledge.inheritedKnowledgeIds=[
+    STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod
+  ];
+  const sameLifeOut=resolveReactions(
+    sameLife,
+    [{kind:'nightChoiceCompleted',choice:'school.night_study.arcana.reason'}],
+    cat
+  ).state;
+  const sameLifeOffer=sameLifeOut.run.flow.reaction.queued.find(
+    q=>q.eventId==='school-life-content-v1.night-study.arcana-reason'
+  );
+  assert.equal(sameLifeOffer?.variantId,'default');
+
+  const future=ready();
+  future.run.strongMetaSnapshot={
+    ...emptyResolvedStrongMetaSnapshot(),
+    automaticKnowledgeIds:[STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod]
+  };
+  const before={
+    money:future.run.resources.money,
+    energy:future.run.dayState.energyCurrent,
+    stats:structuredClone(future.run.character.stats),
+    progression:structuredClone(future.run.progression),
+    endings:structuredClone(future.run.endings)
+  };
+  const offered=resolveReactions(
+    future,
+    [{kind:'nightChoiceCompleted',choice:'school.night_study.arcana.reason'}],
+    cat
+  ).state;
+  const offer=offered.run.flow.reaction.queued.find(
+    q=>q.eventId==='school-life-content-v1.night-study.arcana-reason'
+  );
+  assert.ok(offer);
+  assert.equal(offer.variantId,'source-method-crosscheck');
+
+  const restored=parseSave(JSON.stringify(offered),cat);
+  const restoredOffer=restored.run.flow.reaction.queued.find(
+    q=>q.instanceId===offer.instanceId
+  );
+  assert.equal(restoredOffer?.variantId,'source-method-crosscheck');
+
+  const opened=dispatch(restored,{type:'openOffer',id:offer.instanceId},cat);
+  const resolved=dispatch(opened,{type:'choice',id:'continue'},cat);
+  assert.equal(resolved.run.resources.money,before.money);
+  assert.equal(resolved.run.dayState.energyCurrent,before.energy);
+  assert.deepEqual(resolved.run.character.stats,before.stats);
+  assert.deepEqual(resolved.run.progression,before.progression);
+  assert.deepEqual(resolved.run.endings,before.endings);
+
+  assert.deepEqual(pack.capabilities,{
+    reads:{meta:['strongMetaKnowledge']},
+    writes:{}
+  });
+});
+
+test('Source Method player-facing copy stays below the D49 macro-lore ceiling in RU and EN',()=>{
+  const event=pack.events.find(
+    (e:any)=>e.id==='school-life-content-v1.night-study.arcana-reason'
+  );
+  assert.ok(event);
+  const variant=event.variants.find(
+    (v:any)=>v.id==='source-method-crosscheck'
+  );
+  assert.ok(variant);
+  assert.deepEqual(variant.conditions,[{
+    kind:'strongMetaKnowledge',
+    knowledge:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod,
+    present:true
+  }]);
+
+  const key='event.school-life-content-v1.night-study.arcana-reason.variant.source-method-crosscheck.text';
+  const localized=localization.strings[key];
+  assert.equal(typeof localized?.ru,'string');
+  assert.equal(typeof localized?.en,'string');
+
+  const forbiddenEnglish=/\b(?:palace|threshold|crossing|origin|return|prince|archive)\b/i;
+  const forbiddenRussian=/(?:дворец|порог|пересеч|переход|происхожд|возвращ|принц|архив)/i;
+  for(const copy of [variant.text,localized.en]){
+    assert.equal(forbiddenEnglish.test(copy),false,copy);
+  }
+  assert.equal(forbiddenRussian.test(localized.ru),false,localized.ru);
 });

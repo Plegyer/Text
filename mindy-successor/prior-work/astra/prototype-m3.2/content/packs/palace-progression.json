@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "id": "palace.progression",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "careers": [
+        "palace"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "palace"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "palace.progression.milestone-02-working-rhythm",
+      "title": "Palace — Working Rhythm",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "working-rhythm"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 2
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-02-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "By the second duty, coincidence stops looking like coincidence. Offices that handle different work use the same case marks, the same handoff notation, and the same habit of recording who knew what, and when. You can see the shape of a shared system. What that system is ultimately protecting remains outside your clearance.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "You acknowledge what the work has established and continue from the stage already committed.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-02-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-05-trusted-service",
+      "title": "Palace — Trusted Service",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "trusted-service"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 5
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-05-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Trusted Service means being asked to follow a problem across desks instead of solving only the piece in front of you. A delayed record changes a route; a careless route changes an audience; an unclear audience changes who is held responsible. The Palace is testing breadth in practice now, not on paper. A life of service becomes imaginable, but the institution's protected purpose is still withheld.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "You acknowledge what the work has established and continue from the stage already committed.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-05-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-08-palace-network",
+      "title": "Palace — Palace Network",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "palace-network"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 8
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-08-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Palace Network finally makes power look ordinary enough to measure. Appointments open doors. Access rules close them. Audits expose weak chains of responsibility. Routing and formal recognition decide which facts reach which desks. Court Power, if you pursue it, would mean authority over these institutional levers—not command over reality itself.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "You acknowledge what the work has established and continue from the stage already committed.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-08-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-12-crossroads",
+      "title": "Palace — Crossroads",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "crossroads"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 12
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-12-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "At Crossroads, several authenticated records refuse to fit the ordinary map. An arrival is logged where no road, gate, or ship accounts for it. A departure is confirmed by two offices that never shared a clerk. The sources corroborate an anomaly; they do not yet explain its mechanism, its cause, or whether it can be repeated.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "You acknowledge what the work has established and continue from the stage already committed.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-12-resolved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palace.progression.milestone-15-outcome-ready",
+      "title": "Palace — Outcome Ready",
+      "sourceDomain": "palace",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "careerTransition",
+          "career": "palace"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 100,
+      "blocking": true,
+      "delivery": {
+        "policy": "latched"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "careerStage",
+          "career": "palace",
+          "stage": "outcome-ready"
+        },
+        {
+          "kind": "careerCounter",
+          "career": "palace",
+          "counter": "palace-duty-count",
+          "op": "gte",
+          "value": 15
+        },
+        {
+          "kind": "careerFact",
+          "career": "palace",
+          "fact": "milestone-15-resolved",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The fifteenth duty closes the rotation and finally gives the scattered work a name. The Palace Concordance is the method that correlates authenticated evidence across domains. Behind it sits the protected Threshold Archive: records of rare crossings at a real inter-world Threshold. Your own arrival is filed among those anomalies. You now know enough to judge the Palace and choose your relationship to it. You still do not know what originally displaced you.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "text": "You acknowledge what the work has established and continue from the stage already committed.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "palace",
+              "fact": "milestone-15-resolved"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

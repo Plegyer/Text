@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import {approvedStrongRewardIdSchema,strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema} from './strongMeta.ts';
+import {approvedStrongKnowledgeIdSchema,approvedStrongRewardIdSchema,strongMetaRuntimeSchema,strongMetaSnapshotSchema,strongMetaStateSchema} from './strongMeta.ts';
 
 export const stats = ['strength','endurance','dexterity','reason','magic','creativity','wits','charm','sociability','manners','grooming','sexuality'] as const;
 export const legacyStats = ['strength','endurance','dexterity','perception','intelligence','magic','empathy','persuasion','composure','organization','lust'] as const;
@@ -56,6 +56,8 @@ export type Condition =
   | {kind:'metaUnlock';unlock:string;present:boolean}
   | {kind:'metaEndingCompleted';ending:string;present:boolean}
   | {kind:'metaHardWork';career:string;present:boolean}
+  | {kind:'strongMetaKnowledge';knowledge:string;present:boolean}
+  | {kind:'strongMetaFormalIntroductionAvailable';career:string;relationship:string;transition:string}
   // M3.2 migration leaves. Do not author new target content with these.
   | {kind:'metric';key:Metric;op:CompareOp;value:number}
   | {kind:'visits';action:string;value:number}
@@ -110,6 +112,8 @@ export const conditionSchema: z.ZodType<Condition> = z.lazy(()=>z.union([
   z.object({kind:z.literal('metaUnlock'),unlock:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('metaEndingCompleted'),ending:id,present:z.boolean()}).strict(),
   z.object({kind:z.literal('metaHardWork'),career:id,present:z.boolean()}).strict(),
+  z.object({kind:z.literal('strongMetaKnowledge'),knowledge:approvedStrongKnowledgeIdSchema,present:z.boolean()}).strict(),
+  z.object({kind:z.literal('strongMetaFormalIntroductionAvailable'),career:id,relationship:id,transition:id}).strict(),
 
   z.object({kind:z.literal('metric'),key:metricEnum,op:compareOp,value:n}).strict(),
   z.object({kind:z.literal('visits'),action:id,value:n}).strict(),
@@ -150,6 +154,7 @@ export const effectSchema = z.discriminatedUnion('kind',[
   z.object({kind:z.literal('addRelationshipFact'),relationship:id,fact:id}).strict(),
   z.object({kind:z.literal('setRelationshipChoice'),relationship:id,choice:id,value:textId}).strict(),
   z.object({kind:z.literal('advanceRelationship'),relationship:id,transition:id}).strict(),
+  z.object({kind:z.literal('useStrongMetaFormalIntroduction'),career:id,relationship:id,transition:id}).strict(),
 
   z.object({kind:z.literal('addWorldFact'),fact:id}).strict(),
   z.object({kind:z.literal('removeWorldFact'),fact:id}).strict(),
@@ -202,7 +207,7 @@ const capabilityReads=z.object({
   relationships:z.array(id).optional(),
   activities:z.array(id).optional(),
   worldFacts:z.array(id).optional(),
-  meta:z.array(z.enum(['unlock','endingCompleted','hardWork'])).optional()
+  meta:z.array(z.enum(['unlock','endingCompleted','hardWork','strongMetaKnowledge','strongMetaFormalIntroduction'])).optional()
 }).strict();
 const capabilityWrites=z.object({
   stats:z.array(z.enum(stats)).optional(),
@@ -434,7 +439,8 @@ export type OrdinaryHardWorkCareer=typeof ordinaryHardWorkCareers[number];
 export const metaRewardSchema=z.discriminatedUnion('kind',[
   z.object({kind:z.literal('unlock'),rewardId:rewardId,unlock:id}).strict(),
   z.object({kind:z.literal('hardWork'),rewardId:rewardId,career:z.enum(ordinaryHardWorkCareers)}).strict(),
-  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:approvedStrongRewardIdSchema}).strict()
+  z.object({kind:z.literal('strongMeta'),rewardId:rewardId,reward:approvedStrongRewardIdSchema}).strict(),
+  z.object({kind:z.literal('knowledge'),rewardId:rewardId,knowledge:approvedStrongKnowledgeIdSchema}).strict()
 ]);
 export type MetaReward=z.infer<typeof metaRewardSchema>;
 
@@ -494,6 +500,33 @@ export const resourceStateSchema=z.object({money:n,inventory:inventoryRecord}).s
 export const housingStateSchema=z.object({current:z.enum(targetHousing),paidForCurrentNight:z.boolean()}).strict();
 
 const careerState=z.object({stage:id,shifts:n,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
+export const palaceStages=['entered-service','working-rhythm','trusted-service','palace-network','crossroads','outcome-ready'] as const;
+export type PalaceStage=typeof palaceStages[number];
+export const palaceRoutePrepFacts=['service-life','court-power','inner-truth'] as const;
+export type PalaceRoutePrepFact=typeof palaceRoutePrepFacts[number];
+export const palaceProgressionStateSchema=careerState.extend({
+  stage:z.enum(palaceStages),
+  lastStructuralDutyDay:z.number().int().min(-1).max(159),
+  lastSupportActionDay:z.number().int().min(-1).max(159),
+  committedDutyIds:z.array(id).max(15),
+  completedSupportIds:z.array(id).max(16),
+  routePrepFacts:z.array(z.enum(palaceRoutePrepFacts)).max(3)
+}).strict();
+export type PalaceProgressionState=z.infer<typeof palaceProgressionStateSchema>;
+export function createDefaultPalaceProgressionState():PalaceProgressionState{
+  return {
+    stage:'entered-service',
+    shifts:0,
+    counters:{'palace-duty-count':0},
+    choices:{},
+    facts:[],
+    lastStructuralDutyDay:-1,
+    lastSupportActionDay:-1,
+    committedDutyIds:[],
+    completedSupportIds:[],
+    routePrepFacts:[]
+  };
+}
 const questState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const relationshipState=z.object({stage:id,counters:z.record(z.string(),n),choices:z.record(z.string(),z.string()),facts:z.array(id)}).strict();
 const schoolTrackState=z.object({
@@ -507,6 +540,7 @@ const schoolTrackState=z.object({
 export const schoolProgressionStateSchema=z.object({tracks:z.record(z.string(),schoolTrackState)}).strict();
 export const progressionStateSchema=z.object({
   careers:z.record(z.string(),careerState),
+  palace:palaceProgressionStateSchema.default(createDefaultPalaceProgressionState),
   quests:z.record(z.string(),questState),
   relationships:z.record(z.string(),relationshipState),
   school:schoolProgressionStateSchema.default({tracks:{}}),

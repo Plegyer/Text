@@ -282,6 +282,20 @@
           "media": [
             "school.life.night-study.default"
           ]
+        },
+        {
+          "id": "source-method-crosscheck",
+          "text": "Trace each claim back to what was actually observed and who supplied it. Independent agreement strengthens a conclusion; a mismatch stays marked as unresolved instead of being turned into an answer.",
+          "conditions": [
+            {
+              "kind": "strongMetaKnowledge",
+              "knowledge": "palace.inner-truth.source-method",
+              "present": true
+            }
+          ],
+          "media": [
+            "school.life.night-study.default"
+          ]
         }
       ],
       "choices": [
@@ -1114,5 +1128,13 @@
         }
       ]
     }
-  ]
+  ],
+  "capabilities": {
+    "reads": {
+      "meta": [
+        "strongMetaKnowledge"
+      ]
+    },
+    "writes": {}
+  }
 }

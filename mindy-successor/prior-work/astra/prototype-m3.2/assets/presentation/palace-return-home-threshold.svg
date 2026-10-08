@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" data-palace-family="return-home-threshold">
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#293946"/><stop offset="1" stop-color="#806e57"/></linearGradient>
+  <linearGradient id="passage" x2="1"><stop stop-color="#c9ad79" stop-opacity=".24"/><stop offset=".52" stop-color="#efd7a1" stop-opacity=".78"/><stop offset="1" stop-color="#bfc9c1" stop-opacity=".22"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#f2d89e" stop-opacity=".58"/><stop offset="1" stop-color="#f2d89e" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<g fill="#4b4f4d">
+  <rect x="0" y="160" width="250" height="390"/><rect x="950" y="150" width="250" height="400"/>
+  <rect x="115" y="100" width="150" height="460"/><rect x="885" y="95" width="150" height="465"/>
+</g>
+<g fill="#9b876b"><rect x="35" y="215" width="180" height="20"/><rect x="985" y="205" width="180" height="20"/></g>
+<circle cx="610" cy="310" r="300" fill="url(#glow)"/>
+<path d="M410 560V230Q410 125 515 125H705Q810 125 810 230V560Z" fill="#343f43" stroke="#a79370" stroke-width="18"/>
+<path d="M452 550V244Q452 172 524 172H696Q768 172 768 244V550Z" fill="url(#passage)"/>
+<path d="M470 530Q610 470 750 530" fill="none" stroke="#e0c891" stroke-width="10" opacity=".72"/>
+<path d="M0 550H1200V675H0Z" fill="#403d39"/>
+<path d="M65 550h300l90 125H0Z" fill="#514a40"/>
+<path d="M1135 550H835L745 675h455Z" fill="#514a40"/>
+<g transform="translate(590 290)">
+  <ellipse cx="15" cy="255" rx="62" ry="15" fill="#182229" opacity=".38"/>
+  <circle cx="10" cy="38" r="26" fill="#d7a981"/>
+  <path d="M-17 33Q-3 0 33 9L45 34 26 26 10 18Z" fill="#42383b"/>
+  <path d="M-30 77Q10 60 48 79L51 181H-34Z" fill="#607985"/>
+  <path d="M-13 181L-27 249H1L13 198 29 249H56L45 181Z" fill="#2a353d"/>
+  <path d="M-23 105L-61 152M40 105L74 151" stroke="#cea17d" stroke-width="12" stroke-linecap="round"/>
+</g>
+<g opacity=".78" fill="#6b6254">
+  <rect x="275" y="350" width="95" height="170"/><rect x="830" y="350" width="95" height="170"/>
+</g>
+<rect y="646" width="1200" height="29" fill="#151a25" opacity=".28"/>
+</svg>

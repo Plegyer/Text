@@ -3715,6 +3715,158 @@
         "alt": "A voluntary private-space continuation with the recurring client.",
         "altKey": "presentation.static.prostitute.night.client-private.alt"
       }
+    },
+    "job/palace/event/palace-invitation-day1-arrival/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Neutral town backdrop for a Palace invitation scene.",
+        "altKey": "presentation.static.palace.invitation.alt"
+      }
+    },
+    "job/palace/event/palace-invitation-reveal/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Neutral town backdrop for a Palace invitation scene.",
+        "altKey": "presentation.static.palace.invitation.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-02-working-rhythm/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-05-trusted-service/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-08-palace-network/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "job/palace/event/palace-outcome-finalize-service-life/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "job/palace/event/palace-outcome-finalize-court-power/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "ending/palace/service-life": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "ending/palace/court-power": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-service-interior.svg",
+        "alt": "Working Palace interior with desks, records, and controlled passages; the scene presents administration, not a hidden magical function.",
+        "altKey": "presentation.static.palace.service-interior.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-12-crossroads/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-threshold-archive.svg",
+        "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+        "altKey": "presentation.static.palace.threshold-archive.alt"
+      }
+    },
+    "job/palace/event/palace-progression-milestone-15-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-threshold-archive.svg",
+        "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+        "altKey": "presentation.static.palace.threshold-archive.alt"
+      }
+    },
+    "job/palace/event/palace-outcome-finalize-inner-truth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-threshold-archive.svg",
+        "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+        "altKey": "presentation.static.palace.threshold-archive.alt"
+      }
+    },
+    "ending/palace/inner-truth": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-threshold-archive.svg",
+        "alt": "Protected archive with multiple record groups and provenance work areas; the image does not explain the cause of the crossings.",
+        "altKey": "presentation.static.palace.threshold-archive.alt"
+      }
+    },
+    "location/town/palace/confront-prince/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-custodian-audience.svg",
+        "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+        "altKey": "presentation.static.palace.custodian-audience.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-01-audit-record/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-custodian-audience.svg",
+        "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+        "altKey": "presentation.static.palace.custodian-audience.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-02-name-contradiction/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-custodian-audience.svg",
+        "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+        "altKey": "presentation.static.palace.custodian-audience.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-03-define-boundary/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-custodian-audience.svg",
+        "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+        "altKey": "presentation.static.palace.custodian-audience.alt"
+      }
+    },
+    "job/palace/event/palace-prince-confrontation-phase-04-reconstruct-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-custodian-audience.svg",
+        "alt": "Formal meeting with the human Custodian over a table of records; the scene depicts evidence review, not combat.",
+        "altKey": "presentation.static.palace.custodian-audience.alt"
+      }
+    },
+    "ending/palace/return-home": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/palace-return-home-threshold.svg",
+        "alt": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues.",
+        "altKey": "presentation.static.palace.return-home-threshold.alt"
+      }
     }
   }
 }

@@ -1,12 +1,14 @@
 import {z} from 'zod';
 
-export const STRONG_META_REGISTRY_VERSION='strong-meta-v3' as const;
+export const STRONG_META_REGISTRY_VERSION='strong-meta-v4' as const;
 export const STRONG_META_CONTRACT_VERSION=1 as const;
 export const STRONG_META_KEYSTONE_CAPACITY=1 as const;
 export const STRONG_META_SPECIALIST_CAPACITY=2 as const;
 
 export const STRONG_META_IDS={
   palaceCap200:'palace.true.cap-200',
+  palaceSteadyPractice:'palace.service-life.steady-practice',
+  palaceFormalIntroduction:'palace.court-power.formal-introduction',
   earnedReserveMatch:'secret-debt.paid-freedom.earned-reserve-match',
   workRhythm:'secret-debt.bound-life.work-rhythm',
   networkRetainer:'secret-debt.takeover.network-retainer',
@@ -30,7 +32,7 @@ export const STRONG_META_IDS={
 
 export type ApprovedStrongRewardId=typeof STRONG_META_IDS[keyof typeof STRONG_META_IDS];
 export const approvedStrongRewardIdSchema=z.enum([
-  STRONG_META_IDS.palaceCap200,STRONG_META_IDS.earnedReserveMatch,STRONG_META_IDS.workRhythm,STRONG_META_IDS.networkRetainer,
+  STRONG_META_IDS.palaceCap200,STRONG_META_IDS.palaceSteadyPractice,STRONG_META_IDS.palaceFormalIntroduction,STRONG_META_IDS.earnedReserveMatch,STRONG_META_IDS.workRhythm,STRONG_META_IDS.networkRetainer,
   STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,
   STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,
   STRONG_META_IDS.prostituteMutualAidRoster,STRONG_META_IDS.lumberForewomanLedger,STRONG_META_IDS.lumberForestCompactRoute,
@@ -45,8 +47,27 @@ export const strongRewardIdPattern=/^[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z0-9]+(?:-[a-z
 export const strongRewardIdSchema=z.string().regex(strongRewardIdPattern);
 export const knowledgeUnlockIdSchema=z.string().regex(strongRewardIdPattern);
 
+export const STRONG_META_KNOWLEDGE_IDS={
+  palaceSourceMethod:'palace.inner-truth.source-method'
+} as const;
+export type ApprovedStrongKnowledgeId=typeof STRONG_META_KNOWLEDGE_IDS[keyof typeof STRONG_META_KNOWLEDGE_IDS];
+export const approvedStrongKnowledgeIdSchema=z.enum([STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod]);
+export const strongMetaKnowledgeRegistry:Readonly<Record<ApprovedStrongKnowledgeId,Readonly<{
+  id:ApprovedStrongKnowledgeId;
+  lifecycle:'active'|'retired';
+  authority:'D39';
+}>>>={
+  [STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod]:{
+    id:STRONG_META_KNOWLEDGE_IDS.palaceSourceMethod,
+    lifecycle:'active',
+    authority:'D39'
+  }
+};
+
 const nonNegativeInt=z.number().int().min(0).max(1_000_000);
 const calendarDay=z.number().int().min(0).max(159);
+const stableId=z.string().regex(/^[a-z][a-z0-9_.-]{1,79}$/);
+const d39OrdinaryCareerSchema=z.enum(['lumber','satyr-maid','undead-farm','tavern','hunter','guard','merchant','artist-geisha','assassin','prostitute']);
 
 const cap200EffectSchema=z.object({
   kind:z.literal('progression-stat-cap'),
@@ -67,6 +88,17 @@ const networkRetainerEffectSchema=z.object({
   paymentAmount:nonNegativeInt,
   eligibleDayCount:z.number().int().min(0).max(160),
   perRunTotalCap:nonNegativeInt
+}).strict();
+const steadyPracticeEffectSchema=z.object({
+  kind:z.literal('steady-practice'),
+  bindAtCompletedShifts:z.literal(8),
+  maxBoundCareers:z.literal(2),
+  protectionsPerCareer:z.literal(3)
+}).strict();
+const formalIntroductionEffectSchema=z.object({
+  kind:z.literal('formal-introduction'),
+  maxUsesPerRun:z.literal(3),
+  maxUsesPerRelationship:z.literal(1)
 }).strict();
 
 const guardInstitutionalFavorsEffectSchema=z.object({kind:z.literal('guard-institutional-favors'),maxUsesPerRun:z.literal(2)}).strict();
@@ -91,7 +123,7 @@ export const resolvedStrongRewardSchema=z.discriminatedUnion('class',[
     id:strongRewardIdSchema,
     class:z.literal('specialist'),
     definitionVersion:z.number().int().min(1),
-    effect:z.union([cap200EffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema,lumberForewomanLedgerEffectSchema,lumberForestCompactRouteEffectSchema,satyrHouseLedgerEffectSchema,satyrGuestNetworkEffectSchema,farmFieldPreservationEffectSchema,farmSupplierAccountEffectSchema,tavernHouseLedgerEffectSchema,tavernSafehouseNetworkEffectSchema,hunterMasterKitEffectSchema])
+    effect:z.union([cap200EffectSchema,steadyPracticeEffectSchema,formalIntroductionEffectSchema,guardInstitutionalFavorsEffectSchema,merchantRiskLedgerEffectSchema,artistSalonIntroductionsEffectSchema,assassinGhostRoutesEffectSchema,assassinContractLedgerEffectSchema,prostituteHousebookEffectSchema,prostituteMutualAidRosterEffectSchema,lumberForewomanLedgerEffectSchema,lumberForestCompactRouteEffectSchema,satyrHouseLedgerEffectSchema,satyrGuestNetworkEffectSchema,farmFieldPreservationEffectSchema,farmSupplierAccountEffectSchema,tavernHouseLedgerEffectSchema,tavernSafehouseNetworkEffectSchema,hunterMasterKitEffectSchema])
   }).strict(),
   z.object({
     id:strongRewardIdSchema,
@@ -140,7 +172,10 @@ export const strongMetaRuntimeSchema=z.object({
   workRhythmAppliedDay:calendarDay.nullable(),
   networkRetainerLastProcessedDay:calendarDay.nullable(),
   networkRetainerPaidDays:z.number().int().min(0).max(160),
-  networkRetainerTotalPaid:nonNegativeInt
+  networkRetainerTotalPaid:nonNegativeInt,
+  steadyPracticeBoundCareerIds:z.array(d39OrdinaryCareerSchema).max(2).default([]),
+  steadyPracticeProtectionsUsedByCareer:z.partialRecord(d39OrdinaryCareerSchema,z.number().int().min(0).max(3)).default({}),
+  formalIntroductionUsedRelationshipIds:z.array(stableId).max(3).default([])
 }).strict();
 export type StrongMetaRuntime=z.infer<typeof strongMetaRuntimeSchema>;
 
@@ -149,12 +184,14 @@ export type StrongRewardDefinition=Readonly<{
   class:StrongRewardClass;
   lifecycle:StrongRewardLifecycle;
   definitionVersion:1;
-  authority:'D24'|'D30'|'D32'|'D40'|'D41';
+  authority:'D24'|'D30'|'D32'|'D39'|'D40'|'D41';
   effect:ResolvedStrongReward['effect'];
 }>;
 
 export const strongMetaRegistry:Readonly<Record<ApprovedStrongRewardId,StrongRewardDefinition>>={
   [STRONG_META_IDS.palaceCap200]:{id:STRONG_META_IDS.palaceCap200,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D24',effect:{kind:'progression-stat-cap',cap:200}},
+  [STRONG_META_IDS.palaceSteadyPractice]:{id:STRONG_META_IDS.palaceSteadyPractice,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D39',effect:{kind:'steady-practice',bindAtCompletedShifts:8,maxBoundCareers:2,protectionsPerCareer:3}},
+  [STRONG_META_IDS.palaceFormalIntroduction]:{id:STRONG_META_IDS.palaceFormalIntroduction,class:'specialist',lifecycle:'active',definitionVersion:1,authority:'D39',effect:{kind:'formal-introduction',maxUsesPerRun:3,maxUsesPerRelationship:1}},
   [STRONG_META_IDS.earnedReserveMatch]:{id:STRONG_META_IDS.earnedReserveMatch,class:'keystone',lifecycle:'active',definitionVersion:1,authority:'D32',effect:{kind:'earned-reserve-match',matchRatio:1,perRunCap:1000}},
   [STRONG_META_IDS.workRhythm]:{id:STRONG_META_IDS.workRhythm,class:'keystone',lifecycle:'active',definitionVersion:1,authority:'D32',effect:{kind:'work-rhythm',energyDelta:1,maxBonusDays:20}},
   [STRONG_META_IDS.networkRetainer]:{id:STRONG_META_IDS.networkRetainer,class:'keystone',lifecycle:'active',definitionVersion:1,authority:'D32',effect:{kind:'network-retainer',paymentAmount:25,eligibleDayCount:40,perRunTotalCap:1000}},
@@ -210,7 +247,10 @@ export function emptyStrongMetaRuntime():StrongMetaRuntime{
     workRhythmAppliedDay:null,
     networkRetainerLastProcessedDay:null,
     networkRetainerPaidDays:0,
-    networkRetainerTotalPaid:0
+    networkRetainerTotalPaid:0,
+    steadyPracticeBoundCareerIds:[],
+    steadyPracticeProtectionsUsedByCareer:{},
+    formalIntroductionUsedRelationshipIds:[]
   };
 }
 
@@ -235,6 +275,22 @@ export function grantStrongMetaReward(state:StrongMetaState,id:ApprovedStrongRew
     ...state,
     ownership:{ownedRewardIds:[...state.ownership.ownedRewardIds,id]}
   });
+}
+
+export function grantStrongMetaKnowledge(state:StrongMetaState,id:ApprovedStrongKnowledgeId):StrongMetaState{
+  const definition=strongMetaKnowledgeRegistry[id];
+  if(!definition||definition.lifecycle!=='active')throw new Error(`Unknown approved Strong Meta knowledge: ${id}`);
+  return canonicalStrongMetaState({
+    ...state,
+    knowledge:{inheritedKnowledgeIds:[...state.knowledge.inheritedKnowledgeIds,id]}
+  });
+}
+
+export function hasAutomaticStrongMetaKnowledge(
+  snapshot:ResolvedStrongMetaSnapshot|null|undefined,
+  id:ApprovedStrongKnowledgeId
+):boolean{
+  return !!snapshot?.automaticKnowledgeIds.includes(id);
 }
 
 function definitionFor(id:string):StrongRewardDefinition|undefined{
@@ -397,6 +453,27 @@ export function validateStrongMetaRuntimeAgainstSnapshot(snapshot:ResolvedStrong
     if(runtime.networkRetainerPaidDays>retainer.eligibleDayCount)throw new Error('Network Retainer runtime exceeds resolved day window.');
     if(runtime.networkRetainerTotalPaid>retainer.perRunTotalCap)throw new Error('Network Retainer runtime exceeds resolved total cap.');
   }
+
+  const steady=effects.get('steady-practice');
+  if(!steady&&(runtime.steadyPracticeBoundCareerIds.length||Object.keys(runtime.steadyPracticeProtectionsUsedByCareer).length)){
+    throw new Error('Steady Practice runtime state exists without resolved reward.');
+  }
+  if(steady&&steady.kind==='steady-practice'){
+    if(new Set(runtime.steadyPracticeBoundCareerIds).size!==runtime.steadyPracticeBoundCareerIds.length)throw new Error('Steady Practice bound careers must be unique.');
+    if(runtime.steadyPracticeBoundCareerIds.length>steady.maxBoundCareers)throw new Error('Steady Practice runtime exceeds bound-career cap.');
+    const bound=new Set(runtime.steadyPracticeBoundCareerIds);
+    for(const [career,used] of Object.entries(runtime.steadyPracticeProtectionsUsedByCareer)){
+      if(!bound.has(career as never))throw new Error('Steady Practice protection count exists for an unbound career.');
+      if(used>steady.protectionsPerCareer)throw new Error('Steady Practice runtime exceeds protection cap.');
+    }
+  }
+
+  const formal=effects.get('formal-introduction');
+  if(!formal&&runtime.formalIntroductionUsedRelationshipIds.length)throw new Error('Formal Introduction runtime state exists without resolved reward.');
+  if(formal&&formal.kind==='formal-introduction'){
+    if(new Set(runtime.formalIntroductionUsedRelationshipIds).size!==runtime.formalIntroductionUsedRelationshipIds.length)throw new Error('Formal Introduction relationship IDs must be unique.');
+    if(runtime.formalIntroductionUsedRelationshipIds.length>formal.maxUsesPerRun)throw new Error('Formal Introduction runtime exceeds use cap.');
+  }
 }
 
 export function strongMetaCurrentEnergyBonus(
@@ -411,6 +488,61 @@ export function strongMetaCurrentEnergyBonus(
 
 export function hasResolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):boolean{
   return !!snapshot?.resolvedRewards.some(reward=>reward.id===id);
+}
+
+export function bindSteadyPracticeCareer(input:Readonly<{
+  snapshot:ResolvedStrongMetaSnapshot|null|undefined;
+  runtime:StrongMetaRuntime;
+  career:string;
+  completedShifts:number;
+}>):StrongMetaRuntime{
+  const runtime=structuredClone(input.runtime);
+  const reward=resolvedReward(input.snapshot,STRONG_META_IDS.palaceSteadyPractice);
+  if(!reward||reward.effect.kind!=='steady-practice')return runtime;
+  if(input.completedShifts!==reward.effect.bindAtCompletedShifts)return runtime;
+  if(!d39OrdinaryCareerSchema.safeParse(input.career).success)return runtime;
+  if(runtime.steadyPracticeBoundCareerIds.includes(input.career as any))return runtime;
+  if(runtime.steadyPracticeBoundCareerIds.length>=reward.effect.maxBoundCareers)return runtime;
+  runtime.steadyPracticeBoundCareerIds.push(input.career as any);
+  return runtime;
+}
+
+export function applySteadyPracticeSeasonalLoss(input:Readonly<{
+  snapshot:ResolvedStrongMetaSnapshot|null|undefined;
+  runtime:StrongMetaRuntime;
+  career:string;
+  delta:number;
+}>):Readonly<{runtime:StrongMetaRuntime;delta:number;prevented:boolean}>{
+  const runtime=structuredClone(input.runtime);
+  const reward=resolvedReward(input.snapshot,STRONG_META_IDS.palaceSteadyPractice);
+  if(!reward||reward.effect.kind!=='steady-practice'||input.delta!==-1)return {runtime,delta:input.delta,prevented:false};
+  if(!runtime.steadyPracticeBoundCareerIds.includes(input.career as any))return {runtime,delta:input.delta,prevented:false};
+  const used=runtime.steadyPracticeProtectionsUsedByCareer[input.career as keyof typeof runtime.steadyPracticeProtectionsUsedByCareer]??0;
+  if(used>=reward.effect.protectionsPerCareer)return {runtime,delta:input.delta,prevented:false};
+  runtime.steadyPracticeProtectionsUsedByCareer[input.career as keyof typeof runtime.steadyPracticeProtectionsUsedByCareer]=used+1;
+  return {runtime,delta:0,prevented:true};
+}
+
+export function formalIntroductionUseAvailable(
+  snapshot:ResolvedStrongMetaSnapshot|null|undefined,
+  runtime:StrongMetaRuntime,
+  relationshipId:string
+):boolean{
+  const reward=resolvedReward(snapshot,STRONG_META_IDS.palaceFormalIntroduction);
+  if(!reward||reward.effect.kind!=='formal-introduction')return false;
+  if(runtime.formalIntroductionUsedRelationshipIds.includes(relationshipId))return false;
+  return runtime.formalIntroductionUsedRelationshipIds.length<reward.effect.maxUsesPerRun;
+}
+
+export function consumeFormalIntroductionUse(
+  snapshot:ResolvedStrongMetaSnapshot|null|undefined,
+  runtime:StrongMetaRuntime,
+  relationshipId:string
+):StrongMetaRuntime{
+  if(!formalIntroductionUseAvailable(snapshot,runtime,relationshipId))throw new Error('Formal Introduction use is unavailable.');
+  const next=structuredClone(runtime);
+  next.formalIntroductionUsedRelationshipIds.push(relationshipId);
+  return next;
 }
 
 function resolvedReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):ResolvedStrongReward|undefined{
@@ -501,7 +633,7 @@ export function applyNetworkRetainerAtStartDay(input:Readonly<{
 
 export function validateStrongMetaRegistry():void{
   const ids=Object.keys(strongMetaRegistry);
-  if(ids.length!==20)throw new Error('Strong Meta registry must contain four v7 rewards, seven D40 Specialists, and nine D41 Specialists.');
+  if(ids.length!==22)throw new Error('Strong Meta registry must contain four v7 rewards, two D39 Specialists, seven D40 Specialists, and nine D41 Specialists.');
   for(const [key,definition] of Object.entries(strongMetaRegistry)){
     if(key!==definition.id)throw new Error(`Strong Meta registry key mismatch: ${key}`);
     if(!strongRewardIdPattern.test(key))throw new Error(`Invalid Strong Meta reward ID: ${key}`);
@@ -509,8 +641,12 @@ export function validateStrongMetaRegistry():void{
   if(new Set(ids).size!==ids.length)throw new Error('Duplicate Strong Meta reward ID.');
   const specialists=Object.values(strongMetaRegistry).filter(x=>x.class==='specialist');
   const keystones=Object.values(strongMetaRegistry).filter(x=>x.class==='keystone');
-  if(specialists.length!==17)throw new Error('Strong Meta Specialist registry drift.');
+  if(specialists.length!==19)throw new Error('Strong Meta Specialist registry drift.');
   if(keystones.length!==3)throw new Error('Strong Meta Keystone registry drift.');
+  for(const id of [STRONG_META_IDS.palaceSteadyPractice,STRONG_META_IDS.palaceFormalIntroduction]){
+    const definition=strongMetaRegistry[id];
+    if(definition.class!=='specialist'||definition.authority!=='D39')throw new Error(`D39 Specialist registry drift: ${id}`);
+  }
   for(const id of [STRONG_META_IDS.guardInstitutionalFavors,STRONG_META_IDS.merchantRiskLedger,STRONG_META_IDS.artistSalonIntroductions,STRONG_META_IDS.assassinGhostRoutes,STRONG_META_IDS.assassinContractLedger,STRONG_META_IDS.prostituteHousebook,STRONG_META_IDS.prostituteMutualAidRoster]){
     const definition=strongMetaRegistry[id];
     if(definition.class!=='specialist'||definition.authority!=='D40')throw new Error(`D40 Specialist registry drift: ${id}`);

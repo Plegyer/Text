@@ -1,11 +1,18 @@
-import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap } from './schema.ts';
+import { metrics, stats, seasons, priorityClasses, saveSchema, type Stat, type Save, type Meta, type Condition, type Effect, type Catalog, type StoryEvent, type Action, type MachineDefinition, type ReactionFact, type ReactionTrigger, type PriorityClass, type LodgingDefinition, type NightChoiceDefinition, type ActivityDefinition, type ActivityOutcome, type ActivityEnvelope, ordinaryHardWorkCareers, type MetaReward, type OrdinaryHardWorkCareer, type ProgressionStatCap, createDefaultPalaceProgressionState } from './schema.ts';
 import {SCHOOL_ACTION_ID,SCHOOL_COURSES,executeSchoolLesson,type SchoolCourseId} from './school.ts';
 import {presentationIdForActionResult,presentationIdForEvent} from './presentation.ts';
 import {applyHardWorkPackagesAtCreation,ordinaryCareerAvailableWithHardWork,palaceNewStartQualified,validateHardWorkPackageSelection} from './hardWorkMeta.ts';
 import {hardWorkPackageDefinitions} from './hardWorkPackageCatalog.ts';
 import {
   STRONG_META_IDS,
+  STRONG_META_KNOWLEDGE_IDS,
   STRONG_META_REGISTRY_VERSION,
+  applySteadyPracticeSeasonalLoss,
+  bindSteadyPracticeCareer,
+  formalIntroductionUseAvailable,
+  grantStrongMetaKnowledge,
+  hasAutomaticStrongMetaKnowledge,
+  consumeFormalIntroductionUse,
   applyEarnedReserveMatch,
   applyNetworkRetainerAtStartDay,
   applyWorkRhythmAtStartDay,
@@ -22,9 +29,22 @@ import {
   strongMetaCurrentEnergyBonus,
   validateResolvedStrongMetaSnapshot,
   validateStrongMetaRuntimeAgainstSnapshot,
+  type ApprovedStrongKnowledgeId,
   type ApprovedStrongRewardId
 } from './strongMeta.ts';
-import {markPalaceCreationQualification} from './palace.ts';
+import {
+  PALACE_DUTY_COUNTER,
+  PALACE_STRUCTURAL_DUTY_ENERGY_COST,
+  PALACE_SUPPORT_ENERGY_COST,
+  assertPalaceProgressionState,
+  markPalaceCreationQualification,
+  markPalaceRoutePrepared,
+  palaceDutyDefinition,
+  palaceStructuralDutyAvailable,
+  palaceStructuralWage,
+  palaceSupportActionAvailable,
+  palaceSupportDefinition
+} from './palace.ts';
 import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnding,migrateD41MetaData} from './advancedEndingsD41.ts';import {
   SECRET_DEBT_LENDER_EVENT_ID,
   SECRET_DEBT_HIDDEN_WORK_ACTION_ID,
@@ -230,11 +250,16 @@ function domainMap(s:Save,kind:DomainKind):Record<string,DomainState>{
   return (kind==='career'?s.run.progression.careers:kind==='quest'?s.run.progression.quests:s.run.progression.relationships) as Record<string,DomainState>;
 }
 function readDomainState(s:Save,kind:DomainKind,id:string,cat?:Catalog):DomainState|undefined{
+  if(kind==='career'&&id==='palace')return s.run.progression.palace;
   const existing=domainMap(s,kind)[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)return undefined;
   return {stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
 }
 function ensureDomainState(s:Save,kind:DomainKind,id:string,cat:Catalog):DomainState{
+  if(kind==='career'&&id==='palace'){
+    if(!machineDefinition(cat,kind,id))throw new Error('Неизвестная career state machine: palace');
+    return s.run.progression.palace;
+  }
   const map=domainMap(s,kind),existing=map[id];if(existing)return existing;
   const def=machineDefinition(cat,kind,id);if(!def)throw new Error(`Неизвестная ${kind} state machine: ${id}`);
   const created={stage:def.initialStage,counters:{},choices:{},facts:[],...(kind==='career'?{shifts:0}:{})};
@@ -289,6 +314,8 @@ export function meets(c:Condition,s:Save,cat?:Catalog):boolean {
     case 'metaUnlock': return s.meta.unlocks.includes(c.unlock)===c.present;
     case 'metaEndingCompleted': return s.meta.completedEndings.includes(c.ending)===c.present;
     case 'metaHardWork': return s.meta.hardWorkProgress.includes(c.career)===c.present;
+    case 'strongMetaKnowledge': return hasAutomaticStrongMetaKnowledge(s.run.strongMetaSnapshot,c.knowledge as ApprovedStrongKnowledgeId)===c.present;
+    case 'strongMetaFormalIntroductionAvailable': return strongMetaFormalIntroductionAvailable(s,cat,c.career,c.relationship,c.transition);
 
     // Legacy M3.2 leaves.
     case 'metric': return compare(getMetric(s,c.key),c.op,c.value);
@@ -326,6 +353,8 @@ function ordinaryCareerDomainForAction(action:Action):OrdinaryHardWorkCareer|nul
 
 export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:ActionAvailabilityOptions={}):boolean{
   const normalGateSatisfied=eligible(action.conditions,s,cat);
+  if(palaceDutyDefinition(action.id))return normalGateSatisfied&&palaceStructuralDutyAvailable(s,action.id);
+  if(palaceSupportDefinition(action.id))return normalGateSatisfied&&palaceSupportActionAvailable(s,action.id);
   const domainCareer=ordinaryCareerDomainForAction(action);
   const domainLocked=secretDebtBound(s)||(options.ordinaryCareersDomainLocked??false);
   if(domainCareer&&domainLocked)return false;
@@ -340,6 +369,98 @@ export function actionAvailable(action:Action,s:Save,cat?:Catalog,options:Action
   });
 }
 
+
+function palaceActionVariant(a:Action,s:Save,cat:Catalog){
+  return a.scenes?.filter(v=>eligible(v.conditions,s,cat)).sort((left,right)=>right.conditions.length-left.conditions.length)[0];
+}
+
+function executePalaceStructuralDutyMutable(s:Save,a:Action,cat:Catalog){
+  const definition=palaceDutyDefinition(a.id);
+  if(!definition||!palaceStructuralDutyAvailable(s,a.id))throw new Error('Эта Palace duty сейчас недоступна.');
+  if(s.run.dayState.energyCurrent<PALACE_STRUCTURAL_DUTY_ENERGY_COST)throw new Error('Не хватает Energy для Palace duty.');
+
+  const before=cloneSave(s);
+  const beforeMetrics={...s.run.metrics};
+  const palace=s.run.progression.palace;
+  const wage=palaceStructuralWage(s);
+
+  s.run.dayState.energyCurrent-=PALACE_STRUCTURAL_DUTY_ENERGY_COST;
+  s.run.resources.money=Math.min(1_000_000,s.run.resources.money+wage);
+  palace.counters[PALACE_DUTY_COUNTER]=definition.ordinal;
+  palace.shifts=definition.ordinal;
+  palace.lastStructuralDutyDay=s.run.calendar.elapsedDays;
+  palace.committedDutyIds.push(definition.id);
+
+  if(definition.transition)applyTransition(s,'career','palace',definition.transition,cat);
+
+  s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
+  s.run.historyState.dayActionCount=Math.min(1000,s.run.historyState.dayActionCount+1);
+  log(s,`Заработано: ${wage} монет.`);
+  log(s,`${a.label}. Осталось энергии: ${s.run.dayState.energyCurrent}.`);
+
+  const variant=palaceActionVariant(a,s,cat);
+  s.run.flow.lastAction={
+    id:a.id,
+    title:a.label,
+    text:variant?.text??a.description,
+    media:variant?.media??['stage.town'],
+    presentationId:presentationIdForActionResult(cat,a.id,variant?.media??['stage.town']),
+    deltas:delta(beforeMetrics,s.run.metrics)
+  };
+
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'actionCompleted',action:a.id}],true);
+}
+
+function executePalaceSupportMutable(s:Save,a:Action,cat:Catalog){
+  const definition=palaceSupportDefinition(a.id);
+  if(!definition||!palaceSupportActionAvailable(s,a.id))throw new Error('Это Palace support action сейчас недоступно.');
+  if(s.run.dayState.energyCurrent<PALACE_SUPPORT_ENERGY_COST)throw new Error('Не хватает Energy для Palace support.');
+
+  const before=cloneSave(s);
+  const beforeMetrics={...s.run.metrics};
+  const palace=s.run.progression.palace;
+
+  s.run.dayState.energyCurrent-=PALACE_SUPPORT_ENERGY_COST;
+  palace.lastSupportActionDay=s.run.calendar.elapsedDays;
+  palace.completedSupportIds.push(definition.id);
+  addUnique(palace.facts,definition.id);
+  if(definition.writesPrep)markPalaceRoutePrepared(s,definition.route);
+
+  s.run.actionCounts[a.id]=Math.min(1_000_000,(s.run.actionCounts[a.id]??0)+1);
+  s.run.historyState.dayActionCount=Math.min(1000,s.run.historyState.dayActionCount+1);
+  log(s,`${a.label}. Осталось энергии: ${s.run.dayState.energyCurrent}.`);
+
+  const variant=palaceActionVariant(a,s,cat);
+  s.run.flow.lastAction={
+    id:a.id,
+    title:a.label,
+    text:variant?.text??a.description,
+    media:variant?.media??['stage.town'],
+    presentationId:presentationIdForActionResult(cat,a.id,variant?.media??['stage.town']),
+    deltas:delta(beforeMetrics,s.run.metrics)
+  };
+
+  register(s,cat);
+  runResolverBoundary(s,before,cat,[{kind:'actionCompleted',action:a.id}],true);
+}
+
+
+function strongMetaFormalIntroductionAvailable(s:Save,cat:Catalog|undefined,career:string,relationship:string,transition:string):boolean{
+  if(!cat||!ordinaryCareerSet.has(career))return false;
+  if(/^(?:palace|activity|secret-debt)\./.test(relationship))return false;
+  if(!formalIntroductionUseAvailable(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,relationship))return false;
+  const shift=cat.definitions.actions.find(action=>action.id===`${career}.shift`);
+  if(!shift||!actionAvailable(shift,s,cat))return false;
+  const careerState=readDomainState(s,'career',career,cat);
+  if((careerState?.counters.completed_shifts??0)<1)return false;
+  const relationshipState=readDomainState(s,'relationship',relationship,cat);
+  if(!relationshipState)return false;
+  const def=machineDefinition(cat,'relationship',relationship);
+  const target=def?.transitions.find(item=>item.id===transition);
+  if(!target||!target.from.includes(relationshipState.stage))return false;
+  return eligible(target.conditions,s,cat);
+}
 
 export function actionCost(a:Action,s:Save){
   if(a.id==='repay')return Math.min(a.cost.money,getMetric(s,'debt'));
@@ -369,7 +490,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       resources:{money:startingMoney,inventory:{herb:2,tonic:0,scales:0}},
       dayState:{energyCurrent:3,nextDayModifiers:{energyDelta:0,statEffects:[],tags:[]},optionalOfferIds:[],scheduledEventIds:[]},
       housingState:{current:'normal' as const,paidForCurrentNight:false},
-      progression:{careers:{},quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
+      progression:{careers:{},palace:createDefaultPalaceProgressionState(),quests:{},relationships:{},school:{tracks:{}},worldFacts:[]},
       endings:{eligible:[],committed:null,result:null},
       flow:{pendingScene:null,reaction:{epochCounter:0,currentEpochId:null,attemptedEventIds:[],cascadeDepth:0,queued:[]},night:null,activity:null,lastAction:null},
       rngState:{state:(meta.runsStarted*2654435761)>>>0},
@@ -449,7 +570,7 @@ function removeValue(target:string[],value:string){const i=target.indexOf(value)
 function effectPhase(e:Effect){
   if(['modifyStat','modifyResource','modifyEnergy','addItem','removeItem','setHousing','metric','item','housing','flag'].includes(e.kind))return 1;
   if(['incrementSchoolCounter','incrementCareerCounter','addCareerFact','setCareerChoice','incrementQuestCounter','addQuestFact','setQuestChoice','incrementRelationshipCounter','addRelationshipFact','setRelationshipChoice','addWorldFact','removeWorldFact','secretDebtAccept','secretDebtRefuse'].includes(e.kind))return 2;
-  if(['advanceCareer','advanceQuest','advanceRelationship'].includes(e.kind))return 3;
+  if(['advanceCareer','advanceQuest','advanceRelationship','useStrongMetaFormalIntroduction'].includes(e.kind))return 3;
   return 4;
 }
 function transitionFor(cat:Catalog,kind:DomainKind,id:string,transitionId:string){
@@ -512,6 +633,14 @@ function applyOne(s:Save,e:Effect,cat:Catalog,allowTransitions:boolean){
     case 'advanceQuest': if(!allowTransitions)throw new Error('Nested quest transition запрещён');applyTransition(s,'quest',e.quest,e.transition,cat);return;
     case 'advanceRelationship': if(!allowTransitions)throw new Error('Nested relationship transition запрещён');applyTransition(s,'relationship',e.relationship,e.transition,cat);return;
 
+    case 'useStrongMetaFormalIntroduction': {
+      if(!allowTransitions)throw new Error('Nested Formal Introduction transition запрещён');
+      if(!strongMetaFormalIntroductionAvailable(s,cat,e.career,e.relationship,e.transition))throw new Error('Formal Introduction сейчас недоступно.');
+      applyTransition(s,'relationship',e.relationship,e.transition,cat);
+      s.run.strongMetaRuntime=consumeFormalIntroductionUse(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,e.relationship);
+      return;
+    }
+
     case 'addNextDayModifier':
       s.run.dayState.nextDayModifiers.energyDelta+=e.energyDelta;
       for(const se of e.statEffects)s.run.dayState.nextDayModifiers.statEffects.push(se);
@@ -543,6 +672,22 @@ function applyActionEffectsMutable(s:Save,effects:Effect[],cat:Catalog){
     return readDomainState(s,'career',effect.career,cat)?.stage!==t.to;
   });
   applyEffectsMutable(s,applicable,cat,true);
+}
+function applySteadyPracticeSeasonalEffectsMutable(s:Save,effects:Effect[],cat:Catalog,career:OrdinaryHardWorkCareer){
+  const adjusted:Effect[]=[];
+  for(const effect of effects){
+    if(effect.kind==='modifyStat'&&effect.delta===-1){
+      const protectedLoss=applySteadyPracticeSeasonalLoss({
+        snapshot:s.run.strongMetaSnapshot,
+        runtime:s.run.strongMetaRuntime,
+        career,
+        delta:effect.delta
+      });
+      s.run.strongMetaRuntime=protectedLoss.runtime;
+      adjusted.push({...effect,delta:protectedLoss.delta});
+    }else adjusted.push(effect);
+  }
+  applyEffectsMutable(s,adjusted,cat,true);
 }
 export function applyEffects(input:Save,effects:Effect[],cat:Catalog):Save{
   const s=cloneSave(input);applyEffectsMutable(s,effects,cat,true);return s;
@@ -796,6 +941,7 @@ export function resolveReactions(input:Save,facts:ReactionFact[],cat:Catalog,{ne
 function collectDomainFacts(before:Save,after:Save,cat:Catalog,kind:DomainKind,facts:ReactionFact[]){
   const beforeMap=domainMap(before,kind),afterMap=domainMap(after,kind);
   const ids=new Set([...Object.keys(beforeMap),...Object.keys(afterMap)]);
+  if(kind==='career'&&machineDefinition(cat,'career','palace'))ids.add('palace');
   for(const id of ids){
     const a=readDomainState(before,kind,id,cat),b=readDomainState(after,kind,id,cat);if(!a||!b)continue;
     if(a.stage!==b.stage){
@@ -886,6 +1032,7 @@ function applyMetaRewardMutable(meta:Meta,reward:MetaReward){
   if(reward.kind==='unlock')addUnique(meta.unlocks,reward.unlock);
   else if(reward.kind==='hardWork')addUnique(meta.hardWorkProgress,reward.career);
   else if(reward.kind==='strongMeta')meta.strongMeta=grantStrongMetaReward(meta.strongMeta,reward.reward as ApprovedStrongRewardId);
+  else if(reward.kind==='knowledge')meta.strongMeta=grantStrongMetaKnowledge(meta.strongMeta,reward.knowledge as ApprovedStrongKnowledgeId);
 }
 function commitEndingMutable(s:Save,endingId:string,cat:Catalog){
   if(s.run.status==='ended'){
@@ -1420,6 +1567,8 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(command.id==='rest')throw new Error('Выберите способ ночлега.');
   const a=cat.definitions.actions.find(a=>a.id===command.id);
   if(!a||!actionAvailable(a,s,cat))throw new Error('Условия действия не выполнены.');
+  if(palaceDutyDefinition(a.id)){executePalaceStructuralDutyMutable(s,a,cat);return s;}
+  if(palaceSupportDefinition(a.id)){executePalaceSupportMutable(s,a,cat);return s;}
   if(a.id!=='arrival'&&!s.run.flags['story.arrived'])throw new Error('Сначала завершите вступление.');
   const before={...s.run.metrics};
   const cost=actionCost(a,s);
@@ -1427,6 +1576,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
+  const ordinaryCareer=ordinaryCareerForShiftAction(a);
   if(a.id===SECRET_DEBT_HIDDEN_WORK_ACTION_ID){
     const result=applySecretDebtHiddenShiftMutable(s);
     log(s,`Заработано: ${result.wage} монет.`);
@@ -1439,14 +1589,27 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }else{
     applyActionEffectsMutable(s,a.effects,cat);
   }
-  if(a.seasonal)applyEffectsMutable(s,a.seasonal[calendar(s.run.day).season],cat,true);
+  if(ordinaryCareer){
+    const completedShifts=readDomainState(s,'career',ordinaryCareer,cat)?.counters.completed_shifts??0;
+    s.run.strongMetaRuntime=bindSteadyPracticeCareer({
+      snapshot:s.run.strongMetaSnapshot,
+      runtime:s.run.strongMetaRuntime,
+      career:ordinaryCareer,
+      completedShifts
+    });
+  }
+  if(a.seasonal){
+    const seasonal=a.seasonal[calendar(s.run.day).season];
+    if(ordinaryCareer)applySteadyPracticeSeasonalEffectsMutable(s,seasonal,cat,ordinaryCareer);
+    else applyEffectsMutable(s,seasonal,cat,true);
+  }
   let ordinaryWage=0;
   if(a.wage){
     const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
     ordinaryWage=wage;
   }
-  if(ordinaryCareerForShiftAction(a)){
+  if(ordinaryCareer){
     const matchBonus=applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,false);
     if(matchBonus>0)log(s,`Strong Meta: заработанный резерв добавил ${matchBonus} монет.`);
   }
@@ -1628,6 +1791,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const s=attachLegacyFacade(parsed);
   repairD40SelectedRouteFactsMutable(s);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
+  assertPalaceProgressionState(s);
   if(s.run.strongMetaSnapshot)validateResolvedStrongMetaSnapshot(s.run.strongMetaSnapshot);
   validateStrongMetaRuntimeAgainstSnapshot(s.run.strongMetaSnapshot,s.run.strongMetaRuntime);
   validateSecretDebtState(s.run.secretDebt);
