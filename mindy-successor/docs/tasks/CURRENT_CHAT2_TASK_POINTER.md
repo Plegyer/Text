@@ -1,5 +1,8 @@
 # CURRENT CHAT2 STATUS — PARKED AFTER STAGE5 RELEASE GO (2026-10-08)
 
+> **Mandatory current product knowledge before any new assignment:** [LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md](../LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md). Old Stage5 work is historical; worker parked until user activation and fresh Leader task.
+
+
 **Stage1–5 CLOSED; burn-down 0. NO ACTIVE ASSIGNMENT. DO NOT WAKE / RESTART OLD STAGE5 TASK.** The earlier assignment below is archived and superseded; its work was integrated by Leader through merged PR #303 and final official exact-main CI [#37812797149](https://github.com/Plegyer/Text/actions/runs/37812797149). Production selective assembly delivered via provenance PR #301; do not merge separately. New work requires a new explicit Leader task and manual user activation.
 
 ---
