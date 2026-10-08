@@ -3338,30 +3338,6 @@
       "ru": "Финал: жизнь через образование.",
       "en": "Ending: a life shaped by education."
     },
-    "presentation.static.ending.tavern-stay.alt": {
-      "ru": "Тёплая таверна после закрытия: стойка, кружка и связка ключей обозначают решение остаться и вести это место.",
-      "en": "A warm tavern after closing, with a counter, mug, and keys representing the choice to stay and run the place."
-    },
-    "presentation.static.ending.tavern-stay.caption": {
-      "ru": "Финал таверны: остаться в «Третьем тосте».",
-      "en": "Tavern ending: staying at the Third Toast."
-    },
-    "presentation.static.ending.tavern-guild.alt": {
-      "ru": "Стол таверны с кружкой, книгой учёта и знаком артели обозначает переход от смен к более широкой работе с гильдией.",
-      "en": "A tavern table with a mug, ledger, and guild mark representing a move from shifts into broader guild work."
-    },
-    "presentation.static.ending.tavern-guild.caption": {
-      "ru": "Финал таверны: путь через гильдию.",
-      "en": "Tavern ending: the guild route."
-    },
-    "presentation.static.ending.tavern-court.alt": {
-      "ru": "Запечатанное приглашение рядом с таверной кружкой обозначает приглашение ко двору без изображения конкретных персонажей.",
-      "en": "A sealed invitation beside a tavern mug represents a court invitation without depicting specific characters."
-    },
-    "presentation.static.ending.tavern-court.caption": {
-      "ru": "Финал таверны: приглашение ко двору.",
-      "en": "Tavern ending: an invitation to court."
-    },
     "presentation.static.location.town.event.poverty-street-production-v2-helpful-summer-shade.market-closing.alt": {
       "ru": "Летняя небогатая улица у закрывающегося рынка, используемая как статичная сцена для короткой помощи у прилавков.",
       "en": "A modest summer street by a closing market, used as a static scene for a short helping task near the stalls."
@@ -9794,18 +9770,6 @@
       "ru": "Зимой редкий товар быстро собирает очередь, и именно поэтому ты не называешь нехватку доказательством любой цены. Ты отмечаешь доступный объём, уже данные обещания и тех, кому нужна предсказуемость поставки.\n\nЗакрытый участок дороги меняет обычную доставку: часть заказов можно перенести, часть разделить, а часть честнее отменить. Ты сообщаешь ограничения до того, как задержка превращается в конфликт.\n\nПри ограниченном запасе постоянные покупатели просят сохранить привычный объём. Ты уточняешь реальные потребности и распределяешь обещания так, чтобы дефицит не превращался в соревнование громких заявлений.",
       "en": "In winter, scarce goods quickly draw a queue, which is exactly why you do not treat scarcity as proof of any price. You record available quantity, promises already made, and buyers who need predictable supply.\n\nA closed stretch of road changes an ordinary delivery: some orders can be delayed, some split, and some are better cancelled honestly. You explain the constraint before the delay turns into a dispute.\n\nWith limited stock, regular buyers ask for their usual quantity. You clarify actual needs and distribute commitments so scarcity does not become a contest of loud promises."
     },
-    "ending.merchant.hard-work.title": {
-      "ru": "Merchant: упорный труд",
-      "en": "Merchant Hard Work"
-    },
-    "ending.merchant.hard-work.description": {
-      "ru": "Публичная Merchant-концовка этой волны остаётся обычным Hard Work за устойчивую карьеру. Продвинутые маршруты добавляют идентичность и выбор, но не создают новые публичные ending IDs.",
-      "en": "The public Merchant ending in this wave remains the ordinary Hard Work outcome for a sustained career. Advanced routes add identity and choice without creating new public ending IDs."
-    },
-    "ending.merchant.hard-work.epilogue": {
-      "ru": "Устойчивая торговая карьера завершена как путь Hard Work.",
-      "en": "Hard Work completion recorded for Merchant."
-    },
     "event.merchant.career.first-shift.title": {
       "ru": "Первая завершённая смена Merchant",
       "en": "The first completed Merchant shift opens independent trading"
@@ -9883,7 +9847,7 @@
       "en": "Take Veteran"
     },
     "event.merchant.career.choose-route.choice.veteran.text": {
-      "ru": "Merchant House означает устойчивую работу нескольких договорённостей, а не бесконечный капитал. Важны повторяемые записи, понятные сроки и способность пережить одну сорванную поставку без распада всей сети.",
+      "ru": "Выбрать путь опытной обычной торговли без перехода в одну из продвинутых сетевых веток.",
       "en": "Choose seasoned ordinary trade."
     },
     "event.merchant.career.choose-route.choice.merchant-house.label": {
@@ -9899,7 +9863,7 @@
       "en": "Take Speculator / Smuggler"
     },
     "event.merchant.career.choose-route.choice.speculator-smuggler.text": {
-      "ru": "Стабильная логистика начинается с обещаний, которые можно выполнить: объём, окно доставки, резервный вариант. Merchant House не превращает мир в таблицу цен, а делает сложную цепочку понятнее.",
+      "ru": "Выбрать готовность к конкретному высокому риску без шкалы морали и без общей системы закона или преступности.",
       "en": "Choose typed high-risk trade readiness without a morality score or generic law system."
     },
     "event.merchant.career.choose-route.choice.defer.label": {
@@ -10067,7 +10031,7 @@
       "en": "Keep working without them"
     },
     "event.merchant.items.appraisal-scales.choice.defer.text": {
-      "ru": "Если показания весов не объясняют странное свойство товара, ты сохраняешь неопределённость в записи. Инструмент помогает увидеть расхождение, а не превращает неполные данные в уверенный ответ.",
+      "ru": "Отложить оценочные весы; обычная работа торговки остаётся доступной.",
       "en": "Ordinary Merchant work remains available."
     },
     "event.merchant.items.manifest-case.title": {
@@ -10091,7 +10055,7 @@
       "en": "Use ordinary records"
     },
     "event.merchant.items.manifest-case.choice.defer.text": {
-      "ru": "К накладной полезно приложить короткое объяснение сложного условия своими словами. Футляр сохраняет обе версии рядом, чтобы формальный документ не становился удобным местом для двусмысленности.",
+      "ru": "Отложить футляр для накладных; карьеру можно продолжать без этого необязательного инструмента.",
       "en": "Keep the career playable without the optional tool."
     },
     "event.merchant.items.sample-kit.title": {
@@ -10115,7 +10079,7 @@
       "en": "Do not take the kit"
     },
     "event.merchant.items.sample-kit.choice.defer.text": {
-      "ru": "Три инструмента меняют только качество конкретных Merchant-проверок и доступных вариантов. Они не создают систему вместимости склада, автоматическую оценку стоимости или гарантированный торговый бонус.",
+      "ru": "Продолжить обычную торговлю без работы с набором образцов.",
       "en": "Continue ordinary trade without sample handling."
     },
     "event.merchant.poverty.liquidity-response.title": {
@@ -10179,7 +10143,7 @@
       "en": "Keep the reliable contact"
     },
     "event.merchant.relationship.trust.choice.continue.text": {
-      "ru": "Практика риторики учит сначала выяснять, спорит ли покупатель о цене, сроке, риске или доверии. Она не гарантирует скидку, победу в торге или автоматическое изменение отношений.",
+      "ru": "Укрепить профессиональное доверие ещё одной передачей, которую можно проверить.",
       "en": "Build professional trust through another verifiable handoff."
     },
     "event.merchant.relationship.conflict-open.title": {
@@ -10267,7 +10231,7 @@
       "en": "Record route readiness"
     },
     "event.merchant.routes.house-ready.choice.record.text": {
-      "ru": "Занятия с числами помогают отличать итоговую прибыль от денег, доступных до следующего обязательства, и аккуратнее читать накладные. Текст не задаёт числовой порог и не выпускает новый публичный School-факт.",
+      "ru": "Сохранить готовность Торгового дома наряду с другими готовыми маршрутами торговки.",
       "en": "Keep this readiness alongside other Merchant routes."
     },
     "event.merchant.routes.speculator-ready.title": {
@@ -10283,7 +10247,7 @@
       "en": "Record route readiness"
     },
     "event.merchant.routes.speculator-ready.choice.record.text": {
-      "ru": "Дефицит создаёт возможность и одновременно повышает цену ошибки. Ты можешь ждать, резервировать товар или принимать узкий риск, но нехватка сама по себе не доказывает, что любое решение выгодно.",
+      "ru": "Сохранить готовность пути Спекулянта / Контрабандиста наряду с другими готовыми маршрутами торговки.",
       "en": "Keep this readiness alongside other Merchant routes."
     },
     "event.merchant.routes.patron-ready.title": {
@@ -10299,7 +10263,7 @@
       "en": "Record route readiness"
     },
     "event.merchant.routes.patron-ready.choice.record.text": {
-      "ru": "Связь с Lumber даёт сети понимание одного устойчивого источника и ограничений маршрута. Patron of Routes ценит подтверждённую связь, а не присваивает себе производство древесины или Forest.",
+      "ru": "Сохранить готовность Покровительницы маршрутов наряду с другими готовыми маршрутами торговки.",
       "en": "Keep this readiness alongside other Merchant routes."
     },
     "event.merchant.trade.appraisal.title": {
@@ -10477,18 +10441,6 @@
     "action.artist-geisha.shift.scene.winter.default.text": {
       "ru": "Зимняя смена проходит в более тесном салонном пространстве, где заметнее пауза, формулировка и реакция на одного собеседника. Ты работаешь точнее, но камерность вечера не превращается в особый социальный статус.\n\nКогда событий меньше, легче увидеть, что делает программу устойчивой: повторяемая подготовка, понятные записи и партнёры, которые знают порядок действий. Ты используешь спокойный сезон для качества обычной работы, а не для автоматического карьерного скачка.\n\nЗимой знакомые гости чаще возвращаются с привычными ожиданиями. Ты помнишь контекст прошлых вечеров, но каждый новый разговор остаётся отдельным: прошлое внимание не создаёт бессрочного обещания или обязательной личной линии.",
       "en": "A winter shift takes place in a tighter salon setting where a pause, a phrase, and a response to one person are easier to notice. You work with more precision, but the intimacy of the room does not become special social status.\n\nWhen there are fewer events, it is easier to see what makes a program sustainable: repeatable preparation, clear notes, and partners who know the order of work. You use the quiet season to improve ordinary work rather than trigger an automatic career leap.\n\nIn winter, familiar guests more often return with established expectations. You remember the context of earlier evenings, but each new conversation remains separate: prior attention creates no permanent promise or mandatory personal route."
-    },
-    "ending.artist-geisha.hard-work.title": {
-      "ru": "Artist/Geisha: упорный труд",
-      "en": "Artist/Geisha Hard Work"
-    },
-    "ending.artist-geisha.hard-work.description": {
-      "ru": "Публичная Artist/Geisha-концовка этой волны остаётся `ending.artist-geisha.hard-work` за устойчивую карьеру. Продвинутые маршруты добавляют различимый профессиональный смысл, но не новые ending IDs.",
-      "en": "The public Artist/Geisha ending in this wave remains `ending.artist-geisha.hard-work` for sustained career work. Advanced routes add distinct professional meaning without new ending IDs."
-    },
-    "ending.artist-geisha.hard-work.epilogue": {
-      "ru": "Устойчивая карьера Artist/Geisha завершена как путь Hard Work.",
-      "en": "Hard Work completion recorded for Artist/Geisha."
     },
     "event.artist-geisha.career.first-shift.title": {
       "ru": "Первый шаг в Artist House",
@@ -14679,8 +14631,8 @@
       "en": "Field contacts, guides, and people with access stop being isolated acquaintances and become a real expedition network. This is the fate of an explorer who knows how to cross difficult ground without doing it alone, while never turning trust into a universal pass."
     },
     "ending.ending.activity.network.epilogue": {
-      "ru": "У этой сети нет штаба, печати и списка членов. Есть условные фразы, надёжные адреса, люди, которые знают, кому передать записку, и достаточно доверия, чтобы однажды ответить на неё. Ни один контакт не открывает все двери, но вместе они превращают четыре разрозненных направления в пространство, где у вас почти всегда есть с кем начать разговор.",
-      "en": "The network has no headquarters, seal, or membership roll. It has agreed phrases, reliable addresses, people who know where to pass a note, and enough trust for someone to answer it. No contact opens every door, but together they turn four disconnected directions into a world where you almost always know who to speak to first."
+      "ru": "Контакты связывают разрозненные направления в единое рабочее пространство.",
+      "en": "The contacts tie disconnected routes into one practical working network."
     },
     "ending.ending.activity.network.title": {
       "ru": "Нити через границы",
@@ -14777,6 +14729,390 @@
     "ui.ending.state.historical": {
       "ru": "историческая",
       "en": "historical"
+    },
+    "ending.ending.guard.officer.title": {
+      "ru": "Стража — офицер",
+      "en": "Guard — Officer"
+    },
+    "ending.ending.guard.officer.description": {
+      "ru": "Принять формальную ответственность за отчёты, служебный доступ и решения, которые можно проверить позже; звание опирается на доказанную работу, а не заменяет её.",
+      "en": "Accept formal responsibility for reports, authorized access, and decisions that can be reviewed later; the office rests on demonstrated work rather than replacing it."
+    },
+    "ending.ending.guard.officer.epilogue": {
+      "ru": "Ты принимаешь офицерскую ответственность как продолжение обычной службы. Отчёты остаются проверяемыми, доступ — объяснимым, а решения сохраняют след, по которому их можно пересмотреть.",
+      "en": "You accept officer responsibility as a continuation of ordinary service. Reports remain reviewable, access remains accountable, and decisions leave a record that can be checked again."
+    },
+    "ending.ending.guard.reform.title": {
+      "ru": "Стража — реформа",
+      "en": "Guard — Reform"
+    },
+    "ending.ending.guard.reform.description": {
+      "ru": "Закрепить изменения в повседневной практике стражи: в разборе споров, работе с уязвимыми горожанами и профессиональных конфликтах — без скрытой шкалы морали.",
+      "en": "Make concrete changes to everyday Guard practice in disputes, poverty-facing duty, and professional conflict, without turning the route into a hidden morality scale."
+    },
+    "ending.ending.guard.reform.epilogue": {
+      "ru": "Реформа остаётся набором процедур, а не лозунгом. Новые правила можно объяснить, проверить на следующей смене и исправить, если они не выдерживают реальной городской работы.",
+      "en": "Reform remains a set of practices rather than a slogan. New procedures can be explained, tested on the next shift, and corrected when they fail under real city work."
+    },
+    "ending.ending.guard.network.title": {
+      "ru": "Стража — сеть / коррупция",
+      "en": "Guard — Network / Corruption"
+    },
+    "ending.ending.guard.network.description": {
+      "ru": "Работать через проверяемые связи, документы и институциональные услуги, проводя дела между людьми и учреждениями; связи дают рычаги, но не создают универсальную власть или скрытую шкалу коррупции.",
+      "en": "Work through verifiable contacts, documents, and institutional favors to move cases between people and offices; connections provide leverage without creating universal authority or a hidden corruption meter."
+    },
+    "ending.ending.guard.network.epilogue": {
+      "ru": "Ты знаешь, кому можно передать дело, где запросить подтверждение и чья подпись действительно что-то меняет. Сеть полезна именно потому, что каждый её рычаг имеет источник, предел и последствия.",
+      "en": "You know who can receive a case, where to seek confirmation, and whose signature actually changes something. The network is useful precisely because every lever has a source, a limit, and consequences."
+    },
+    "ending.ending.guard.major-case.title": {
+      "ru": "Стража — крупное дело",
+      "en": "Guard — Major Case"
+    },
+    "ending.ending.guard.major-case.description": {
+      "ru": "Свести независимые линии крупного дела: внутренний отчёт, внешнее подтверждение, решение городской проблемы, профессиональный источник и разрешённый кризис — без заранее назначенного виновника.",
+      "en": "Bring together independent lines of a major case: an internal report, external confirmation, a city-facing duty decision, a professional source, and a resolved crisis, without predetermining a culprit."
+    },
+    "ending.ending.guard.major-case.epilogue": {
+      "ru": "Крупное дело закрывается не одной эффектной догадкой, а цепочкой источников, которые выдержали перекрёстную проверку. В книге остаётся не легенда о героине, а понятная запись того, как вывод был получен.",
+      "en": "The major case closes through a chain of sources that survived cross-checking, not one dramatic guess. The casebook keeps a clear record of how the conclusion was reached rather than a legend about the heroine."
+    },
+    "ending.ending.merchant.house.title": {
+      "ru": "Торговка — торговый дом",
+      "en": "Merchant — Merchant House"
+    },
+    "ending.ending.merchant.house.description": {
+      "ru": "Построить устойчивую работу нескольких соглашений через повторяемые записи, ясные сроки, проверяемых поставщиков и запасные маршруты; стабильность важнее бесконечного капитала.",
+      "en": "Build stable operations across several agreements through repeatable records, clear timing, verifiable suppliers, and backup routes; resilience matters more than unlimited capital."
+    },
+    "ending.ending.merchant.house.epilogue": {
+      "ru": "Торговый дом держится не на одной удачной сделке. Поставщики, накладные, сроки и запасные маршруты складываются в систему, способную пережить сорванную доставку и продолжить работу.",
+      "en": "The Merchant House does not rest on one lucky deal. Suppliers, manifests, timing, and backup routes form a system that can absorb a failed delivery and keep working."
+    },
+    "ending.ending.merchant.speculator-smuggler.title": {
+      "ru": "Торговка — спекуляция / контрабанда",
+      "en": "Merchant — Speculator / Smuggler"
+    },
+    "ending.ending.merchant.speculator-smuggler.description": {
+      "ru": "Выбрать путь конкретного риска: дефицита, сроков, маршрутов, состояния товара и неполной информации — без скрытой шкалы добра, зла или общей системы преступности.",
+      "en": "Choose a route of concrete risk—scarcity, timing, routes, goods condition, and incomplete information—without a hidden good-or-evil meter or a universal crime system."
+    },
+    "ending.ending.merchant.speculator-smuggler.epilogue": {
+      "ru": "Ты ведёшь риск как запись, а не как оправдание. Где источник неясен, это отмечено; где решение опасно, известна причина; прибыль больше не маскирует цену ошибки.",
+      "en": "You keep risk as a record rather than an excuse. Unclear sources stay marked, dangerous decisions keep their reasons, and profit no longer hides the cost of a mistake."
+    },
+    "ending.ending.merchant.patron-of-routes.title": {
+      "ru": "Торговка — покровительница маршрутов",
+      "en": "Merchant — Patron of Routes"
+    },
+    "ending.ending.merchant.patron-of-routes.description": {
+      "ru": "Связать проверенные источники, поставки, возвращённые маршруты и ограничения уже существующих систем в устойчивую логистическую сеть, не присваивая себе чужую работу и не создавая универсальный пропуск.",
+      "en": "Connect verified sources, supplies, completed routes, and constraints from existing systems into resilient logistics without taking ownership of other people's work or creating a universal pass."
+    },
+    "ending.ending.merchant.patron-of-routes.epilogue": {
+      "ru": "Маршруты становятся надёжнее не потому, что исчезают препятствия, а потому, что сеть знает о них заранее. Каждый контакт отвечает за свой участок, а подтверждённая связь ценится выше красивого обещания.",
+      "en": "Routes become more reliable not because obstacles disappear, but because the network accounts for them in advance. Each contact covers a bounded part of the work, and a verified link is worth more than an attractive promise."
+    },
+    "ending.ending.artist-geisha.master-artist.title": {
+      "ru": "Дом искусств — мастер",
+      "en": "Artist House — Master Artist"
+    },
+    "ending.ending.artist-geisha.master-artist.description": {
+      "ru": "Выбрать глубину профессиональной подготовки: ясное намерение, повторяемую репетицию, полезные записи и способность объяснять собственный выбор — без универсального рейтинга художественной ценности.",
+      "en": "Choose depth of professional preparation: clear intention, repeatable rehearsal, usable records, and the ability to explain one's choices, without turning art into a universal ranking."
+    },
+    "ending.ending.artist-geisha.master-artist.epilogue": {
+      "ru": "Мастерство проявляется в процессе, который можно повторить и передать дальше. Репетиционные записи становятся рабочим инструментом, а уверенность в ремесле не требует объявлять один стиль единственно правильным.",
+      "en": "Mastery lives in a process that can be repeated and taught. Rehearsal records become working tools, and confidence in the craft never requires declaring one style universally correct."
+    },
+    "ending.ending.artist-geisha.patron-network.title": {
+      "ru": "Дом искусств — сеть покровителей",
+      "en": "Artist House — Patron Network"
+    },
+    "ending.ending.artist-geisha.patron-network.description": {
+      "ru": "Собрать несколько устойчивых профессиональных контактов, где понятны контекст, ожидания и следующий разговор; сеть помогает с конкретными знакомствами, но не становится отдельной валютой влияния.",
+      "en": "Build several durable professional contacts with clear context, expectations, and next conversations; the network supports specific introductions without becoming a separate influence currency."
+    },
+    "ending.ending.artist-geisha.patron-network.epilogue": {
+      "ru": "У сети нет обещания открыть любую дверь. Зато ты знаешь, кто действительно ответит, кого можно представить друг другу и где одно хорошее знакомство заканчивается, не превращаясь в вечный долг.",
+      "en": "The network promises no universal access. Instead, you know who will actually answer, which people can usefully be introduced, and where one good connection ends without becoming a permanent obligation."
+    },
+    "ending.ending.artist-geisha.court-invitation.title": {
+      "ru": "Дом искусств — приглашение ко двору",
+      "en": "Artist House — Court Invitation"
+    },
+    "ending.ending.artist-geisha.court-invitation.description": {
+      "ru": "Закрепить профессиональную готовность к формальному придворному контексту через реальное приглашение, этикет и подготовку; это карьерный контакт, а не доступ во Дворец и не универсальный пропуск.",
+      "en": "Establish readiness for a formal court context through a real invitation, etiquette, and preparation; this is an Artist House career contact, not Palace access or a universal pass."
+    },
+    "ending.ending.artist-geisha.court-invitation.epilogue": {
+      "ru": "Приглашение открывает один конкретный формальный вечер и требует той же точности, что любая другая работа. Ты входишь подготовленной, не путая придворный контекст с властью над Дворцом или правом на все будущие двери.",
+      "en": "The invitation opens one specific formal evening and demands the same precision as any other work. You enter prepared without confusing court context with authority over the Palace or a right to every future door."
+    },
+    "ending.ending.assassin.ghost.title": {
+      "ru": "Ассасин — призрак",
+      "en": "Assassin — Ghost"
+    },
+    "ending.ending.assassin.ghost.description": {
+      "ru": "Развить специализацию скрытого прохождения через тихую подготовку, выборочные доказательства из инфильтрации и подходящие профессиональные возможности — без превращения карьеры в универсальную систему проникновения.",
+      "en": "Develop a quiet-infiltration specialization through careful preparation, selective infiltration evidence, and matching professional capability without turning the career into a universal infiltration system."
+    },
+    "ending.ending.assassin.ghost.epilogue": {
+      "ru": "Лучшие маршруты этой специализации оставляют минимум лишних следов и максимум проверенной подготовки. Ты знаешь, когда пройти незаметно, а когда отсутствие надёжного пути само по себе является ответом.",
+      "en": "The best routes in this practice leave as little unnecessary trace as possible and depend on verified preparation. You know when a quiet passage is workable—and when the absence of a reliable route is itself the answer."
+    },
+    "ending.ending.assassin.handler-takeover.title": {
+      "ru": "Ассасин — перехват роли куратора",
+      "en": "Assassin — Handler Takeover"
+    },
+    "ending.ending.assassin.handler-takeover.description": {
+      "ru": "Перейти от исполнения к локальной координации через полезные записи, профессиональные контакты и проверяемую работу с заданиями, не создавая отдельную глобальную сеть власти.",
+      "en": "Move from execution toward local coordination through usable records, professional contacts, and verifiable contract work without creating a separate global power network."
+    },
+    "ending.ending.assassin.handler-takeover.epilogue": {
+      "ru": "Теперь задания не просто приходят к тебе: ты умеешь проверять, что известно, кому можно передать следующий шаг и где цепочку следует остановить. Контроль держится на учёте и ответственности, а не на тайной всеведущей сети.",
+      "en": "Assignments no longer merely arrive at your door: you can check what is known, decide who can carry the next step, and recognize where a chain should stop. Control rests on records and responsibility, not an all-knowing secret network."
+    },
+    "ending.ending.assassin.refusal-turncoat.title": {
+      "ru": "Ассасин — отказ / смена стороны",
+      "en": "Assassin — Refusal / Turncoat"
+    },
+    "ending.ending.assassin.refusal-turncoat.description": {
+      "ru": "Сделать отказ, перенаправление или разрыв цепочки самостоятельной профессиональной позицией, опираясь на сохранённые доказательства — без скрытой шкалы морали.",
+      "en": "Make refusal, redirection, or a break in the chain an explicit professional position supported by preserved evidence, without adding a hidden morality meter."
+    },
+    "ending.ending.assassin.refusal-turncoat.epilogue": {
+      "ru": "Ты доказываешь, что профессиональная дисциплина включает право остановить цепочку, которую больше нельзя защищать фактами или условиями. Отказ остаётся зафиксированным решением, а не невидимой моральной оценкой.",
+      "en": "You prove that professional discipline includes the right to stop a chain that can no longer be defended by evidence or terms. Refusal remains a recorded decision rather than an invisible moral score."
+    },
+    "ending.ending.prostitute.independent-house.title": {
+      "ru": "Независимая профессия — собственный дом",
+      "en": "Professional — Independent House"
+    },
+    "ending.ending.prostitute.independent-house.description": {
+      "ru": "Построить самостоятельное рабочее пространство на добровольных договорённостях, ясных границах, учёте и деловой устойчивости; экономическое давление не подменяет согласие.",
+      "en": "Build an independent workplace around voluntary agreements, clear boundaries, records, and business stability; economic pressure does not substitute for consent."
+    },
+    "ending.ending.prostitute.independent-house.epilogue": {
+      "ru": "Собственный дом работает по правилам, которые можно назвать вслух: условия известны заранее, отказ остаётся возможным, а записи помогают защищать труд, а не контролировать человека. Профессиональная самостоятельность становится обычной практикой.",
+      "en": "The independent house runs on terms that can be stated plainly: conditions are known in advance, refusal remains possible, and records protect the work rather than control the person. Professional independence becomes ordinary practice."
+    },
+    "ending.ending.prostitute.elite-clientele.title": {
+      "ru": "Независимая профессия — избранная клиентура",
+      "en": "Professional — Elite Clientele"
+    },
+    "ending.ending.prostitute.elite-clientele.description": {
+      "ru": "Сформировать устойчивую избранную клиентуру через репутацию, ясные ожидания и добровольный профессиональный выбор; статус клиентов не отменяет границы и не даёт доступа во Дворец.",
+      "en": "Build a stable selective clientele through reputation, clear expectations, and voluntary professional choice; client status never overrides boundaries or grants Palace access."
+    },
+    "ending.ending.prostitute.elite-clientele.epilogue": {
+      "ru": "Избранная клиентура означает меньше случайности, а не меньше права выбирать. Ты работаешь с людьми, чьи ожидания можно обсудить заранее, и высокий статус ни разу не становится заменой согласию или профессиональным условиям.",
+      "en": "Elite clientele means less randomness, not less choice. You work with people whose expectations can be discussed in advance, and high status never becomes a substitute for consent or professional terms."
+    },
+    "ending.ending.prostitute.network-protection.title": {
+      "ru": "Независимая профессия — сеть защиты",
+      "en": "Professional — Network / Protection"
+    },
+    "ending.ending.prostitute.network-protection.description": {
+      "ru": "Выстроить локальную сеть взаимной защиты через документы, проверенные контакты и взаимопомощь, не превращая её в универсальную фракцию, власть или обязательную зависимость.",
+      "en": "Build a local mutual-protection network through records, verified contacts, and mutual aid without turning it into a universal faction, authority, or compulsory dependency."
+    },
+    "ending.ending.prostitute.network-protection.epilogue": {
+      "ru": "Защита работает потому, что люди знают, кому сообщить о проблеме, где оставить запись и кто способен подтвердить случившееся. Сеть не обещает безопасности от всего; она делает помощь конкретной, взаимной и проверяемой.",
+      "en": "Protection works because people know who to contact, where to leave a record, and who can confirm what happened. The network promises no universal safety; it makes help concrete, mutual, and verifiable."
+    },
+    "ending.ending.lumber.hard-work.epilogue": {
+      "ru": "Пятьдесят обычных смен превращают привычку к тяжёлой работе в настоящее ремесло. Ты знаешь ритм артели, цену безопасной подготовки и разницу между разовой удачей и надёжностью.",
+      "en": "Fifty ordinary shifts turn hard work into a practiced craft. You know the crew's rhythm, the value of safe preparation, and the difference between one lucky day and dependable work."
+    },
+    "ending.ending.satyr-maid.hard-work.epilogue": {
+      "ru": "Долгая череда смен оставляет после себя не один яркий вечер, а устойчивую профессиональную репутацию. Ты умеешь держать темп, условия и собственные границы без обязательной особой роли.",
+      "en": "A long run of shifts leaves more than one memorable evening: it builds a durable professional reputation. You can hold the pace, the terms, and your own boundaries without needing a special route."
+    },
+    "ending.ending.undead-farm.hard-work.epilogue": {
+      "ru": "Сезоны меняются, странности фермы остаются, а работа всё равно должна быть сделана аккуратно. Твоя ценность здесь — в выдержке, повторяемом процессе и надёжности обычной смены.",
+      "en": "Seasons change, the farm remains strange, and the work still has to be done carefully. Your value here lies in endurance, repeatable process, and the reliability of ordinary shifts."
+    },
+    "ending.ending.tavern.hard-work.epilogue": {
+      "ru": "За стойкой и в зале ты проходишь достаточно смен, чтобы работа перестала быть временной случайностью. Дом держится на людях, которые замечают мелочи и возвращаются к делу на следующий день.",
+      "en": "After enough shifts behind the bar and across the room, the work no longer feels temporary. The house endures because people notice the small things and return to the job the next day."
+    },
+    "ending.ending.hunter.hard-work.epilogue": {
+      "ru": "Много обычных выходов учат тебя тому, чего не даёт один редкий трофей: читать маршрут, готовиться к перемене погоды и возвращаться с работой, завершённой без лишнего риска.",
+      "en": "Many ordinary outings teach what one rare trophy cannot: how to read a route, prepare for changing weather, and return with the work finished without needless risk."
+    },
+    "ending.ending.guard.hard-work.epilogue": {
+      "ru": "Патрули, посты и обычные городские обязанности складываются в службу, которой доверяют именно за постоянство. Ты не обязана становиться символом порядка, чтобы быть надёжной частью стражи.",
+      "en": "Patrols, posts, and ordinary city duties become a service trusted for its consistency. You do not need to become a symbol of order to be a dependable part of the Guard."
+    },
+    "ending.ending.merchant.hard-work.epilogue": {
+      "ru": "Сделки, доставки и оценки складываются в устойчивую торговую практику. Ты умеешь вести обычную работу так, чтобы запись, обещание и фактическая поставка снова встречались в одном месте.",
+      "en": "Deals, deliveries, and appraisals become a steady trading practice. You can conduct ordinary business so that the record, the promise, and the actual delivery meet in the same place again."
+    },
+    "ending.ending.artist-geisha.hard-work.epilogue": {
+      "ru": "Практика, подготовка и работа с гостями превращаются в ремесло, которое выдерживает повторение. Ты умеешь провести очередную смену профессионально, не нуждаясь в отдельном титуле или покровителе.",
+      "en": "Practice, preparation, and guest-facing work become a craft that survives repetition. You can carry another shift professionally without needing a separate title or patron."
+    },
+    "ending.ending.assassin.hard-work.epilogue": {
+      "ru": "Пятьдесят скрытых смен оставляют после себя дисциплину: подготовить инструменты, проверить задачу, выполнить ограниченную работу и не подменять профессионализм эффектностью.",
+      "en": "Fifty covert shifts leave behind discipline: prepare the tools, check the assignment, complete bounded work, and never confuse professionalism with spectacle."
+    },
+    "ending.ending.prostitute.hard-work.epilogue": {
+      "ru": "Долгая последовательность добровольных смен становится устойчивой профессией. Опыт помогает яснее называть условия, выбирать работу и сохранять личные границы без обязательной продвинутой роли.",
+      "en": "A long sequence of voluntary shifts becomes a stable profession. Experience makes it easier to state terms, choose work, and keep personal boundaries without requiring an advanced route."
+    },
+    "ending.ending.lumber.forewoman.epilogue": {
+      "ru": "Ты остаёшься с артелью уже не как человек, которому просто поручили больше работы. План смены, журнал и ответственность за команду сходятся в одной профессиональной роли, а доверие с бригадиром остаётся рабочим, а не обязательным личным условием.",
+      "en": "You remain with the crew as more than someone who was simply given extra work. The shift plan, ledger, and responsibility for the team meet in one professional role, while trust with the Foreman remains professional rather than a required personal condition."
+    },
+    "ending.ending.lumber.forest.epilogue": {
+      "ru": "Подтверждённая лесная правда входит в обычную практику артели. Работа продолжается, но маршрут, риск и решение проблемы теперь опираются на то, что было проверено, а не на удобный слух.",
+      "en": "The confirmed forest truth becomes part of ordinary crew practice. Work continues, but route, risk, and problem-solving now rest on what was verified rather than on a convenient rumour."
+    },
+    "ending.ending.satyr-maid.personal-network.epilogue": {
+      "ru": "Повторные рабочие встречи превращаются в небольшую сеть людей, которые знают твои условия и умеют обращаться к тебе по делу. Близость или романтика могут существовать отдельно, но этот профессиональный результат их не требует.",
+      "en": "Repeated work encounters become a small network of people who know your terms and know how to approach you professionally. Intimacy or romance may exist separately, but this professional outcome does not require either."
+    },
+    "ending.ending.undead-farm.external-anomaly.epilogue": {
+      "ru": "Сохранённый образец больше не стоит в одиночестве. Внешний подтверждённый источник даёт ему контекст, и аномалия становится предметом аккуратного сравнения, а не поводом объявить неизвестное объяснённым.",
+      "en": "The preserved specimen no longer stands alone. A confirmed external source gives it context, turning the anomaly into something that can be compared carefully rather than an excuse to declare the unknown solved."
+    },
+    "ending.ending.tavern.innkeeper.epilogue": {
+      "ru": "Ты принимаешь ответственность за дом через учёт, доступ персонала и решения, которые выдержали реальный кризис. Таверна остаётся живым местом, но её работа больше не зависит от того, что важные вещи помнят только на словах.",
+      "en": "You take responsibility for the house through records, staff access, and decisions that survived a real crisis. The tavern remains a living place, but its work no longer depends on important things being remembered only by word of mouth."
+    },
+    "ending.ending.tavern.information-broker.epilogue": {
+      "ru": "Ты работаешь с информацией профессионально: слух остаётся слухом, пока его не подтвердит независимый источник, а конфиденциальность не становится обещанием без границ. Полезность сети строится на различии между тем, что известно, и тем, что только рассказано.",
+      "en": "You handle information professionally: a rumour remains a rumour until an independent source confirms it, and confidentiality never becomes a promise without limits. The network is useful because it distinguishes what is known from what has merely been reported."
+    },
+    "ending.ending.tavern.sanctuary.epilogue": {
+      "ru": "Таверна становится местом, где помощь с жильём и конфиденциальность могут сосуществовать без скрытых условий. Убежище работает как практическая поддержка сообщества, а не как отмена обычных правил ночлега или долгов.",
+      "en": "The tavern becomes a place where housing help and confidentiality can coexist without hidden terms. Sanctuary works as practical community support rather than an escape from ordinary lodging or debt rules."
+    },
+    "ending.ending.hunter.master-hunter.epilogue": {
+      "ru": "Четыре сезона, сложные маршруты и возвращённые доказательства складываются в мастерство, которое не нуждается в одном легендарном моменте. Ты умеешь готовить выход, читать условия и возвращаться с результатом снова и снова.",
+      "en": "Four seasons, difficult routes, and returned evidence become a mastery that does not depend on one legendary moment. You can prepare an outing, read conditions, and return with a result again and again."
+    },
+    "ending.ending.hunter.warden.epilogue": {
+      "ru": "Ты берёшь на себя заботу о маршрутах и территории через наблюдение, сотрудничество и подтверждённые признаки. Хранительство означает знать, что следует защищать и почему, а не владеть землёй или закрывать её для остальных.",
+      "en": "You take responsibility for routes and territory through observation, cooperation, and confirmed signs. Stewardship means knowing what needs protection and why, not owning the land or closing it to everyone else."
+    },
+    "ending.ending.hunter.legend.epilogue": {
+      "ru": "Редкий контракт становится историей, которую повторяют не потому, что она была неизбежной, а потому, что ты подготовилась, связала независимые улики и вернулась после третьей успешной экспедиции. Легенда остаётся следствием работы, а не заменой ей.",
+      "en": "The rare contract becomes a story people repeat not because it was inevitable, but because you prepared, connected independent clues, and returned after a third successful expedition. The legend remains a consequence of the work rather than a substitute for it."
+    },
+    "ending.guild-life.epilogue": {
+      "ru": "Артель вручает вам ключ от комнаты. Орвин предлагает отпраздновать вдвоём и тут же уточняет, что котёл на этот раз приглашения не получил. Можно согласиться на первое свидание или оставить вечер дружеским. В следующей жизни вас встретят как свою.",
+      "en": "The guild hands you a room key. Orwin suggests celebrating together, then immediately clarifies that the cauldron was not invited this time. You may agree to a first date or keep the evening friendly. In the next life, they will welcome you as one of their own."
+    },
+    "ending.scholar-life.epilogue": {
+      "ru": "Диплом пахнет чернилами и слегка — карамелью. Взрослый выпускник соседней мастерской приглашает вас на праздничный ужин: «Без пробирок, обещаю». Свидание остаётся вашим выбором, а право на новое начало уже заслужено.",
+      "en": "The diploma smells of ink and faintly of caramel. An adult graduate from the neighboring workshop invites you to a celebratory dinner: “No test tubes, I promise.” Whether it is a date remains your choice; the right to a new beginning is already earned."
+    },
+    "media.stage.room.caption": {
+      "ru": "Сцена дешёвой общей комнаты для ночлега.",
+      "en": "Cheap shared-room lodging scene."
+    },
+    "media.base.town.caption": {
+      "ru": "Условная иллюстрация фэнтезийного города.",
+      "en": "A stylized illustration of the fantasy town."
+    },
+    "ui.condition.schoolCounter": {
+      "ru": "Школа {track}: {counter} {comparison}",
+      "en": "School {track}: {counter} {comparison}"
+    },
+    "ui.activity.fieldTimeLabel": {
+      "ru": "Полевое время",
+      "en": "Field time"
+    },
+    "ui.activity.miniGameLabel": {
+      "ru": "Мини-игра",
+      "en": "Mini-game"
+    },
+    "ui.activity.suspicionLabel": {
+      "ru": "Подозрение",
+      "en": "Suspicion"
+    },
+    "unlock.satyr-maid.clear-terms.label": {
+      "ru": "Чёткие условия",
+      "en": "Clear Terms"
+    },
+    "unlock.knowledge.undead-farm.anomaly-catalog.label": {
+      "ru": "Каталог аномалий",
+      "en": "Anomaly Catalog"
+    },
+    "unlock.knowledge.tavern.broker-index.label": {
+      "ru": "Справочник посредника",
+      "en": "Broker Index"
+    },
+    "unlock.knowledge.hunter.warden-signs.label": {
+      "ru": "Знаки хранителя",
+      "en": "Warden Signs"
+    },
+    "unlock.knowledge.hunter.legend-contracts.label": {
+      "ru": "Легендарные контракты",
+      "en": "Legend Contracts"
+    },
+    "unlock.unlock.guard.command-briefing.label": {
+      "ru": "Командный инструктаж",
+      "en": "Command Briefing"
+    },
+    "unlock.unlock.guard.reform-practice.label": {
+      "ru": "Практика реформ",
+      "en": "Reform Practice"
+    },
+    "unlock.unlock.guard.casebook-index.label": {
+      "ru": "Указатель дел",
+      "en": "Casebook Index"
+    },
+    "unlock.unlock.merchant.house-supplier.label": {
+      "ru": "Поставщик дома",
+      "en": "House Supplier"
+    },
+    "unlock.unlock.merchant.patron-destinations.label": {
+      "ru": "Направления покровителя",
+      "en": "Patron Destinations"
+    },
+    "unlock.unlock.artist.master-repertoire.label": {
+      "ru": "Репертуар мастера",
+      "en": "Master Repertoire"
+    },
+    "unlock.unlock.artist.court-context.label": {
+      "ru": "Придворный контекст",
+      "en": "Court Context"
+    },
+    "unlock.unlock.assassin.refusal-protocol.label": {
+      "ru": "Протокол отказа",
+      "en": "Refusal Protocol"
+    },
+    "unlock.unlock.prostitute.elite-protocol.label": {
+      "ru": "Элитный протокол",
+      "en": "Elite Protocol"
+    },
+    "ui.secretDebt.statusLabel": {
+      "ru": "Тайный долг",
+      "en": "Secret Debt"
+    },
+    "ui.secretDebt.principalLabel": {
+      "ru": "Тайный долг — основной долг",
+      "en": "Secret Debt principal"
+    },
+    "ui.condition.secretDebtStatus": {
+      "ru": "Тайный долг: {status}",
+      "en": "Secret Debt: {status}"
+    },
+    "secretDebt.status.bound": {
+      "ru": "связан",
+      "en": "bound"
+    },
+    "secretDebt.status.paid-freedom": {
+      "ru": "выплачен",
+      "en": "paid freedom"
+    },
+    "secretDebt.status.takeover": {
+      "ru": "контроль перехвачен",
+      "en": "takeover"
     }
   }
 }
