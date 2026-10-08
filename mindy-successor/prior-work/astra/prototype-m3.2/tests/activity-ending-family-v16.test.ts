@@ -74,9 +74,9 @@ test('D38 Activity family exposes exact stable ending and Specialist reward IDs'
     const e=ending(ENDINGS[kind]);
     assert.equal(e.reward,REWARDS[kind]);
     assert.deepEqual(e.metaRewards,[{
-      kind:'unlock',
+      kind:'strongMeta',
       rewardId:REWARDS[kind],
-      unlock:REWARDS[kind]
+      reward:REWARDS[kind]
     }]);
   }
 });
