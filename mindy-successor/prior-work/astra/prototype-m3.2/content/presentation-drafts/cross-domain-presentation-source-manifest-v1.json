@@ -663,10 +663,6 @@
     {
       "presentationId": "ending/scholar-life",
       "reason": "Current ending identity outside assigned Tavern and target-Lumber ending coverage."
-    },
-    {
-      "presentationId": "ending/lumber-stay",
-      "reason": "Current legacy Lumber ending; C2-39 explicitly targets Hard Work / Forewoman / Forest."
     }
   ],
   "policies": {

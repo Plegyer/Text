@@ -98,14 +98,6 @@
       "captionKey": "presentation.static.tavern-ending-information-broker.caption"
     },
     {
-      "presentationId": "ending/lumber-stay",
-      "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-      "state": "exact-after-c2-52",
-      "fallbackId": "location/town/default",
-      "altKey": "presentation.static.ending.lumber-stay.alt",
-      "captionKey": "presentation.static.ending.lumber-stay.caption"
-    },
-    {
       "presentationId": "ending/lumber/hard-work",
       "sourceAsset": "assets/presentation/career-lumber-result.svg",
       "state": "existing-exact",
@@ -614,7 +606,7 @@
       "inventedTeacherSemanticIds": false
     },
     "animationFallback": {
-      "selectedSemanticSlots": 47,
+      "selectedSemanticSlots": 46,
       "animationsDisabledMustSelectStatic": true,
       "missingOptionalDynamicMustLeaveStaticCandidate": true
     },
@@ -635,12 +627,12 @@
   },
   "summary": {
     "workControls": 10,
-    "endingSlots": 9,
+    "endingSlots": 8,
     "forestSlots": 10,
     "povertySlots": 20,
     "schoolCourseSlots": 8,
     "teacherMediaSurfaces": 8,
-    "selectedSemanticSlots": 47,
+    "selectedSemanticSlots": 46,
     "gameplayMutation": false
   },
   "finalCandidateBase": "f3a684448b0681c355452b7d24d836e3926cb594"

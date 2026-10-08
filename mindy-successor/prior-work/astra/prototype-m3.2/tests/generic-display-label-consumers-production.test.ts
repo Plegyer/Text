@@ -8,7 +8,7 @@ const unlocks=JSON.parse(readFileSync('content/legacy-unlock-localization-v1.fix
 const app=readFileSync('src/ui/app.ts','utf8');
 
 const careerIds=['lumber','satyr-maid','undead-farm','tavern','hunter','guard','merchant','artist-geisha','assassin','prostitute'];
-const unlockIds=['guild','scholar','calendar','host','mediator','court','vitality','lumber.forewoman.compat','lumber.forest.compat','palace'];
+const unlockIds=['guild','scholar','calendar','host','mediator','court','lumber.forewoman.compat','lumber.forest.compat','palace'];
 
 test('all current profession identity labels and descriptions are bilingual',()=>{
  assert.equal(Object.keys(professions.strings).length,20);
@@ -25,6 +25,9 @@ test('all current profession identity labels and descriptions are bilingual',()=
 
 test('current legacy unlock labels are bilingual without changing unlock identity',()=>{
  assert.equal(Object.keys(unlocks.strings).length,10);
+ assert.equal(localization['unlock.vitality.label'],undefined);
+ assert.ok(localization['legacy.perk.lumber-stay-vitality.label']?.ru?.trim());
+ assert.ok(localization['legacy.perk.lumber-stay-vitality.label']?.en?.trim());
  for(const id of unlockIds){
   const key=`unlock.${id}.label`;
   assert.deepEqual(localization[key],unlocks.strings[key],key);

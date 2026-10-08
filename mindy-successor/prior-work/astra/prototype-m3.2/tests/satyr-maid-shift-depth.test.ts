@@ -18,7 +18,7 @@ test('Satyr Maid repeatable work ships 12 seasonal/context variants without chan
   assert.equal(action.cost.energy,1);
   assert.equal(action.cost.money,0);
   assert.deepEqual(action.wage,{
-    base:15,
+    base:37,
     weights:[
       {stat:'charm',factor:0.35},
       {stat:'sexuality',factor:0.25}

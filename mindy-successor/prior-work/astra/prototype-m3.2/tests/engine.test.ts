@@ -6,7 +6,7 @@ test('creation: twelve low stats, ten points, separate lust, no play before comp
  let s=freshSave();
  assert.equal(s.schemaVersion,6);
  for(const k of stats)assert.equal(s.run.character.stats[k],1);
- assert.equal(s.run.character.lust,1);
+ assert.equal(s.run.character.lust,5);
  assert.equal(s.run.resources.money,600);
  assert.equal(s.run.dayState.energyCurrent,3);
  assert.throws(()=>act(s,'arrival'));
@@ -78,13 +78,17 @@ test('refusal still blocks repeated romantic invitation',()=>{
  s=dispatch(s,{type:'choice',id:'no'},catalog);for(let i=0;i<3;i++)s=act(s,'visit');assert.equal(s.run.history['base.invite'].count,1);
 });
 
-test('legacy lumber vitality reward still changes compatibility daily budget',()=>{
- let s=started();for(let i=0;i<24;i++)s=act(s,'lumber');assert.ok(s.run.availableEndings.includes('lumber-stay'));
- s=dispatch(s,{type:'accept',id:'lumber-stay'},catalog);s=dispatch(s,{type:'newLife'},catalog);assert.equal(energyMax(s),4);assert.equal(s.run.metrics.energy,4);
+test('retired lumber-stay cannot be earned anew but historical ownership still grants one Energy',()=>{
+ let s=started();for(let i=0;i<24;i++)s=act(s,'lumber');assert.equal(s.run.availableEndings.includes('lumber-stay'),false);
+ assert.throws(()=>dispatch(s,{type:'accept',id:'lumber-stay'},catalog));
+ const historical=freshSave({completedEndings:['lumber-stay'],unlocks:['vitality']});
+ assert.equal(energyMax(historical),4);
+ assert.equal(historical.run.metrics.energy,4);
+ assert.equal(historical.meta.activeLegacyPerks.filter(id=>id==='legacy.lumber-stay.vitality').length,1);
 });
 
 test('lust is separate from progression stats but still changes legacy content probability and choices',()=>{
- const e=catalog.events.find(e=>e.id==='stage.goblin')!;const s=started();assert.equal(eventChance(e,s),.092);
+ const e=catalog.events.find(e=>e.id==='stage.goblin')!;const s=started();assert.equal(eventChance(e,s),.14);
  s.run.metrics.lust=60;assert.ok(eventChance(e,s)>.79);s.run.metrics.lust=100;assert.equal(eventChance(e,s),.85);
  s.run.flags['woods.met']=true;s.run.actionCounts.lumber=1;s.run.rng=0;
  const a=dispatch(s,{type:'action',id:'lumber'},catalog),b=dispatch(parseSave(JSON.stringify(s),catalog),{type:'action',id:'lumber'},catalog);

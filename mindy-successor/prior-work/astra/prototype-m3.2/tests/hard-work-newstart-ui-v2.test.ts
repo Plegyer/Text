@@ -57,7 +57,7 @@ test('creation UI shows only earned packages and toggles each whole package inde
     assert.match(guardCard.textContent,/Манеры \+5/);
     assert.match(professionalCard.textContent,/Сексуальность \+5/);
     assert.match(professionalCard.textContent,/Обаяние \+5/);
-    assert.match(professionalCard.textContent,/Похоть \+3/);
+    assert.match(professionalCard.textContent,/Похоть \+5/);
     assert.match(guardCard.querySelector('.hard-work-early-access').textContent,/Hard Work/);
 
     guard.click();

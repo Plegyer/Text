@@ -84,7 +84,7 @@ test('tradeoff implementation preserves costs, shift counters, wages, unlocks, p
     assert.ok(action,career);
     assert.deepEqual(action.cost,expected.cost,career+' cost');
     assert.deepEqual(action.effects,expected.effects,career+' shift effects');
-    assert.deepEqual(action.wage,expected.wage,career+' wage');
+    assert.deepEqual(action.wage,{...expected.wage,base:career==='lumber'?35:37},career+' D46 wage; historical weight contract retained');
     assert.deepEqual(action.conditions,expected.conditions,career+' unlock');
     for(const season of seasons){
       assert.deepEqual(

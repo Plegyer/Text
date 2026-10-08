@@ -11,10 +11,10 @@
     "requiredCiConclusion": "success"
   },
   "reachability": {
-    "selectedUniqueSemanticBindings": 102,
+    "selectedUniqueSemanticBindings": 101,
     "domainCounts": {
       "work": 56,
-      "endings": 9,
+      "endings": 8,
       "school": 11,
       "forest": 10,
       "ordinary-poverty": 20
@@ -1598,7 +1598,7 @@
   "validation": {
     "reducedMotionV9": {
       "test": "tests/presentation-reduced-motion-v9.test.ts",
-      "selectedSemanticBindings": 102,
+      "selectedSemanticBindings": 101,
       "productionDynamicBindings": 0,
       "preparedSequences": 9
     },
@@ -1613,7 +1613,7 @@
     },
     "endingParityV2": {
       "test": "tests/presentation-ending-parity-v9.test.ts",
-      "endingIds": 9
+      "endingIds": 8
     },
     "forestParityV2": {
       "test": "tests/presentation-forest-parity-v9.test.ts",
@@ -1636,12 +1636,12 @@
     },
     "replacementEditorInvarianceV3": {
       "test": "tests/presentation-replacement-editor-invariance-v9.test.ts",
-      "semanticBindings": 102,
+      "semanticBindings": 101,
       "teacherMedia": 8
     },
     "localeAccessibilityParityV4": {
       "test": "tests/presentation-locale-accessibility-v9.test.ts",
-      "semanticBindings": 102,
+      "semanticBindings": 101,
       "teacherMedia": 8,
       "helpKeys": 5
     },
@@ -1664,7 +1664,7 @@
       "focusableLockedReason": "prepared-in-pr136-not-current-main"
     },
     "endings": {
-      "existingIds": 9,
+      "existingIds": 8,
       "visibleActionName": true,
       "disabledWhenUnavailable": true,
       "enabledWhenEligible": true
@@ -1778,7 +1778,7 @@
       "distinctLocalizedUiLabel": "prepared-in-pr136-not-current-main"
     },
     "completedState": "active-current-main",
-    "exactStaticCount": 9
+    "exactStaticCount": 8
   },
   "forestParity": {
     "currentSemanticIds": [
@@ -2132,7 +2132,7 @@
     "fixesRequired": 0
   },
   "sourceIntegrity": {
-    "selectedSemanticBindings": 102,
+    "selectedSemanticBindings": 101,
     "fallbackRoots": 1,
     "schoolTeacherMedia": 8,
     "uniqueProjectOwnedSources": [
@@ -3020,7 +3020,7 @@
     "deadIdentityReferenceCount": 0
   },
   "replacementEditorInvariance": {
-    "semanticBindings": 102,
+    "semanticBindings": 101,
     "teacherMedia": 8,
     "replacementSource": "assets/stage-town.svg",
     "gameplayDefinitionsPreserved": true,
@@ -3034,7 +3034,7 @@
       "en"
     ],
     "activeExactSemanticBindings": {
-      "count": 102,
+      "count": 101,
       "complete": 101
     },
     "schoolTeacherMedia": {

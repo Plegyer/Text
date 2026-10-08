@@ -8,7 +8,7 @@ const endings=JSON.parse(readFileSync('content/ending-localization-production-v2
 const actions=JSON.parse(readFileSync('content/ordinary-action-result-localization-v3.fixture.json','utf8'));
 const app=readFileSync('src/ui/app.ts','utf8');
 
-const endingIds=['guild-life','scholar-life','ending.tavern.innkeeper','ending.tavern.information-broker','ending.tavern.sanctuary','lumber-stay','ending.lumber.hard-work','ending.lumber.forewoman','ending.lumber.forest'].sort();
+const endingIds=['guild-life','scholar-life','ending.tavern.innkeeper','ending.tavern.information-broker','ending.tavern.sanctuary','ending.lumber.hard-work','ending.lumber.forewoman','ending.lumber.forest'].sort();
 const actionIds=['work','forage','brew','sell','scales','exam','deliver','visit','oddjob','repay','rent-room','rest','arrival','forest-search','tavern-talk','landlord'].sort();
 
 test('ending and ordinary action production patches are fully merged RU EN',()=>{
@@ -16,7 +16,12 @@ test('ending and ordinary action production patches are fully merged RU EN',()=>
  assert.equal(Object.keys(endings.strings).length,18);
  assert.equal(Object.keys(actions.strings).length,32);
  assert.equal(Object.keys(merged).length,50);
+ const retired=new Set(['ending.lumber-stay.title','ending.lumber-stay.description']);
  for(const [key,value] of Object.entries(merged) as [string,{ru:string;en:string}][]){
+  if(retired.has(key)){
+   assert.equal(root[key],undefined,'retired live label '+key);
+   continue;
+  }
   assert.deepEqual(root[key],value,key);
   assert.ok(value.ru?.trim(),key+' ru');
   assert.ok(value.en?.trim(),key+' en');

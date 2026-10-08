@@ -147,5 +147,5 @@ test('completed chain does not repeat through shift 24 and tenure ending remains
   s=lumber(s);assert.equal(s.run.actionCounts.lumber,count);assert.equal(s.run.pending,null);
  }
  assert.deepEqual(chainIds.map(id=>s.run.history[id]),history);
- assert.ok(s.run.availableEndings.includes('lumber-stay'));
+ assert.equal(s.run.availableEndings.includes('lumber-stay'),false,'retired lumber-stay must not return as a live ending');
 });

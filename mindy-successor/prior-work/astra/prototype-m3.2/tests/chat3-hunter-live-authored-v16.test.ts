@@ -11,6 +11,7 @@ const loc=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 const baseline=JSON.parse(readFileSync('content/hunter-authored-v16-mechanics-baseline.fixture.json','utf8')).projection;
 baseline.action.seasonal.spring.push({kind:'modifyStat',stat:'endurance',delta:-1});
 baseline.action.seasonal.winter.push({kind:'modifyStat',stat:'dexterity',delta:-1});
+baseline.action.wage.base=37;
 const contract=JSON.parse(readFileSync('../../../docs/tasks/HUNTER_RUNTIME_CONTRACT_v1.json','utf8'));
 const packFiles=['hunter-career.json','hunter-clues.json','hunter-items.json','hunter-relationship.json','hunter-routes.json','hunter-school.json'];
 const packs=packFiles.map(name=>JSON.parse(readFileSync('content/packs/'+name,'utf8')));

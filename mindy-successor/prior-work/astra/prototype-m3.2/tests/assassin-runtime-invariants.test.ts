@@ -18,7 +18,7 @@ test('Assassin preserves shipped ordinary-work unlock, seasonal tuning, and Hard
   ]},
   {kind:'calendarYear',op:'gte',value:3}
  ]}]);
- assert.deepEqual(action.wage,{base:15,weights:[
+ assert.deepEqual(action.wage,{base:37,weights:[
   {stat:'dexterity',factor:0.35},{stat:'wits',factor:0.3},
   {stat:'reason',factor:0.2},{stat:'manners',factor:0.1}
  ]});

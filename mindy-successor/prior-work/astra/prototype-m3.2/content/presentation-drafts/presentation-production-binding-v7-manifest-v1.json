@@ -62,16 +62,6 @@
         "exactProductionBinding": true
       },
       {
-        "presentationId": "ending/lumber-stay",
-        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-        "state": "exact-after-c2-52",
-        "fallbackId": "location/town/default",
-        "altKey": "presentation.static.ending.lumber-stay.alt",
-        "captionKey": "presentation.static.ending.lumber-stay.caption",
-        "bindingState": "active-current-main",
-        "exactProductionBinding": true
-      },
-      {
         "presentationId": "ending/lumber/hard-work",
         "sourceAsset": "assets/presentation/career-lumber-result.svg",
         "state": "existing-exact",
@@ -706,12 +696,12 @@
     "projectOwnedSourcesOnly": true
   },
   "summary": {
-    "activeSemanticSlots": 47,
+    "activeSemanticSlots": 46,
     "preparedOnlySemanticSlots": 0,
     "activeTeacherMediaSurfaces": 8,
     "activeWorkControls": 10,
-    "currentEndingIds": 9,
-    "currentEndingExactStatic": 9,
+    "currentEndingIds": 8,
+    "currentEndingExactStatic": 8,
     "currentEndingGaps": 0,
     "teacherLocaleFallbacks": 8
   },
@@ -1028,14 +1018,6 @@
         "fallbackId": "location/town/default"
       },
       {
-        "endingId": "lumber-stay",
-        "presentationId": "ending/lumber-stay",
-        "exactStatic": true,
-        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-        "altKey": "presentation.static.ending.lumber-stay.alt",
-        "fallbackId": "location/town/default"
-      },
-      {
         "endingId": "ending.lumber.hard-work",
         "presentationId": "ending/lumber/hard-work",
         "exactStatic": true,
@@ -1121,19 +1103,6 @@
         "altKey": "presentation.static.tavern-ending-information-broker.alt",
         "fallbackId": "location/town/default",
         "captionKey": "presentation.static.tavern-ending-information-broker.caption",
-        "ruAlt": true,
-        "enAlt": true,
-        "ruCaption": true,
-        "enCaption": true
-      },
-      {
-        "endingId": "lumber-stay",
-        "presentationId": "ending/lumber-stay",
-        "exactStatic": true,
-        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-        "altKey": "presentation.static.ending.lumber-stay.alt",
-        "fallbackId": "location/town/default",
-        "captionKey": "presentation.static.ending.lumber-stay.caption",
         "ruAlt": true,
         "enAlt": true,
         "ruCaption": true,
@@ -1259,7 +1228,7 @@
   "validation": {
     "localeAccessibilityParity": {
       "test": "tests/presentation-locale-accessibility-parity-v7.test.ts",
-      "semanticSlots": 47,
+      "semanticSlots": 46,
       "teacherMediaSurfaces": 8,
       "workAccessibilityKeys": [
         "ui.work.lockedCareerHelp",
@@ -1272,7 +1241,7 @@
     },
     "replacementEditor": {
       "test": "tests/presentation-replacement-editor-regression-v7.test.ts",
-      "semanticSlots": 47,
+      "semanticSlots": 46,
       "teacherMediaSurfaces": 8,
       "semanticIdentityPreserved": true,
       "mediaIdentityPreserved": true,
@@ -1281,7 +1250,7 @@
     },
     "registryCollisionStaleId": {
       "test": "tests/presentation-registry-collision-stale-v7.test.ts",
-      "selectedSemanticSlots": 47,
+      "selectedSemanticSlots": 46,
       "requireUniqueSemanticIds": true,
       "requireCurrentRegistryIdentity": true,
       "requireExactProductionBinding": true,

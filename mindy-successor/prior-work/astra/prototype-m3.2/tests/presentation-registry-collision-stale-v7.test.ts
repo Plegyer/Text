@@ -17,7 +17,7 @@ const selected=[
 
 test('queue-v7 selected semantic IDs are unique, live, exact-bound and source-backed',()=>{
   presentationSchema.parse(presentation);
-  assert.equal(selected.length,47);
+  assert.equal(selected.length,46);
   const ids=selected.map((entry:any)=>entry.presentationId);
   assert.equal(new Set(ids).size,ids.length,'duplicate selected semantic ID');
 
@@ -70,5 +70,5 @@ test('all current gameplay ending identities map to one live presentation slot w
     assert.equal(entry.exactStatic,true,entry.presentationId);
     assert.ok(presentation.slots?.[entry.presentationId]?.static,entry.presentationId);
   }
-  assert.equal(endingEntries.length,9);
+  assert.equal(endingEntries.length,8);
 });

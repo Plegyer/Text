@@ -36,7 +36,7 @@ test('current production limits active dynamic bindings to approved starter and 
 test('animation-off resolution is deterministic and static for every queue-v9 active binding',()=>{
   const checked=applyPresentation(catalog,presentation);
   const selected=manifest.reachability.activeExact;
-  assert.equal(selected.length,102);
+  assert.equal(selected.length,101);
   for(const entry of selected){
     const a=resolvePresentation(checked,presentation,entry.presentationId,{animationsEnabled:false,occurrenceKey:'reduced-motion-v9'});
     const b=resolvePresentation(checked,presentation,entry.presentationId,{animationsEnabled:false,occurrenceKey:'reduced-motion-v9'});

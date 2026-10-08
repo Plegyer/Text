@@ -21,7 +21,7 @@ test('Artist/Geisha v16 preserves shipped action, seasonal, and Hard Work identi
     ]
   }]);
   assert.deepEqual(action.wage,{
-    base:15,
+    base:37,
     weights:[
       {stat:'manners',factor:0.3},
       {stat:'charm',factor:0.3},

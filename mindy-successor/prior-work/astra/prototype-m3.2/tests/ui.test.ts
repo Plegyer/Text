@@ -147,9 +147,9 @@ test('renderer: all ten target careers are exposed but only starter trio is avai
    return !!raw&&JSON.parse(raw).run.resources.money>beforeMoney;
   });
   const saved=JSON.parse(w.localStorage.getItem('portal-life.v1'));
-  assert.equal(saved.run.resources.money,beforeMoney+16);
+  assert.equal(saved.run.resources.money,beforeMoney+37);
   assert.equal(saved.run.historyState.actionCounts['lumber.shift'],1);
-  assert.match(saved.run.historyState.journal.join('\n'),/Заработано: 16 монет/);
+  assert.match(saved.run.historyState.journal.join('\n'),/Заработано: 37 монет/);
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });

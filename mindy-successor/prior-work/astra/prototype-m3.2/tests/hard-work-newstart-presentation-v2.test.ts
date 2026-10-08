@@ -34,7 +34,7 @@ test('New Start+ presentation derives locked package effects from the centralize
   );
   assert.deepEqual(
     hardWorkPackageEffectLabels('prostitute','en',stat=>statNames[stat]),
-    ['Sexuality +5','Charm +5','Lust +3']
+    ['Sexuality +5','Charm +5','Lust +5']
   );
 });
 
