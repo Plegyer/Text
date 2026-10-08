@@ -1,0 +1,25 @@
+{
+  "stage": "Stage3",
+  "merge_pr": 298,
+  "merge_url": "https://github.com/Plegyer/Text/pull/298",
+  "production_merge_sha": "55e283753705747f208290acd840da4740559aa7",
+  "official_workflow": "mindy-successor check",
+  "official_main_push_run_id": 37776012058,
+  "run_url": "https://github.com/Plegyer/Text/actions/runs/37776012058",
+  "event": "push",
+  "head_branch": "main",
+  "head_sha": "55e283753705747f208290acd840da4740559aa7",
+  "conclusion": "success",
+  "npm_run_check": {
+    "total": 1287,
+    "pass": 1287,
+    "fail": 0,
+    "skipped": 0
+  },
+  "typecheck": "pass",
+  "validate": "pass",
+  "build": "pass",
+  "stage_closed": true,
+  "broad_burndown_after_closure": 2,
+  "next_stage": "Stage4 D46+D47+legacy ending retirement"
+}

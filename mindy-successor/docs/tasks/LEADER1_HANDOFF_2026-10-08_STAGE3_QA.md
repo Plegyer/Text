@@ -1,3 +1,5 @@
+> **ARCHIVED — Stage 3 was closed 2026-10-08.** For current Stage 4 work, read `LEADER_STATE.md` and `CURRENT_LEADER1_CHECKPOINT.md` first. Stage 3 exact-main CI `37776012058` SUCCESS on `55e283753705747f208290acd840da4740559aa7` (1287/1287); broad burn-down is now 2. The historical instructions below are preserved as transfer evidence, not current action.
+
 # LEADER 1 HANDOFF — 2026-10-08 — STAGE 3 ACTIVITY + CAMP + D38
 
 Status: **AUTHORITATIVE NEXT-LEADER RECOVERY POINT**

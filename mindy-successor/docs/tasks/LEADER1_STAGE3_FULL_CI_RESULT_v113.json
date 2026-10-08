@@ -1,0 +1,27 @@
+{
+  "stage": "Stage3",
+  "source_sha": "7966a15fcebfd358ae7ae08e3ae9a84b229be050",
+  "source_branch": "lead/stage3-two-compat-fixes-v112",
+  "workflow_run_id": 37775331892,
+  "run_url": "https://github.com/Plegyer/Text/actions/runs/37775331892",
+  "conclusion": "success",
+  "focused_tests": {
+    "total": 12,
+    "pass": 12,
+    "fail": 0
+  },
+  "npm_run_check": {
+    "total": 1287,
+    "pass": 1287,
+    "fail": 0,
+    "skipped": 0
+  },
+  "typecheck": "pass",
+  "validate": "pass",
+  "build": "pass",
+  "production_changed_since_v111": false,
+  "only_changed_files_since_v111": [
+    "tests/chat3-forest-authored-depth-v13.test.ts",
+    "tests/merchant-production-presentation-reachability-c2-192.test.ts"
+  ]
+}

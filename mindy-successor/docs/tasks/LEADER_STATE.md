@@ -4,7 +4,19 @@ This is the single current operational notebook for Leader 1.
 
 Rule: read this file, then re-query live GitHub refs before acting. Exact source SHA + executable evidence outrank prose. Old handoffs/checkpoints remain archive only.
 
-## Live Stage 3 execution update — 2026-10-08 (latest)
+## Latest operational state — Stage 3 CLOSED; Stage 4 CURRENT (2026-10-08)
+
+- Stage 1, Stage 2 and **Stage 3 are CLOSED**. Broad burn-down **2** (Stage 4 + Stage 5 remain).
+- Stage 3 accepted exact source: `7966a15fcebfd358ae7ae08e3ae9a84b229be050`, branch `lead/stage3-two-compat-fixes-v112`. Two QA compatibility fixes only compared to `c9b2805d...`: Forest Field Time expected fields and new D36 Merchant supplier-network existing catalog fallback. No product changes.
+- Stage 3 exact-source gate: `37775331892` SUCCESS, focused 12/12, full `npm run check` 1287/1287 PASS, typecheck/validate/build PASS.
+- Leader merged PR #298 via a merge commit: `55e283753705747f208290acd840da4740559aa7`. Main control-plane docs from Stage 2 were preserved.
+- **Official exact-main** workflow `mindy-successor check` run `37776012058` SUCCESS on exact merge SHA `55e283753705747f208290acd840da4740559aa7`; 1287/1287 PASS, 0 FAIL, typecheck/validate/build PASS.
+- Stage 3 evidence: `LEADER1_STAGE3_FULL_CI_RESULT_v113.json` and `LEADER1_STAGE3_EXACT_MAIN_CI_RESULT_v114.json`.
+- Current Stage 4: **D46 + D47 + legacy lumber-stay ending retirement**. Chat2 receives **production assembly only**, using `CHAT2_STAGE4_D46_D47_LEGACY_ASSEMBLY_TASK_2026-10-08.md`; the user must manually activate that worker. Chat2 is currently parked; do not imply it is running.
+- Stage 4 freeze base at assembly time from live `main` (production release anchor above; a docs-only state update may follow). Never overwrite Stage 3/shared-file semantic owners with older producers. Leader owns focused QA, exact-source full CI, production merge and official exact-main CI.
+- All older Stage 3 "current action" blocks below are archived pre-closure history and are **superseded by this section**.
+
+## Historical Stage 3 pre-closure QA snapshot — 2026-10-08 (superseded)
 
 - **Stage 3 not closed. Broad burn-down remains 3.** Stage1 and Stage2 remain CLOSED.
 - Current `main` before this doc update: `767ca946ef7a05a2e1db022bec4c686e1f142fcd`; docs-only/control-plane change since Stage2. Re-query.
@@ -62,14 +74,19 @@ Rule: read this file, then re-query live GitHub refs before acting. Exact source
   - evidence: `LEADER1_STAGE2_EXACT_MAIN_CI_RESULT_v102.json`
 - [x] broad burn-down decremented 4 -> 3
 
-### Stage 3 — CURRENT
-- [ ] **Activity + Camp + D38 — CURRENT ITEM**
+### Stage 3 — CLOSED
+- [x] **Activity + Camp + D38 — CLOSED (exact-source and exact-main CI green)**
+  - exact source: `7966a15fcebfd358ae7ae08e3ae9a84b229be050`
+  - production merge: `55e283753705747f208290acd840da4740559aa7`
+  - exact-source run: `37775331892` SUCCESS 1287/1287
+  - official exact-main run: `37776012058` SUCCESS 1287/1287
+- [x] broad burn-down decremented 3 -> 2
 
 ### Remaining broad stages
-- [ ] Stage 4 — D46 + D47 + legacy ending retirement
+- [ ] **Stage 4 — D46 + D47 + legacy ending retirement — CURRENT**
 - [ ] Stage 5 — final save/migration/UI/localization/presentation/regression closure
 
-Current broad burn-down: **3**
+Current broad burn-down: **2**
 
 ## Current execution model
 
@@ -92,7 +109,7 @@ Current worker status:
 - Chat5: stands
 - Chat6: stands
 
-## Current item — Stage 3 Activity + Camp + D38
+## Historical item — Stage 3 Activity + Camp + D38 (closed)
 
 Production assembly complete. Worker source `0f7c4b6cbbba55cfc91a854e3d64baf933191a84`; docs-only worker handoff `e4fefda2c3cebc657eaee309c682c0316425e275`.
 
@@ -100,7 +117,7 @@ Focused-green source `1a8c739fb66253991009d04ecb0a2e50764f6d5f`, run `3775545477
 
 Current full-suite candidate `c9b2805d60762221cbd89d9ad438982ea8d28531`, v111 run `37760102503` FAILURE 1285/1287. Two remaining test compatibility blockers detailed in `LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md`.
 
-Current first action: narrow Forest adapterConfig and Merchant supplier-network fallback investigation/test repair. Then exact-source full CI; only after green merge and exact-main CI.
+Historical first action (completed): Forest adapterConfig and Merchant supplier-network fallback compatibility fixes, exact-source full CI, Leader merge and official exact-main CI.
 
 ## Governance that must not drift
 
