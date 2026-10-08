@@ -1,5 +1,14 @@
 # Лидер 1 — обязательная библиотека знаний проекта / CURRENT KNOWLEDGE
 
+## CURRENT RC0 EXTENDED CROSS-LIFE QA — PENDING EXACT-HEAD VERDICT (2026-10-08)
+
+**Already accepted:** merged [PR #305](https://github.com/Plegyer/Text/pull/305) test-only 50-shift + 160-day Lumber/School/Forest/expiry/NG+ natural paths. Exact source CI #37819314383 SUCCESS and official merged-main [CI #37819891908](https://github.com/Plegyer/Text/actions/runs/37819891908) SUCCESS, **1356 PASS / 0 FAIL / 4 optional SKIP**, merged executable/test commit `44f49fde938c46196d57a3e4eaeedc8197f7cb85`. [Issue #304](https://github.com/Plegyer/Text/issues/304) **CLOSED**. No production code change.
+
+**New unaccepted candidate:** [Draft PR #307](https://github.com/Plegyer/Text/pull/307), exact head `a204b6a3672bd6edebb9fcd2ffd99a41f8e09152`, test-only `tests/rc0-natural-ten-lives-palace-chain.test.ts`. Tests 10 ordinary Hard Work careers over **500 natural shift commands/ten lives** with real calendar/Night/Meta transactions, 11th life **10 earned packages activated → Palace Day-1 invite**, natural 15-duty progression, service-life ending, NG+. Source **Windows Actions [#37821532773](https://github.com/Plegyer/Text/actions/runs/37821532773) RUNNING** when written. THIS IS NOT YET ACCEPTED PROOF; if failed, read exact logs before deciding whether QA choices, tests or game need change. **Do not merge PR #307 without green exact-head and official exact-main.** User GUI tests actual installer tomorrow; worker Chat4 handles GIF needs after manual user activation. No overlap.
+
+---
+
+
 ## СВЕЖЕЕ ПОРУЧЕНИЕ И QA — когда пользователь проверяет игру завтра (2026-10-08)
 
 Пользователь подтвердил **ручной Windows playtest на завтра**, попросил **сегодня продолжать независимую работу**. Нельзя выдавать за него чистую GUI-установку или просить провести её раньше.
