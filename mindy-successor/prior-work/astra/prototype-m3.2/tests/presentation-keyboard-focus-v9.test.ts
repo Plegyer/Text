@@ -88,15 +88,19 @@ test('ending controls expose a visible name, disable unavailable endings and ena
   const {dom,w,errors}=await boot(s);
   try{
     w.document.querySelector('[data-panel="legacy"]').click();
-    await wait(()=>w.document.querySelectorAll('[data-ending]').length===catalog.definitions.endings.length);
+    await wait(()=>!!w.document.querySelector('[data-ending="ending.lumber.hard-work"]'));
     assert.equal(w.document.activeElement?.id,'close');
     const buttons=[...w.document.querySelectorAll('[data-ending]')];
     for(const button of buttons)assert.ok(button.textContent?.trim(),'ending visible name');
+    const visibleIds=buttons.map((button:any)=>button.dataset.ending);
+    const ordinaryEndingIds=catalog.definitions.endings.filter(ending=>!ending.id.startsWith('ending.palace.')).map(ending=>ending.id);
+    assert.deepEqual([...visibleIds].sort(),[...ordinaryEndingIds].sort());
     const eligible=w.document.querySelector('[data-ending="ending.lumber.hard-work"]');
     assert.ok(eligible);
     assert.equal(eligible.disabled,false);
     const unavailable=buttons.filter((button:any)=>button.dataset.ending!=='ending.lumber.hard-work');
     assert.ok(unavailable.some((button:any)=>button.disabled));
+    assert.equal(buttons.some((button:any)=>button.dataset.ending?.startsWith('ending.palace.')),false);
     assert.deepEqual(errors,[]);
   }finally{dom.window.close();}
 });
