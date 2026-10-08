@@ -178,10 +178,17 @@ test('C2-192 Merchant registry preserves 68 frozen surfaces plus four Stage3 sur
     'ending/merchant/speculator-smuggler',
     'ending/merchant/patron-of-routes'
   ]);
+  const supplierNetworkId='relationship/merchant-supplier/trade-corridor-production-supplier-network/default';
+  assert.equal(presentation.slots?.[supplierNetworkId],undefined,'D36 supplier network has no authored override');
   for(const id of ids){
     const resolved=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'merchant-c2-192-static'});
     assert.equal(resolved.textOnly,false,id);
-    assert.equal(resolved.selected?.source,d40EndingSlots.has(id)?'catalog':'override-static',id);
+    assert.equal(resolved.selected?.source,d40EndingSlots.has(id)||id===supplierNetworkId?'catalog':'override-static',id);
+    if(id===supplierNetworkId){
+      assert.deepEqual(resolved.diagnostics,[],id+' must resolve its authored slot');
+      assert.equal(resolved.selected?.slotId,'location/town/default',id+' static catalog fallback');
+      assert.equal(resolved.selected?.mediaId,'stage.town',id+' existing project media');
+    }
     assert.ok(existsSync(resolved.selected!.src),resolved.selected!.src);
   }
   assert.equal(JSON.stringify(save),before);
