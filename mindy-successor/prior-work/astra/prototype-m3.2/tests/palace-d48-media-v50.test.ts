@@ -152,7 +152,7 @@ test('v49 provides RU/EN alt and caption parity for every D48 visual family',()=
 });
 
 test('v49 remaps no non-Palace presentation slot to a D48 Palace asset',()=>{
-  const palaceSrcs=new Set(Object.values(families).map(family=>family.src));
+  const palaceSrcs=new Set<string>(Object.values(families).map(family=>family.src));
   for(const [slotId,slot] of Object.entries(presentation.slots)){
     if(palaceSrcs.has(slot.static?.src??'')){
       assert.match(slotId,/palace/,'D48 asset leaked into non-Palace slot '+slotId);
