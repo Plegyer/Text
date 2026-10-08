@@ -712,7 +712,7 @@ export function applyNetworkRetainerAtStartDay(input:Readonly<{
 
 export function validateStrongMetaRegistry():void{
   const ids=Object.keys(strongMetaRegistry);
-  if(ids.length!==22)throw new Error('Strong Meta registry must contain four v7 rewards, two D39 Specialists, seven D40 Specialists, and nine D41 Specialists.');
+  if(ids.length!==25)throw new Error('Strong Meta registry must contain four v7 rewards, three D38 Specialists, two D39 Specialists, seven D40 Specialists, and nine D41 Specialists.');
   for(const [key,definition] of Object.entries(strongMetaRegistry)){
     if(key!==definition.id)throw new Error(`Strong Meta registry key mismatch: ${key}`);
     if(!strongRewardIdPattern.test(key))throw new Error(`Invalid Strong Meta reward ID: ${key}`);
@@ -720,8 +720,12 @@ export function validateStrongMetaRegistry():void{
   if(new Set(ids).size!==ids.length)throw new Error('Duplicate Strong Meta reward ID.');
   const specialists=Object.values(strongMetaRegistry).filter(x=>x.class==='specialist');
   const keystones=Object.values(strongMetaRegistry).filter(x=>x.class==='keystone');
-  if(specialists.length!==19)throw new Error('Strong Meta Specialist registry drift.');
+  if(specialists.length!==22)throw new Error('Strong Meta Specialist registry drift.');
   if(keystones.length!==3)throw new Error('Strong Meta Keystone registry drift.');
+  for(const id of [STRONG_META_IDS.activitySurveyorsAtlas,STRONG_META_IDS.activityFieldArchive,STRONG_META_IDS.activityContactNetwork]){
+    const definition=strongMetaRegistry[id];
+    if(definition.class!=='specialist'||definition.authority!=='D38')throw new Error(`D38 Specialist registry drift: ${id}`);
+  }
   for(const id of [STRONG_META_IDS.palaceSteadyPractice,STRONG_META_IDS.palaceFormalIntroduction]){
     const definition=strongMetaRegistry[id];
     if(definition.class!=='specialist'||definition.authority!=='D39')throw new Error(`D39 Specialist registry drift: ${id}`);
