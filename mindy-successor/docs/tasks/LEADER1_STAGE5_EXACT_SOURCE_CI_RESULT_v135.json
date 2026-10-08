@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "status": "SUCCESS",
+  "acceptance": "EXACT_SOURCE_ACCEPTED",
+  "date": "2026-10-08",
+  "sourceSha": "8ea2279a5097e6568d9d31e9137ca3feb1f1a4e1",
+  "wrapperSha": "a917d0cbd3cc1fc2514a9ab5f3b6e3f32663b8ea",
+  "runId": 37809954382,
+  "runUrl": "https://github.com/Plegyer/Text/actions/runs/37809954382",
+  "requiredGates": {
+    "install": "PASS",
+    "typecheck": "PASS",
+    "validate": "PASS",
+    "build": "PASS",
+    "legacyGoldenAssertions": {
+      "passed": 32,
+      "total": 32
+    },
+    "strictPlayerFacing": {
+      "passed": 6,
+      "total": 6
+    },
+    "saveMigrationHistorical": {
+      "passed": 38,
+      "total": 38
+    },
+    "focusedUndead": {
+      "passed": 4,
+      "total": 4
+    },
+    "renderedChromium": {
+      "ru": "PASS",
+      "en": "PASS",
+      "modalAria": "PASS",
+      "keyboardFocus": "PASS",
+      "imageAlt": "PASS",
+      "caption": {
+        "ru": "PASS",
+        "en": "PASS",
+        "note": "browser-only intercepted source-backed published slot injected at entry; natural route not asserted"
+      }
+    },
+    "fullCheck": {
+      "passed": 1354,
+      "failed": 0,
+      "skipped": 4,
+      "total": 1358
+    }
+  },
+  "frozenGoldenBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
+  "frozenValidatorBlob": "e40737f3c6d6da83d1e4692e4457c04936279d53",
+  "mergePr": 303,
+  "mergeCommit": "bb2a1c8649bf150b74611eda958ea874a8905952"
+}
