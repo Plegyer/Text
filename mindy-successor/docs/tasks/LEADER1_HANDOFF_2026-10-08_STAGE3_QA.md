@@ -4,6 +4,32 @@ Status: **AUTHORITATIVE NEXT-LEADER RECOVERY POINT**
 
 This document supersedes older prose handoffs for active sequencing. Read this file, then `LEADER_STATE.md`, then re-query live GitHub before mutating anything.
 
+## LIVE RECOVERY — 2026-10-08, latest verified state (READ FIRST)
+
+**Stage 3 is NOT merged, NOT closed, and burn-down remains 3.** This block supersedes stale current-action text below; historical v105/v109 details below are context, not the next task.
+
+- Current `main` before this handoff refresh: `767ca946ef7a05a2e1db022bec4c686e1f142fcd` — docs/control-plane only since Stage 2. Re-query live ref before acting.
+- Stage 2 is CLOSED: production merge `e38273a09e44e39733eeb74f3e622cc2b6428884`; official exact-main run `37737669459` SUCCESS, 1198/1198.
+- Worker Stage 3 production head: `0f7c4b6cbbba55cfc91a854e3d64baf933191a84`; docs-only worker handoff `e4fefda2c3cebc657eaee309c682c0316425e275` on `chat2/assembly-activity-camp-d38-current-main-v103`.
+- Post-worker integrated focused-green source: `1a8c739fb66253991009d04ecb0a2e50764f6d5f` (includes narrow `strongMeta.ts` code repair plus focused-fixture repairs over worker production source).
+- Focused v108 `37755454777` **SUCCESS** on exact `1a8c739...` (`qa-stage3-focused-v108@28ab56f384c4cbb1ca2ff0072f04975d01ba4104`).
+- Full CI v109 `37755758953` on that focused source: **FAILURE, 1277/1287 PASS (10 failures)**. Typecheck, validate, build passed.
+- v110 compatibility source `lead/stage3-full-compat-v110@c9b2805d60762221cbd89d9ad438982ea8d28531` differs from focused-green `1a8c739...` by **eight tests only; no production changes**.
+- Latest full CI v111 `37760102503`: **COMPLETED FAILURE, 1285/1287 PASS, exactly 2 failing tests**. Wrapper `qa-stage3-full-v111@39bf4292cb1d56355984d277a8e2b3f8652758a4` checks out and guards **exact source `c9b2805...`**. npm ci, typecheck, validate, build passed; full test suite has the two failures listed below.
+
+### Exactly two remaining v111 blockers
+
+1. `tests/chat3-forest-authored-depth-v13.test.ts`, test `C3-133/C3-134/C3-135/C3-136 authored route and challenge pools are bilingual and use existing IDs`, at line ~73. Test still asserts whole `activity.adapterConfig` object equals four old fields. Actual schema adds canonical `fieldTimeSegments:6` and `advanceFieldTimeCost:1`. Fix only this stale test expectation (include/assert the two locked FT fields and preserve existing checks); do not remove Field Time from production.
+2. `tests/merchant-production-presentation-reachability-c2-192.test.ts`, test `C2-192 Merchant registry preserves 68 frozen surfaces plus four Stage3 surfaces and stays static-safe`, at line ~184. New `relationship/merchant-supplier/trade-corridor-production-supplier-network/default` resolves `selected.source='catalog'`, but test currently universally expects `override-static` (except three D40 endings). `content/presentation.json` has **no explicit slot override** for that new Stage3 event. Inspect `resolvePresentation` to confirm usable project-owned static catalog fallback (`textOnly=false`, existing media asset, correct authored slot) and keep the original 68 frozen overrides strict. If fallback is valid, add **narrow ID-scoped** catalog expectation for this new D36 surface; do NOT relax every Merchant surface or add a new visual without authority. If fallback is invalid, treat as an actual production blocker and diagnose before repair.
+
+### FIRST NEXT-LEADER ACTION (no worker needed)
+
+- Read this block, then `LEADER_STATE.md`; re-query GitHub `main`, `lead/stage3-full-compat-v110`, Stage3 worker branch and Actions run `37760102503`.
+- On a fresh Leader-only candidate based **exactly** on `c9b2805d60762221cbd89d9ad438982ea8d28531`, make only the two verified compatibility corrections; do not modify the original frozen worker handoff.
+- Run the two affected tests (and typecheck/validate/build) on the new exact SHA, then full `npm run check` via one exact-source Actions gate. Avoid chains of duplicated diagnostic jobs. Preserve all product assertions.
+- Only after full CI GREEN, merge that exact tested production+test candidate into the **latest** `main`, preserving docs-only `main` handoff/notebook updates; require the official exact-main CI green. Only then mark Stage 3 closed and reduce burn-down **3 -> 2**.
+- All worker chats are parked. Chat2 is production assembly only; Leader owns QA/full CI/test-only fixes/merge/exact-main. User manually activates workers. Do not delegate QA-only steps.
+
 ## 1. Current project state
 
 Broad burn-down: **3**
@@ -147,79 +173,13 @@ D38 ending bindings statically confirmed:
 - Network -> `specialist.activity.contact-network`
 - canonical `metaRewards` use `kind:'strongMeta'`.
 
-## 6. Stage 3 focused gate — CURRENT BLOCKER
+## 6. Historical v105 focused gate (CLOSED — NOT CURRENT)
 
-Leader QA branch:
-`qa-stage3-focused-v105`
+The original `37753332403` v105 run failed on a synthetic Activity option fixture's required `tags:[]` and `carriedResults:[]`. That blocker was repaired during subsequent Leader QA.
 
-Workflow wrapper commit:
-`dcfe354b7aaec69cb263abe986ca4eedb4e1eb75`
+Focused v108 `37755454777` later PASSED on exact source `1a8c739fb66253991009d04ecb0a2e50764f6d5f`.
 
-Exact product source guarded by workflow:
-`0f7c4b6cbbba55cfc91a854e3d64baf933191a84`
-
-Run:
-`37753332403`
-
-Result:
-**FAILURE at typecheck**
-
-Passed before failure:
-- checkout
-- exact SHA guard
-- setup Node
-- npm ci
-
-Failed:
-- `npm run typecheck`
-
-Skipped:
-- validate
-- build
-- focused tests
-
-Exact TypeScript error:
-`tests/item-capability-activity-closure.test.ts(124,23) TS2345`
-
-The manually inserted test fixture Activity option is missing the now-required fields:
-- `tags`
-- `carriedResults`
-
-Relevant fixture currently pushes:
-```ts
-forest.options.push({
-  id:'forest.route.unknown-capability',
-  label:'Impossible route',
-  category:'route',
-  conditions:[{kind:'itemCapability',capability:'not_declared_anywhere',present:true}],
-  progressDelta:0,
-  enduranceCost:0,
-  effects:[],
-  setRoute:'unknown-route'
-  ...
-})
-```
-
-### First action for new Leader 1
-
-Treat this as a **test-only compatibility repair unless inspection proves otherwise**.
-
-Expected narrow repair:
-- add `tags:[]`
-- add `carriedResults:[]`
-to that synthetic option fixture only.
-
-Do not change production schema to make the fields optional merely to satisfy this fixture.
-
-After the test-only repair:
-1. create a new exact-source QA run;
-2. run `npm ci`;
-3. run typecheck;
-4. validate;
-5. build;
-6. the Stage3 focused suite.
-
-If new failures appear, diagnose exact failures before any broader changes.
+**Current blocker is the two remaining full-suite failures in v111 above**, not the old v105 typecheck or focused gate.
 
 ## 7. Stage 3 focused suite used by previous Leader
 
@@ -361,11 +321,10 @@ Do not interpret those warnings as product failures.
 
 ## 13. Recovery procedure for the next Leader
 
-1. Read this document.
-2. Read `LEADER_STATE.md`.
-3. Re-query live `main`.
-4. Re-query Stage3 production branch.
-5. Verify whether someone already repaired the fixture after this handoff.
-6. Continue from the exact first unresolved item: **Stage 3 focused QA typecheck repair**.
-7. Do not wake a worker for QA-only work.
-8. Do not decrement burn-down until exact-main CI is green.
+1. Start at **LIVE RECOVERY** at the top of this document, then `LEADER_STATE.md`.
+2. Re-query live `main` and relevant candidate branches; never trust an old SHA as current automatically.
+3. Read v111 full CI log `37760102503`: **1285/1287 PASS; only Forest adapterConfig and Merchant supplier-network presentation tests fail**.
+4. Confirm Merchant's catalog fallback is a real, valid asset before test-only changes. Fix only the two narrow assertions.
+5. Recheck these two tests, then exact-source full CI `npm run check`.
+6. If green, merge the exact tested source into latest `main`, preserve documentation, and require official exact-main CI green.
+7. Do not wake a worker for QA-only work. Burn-down remains 3 until exact-main green.

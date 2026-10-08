@@ -4,17 +4,17 @@ This is the single current operational notebook for Leader 1.
 
 Rule: read this file, then re-query live GitHub refs before acting. Exact source SHA + executable evidence outrank prose. Old handoffs/checkpoints remain archive only.
 
-## Live Stage 3 execution update — 2026-10-08 (after handoff)
+## Live Stage 3 execution update — 2026-10-08 (latest)
 
-Read this block together with the handoff and **re-query GitHub live** before any further action. This update does not override executable evidence.
-
-- `main` remained at `cd3961b3aa797cd7a37c83cad87ca6153f819b7c` when the Stage3 full-suite repair started; Stage 3 is **NOT merged or closed**.
-- Post-handoff focused QA **SUCCESS**: run `37755454777`, wrapper `qa-stage3-focused-v108@28ab56f384c4cbb1ca2ff0072f04975d01ba4104`, exact checked source `1a8c739fb66253991009d04ecb0a2e50764f6d5f`.
-- First full CI run `37755758953` (v109) failed **1277/1287 PASS; 10 failures**. Typecheck, validation and build passed. The failures were stale Stage2-era assertions around D36 Forest option count/Field Time, generalized UI, Guard/Trade return presentation, Hunter UI entry list, Merchant/Trade return inventory, and D38 Specialist registry growth.
-- Leader 1 created a **test-only** full-suite compatibility patch on `lead/stage3-full-compat-v110@c9b2805d60762221cbd89d9ad438982ea8d28531` (eight test files changed; production code identical to focused-green source `1a8c739...`).
-- Exact-source full CI wrapper `qa-stage3-full-v111@39bf4292cb1d56355984d277a8e2b3f8652758a4` checks out and SHA-guards `c9b2805d60762221cbd89d9ad438982ea8d28531`. Run `37760102503` was **QUEUED** at this notebook update; do not infer a result from its existence.
-- **First unresolved step:** inspect the executable result of `37760102503`. Diagnose any remaining failures; if green, integrate exact tested source into latest `main` without dropping main-only handoff docs; then require official exact-main CI green before checking Stage 3 or decrementing burn-down.
-- Worker chats remain parked. No QA-only worker delegation.
+- **Stage 3 not closed. Broad burn-down remains 3.** Stage1 and Stage2 remain CLOSED.
+- Current `main` before this doc update: `767ca946ef7a05a2e1db022bec4c686e1f142fcd`; docs-only/control-plane change since Stage2. Re-query.
+- Worker production source `0f7c4b6cbbba55cfc91a854e3d64baf933191a84`, handoff `e4fefda2c3cebc657eaee309c682c0316425e275`.
+- Focused-green candidate `1a8c739fb66253991009d04ecb0a2e50764f6d5f`; focused v108 `37755454777` SUCCESS.
+- Full-suite compatibility candidate `lead/stage3-full-compat-v110@c9b2805d60762221cbd89d9ad438982ea8d28531` changes only eight test files relative to focused-green source.
+- **Latest full CI v111 `37760102503`: COMPLETED FAILURE, 1285/1287 PASS.** Exact source guarded: `c9b2805...`; typecheck/validate/build PASS.
+- Two remaining failures: stale Forest `adapterConfig` deep-equality (missing Field Time fields), Merchant Stage3 supplier-network resolution `catalog` vs generalized `override-static` expectation. See authoritative `LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md` LIVE RECOVERY.
+- **Next action:** Leader-only narrow test compatibility inspection/fix, then two focused tests, one exact-source full CI, Leader merge, official exact-main CI. Do not assign QA to Chat2. No merge or burn-down decrement before full/exact-main green.
+- All workers parked.
 
 ## Human checklist
 
@@ -94,29 +94,13 @@ Current worker status:
 
 ## Current item — Stage 3 Activity + Camp + D38
 
-Production assembly is complete.
+Production assembly complete. Worker source `0f7c4b6cbbba55cfc91a854e3d64baf933191a84`; docs-only worker handoff `e4fefda2c3cebc657eaee309c682c0316425e275`.
 
-Exact production source:
-`0f7c4b6cbbba55cfc91a854e3d64baf933191a84`
+Focused-green source `1a8c739fb66253991009d04ecb0a2e50764f6d5f`, run `37755454777` SUCCESS.
 
-Docs-only worker handoff head:
-`e4fefda2c3cebc657eaee309c682c0316425e275`
+Current full-suite candidate `c9b2805d60762221cbd89d9ad438982ea8d28531`, v111 run `37760102503` FAILURE 1285/1287. Two remaining test compatibility blockers detailed in `LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md`.
 
-Worker handoff:
-`CHAT2_STAGE3_ACTIVITY_CAMP_D38_PRODUCTION_HANDOFF_v104.md`
-
-Current blocker:
-- Leader focused run `37753332403` failed at typecheck only.
-- `tests/item-capability-activity-closure.test.ts` synthetic Activity option fixture is missing required `tags:[]` and `carriedResults:[]`.
-- validate/build/focused tests did not run.
-
-Next action:
-- Leader test-only compatibility repair;
-- rerun exact-source Stage 3 focused gate;
-- then full CI -> merge -> exact-main CI.
-
-Authoritative recovery document:
-`LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md`
+Current first action: narrow Forest adapterConfig and Merchant supplier-network fallback investigation/test repair. Then exact-source full CI; only after green merge and exact-main CI.
 
 ## Governance that must not drift
 
