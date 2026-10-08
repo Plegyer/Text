@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "id": "restricted-sites.production",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "restricted.sites"
+      ],
+      "careers": [
+        "assassin"
+      ],
+      "relationships": [
+        "assassin.handler"
+      ],
+      "worldFacts": [
+        "activity.restricted-sites.anchor-secured",
+        "activity.restricted-sites.result.evidence-secured",
+        "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+        "activity.restricted-sites.contact-thread-open",
+        "restricted.sites.city-return-recorded",
+        "activity.restricted-sites.result.research-grade"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "assassin"
+      ],
+      "relationships": [
+        "assassin.handler"
+      ],
+      "worldFacts": [
+        "restricted.sites.city-return-recorded",
+        "activity.restricted-sites.mark.network",
+        "activity.restricted-sites.result.research-grade"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "restricted-sites.production.city-return",
+      "title": "Restricted Sites return reaches the city",
+      "sourceDomain": "restricted-sites",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "restricted.sites",
+          "outcome": "success",
+          "result": "restricted.sites.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "restricted.sites.city-return-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Restricted Sites return is recorded as a city-facing Activity result without changing Palace access, Night, Debt, or global Energy.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the restricted-site return",
+          "text": "Store the regional return as a typed city fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "restricted.sites.city-return-recorded"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "restricted-sites.production.assassin-return",
+      "title": "Restricted Sites return reaches Assassin work",
+      "sourceDomain": "assassin",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "restricted.sites",
+          "outcome": "success",
+          "result": "restricted.sites.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 75,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "runner"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "operative"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "trusted-blade"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "ghost"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "turncoat"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "handler-takeover"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "refusal-chain"
+            },
+            {
+              "kind": "careerStage",
+              "career": "assassin",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "assassin",
+          "fact": "restricted-sites-returned",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The regional result can be recorded on the existing Assassin career without choosing Ghost, Turncoat, Handler Takeover, Refusal Chain, or an ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Assassin return",
+          "text": "Attach the regional result to the existing Assassin career state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "assassin",
+              "fact": "restricted-sites-returned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "restricted-sites.production.research-grade",
+      "title": "Restricted Sites research-grade secured result",
+      "sourceDomain": "restricted-sites",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "restricted.sites",
+          "outcome": "success",
+          "result": "restricted.sites.success"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.restricted-sites.result.evidence-secured"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.result.evidence-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.minigame.infiltration-suspicion-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.result.research-grade",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A completed Infiltration/Suspicion sequence plus secured restricted-site evidence qualifies this regional result as research-grade.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the research-grade result",
+          "text": "Publish only the typed D38 result seam; do not grant or commit an ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.result.research-grade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "restricted-sites.production.handler-network",
+      "title": "Restricted Sites return reaches the Handler",
+      "sourceDomain": "assassin.handler",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "restricted.sites",
+          "outcome": "success",
+          "result": "restricted.sites.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.restricted-sites.contact-thread-open",
+          "present": true
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "utility-response-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "assassin.handler",
+          "choice": "utility-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "assassin.handler",
+          "fact": "restricted-sites-return-shared",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The existing accepted Handler utility thread can receive the Restricted Sites return as a real network-capable Activity contact.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "share",
+          "label": "Share the restricted-site return",
+          "text": "Record the return on the existing Handler relationship and mark this regional anchor as Network-capable.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "assassin.handler",
+              "fact": "restricted-sites-return-shared"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.restricted-sites.mark.network"
+            }
+          ]
+        },
+        {
+          "id": "keep-local",
+          "label": "Keep the return local",
+          "text": "Do not attach this regional result to the Handler network.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

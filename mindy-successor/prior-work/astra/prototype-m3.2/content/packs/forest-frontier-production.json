@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "forest-frontier.production",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "lumber.forest"
+      ],
+      "careers": [
+        "lumber",
+        "hunter"
+      ],
+      "relationships": [
+        "hunter.senior-guide"
+      ],
+      "schoolTracks": [
+        "school.track.field_craft"
+      ],
+      "worldFacts": [
+        "activity.forest-frontier.anchor-secured",
+        "activity.forest-frontier.mark.pathfinder",
+        "activity.forest-frontier.mark.preservation",
+        "activity.forest-frontier.result.research-grade",
+        "forest.frontier.school-reflection-recorded",
+        "forest.frontier.tracking-triangulated",
+        "forest.frontier.contact-thread-open"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "lumber",
+        "hunter"
+      ],
+      "relationships": [
+        "hunter.senior-guide"
+      ],
+      "worldFacts": [
+        "activity.forest-frontier.mark.network",
+        "activity.forest-frontier.result.research-grade",
+        "forest.frontier.school-reflection-recorded"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "forest-frontier.production.research-grade",
+      "title": "Forest Frontier research-grade candidate",
+      "sourceDomain": "forest-frontier",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.forest-frontier.anchor-secured"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.forest-frontier.mark.preservation"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.forest-frontier.mark.pathfinder"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 79,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.forest-frontier.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "forest.frontier.tracking-triangulated",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.forest-frontier.mark.preservation",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.forest-frontier.result.research-grade",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Triangulated field evidence plus an actually preserved sample qualifies this Forest result as a research-grade candidate.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record research-grade candidate",
+          "text": "Store the typed result tag without granting a D38 ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.forest-frontier.result.research-grade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forest-frontier.production.companion-return",
+      "title": "Forest Frontier companion thread return",
+      "sourceDomain": "forest-frontier",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 68,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 2,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.forest-frontier.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "forest.frontier.contact-thread-open",
+          "present": true
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "hunter.senior-guide",
+          "fact": "companion-response-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "hunter.senior-guide",
+          "choice": "companion-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "hunter.senior-guide",
+          "fact": "forest-frontier-return-shared",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "An already accepted senior-guide companion thread can now receive the Forest Frontier return as optional field feedback.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "share",
+          "label": "Share the field return",
+          "text": "Record the return on the existing relationship thread.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "hunter.senior-guide",
+              "fact": "forest-frontier-return-shared"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.forest-frontier.mark.network"
+            }
+          ]
+        },
+        {
+          "id": "keep-field-note",
+          "label": "Keep it as a field note",
+          "text": "Do not attach the regional result to the companion thread.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "forest-frontier.production.school-reflection",
+      "title": "Field Craft reflects on the Forest Frontier return",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "lumber.forest",
+          "outcome": "success",
+          "result": "lumber.forest.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 67,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.forest-frontier.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "schoolCounter",
+          "track": "school.track.field_craft",
+          "counter": "lessons_completed",
+          "op": "gte",
+          "value": 1
+        },
+        {
+          "kind": "worldFact",
+          "fact": "forest.frontier.school-reflection-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A prior Field Craft lesson now has a concrete Forest return to compare against; this is feedback, not another paid lesson or certificate.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Field Craft reflection",
+          "text": "Store one School-facing feedback fact without changing tuition, lesson counts, or stats.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "forest.frontier.school-reflection-recorded"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
