@@ -47,3 +47,18 @@ export function stage5FinalExpectedLocalization<T extends {ru:string;en:string}>
   assert.equal(frozenValue.en,override.en,key+' EN is not negotiable');
   return {...frozenValue,ru:override.acceptedRu};
 }
+
+/** Exact Leader v2 historical Tavern visible-copy exception; frozen v54 source stays unchanged.
+ * The accepted frozen string quotes raw ending.tavern.information-broker,
+ * which conflicts with the final UI rule prohibiting raw IDs. Render a human name.
+ */
+export const STAGE5_TAVERN_LEGACY_DISPLAY_KEY='ending.tavern-court.description' as const;
+export const STAGE5_TAVERN_LEGACY_DISPLAY={
+  frozen:{ru:'Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.information-broker и не открывает Дворец.',en:'This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.information-broker and grants no Palace access.'},
+  final:{ru:'Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути информационного посредника и не открывает доступ во Дворец.',en:'This historical route is no longer a modern ending. Its completion counts toward the Information Broker path and does not grant Palace access.'}
+} as const;
+export function stage5FinalExpectedHistoricalCompatibility<T extends {ru:string;en:string}>(key:string,original:T):T{
+  if(key!==STAGE5_TAVERN_LEGACY_DISPLAY_KEY)return original;
+  assert.deepEqual(original,STAGE5_TAVERN_LEGACY_DISPLAY.frozen,'unchanged Golden v54 legacy reference');
+  return {...original,...STAGE5_TAVERN_LEGACY_DISPLAY.final};
+}

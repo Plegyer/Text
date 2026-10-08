@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {assertStage5OverlayAuthority,stage5FinalExpectedLocalization} from './stage5-secret-debt-ru-adjudication-v1.ts';
+import {assertStage5OverlayAuthority,stage5FinalExpectedLocalization,stage5FinalExpectedHistoricalCompatibility} from './stage5-secret-debt-ru-adjudication-v1.ts';
 import {existsSync,readFileSync,readdirSync} from 'node:fs';
 
 const MATRIX_PATH='tests/fixtures/final-ui-accessibility-smoke-v60.json';
@@ -100,7 +100,8 @@ test('v61 assembled UI/accessibility smoke satisfies the matrix', {skip:!FINAL_T
       if(!(key in localization)){issue(issues,'MISSING_RU_EN_COPY',key,surface.id);continue;}
       const actual=localization[key];
       if(!pairComplete(actual))issue(issues,'MISSING_RU_EN_COPY',key,surface.id);
-      if(!same(actual,stage5FinalExpectedLocalization(key,expected as {ru:string;en:string})))issue(issues,'VISIBLE_COPY_MISMATCH',key,surface.id);
+      const approved=stage5FinalExpectedHistoricalCompatibility(key,stage5FinalExpectedLocalization(key,expected as {ru:string;en:string}));
+      if(!same(actual,approved))issue(issues,'VISIBLE_COPY_MISMATCH',key,surface.id);
       if(surface.rawIdScan){
         for(const locale of ['ru','en']){
           const value=String(actual?.[locale]??'');

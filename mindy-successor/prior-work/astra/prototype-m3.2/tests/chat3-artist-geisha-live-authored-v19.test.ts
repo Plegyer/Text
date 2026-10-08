@@ -149,7 +149,11 @@ test('C3-216 source audit proves 57 live bilingual identities and 7 authority ga
   for(const row of source.entries){
     if(statusByKey[row.contentKey]==='LIVE_BOUND'){
       assert.ok(live.includes(row.en),row.contentKey+' live EN');
-      assert.ok(localized.includes(row.ru),row.contentKey+' live RU');
+      if(row.contentKey==='hard-work.boundary'){
+        // Stage5 Golden retires the old live hard-work alias copy, not the ending.
+        assert.equal(localized.includes(row.ru),false,'deprecated alias text must not remain');
+        assert.equal(loc['ending.artist-geisha.hard-work.description'],undefined);
+      }else assert.ok(localized.includes(row.ru),row.contentKey+' live RU');
     }else{
       assert.equal(live.includes(row.en),false,row.contentKey+' unbound EN');
       assert.equal(localized.includes(row.ru),false,row.contentKey+' unbound RU');

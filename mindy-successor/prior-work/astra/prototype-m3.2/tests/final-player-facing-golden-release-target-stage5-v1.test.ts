@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {assertStage5OverlayAuthority,stage5FinalExpectedLocalization} from './stage5-secret-debt-ru-adjudication-v1.ts';
+import {assertStage5OverlayAuthority,stage5FinalExpectedLocalization,stage5FinalExpectedHistoricalCompatibility} from './stage5-secret-debt-ru-adjudication-v1.ts';
 import {existsSync,readFileSync,readdirSync} from 'node:fs';
 import {basename} from 'node:path';
 
@@ -135,7 +135,7 @@ test('v55 final assembled target satisfies the golden manifest', {skip:!FINAL_TA
       continue;
     }
     if(!pairComplete(localization[key]))addIssue(issues,'RU_EN_PARITY_MISSING',key);
-    if(!same(localization[key],(row as any).value)){
+    if(!same(localization[key],stage5FinalExpectedHistoricalCompatibility(key,(row as any).value))){
       addIssue(issues,'HISTORICAL_COMPATIBILITY_CONFLICT',key);
     }
   }

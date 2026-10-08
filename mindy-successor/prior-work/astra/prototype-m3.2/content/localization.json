@@ -2715,8 +2715,8 @@
       "en": "Retired Tavern ending (migrated)"
     },
     "ending.tavern-court.description": {
-      "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.information-broker и не открывает Дворец.",
-      "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.information-broker and grants no Palace access."
+      "ru": "Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути информационного посредника и не открывает доступ во Дворец.",
+      "en": "This historical route is no longer a modern ending. Its completion counts toward the Information Broker path and does not grant Palace access."
     },
     "ending.ending.lumber.hard-work.title": {
       "ru": "Лесоруб: тяжкий труд",

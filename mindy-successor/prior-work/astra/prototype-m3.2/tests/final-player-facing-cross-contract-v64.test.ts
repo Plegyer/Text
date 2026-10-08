@@ -91,7 +91,12 @@ test('v64 accepted closure contracts agree',()=>{
   for(const k of [...tavern,...lumber]){
     const v=golden.localization.required[k]?.value??golden.localization.retainedCompatibility[k]?.value;
     assert.ok(pair(v),'REQUIRED_HISTORICAL_LABEL_DELETED '+k);
-    assert.equal(raw.test(v.ru)||raw.test(v.en),false,'RAW_INTERNAL_ID_FALLBACK '+k);
+    if(k==='ending.tavern-court.description'){
+      // Frozen historical text quotes a canonical ID as migration provenance;
+      // final player-visible copy MUST NOT contain an internal identifier.
+      assert.ok(v.ru.includes('ending.tavern.information-broker'));
+      assert.ok(v.en.includes('ending.tavern.information-broker'));
+    }else assert.equal(raw.test(v.ru)||raw.test(v.en),false,'RAW_INTERNAL_ID_FALLBACK '+k);
   }
 });
 
@@ -109,6 +114,8 @@ test('v64 assembled target satisfies player-facing cross-contract fences',{skip:
 
   for(const k of golden.localization.forbidden as string[])if(k in loc)add(issues,'RETIRED_OR_DELETED_VISIBLE_KEY_RETURNED',k);
   for(const k of [...golden.retiredSurfaces.tavern.historicalLocalizationKeys,...golden.retiredSurfaces.lumberStayVitality.historicalLocalizationKeys] as string[])if(!pair(loc[k]))add(issues,'REQUIRED_HISTORICAL_LABEL_DELETED',k);
+  const humanLegacy=loc['ending.tavern-court.description'];
+  if(!pair(humanLegacy)||raw.test(humanLegacy.ru)||raw.test(humanLegacy.en))add(issues,'RAW_HISTORICAL_ID_IN_PLAYER_COPY','ending.tavern-court.description');
 
   for(const id of [...golden.retiredSurfaces.tavern.forbiddenEndingDefinitionIds,...golden.retiredSurfaces.lumberStayVitality.forbiddenEndingDefinitionIds] as string[])if(endingIds.has(id))add(issues,'RETIRED_LIVE_SURFACE_REINTRODUCED',id);
   for(const reward of golden.retiredSurfaces.lumberStayVitality.forbiddenEndingRewardIds as string[])if(endings.some((x:any)=>x?.reward===reward))add(issues,'RETIRED_LIVE_SURFACE_REINTRODUCED',reward);
