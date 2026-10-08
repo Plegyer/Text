@@ -1,0 +1,64 @@
+name: leader1 RC1 Windows package evidence
+
+on:
+  push:
+    branches:
+      - lead/ci-rc1-windows-package-v1
+
+jobs:
+  windows-package:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact RC1 product source (wrapper is not product SHA)
+        uses: actions/checkout@v4
+        with:
+          ref: 10ae406cd3ff107a6b1316959daab50f43372824
+      - name: Verify exact source SHA
+        shell: powershell
+        run: |
+          $sha=(git rev-parse HEAD).Trim()
+          if ($sha -ne '10ae406cd3ff107a6b1316959daab50f43372824') { throw "RC source SHA drift: $sha" }
+          Write-Host "EXACT_RC1_PRODUCT_SOURCE_SHA=$sha"
+      - name: Node 22.18.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install frozen dependencies
+        run: npm ci
+      - name: Build game source
+        run: npm run build
+      - name: Build unsigned Windows NSIS installer
+        shell: powershell
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: |
+          npx --no-install electron-builder --win nsis --x64 --publish never
+          if ($LASTEXITCODE -ne 0) { throw "electron-builder failed with code $LASTEXITCODE" }
+      - name: Verify generated installable and unpacked payload
+        shell: powershell
+        run: |
+          $installer=Get-ChildItem -Path release -Filter *.exe -File | Where-Object { $_.Name -notmatch 'unins' } | Select-Object -First 1
+          if (!$installer) { throw 'NO_WINDOWS_INSTALLER_EXE' }
+          $unpacked=Join-Path 'release' 'win-unpacked'
+          if (!(Test-Path $unpacked)) { throw 'NO_WIN_UNPACKED_PAYLOAD' }
+          $app=Get-ChildItem -Path $unpacked -Filter *.exe -File | Select-Object -First 1
+          if (!$app) { throw 'NO_PACKAGED_ELECTRON_APP' }
+          if (!(Test-Path (Join-Path $unpacked 'resources/app.asar'))) { throw 'NO_PACKAGED_APP_ASAR' }
+          Write-Host "INSTALLER_NAME=$($installer.Name)"
+          Write-Host "INSTALLER_BYTES=$($installer.Length)"
+          Write-Host "INSTALLER_SHA256=$((Get-FileHash $installer.FullName -Algorithm SHA256).Hash)"
+          Write-Host "UNPACKED_APP_NAME=$($app.Name)"
+          Write-Host 'RC1_WINDOWS_PACKAGE_FILE_INTEGRITY_PASS'
+      - name: Archive installer evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rc1-windows-nsis-installer
+          path: mindy-successor/prior-work/astra/prototype-m3.2/release/*.exe
+          if-no-files-found: error
+          retention-days: 7
