@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "SUCCESS",
+  "acceptance": "OFFICIAL_EXACT_MAIN_ACCEPTED",
+  "date": "2026-10-08",
+  "runId": 37812797149,
+  "runUrl": "https://github.com/Plegyer/Text/actions/runs/37812797149",
+  "workflow": "mindy-successor check",
+  "event": "push",
+  "exactMainSha": "db3cc892cb96cca43bec298a85e61f0e2c376bda",
+  "originalMergeSha": "bb2a1c8649bf150b74611eda958ea874a8905952",
+  "onlyPostMergeSourceDifference": ".github/workflows/mindy-successor-check.yml",
+  "reason": "Windows git text checkout CRLF on immutable Golden bytes; restore via git show HEAD:path before checks",
+  "priorFailedRun": {
+    "id": 37812155535,
+    "sha": "bb2a1c8649bf150b74611eda958ea874a8905952",
+    "passed": 1353,
+    "failed": 1,
+    "skipped": 4,
+    "reason": "v64 immutable Golden SHA mismatch due local Windows checkout"
+  },
+  "checks": {
+    "checkout": "PASS",
+    "setupNode22_18_0": "PASS",
+    "restoreFrozenGoldenByteExact": "PASS",
+    "npmCi": "PASS",
+    "npmRunCheck": {
+      "passed": 1354,
+      "failed": 0,
+      "skipped": 4,
+      "total": 1358
+    }
+  },
+  "releaseDecision": "GO",
+  "stage5": "CLOSED",
+  "burnDownBefore": 1,
+  "burnDownAfter": 0
+}
