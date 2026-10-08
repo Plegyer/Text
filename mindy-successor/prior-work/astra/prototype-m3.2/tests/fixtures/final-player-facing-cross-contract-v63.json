@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "id": "chat6.final-player-facing.cross-contract.v63",
+  "status": "STATIC_CROSS_CONTRACT_PASS_POST_INTEGRATION_EXECUTION_REQUIRED",
+  "exactAuthorities": {
+    "playerFacingGolden": {
+      "implementationHead": "62b4da9028c96f7c999a9156d596590ddae74ebd",
+      "fixtureBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14"
+    },
+    "playerFacingGoldenQa": {
+      "head": "45b21d3fd19d91f7b2787e3b56930aa2aa3e9af4"
+    },
+    "uiAccessibilitySmoke": {
+      "head": "f25be675ae5ba7355f31d02b0c73ca75b18d5a3e",
+      "fixtureBlob": "62f1b14b1f6890b4641c2acb2cd26860c8b99ed8"
+    },
+    "saveMigrationGolden": {
+      "head": "5d93d3f5b3ca34e2512d183e83e09404d5072701",
+      "fixtureBlob": "6ad4ed97ec6058960f90c6b6b80edfda0b9a6279"
+    },
+    "d46D47LegacyGolden": {
+      "head": "13424ebeefa55c91af7ca39e70a3843b80a75f99",
+      "operationsBlob": "17282cf11436d54d49915f44ed84de56a0eebf7c",
+      "gateBlob": "dae0b2bf197f66c1b1fe834e643caf541c6ef4c7"
+    }
+  },
+  "inputPaths": {
+    "playerFacingGolden": "tests/fixtures/final-player-facing-golden-v54.json",
+    "uiAccessibilitySmoke": "tests/fixtures/final-ui-accessibility-smoke-v60.json",
+    "saveMigrationGolden": "tests/fixtures/final-save-migration-golden-v57.json",
+    "legacyOperations": "../../../docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53.json",
+    "legacyGate": "../../../docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_GATE_v54.json"
+  },
+  "consistencyMatrix": [
+    {
+      "id": "content-presentation-save-neutrality",
+      "layers": [
+        "player-facing",
+        "save-migration"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "Player-facing localization/presentation/accessibility layers do not mutate Save fields, mechanical IDs, RNG, pending identity, reward IDs, transaction IDs, conditions/effects, or ending eligibility.",
+        "Save/migration case-23 remains the execution authority for mechanical before/after equality."
+      ],
+      "exactRefs": [
+        "saveMigration.contentPresentationSaveNeutrality.mechanicalMutationAllowed=false",
+        "saveMigration.case-23"
+      ]
+    },
+    {
+      "id": "lumber-retirement-history",
+      "layers": [
+        "player-facing",
+        "save-migration",
+        "legacy-retirement"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "Live lumber-stay ending, vitality reward acquisition, ending/lumber-stay presentation, and five live localization rows stay absent.",
+        "legacy.lumber-stay.vitality and five historical localization rows remain available.",
+        "Historical evidence grants +1 Energy once only and never creates Hard Work, Palace qualification, Strong Meta slot ownership, or a modern ending."
+      ],
+      "exactRefs": [
+        "saveMigration.case-06",
+        "legacy A14-A32",
+        "playerFacing.retiredSurfaces.lumberStayVitality"
+      ],
+      "authorityNote": "Chat3 case-06 cites the retirement producer head while Chat4/player-facing cite the verified retirement target; stable IDs and required semantics agree, so this is an authority-reference difference, not a semantic contradiction."
+    },
+    {
+      "id": "tavern-retirement-history",
+      "layers": [
+        "player-facing",
+        "save-migration"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "tavern-stay, tavern-guild, and tavern-court remain absent as live ending definitions/presentation slots.",
+        "Nine migration/history localization rows remain available.",
+        "Completed legacy IDs may canonicalize through migration; eligibility or unfinished commit never becomes completion."
+      ],
+      "exactRefs": [
+        "saveMigration.case-05",
+        "playerFacing.retiredSurfaces.tavern"
+      ]
+    },
+    {
+      "id": "d42-night-preservation",
+      "layers": [
+        "player-facing",
+        "ui-accessibility"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "Exactly 110 D42 Night localization rows and 12 D42 presentation slots survive unchanged."
+      ],
+      "exactRefs": [
+        "playerFacing.d42NightPreservation",
+        "uiSmoke.d42-night-player-facing"
+      ]
+    },
+    {
+      "id": "activity-network-v36-precedence",
+      "layers": [
+        "player-facing",
+        "ui-accessibility",
+        "save-migration"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "ending.ending.activity.network.epilogue uses Activity Network v36 final copy.",
+        "Activity v17 four-direction predecessor is forbidden as final visible copy.",
+        "Ending eligibility stays non-terminal and canonical Specialist ownership is exactly once."
+      ],
+      "exactRefs": [
+        "playerFacing.activityNetworkFinalAuthority",
+        "uiSmoke.activity-network-v36-ending",
+        "saveMigration.case-21"
+      ]
+    },
+    {
+      "id": "palace-d48-explicit-return-home",
+      "layers": [
+        "player-facing",
+        "ui-accessibility",
+        "save-migration"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "Palace invitation remains neutral town presentation.",
+        "Exactly four D48 assets are allowed only in the exact 17 Palace slots.",
+        "Four Palace endings remain explicit live ending definitions.",
+        "Prince readiness/defeat is not inferred from readiness and Return Home never auto-commits."
+      ],
+      "exactRefs": [
+        "playerFacing.presentation.d48",
+        "uiSmoke.palace-*",
+        "saveMigration.case-13..15"
+      ]
+    },
+    {
+      "id": "strong-meta-representation",
+      "layers": [
+        "player-facing",
+        "ui-accessibility",
+        "save-migration",
+        "legacy-retirement"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "UI presents max one Keystone and max two Specialists.",
+        "Automatic Source Method/inherited knowledge is slot-free and never selectable.",
+        "Hard Work packages remain outside Strong Meta slots.",
+        "Historical lumber vitality remains slot-free."
+      ],
+      "exactRefs": [
+        "playerFacing.ui.strongMetaModal.selectionContract",
+        "uiSmoke Strong Meta surfaces",
+        "saveMigration strongMetaSeparationRequired",
+        "legacy A13/A27"
+      ]
+    },
+    {
+      "id": "historical-human-readable-copy",
+      "layers": [
+        "player-facing",
+        "ui-accessibility",
+        "save-migration"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "Accepted compatibility/historical UI uses bilingual human-readable labels rather than raw internal IDs.",
+        "Raw panel IDs never replace localized modal accessible names."
+      ],
+      "exactRefs": [
+        "playerFacing retained compatibility rows",
+        "uiSmoke raw ID guards"
+      ]
+    },
+    {
+      "id": "deletion-retention-disjointness",
+      "layers": [
+        "player-facing",
+        "save-migration",
+        "legacy-retirement"
+      ],
+      "verdict": "AGREE",
+      "requirements": [
+        "Player-facing forbidden/deleted localization does not overlap migration-required Tavern or lumber historical labels.",
+        "Retired live presentation deletions do not delete historical display fallback semantics."
+      ],
+      "exactRefs": [
+        "17 forbidden player-facing localization keys",
+        "9 Tavern historical rows",
+        "5 lumber historical rows"
+      ]
+    }
+  ],
+  "staticAudit": {
+    "verdict": "PASS",
+    "contradictions": [],
+    "checkedCounts": {
+      "saveMigrationCases": 23,
+      "playerFacingForbiddenLocalization": 17,
+      "retainedTavernHistoricalLocalization": 9,
+      "retainedLumberHistoricalLocalization": 5,
+      "d42Localization": 110,
+      "d42Presentation": 12,
+      "d48Assets": 4,
+      "d48Slots": 17,
+      "legacyMandatoryAssertions": 32
+    }
+  },
+  "finalIntegrationStopConditions": [
+    "Any player-facing deletion overlaps a migration-required historical label.",
+    "Any required historical label is missing or replaced by a raw internal ID.",
+    "Any content/presentation/accessibility layer mutates mechanical save state.",
+    "Any retired lumber/Tavern live ending, reward, presentation slot, or forbidden localization returns.",
+    "D42 110/12 preservation sets drift.",
+    "Activity Network v17 predecessor wording becomes final.",
+    "D48 assets are missing, changed in ownership, or leak outside the approved 17 Palace slots.",
+    "Palace Return Home becomes implicit/automatic or any of the four Palace ending definitions disappears.",
+    "Strong Meta automatic knowledge becomes selectable, capacity stops being 1 Keystone / 2 Specialists, or Hard Work/legacy lumber consumes a Strong Meta slot.",
+    "Raw internal IDs replace accepted human-readable visible/accessibility copy.",
+    "A contradiction would require chronology/last-write-wins rather than exact owner disposition."
+  ]
+}
