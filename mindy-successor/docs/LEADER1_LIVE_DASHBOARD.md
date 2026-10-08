@@ -1,5 +1,21 @@
 # Leader 1 — Live Dashboard
 
+## LATEST PROJECT REALITY — READ FIRST (2026-10-08)
+
+**Canonical current library:** [LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md](LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md). This dashboard contains long 2026-10-02 historical events; they are **NOT** current source of product/work queues.
+
+- Engine/major systems functionally ready; 10 ordinary careers, Palace, Secret Debt, School/Night, 4 D36 core Activity regions, RU/EN, Save/Meta, Electron already shipped in source.
+- Stages 1–5 integration CLOSED, 0 broad burn-down. Public 1.0 still requires final product play/creative/UX/media/installer verification.
+- Official exact-main CI [#37812797149](https://github.com/Plegyer/Text/actions/runs/37812797149) green at `db3cc892cb96cca43bec298a85e61f0e2c376bda`: 1354 PASS / 0 FAIL / 4 optional SKIP.
+- Draft #305 test-only natural Lumber 50-shift proof on SHA `de51aad2817e6cee1f39c5598a3ef9cd4c9a83ed` green [#37814203592](https://github.com/Plegyer/Text/actions/runs/37814203592): 1355 PASS / 0 FAIL / 4 SKIP. **PR NOT YET MERGED as of this record.**
+- Work chats Chat2–6 PARKED pending user-initiated activation and new bounded assignments; old 2026-10-02 queues below are closed history.
+- Next action: do meaningful finished-game product gap review, not restart architecture. See cumulative library and [whole-project audit](tasks/LEADER1_WHOLE_PROJECT_REALITY_AUDIT_2026-10-08.md).
+
+**Update THIS banner and the canonical library when project facts change.** For current refs, always query GitHub rather than copying a stale SHA.
+
+---
+
+
 ## SINGLE-RUNNER CI SLOT CORRECTION — 2026-10-02
 
 Fresh Actions audit found a coordination defect:
