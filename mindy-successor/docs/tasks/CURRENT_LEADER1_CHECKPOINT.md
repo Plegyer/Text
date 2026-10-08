@@ -1,3 +1,11 @@
+## LATEST — Natural 10-life → Palace earned Meta on real Save, **MERGED-MAIN CI GREEN** (2026-10-08)
+
+**New executable accepted QA:** [PR #307](https://github.com/Plegyer/Text/pull/307) **MERGED** at `daf8105005367811c53a248c186dab71d67d96d1` (test-only), exact-source [#37821532773](https://github.com/Plegyer/Text/actions/runs/37821532773) SUCCESS, exact official merged-main [#37822147799](https://github.com/Plegyer/Text/actions/runs/37822147799) **SUCCESS: 1357 PASS / 0 FAIL / 4 opt-in SKIP**. Automated unseeded script runs **10 natural lives with 500 real shifts**, 10 distinct earned Hard Work rewards, 11th life's manual activation of ten real packages, Day-1 Palace invitation, 15 genuine-day Palace duties, Palace Service Life ending and NG+; no Save stats/day/counters/meta injection. New test `rc0-natural-ten-lives-palace-chain.test.ts` **PASS #883**, prior 50-shift #539 and full 160-day #882 still PASS. **No gameplay/runtime/Golden changes**.
+
+**NEXT:** full *four-region D36 → D38 Activity* unseeded reachability and content/user-quality evaluation; real 12-stat ≥91 Palace True Ending remains unproved by this test; final macro-mystery authorial decision and differentiated media remain OPEN. User installs/tests packaged RC0 on Windows **tomorrow**, no falsely claimed manual test today. Chat4 separately owns non-erotic GIF inventory once user manually activates; don't duplicate. Official #306 tracks full-game RC0 scope; Issue #304 was CLOSED by merged PR #305. Library [LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md](../LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md) updated in place and is required first read for future Chat1.
+
+---
+
 ## LATEST — RC0 whole-game acceptance, no-scope-cut preservation (2026-10-08)
 
 **CURRENT WORK:** [Issue #306](https://github.com/Plegyer/Text/issues/306) RC0 full scope-to-shipped traceability and first Windows package proof, **not** an engine rewrite or public release GO. Entire 18-point LIFE user vision and locked D1–D48 preserved in [RC0 requirements matrix](LEADER1_RC0_WHOLE_GAME_REQUIREMENTS_TRACEABILITY_2026-10-08.md). The successor MUST read [canonical Leader knowledge library](../LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md) **first**; it has been updated **in place** with all exact evidence.
