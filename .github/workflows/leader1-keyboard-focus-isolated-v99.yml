@@ -1,0 +1,28 @@
+name: Leader1 keyboard focus isolated v99
+on:
+  push:
+    branches: [qa-keyboard-focus-isolated-v99]
+permissions:
+  contents: read
+jobs:
+  isolated:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 05a9eb5b9b7293a029ce1d8962207aef3601d145
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "05a9eb5b9b7293a029ce1d8962207aef3601d145"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - run: npm ci
+      - run: npm run build
+      - run: node --experimental-strip-types --test tests/presentation-keyboard-focus-v9.test.ts
