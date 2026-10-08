@@ -1,0 +1,27 @@
+name: Leader1 Stage3 full CI v111
+on:
+  push:
+    branches: [qa-stage3-full-v111]
+permissions:
+  contents: read
+jobs:
+  full-ci:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 70
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c9b2805d60762221cbd89d9ad438982ea8d28531
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "c9b2805d60762221cbd89d9ad438982ea8d28531"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - run: npm ci
+      - run: npm run check
