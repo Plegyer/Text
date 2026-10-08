@@ -3883,6 +3883,750 @@
         "alt": "Нейтральная панорама города как узла маршрутов и контактов.",
         "altKey": "presentation.static.activity-ending-network.alt"
       }
+    },
+    "activity/forest/route/hunter-trail": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-default-v1.svg",
+        "alt": "Героиня идёт по нейтральной лесной тропе без указания конкретного маршрута или исхода.",
+        "altKey": "presentation.static.forest.route.default.alt"
+      }
+    },
+    "activity/infiltration/return/escape": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/return/failure": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/return/success": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/route/concealed-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/route/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/route/disguise-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/route/local-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "activity/infiltration/route/sealed-route": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-activity-infiltration-return/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-first-shift/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-season-autumn/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-season-spring/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-season-summer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-season-winter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-seasonal-breadth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-trusted-blade/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-career-veteran-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-close/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-fallout/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-intel/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-method/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-offer/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-prep/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-contract-resolve/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-cross-guard-pressure/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-cross-merchant-route/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-cross-tavern-rumour/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-items-concealed-toolset/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-items-disguise-kit/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-items-evidence-case/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-items-sealed-pass/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-relationship-conflict-open/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-relationship-conflict-resolve/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-relationship-intro/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-relationship-trust/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-relationship-utility/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-choose-network/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-choose-practice/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-ghost-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-handler-takeover-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-infiltration-qualified/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-outcome-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-refusal-evidence/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-routes-turncoat-ready/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-school-etiquette/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-school-field/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-school-literacy/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-school-physical/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/assassin/event/assassin-school-rhetoric/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-assassin-result.svg",
+        "alt": "Тихая тренировочная сцена с подготовленным снаряжением без изображения цели.",
+        "altKey": "presentation.static.career.assassin.result.alt"
+      }
+    },
+    "job/guard/shift/autumn/cargo-check/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-autumn.svg",
+        "alt": "Стражница несёт обычную службу на городском посту осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.autumn.alt"
+      }
+    },
+    "job/guard/shift/autumn/market-records/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-autumn.svg",
+        "alt": "Стражница несёт обычную службу на городском посту осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.autumn.alt"
+      }
+    },
+    "job/guard/shift/spring/property-dispute/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-spring.svg",
+        "alt": "Стражница несёт обычную службу на городском посту весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.spring.alt"
+      }
+    },
+    "job/guard/shift/spring/road-reopen/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-spring.svg",
+        "alt": "Стражница несёт обычную службу на городском посту весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.spring.alt"
+      }
+    },
+    "job/guard/shift/summer/festival/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-summer.svg",
+        "alt": "Стражница несёт обычную службу на городском посту летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.summer.alt"
+      }
+    },
+    "job/guard/shift/summer/market-crowd/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-summer.svg",
+        "alt": "Стражница несёт обычную службу на городском посту летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.summer.alt"
+      }
+    },
+    "job/guard/shift/winter/closed-quarter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-winter.svg",
+        "alt": "Стражница несёт обычную службу на городском посту зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.winter.alt"
+      }
+    },
+    "job/guard/shift/winter/lodging-pressure/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-guard-shift-winter.svg",
+        "alt": "Стражница несёт обычную службу на городском посту зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.guard.shift.winter.alt"
+      }
+    },
+    "job/hunter/shift/autumn/migration/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-autumn.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.autumn.alt"
+      }
+    },
+    "job/hunter/shift/autumn/trophy-handoff/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-autumn.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.autumn.alt"
+      }
+    },
+    "job/hunter/shift/spring/edge-scout/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-spring.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.spring.alt"
+      }
+    },
+    "job/hunter/shift/spring/melt-tracks/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-spring.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.spring.alt"
+      }
+    },
+    "job/hunter/shift/spring/trap-check/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-spring.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.spring.alt"
+      }
+    },
+    "job/hunter/shift/summer/edge-predator/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-summer.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.summer.alt"
+      }
+    },
+    "job/hunter/shift/summer/training/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-summer.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.summer.alt"
+      }
+    },
+    "job/hunter/shift/winter/route-limits/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-hunter-shift-winter.svg",
+        "alt": "Охотница готовится к обычной работе у лесной тропы зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.hunter.shift.winter.alt"
+      }
+    },
+    "job/satyr-maid/shift/autumn/closing-reset/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-autumn.svg",
+        "alt": "Служанка работает в таверне осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt"
+      }
+    },
+    "job/satyr-maid/shift/autumn/queue-control/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-autumn.svg",
+        "alt": "Служанка работает в таверне осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.autumn.alt"
+      }
+    },
+    "job/satyr-maid/shift/spring/arrival-rush/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-spring.svg",
+        "alt": "Служанка работает в таверне весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.spring.alt"
+      }
+    },
+    "job/satyr-maid/shift/spring/table-reset/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-spring.svg",
+        "alt": "Служанка работает в таверне весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.spring.alt"
+      }
+    },
+    "job/satyr-maid/shift/summer/refill-rush/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-summer.svg",
+        "alt": "Служанка работает в таверне летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.summer.alt"
+      }
+    },
+    "job/satyr-maid/shift/summer/split-order/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-summer.svg",
+        "alt": "Служанка работает в таверне летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.summer.alt"
+      }
+    },
+    "job/satyr-maid/shift/winter/familiar-order/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-winter.svg",
+        "alt": "Служанка работает в таверне зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.winter.alt"
+      }
+    },
+    "job/satyr-maid/shift/winter/hearth-round/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-satyr-maid-shift-winter.svg",
+        "alt": "Служанка работает в таверне зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.satyr-maid.shift.winter.alt"
+      }
+    },
+    "job/tavern/shift/autumn/orders/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-autumn.svg",
+        "alt": "Рабочая сцена в таверне осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.autumn.alt"
+      }
+    },
+    "job/tavern/shift/autumn/rumours/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-autumn.svg",
+        "alt": "Рабочая сцена в таверне осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.autumn.alt"
+      }
+    },
+    "job/tavern/shift/spring/rooms/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-spring.svg",
+        "alt": "Рабочая сцена в таверне весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.spring.alt"
+      }
+    },
+    "job/tavern/shift/spring/supplies/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-spring.svg",
+        "alt": "Рабочая сцена в таверне весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.spring.alt"
+      }
+    },
+    "job/tavern/shift/summer/deliveries/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-summer.svg",
+        "alt": "Рабочая сцена в таверне летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.summer.alt"
+      }
+    },
+    "job/tavern/shift/summer/occupancy/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-summer.svg",
+        "alt": "Рабочая сцена в таверне летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.summer.alt"
+      }
+    },
+    "job/tavern/shift/winter/house-node/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-winter.svg",
+        "alt": "Рабочая сцена в таверне зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.winter.alt"
+      }
+    },
+    "job/tavern/shift/winter/shelter/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-tavern-shift-winter.svg",
+        "alt": "Рабочая сцена в таверне зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.tavern.shift.winter.alt"
+      }
+    },
+    "job/undead-farm/shift/autumn/contract-sort/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-autumn.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.autumn.alt"
+      }
+    },
+    "job/undead-farm/shift/autumn/reserve/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-autumn.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити осенью; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.autumn.alt"
+      }
+    },
+    "job/undead-farm/shift/spring/process-check/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-spring.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.spring.alt"
+      }
+    },
+    "job/undead-farm/shift/spring/wet-beds/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-spring.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити весной; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.spring.alt"
+      }
+    },
+    "job/undead-farm/shift/summer/overgrowth/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-summer.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.summer.alt"
+      }
+    },
+    "job/undead-farm/shift/summer/production-run/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-summer.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити летом; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.summer.alt"
+      }
+    },
+    "job/undead-farm/shift/winter/analysis-bench/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-winter.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.winter.alt"
+      }
+    },
+    "job/undead-farm/shift/winter/specimen-check/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/career-undead-farm-shift-winter.svg",
+        "alt": "Работница выполняет обычную задачу на ферме нежити зимой; сезон показан окружением и не меняет игровой исход.",
+        "altKey": "presentation.static.career.undead-farm.shift.winter.alt"
+      }
+    },
+    "location/town/repay/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/poverty-pressure.svg",
+        "alt": "Героиня переживает тяжёлые уличные условия под дождём и городской нагрузкой.",
+        "altKey": "presentation.static.poverty.pressure.alt"
+      }
+    },
+    "night/rent-room/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-room.svg",
+        "alt": "Сцена дешёвой общей комнаты для ночлега.",
+        "altKey": "media.stage.room.alt"
+      }
+    },
+    "night/rest/default": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Условная иллюстрация фэнтезийного города.",
+        "altKey": "media.base.town.alt"
+      }
     }
   }
 }
