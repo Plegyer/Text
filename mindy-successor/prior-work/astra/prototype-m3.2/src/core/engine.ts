@@ -7,6 +7,7 @@ import {
   STRONG_META_IDS,
   STRONG_META_KNOWLEDGE_IDS,
   STRONG_META_REGISTRY_VERSION,
+  D38_ACTIVITY_REGION_IDS,
   applySteadyPracticeSeasonalLoss,
   bindSteadyPracticeCareer,
   formalIntroductionUseAvailable,
@@ -30,8 +31,19 @@ import {
   validateResolvedStrongMetaSnapshot,
   validateStrongMetaRuntimeAgainstSnapshot,
   type ApprovedStrongKnowledgeId,
-  type ApprovedStrongRewardId
+  type ApprovedStrongRewardId,
+  type D38ActivityRegionId
 } from './strongMeta.ts';
+import {
+  ACTIVITY_D38_TAGS,
+  activityD38SurveyFieldTimeCost,
+  commitActivityD38SurveyUse,
+  activityD38CanSecureResult,
+  commitActivityD38SecureResult,
+  activityD38CarriedResultSurvives,
+  activityD38CanUseContactIntroduction,
+  commitActivityD38ContactIntroduction
+} from './activityD38.ts';
 import {
   PALACE_DUTY_COUNTER,
   PALACE_STRUCTURAL_DUTY_ENERGY_COST,
@@ -1093,6 +1105,19 @@ function activityDefinition(cat:Catalog,id:string):ActivityDefinition{
   if(!definition)throw new Error(`Неизвестная Activity: ${id}`);
   return definition;
 }
+function neutralActivityCampState():ActivityEnvelope['campState']{
+  return {
+    phase:'idle',
+    nightsUsed:0,
+    boundaryDay:null,
+    calendarAdvanceCommitted:false,
+    fieldTimeRefreshCommitted:false
+  };
+}
+const ACTIVITY_CAMP_CHOOSE='camp';
+const ACTIVITY_CAMP_ADVANCE='camp.advance-calendar';
+const ACTIVITY_CAMP_REFRESH='camp.refresh-field-time';
+
 function activityRandom(envelope:ActivityEnvelope){
   envelope.rngState=(Math.imul(envelope.rngState,1664525)+1013904223)>>>0;
   return envelope.rngState/4294967296;
@@ -1102,12 +1127,180 @@ function activityResult(definition:ActivityDefinition,outcome:ActivityOutcome){
   if(!result)throw new Error(`Activity ${definition.id} не имеет result ${outcome}`);
   return result;
 }
+function activityFieldTimeRemaining(envelope:ActivityEnvelope){
+  return envelope.internalState.fieldTimeRemaining??null;
+}
+function activityFieldTimeAffordable(envelope:ActivityEnvelope,cost:number){
+  const remaining=activityFieldTimeRemaining(envelope);
+  return remaining===null||remaining>=cost;
+}
+function activitySpendFieldTime(envelope:ActivityEnvelope,cost:number){
+  if(cost<=0)return;
+  const remaining=activityFieldTimeRemaining(envelope);
+  if(remaining===null)return;
+  if(remaining<cost)throw new Error('Не хватает Field Time для этого действия.');
+  envelope.internalState.fieldTimeRemaining=remaining-cost;
+}
+const ACTIVITY_D38_SECURE_PREFIX='activity.d38.secure.';
+function d38RegionId(activityId:string):D38ActivityRegionId|null{
+  return (D38_ACTIVITY_REGION_IDS as readonly string[]).includes(activityId)?activityId as D38ActivityRegionId:null;
+}
+function d38Context(s:Save,envelope:ActivityEnvelope){
+  const regionId=d38RegionId(envelope.activityId);
+  if(!regionId)return null;
+  return {snapshot:s.run.strongMetaSnapshot,runtime:s.run.strongMetaRuntime,regionId} as const;
+}
+function activityOptionFieldTimeCost(s:Save,envelope:ActivityEnvelope,option:ActivityDefinition['options'][number]){
+  const authoredFieldTimeCost=option.fieldTimeCost??0;
+  const context=d38Context(s,envelope);
+  if(!context||!option.tags.includes(ACTIVITY_D38_TAGS.surveyDiscovery))return authoredFieldTimeCost;
+  return activityD38SurveyFieldTimeCost({...context,authoredFieldTimeCost,tags:option.tags});
+}
+function activityContactNetworkLateralAvailable(
+  s:Save,
+  envelope:ActivityEnvelope,
+  option:ActivityDefinition['options'][number]
+){
+  const context=d38Context(s,envelope);
+  if(!context||!option.tags.includes(ACTIVITY_D38_TAGS.networkIntroduction))return false;
+  return activityD38CanUseContactIntroduction({
+    ...context,
+    tags:option.tags,
+    regionNormallyUnlocked:true,
+    normalConditionsMet:true
+  });
+}
+function activityD38SecureActions(s:Save,envelope:ActivityEnvelope){
+  const context=d38Context(s,envelope);
+  if(!context)return [] as Array<{id:string;label:string}>;
+  return envelope.internalState.carriedResults
+    .filter(record=>activityD38CanSecureResult({...context,resultId:record.resultId,tags:record.tags}))
+    .map(record=>({id:ACTIVITY_D38_SECURE_PREFIX+record.resultId,label:`Secure field result: ${record.resultId}`}));
+}
+function activityMiniGameTransitionAvailable(
+  envelope:ActivityEnvelope,
+  option:ActivityDefinition['options'][number]
+){
+  const transition=option.miniGameTransition;
+  if(!transition)return true;
+  const game=envelope.internalState.miniGames?.[transition.game];
+  if(game&&game.status!=='active')return false;
+  if((game?.stage??'start')!==transition.from)return false;
+  const suspicion=game?.suspicion??0;
+  if(transition.minSuspicion!==undefined&&suspicion<transition.minSuspicion)return false;
+  if(transition.maxSuspicion!==undefined&&suspicion>transition.maxSuspicion)return false;
+  return true;
+}
+function applyActivityMiniGameTransition(
+  envelope:ActivityEnvelope,
+  option:ActivityDefinition['options'][number]
+){
+  const transition=option.miniGameTransition;
+  if(!transition)return;
+  type MiniGameState=NonNullable<ActivityEnvelope['internalState']['miniGames']>[string];
+  const games:NonNullable<ActivityEnvelope['internalState']['miniGames']>=envelope.internalState.miniGames??{};
+  envelope.internalState.miniGames=games;
+  const fresh:MiniGameState={stage:'start',status:'active',choiceIds:[],suspicion:0};
+  const game=games[transition.game]??fresh;
+  if(!activityMiniGameTransitionAvailable(envelope,option))throw new Error('Mini-game transition сейчас недоступен.');
+  game.stage=transition.to;
+  game.choiceIds.push(option.id);
+  game.suspicion=Math.max(0,Math.min(100,game.suspicion+(transition.suspicionDelta??0)));
+  if(transition.outcome)game.status=transition.outcome;
+  games[transition.game]=game;
+}
+function forcedConsumingNightCatalog(cat:Catalog):Catalog{
+  const events=cat.events.filter(event=>
+    event.blocking
+    &&event.priorityClass==='forced'
+    &&event.nightPolicy?.intercept==='before_lodging'
+    &&event.nightPolicy.consumesNight
+    &&event.nightPolicy.suppressVoluntaryMenu
+    &&event.reactionTriggers.some(trigger=>trigger.kind==='nightPhase'&&trigger.point==='before_lodging')
+  );
+  return {...cat,events};
+}
+function handoffForcedNightAtCampBoundaryMutable(s:Save,cat:Catalog){
+  const forcedCat=forcedConsumingNightCatalog(cat);
+  if(!forcedCat.events.length)return false;
+  const before=cloneSave(s);
+  runResolverBoundary(s,before,forcedCat,[{kind:'nightPhase',point:'before_lodging'}],true);
+  if(!s.run.pending)return false;
+  const event=forcedCat.events.find(candidate=>candidate.id===s.run.pending!.eventId);
+  if(!event)throw new Error('Camp boundary selected an invalid forced Night event.');
+  s.run.flow.activity=null;
+  s.run.flow.night=createNightState(s.run.day);
+  const night=s.run.flow.night;
+  night.phase='NightEventResolution';
+  night.currentIntercept='before_lodging';
+  applyPendingNightPolicy(s,cat,'before_lodging');
+  return true;
+}
+function activityCampCanChoose(s:Save,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  const policy=definition.campPolicy;
+  if(!policy)return false;
+  const camp=envelope.campState;
+  if(camp.phase!=='idle'&&camp.phase!=='field_day_ready')return false;
+  if(camp.nightsUsed>=policy.maxNights)return false;
+  if(s.run.day+1>=160)return false;
+  return activityFieldTimeRemaining(envelope)===0;
+}
+function chooseActivityCampMutable(s:Save,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  if(!activityCampCanChoose(s,definition,envelope))throw new Error('Camp сейчас недоступен.');
+  const camp=envelope.campState;
+  camp.phase='chosen';
+  camp.boundaryDay=s.run.day;
+  camp.calendarAdvanceCommitted=false;
+  camp.fieldTimeRefreshCommitted=false;
+  envelope.checkpoint='camp.chosen';
+}
+function advanceActivityCampCalendarMutable(s:Save,cat:Catalog,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  const camp=envelope.campState;
+  if(!definition.campPolicy)throw new Error('Activity не поддерживает Camp.');
+  if(camp.phase!=='chosen'||camp.boundaryDay!==s.run.day||camp.calendarAdvanceCommitted||camp.fieldTimeRefreshCommitted){
+    throw new Error('Camp calendar advance находится в несовместимом состоянии.');
+  }
+  if(handoffForcedNightAtCampBoundaryMutable(s,cat))return;
+  if(!advanceCalendarOneDayMutable(s))throw new Error('Camp не может выйти за предел календаря текущей жизни.');
+  camp.nightsUsed++;
+  camp.calendarAdvanceCommitted=true;
+  camp.phase='calendar_advanced';
+  envelope.checkpoint='camp.calendar-advanced';
+}
+function refreshActivityCampFieldTimeMutable(s:Save,definition:ActivityDefinition,envelope:ActivityEnvelope){
+  const camp=envelope.campState;
+  const segments=definition.adapterConfig.fieldTimeSegments;
+  if(
+    !definition.campPolicy
+    ||segments===undefined
+    ||camp.phase!=='calendar_advanced'
+    ||camp.boundaryDay===null
+    ||s.run.day!==camp.boundaryDay+1
+    ||!camp.calendarAdvanceCommitted
+    ||camp.fieldTimeRefreshCommitted
+  )throw new Error('Camp Field Time refresh находится в несовместимом состоянии.');
+  envelope.internalState.fieldTimeRemaining=segments;
+  camp.fieldTimeRefreshCommitted=true;
+  camp.phase='field_day_ready';
+  envelope.checkpoint='camp.field-day-ready';
+}
+
 function finalizeActivityMutable(s:Save,cat:Catalog,outcome:ActivityOutcome){
   const envelope=s.run.flow.activity;if(!envelope)throw new Error('Нет активной Activity.');
   const definition=activityDefinition(cat,envelope.activityId);
   if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с сохранённым envelope.');
   const result=activityResult(definition,outcome);
   const before=cloneSave(s);
+  if(outcome!=='success'){
+    const context=d38Context(s,envelope);
+    if(context){
+      for(const carried of envelope.internalState.carriedResults){
+        if(!activityD38CarriedResultSurvives({...context,resultId:carried.resultId,tags:carried.tags,outcome})){
+          removeValue(s.run.progression.worldFacts,carried.resultId);
+        }
+      }
+    }
+  }
   envelope.status='resolving';
   envelope.accumulatedRewards.push(...structuredClone(result.effects));
   addUnique(envelope.emittedFacts,result.id);
@@ -1134,13 +1327,18 @@ function enterActivityMutable(s:Save,cat:Catalog,id:string){
     startedDay:s.run.day,
     entryEnergyCommitted:true,
     optionModelVersion:definition.options.length?1:0,
+    campStateVersion:1,
+    campState:neutralActivityCampState(),
     internalState:{
       progress:0,
       endurance:definition.adapterConfig.initialEndurance,
       steps:0,
       lastRoll:null,
       routeId:null,
-      resolvedOptionIds:[]
+      resolvedOptionIds:[],
+      fieldTimeRemaining:definition.adapterConfig.fieldTimeSegments??null,
+      miniGames:{},
+      carriedResults:[]
     },
     rngState:s.run.rngState.state,
     checkpoint:'entry',
@@ -1154,9 +1352,26 @@ function activityActionMutable(s:Save,cat:Catalog,action:string){
   const definition=activityDefinition(cat,envelope.activityId);
   if(definition.version!==envelope.definitionVersion||definition.adapter!==envelope.adapter)throw new Error('Activity definition несовместима с сохранённым envelope.');
   if(envelope.status!=='active')throw new Error('Activity сейчас не принимает действия.');
-  if(action==='escape'){finalizeActivityMutable(s,cat,'escape');return;}
-  if(envelope.optionModelVersion===0&&action!=='advance')throw new Error(`Неизвестное Activity action: ${action}`);
+  const camp=envelope.campState;
+  if(action==='escape'){
+    if(camp.phase==='chosen'||camp.phase==='calendar_advanced')throw new Error('Сначала завершите выбранную Camp boundary.');
+    finalizeActivityMutable(s,cat,'escape');return;
+  }
+  if(action===ACTIVITY_CAMP_CHOOSE){chooseActivityCampMutable(s,definition,envelope);return;}
+  if(action===ACTIVITY_CAMP_ADVANCE){advanceActivityCampCalendarMutable(s,cat,definition,envelope);return;}
+  if(action===ACTIVITY_CAMP_REFRESH){refreshActivityCampFieldTimeMutable(s,definition,envelope);return;}
+  if(camp.phase==='chosen'||camp.phase==='calendar_advanced')throw new Error('Сначала завершите Camp boundary.');
   const state=envelope.internalState;
+  if(action.startsWith(ACTIVITY_D38_SECURE_PREFIX)){
+    const resultId=action.slice(ACTIVITY_D38_SECURE_PREFIX.length);
+    const carried=state.carriedResults.find(record=>record.resultId===resultId);
+    const context=d38Context(s,envelope);
+    if(!carried||!context)throw new Error('Field Archive result is not available.');
+    s.run.strongMetaRuntime=commitActivityD38SecureResult({...context,resultId:carried.resultId,tags:carried.tags});
+    envelope.checkpoint=`activity.d38.secured.${resultId}`;
+    return;
+  }
+  if(envelope.optionModelVersion===0&&action!=='advance')throw new Error(`Неизвестное Activity action: ${action}`);
   const requiresRouteSelection=envelope.optionModelVersion>=1&&definition.options.some(option=>option.category==='route');
   if(action==='advance'&&requiresRouteSelection&&!state.routeId)throw new Error('Сначала выберите маршрут Activity.');
   if(action!=='advance'){
@@ -1164,18 +1379,47 @@ function activityActionMutable(s:Save,cat:Catalog,action:string){
     if(!option)throw new Error(`Неизвестное Activity action: ${action}`);
     if(state.resolvedOptionIds.includes(option.id))throw new Error('Activity option уже использована.');
     if(!eligible(option.conditions,s,cat))throw new Error('Activity option недоступна.');
-    if(option.setRoute&&state.routeId&&state.routeId!==option.setRoute)throw new Error('Activity route уже выбрана.');
+    const routeMismatch=!!option.setRoute&&!!state.routeId&&state.routeId!==option.setRoute;
+    const lateralContactUse=routeMismatch&&activityContactNetworkLateralAvailable(s,envelope,option);
+    if(routeMismatch&&!lateralContactUse)throw new Error('Activity route уже выбрана.');
+    if(!activityMiniGameTransitionAvailable(envelope,option))throw new Error('Mini-game transition сейчас недоступен.');
+    const authoredFieldTimeCost=option.fieldTimeCost??0;
+    const fieldTimeCost=activityOptionFieldTimeCost(s,envelope,option);
+    if(!activityFieldTimeAffordable(envelope,fieldTimeCost))throw new Error('Не хватает Field Time для этого действия.');
     state.steps++;
-    if(option.setRoute)state.routeId=option.setRoute;
+    if(option.setRoute&&!lateralContactUse)state.routeId=option.setRoute;
     state.progress=Math.min(1_000_000,state.progress+option.progressDelta);
     state.endurance=Math.max(0,state.endurance-option.enduranceCost);
+    activitySpendFieldTime(envelope,fieldTimeCost);
+    applyActivityMiniGameTransition(envelope,option);
+    if(option.effects.length)applyEffectsMutable(s,option.effects,cat,true);
+    for(const carried of option.carriedResults){
+      if(!state.carriedResults.some(record=>record.resultId===carried.resultId)){
+        state.carriedResults.push(structuredClone(carried));
+      }
+    }
+    const context=d38Context(s,envelope);
+    if(context&&fieldTimeCost!==authoredFieldTimeCost&&option.tags.includes(ACTIVITY_D38_TAGS.surveyDiscovery)){
+      s.run.strongMetaRuntime=commitActivityD38SurveyUse({...context,authoredFieldTimeCost,tags:option.tags});
+    }
+    if(context&&lateralContactUse){
+      s.run.strongMetaRuntime=commitActivityD38ContactIntroduction({
+        ...context,
+        tags:option.tags,
+        regionNormallyUnlocked:true,
+        normalConditionsMet:true
+      });
+    }
     state.lastRoll=activityRandom(envelope);
     addUnique(state.resolvedOptionIds,option.id);
     envelope.checkpoint=option.id;
   }else{
+    const fieldTimeCost=definition.adapterConfig.advanceFieldTimeCost??0;
+    if(!activityFieldTimeAffordable(envelope,fieldTimeCost))throw new Error('Не хватает Field Time для продолжения.');
     state.steps++;
     state.progress++;
     state.endurance=Math.max(0,state.endurance-definition.adapterConfig.advanceEnduranceCost);
+    activitySpendFieldTime(envelope,fieldTimeCost);
     state.lastRoll=activityRandom(envelope);
     envelope.checkpoint=`counter.step.${state.steps}`;
   }
@@ -1187,19 +1431,61 @@ export function availableActivityActions(s:Save,cat:Catalog):Array<{id:string;la
   const envelope=s.run.flow.activity;if(!envelope||envelope.status!=='active')return [];
   const definition=activityDefinition(cat,envelope.activityId);
   const state=envelope.internalState;
-  if(envelope.optionModelVersion===0)return [{id:'advance',label:'Продолжить'},{id:'escape',label:'Отступить'}];
+  const camp=envelope.campState;
+  if(camp.phase==='chosen')return [{id:ACTIVITY_CAMP_ADVANCE,label:'Перейти через лагерную ночь'}];
+  if(camp.phase==='calendar_advanced')return [{id:ACTIVITY_CAMP_REFRESH,label:'Начать новый полевой день'}];
+  if(envelope.optionModelVersion===0){
+    const campAction=activityCampCanChoose(s,definition,envelope)?[{id:ACTIVITY_CAMP_CHOOSE,label:'Разбить лагерь'}]:[];
+    const advance=activityFieldTimeAffordable(envelope,definition.adapterConfig.advanceFieldTimeCost??0)
+      ?[{id:'advance',label:'Продолжить'}]
+      :[];
+    return [...advance,...campAction,{id:'escape',label:'Отступить'}];
+  }
   const custom=definition.options
     .filter(option=>!state.resolvedOptionIds.includes(option.id))
     .filter(option=>eligible(option.conditions,s,cat))
-    .filter(option=>!option.setRoute||!state.routeId||state.routeId===option.setRoute)
+    .filter(option=>{
+      if(!option.setRoute||!state.routeId||state.routeId===option.setRoute)return true;
+      return activityContactNetworkLateralAvailable(s,envelope,option);
+    })
+    .filter(option=>activityMiniGameTransitionAvailable(envelope,option))
+    .filter(option=>activityFieldTimeAffordable(envelope,activityOptionFieldTimeCost(s,envelope,option)))
     .map(option=>({id:option.id,label:option.label}));
+  const secureActions=activityD38SecureActions(s,envelope);
   const requiresRouteSelection=definition.options.some(option=>option.category==='route');
-  const ordinary=requiresRouteSelection&&!state.routeId?[]:[{id:'advance',label:'Продолжить'}];
-  return [...custom,...ordinary,{id:'escape',label:'Отступить'}];
+  const advanceCost=definition.adapterConfig.advanceFieldTimeCost??0;
+  const ordinary=requiresRouteSelection&&!state.routeId||!activityFieldTimeAffordable(envelope,advanceCost)
+    ?[]
+    :[{id:'advance',label:'Продолжить'}];
+  const campAction=activityCampCanChoose(s,definition,envelope)?[{id:ACTIVITY_CAMP_CHOOSE,label:'Разбить лагерь'}]:[];
+  return [...secureActions,...custom,...ordinary,...campAction,{id:'escape',label:'Отступить'}];
+}
+
+function advanceCalendarOneDayMutable(s:Save){
+  if(s.run.day+1>=160)return false;
+  s.run.day++;
+  s.run.slot=0;
+  return true;
 }
 
 type NightPoint='before_lodging'|'after_lodging'|'after_choice';
 type NightState=NonNullable<Save['run']['flow']['night']>;
+
+function createNightState(startedDay:number):NightState{
+  return {
+    phase:'PreLodgingForcedCheck',
+    startedDay,
+    selectedLodgingId:null,
+    lodgingPaymentCommitted:false,
+    selectedNightChoiceId:null,
+    suppressLodgingPayment:false,
+    suppressVoluntaryMenu:false,
+    consumesNight:false,
+    calendarAdvanceCommitted:false,
+    currentIntercept:null,
+    handledEventIds:[]
+  };
+}
 
 function nightState(s:Save):NightState{
   const n=s.run.flow.night;if(!n)throw new Error('Ночная последовательность не начата.');return n;
@@ -1257,8 +1543,7 @@ function finishNightMutable(s:Save,cat:Catalog){
       s.run.flow.night=null;
       return;
     }
-    s.run.day++;
-    s.run.slot=0;
+    if(!advanceCalendarOneDayMutable(s))throw new Error('Night calendar advance failed.');
     n.calendarAdvanceCommitted=true;
   }
   n.phase='StartDay';
@@ -1319,19 +1604,7 @@ function beginNightMutable(s:Save,cat:Catalog){
     log(s,'Четыре года истекли. Выберите открытую судьбу или начните следующую жизнь.');
     return;
   }
-  s.run.flow.night={
-    phase:'PreLodgingForcedCheck',
-    startedDay:s.run.day,
-    selectedLodgingId:null,
-    lodgingPaymentCommitted:false,
-    selectedNightChoiceId:null,
-    suppressLodgingPayment:false,
-    suppressVoluntaryMenu:false,
-    consumesNight:false,
-    calendarAdvanceCommitted:false,
-    currentIntercept:null,
-    handledEventIds:[]
-  };
+  s.run.flow.night=createNightState(s.run.day);
   runNightPointMutable(s,cat,'before_lodging');
 }
 function chooseLodgingMutable(s:Save,cat:Catalog,lodging:LodgingDefinition){
@@ -1693,6 +1966,19 @@ function migrateV3(raw:any){
   }
   return migrated;
 }
+function migrateActivityCampStateV1(raw:any){
+  const active=raw.run?.flow?.activity;
+  if(!active)return;
+  const version=active.campStateVersion;
+  const state=active.campState;
+  if(version===undefined&&state===undefined){
+    active.campStateVersion=1;
+    active.campState=neutralActivityCampState();
+    return;
+  }
+  if(version!==1||state===undefined)throw new Error('Несовместимое persisted Activity Camp state.');
+}
+
 const D40_SELECTED_ROUTE_FACT_BY_STAGE:Record<string,Record<string,string>>={
   guard:{officer:'ending-route-officer-selected','reform-order':'ending-route-reform-selected',network:'ending-route-network-selected','major-case':'ending-route-major-case-selected'},
   merchant:{'merchant-house':'ending-route-merchant-house-selected','speculator-smuggler':'ending-route-speculator-smuggler-selected','patron-of-routes':'ending-route-patron-routes-selected'},
@@ -1746,6 +2032,7 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     raw.run.strongMetaRuntime=emptyStrongMetaRuntime();
     raw.schemaVersion=6;
   }
+  if(raw.schemaVersion===6)migrateActivityCampStateV1(raw);
 
   // D41 migration runs before reference validation. Only completed legacy Tavern
   // outcomes migrate; uncompleted legacy eligibility/commit state is retired.
@@ -1789,6 +2076,20 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
 
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
+  if(s.run.flow.activity){
+    const active=s.run.flow.activity;
+    const definition=cat.definitions.activities.find(x=>x.id===active.activityId);
+    if(definition){
+      active.internalState.miniGames??={};
+      active.internalState.carriedResults??=[];
+      if(active.internalState.fieldTimeRemaining===undefined){
+        const segments=definition.adapterConfig.fieldTimeSegments;
+        active.internalState.fieldTimeRemaining=segments===undefined
+          ?null
+          :Math.max(0,segments-active.internalState.steps);
+      }
+    }
+  }
   repairD40SelectedRouteFactsMutable(s);
   s.meta.unlocks=s.meta.unlocks.filter(unlock=>unlock!=='palace');
   assertPalaceProgressionState(s);
@@ -1865,10 +2166,73 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     if(definition.adapter!==a.adapter)throw new Error(`Несовместимый Activity adapter: ${a.activityId}`);
     if(a.status!=='active')throw new Error('Нестабильное resolving Activity состояние не может быть загружено.');
     if(a.startedDay>s.run.day)throw new Error('Activity начата в будущем календаря.');
-    if(definition.timePolicy==='same_day'&&a.startedDay!==s.run.day)throw new Error('same_day Activity не может пережить CalendarAdvance.');
+    const camp=a.campState;
+    if(!definition.campPolicy){
+      if(definition.timePolicy==='same_day'&&a.startedDay!==s.run.day)throw new Error('same_day Activity не может пережить CalendarAdvance.');
+      if(
+        camp.phase!=='idle'
+        ||camp.nightsUsed!==0
+        ||camp.boundaryDay!==null
+        ||camp.calendarAdvanceCommitted
+        ||camp.fieldTimeRefreshCommitted
+      )throw new Error('Activity без campPolicy не может содержать Camp state.');
+    }else{
+      if(definition.timePolicy!=='can_advance_days_internally')throw new Error('Camp Activity имеет несовместимый timePolicy.');
+      if(camp.nightsUsed>definition.campPolicy.maxNights)throw new Error('Activity Camp превысил лимит ночей.');
+      if(s.run.day-a.startedDay!==camp.nightsUsed)throw new Error('Activity Camp calendar state не совпадает с persisted nightsUsed.');
+      if(camp.phase==='idle'){
+        if(
+          camp.nightsUsed!==0
+          ||camp.boundaryDay!==null
+          ||camp.calendarAdvanceCommitted
+          ||camp.fieldTimeRefreshCommitted
+        )throw new Error('Некорректный neutral Activity Camp state.');
+      }else if(camp.phase==='chosen'){
+        if(
+          camp.boundaryDay!==s.run.day
+          ||camp.calendarAdvanceCommitted
+          ||camp.fieldTimeRefreshCommitted
+          ||camp.nightsUsed>=definition.campPolicy.maxNights
+          ||a.internalState.fieldTimeRemaining!==0
+        )throw new Error('Некорректный chosen Activity Camp state.');
+      }else if(camp.phase==='calendar_advanced'){
+        if(
+          camp.boundaryDay===null
+          ||s.run.day!==camp.boundaryDay+1
+          ||!camp.calendarAdvanceCommitted
+          ||camp.fieldTimeRefreshCommitted
+          ||camp.nightsUsed<1
+          ||a.internalState.fieldTimeRemaining!==0
+        )throw new Error('Некорректный calendar-advanced Activity Camp state.');
+      }else if(
+        camp.boundaryDay===null
+        ||s.run.day!==camp.boundaryDay+1
+        ||!camp.calendarAdvanceCommitted
+        ||!camp.fieldTimeRefreshCommitted
+        ||camp.nightsUsed<1
+      ){
+        throw new Error('Некорректный refreshed Activity Camp state.');
+      }
+    }
     if(a.internalState.endurance>definition.adapterConfig.initialEndurance)throw new Error('Некорректный internal Endurance Activity.');
     if(a.internalState.progress>=definition.adapterConfig.successAtProgress)throw new Error('Activity должна была завершиться success до сохранения.');
     if(a.internalState.endurance<=definition.adapterConfig.failAtEndurance)throw new Error('Activity должна была завершиться failure до сохранения.');
+    const fieldTimeSegments=definition.adapterConfig.fieldTimeSegments;
+    if(fieldTimeSegments===undefined){
+      if(a.internalState.fieldTimeRemaining!==null)throw new Error('Activity без Field Time не может иметь finite Field Time state.');
+    }else if(
+      a.internalState.fieldTimeRemaining===null
+      || a.internalState.fieldTimeRemaining===undefined
+      || a.internalState.fieldTimeRemaining>fieldTimeSegments
+    ){
+      throw new Error('Некорректный Field Time Activity.');
+    }
+    const miniGameDefinitions=new Set(
+      definition.options.flatMap(option=>option.miniGameTransition?[option.miniGameTransition.game]:[])
+    );
+    for(const gameId of Object.keys(a.internalState.miniGames??{})){
+      if(!miniGameDefinitions.has(gameId))throw new Error(`Неизвестное mini-game state Activity: ${gameId}`);
+    }
     if(a.accumulatedRewards.length||a.emittedFacts.length)throw new Error('Активная synthetic Activity не должна содержать уже committed result.');
   }
   if(s.run.flow.night){

@@ -66,9 +66,11 @@ test('C3-133/C3-134/C3-135/C3-136 authored route and challenge pools are bilingu
     keyText(key,'ru');keyText(key,'en');
   }
   const activity=catalog.definitions.activities.find(x=>x.id==='lumber.forest')!;
-  assert.equal(activity.options.length,15);
+  assert.equal(activity.options.length,22);
+  assert.deepEqual(activity.options.filter(option=>/^(forest\.detour\.|forest\.tracking\.|forest\.shortcut\.)/.test(option.id)).map(option=>option.id).sort(),
+    ['forest.detour.tracking-observe','forest.tracking.cross-check','forest.tracking.informed-risk','forest.tracking.complete','forest.tracking.force-conclusion','forest.tracking.abort','forest.shortcut.triangulated-line'].sort());
   assert.equal(activity.adapter,'counter.v1');
-  assert.deepEqual(activity.adapterConfig,{initialEndurance:6,advanceEnduranceCost:2,successAtProgress:6,failAtEndurance:0});
+  assert.deepEqual(activity.adapterConfig,{initialEndurance:6,advanceEnduranceCost:2,successAtProgress:6,failAtEndurance:0,fieldTimeSegments:6,advanceFieldTimeCost:1});
 });
 
 test('C3-137/C3-138/C3-140 exact stat/capability solutions select distinct live narrative',()=>{

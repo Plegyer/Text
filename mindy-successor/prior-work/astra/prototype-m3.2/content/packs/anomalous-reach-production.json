@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "id": "anomalous-reach.production",
+  "reads": [],
+  "writes": [],
+  "capabilities": {
+    "reads": {
+      "activities": [
+        "anomalous.reach"
+      ],
+      "careers": [
+        "undead-farm"
+      ],
+      "relationships": [
+        "undead-farm.keeper"
+      ],
+      "schoolTracks": [
+        "school.track.arcana"
+      ],
+      "worldFacts": [
+        "activity.anomalous-reach.anchor-secured",
+        "activity.anomalous-reach.result.sample-secured",
+        "anomalous.reach.ritual-circuit-resolved",
+        "anomalous.reach.contact-thread-open",
+        "anomalous.reach.city-return-recorded",
+        "activity.anomalous-reach.result.research-grade",
+        "anomalous.reach.school-reflection-recorded",
+        "activity.anomalous-reach.minigame.pattern-ritual-complete",
+        "activity.anomalous-reach.contact-thread-open"
+      ]
+    },
+    "writes": {
+      "careers": [
+        "undead-farm"
+      ],
+      "relationships": [
+        "undead-farm.keeper"
+      ],
+      "worldFacts": [
+        "anomalous.reach.city-return-recorded",
+        "anomalous.reach.school-reflection-recorded",
+        "activity.anomalous-reach.mark.network",
+        "activity.anomalous-reach.result.research-grade"
+      ]
+    }
+  },
+  "media": [],
+  "events": [
+    {
+      "id": "anomalous-reach.production.city-return",
+      "title": "Anomalous Reach return reaches the city",
+      "sourceDomain": "anomalous-reach",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "anomalous.reach",
+          "outcome": "success",
+          "result": "anomalous.reach.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 86,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "anomalous.reach.city-return-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Anomalous Reach return is entered into the city-facing research record without changing School tuition, wages, Night, or global Energy.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the anomaly return",
+          "text": "Store the regional return as a typed city fact.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.city-return-recorded"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomalous-reach.production.farm-return",
+      "title": "Anomalous Reach return reaches Farm research",
+      "sourceDomain": "undead-farm",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "anomalous.reach",
+          "outcome": "success",
+          "result": "anomalous.reach.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 75,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "new-hand"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "reliable-helper"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "keeper-of-process"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "veteran"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "research"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "successor"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "external-anomaly"
+            },
+            {
+              "kind": "careerStage",
+              "career": "undead-farm",
+              "stage": "outcome-ready"
+            }
+          ]
+        },
+        {
+          "kind": "careerFact",
+          "career": "undead-farm",
+          "fact": "anomalous-reach-returned",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The Anomalous Reach return can be compared against the existing Farm anomaly/research path without auto-selecting an advanced career ending.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Farm comparison",
+          "text": "Attach the regional result to the existing Undead Farm career state.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addCareerFact",
+              "career": "undead-farm",
+              "fact": "anomalous-reach-returned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomalous-reach.production.school-reflection",
+      "title": "Arcana reflects on the Anomalous Reach return",
+      "sourceDomain": "school",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "anomalous.reach",
+          "outcome": "success",
+          "result": "anomalous.reach.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 74,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "lessons_completed",
+              "op": "gte",
+              "value": 1
+            },
+            {
+              "kind": "schoolCounter",
+              "track": "school.track.arcana",
+              "counter": "night_study_sessions",
+              "op": "gte",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "kind": "worldFact",
+          "fact": "anomalous.reach.school-reflection-recorded",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "Existing Arcana study now has a concrete field return to compare against. This feedback grants no lesson, certificate, or stat by itself.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the Arcana reflection",
+          "text": "Store one School-facing feedback fact without changing School counters.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "anomalous.reach.school-reflection-recorded"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomalous-reach.production.research-grade",
+      "title": "Anomalous Reach research-grade secured result",
+      "sourceDomain": "anomalous-reach",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "anomalous.reach",
+          "outcome": "success",
+          "result": "anomalous.reach.success"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.anomalous-reach.result.sample-secured"
+        },
+        {
+          "kind": "worldFactAdded",
+          "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "critical_progression",
+      "priority": 73,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.result.sample-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.minigame.pattern-ritual-complete",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.result.research-grade",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "A secured field sample plus a successfully resolved Pattern/Ritual Circuit qualifies this regional result as research-grade.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "record",
+          "label": "Record the research-grade result",
+          "text": "Publish only the typed D38 seam; do not complete an Activity ending.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.result.research-grade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomalous-reach.production.keeper-network",
+      "title": "Anomalous Reach return reaches the Farm Keeper",
+      "sourceDomain": "undead-farm.keeper",
+      "trigger": [],
+      "reactionTriggers": [
+        {
+          "kind": "activityResult",
+          "activity": "anomalous.reach",
+          "outcome": "success",
+          "result": "anomalous.reach.success"
+        },
+        {
+          "kind": "dayStarted"
+        }
+      ],
+      "priorityClass": "normal_progression",
+      "priority": 72,
+      "blocking": true,
+      "delivery": {
+        "policy": "live"
+      },
+      "cooldownDays": 0,
+      "variantCooldownDays": 0,
+      "maxShows": 1,
+      "conditions": [
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.anchor-secured",
+          "present": true
+        },
+        {
+          "kind": "worldFact",
+          "fact": "activity.anomalous-reach.contact-thread-open",
+          "present": true
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "undead-farm.keeper",
+          "fact": "request-resolved",
+          "present": true
+        },
+        {
+          "kind": "relationshipChoice",
+          "relationship": "undead-farm.keeper",
+          "choice": "request-response",
+          "value": "accepted"
+        },
+        {
+          "kind": "relationshipFact",
+          "relationship": "undead-farm.keeper",
+          "fact": "anomalous-reach-return-shared",
+          "present": false
+        }
+      ],
+      "variants": [
+        {
+          "id": "default",
+          "text": "The existing Keeper request thread can receive the anomalous field return as a real network-capable contact result.",
+          "conditions": [],
+          "media": []
+        }
+      ],
+      "choices": [
+        {
+          "id": "share",
+          "label": "Share the anomaly return",
+          "text": "Record the return on the existing Keeper relationship and mark this regional anchor as Network-capable.",
+          "conditions": [],
+          "effects": [
+            {
+              "kind": "addRelationshipFact",
+              "relationship": "undead-farm.keeper",
+              "fact": "anomalous-reach-return-shared"
+            },
+            {
+              "kind": "addWorldFact",
+              "fact": "activity.anomalous-reach.mark.network"
+            }
+          ]
+        },
+        {
+          "id": "keep-field-note",
+          "label": "Keep it as a field note",
+          "text": "Do not attach this regional result to the Keeper network.",
+          "conditions": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

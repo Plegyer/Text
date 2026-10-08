@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "scope": "D38 Activity ending family v17",
+  "policy": "Only genuinely absent dedicated Activity-ending visuals are listed. Existing project-owned media is reused only when it does not imply a forbidden career, School path, faction, or mechanical requirement.",
+  "assets": [
+    {
+      "endingId": "ending.activity.pathfinder",
+      "presentationId": "ending/activity/pathfinder",
+      "status": "missing-dedicated-ending-visual",
+      "desired": "Cross-region survey table or atlas scene combining multiple Activity regions without implying a single career.",
+      "currentSafeReuse": "assets/presentation/forest-route-default-v1.svg",
+      "reuseLimit": "Representative route image only; it must not be read as a Forest-only requirement."
+    },
+    {
+      "endingId": "ending.activity.preservation",
+      "presentationId": "ending/activity/preservation",
+      "status": "missing-dedicated-ending-visual",
+      "desired": "Field archive scene with labeled secured samples, notes, cases, and ritual/research records.",
+      "currentSafeReuse": "assets/stage-town.svg",
+      "reuseLimit": "Neutral city-return image only; it does not depict the archive itself."
+    },
+    {
+      "endingId": "ending.activity.network",
+      "presentationId": "ending/activity/network",
+      "status": "missing-dedicated-ending-visual",
+      "desired": "Multi-contact expedition network scene linking distinct regional contacts without assigning a single career or faction.",
+      "currentSafeReuse": "assets/stage-town.svg",
+      "reuseLimit": "Neutral city-hub image only; it does not depict the contact network itself."
+    }
+  ]
+}

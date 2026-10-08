@@ -64,17 +64,23 @@ function finishNight(state:Save){
 test('C2-180 every published Guard event override comes from one real frozen production event',()=>{
   const known=new Set(presentationSlots(catalog).map(slot=>slot.id));
   const expected=new Set<string>();
+  const stage3Return='job/guard/event/trade-corridor-production-guard-return/default';
   for(const event of catalog.events.filter(event=>event.sourceDomain==='guard')){
     for(const variant of event.variants){
       const id=presentationIdForEvent(catalog,event.id,variant.id);
       expected.add(id);
       assert.ok(known.has(id),id+' live registry');
-      assert.ok(presentation.slots?.[id]?.static,id+' static override');
+      if(id===stage3Return){
+        const resolved=resolvePresentation(catalog,presentation,id,{animationsEnabled:false,occurrenceKey:'stage3-guard-return'});
+        assert.equal(resolved.textOnly,false,id+' inherited Guard static fallback');
+        assert.ok(resolved.selected?.src&&existsSync(resolved.selected.src),id+' usable fallback');
+      }else assert.ok(presentation.slots?.[id]?.static,id+' frozen static override');
     }
   }
-  assert.equal(expected.size,29);
+  assert.equal(expected.size,30);
+  assert.ok(expected.has(stage3Return));
   const published=Object.keys(presentation.slots??{}).filter(id=>expected.has(id));
-  assert.equal(published.length,expected.size);
+  assert.equal(published.length,29,'29 frozen Guard overrides, new D36 return via fallback');
   for(const id of published)assert.ok(expected.has(id),id+' catalog-backed');
 });
 

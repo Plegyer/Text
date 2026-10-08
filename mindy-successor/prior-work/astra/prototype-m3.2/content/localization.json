@@ -14693,6 +14693,90 @@
     "presentation.static.palace.return-home-threshold.caption": {
       "ru": "Переход означает уход из реального мира, а не его исчезновение; причина перемещения не показана.",
       "en": "The crossing means leaving a real world, not erasing it; the cause of the displacement is not shown."
+    },
+    "ending.ending.activity.network.description": {
+      "ru": "Полевые контакты, проводники и люди с доступом перестают быть случайными знакомствами и начинают работать как настоящая экспедиционная сеть. Это судьба исследовательницы, которая умеет проходить сложные места не в одиночку и не превращает доверие в универсальный пропуск.",
+      "en": "Field contacts, guides, and people with access stop being isolated acquaintances and become a real expedition network. This is the fate of an explorer who knows how to cross difficult ground without doing it alone, while never turning trust into a universal pass."
+    },
+    "ending.ending.activity.network.epilogue": {
+      "ru": "У этой сети нет штаба, печати и списка членов. Есть условные фразы, надёжные адреса, люди, которые знают, кому передать записку, и достаточно доверия, чтобы однажды ответить на неё. Ни один контакт не открывает все двери, но вместе они превращают четыре разрозненных направления в пространство, где у вас почти всегда есть с кем начать разговор.",
+      "en": "The network has no headquarters, seal, or membership roll. It has agreed phrases, reliable addresses, people who know where to pass a note, and enough trust for someone to answer it. No contact opens every door, but together they turn four disconnected directions into a world where you almost always know who to speak to first."
+    },
+    "ending.ending.activity.network.title": {
+      "ru": "Нити через границы",
+      "en": "Threads Across the Boundaries"
+    },
+    "ending.ending.activity.pathfinder.description": {
+      "ru": "Маршруты трёх регионов перестают быть отдельными вылазками: вы связываете их в рабочую карту, проверенную следами, обходами и собственными решениями. Это судьба исследовательницы, которая научилась не просто возвращаться, а понимать, куда ведёт следующий путь.",
+      "en": "Three regions stop being isolated expeditions and become one working map, tested by tracks, detours, and your own decisions. This is the fate of an explorer who learned not only how to return, but how to understand where the next route leads."
+    },
+    "ending.ending.activity.pathfinder.epilogue": {
+      "ru": "Вечером на столе не остаётся пустого места: старые схемы перекрыты новыми линиями, на полях стоят даты, предупреждения и имена тех, кто помог пройти дальше. Карта не обещает безопасной дороги и не делает путь короче сама по себе — она хранит знание, добытое шаг за шагом. Когда приходит время выбрать следующую дорогу, вы впервые смотрите не на край известного мира, а за него.",
+      "en": "By evening there is no empty space left on the table: old sketches are crossed by new lines, with dates, warnings, and the names of people who helped you go farther written in the margins. The map promises no safe road and shortens nothing by itself; it preserves knowledge earned one step at a time. When the time comes to choose the next route, you look not at the edge of the known world, but beyond it."
+    },
+    "ending.ending.activity.pathfinder.title": {
+      "ru": "За пределами карты",
+      "en": "Beyond the Map"
+    },
+    "ending.ending.activity.preservation.description": {
+      "ru": "Вы возвращаете из полевых зон не трофеи, а свидетельства: образцы, записи и закономерности, которые переживут одну удачную вылазку. Это судьба исследовательницы, для которой находка становится ценной только тогда, когда её можно сохранить, проверить и передать дальше.",
+      "en": "You bring back evidence rather than trophies: samples, records, and patterns that can outlast a single successful expedition. This is the fate of an explorer who considers a discovery valuable only when it can be preserved, checked, and passed on."
+    },
+    "ending.ending.activity.preservation.epilogue": {
+      "ru": "Первые ящики выглядят скромно: подписанные пакеты, копии схем, заметки о том, что нельзя хранить рядом и что следует проверять дважды. Но постепенно разрозненные находки складываются в архив, к которому можно вернуться после неудачи, спора или нового открытия. Вы не остановили перемены за городскими границами — вы сделали так, чтобы важное больше не исчезало вместе с одним плохим возвращением.",
+      "en": "The first cases look modest: labeled packets, copied diagrams, notes on what must not be stored together and what should always be checked twice. Gradually, scattered finds become an archive that can be revisited after a failure, an argument, or a new discovery. You did not stop the world beyond the city from changing; you made sure that what matters no longer vanishes with one bad return."
+    },
+    "ending.ending.activity.preservation.title": {
+      "ru": "Сохранённое невозможное",
+      "en": "The Impossible Preserved"
+    },
+    "presentation.static.activity-ending-network.alt": {
+      "ru": "Нейтральная панорама Листограда как узла маршрутов и контактов; визуал не приписывает финал конкретной карьере или фракции.",
+      "en": "A neutral view of Listograd as a hub of routes and contacts; the image does not assign the ending to any specific career or faction."
+    },
+    "presentation.static.activity-ending-network.caption": {
+      "ru": "Нейтральный project-owned визуал сети, сходящейся в городе. Отдельный финальный арт с несколькими региональными контактами пока отсутствует.",
+      "en": "Neutral project-owned visual for a network converging on the city. A dedicated ending image showing several regional contacts is still missing."
+    },
+    "presentation.static.activity-ending-pathfinder.alt": {
+      "ru": "Героиня идёт по нейтральной лесной тропе; существующая маршрутная иллюстрация служит временным символом картографирования и не означает, что финал требует только Лесной фронтир.",
+      "en": "The heroine follows a neutral forest trail; this existing route image is a temporary symbol of mapping and does not mean the ending requires only the Forest Frontier."
+    },
+    "presentation.static.activity-ending-pathfinder.caption": {
+      "ru": "Временный project-owned визуал: путь и наблюдение важнее конкретного региона. Отдельный финальный арт для Pathfinder пока отсутствует.",
+      "en": "Temporary project-owned visual: route-finding and observation matter more than any single region. A dedicated Pathfinder ending image is still missing."
+    },
+    "presentation.static.activity-ending-preservation.alt": {
+      "ru": "Нейтральная панорама Листограда после возвращения из вылазки; визуал не утверждает конкретную карьеру, школу или регион.",
+      "en": "A neutral view of Listograd after an expedition return; the image does not imply any specific career, school, or region."
+    },
+    "presentation.static.activity-ending-preservation.caption": {
+      "ru": "Нейтральный project-owned визуал возвращения в город. Отдельный финальный арт с полевым архивом и сохранёнными образцами пока отсутствует.",
+      "en": "Neutral project-owned return-to-city visual. A dedicated ending image showing the field archive and preserved samples is still missing."
+    },
+    "specialist.activity.contact-network.description": {
+      "ru": "Выбираемый Specialist. После обычного открытия региона в нём может появиться ровно один авторский activity-network-introduction за прохождение. Максимум 4 знакомства за прохождение; Сеть не обходит открытие региона, карьеру, отношения, предметные возможности, Palace, Secret Debt или ending eligibility.",
+      "en": "Selectable Specialist. After a region is normally unlocked, it may expose exactly one authored activity-network-introduction per run. Maximum 4 introductions per run; the Network does not bypass region unlock, career, relationships, item capabilities, Palace, Secret Debt, or ending eligibility."
+    },
+    "specialist.activity.field-archive.description": {
+      "ru": "Выбираемый Specialist. Один раз на регион за прохождение законно полученный результат с тегом activity-secure-eligible можно пометить как Secured на стабильной Activity-точке. Он переживёт последующий escape/failure этой вылазки; максимум 1 на регион и 4 за прохождение, без создания результата или отмены условий его получения.",
+      "en": "Selectable Specialist. Once per region per run, a legally obtained activity-secure-eligible result may be marked Secured at a stable Activity checkpoint. It survives a later escape or failure from that expedition; maximum 1 per region and 4 per run, without creating a result or waiving the requirements used to obtain it."
+    },
+    "specialist.activity.surveyors-atlas.description": {
+      "ru": "Выбираемый Specialist. Один раз в каждом Activity-регионе за прохождение первое авторское обследование или открытие маршрута с обычной ценой ровно 1 Field Time стоит 0. Максимальная прямая экономия — 4 Field Time за прохождение; Атлас не открывает регионы и не обходит capability, сезонные или ending-гейты.",
+      "en": "Selectable Specialist. Once in each Activity region per run, the first authored route survey or discovery that normally costs exactly 1 Field Time costs 0. Maximum direct saving is 4 Field Time per run; the Atlas does not unlock regions or bypass capability, seasonal, or ending gates."
+    },
+    "unlock.specialist.activity.contact-network.label": {
+      "ru": "Сеть экспедиционных контактов",
+      "en": "Expedition Contact Network"
+    },
+    "unlock.specialist.activity.field-archive.label": {
+      "ru": "Протокол полевого архива",
+      "en": "Field Archive Protocol"
+    },
+    "unlock.specialist.activity.surveyors-atlas.label": {
+      "ru": "Атлас землемера",
+      "en": "Surveyor's Atlas"
     }
   }
 }

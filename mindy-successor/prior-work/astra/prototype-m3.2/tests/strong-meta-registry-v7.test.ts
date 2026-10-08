@@ -19,9 +19,9 @@ import {
 } from '../src/core/strongMeta.ts';
 import {metaRewardSchema} from '../src/core/schema.ts';
 
-test('registry preserves v7/D40/D41 and adds two D39 Specialists without changing capacity',()=>{
+test('registry preserves prior rewards and adds D38/D39 Specialists without changing capacity',()=>{
   validateStrongMetaRegistry();
-  assert.equal(Object.keys(strongMetaRegistry).length,22);
+  assert.equal(Object.keys(strongMetaRegistry).length,25);
   assert.equal(STRONG_META_KEYSTONE_CAPACITY,1);
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
   assert.equal(strongMetaRegistry[STRONG_META_IDS.palaceCap200].class,'specialist');

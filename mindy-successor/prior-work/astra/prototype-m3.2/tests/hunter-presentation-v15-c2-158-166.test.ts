@@ -164,7 +164,7 @@ test('C2-162 Hunter gear and expedition route/result surfaces use only live item
   }
   for(const eventId of HUNTER_ITEM_EVENT_IDS)assertLocalizedMedia(presentationIdForEvent(catalog,eventId,'default'));
 
-  assert.match(app,/activityEntryList\(\['lumber\.forest','hunter\.expedition'\]\)/);
+  assert.match(app,/activityEntryList\(\['lumber\.forest','trade\.corridor','anomalous\.reach','restricted\.sites','hunter\.expedition'\]\)/);
   assert.match(app,/ui\.hunter\.expedition\.route\./);
 });
 

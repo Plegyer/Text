@@ -373,7 +373,25 @@ const counterActivityConfigSchema=z.object({
   initialEndurance:z.number().int().min(1).max(1000),
   advanceEnduranceCost:z.number().int().min(1).max(1000),
   successAtProgress:z.number().int().min(1).max(1000),
-  failAtEndurance:z.number().int().min(0).max(1000)
+  failAtEndurance:z.number().int().min(0).max(1000),
+  fieldTimeSegments:z.number().int().min(1).max(24).optional(),
+  advanceFieldTimeCost:z.number().int().min(0).max(24).optional()
+}).strict();
+
+const activityMiniGameOutcomeSchema=z.enum(['success','failure','abort']);
+const activityMiniGameTransitionSchema=z.object({
+  game:id,
+  from:id,
+  to:id,
+  outcome:activityMiniGameOutcomeSchema.optional(),
+  suspicionDelta:z.number().int().min(-100).max(100).optional(),
+  minSuspicion:z.number().int().min(0).max(100).optional(),
+  maxSuspicion:z.number().int().min(0).max(100).optional()
+}).strict();
+
+const activityCarriedResultSchema=z.object({
+  resultId:id,
+  tags:z.array(id).max(8).default([])
 }).strict();
 
 const activityOptionSchema=z.object({
@@ -383,7 +401,12 @@ const activityOptionSchema=z.object({
   conditions:z.array(conditionSchema).max(24).default([]),
   progressDelta:z.number().int().min(0).max(1000).default(0),
   enduranceCost:z.number().int().min(0).max(1000).default(0),
-  setRoute:id.optional()
+  fieldTimeCost:z.number().int().min(0).max(24).optional(),
+  tags:z.array(id).max(8).default([]),
+  carriedResults:z.array(activityCarriedResultSchema).max(8).default([]),
+  effects:z.array(effectSchema).max(12).default([]),
+  setRoute:id.optional(),
+  miniGameTransition:activityMiniGameTransitionSchema.optional()
 }).strict();
 
 const activityResultDefinitionSchema=z.object({
@@ -401,6 +424,7 @@ export const activityDefinitionSchema=z.object({
   resumePolicy:z.enum(['allowed','checkpoint_only','forbidden']),
   timePolicy:z.enum(['same_day','advances_calendar_on_exit','can_advance_days_internally']),
   failurePolicy:z.enum(['exit_to_day','exit_to_night','terminal']),
+  campPolicy:z.object({maxNights:z.number().int().min(1).max(2)}).strict().optional(),
   adapter:z.literal('counter.v1'),
   adapterConfig:counterActivityConfigSchema,
   options:z.array(activityOptionSchema).max(64).default([]),
@@ -408,13 +432,33 @@ export const activityDefinitionSchema=z.object({
 }).strict();
 export type ActivityDefinition=z.infer<typeof activityDefinitionSchema>;
 
+const activityMiniGameStateSchema=z.object({
+  stage:id,
+  status:z.enum(['active','success','failure','abort']),
+  choiceIds:z.array(id).max(64).default([]),
+  suspicion:z.number().int().min(0).max(100).default(0)
+}).strict();
+
+export const activityCampPhases=['idle','chosen','calendar_advanced','field_day_ready'] as const;
+const activityCampStateSchema=z.object({
+  phase:z.enum(activityCampPhases),
+  nightsUsed:z.number().int().min(0).max(2),
+  boundaryDay:n.max(159).nullable(),
+  calendarAdvanceCommitted:z.boolean(),
+  fieldTimeRefreshCommitted:z.boolean()
+}).strict();
+export type ActivityCampState=z.infer<typeof activityCampStateSchema>;
+
 const counterActivityStateSchema=z.object({
   progress:z.number().int().min(0).max(1_000_000),
   endurance:z.number().int().min(0).max(1_000_000),
   steps:z.number().int().min(0).max(1_000_000),
   lastRoll:z.number().min(0).max(1).nullable(),
   routeId:id.nullable().default(null),
-  resolvedOptionIds:z.array(id).max(128).default([])
+  resolvedOptionIds:z.array(id).max(128).default([]),
+  fieldTimeRemaining:z.number().int().min(0).max(24).nullable().optional(),
+  miniGames:z.record(z.string(),activityMiniGameStateSchema).optional(),
+  carriedResults:z.array(activityCarriedResultSchema).max(16).default([])
 }).strict();
 
 export const activityEnvelopeSchema=z.object({
@@ -425,6 +469,8 @@ export const activityEnvelopeSchema=z.object({
   startedDay:n.max(159),
   entryEnergyCommitted:z.literal(true),
   optionModelVersion:z.number().int().min(0).max(1).default(0),
+  campStateVersion:z.literal(1),
+  campState:activityCampStateSchema,
   internalState:counterActivityStateSchema,
   rngState:z.number().int().min(0).max(4294967295),
   checkpoint:id,

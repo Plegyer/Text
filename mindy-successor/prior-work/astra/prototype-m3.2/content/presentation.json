@@ -3867,6 +3867,30 @@
         "alt": "A person crosses a bounded inter-world Threshold while the intact world behind them remains and continues.",
         "altKey": "presentation.static.palace.return-home-threshold.alt"
       }
+    },
+    "ending/activity/pathfinder": {
+      "static": {
+        "kind": "image",
+        "src": "assets/presentation/forest-route-default-v1.svg",
+        "alt": "Героиня идёт по нейтральной лесной тропе как символ картографирования.",
+        "altKey": "presentation.static.activity-ending-pathfinder.alt"
+      }
+    },
+    "ending/activity/preservation": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Нейтральная панорама города после возвращения из вылазки.",
+        "altKey": "presentation.static.activity-ending-preservation.alt"
+      }
+    },
+    "ending/activity/network": {
+      "static": {
+        "kind": "image",
+        "src": "assets/stage-town.svg",
+        "alt": "Нейтральная панорама города как узла маршрутов и контактов.",
+        "altKey": "presentation.static.activity-ending-network.alt"
+      }
     }
   }
 }
