@@ -1,0 +1,31 @@
+name: Leader1 Stage5 32 legacy assertions runtime witness v131
+on:
+  push:
+    branches: [qa-stage5-legacy32-v131]
+permissions:
+  contents: read
+jobs:
+  witnesses:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 24e0a153b7eb9845409addd4214f286a6acd9461
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "24e0a153b7eb9845409addd4214f286a6acd9461"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Execute 32 golden assertion witnesses
+        run: node --experimental-strip-types --test tests/gates/stage5-legacy-golden-32-v1.test.ts
