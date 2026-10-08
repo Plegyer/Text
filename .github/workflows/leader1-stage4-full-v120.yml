@@ -1,0 +1,39 @@
+name: Leader1 Stage4 exact-source full CI v120
+on:
+  push:
+    branches: [qa-stage4-full-v120]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 70
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 7b04d1cdc68b922e9d2278ba28e93662f158fafb
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "7b04d1cdc68b922e9d2278ba28e93662f158fafb"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Stage4 golden focused gate
+        run: node --experimental-strip-types --test tests/economy-start-balance-v14.test.ts tests/hard-work-bonus-mapping-v13.test.ts tests/ordinary-hard-work-meta-production.test.ts tests/ordinary-hard-work-lifecycle-parity.test.ts tests/lumber-hard-work-invariant.test.ts tests/hard-work-stat-cap-d24.test.ts tests/hard-work-meta-migration-v5.test.ts tests/migration.test.ts tests/ending-meta.test.ts tests/qa-exactly-once-reload.test.ts tests/qa-one-save-state-drift-sentinel-v2.test.ts tests/lumber-stay-retirement-v17.test.ts tests/presentation-ending-parity-v9.test.ts tests/advanced-endings-tranche-a-v11.test.ts tests/d40-advanced-endings-tranche-b-v11.test.ts tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/hard-work-palace-meta-smoke.test.ts tests/palace-d23-consumer-integration-v8.test.ts tests/secret-debt-full-route-v12.test.ts tests/secret-debt-activity-energy-compat-v20.test.ts tests/activity.test.ts tests/school-night-study-adapter.test.ts tests/night-flow.test.ts tests/night-content-gap-v10.test.ts tests/shared-night-ui-localization-production-v1.test.ts tests/localization.test.ts tests/presentation-source-integrity-v9.test.ts tests/presentation-locale-accessibility-v9.test.ts
+      - name: Stage4 previous full-failure targeted gate
+        run: node --experimental-strip-types --test tests/artist-geisha-runtime-invariants.test.ts tests/assassin-runtime-invariants.test.ts tests/chat3-artist-geisha-live-authored-v19.test.ts tests/chat3-guard-live-authored-v17.test.ts tests/chat3-hunter-live-authored-v16.test.ts tests/chat3-merchant-live-authored-v18.test.ts tests/chat3-tavern-live-authored-v15.test.ts tests/ds-lumber.test.ts tests/ending-action-localization-production.test.ts tests/engine.test.ts tests/generic-display-label-consumers-production.test.ts tests/hard-work-newstart-presentation-v2.test.ts tests/hard-work-newstart-ui-v2.test.ts tests/hard-work-package-catalog-runtime.test.ts tests/hunter-poverty-compatibility.test.ts tests/merchant-runtime-invariants.test.ts tests/ordinary-work-seasonal-negative-tradeoffs.test.ts tests/presentation-animation-off-fallback-v6.test.ts tests/presentation-locale-accessibility-parity-v7.test.ts tests/presentation-reduced-motion-v9.test.ts tests/presentation-registry-collision-stale-v7.test.ts tests/presentation-replacement-editor-regression-v7.test.ts tests/presentation-stale-dead-binding-v9.test.ts tests/presentation-stale-semantic-id-validator-v6.test.ts tests/prostitute-runtime-invariants.test.ts tests/qa-minimal-rc-acceptance-gate-v2.test.ts tests/release-candidate-shipped-e2e.test.ts tests/satyr-maid-house-power-presentation-c2-128.test.ts tests/satyr-maid-shift-depth.test.ts tests/ui.test.ts
+      - name: Full check
+        run: npm run check
