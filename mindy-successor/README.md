@@ -1,5 +1,14 @@
 # Mindy Successor Project
 
+## CRITICAL NEW LEADER ENTRYPOINT — CURRENT (2026-10-08)
+
+**READ FIRST:** [LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md](docs/LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md) — authoritative cumulative project knowledge and full post-Stage5 reality, including what is finished, what is NOT, and how to keep successor context.
+
+**THEN:** [CURRENT_LEADER1_CHECKPOINT.md](docs/tasks/CURRENT_LEADER1_CHECKPOINT.md) and [LEADER_STATE.md](docs/tasks/LEADER_STATE.md), followed by GitHub `main` / latest CI / open PRs / worker pointers. Older "CURRENT LIVE ENTRYPOINT — 2026-10-01", A1 migration, and production-not-started claims below are **historical and superseded**. Engine/platform is functionally ready; public full 1.0 is not signed off. DO NOT restart implementation from architecture.
+
+---
+
+
 ## Leader 1 entrypoint
 
 For any current or replacement Leader 1, start here:
