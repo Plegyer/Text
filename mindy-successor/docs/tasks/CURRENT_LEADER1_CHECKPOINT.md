@@ -1,3 +1,11 @@
+## Post-Stage5 whole-project reality correction — 2026-10-08
+
+**ENGINE/PLATFORM FUNCTIONALLY READY.** Stage1–5 are CLOSED (burn-down 0), but that is integration acceptance, **not public 1.0 completion**. Substantial production content already exists: ten ordinary careers, Palace, Secret Debt, four target D36 Activity regions, School/Night/Meta and RU/EN. Do not restart an engine rewrite or interpret archived pre-Stage5 project gaps as current. The actual next phase is **finish the existing game's natural player journeys, authorial macro mystery, UX/media/content quality, and clean Windows packaged-release proof**.
+
+Authority: [Whole-project reality audit](LEADER1_WHOLE_PROJECT_REALITY_AUDIT_2026-10-08.md). A test-only unaccelerated Lumber 50-day QA witness is GREEN in [Draft PR #305](https://github.com/Plegyer/Text/pull/305), exact-source CI #37814203592: 1355 PASS / 0 FAIL / 4 optional SKIP. This does not imply a gameplay engine gap. Chat2–6 remain parked pending *explicit manual user activation* and new non-overlapping product assignments.
+
+---
+
 # CURRENT LEADER 1 CHECKPOINT — FINAL (2026-10-08)
 
 **STAGE 1–5 CLOSED. Broad burn-down: 0. Final release decision: GO.**
