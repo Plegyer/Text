@@ -64,6 +64,9 @@ function accepted(...suites:AcceptedSuite[]):void {
       timeout:120_000,
       maxBuffer:16*1024*1024,
       cwd:process.cwd(),
+      // Node marks test workers with NODE_TEST_CONTEXT; children must not
+      // inherit that marker or Node silently skips nested test files.
+      env:{...process.env,NODE_TEST_CONTEXT:undefined},
       windowsHide:true
     });
     const output=`${result.stdout??''}\n${result.stderr??''}`;
