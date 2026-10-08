@@ -6,6 +6,11 @@ Rule: read this file, then re-query live GitHub refs before acting. Exact source
 
 ## AUTHORITATIVE CURRENT — Stage 4 CLOSED; Stage 5 CURRENT (2026-10-08)
 
+## Stage5 exact-key conflict adjudication — 2026-10-08
+
+The two previously unresolved Secret Debt RU Golden third-values have been explicitly resolved by Leader 1 in `LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md` by checking accepted Stage1 exact-main source and unchanged Stage4 source. **PRESERVE current production labels**, do not overwrite them. On a copied Golden v54 fixture ONLY, adjust exactly the two `localization.required[KEY].value.ru` test-only expected values with explicit provenance; no blanket Golden weakening. The Stage5 production worker should proceed with safe selective work and STOP only on *new* third values / ownership conflicts. All original Stage5 test gates still mandatory.
+
+
 - **Stage 1, Stage 2, Stage 3, Stage 4 CLOSED. Broad burn-down 1. Stage 5 is the final remaining broad stage.** Supersedes every older stage-status or worker-next-step block below.
 - Stage 4 worker delivery: Chat2 branch `chat2/stage4-d46-d47-legacy-assembly-v1@5570e867d843186815ebc62c17e858e6a4e1165b`, original static-only Draft PR #299. Leader QA/repair source: `lead/stage4-qa-compat-v116@a13451903b66298d70713d3db67a99429fe01f2b`; production PR **#300 MERGED**, https://github.com/Plegyer/Text/pull/300.
 - **Exact-source CI v121** https://github.com/Plegyer/Text/actions/runs/37786950370 `SUCCESS` on SHA `a13451903b66298d70713d3db67a99429fe01f2b`, Node 22.18.0, `npm ci`, typecheck, validate, build, cross-domain retirement focused **5/5**, full `npm run check` **1312/1312 PASS, zero fail/skipped**. This is not a workflow wrapper SHA: exact code checkout was SHA-guarded.

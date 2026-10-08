@@ -13,6 +13,11 @@
 
 ## Stage 5 entry and ownership
 
+## Stage5 exact-key conflict adjudication — 2026-10-08
+
+The two previously unresolved Secret Debt RU Golden third-values have been explicitly resolved by Leader 1 in `LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md` by checking accepted Stage1 exact-main source and unchanged Stage4 source. **PRESERVE current production labels**, do not overwrite them. On a copied Golden v54 fixture ONLY, adjust exactly the two `localization.required[KEY].value.ru` test-only expected values with explicit provenance; no blanket Golden weakening. The Stage5 production worker should proceed with safe selective work and STOP only on *new* third values / ownership conflicts. All original Stage5 test gates still mandatory.
+
+
 - Next task: `CHAT2_STAGE5_FINAL_PLAYER_FACING_SELECTIVE_ASSEMBLY_TASK_2026-10-08.md`.
 - New Chat2 production branch must be created from live `main` after this docs-only control-plane commit. **User manually wakes Chat2**; a task pointer does not start work.
 - Direct initial gap audit recorded in `LEADER1_STAGE5_GOLDEN_GAP_AUDIT_2026-10-08.json`: Chat6 v54 gold requires still-missing localization/presentation operations. Two current-main Secret Debt RU third-values are STOP/Leader-disposition, not permission for blind replacement.

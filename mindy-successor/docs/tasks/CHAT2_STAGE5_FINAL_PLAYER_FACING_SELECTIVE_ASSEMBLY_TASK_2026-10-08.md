@@ -1,5 +1,10 @@
 # CHAT2 — Stage 5 selective player-facing production assembly — 2026-10-08
 
+## Stage5 exact-key conflict adjudication — 2026-10-08
+
+The two previously unresolved Secret Debt RU Golden third-values have been explicitly resolved by Leader 1 in `LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md` by checking accepted Stage1 exact-main source and unchanged Stage4 source. **PRESERVE current production labels**, do not overwrite them. On a copied Golden v54 fixture ONLY, adjust exactly the two `localization.required[KEY].value.ru` test-only expected values with explicit provenance; no blanket Golden weakening. The Stage5 production worker should proceed with safe selective work and STOP only on *new* third values / ownership conflicts. All original Stage5 test gates still mandatory.
+
+
 **Status: ASSIGNED, NOT ACTIVATED.** The user must manually wake a separate Chat2 context. Owner Chat2: production-only. Leader1: frozen-authority/third-value decisions, tests, QA, exact-source full CI, main merge, official exact-main CI, Stage5 closure. Worker must stop and report at `STAGE5_PLAYER_FACING_ASSEMBLY_READY_FOR_LEADER` or `STAGE5_PLAYER_FACING_ASSEMBLY_BLOCKED`.
 
 ## Baseline and boundaries
