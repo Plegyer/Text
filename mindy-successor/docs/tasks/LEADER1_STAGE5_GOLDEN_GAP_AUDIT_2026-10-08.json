@@ -5,7 +5,7 @@
   "source_main_sha": "4e67da063716cde9c41aec3a6ae40cdfc96da962",
   "fixture_branch": "chat6/final-player-facing-golden-manifest-v54",
   "fixture_path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-golden-v54.json",
-  "fixture_blob_sha": "bc8617be68825543ed7617e9dd5c7d9156b0e14",
+  "fixture_blob_sha": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
   "main_content_blobs": {
     "localization": "cf3735bd4c141bcfeaea150b9f3a72369535effc",
     "presentation": "deb6a3b65bf843529a8a57a220e76bd9097f9dbc",
@@ -63,3 +63,4 @@
     "Stage5 official exact-main CI"
   ]
 }
+
