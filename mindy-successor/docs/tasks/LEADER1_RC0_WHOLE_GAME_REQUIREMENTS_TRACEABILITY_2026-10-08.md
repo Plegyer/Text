@@ -52,10 +52,20 @@
 ## First release-candidate attempt — record the exact boundary, don't truncate game
 
 - **RC0 frozen-source candidate:** `10ae406cd3ff107a6b1316959daab50f43372824` (full shipped main tree at audit). This is a **baseline for evaluation**, not a public released tag/approval. Later docs-only commits do not change it; future code commits require new source SHA.
-- **Windows packaging experiment:** workflow wrapper branch `lead/ci-rc1-windows-package-v1` head `f180abe976305b9bcafbe2f654d9c8b8d568cf31`, Action [#37816885139](https://github.com/Plegyer/Text/actions/runs/37816885139). Its checkout is explicitly pinned to **RC0 actual product source** `10ae...`, not to wrapper branch SHA. At time of this written ledger the packaging result **PENDING**; refresh from GitHub before marking PASS.
+- **Windows packaging experiment:** workflow wrapper branch `lead/ci-rc1-windows-package-v1` head `f180abe976305b9bcafbe2f654d9c8b8d568cf31`, Action [#37816885139](https://github.com/Plegyer/Text/actions/runs/37816885139) **SUCCESS**. Explicit checkout verified **RC0 actual product source** `10ae406cd3ff107a6b1316959daab50f43372824`, not wrapper SHA. `npm ci`, `npm run build`, unsigned Windows NSIS via electron-builder 26.15.3, `win-unpacked/Portal Life.exe`, `resources/app.asar`, file/hash assertions and artifact upload all PASS. Installer `Portal Life Setup 0.1.0.exe`, **112,505,127 bytes**, SHA256 `BE07726D5CC400E0B407D3EA038A4308860EEECDE429AC7D2309DBDBDD80EDEE`; GitHub artifact **#11567362669** `rc1-windows-nsis-installer`, 7-day retention (expires 2026-10-15). **No install/launch on a clean Windows machine yet; packaging proof only.**
 - **Lumber unseeded life:** issue #304 / Draft PR #305, exact head `de51aad2817e6cee1f39c5598a3ef9cd4c9a83ed`, #37814203592 **1355 PASS / 0 FAIL / 4 SKIP**, but **not in RC0 baseline until deliberately integrated**.
 - **Scope preservation:** no feature deletion; zero changes to game/runtime/content in this RC0 inventory or packaging experiment; no authorization to defer mandatory LOCKED D1–D48. Findings become priority/acceptance evidence, not scope-cutting decisions.
 - **Workflow:** review largest player-visible gaps, create focused fixes or authored improvements, batch multiple independent slices → freeze exact source → full CI → merge → exact-main CI → real packaged clean-machine acceptance. One runner; avoid serial full CI on each tiny test.
+
+
+## Direct visual inventory — first measured finishing hotspot
+
+Data source: **current** `content/presentation.json` and actual `assets` directories, not old media drafts.
+
+- **507 shipped semantic presentation slots**, **all 507 have a static image entry**; **92 distinct static source files** are referenced (no missing file among these 92 at audited paths). The same file is intentionally reused across many different slots — stable identity/fallback works, but scene-distinct illustration may not.
+- Media candidate pools define **60 additional candidates**; the project-owned `assets/presentation` directory contains **101 SVG + 6 GIF**. These measurements are different sets and must not be added as if 507 unique paintings exist.
+- Biggest placeholder-reuse hotspot by identical static `src`: Hunter basic result **65 slots**, Guard basic result **63**, Tavern basic result **54**, Assassin basic result **52**, Undead Farm basic result **38**, Prostitute basic result **38**, Satyr Maid basic result **33**. These repeated backgrounds cover not only routine shifts but also many milestones, endings, relationship events; they are **high-value priorities for art differentiation**, not evidence of broken resolver or missing content.
+- Palace's four required D48 SVG are present. Non-Palace art budget and story-specific differentiated assets remain explicitly open under LOCKED decisions after D48. **Don't replace all 507 slots indiscriminately**; select high-value endings/milestones/unique story beats for a bounded art pass, preserve stable IDs and fallback.
 
 ## Next minimal order of execution
 
