@@ -244,8 +244,11 @@ test('C2-179 every published Guard event override maps to one exact frozen produ
       .filter(event=>event.sourceDomain==='guard')
       .flatMap(event=>event.variants.map(variant=>presentationIdForEvent(catalog,event.id,variant.id)))
   );
-  assert.equal(expected.size,29);
+  assert.equal(expected.size,30,'29 frozen Guard event slots plus the Stage3 Trade Corridor return');
+  const stage3Return='job/guard/event/trade-corridor-production-guard-return/default';
+  assert.ok(expected.has(stage3Return));
   const published=Object.keys(presentation.slots??{}).filter(id=>expected.has(id));
-  assert.equal(published.length,29);
+  assert.equal(published.length,29,'frozen Guard override inventory remains intact');
+  assert.equal(published.includes(stage3Return),false,'new Activity return uses the existing Guard static fallback');
   for(const id of published)assert.ok(expected.has(id),id+' exact catalog backing');
 });

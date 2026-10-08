@@ -110,7 +110,11 @@ function complete(input:Save,cat:Catalog,id:string):Save{
 
 test('D39 registry adds exactly two normal Specialists and Source Method stays automatic knowledge',()=>{
   validateStrongMetaRegistry();
-  assert.equal(Object.keys(strongMetaRegistry).length,22);
+  assert.equal(Object.keys(strongMetaRegistry).length,25,'22 pre-Stage3 rewards plus three D38 Activity Specialists');
+  for(const id of [STRONG_META_IDS.activitySurveyorsAtlas,STRONG_META_IDS.activityFieldArchive,STRONG_META_IDS.activityContactNetwork]){
+    assert.equal(strongMetaRegistry[id].class,'specialist');
+    assert.equal(strongMetaRegistry[id].authority,'D38');
+  }
   assert.equal(STRONG_META_SPECIALIST_CAPACITY,2);
 
   const steady=strongMetaRegistry[STRONG_META_IDS.palaceSteadyPractice];

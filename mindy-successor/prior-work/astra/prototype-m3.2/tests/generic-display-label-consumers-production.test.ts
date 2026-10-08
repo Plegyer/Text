@@ -45,9 +45,9 @@ test('Forest persisted route IDs have bilingual display labels',()=>{
 test('UI renders display labels without changing stable persisted IDs',()=>{
  assert.ok(app.includes("tr(`profession.${career}.label`,tr(`action.${id}.label`,action.label))"));
  assert.ok(app.includes("tr(`unlock.${k}.label`,labels[k]??k)"));
- assert.ok(app.includes("activityOptionLabel(`forest.route.${activity.internalState.routeId}`,activity.internalState.routeId)"));
+ assert.ok(app.includes("routeOption?activityOptionLabel(routeOption.id,routeOption.label):activity.internalState.routeId"));
  assert.ok(app.includes("a.internalState.routeId??'none'"));
- assert.ok(app.includes("activity.checkpoint.startsWith('forest.route.')"));
+ assert.ok(app.includes("definition?.options.some(option=>option.id===activity.checkpoint)"));
  assert.ok(app.includes("state.run.actionCounts[id]??0"));
  assert.ok(app.includes("state.meta.unlocks.map"));
 });

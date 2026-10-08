@@ -24,8 +24,8 @@ test('C3-117 frozen v11 Forest contracts remain present under the intentional v1
  assert.equal(activity.entryEnergyCost,2);
  assert.equal(activity.adapter,'counter.v1');
  const optionById=new Map(activity.options.map((entry:any)=>[entry.id,entry]));
- assert.deepEqual(optionById.get('forest.route.logging-road'),{id:'forest.route.logging-road',label:'Logging road',category:'route',conditions:[],progressDelta:0,enduranceCost:0,setRoute:'logging-road'});
- assert.deepEqual(optionById.get('forest.route.old-boundary'),{id:'forest.route.old-boundary',label:'Old boundary path',category:'route',conditions:[{kind:'itemCapability',capability:'enter_old_boundary',present:true}],progressDelta:0,enduranceCost:0,setRoute:'old-boundary'});
+ assert.deepEqual(optionById.get('forest.route.logging-road'),{id:'forest.route.logging-road',label:'Logging road',category:'route',conditions:[],progressDelta:0,enduranceCost:0,fieldTimeCost:1,setRoute:'logging-road'});
+ assert.deepEqual(optionById.get('forest.route.old-boundary'),{id:'forest.route.old-boundary',label:'Old boundary path',category:'route',conditions:[{kind:'itemCapability',capability:'enter_old_boundary',present:true}],progressDelta:0,enduranceCost:0,fieldTimeCost:1,setRoute:'old-boundary'});
  assert.deepEqual(activity.results.map((entry:any)=>({id:entry.id,outcome:entry.outcome})),[
   {id:'lumber.forest.success',outcome:'success'},
   {id:'lumber.forest.escape',outcome:'escape'},
