@@ -1,5 +1,14 @@
 # Document Authority and Index v0
 
+## Leadership recovery — MANDATORY CURRENT ENTRYPOINT (2026-10-08)
+
+**FIRST:** [LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md](LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md), fully. **SECOND:** `tasks/CURRENT_LEADER1_CHECKPOINT.md` and `tasks/LEADER_STATE.md`, then re-query GitHub main/CI/PR/worker pointers. **THIRD:** specific locked decisions/specs for the actual task.
+
+This file's old 2026-10-01 "fast entrypoint" and "live status authority" sections below are **historical**, not authorization to prioritize `LEAD1_CURRENT_STATE_v1.md` or revive earlier architecture/profession gaps. Current platform/engine is functionally ready, Stage1–5 CLOSED, public 1.0 remaining product/creative/QA work. The canonical library must be updated *in place* at context handoff, otherwise a new Leader repeats stale work. Direct user decisions and locked Product authority remain above status prose.
+
+---
+
+
 ## Leader 1 fast entrypoint
 
 For project leadership/recovery, read first:
