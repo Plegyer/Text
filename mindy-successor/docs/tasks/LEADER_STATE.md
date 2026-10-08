@@ -1,3 +1,9 @@
+## PRIMARY KNOWLEDGE AUTHORITY — LEADER CONTEXT HANDOFF (2026-10-08)
+
+**MANDATORY FIRST: [CURRENT KNOWLEDGE LIBRARY](../LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md).** All subsequent dated Stage5 OPEN and 2026-10-01/02 worker/project backlog below is **historical**. Actual platform/engine is ready; Stage1–5 CLOSED, burn-down 0, public 1.0 NOT completed. Lead must finish existing game (story, gameplay paths, media/UX, Windows release), not rebuild engine or reassign already integrated work. The library contains verified GitHub sources, certified exact-source and exact-main CI, Draft PR #305 and active worker status. **Update the library in place** when truth changes; sync checkpoint/pointers before context handoff.
+
+---
+
 ## LATEST AUTHORITATIVE UPDATE — Leader1 Stage5 FINAL GO / CLOSED (2026-10-08)
 
 **ALL STAGES 1–5 CLOSED; broad burn-down 0; release GO.** This section supersedes ALL older Stage5 OPEN / pending-runner / draft / no-merge language below (which is retained as historical record). Final evidence: `LEADER1_STAGE5_FINAL_GO_NO_GO_2026-10-08.md`, `LEADER1_STAGE5_EXACT_SOURCE_CI_RESULT_v135.json`, `LEADER1_STAGE5_EXACT_MAIN_CI_RESULT_v136.json`.
