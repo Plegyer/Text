@@ -37,8 +37,14 @@ Rule: read this file, then re-query live GitHub refs before acting. Exact source
   - npm ci / typecheck / validate / build: PASS
   - focused Strong Meta UI + adjacency: 65/65 PASS
   - evidence: `LEADER1_STRONG_META_UI_CLOSURE_RESULT_v93.json`
-- [ ] **D48 Palace media overlay — CURRENT ITEM**
-- [ ] Stage 2 focused gate
+- [x] D48 Palace media overlay
+  - production D48 source: `e0499c9c93b5d5bfe72ae43013800c6b52785504`
+  - accepted source after two test-only compatibility fixes: `05a9eb5b9b7293a029ce1d8962207aef3601d145`
+  - run: `37734288135` SUCCESS
+  - npm ci / typecheck / validate / build: PASS
+  - focused D48 + Stage2 adjacency: PASS
+  - evidence: `LEADER1_D48_CLOSURE_RESULT_v96.json`
+- [ ] **Stage 2 focused gate — CURRENT ITEM**
 - [ ] Chat2 Stage 2 full CI
 - [ ] Leader production merge to `main`
 - [ ] exact-main CI
@@ -59,13 +65,11 @@ Branch:
 `chat2/assembly-palace-d39-d48-current-main-v76`
 
 Accepted production source before current item:
-`63081de1641362b7b2b06202b7a09e554caa8ecf`
-
-Current control-plane tip after assigning D48:
-`0d66e0b0f7db194185771dd05533ca5e0e8bfb4c`
+`05a9eb5b9b7293a029ce1d8962207aef3601d145`
 
 Current worker status:
-- Chat2: D48 assigned; requires explicit/manual user resume before calling it active
+- Chat2: Stage 2 focused gate not yet manually resumed
+
 - Chat3: stands
 - Chat4: done / stands
 - Chat5: stands
@@ -73,36 +77,31 @@ Current worker status:
 
 Never say a worker is active only because a pointer exists.
 
-## Current item — D48 Palace media overlay
+## Current item — Stage 2 focused gate
 
-Frozen implementation authority:
-`chat6/palace-d48-media-producer-v48@e0277dc302df178e73184bf1623d0e91e5237b45`
+Exact assembled source:
+`05a9eb5b9b7293a029ce1d8962207aef3601d145`
 
-Producer seed:
-`ee3ea8581f890bc7e5e6ed148e74f5a73b9398c7`
+No production/content/media mutation is expected in this gate.
 
-Selective implementation delta only:
-- four project-owned Palace SVG masters;
-- `content/presentation.json`;
-- `content/localization.json`;
-- `tests/palace-d48-media-v50.test.ts`.
+Required coverage must include:
+- Palace v15/v16/v18/v19;
+- D39 runtime;
+- D39 live consumers;
+- Strong Meta UI + modal accessibility;
+- D48 media;
+- ending/meta transaction adjacency;
+- Secret Debt/D51 separation smoke.
 
-Semantic union only. Never wholesale replace presentation/localization.
-
-Locked composition:
-- exactly 17 Palace v19 slots receive D48 overlays;
-- both invitation slots remain on `assets/stage-town.svg`;
-- exactly 8 D48 localization rows;
-- no non-Palace D48 mappings;
-- no mechanics/runtime changes.
+If a test is stale because it contradicts an already accepted later authority, repair only the test compatibility and re-run exact source. Do not weaken product invariants.
 
 Stop marker:
-`D48_READY_FOR_STAGE2_FOCUSED_GATE`
+`STAGE2_FOCUSED_GATE_GREEN_READY_FOR_FULL_CI`
 
 ## Locked next step
 
-After D48 executable acceptance:
-**Stage 2 focused gate**, then Chat2 Stage 2 full CI, Leader production merge, exact-main CI.
+After focused gate green:
+**Chat2 Stage 2 full CI**, then Leader production merge to `main`, then exact-main CI.
 
 ## Governance that must not drift
 

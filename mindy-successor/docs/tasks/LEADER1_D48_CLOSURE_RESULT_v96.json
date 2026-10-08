@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "leader1.d48-closure.v96",
+  "status": "PASS",
+  "productionD48SourceSha": "e0499c9c93b5d5bfe72ae43013800c6b52785504",
+  "acceptedSourceSha": "05a9eb5b9b7293a029ce1d8962207aef3601d145",
+  "frozenAuthoritySha": "e0277dc302df178e73184bf1623d0e91e5237b45",
+  "staticProof": {
+    "assets": "4/4 exact",
+    "remaps": "17/17 exact",
+    "invitationSlots": "2/2 remain assets/stage-town.svg",
+    "localizationRows": "8/8 exact",
+    "nonPalaceLeaks": 0
+  },
+  "testOnlyFixes": [
+    "palace-d48-media-v50 Set<string> typing",
+    "palace-final-prose-media-v19 accepts locked D48 approved assets"
+  ],
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "validate": "PASS",
+    "build": "PASS",
+    "focusedD48Stage2Adjacency": "PASS"
+  },
+  "runId": "37734288135"
+}
