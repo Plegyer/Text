@@ -128,6 +128,7 @@ test('catalog validation rejects Activity option that references undeclared item
     conditions:[{kind:'itemCapability',capability:'not_declared_anywhere',present:true}],
     progressDelta:0,
     enduranceCost:0,
+    effects:[],
     setRoute:'unknown-route'
   });
 
