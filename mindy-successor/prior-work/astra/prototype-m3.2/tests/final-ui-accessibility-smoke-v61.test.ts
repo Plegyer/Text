@@ -198,7 +198,7 @@ test('v61 assembled UI/accessibility smoke satisfies the matrix', {skip:!FINAL_T
   const assetDir='assets/presentation';
   if(!existsSync(assetDir))issue(issues,'MISSING_D48_ASSET_DIRECTORY',assetDir);
   else{
-    const palaceFiles=readdirSync(assetDir).filter(name=>/^palace-.*\\.svg$/i.test(name)).map(name=>assetDir+'/'+name).sort();
+    const palaceFiles=readdirSync(assetDir).filter(name=>/^palace-.*\.svg$/i.test(name)).map(name=>assetDir+'/'+name).sort();
     if(!same(palaceFiles,[...d48Assets].sort()))issue(issues,'D48_ASSET_SET_DRIFT',assetDir);
   }
   for(const asset of d48Assets)if(!existsSync(asset))issue(issues,'MISSING_D48_ASSET',asset);
