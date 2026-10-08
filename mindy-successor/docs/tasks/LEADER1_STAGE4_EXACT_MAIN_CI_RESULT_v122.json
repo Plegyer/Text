@@ -1,0 +1,29 @@
+{
+  "stage": 4,
+  "kind": "leader1-stage4-official-exact-main",
+  "status": "SUCCESS",
+  "source_branch": "main",
+  "source_sha": "4e67da063716cde9c41aec3a6ae40cdfc96da962",
+  "run_id": 37787726602,
+  "workflow": "mindy-successor check",
+  "event": "push",
+  "url": "https://github.com/Plegyer/Text/actions/runs/37787726602",
+  "steps": {
+    "checkout": "PASS",
+    "setup_node": "PASS",
+    "npm_ci": "PASS",
+    "full_check": {
+      "typecheck": "PASS",
+      "validate": "PASS",
+      "build": "PASS",
+      "tests": 1312,
+      "pass": 1312,
+      "fail": 0,
+      "skipped": 0
+    }
+  },
+  "merge_pr": 300,
+  "burn_down_before": 2,
+  "burn_down_after": 1,
+  "recorded": "2026-10-08"
+}

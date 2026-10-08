@@ -4,7 +4,18 @@ This is the single current operational notebook for Leader 1.
 
 Rule: read this file, then re-query live GitHub refs before acting. Exact source SHA + executable evidence outrank prose. Old handoffs/checkpoints remain archive only.
 
-## Stage 4 live integration handoff — 2026-10-08 (supersedes earlier Stage 4 assignment status)
+## AUTHORITATIVE CURRENT — Stage 4 CLOSED; Stage 5 CURRENT (2026-10-08)
+
+- **Stage 1, Stage 2, Stage 3, Stage 4 CLOSED. Broad burn-down 1. Stage 5 is the final remaining broad stage.** Supersedes every older stage-status or worker-next-step block below.
+- Stage 4 worker delivery: Chat2 branch `chat2/stage4-d46-d47-legacy-assembly-v1@5570e867d843186815ebc62c17e858e6a4e1165b`, original static-only Draft PR #299. Leader QA/repair source: `lead/stage4-qa-compat-v116@a13451903b66298d70713d3db67a99429fe01f2b`; production PR **#300 MERGED**, https://github.com/Plegyer/Text/pull/300.
+- **Exact-source CI v121** https://github.com/Plegyer/Text/actions/runs/37786950370 `SUCCESS` on SHA `a13451903b66298d70713d3db67a99429fe01f2b`, Node 22.18.0, `npm ci`, typecheck, validate, build, cross-domain retirement focused **5/5**, full `npm run check` **1312/1312 PASS, zero fail/skipped**. This is not a workflow wrapper SHA: exact code checkout was SHA-guarded.
+- **Production merge SHA** `4e67da063716cde9c41aec3a6ae40cdfc96da962` on `main`. **Official exact-main push CI** https://github.com/Plegyer/Text/actions/runs/37787726602 `SUCCESS` on exactly `4e67da063716cde9c41aec3a6ae40cdfc96da962`, **1312/1312 PASS, zero fail/skipped**, `npm run check`. All Stage 4 gates passed; decrement **2 -> 1** occurs only now. Evidence: `LEADER1_STAGE4_EXACT_SOURCE_CI_RESULT_v121.json` and `LEADER1_STAGE4_EXACT_MAIN_CI_RESULT_v122.json`.
+- Stage 4 real compatibility repair: historical retired `lumber-stay` complete RunResult may be loaded while newly available/accepted retired endings remain prohibited; legacy proof preserves +1 Energy once. Historical regression fixtures and v6/v7/v9 presentation manifests were aligned with approved D46/D47/retirement facts, without whole-file production rollback. Ordinary Hard Work remains 50 shifts; fresh Lust 5; ordinary bases Lumber 35 / other nine 37; cap 120 ordinary-only; D47 ten exact packages outside Strong Meta slots; canonical ordinary endings 40.
+- **Stage 5 CURRENT**: final save/migration + RU/EN localization/presentation/UI/accessibility + legacy 32-assertion release closure. Entry audit on exact production merge `4e67da06...` against frozen Chat6 v54 gold `bc8617be68825543ed7617e9dd5c7d9156b0e14` found production work: 90 absent required localization keys, 10 predecessor values, 2 conflicting third values (exact keys documented in `LEADER1_STAGE5_GOLDEN_GAP_AUDIT_2026-10-08.json`); 93 absent presentation slots. **Do not report Stage5 final gates green: they have NOT RUN on assembled final Stage5 source.**
+- Stage5 production assignment is in `CHAT2_STAGE5_FINAL_PLAYER_FACING_SELECTIVE_ASSEMBLY_TASK_2026-10-08.md` and `CURRENT_CHAT2_TASK_POINTER.md`. Chat2 must be **manually woken by the user** to perform selective production assembly only. No worker is automatically active. Leader owns exact-source focus/full CI, merge, official exact-main CI and all Stage5 closure/go decision. Chat3/Chat4/Chat5/Chat6 remain parked. Cross-chat handoff: GitHub artifacts only, short user marker.
+- Two Golden v40/current-main Secret Debt RU translations are true third-value conflicts and MUST NOT be overwritten without Leader authority: `unlock.secret-debt.paid-freedom.earned-reserve-match.label` and `unlock.secret-debt.takeover.network-retainer.label`. Stage5 worker should isolate/escalate exact keys, preserve current main, and continue safe nonconflicting work on a scoped branch only. Never use chronology or last-write-wins.
+
+## Archived Stage 4 live integration handoff — 2026-10-08 (supersedes earlier Stage 4 assignment status)
 
 - **Stage 4 assembly received, NOT QA-accepted, NOT merged, NOT closed. Broad burn-down stays 2.**
 - Chat2's completed assembly branch: `chat2/stage4-d46-d47-legacy-assembly-v1` at `5570e867d843186815ebc62c17e858e6a4e1165b`; base main `8c376be749579077663e46e719747774c55b64be`.
@@ -94,10 +105,11 @@ Rule: read this file, then re-query live GitHub refs before acting. Exact source
 - [x] broad burn-down decremented 3 -> 2
 
 ### Remaining broad stages
-- [ ] **Stage 4 — D46 + D47 + legacy ending retirement — CURRENT**
-- [ ] Stage 5 — final save/migration/UI/localization/presentation/regression closure
+- [x] **Stage 4 — D46 + D47 + legacy ending retirement — CLOSED** (v121 exact-source 1312/1312, v122 exact-main 1312/1312, PR #300 merged)
+- [x] broad burn-down decremented 2 -> 1
+- [ ] **Stage 5 — final save/migration/UI/localization/presentation/regression closure — CURRENT**
 
-Current broad burn-down: **2**
+Current broad burn-down: **1**
 
 ## Current execution model
 

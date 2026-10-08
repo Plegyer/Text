@@ -1,0 +1,65 @@
+{
+  "kind": "Leader Stage5 Chat6-v54-vs-main",
+  "status": "ENTRY_AUDIT_ONLY_NOT_FINAL_QA",
+  "date": "2026-10-08",
+  "source_main_sha": "4e67da063716cde9c41aec3a6ae40cdfc96da962",
+  "fixture_branch": "chat6/final-player-facing-golden-manifest-v54",
+  "fixture_path": "mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-golden-v54.json",
+  "fixture_blob_sha": "bc8617be68825543ed7617e9dd5c7d9156b0e14",
+  "main_content_blobs": {
+    "localization": "cf3735bd4c141bcfeaea150b9f3a72369535effc",
+    "presentation": "deb6a3b65bf843529a8a57a220e76bd9097f9dbc",
+    "ui": "c086bfef44cadeabe16049cff61a22f0c0565a58"
+  },
+  "localized_required": {
+    "total": 343,
+    "exact_final": 241,
+    "absent": 90,
+    "exact_predecessor": 10,
+    "third_value": 2,
+    "forbidden_live_present": 12
+  },
+  "presentation_required": {
+    "total": 127,
+    "exact_final": 34,
+    "absent": 93,
+    "exact_predecessor": 0,
+    "third_value": 0,
+    "retired_slots_present": 0
+  },
+  "exact_unresolved_third_values": [
+    {
+      "key": "unlock.secret-debt.paid-freedom.earned-reserve-match.label",
+      "current": {
+        "ru": "Сопоставление заработанного резерва",
+        "en": "Earned Reserve Match"
+      },
+      "golden": {
+        "ru": "Паритет заработанного резерва",
+        "en": "Earned Reserve Match"
+      },
+      "disposition": "LEADER_DECISION_REQUIRED_PRESERVE_CURRENT_MAIN"
+    },
+    {
+      "key": "unlock.secret-debt.takeover.network-retainer.label",
+      "current": {
+        "ru": "Сетевое содержание",
+        "en": "Network Retainer"
+      },
+      "golden": {
+        "ru": "Сетевой гонорар",
+        "en": "Network Retainer"
+      },
+      "disposition": "LEADER_DECISION_REQUIRED_PRESERVE_CURRENT_MAIN"
+    }
+  ],
+  "not_yet_done": [
+    "Stage5 selective production composition",
+    "final-target RU EN rendered gates",
+    "exact 23-case migration closure",
+    "full 32 legacy assertions",
+    "Stage5 exact-source CI",
+    "Stage5 merge",
+    "Stage5 official exact-main CI"
+  ]
+}

@@ -1,24 +1,20 @@
 # CURRENT LEADER 1 CHECKPOINT — 2026-10-08
 
-**Stage 1, Stage 2 and Stage 3: CLOSED.** Current broad burn-down: **2**. Stage 4 — D46 + D47 + legacy lumber-stay ending retirement — is **CURRENT / production not yet assembled**.
+**Stage 1–4 CLOSED. Broad burn-down: 1. Stage 5 CURRENT.** Operational authority: `LEADER_STATE.md` and live GitHub SHA. Prior checkpoint and previous Stage 4 assignment are archive only.
 
-Authoritative operational notebook: `mindy-successor/docs/tasks/LEADER_STATE.md`. Prior Stage 3 handoff `LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md` is archived. Always re-query live GitHub.
+## Stage 4 final production proof
 
-## Stage 3 final executable evidence
+- Worker source: `chat2/stage4-d46-d47-legacy-assembly-v1@5570e867d843186815ebc62c17e858e6a4e1165b`, original #299.
+- Leader source: `a13451903b66298d70713d3db67a99429fe01f2b`, merged as PR #300: https://github.com/Plegyer/Text/pull/300
+- Exact-source full CI v121 `37786950370` SUCCESS: SHA guard, npm ci, typecheck, validate, build, 5/5 cross-domain gate, full 1312/1312 PASS.
+- Exact production merge and official exact-main test SHA: `4e67da063716cde9c41aec3a6ae40cdfc96da962`.
+- Official main push `mindy-successor check` run `37787726602` SUCCESS: 1312/1312 PASS, zero fails or skips, `npm run check`.
+- Evidence files: `LEADER1_STAGE4_EXACT_SOURCE_CI_RESULT_v121.json`, `LEADER1_STAGE4_EXACT_MAIN_CI_RESULT_v122.json`. Stage 4 CLOSED only after official exact-main success.
 
-- Exact Stage 3 production + narrow test-only QA source: `7966a15fcebfd358ae7ae08e3ae9a84b229be050`.
-- Exact-source v113 run `37775331892` **SUCCESS**: focused 12/12, full 1287/1287, typecheck/validate/build PASS.
-- Production PR: https://github.com/Plegyer/Text/pull/298 (merged).
-- Production merge and official exact-main test SHA: `55e283753705747f208290acd840da4740559aa7`.
-- Official main-push CI run `37776012058` **SUCCESS**, 1287/1287 PASS, 0 fail, typecheck/validate/build PASS.
-- Evidence: `LEADER1_STAGE3_FULL_CI_RESULT_v113.json`, `LEADER1_STAGE3_EXACT_MAIN_CI_RESULT_v114.json`.
+## Stage 5 entry and ownership
 
-## Stage 4 submission received (latest)
-
-Chat2 completed production handoff on branch `chat2/stage4-d46-d47-legacy-assembly-v1` at `5570e867d843186815ebc62c17e858e6a4e1165b`. Exact code/tests `f34b9585a7816d5b1235e1683160ce5423b767ba`; subsequent handoff commit docs-only. Draft PR https://github.com/Plegyer/Text/pull/299 . Detailed handoff on Chat2 branch: `CHAT2_STAGE4_D46_D47_LEGACY_PRODUCTION_HANDOFF_2026-10-08.md`. **Only static checks complete; no executable QA yet. Stage 4 open, burn-down 2.** Leader must independently run QA/CI. Chat2 is parked with no new task. Protocol: `WORKER_TO_LEADER_GITHUB_REPORTING_PROTOCOL.md`.
-
-## Stage 4 original assignment (historical)
-
-Production assembly only, assigned to Chat2 in `CHAT2_STAGE4_D46_D47_LEGACY_ASSEMBLY_TASK_2026-10-08.md` and `CURRENT_CHAT2_TASK_POINTER.md`. Worker remains parked until the user explicitly activates it. The baseline is current live main at assembly time, preserving Stage 3, Palace, Secret Debt/D51, Strong Meta, NightFlow and schema6. No Stage 4 focused/full CI or merge has happened yet. Leader alone owns later QA, full CI, merge and exact-main CI.
-
-Frozen production authorities: D46 `a0c5f855b63d3bb85556f5b2780aaaabb58fbced`; D47 `252dc26c514e24f4ab0f0cc0da7694254282e4c4`; legacy retirement verified `39912e7435c3707d98f96fe550d697c20ac0bedb`. Use the selective golden manifest from Chat4 v55, not historical whole-file snapshots.
+- Next task: `CHAT2_STAGE5_FINAL_PLAYER_FACING_SELECTIVE_ASSEMBLY_TASK_2026-10-08.md`.
+- New Chat2 production branch must be created from live `main` after this docs-only control-plane commit. **User manually wakes Chat2**; a task pointer does not start work.
+- Direct initial gap audit recorded in `LEADER1_STAGE5_GOLDEN_GAP_AUDIT_2026-10-08.json`: Chat6 v54 gold requires still-missing localization/presentation operations. Two current-main Secret Debt RU third-values are STOP/Leader-disposition, not permission for blind replacement.
+- Frozen golden source `chat6/final-player-facing-golden-manifest-v54` fixture blob `bc8617be68825543ed7617e9dd5c7d9156b0e14`, Chat6 v69 final dry-run, Chat3 v66 save/migration dry-run, Chat4 v62 legacy dry-run.
+- Stage5 final executable proof **NOT RUN**. Need exact 23 save/migration cases, all player-facing strict flags, RU and EN rendered, legacy 32 assertions, focused then full CI, merge then official exact-main. Chat2 does production assembly only; Leader owns QA/CI/merge. Peripheral chats parked.

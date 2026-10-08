@@ -1,0 +1,31 @@
+{
+  "stage": 4,
+  "kind": "leader1-stage4-exact-source",
+  "status": "SUCCESS",
+  "source_sha": "a13451903b66298d70713d3db67a99429fe01f2b",
+  "run_id": 37786950370,
+  "workflow": "Leader1 Stage4 exact-source full CI v121",
+  "url": "https://github.com/Plegyer/Text/actions/runs/37786950370",
+  "node": "22.18.0",
+  "steps": {
+    "exact_source_guard": "PASS",
+    "npm_ci": "PASS",
+    "typecheck": "PASS",
+    "validate": "PASS",
+    "build": "PASS",
+    "cross_domain_retirement_focus": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0
+    },
+    "full_check": {
+      "tests": 1312,
+      "pass": 1312,
+      "fail": 0,
+      "skipped": 0
+    }
+  },
+  "merge_pr": 300,
+  "after_merge_main_sha": "4e67da063716cde9c41aec3a6ae40cdfc96da962",
+  "recorded": "2026-10-08"
+}

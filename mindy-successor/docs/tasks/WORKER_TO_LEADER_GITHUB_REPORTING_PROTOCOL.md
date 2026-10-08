@@ -38,6 +38,10 @@ Leader 1 opens the exact PR + branch handoff and checks SHA/diff/run status. Lea
 
 Leader tells the user clearly **which worker to wake next**, if any. When all workers are parked and Leader QA is current, say **no worker needs waking**. Treat the worker's full report in GitHub as the handoff; do not require the user to copy it into Leader chat.
 
-## Current worked example
+## Current worked example (archived Stage 4)
 
 Stage 4 handoff: Draft PR #299 `chat2/stage4-d46-d47-legacy-assembly-v1@5570e867d843186815ebc62c17e858e6a4e1165b`, exact production/test `f34b9585a7816d5b1235e1683160ce5423b767ba`, branch-only report `CHAT2_STAGE4_D46_D47_LEGACY_PRODUCTION_HANDOFF_2026-10-08.md`. It is **READY FOR LEADER QA** but **not executable green and not merged**. Chat2 successor remains parked until needed.
+
+## Stage5 task handoff from Leader
+
+Stage4 merged via PR #300 and official exact-main CI run `37787726602` SUCCESS. The current worker assignment is in `CURRENT_CHAT2_TASK_POINTER.md`, with `CHAT2_STAGE5_FINAL_PLAYER_FACING_SELECTIVE_ASSEMBLY_TASK_2026-10-08.md`. Chat2 must not silently resurrect Stage4, and the user is the only party able to wake it. Preserve two exact current-main Secret Debt translation third values until Leader adjudication.
