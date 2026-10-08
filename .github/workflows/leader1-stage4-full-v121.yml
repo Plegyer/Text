@@ -1,0 +1,37 @@
+name: Leader1 Stage4 exact-source full CI v121
+on:
+  push:
+    branches: [qa-stage4-full-v121]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 70
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: a13451903b66298d70713d3db67a99429fe01f2b
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "a13451903b66298d70713d3db67a99429fe01f2b"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Cross-domain retirement regression
+        run: node --experimental-strip-types --test tests/cross-domain-presentation-source-manifest-v1.test.ts
+      - name: Full check
+        run: npm run check
