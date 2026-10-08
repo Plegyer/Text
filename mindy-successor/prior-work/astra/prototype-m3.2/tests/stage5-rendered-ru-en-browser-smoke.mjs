@@ -39,6 +39,36 @@ try {
     for(const visual of visuals)assert.ok(visual.alt?.trim(),'missing image alt '+lang+': '+visual.src);
     const captions=await page.locator('figcaption,.media-caption').allTextContents();
     for(const caption of captions)assert.ok(caption.trim(),'empty rendered caption '+lang);
+    // Positive caption fixture: mount a real published caption-bearing media slot on the
+    // initial location in a browser-only content response (no production mutation).
+    const captionPage=await context.newPage();
+    await captionPage.addInitScript(()=>localStorage.setItem('portal-life.presentation.animations','off'));
+    let captionSource='';
+    await captionPage.route('**/content.json',async route=>{
+      const response=await route.fetch();
+      const data=await response.json();
+      const slots=data.presentation?.slots??{};
+      const localized=data.localization?.strings??{};
+      const found=Object.entries(slots).find(([id,slot])=>{
+        const key=slot?.static?.altKey;
+        return slot?.static?.kind==='image'&&typeof key==='string'&&key.endsWith('.alt')&&
+          localized[key]?.[lang]?.trim()&&localized[key.slice(0,-4)+'.caption']?.[lang]?.trim();
+      });
+      assert.ok(found,'at least one real published localized captioned image slot '+lang);
+      captionSource=found[0];
+      slots['location/town/default']=structuredClone(found[1]);
+      await route.fulfill({response,body:JSON.stringify(data),headers:{...response.headers(),'content-type':'application/json'}});
+    });
+    await captionPage.goto(base,{waitUntil:'networkidle'});
+    const captionNode=captionPage.locator('.media-window .media-caption');
+    await captionNode.waitFor();
+    assert.ok((await captionNode.textContent())?.trim(),'rendered caption '+lang);
+    const captionImage=captionPage.locator('.media-window img[aria-describedby]');
+    assert.ok(await captionImage.count(),'media image references its caption '+lang);
+    assert.equal(await captionImage.getAttribute('aria-describedby'),await captionNode.getAttribute('id'),'ARIA caption reference '+lang);
+    assert.ok((await captionImage.getAttribute('alt'))?.trim(),'localized alt on captioned image '+lang);
+    console.log(JSON.stringify({locale:lang,captionBranch:'PASS',sourceSlot:captionSource,renderedCaptions:1}));
+    await captionPage.close();
     assert.deepEqual(exceptions,[],'browser JS errors '+lang);
     console.log(JSON.stringify({locale:lang,result:'PASS',imagesChecked:visuals.length,captionsChecked:captions.length,modalAria:true,focus:true,escape:true}));
     await context.close();
