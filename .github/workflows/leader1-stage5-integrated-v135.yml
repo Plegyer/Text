@@ -1,0 +1,60 @@
+name: Leader1 Stage5 final exact-source full CI v135
+on:
+  push:
+    branches: [qa-stage5-leader-full-v135]
+permissions:
+  contents: read
+jobs:
+  stage5:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 110
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 8ea2279a5097e6568d9d31e9137ca3feb1f1a4e1
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "8ea2279a5097e6568d9d31e9137ca3feb1f1a4e1"){throw "incorrect source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Restore frozen Golden authority byte exact on Windows
+        shell: powershell
+        run: |
+          node -e "const fs=require('node:fs');const cp=require('node:child_process');const p=['mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-golden-v54.json','mindy-successor/prior-work/astra/prototype-m3.2/tests/final-player-facing-golden-manifest-v55.test.ts','mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-ui-accessibility-smoke-v60.json','mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-save-migration-golden-v57.json','mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53.json','mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_GATE_v54.json'];for(const x of p){const b=cp.execFileSync('git',['-C',process.env.GITHUB_WORKSPACE,'show','HEAD:'+x]);fs.writeFileSync(process.env.GITHUB_WORKSPACE+'/'+x,b);console.log('ORIGINAL',x,b.length)}"
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Execute 32 legacy Golden assertion witnesses
+        run: node --experimental-strip-types --test tests/gates/stage5-legacy-golden-32-v1.test.ts
+      - name: Strict RU EN Golden and UI smoke and cross-contract
+        shell: powershell
+        run: |
+          $env:FINAL_PLAYER_FACING_GOLDEN_TARGET="1"
+          $env:FINAL_UI_ACCESSIBILITY_SMOKE_TARGET="1"
+          $env:FINAL_PLAYER_FACING_CROSS_CONTRACT_TARGET="1"
+          node --experimental-strip-types --test tests/final-player-facing-golden-release-target-stage5-v1.test.ts tests/final-ui-accessibility-smoke-v61.test.ts tests/final-player-facing-cross-contract-v64.test.ts
+          if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+      - name: Execute 23 migration cases plus frozen F1 F5 and manifest contracts
+        run: node --experimental-strip-types --test tests/final-save-migration-closure-v21.test.ts tests/final-historical-fixtures-v55.test.ts tests/final-save-migration-golden-v57.test.ts
+      - name: Focused Undead Farm C2-143 regression
+        run: node --experimental-strip-types --test tests/undead-farm-production-presentation-reachability-c2-143.test.ts
+      - name: Rendered RU EN Chromium accessibility smoke
+        shell: powershell
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install chromium
+          node tests/stage5-rendered-ru-en-browser-smoke.mjs
+          if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+      - name: Full check
+        run: npm run check
