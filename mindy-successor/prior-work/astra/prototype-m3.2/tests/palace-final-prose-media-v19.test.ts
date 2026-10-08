@@ -110,7 +110,7 @@ test('v19 Palace prose preserves D45 ambiguity and non-combat meaning',()=>{
   assert.doesNotMatch(princeText,/god|avatar|slay|kill the prince/i);
 });
 
-test('v19 Palace presentation mapping uses only existing neutral project-owned media',()=>{
+test('v19 Palace presentation slots remain on existing approved project-owned media after D48 overlay',()=>{
   const knownSlots=new Set(presentationSlots(catalog).map(slot=>slot.id));
   for(const id of palaceSlotIds){
     assert.equal(knownSlots.has(id),true,id);
@@ -118,7 +118,14 @@ test('v19 Palace presentation mapping uses only existing neutral project-owned m
     assert.ok(override,id);
     assert.ok(override.static,id);
     assert.equal(
-      ['assets/stage-town.svg','assets/stage-room.svg'].includes(override.static.src),
+      [
+        'assets/stage-town.svg',
+        'assets/stage-room.svg',
+        'assets/presentation/palace-service-interior.svg',
+        'assets/presentation/palace-threshold-archive.svg',
+        'assets/presentation/palace-custodian-audience.svg',
+        'assets/presentation/palace-return-home-threshold.svg'
+      ].includes(override.static.src),
       true,
       `${id}: ${override.static.src}`
     );
