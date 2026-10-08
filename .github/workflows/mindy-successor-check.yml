@@ -42,6 +42,10 @@ jobs:
           node-version: '22.18.0'
           cache: npm
           cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Restore frozen Golden authority byte-exact on Windows
+        shell: powershell
+        run: |
+          node -e "const fs=require('node:fs');const cp=require('node:child_process');const paths=['mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-golden-v54.json','mindy-successor/prior-work/astra/prototype-m3.2/tests/final-player-facing-golden-manifest-v55.test.ts','mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-ui-accessibility-smoke-v60.json','mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-save-migration-golden-v57.json','mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_OPERATIONS_v53.json','mindy-successor/docs/tasks/CHAT4_D46_D47_LEGACY_GOLDEN_GATE_v54.json'];for(const path of paths){const bytes=cp.execFileSync('git',['-C',process.env.GITHUB_WORKSPACE,'show','HEAD:'+path]);fs.writeFileSync(process.env.GITHUB_WORKSPACE+'/'+path,bytes);console.log('ORIGINAL',path,bytes.length)}"
       - name: Install dependencies
         run: npm ci
       - name: Full check
