@@ -2202,13 +2202,17 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
-  const referencedEndings=[
-    ...s.run.availableEndings,
-    ...s.meta.completed,
-    ...(s.run.acceptedEnding?[s.run.acceptedEnding]:[]),
-    ...(s.run.endings.result?[s.run.endings.result.endingId]:[])
-  ];
-  if(referencedEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  // Historical completed endings remain in Meta, not in live selectable slots.
+  if(s.run.availableEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  if(s.meta.completed.some(id=>!endingIds.has(id)&&!isRetiredHistoricalEndingId(id)))throw new Error('Неизвестная судьба.');
+  const historicalRunEnding=s.run.status==='ended'
+    &&isRetiredHistoricalEndingId(s.run.endings.result?.endingId??'')
+    &&s.run.endings.committed===s.run.endings.result?.endingId;
+  for(const id of [s.run.acceptedEnding,s.run.endings.result?.endingId]){
+    if(id&&!endingIds.has(id)&&!(historicalRunEnding&&isRetiredHistoricalEndingId(id))){
+      throw new Error('Неизвестная судьба.');
+    }
+  }
   if(new Set(s.meta.appliedResultTransactions).size!==s.meta.appliedResultTransactions.length)throw new Error('Дублированный Meta transaction proof.');
   if(s.run.status==='active'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Active run не может иметь committed/result ending.');
   if(s.run.status==='ending_committed'&&(!s.run.endings.committed||s.run.endings.result))throw new Error('Некорректный ending_committed state.');
