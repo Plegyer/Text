@@ -1,0 +1,33 @@
+name: Leader1 Stage2 timeout diagnosis v99
+on:
+  push:
+    branches: [qa-stage2-focus-timeout-v99]
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 05a9eb5b9b7293a029ce1d8962207aef3601d145
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "05a9eb5b9b7293a029ce1d8962207aef3601d145"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - run: npm ci
+      - run: npm run build
+      - name: Focus test pass 1
+        run: node --experimental-strip-types --test tests/presentation-keyboard-focus-v9.test.ts
+      - name: Focus test pass 2
+        run: node --experimental-strip-types --test tests/presentation-keyboard-focus-v9.test.ts
+      - name: Focus test pass 3
+        run: node --experimental-strip-types --test tests/presentation-keyboard-focus-v9.test.ts
