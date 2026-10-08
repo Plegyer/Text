@@ -16,7 +16,7 @@ test('Prostitute production preserves exact shipped ordinary-work and Hard Work 
     ]},
     {kind:'calendarYear',op:'gte',value:3}
   ]}]);
-  assert.deepEqual(action.wage,{base:15,weights:[
+  assert.deepEqual(action.wage,{base:37,weights:[
     {stat:'sexuality',factor:0.35},{stat:'charm',factor:0.3},
     {stat:'manners',factor:0.2},{stat:'endurance',factor:0.15}
   ]});

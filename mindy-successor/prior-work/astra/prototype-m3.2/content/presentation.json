@@ -1012,14 +1012,6 @@
         "altKey": "presentation.static.ending.scholar-life.alt"
       }
     },
-    "ending/lumber-stay": {
-      "static": {
-        "kind": "image",
-        "src": "assets/presentation/ending-lumber-stay.svg",
-        "alt": "Сложенные брёвна и рабочие инструменты обозначают решение остаться в лесной артели без изменения карьерных условий.",
-        "altKey": "presentation.static.ending.lumber-stay.alt"
-      }
-    },
     "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing": {
       "static": {
         "kind": "image",

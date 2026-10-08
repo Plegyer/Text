@@ -17,7 +17,7 @@ const selected=[
 
 test('queue-v6 selected semantic surfaces resolve to static media with animations disabled',()=>{
   presentationSchema.parse(presentation);
-  assert.equal(selected.length,47);
+  assert.equal(selected.length,46);
   const checked=applyPresentation(catalog,presentation);
   for(const entry of selected){
     assert.ok(existsSync(entry.sourceAsset),entry.sourceAsset);

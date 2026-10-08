@@ -1560,7 +1560,7 @@
         ]
       },
       "wage": {
-        "base": 13,
+        "base": 35,
         "weights": [
           {
             "stat": "strength",
@@ -1592,7 +1592,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "charm",
@@ -1997,7 +1997,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "endurance",
@@ -2334,7 +2334,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "charm",
@@ -2705,7 +2705,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "dexterity",
@@ -3047,7 +3047,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "endurance",
@@ -3402,7 +3402,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "wits",
@@ -3609,7 +3609,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "manners",
@@ -3816,7 +3816,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "dexterity",
@@ -3999,7 +3999,7 @@
       ],
       "mode": "normal",
       "wage": {
-        "base": 15,
+        "base": 37,
         "weights": [
           {
             "stat": "sexuality",
@@ -5499,20 +5499,6 @@
       ],
       "reward": "scholar",
       "epilogue": "Диплом пахнет чернилами и слегка — карамелью. Взрослый выпускник соседней мастерской приглашает вас на праздничный ужин: «Без пробирок, обещаю». Свидание остаётся вашим выбором, а право на новое начало уже заслужено."
-    },
-    {
-      "id": "lumber-stay",
-      "title": "Бригадир поневоле",
-      "description": "24 смены у лесорубов. В следующей жизни дневной запас энергии +1.",
-      "conditions": [
-        {
-          "kind": "visits",
-          "action": "lumber",
-          "value": 24
-        }
-      ],
-      "reward": "vitality",
-      "epilogue": "Бронн вручает вам ключи от артели и свисток. «Главное — свистеть до падения дерева». Вы остаётесь руководить работой на своих условиях."
     },
     {
       "id": "ending.lumber.hard-work",

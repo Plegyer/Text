@@ -17,7 +17,7 @@ const semantic=[
 ];
 
 test('queue-v7 semantic bindings are editor-replaceable by exact semantic ID without gameplay or Save mutation',()=>{
-  assert.equal(semantic.length,47);
+  assert.equal(semantic.length,46);
   const originalDefinitions=structuredClone(catalog.definitions);
 
   for(const entry of semantic){

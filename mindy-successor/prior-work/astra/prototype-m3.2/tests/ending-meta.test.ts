@@ -225,8 +225,9 @@ test('Merchant Hard Work no longer adds automatic starting money',()=>{
   s=dispatch(s,{type:'setHardWorkPackageActive',career:'merchant',active:true},cat);
   s=ready(s,cat);
   assert.equal(s.run.resources.money,600);
-  assert.equal(s.run.character.stats.wits,6);
+  assert.equal(s.run.character.stats.wits,1);
   assert.equal(s.run.character.stats.reason,6);
+  assert.equal(s.run.character.stats.sociability,6);
 });
 
 test('all ten unique Hard Work completions require all ten active packages for Palace qualification',()=>{

@@ -21,7 +21,7 @@ test('Merchant v15 preserves shipped action, seasonal, and Hard Work identities'
     ]
   }]);
   assert.deepEqual(action.wage,{
-    base:15,
+    base:37,
     weights:[
       {stat:'wits',factor:0.35},
       {stat:'charm',factor:0.25},

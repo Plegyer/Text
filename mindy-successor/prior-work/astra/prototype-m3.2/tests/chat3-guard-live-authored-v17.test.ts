@@ -11,6 +11,7 @@ const loc=JSON.parse(readFileSync('content/localization.json','utf8')).strings;
 const baseline=JSON.parse(readFileSync('content/guard-authored-v17-mechanics-baseline.fixture.json','utf8')).projection;
 baseline.action.seasonal.summer.push({kind:'modifyStat',stat:'manners',delta:-1});
 baseline.action.seasonal.winter.push({kind:'modifyStat',stat:'reason',delta:-1});
+baseline.action.wage.base=37;
 const source=JSON.parse(readFileSync('content/guard-authored-copy-v17.fixture.json','utf8'));
 const audit=JSON.parse(readFileSync('content/guard-authored-v17-binding-audit.fixture.json','utf8'));
 const packFiles=['guard-access.json','guard-career.json','guard-city.json','guard-cross-system.json','guard-relationship.json','guard-routes.json'];

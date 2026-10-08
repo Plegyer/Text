@@ -31,7 +31,7 @@ test('release-candidate shipped E2E keeps one Save coherent across Lumber, Schoo
 
   // Lumber -> first reactive career milestone -> professional Foreman.
   s=dispatch(s,{type:'action',id:'lumber.shift'},catalog);
-  const lumberMoney=startMoney+16;
+  const lumberMoney=startMoney+37;
   assert.equal(s.run.resources.money,lumberMoney);
   assert.equal(s.run.dayState.energyCurrent,2);
   assert.equal(s.run.progression.careers.lumber?.counters.completed_shifts,1);

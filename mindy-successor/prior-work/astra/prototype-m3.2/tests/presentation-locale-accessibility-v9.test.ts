@@ -12,12 +12,12 @@ function bilingual(key:string){
 
 test('all queue-v9 active exact semantic surfaces have RU/EN alt-caption parity',()=>{
   const rows=manifest.reachability.activeExact;
-  assert.equal(rows.length,102);
+  assert.equal(rows.length,101);
   for(const row of rows){
     bilingual(row.altKey);
     bilingual(row.captionKey);
   }
-  assert.equal(manifest.localeAccessibility.activeExactSemanticBindings.complete,102);
+  assert.equal(manifest.localeAccessibility.activeExactSemanticBindings.complete,101);
 });
 
 test('all eight School teacher media surfaces have RU/EN alt-caption parity',()=>{

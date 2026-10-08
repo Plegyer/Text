@@ -35,7 +35,7 @@ test('v4 migration preserves current-life values and defers selectable packages 
 
   const next=dispatch(migrated,{type:'restart'},catalog);
   assert.equal(Object.values(next.run.character.stats).every(value=>value===1),true);
-  assert.equal(next.run.character.lust,1);
+  assert.equal(next.run.character.lust,5);
   assert.equal(next.run.resources.money,600);
   assert.deepEqual(next.meta.hardWorkProgress,['lumber','merchant']);
   assert.deepEqual(next.run.creation.activeHardWorkPackages,[]);

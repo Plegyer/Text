@@ -20,7 +20,7 @@ test('queue-v7 active semantic bindings have RU/EN alt and caption parity',()=>{
     manifest.preparedVsActive.schoolCourses
   ];
   const selected=groups.flat();
-  assert.equal(selected.length,47);
+  assert.equal(selected.length,46);
 
   for(const entry of selected){
     const slot=presentation.slots?.[entry.presentationId];

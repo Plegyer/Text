@@ -12,7 +12,7 @@ test('Hunter remains ordinary paid work in cheap/street housing without rewritin
   assert.equal(action.cost.energy,1);
   assert.equal(action.cost.money,0);
   assert.deepEqual(action.wage,{
-    base:15,
+    base:37,
     weights:[
       {stat:'dexterity',factor:0.35},
       {stat:'endurance',factor:0.3},

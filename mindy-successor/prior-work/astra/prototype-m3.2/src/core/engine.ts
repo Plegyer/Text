@@ -76,6 +76,13 @@ import {canonicalD41EndingId,d41PendingSpecialistRewardIds,isRetiredD41TavernEnd
 } from './secretDebt.ts';
 
 
+import {
+  LUMBER_STAY_LEGACY_PERK_ID,
+  RETIRED_LUMBER_STAY_ENDING_ID,
+  isRetiredHistoricalEndingId,
+  migrateLumberStayLegacyMetaData
+} from './lumberStayLegacy.ts';
+
 const statSet=new Set<string>(stats);
 const cappedLegacy=new Set(['health','stress','trust']);
 const safeAlias:Record<string,Stat|undefined>={
@@ -134,17 +141,22 @@ function defaultMeta(input?:Partial<Meta>&{completed?:string[];lives?:number}):M
     completedEndings:input?.completedEndings??input?.completed??[],
     unlocks:rawLegacyUnlocks
   });
-  const completed=migratedD41.completedEndings;
+  const migratedLumberStay=migrateLumberStayLegacyMetaData({
+    completedEndings:migratedD41.completedEndings,
+    unlocks:migratedD41.unlocks,
+    activeLegacyPerks:input?.activeLegacyPerks??[]
+  });
+  const completed=migratedLumberStay.completedEndings;
   const runsStarted=Math.max(1,input?.runsStarted??input?.lives??1);
   const core={
     profileVersion:input?.profileVersion??1,
     completedEndings:completed,
-    unlocks:migratedD41.unlocks.filter(unlock=>unlock!=='palace'),
+    unlocks:migratedLumberStay.unlocks.filter(unlock=>unlock!=='palace'),
     ruleModifiers:structuredClone(input?.ruleModifiers??{}),
     hardWorkProgress:[...new Set(input?.hardWorkProgress??[])],
     strongMeta:grantD41PendingStrongMeta(input?.strongMeta,completed,rawLegacyUnlocks),
     persistentChoices:structuredClone(input?.persistentChoices??{}),
-    activeLegacyPerks:[...new Set(input?.activeLegacyPerks??[])],
+    activeLegacyPerks:migratedLumberStay.activeLegacyPerks,
     appliedResultTransactions:[...new Set(input?.appliedResultTransactions??[])],
     runsStarted,
     runsCompleted:Math.max(0,input?.runsCompleted??Math.min(completed.length,runsStarted-1))
@@ -348,11 +360,20 @@ export const eligible=(conditions:Condition[],s:Save,cat?:Catalog)=>conditions.e
 export const starterCareerIds=['lumber','satyr-maid','undead-farm'] as const satisfies readonly OrdinaryHardWorkCareer[];
 const starterCareerSet=new Set<string>(starterCareerIds);
 const ordinaryCareerSet=new Set<string>(ordinaryHardWorkCareers);
+export const ORDINARY_SHIFT_WAGE_CAP=120 as const;
 
 export function ordinaryCareerForShiftAction(action:Action):OrdinaryHardWorkCareer|null{
   if(!action.id.endsWith('.shift'))return null;
   const career=action.id.slice(0,-'.shift'.length);
   return ordinaryCareerSet.has(career)?career as OrdinaryHardWorkCareer:null;
+}
+
+export function ordinaryShiftWage(action:Action,s:Save):number|null{
+  if(!ordinaryCareerForShiftAction(action)||!action.wage)return null;
+  return Math.min(
+    ORDINARY_SHIFT_WAGE_CAP,
+    Math.round(action.wage.base+action.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0))
+  );
 }
 
 export type ActionAvailabilityOptions=Readonly<{ordinaryCareersDomainLocked?:boolean}>;
@@ -494,7 +515,7 @@ export function freshSave(metaInput?:Partial<Meta>&{completed?:string[];lives?:n
       calendar:{elapsedDays:0},
       character:{
         stats:statRecord,
-        lust:1,
+        lust:5,
         progressionStatCap,
         creation:{remaining:10,allocated:{},activeHardWorkPackages:[],hardWorkPackagesApplied:false,complete:false},
         conditions:{}
@@ -1005,7 +1026,7 @@ function register(s:Save,cat:Catalog){
 export function energyMax(s:Save){
   const modifier=Number(s.meta.ruleModifiers['energy.daily']??0);
   const strongBonus=strongMetaCurrentEnergyBonus(s.run.strongMetaSnapshot,s.run.strongMetaRuntime,s.run.day);
-  return Math.max(1,3+modifier+(s.meta.unlocks.includes('vitality')?1:0)+strongBonus);
+  return Math.max(1,3+modifier+(s.meta.activeLegacyPerks.includes(LUMBER_STAY_LEGACY_PERK_ID)?1:0)+strongBonus);
 }
 export function rent(s:Save){
   const base=100;
@@ -1848,6 +1869,7 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   const freeLesson=a.id==='school'&&s.meta.unlocks.includes('scholar')&&!s.run.flags[`system.scholar.${Math.floor(s.run.day/7)}`];
   if(s.run.metrics.money<cost||s.run.metrics.energy<a.cost.energy)throw new Error('Не хватает денег или энергии.');
   if(a.mode==='brew'&&!['gentle','bold'].includes(command.recipe??''))throw new Error('Выберите способ приготовления.');
+  const committedOrdinaryWage=ordinaryShiftWage(a,s);
   s.run.metrics.money-=cost;s.run.metrics.energy-=a.cost.energy;
   const ordinaryCareer=ordinaryCareerForShiftAction(a);
   if(a.id===SECRET_DEBT_HIDDEN_WORK_ACTION_ID){
@@ -1878,11 +1900,12 @@ export function dispatch(input:Save,command:Command,cat:Catalog):Save {
   }
   let ordinaryWage=0;
   if(a.wage){
-    const wage=Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
+    const wage=committedOrdinaryWage
+      ??Math.round(a.wage.base+a.wage.weights.reduce((sum,w)=>sum+getMetric(s,w.stat)*w.factor,0));
     applyEffectsMutable(s,[{kind:'metric',key:'money',delta:wage}],cat,true);log(s,`Заработано: ${wage} монет.`);
-    ordinaryWage=wage;
+    ordinaryWage=committedOrdinaryWage??0;
   }
-  if(ordinaryCareer){
+  if(committedOrdinaryWage!==null){
     const matchBonus=applyStrongMetaOrdinaryWorkMutable(s,ordinaryWage,false);
     if(matchBonus>0)log(s,`Strong Meta: заработанный резерв добавил ${matchBonus} монет.`);
   }
@@ -2049,6 +2072,15 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     migratedStrongMeta=grantStrongMetaReward(migratedStrongMeta,id as ApprovedStrongRewardId);
   }
   raw.meta.strongMeta=migratedStrongMeta;
+  let lumberStayMeta=migrateLumberStayLegacyMetaData({
+    completedEndings:raw.meta.completedEndings,
+    unlocks:raw.meta.unlocks,
+    activeLegacyPerks:raw.meta.activeLegacyPerks??[]
+  });
+  raw.meta.completedEndings=lumberStayMeta.completedEndings;
+  raw.meta.unlocks=lumberStayMeta.unlocks;
+  raw.meta.activeLegacyPerks=lumberStayMeta.activeLegacyPerks;
+  raw.meta.appliedResultTransactions=raw.meta.appliedResultTransactions??[];
 
   const rawEndings=raw.run?.endings;
   if(rawEndings){
@@ -2073,6 +2105,53 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
       if(raw.run?.status==='ending_committed')raw.run.status='active';
     }
   }
+
+  if(rawEndings){
+    rawEndings.eligible=(rawEndings.eligible??[]).filter((id:string)=>id!==RETIRED_LUMBER_STAY_ENDING_ID);
+    const committed=rawEndings.committed as string|null|undefined;
+
+    if(raw.run?.status==='ended'&&committed===RETIRED_LUMBER_STAY_ENDING_ID&&!rawEndings.result){
+      const ids=resultIdentityFor(
+        raw.run.id,
+        Math.max(1,raw.meta.runsStarted??raw.meta.lives??1),
+        RETIRED_LUMBER_STAY_ENDING_ID
+      );
+      rawEndings.result={
+        resultId:ids.resultId,
+        endingId:RETIRED_LUMBER_STAY_ENDING_ID,
+        transactionId:ids.transactionId,
+        completedAtDay:raw.run.calendar?.elapsedDays??raw.run.day??0,
+        firstCompletion:false,
+        appliedMetaRewardIds:[]
+      };
+      if(!raw.meta.appliedResultTransactions.includes(ids.transactionId))raw.meta.appliedResultTransactions.push(ids.transactionId);
+    }
+
+    const historicalResultEnding=rawEndings.result?.endingId as string|undefined;
+    if(raw.run?.status==='ended'&&historicalResultEnding===RETIRED_LUMBER_STAY_ENDING_ID){
+      rawEndings.committed=RETIRED_LUMBER_STAY_ENDING_ID;
+      if(!raw.meta.completedEndings.includes(RETIRED_LUMBER_STAY_ENDING_ID)){
+        raw.meta.completedEndings.push(RETIRED_LUMBER_STAY_ENDING_ID);
+      }
+      const historicalTransaction=rawEndings.result?.transactionId as string|undefined;
+      if(historicalTransaction&&!raw.meta.appliedResultTransactions.includes(historicalTransaction)){
+        raw.meta.appliedResultTransactions.push(historicalTransaction);
+      }
+    }else if(committed===RETIRED_LUMBER_STAY_ENDING_ID){
+      rawEndings.committed=null;
+      rawEndings.result=null;
+      if(raw.run?.status==='ending_committed')raw.run.status='active';
+    }
+  }
+
+  lumberStayMeta=migrateLumberStayLegacyMetaData({
+    completedEndings:raw.meta.completedEndings,
+    unlocks:raw.meta.unlocks,
+    activeLegacyPerks:raw.meta.activeLegacyPerks??[]
+  });
+  raw.meta.completedEndings=lumberStayMeta.completedEndings;
+  raw.meta.unlocks=lumberStayMeta.unlocks;
+  raw.meta.activeLegacyPerks=lumberStayMeta.activeLegacyPerks;
 
   const parsed=saveSchema.parse(raw) as unknown as Save;
   const s=attachLegacyFacade(parsed);
@@ -2123,13 +2202,17 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
   const knownFlags=new Set(cat.definitions.flags);
   for(const flag of Object.keys(s.run.flags))if(!knownFlags.has(flag)&&!/^system\.scholar\.\d+$/.test(flag))throw new Error(`Неизвестный флаг ${flag}`);
   const endingIds=new Set(cat.definitions.endings.map(e=>e.id));
-  const referencedEndings=[
-    ...s.run.availableEndings,
-    ...s.meta.completed,
-    ...(s.run.acceptedEnding?[s.run.acceptedEnding]:[]),
-    ...(s.run.endings.result?[s.run.endings.result.endingId]:[])
-  ];
-  if(referencedEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  // Historical completed endings remain in Meta, not in live selectable slots.
+  if(s.run.availableEndings.some(id=>!endingIds.has(id)))throw new Error('Неизвестная судьба.');
+  if(s.meta.completed.some(id=>!endingIds.has(id)&&!isRetiredHistoricalEndingId(id)))throw new Error('Неизвестная судьба.');
+  const historicalRunEnding=s.run.status==='ended'
+    &&isRetiredHistoricalEndingId(s.run.endings.result?.endingId??'')
+    &&s.run.endings.committed===s.run.endings.result?.endingId;
+  for(const id of [s.run.acceptedEnding,s.run.endings.result?.endingId]){
+    if(id&&!endingIds.has(id)&&!(historicalRunEnding&&isRetiredHistoricalEndingId(id))){
+      throw new Error('Неизвестная судьба.');
+    }
+  }
   if(new Set(s.meta.appliedResultTransactions).size!==s.meta.appliedResultTransactions.length)throw new Error('Дублированный Meta transaction proof.');
   if(s.run.status==='active'&&(s.run.endings.committed||s.run.endings.result))throw new Error('Active run не может иметь committed/result ending.');
   if(s.run.status==='ending_committed'&&(!s.run.endings.committed||s.run.endings.result))throw new Error('Некорректный ending_committed state.');
@@ -2269,6 +2352,14 @@ export function parseSave(text:string,cat:Catalog,currentMeta?:Meta):Save {
     s.meta.ruleModifiers={...s.meta.ruleModifiers,...current.ruleModifiers};
     s.meta.persistentChoices={...s.meta.persistentChoices,...current.persistentChoices};
     s.meta.activeLegacyPerks=[...new Set([...s.meta.activeLegacyPerks,...current.activeLegacyPerks])];
+    const legacyMerged=migrateLumberStayLegacyMetaData({
+      completedEndings:s.meta.completedEndings,
+      unlocks:s.meta.unlocks,
+      activeLegacyPerks:s.meta.activeLegacyPerks
+    });
+    s.meta.completedEndings=legacyMerged.completedEndings;
+    s.meta.unlocks=legacyMerged.unlocks;
+    s.meta.activeLegacyPerks=legacyMerged.activeLegacyPerks;
     attachMetaFacade(s.meta);
   }
   s.run.creation.activeHardWorkPackages=validateHardWorkPackageSelection(

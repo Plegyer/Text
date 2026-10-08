@@ -32,5 +32,5 @@ test('C2-128 committed/completed shell keeps exact ending identity visible',()=>
  assert.match(app,/data-ending-presentation-state=/);
  assert.match(app,/data-ending-id=/);
  assert.match(app,/class="ending-identity"/);
- assert.match(app,/ending\.\$\{endingDef\.id\}\.title/);
+ assert.match(app,/endingTitleForDisplay\(endingId\)/);
 });

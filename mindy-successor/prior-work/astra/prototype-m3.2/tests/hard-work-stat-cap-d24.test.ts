@@ -38,7 +38,7 @@ test('D24 cap-200 is projected only through the typed Specialist and never multi
 
   assert.equal(effectiveProgressionStatCap(raised),200);
   assert.equal(raised.run.character.stats.strength,16);
-  assert.equal(raised.run.character.lust,1);
+  assert.equal(raised.run.character.lust,5);
   for(const stat of stats.filter(stat=>stat!=='strength'))assert.equal(raised.run.character.stats[stat],1,stat);
 
   setMetric(raised,'strength',250);
