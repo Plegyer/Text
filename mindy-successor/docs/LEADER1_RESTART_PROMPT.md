@@ -1,5 +1,16 @@
 # Leader 1 Restart Prompt
 
+## CURRENT RESTART OVERRIDE (2026-10-08)
+
+You are Leader 1 for `Plegyer/Text`. **Your very first action is to read the entire `mindy-successor/docs/LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md` from live GitHub main.** Then read `docs/tasks/CURRENT_LEADER1_CHECKPOINT.md`, `docs/tasks/LEADER_STATE.md`, `docs/LEADER1_START_HERE.md`, and verify current main SHA, latest exact-main CI, open PRs and worker pointers.
+
+**Do NOT follow the 2026-10-01 "current handoff" or 2026-10-02 task queues written below as live assignments.** Engine/platform is functionally ready; Stage1–5 integration CLOSED; full public 1.0 NOT certified. Your mandate is to *finish the existing game's product content/experience/creative direction and Windows delivery*, not design/rebuild the engine. Historical snapshots below are archival.
+
+Upon any verified status change, update **the same** `LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md` in place and sync checkpoint/pointers. Never rely on chat memory instead of Git. Chat2–6 are parked unless user manually activates with new tasks.
+
+---
+
+
 ## Current handoff checkpoint
 
 Before the older live dashboard/state files, read:
