@@ -1,3 +1,7 @@
+## LATEST AUTHORITATIVE UPDATE — Leader1 Stage5 successor checkpoint, 2026-10-08
+
+**Current:** Stage1–4 CLOSED, Stage5 OPEN, burn-down **1**. Main accepted code unchanged since Stage4. Full Stage5 integration is in **Draft PR #303**, Leader source `dd08aff9fc9533d1bccb4789c2d51923fb478423` (branch head docs-only `4766579910da552ff0c8b2ece5541b2897689f96`). Exact-source run `37797349700`: **32/32 legacy, 6/6 strict UI source, 38/38 migration PASS**, but full `npm run check` **1353/1358 pass, 1 Undead test FAIL, 4 opt-in SKIP**. **NO MERGE**. Explicit fix, next workflow, and closure requirements are in `LEADER1_STAGE5_SUCCESSOR_TRANSITION_2026-10-08.md`; this block supersedes older *queued runner* descriptions lower down.
+
 # LEADER STATE — ONE NOTEBOOK
 
 This is the single current operational notebook for Leader 1.
