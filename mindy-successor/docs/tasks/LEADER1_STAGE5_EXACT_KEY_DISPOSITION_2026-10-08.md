@@ -1,5 +1,14 @@
 # Leader 1 Stage 5 — two Secret Debt RU golden third-value decisions (2026-10-08)
 
+## Stage5 immutable Golden SHA guard — Leader correction (2026-10-08)
+
+**Latest controlling QA rule, supersedes earlier suggestion to directly edit copied v54 Golden JSON.** Frozen v54 Golden `tests/fixtures/final-player-facing-golden-v54.json` MUST retain exact blob `bc8617be68825543ed7617e9dd5c7d9156b0e14`. The frozen v57 package QA asserts this SHA; the v64 cross-contract test asserts the same SHA; the v61 UI smoke matrix binds it as authority. Editing even two RU values in that file breaks reproducible strict QA. The two known legitimate shipped Secret Debt RU labels remain authorized unchanged in production by `LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md`.
+
+**Safe test-only resolution:** provide a narrowly scoped, explicit release-target expectation overlay for exactly these two keys, applied when final player-facing validator v55 compares `row.value` with live localization. Do not mutate the frozen JSON. Document exact original expected RU, accepted Stage1/current RU, unmodified EN, and assert there are **exactly two** overlays, with direct reference to the Leader adjudication. Preserve every other key/slot/forbidden rule and exact original fixture hash. If importing v57 package QA, its expected original v55 validator blob is immutable too: run its original frozen version against original artifacts on an isolated package-QA source, **or** retain a byte-identical archived v55 validator and teach the imported package QA to hash that exact preserved validator independently of the transparently adapted release-target validator. DO NOT silently disable/skip the hash assertion. Exact source and normalized comparison evidence must be in GitHub handoff.
+
+This is test-only authority/provenance management, not a new production change and not permission to bypass strict final-target gates.
+
+
 **Status: LEADER-AUTHORIZED EXACT-KEY RESOLUTION.** This is a positive semantic decision after checking BOTH Stage 1 accepted exact-main and Stage 4 exact-main, not a generic last-write-wins exception. All other Golden contract requirements remain hard, no weakened validators or whole-file replacement.
 
 ## Evidence
