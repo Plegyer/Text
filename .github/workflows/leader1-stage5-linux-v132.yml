@@ -1,0 +1,44 @@
+name: Leader1 Stage5 Linux exact-source fallback v132
+on:
+  push:
+    branches: [qa-stage5-leader-linux-v132]
+permissions:
+  contents: read
+jobs:
+  linux-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dd08aff9fc9533d1bccb4789c2d51923fb478423
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "dd08aff9fc9533d1bccb4789c2d51923fb478423"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: npm ci
+        run: npm ci
+      - name: typecheck
+        run: npm run typecheck
+      - name: validate
+        run: npm run validate
+      - name: build
+        run: npm run build
+      - name: 32 Golden legacy executable witnesses
+        run: node --experimental-strip-types --test tests/gates/stage5-legacy-golden-32-v1.test.ts
+      - name: Final strict player-facing RU EN
+        env:
+          FINAL_PLAYER_FACING_GOLDEN_TARGET: '1'
+          FINAL_UI_ACCESSIBILITY_SMOKE_TARGET: '1'
+          FINAL_PLAYER_FACING_CROSS_CONTRACT_TARGET: '1'
+        run: node --experimental-strip-types --test tests/final-player-facing-golden-release-target-stage5-v1.test.ts tests/final-ui-accessibility-smoke-v61.test.ts tests/final-player-facing-cross-contract-v64.test.ts
+      - name: 23 real migration plus original 15 golden checks
+        run: node --experimental-strip-types --test tests/final-save-migration-closure-v21.test.ts tests/final-historical-fixtures-v55.test.ts tests/final-save-migration-golden-v57.test.ts
+      - name: Full check
+        run: npm run check
