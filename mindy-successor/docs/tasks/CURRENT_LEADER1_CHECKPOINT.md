@@ -1,3 +1,9 @@
+## PRIMARY KNOWLEDGE AUTHORITY — LEADER CONTEXT HANDOFF (2026-10-08)
+
+**FIRST, READ THE WHOLE [CANONICAL KNOWLEDGE LIBRARY](../LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md) — it overrides obsolete backlog in older sections.** The project already has a functionally complete core engine and most gameplay systems. Stage1–5 CLOSED ≠ full public 1.0 release accepted. The critical path is product finishing, natural gameplay coherence, creative macro mystery, media/UX and installer proof. Current production/source claim, freezes, follow-on PR #305 and CI provenance are enumerated there. Keep the same library updated **in place** at every major change, not just append dated notes. Chat2–6 PARKED pending explicit new assignment/user activation.
+
+---
+
 ## Post-Stage5 whole-project reality correction — 2026-10-08
 
 **ENGINE/PLATFORM FUNCTIONALLY READY.** Stage1–5 are CLOSED (burn-down 0), but that is integration acceptance, **not public 1.0 completion**. Substantial production content already exists: ten ordinary careers, Palace, Secret Debt, four target D36 Activity regions, School/Night/Meta and RU/EN. Do not restart an engine rewrite or interpret archived pre-Stage5 project gaps as current. The actual next phase is **finish the existing game's natural player journeys, authorial macro mystery, UX/media/content quality, and clean Windows packaged-release proof**.
