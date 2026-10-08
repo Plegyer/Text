@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0",
+  "meta": {
+    "unlocks": [
+      "guild"
+    ],
+    "completed": [
+      "guild-life"
+    ],
+    "lives": 2
+  },
+  "run": {
+    "id": "life-2",
+    "day": 3,
+    "slot": 1,
+    "limitDays": 448,
+    "status": "active",
+    "housing": "room",
+    "metrics": {
+      "strength": 20,
+      "endurance": 20,
+      "dexterity": 20,
+      "perception": 20,
+      "intelligence": 20,
+      "magic": 20,
+      "empathy": 20,
+      "persuasion": 20,
+      "composure": 20,
+      "organization": 21,
+      "money": 130,
+      "energy": 75,
+      "health": 100,
+      "stress": 0,
+      "debt": 0,
+      "work": 1,
+      "lessons": 0,
+      "alchemy": 0,
+      "trust": 0
+    },
+    "flags": {
+      "story.arrived": true
+    },
+    "inventory": {
+      "herb": 2,
+      "tonic": 0,
+      "scales": 0
+    },
+    "history": {
+      "base.arrival": {
+        "count": 1,
+        "lastDay": 3,
+        "variants": {
+          "welcome": 3
+        }
+      }
+    },
+    "pending": {
+      "eventId": "base.arrival",
+      "variantId": "welcome"
+    },
+    "availableEndings": [],
+    "acceptedEnding": null,
+    "journal": [
+      "Старая запись"
+    ]
+  }
+}

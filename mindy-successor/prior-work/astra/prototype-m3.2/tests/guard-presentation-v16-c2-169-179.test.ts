@@ -162,7 +162,7 @@ test('C2-174 only frozen poverty and Tavern cross-system seams are published',()
   assertLocalizedStatic(presentationIdForGuardState('tavern-evidence-known'));
 
   const published=Object.keys(presentation.slots??{}).filter(id=>id.includes('guard'));
-  assert.equal(published.some(id=>/secret-debt|merchant|palace|assassin|prostitute/i.test(id)),false);
+  assert.deepEqual(published.filter(id=>/secret-debt|merchant|palace|assassin|prostitute/i.test(id)),['job/assassin/event/assassin-cross-guard-pressure/default'],'only frozen Golden cross-Guard assassin pressure');
 });
 
 test('C2-175 Guard Badge and Sealed Pass presentation is access-only and live-item backed',()=>{
@@ -225,7 +225,7 @@ test('C2-178 Guard Hard Work remains present alongside the exact D40 ending surf
 test('C2-179 integrated 65 Guard surfaces have RU EN alt-caption parity and animation-off static safety',()=>{
   const checked=applyPresentation(catalog,presentation);
   const guardSlots=Object.entries<any>(presentation.slots??{}).filter(([id])=>id.includes('guard'));
-  assert.equal(guardSlots.length,67,'complete integrated Guard surface count with D42 Night surfaces');
+  assert.equal(guardSlots.length,76,'67 frozen Guard+D42 identities plus nine Stage5 backed overrides');
   for(const [id,slot] of guardSlots){
     assertLocalizedStatic(id);
     const off=resolvePresentation(checked,presentation,id,{animationsEnabled:false,occurrenceKey:'c2-179'});
