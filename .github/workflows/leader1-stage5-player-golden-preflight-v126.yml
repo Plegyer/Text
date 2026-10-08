@@ -1,0 +1,39 @@
+name: Leader1 Stage5 frozen player golden preflight v126
+on:
+  push:
+    branches: [qa-stage5-player-golden-preflight-v126]
+permissions:
+  contents: read
+jobs:
+  golden:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: a58acd176d10393619a5f7d5d4c8af19a4277766
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "a58acd176d10393619a5f7d5d4c8af19a4277766"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Restore original SHA-checked blobs byte-for-byte from Git
+        shell: powershell
+        run: |
+          node -e "const fs=require('node:fs');const cp=require('node:child_process');const p=['mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-player-facing-golden-v54.json','mindy-successor/prior-work/astra/prototype-m3.2/tests/final-player-facing-golden-manifest-v55.test.ts','mindy-successor/docs/tasks/CHAT6_FINAL_PLAYER_FACING_GOLDEN_MANIFEST_v56.md'];for(const x of p){const b=cp.execFileSync('git',['-C',process.env.GITHUB_WORKSPACE,'show','HEAD:'+x]);fs.writeFileSync(process.env.GITHUB_WORKSPACE+'/'+x,b);console.log(x,b.length)}"
+      - name: Install
+        run: npm ci
+      - name: Frozen original player golden package QA
+        run: node --experimental-strip-types --test tests/final-player-facing-golden-package-qa-v57.test.ts tests/final-player-facing-golden-manifest-v55.test.ts
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
