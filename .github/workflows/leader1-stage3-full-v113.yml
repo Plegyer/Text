@@ -1,0 +1,31 @@
+name: Leader1 Stage3 exact-source full CI v113
+on:
+  push:
+    branches: [qa-stage3-full-v113]
+permissions:
+  contents: read
+jobs:
+  full-ci:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 70
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 7966a15fcebfd358ae7ae08e3ae9a84b229be050
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "7966a15fcebfd358ae7ae08e3ae9a84b229be050"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Install dependencies
+        run: npm ci
+      - name: Focused two failure regressions
+        run: node --experimental-strip-types --test tests/chat3-forest-authored-depth-v13.test.ts tests/merchant-production-presentation-reachability-c2-192.test.ts
+      - name: Full check
+        run: npm run check
