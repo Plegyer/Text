@@ -1,18 +1,3 @@
-# CURRENT CHAT3 TASK POINTER
+# CURRENT CHAT3 TASK POINTER — Stage5 migration closure v21
 
-Status: **START NOW — SECRET DEBT + D51 STAGE-1 RELEASE GATE v67-v68**
-Owner: Chat 3
-
-Previous final save/migration dry-run v65-v66 is accepted.
-
-Current branch:
-`chat3/secret-debt-d51-stage1-release-gate-v67`
-
-Task:
-`mindy-successor/docs/tasks/CHAT3_SECRET_DEBT_D51_STAGE1_RELEASE_GATE_v67_v68_TASK.md`
-
-This is a lightweight Stage-1 support bundle for Chat2.
-No production changes. No full CI. Do not merge main.
-
-Expected final:
-`BUNDLE_COMPLETE — READY_FOR_CHAT2_SECRET_DEBT_D51_STAGE1_SAVE_GATE`.
+**ASSIGNED / NOT ACTIVATED**: user must manually wake Chat3. Read `LEADER_STATE.md`, `WORKER_TO_LEADER_GITHUB_REPORTING_PROTOCOL.md`, and `CHAT3_STAGE5_23_CASE_EXECUTABLE_MIGRATION_CLOSURE_TASK_2026-10-08.md` from live main. Produce 23 genuine runtime cases as an isolated test-only branch `chat3/stage5-final-save-migration-closure-v21`; NO production, NO PR301 updates, NO full CI/merge. Existing Chat3 v57 manifest package was preflight-green only (15/15) at Leader run 37790851113 and does NOT fulfill the actual 23-case closure. The user manually activates this chat; GitHub docs don't wake it. Full GitHub handoff, max two user-facing lines. Stop marker `STAGE5_23_CASE_MIGRATION_CLOSURE_READY_FOR_LEADER`.
