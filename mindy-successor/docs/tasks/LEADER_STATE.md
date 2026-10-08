@@ -1,3 +1,14 @@
+## LATEST AUTHORITATIVE UPDATE — Leader1 Stage5 FINAL GO / CLOSED (2026-10-08)
+
+**ALL STAGES 1–5 CLOSED; broad burn-down 0; release GO.** This section supersedes ALL older Stage5 OPEN / pending-runner / draft / no-merge language below (which is retained as historical record). Final evidence: `LEADER1_STAGE5_FINAL_GO_NO_GO_2026-10-08.md`, `LEADER1_STAGE5_EXACT_SOURCE_CI_RESULT_v135.json`, `LEADER1_STAGE5_EXACT_MAIN_CI_RESULT_v136.json`.
+
+- Accepted exact source: `8ea2279a5097e6568d9d31e9137ca3feb1f1a4e1`, v135 exact-source run `37809954382` SUCCESS, 32/32 Golden, 6/6 strict RU/EN targets, 38/38 migration, Chromium real DOM RU/EN plus source-backed caption, full 1354 PASS / 0 FAIL / 4 conditional SKIP.
+- Production integration PR **#303 MERGED** with expected head SHA, merge `bb2a1c8649bf150b74611eda958ea874a8905952`. Chat2 #301 and Chat3 #302 were **NOT separately merged**.
+- Initial official main run `37812155535` failed due Windows CRLF altered local Golden fixture bytes (NOT a game change). Strictly workflow-only commit `db3cc892cb96cca43bec298a85e61f0e2c376bda` reconstructs immutable originals from `git show HEAD:<path>`. **Official exact-main run `37812797149` SUCCESS on this SHA**, full 1354 PASS / 0 FAIL / 4 opt-in SKIP.
+- Stage5 OPEN → CLOSED; burn-down **1 → 0**. Two Secret Debt RU adjudicated current labels and three precise human-facing Tavern changes preserved; immutable Golden unchanged. Chat2 and Chat3 **PARKED**, no wake needed.
+
+---
+
 ## LATEST AUTHORITATIVE UPDATE — Leader1 Stage5 successor checkpoint, 2026-10-08
 
 **Current:** Stage1–4 CLOSED, Stage5 OPEN, burn-down **1**. Main accepted code unchanged since Stage4. Full Stage5 integration is in **Draft PR #303**, Leader source `dd08aff9fc9533d1bccb4789c2d51923fb478423` (branch head docs-only `4766579910da552ff0c8b2ece5541b2897689f96`). Exact-source run `37797349700`: **32/32 legacy, 6/6 strict UI source, 38/38 migration PASS**, but full `npm run check` **1353/1358 pass, 1 Undead test FAIL, 4 opt-in SKIP**. **NO MERGE**. Explicit fix, next workflow, and closure requirements are in `LEADER1_STAGE5_SUCCESSOR_TRANSITION_2026-10-08.md`; this block supersedes older *queued runner* descriptions lower down.
@@ -129,9 +140,9 @@ The two previously unresolved Secret Debt RU Golden third-values have been expli
 ### Remaining broad stages
 - [x] **Stage 4 — D46 + D47 + legacy ending retirement — CLOSED** (v121 exact-source 1312/1312, v122 exact-main 1312/1312, PR #300 merged)
 - [x] broad burn-down decremented 2 -> 1
-- [ ] **Stage 5 — final save/migration/UI/localization/presentation/regression closure — CURRENT**
+- [x] **Stage 5 — final save/migration/UI/localization/presentation/regression closure — CLOSED (v135 source + official exact-main v136)**
 
-Current broad burn-down: **1**
+Current broad burn-down: **0**
 
 ## Current execution model
 
