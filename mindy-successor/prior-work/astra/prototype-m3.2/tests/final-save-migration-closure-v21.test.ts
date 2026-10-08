@@ -36,7 +36,7 @@ assert.equal(manifest.cases.length,23,'frozen golden manifest length');
 assert.equal(new Set(originalNames).size,23,'unique frozen case names');
 
 const clone = <T>(s:T):T => JSON.parse(JSON.stringify(s)) as T;
-const roundTrip = <T>(s:T):T => parseSave(JSON.stringify(s),catalog) as T;
+const roundTrip = (s:ReturnType<typeof freshSave>):ReturnType<typeof freshSave> => parseSave(JSON.stringify(s),catalog);
 const title = (number:number):string => {
   const row=manifest.cases[number-1];
   assert.equal(row?.id,`case-${String(number).padStart(2,'0')}`);
