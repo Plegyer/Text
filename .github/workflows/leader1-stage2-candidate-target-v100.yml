@@ -1,0 +1,28 @@
+name: Leader1 Stage2 candidate target v100
+on:
+  push:
+    branches: [qa-stage2-candidate-v100-target]
+permissions:
+  contents: read
+jobs:
+  target:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3ec5d3eb4254a2723982825fce3f00d03e770d63
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "3ec5d3eb4254a2723982825fce3f00d03e770d63"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - run: npm ci
+      - run: npm run build
+      - run: node --experimental-strip-types --test tests/presentation-keyboard-focus-v9.test.ts
