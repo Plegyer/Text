@@ -1,7 +1,13 @@
-# CURRENT LEADER 1 CHECKPOINT — Stage5 successor handoff 2026-10-08
+# CURRENT LEADER 1 CHECKPOINT — FINAL (2026-10-08)
 
-**Stage1–4 CLOSED. Stage5 OPEN. Broad burn-down 1. PR #303 Draft, NOT MERGED.**
+**STAGE 1–5 CLOSED. Broad burn-down: 0. Final release decision: GO.**
 
-**Read first:** `mindy-successor/docs/tasks/LEADER1_STAGE5_SUCCESSOR_TRANSITION_2026-10-08.md` on current live main, then `LEADER1_STAGE5_EXACT_SOURCE_ACCEPTANCE_CHECKPOINT_2026-10-08.md` and `LEADER1_STAGE5_QA_COLLISION_ADJUDICATION_2026-10-08.md` on `lead/stage5-qa-integration-v1`.
+Latest authoritative details: `LEADER1_STAGE5_FINAL_GO_NO_GO_2026-10-08.md` and exact-source/main CI JSON evidence in this directory. All previous Stage5 OPEN/Draft/NO-GO successor checkpoints are historical superseded notes.
 
-Latest exact-source run `37797349700`: 32/32 legacy, 6/6 strict player-facing, 38/38 migration PASS; full **1353/1358 PASS, one Undead Farm test false scene ID FAIL, four optional SKIPs**. Main still Stage4 stable. Fix the sole wrong `spring/default/default` test-only scene path, SHA-guard rerun focused and full CI, then merge #303 with exact head and run official exact-main. No worker wake needed. No Stage5 CLOSE until both exact-source and exact-main GREEN.
+- Stage5 merged PR **#303**, https://github.com/Plegyer/Text/pull/303, exact accepted source `8ea2279a5097e6568d9d31e9137ca3feb1f1a4e1`, merge SHA `bb2a1c8649bf150b74611eda958ea874a8905952`.
+- Exact-source [v135](https://github.com/Plegyer/Text/actions/runs/37809954382) SUCCESS: 32/32 legacy Golden, 6/6 strict Stage5 RU/EN, 38/38 migration, 4/4 Undead focus, Chromium RU/EN rendered accessibility with positive source-backed caption branch, full **1354 PASS / 0 FAIL / 4 optional SKIP**.
+- First official exact-main [#37812155535](https://github.com/Plegyer/Text/actions/runs/37812155535) failed one frozen v54 blob hash under Windows CRLF checkout. A **CI-only** workflow repair restores exact immutable bytes; no product/test/Golden changes. Subsequent official exact-main [#37812797149](https://github.com/Plegyer/Text/actions/runs/37812797149) **SUCCESS** on `main@db3cc892cb96cca43bec298a85e61f0e2c376bda`, full **1354 PASS / 0 FAIL / 4 optional SKIP**.
+- Two exact Secret Debt RU expectation exceptions and three narrowly adjudicated historical Tavern display strings preserved. Original immutable Golden bytes unchanged.
+- Chat2 and Chat3 **PARKED**; no new assignments, no wake needed. Worker Draft PR #301/#302 **not merged separately**. Historical status and source provenance remain available in GitHub.
+
+**No remaining broad Stage; Stage5 release acceptance CLOSED.** Later administrative docs-only commits on main do not change the certified executable main tree.
