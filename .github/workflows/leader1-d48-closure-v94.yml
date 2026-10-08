@@ -1,0 +1,49 @@
+name: Leader1 D48 closure v94
+on:
+  push:
+    branches: [qa-d48-stage2-v94]
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: e0499c9c93b5d5bfe72ae43013800c6b52785504
+          fetch-depth: 1
+      - name: Exact SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "e0499c9c93b5d5bfe72ae43013800c6b52785504"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run validate
+      - run: npm run build
+      - name: Focused D48 and Stage2 adjacency
+        run: >
+          node --experimental-strip-types --test
+          tests/palace-d48-media-v50.test.ts
+          tests/palace-rich6-runtime-v15.test.ts
+          tests/palace-player-facing-ui-v16.test.ts
+          tests/palace-player-facing-ui-renderer-v16.test.ts
+          tests/palace-prince-narrative-producer-v18.test.ts
+          tests/palace-prince-narrative-renderer-v18.test.ts
+          tests/palace-final-prose-media-v19.test.ts
+          tests/strong-meta-player-ui-v42.test.ts
+          tests/strong-meta-ui-localization-v42-v43.test.ts
+          tests/modal-aria-localization-v43.test.ts
+          tests/d39-formal-introduction-assassin-v46.test.ts
+          tests/school-life-content-reload.test.ts
+          tests/palace-d39-reward-producer-v20.test.ts
+          tests/strong-meta-engine-integration-v7.test.ts
+          tests/strong-meta-registry-v7.test.ts
