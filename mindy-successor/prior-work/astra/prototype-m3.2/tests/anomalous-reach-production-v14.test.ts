@@ -408,7 +408,7 @@ test('Forest and Trade Corridor production contracts remain present while v14 ad
   assert.equal(trade.results.find(r=>r.outcome==='success')?.id,'trade.corridor.success');
 });
 
-test('v14 exposes D38 seams but does not implement or auto-commit a standalone Activity ending',()=>{
+test('v14 D38 seams stay isolated to the assembled Activity ending family',()=>{
   const markerTerms=[
     'activity.anomalous-reach.anchor-secured',
     'activity.anomalous-reach.mark.pathfinder',
@@ -419,8 +419,12 @@ test('v14 exposes D38 seams but does not implement or auto-commit a standalone A
     'activity.anomalous-reach.contact-thread-open',
     'activity.anomalous-reach.minigame.pattern-ritual-complete'
   ];
-  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.')),false);
-  for(const ending of definitions.endings){
+  const activityEndings=catalog.definitions.endings.filter(e=>e.id.startsWith('ending.activity.'));
+  assert.deepEqual(
+    activityEndings.map(e=>e.id).sort(),
+    ['ending.activity.network','ending.activity.pathfinder','ending.activity.preservation']
+  );
+  for(const ending of definitions.endings.filter((e:any)=>!e.id.startsWith('ending.activity.'))){
     const raw=JSON.stringify(ending.conditions);
     for(const marker of markerTerms)assert.equal(raw.includes(marker),false,ending.id+' / '+marker);
   }

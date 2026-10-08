@@ -122,7 +122,7 @@ test('D16 explicit commit remains non-terminal and Specialist ownership arrives 
   assert.equal(eligible(ending(ENDINGS.pathfinder).conditions,s,catalog),true);
   assert.equal(s.run.status,'active');
   assert.equal(s.run.endings.committed,null);
-  assert.equal(s.meta.unlocks.includes(REWARDS.pathfinder),false);
+  assert.equal(s.meta.strongMeta.ownership.ownedRewardIds.includes(REWARDS.pathfinder),false);
 
   // Registration normally happens at a production resolver boundary. This test
   // isolates D16 commit/completion after proving the authored eligibility above.
@@ -131,7 +131,7 @@ test('D16 explicit commit remains non-terminal and Specialist ownership arrives 
   s=dispatch(s,{type:'commitEnding',id:ENDINGS.pathfinder},catalog);
   assert.equal(s.run.status,'ending_committed');
   assert.equal(s.run.endings.result,null);
-  assert.equal(s.meta.unlocks.includes(REWARDS.pathfinder),false);
+  assert.equal(s.meta.strongMeta.ownership.ownedRewardIds.includes(REWARDS.pathfinder),false);
   assert.throws(()=>dispatch(s,{type:'commitEnding',id:ENDINGS.network},catalog),/другая судьба/i);
 
   s=dispatch(s,{type:'completeEnding'},catalog);
@@ -139,7 +139,7 @@ test('D16 explicit commit remains non-terminal and Specialist ownership arrives 
   assert.equal(s.run.endings.result?.endingId,ENDINGS.pathfinder);
   assert.deepEqual(s.run.endings.result?.appliedMetaRewardIds,[REWARDS.pathfinder]);
   assert.ok(s.meta.completedEndings.includes(ENDINGS.pathfinder));
-  assert.ok(s.meta.unlocks.includes(REWARDS.pathfinder));
+  assert.ok(s.meta.strongMeta.ownership.ownedRewardIds.includes(REWARDS.pathfinder));
 });
 
 test('D23 D28 Energy XP and Secret Debt firewalls are assembly-safe on this historical branch',()=>{

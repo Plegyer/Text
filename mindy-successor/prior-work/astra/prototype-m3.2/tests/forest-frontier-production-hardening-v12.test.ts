@@ -267,9 +267,23 @@ test('Forest result feedback exposes career/relationship/School seams and D38 ma
     'activity.forest-frontier.mark.network',
     'activity.forest-frontier.result.research-grade'
   ];
-  for(const ending of definitions.endings){
+  const activityEndings=definitions.endings.filter((ending:any)=>ending.id.startsWith('ending.activity.'));
+  assert.equal(activityEndings.length,3);
+  for(const ending of definitions.endings.filter((ending:any)=>!ending.id.startsWith('ending.activity.'))){
     const conditions=JSON.stringify(ending.conditions);
     for(const marker of newMarkerTerms)assert.equal(conditions.includes(marker),false,ending.id+' / '+marker);
+  }
+  for(const ending of activityEndings){
+    const conditions=JSON.stringify(ending.conditions);
+    assert.equal(
+      [
+        'activity.trade-corridor.anchor-secured',
+        'activity.anomalous-reach.anchor-secured',
+        'activity.restricted-sites.anchor-secured'
+      ].some(anchor=>conditions.includes(anchor)),
+      true,
+      ending.id+' must not be Forest-only'
+    );
   }
 });
 

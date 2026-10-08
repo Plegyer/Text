@@ -129,21 +129,16 @@ function catalog():Catalog{
   return loadCatalog(definitions(),[forcedNightPack()]);
 }
 
-function start():Save{
-  const s=freshSave();
-  s.run.creation={
-    remaining:0,
-    allocated:{},
-    activeHardWorkPackages:[],
-    hardWorkPackagesApplied:true,
-    complete:true
-  };
+function start(cat:Catalog):Save{
+  let s=freshSave();
+  for(let i=0;i<10;i++)s=dispatch(s,{type:'allocate',stat:'strength',delta:1},cat);
+  s=dispatch(s,{type:'finishCreation'},cat);
   s.run.flags['story.arrived']=true;
   return s;
 }
 
 function enter(cat:Catalog,id=CAMP_ID){
-  return dispatch(start(),{type:'enterActivity',id},cat);
+  return dispatch(start(cat),{type:'enterActivity',id},cat);
 }
 
 function exhaustFieldTime(s:Save,cat:Catalog){
@@ -288,7 +283,7 @@ test('ordinary Camp replaces city Night, charges no lodging, refreshes no global
 
 test('Secret-Debt-shaped forced Night preempts Camp, terminates Activity continuation, pays lodging once, and applies Energy -1',()=>{
   const cat=catalog();
-  let source=start();
+  let source=start(cat);
   source.run.progression.worldFacts.push('test.bound');
   let s=dispatch(source,{type:'enterActivity',id:CAMP_ID},cat);
   s=exhaustFieldTime(s,cat);

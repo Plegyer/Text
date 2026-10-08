@@ -355,7 +355,7 @@ test('accepted Handler contact can publish the fourth-region Network marker afte
   );
 });
 
-test('secured evidence + successful infiltration + anchor publishes research-grade candidate without an ending',()=>{
+test('secured evidence + successful infiltration + anchor publishes research-grade candidate without auto-committing an ending',()=>{
   let s=year3Prepared();
   s.run.resources.inventory.assassin_evidence_case=1;
   s=dispatch(s,{type:'enterActivity',id:'restricted.sites'},catalog);
@@ -374,7 +374,9 @@ test('secured evidence + successful infiltration + anchor publishes research-gra
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.anchor-secured'));
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.result.evidence-secured'));
   assert.ok(s.run.progression.worldFacts.includes('activity.restricted-sites.result.research-grade'));
-  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.')),false);
+  assert.equal(s.run.status,'active');
+  assert.equal(s.run.endings.committed,null);
+  assert.equal(catalog.definitions.endings.filter(e=>e.id.startsWith('ending.activity.')).length,3);
 });
 
 test('all four production region definitions coexist and keep 2-Energy entry contracts',()=>{
@@ -459,7 +461,7 @@ function specialistReady(kind:Specialist,facts:Set<string>){
   return countDistinct(facts,marks)>=2&&infiltration;
 }
 
-test('D38 four-region readiness matrix has positive and negative cases while commit remains separate',()=>{
+test('D38 four-region readiness matrix has positive and negative cases in the assembled ending family',()=>{
   const pathfinder=new Set([
     'activity.forest-frontier.anchor-secured',
     'activity.trade-corridor.anchor-secured',
@@ -515,7 +517,7 @@ test('D38 four-region readiness matrix has positive and negative cases while com
   oneNetworkRegion.delete('activity.trade-corridor.mark.network');
   assert.equal(specialistReady('network',oneNetworkRegion),false);
 
-  assert.equal(catalog.definitions.endings.some(e=>e.id.startsWith('ending.activity.')),false);
+  assert.equal(catalog.definitions.endings.filter(e=>e.id.startsWith('ending.activity.')).length,3);
 });
 
 test('legacy Assassin infiltration remains unlimited and separate from Restricted Sites suspicion',()=>{
