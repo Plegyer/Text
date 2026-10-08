@@ -1,0 +1,37 @@
+name: Leader1 Stage5 save golden package preflight v123
+on:
+  push:
+    branches: [qa-stage5-save-golden-preflight-v123]
+permissions:
+  contents: read
+jobs:
+  golden-package:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 9d47c0f43c173c55f59dcf07ff82033acbbbdb3a
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "9d47c0f43c173c55f59dcf07ff82033acbbbdb3a"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Frozen 23-case manifest and F1-F5 integrity
+        run: node --experimental-strip-types --test tests/final-historical-fixtures-v55.test.ts tests/final-save-migration-golden-v57.test.ts
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
