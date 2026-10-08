@@ -37,23 +37,7 @@ test('v64 accepted closure contracts agree',()=>{
   assert.equal(contract.consistencyMatrix.length,9);
   assert.ok(contract.consistencyMatrix.every((x:any)=>x.verdict==='AGREE'));
 
-  // Authoritative source hash reconstructs EXACTLY after reversing only Leader-approved RU expected values.
-  const adjusted=JSON.parse(readFileSync(GOLDEN,'utf8')) as any;
-  assert.equal(adjusted.leaderAdjudication?.document,'mindy-successor/docs/tasks/LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md');
-  assert.deepEqual(adjusted.leaderAdjudication?.keys,[
-    'unlock.secret-debt.paid-freedom.earned-reserve-match.label',
-    'unlock.secret-debt.takeover.network-retainer.label'
-  ]);
-  for(const [key,frozenRu,acceptedRu] of [
-    ['unlock.secret-debt.paid-freedom.earned-reserve-match.label','Паритет заработанного резерва','Сопоставление заработанного резерва'],
-    ['unlock.secret-debt.takeover.network-retainer.label','Сетевой гонорар','Сетевое содержание']
-  ] as const){
-    assert.equal(adjusted.localization.required[key].value.ru,acceptedRu);
-    assert.equal(adjusted.localization.required[key].value.en,golden.localization.required[key].value.en);
-    adjusted.localization.required[key].value.ru=frozenRu;
-  }
-  delete adjusted.leaderAdjudication;
-  assert.equal(blob(JSON.stringify(adjusted,null,2)+'\n'),'bc8617be68825543ed7617e9dd5c7d915f6b0e14','no other Golden v54 deviation');
+  assert.equal(blob(readFileSync(GOLDEN,'utf8')),'bc8617be68825543ed7617e9dd5c7d915f6b0e14');
   assert.equal(blob(readFileSync(SMOKE,'utf8')),'62f1b14b1f6890b4641c2acb2cd26860c8b99ed8');
   assert.equal(blob(readFileSync(SAVE,'utf8')),'6ad4ed97ec6058960f90c6b6b80edfda0b9a6279');
   assert.equal(blob(readFileSync(OPS,'utf8')),'17282cf11436d54d49915f44ed84de56a0eebf7c');

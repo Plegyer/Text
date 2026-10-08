@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {assertStage5OverlayAuthority,stage5FinalExpectedLocalization} from './stage5-secret-debt-ru-adjudication-v1.ts';
 import {existsSync,readFileSync,readdirSync} from 'node:fs';
 
 const MATRIX_PATH='tests/fixtures/final-ui-accessibility-smoke-v60.json';
@@ -8,29 +9,6 @@ const FINAL_TARGET=process.env.FINAL_UI_ACCESSIBILITY_SMOKE_TARGET==='1';
 
 const matrix=JSON.parse(readFileSync(MATRIX_PATH,'utf8')) as any;
 const golden=JSON.parse(readFileSync(GOLDEN_PATH,'utf8')) as any;
-
-// Leader 1 authorized only two Secret Debt RU decisions. Frozen v60 matrix stays intact.
-const STAGE5_RU_RESOLUTIONS:Record<string,{frozenRu:string;finalRu:string}>={
-  "unlock.secret-debt.paid-freedom.earned-reserve-match.label": {
-    "frozenRu": "Паритет заработанного резерва",
-    "finalRu": "Сопоставление заработанного резерва"
-  },
-  "unlock.secret-debt.takeover.network-retainer.label": {
-    "frozenRu": "Сетевой гонорар",
-    "finalRu": "Сетевое содержание"
-  }
-};
-function adjudicatedSmokeExpectation(key:string,expected:any){
-  const decision=STAGE5_RU_RESOLUTIONS[key];
-  if(!decision)return expected;
-  assert.equal(golden.leaderAdjudication?.document,'mindy-successor/docs/tasks/LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md');
-  assert.deepEqual(golden.leaderAdjudication?.keys,Object.keys(STAGE5_RU_RESOLUTIONS));
-  assert.equal(expected.ru,decision.frozenRu,'frozen v60 wording unchanged');
-  const final=golden.localization.required[key]?.value;
-  assert.equal(final?.ru,decision.finalRu,'accepted Stage1 RU wording');
-  assert.equal(final?.en,expected.en,'EN unchanged');
-  return final;
-}
 
 type Issue={code:string;target:string;detail?:string};
 
@@ -47,6 +25,7 @@ function readJson(path:string,issues:Issue[]){
 function issue(issues:Issue[],code:string,target:string,detail?:string){issues.push(detail?{code,target,detail}:{code,target});}
 
 test('v61 smoke matrix is internally coherent and anchored to the golden contract',()=>{
+  assertStage5OverlayAuthority(golden.localization.required);
   assert.equal(matrix.schemaVersion,1);
   assert.equal(matrix.id,'chat6.final-ui-accessibility-smoke.v60');
   assert.equal(matrix.status,'POST_INTEGRATION_RENDERED_EXECUTION_REQUIRED');
@@ -69,7 +48,7 @@ test('v61 smoke matrix is internally coherent and anchored to the golden contrac
     for(const [key,value] of Object.entries(surface.expectedLocalization??{})){
       assert.ok(pairComplete(value),surface.id+' '+key+' RU/EN');
       const frozen=golden.localization.required[key]?.value??golden.localization.retainedCompatibility[key]?.value;
-      if(frozen!==undefined)assert.deepEqual(adjudicatedSmokeExpectation(key,value),frozen,surface.id+' '+key+' differs from Leader-adjudicated golden fixture');
+      if(frozen!==undefined)assert.deepEqual(value,frozen,surface.id+' '+key+' differs from golden fixture');
     }
     for(const [slot,value] of Object.entries(surface.expectedPresentation??{})){
       const frozen=golden.presentation.required[slot]?.value;
@@ -121,7 +100,7 @@ test('v61 assembled UI/accessibility smoke satisfies the matrix', {skip:!FINAL_T
       if(!(key in localization)){issue(issues,'MISSING_RU_EN_COPY',key,surface.id);continue;}
       const actual=localization[key];
       if(!pairComplete(actual))issue(issues,'MISSING_RU_EN_COPY',key,surface.id);
-      if(!same(actual,adjudicatedSmokeExpectation(key,expected)))issue(issues,'VISIBLE_COPY_MISMATCH',key,surface.id);
+      if(!same(actual,stage5FinalExpectedLocalization(key,expected as {ru:string;en:string})))issue(issues,'VISIBLE_COPY_MISMATCH',key,surface.id);
       if(surface.rawIdScan){
         for(const locale of ['ru','en']){
           const value=String(actual?.[locale]??'');
@@ -132,7 +111,7 @@ test('v61 assembled UI/accessibility smoke satisfies the matrix', {skip:!FINAL_T
     }
 
     for(const [slot,expected] of Object.entries(surface.expectedPresentation??{})){
-      // Explicit v60 Strong Meta metadata, never media slot identities.
+      // The frozen v60 matrix encodes four Strong Meta scalars, not media slots.
       const semantic:Record<string,number|boolean>={maxKeystone:1,maxSpecialists:2,noAutoSelect:true,automaticKnowledgeSlotFree:true};
       if(Object.hasOwn(semantic,slot)){
         if(!same(expected,semantic[slot]))issue(issues,'STRONG_META_MATRIX_SEMANTIC_DRIFT',slot,surface.id);

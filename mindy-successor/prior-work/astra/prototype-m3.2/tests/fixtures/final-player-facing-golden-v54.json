@@ -5212,7 +5212,7 @@
       },
       "unlock.secret-debt.paid-freedom.earned-reserve-match.label": {
         "value": {
-          "ru": "Сопоставление заработанного резерва",
+          "ru": "Паритет заработанного резерва",
           "en": "Earned Reserve Match"
         },
         "operation": "add",
@@ -5240,7 +5240,7 @@
       },
       "unlock.secret-debt.takeover.network-retainer.label": {
         "value": {
-          "ru": "Сетевое содержание",
+          "ru": "Сетевой гонорар",
           "en": "Network Retainer"
         },
         "operation": "add",
@@ -9205,16 +9205,5 @@
       "retired live-surface absence",
       "D48 Palace-only usage"
     ]
-  },
-  "leaderAdjudication": {
-    "document": "mindy-successor/docs/tasks/LEADER1_STAGE5_EXACT_KEY_DISPOSITION_2026-10-08.md",
-    "frozenFixtureBlob": "bc8617be68825543ed7617e9dd5c7d915f6b0e14",
-    "scope": "TWO_TEST_ONLY_RU_EXPECTED_VALUE_OVERRIDES",
-    "keys": [
-      "unlock.secret-debt.paid-freedom.earned-reserve-match.label",
-      "unlock.secret-debt.takeover.network-retainer.label"
-    ],
-    "preserveProductionStage1Labels": true,
-    "sourceFrozenFixtureUnmodified": true
   }
 }
