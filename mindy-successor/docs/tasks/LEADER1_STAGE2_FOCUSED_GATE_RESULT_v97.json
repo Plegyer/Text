@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "leader1.stage2.focused-gate.v97",
+  "status": "PASS",
+  "sourceSha": "05a9eb5b9b7293a029ce1d8962207aef3601d145",
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "validate": "PASS",
+    "build": "PASS",
+    "focused": "194/194 PASS"
+  },
+  "runId": "37734972938"
+}

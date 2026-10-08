@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "leader1.stage2.exact-main-ci.v102",
+  "status": "PASS",
+  "mainSha": "e38273a09e44e39733eeb74f3e622cc2b6428884",
+  "workflow": "mindy-successor check",
+  "event": "push",
+  "checks": {
+    "installDependencies": "PASS",
+    "fullCheck": "PASS",
+    "tests": "1198/1198 PASS"
+  },
+  "warnings": [
+    "npm cache save warning because gzip is absent on the self-hosted runner; non-fatal",
+    "GitHub Actions Node 20 deprecation warning; non-fatal"
+  ],
+  "runId": "37737669459"
+}

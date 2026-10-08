@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "leader1.stage2.full-ci.v101",
+  "status": "PASS",
+  "sourceSha": "3ec5d3eb4254a2723982825fce3f00d03e770d63",
+  "checks": {
+    "npmCi": "PASS",
+    "npmRunCheck": "PASS"
+  },
+  "note": "Full CI followed a test-only compatibility fix aligning legacy ending focus expectations with eligible-only Palace UI.",
+  "runId": "37736593878"
+}
