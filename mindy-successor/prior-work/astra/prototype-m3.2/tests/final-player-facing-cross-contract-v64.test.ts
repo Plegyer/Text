@@ -114,6 +114,7 @@ test('v64 assembled target satisfies player-facing cross-contract fences',{skip:
 
   for(const k of golden.localization.forbidden as string[])if(k in loc)add(issues,'RETIRED_OR_DELETED_VISIBLE_KEY_RETURNED',k);
   for(const k of [...golden.retiredSurfaces.tavern.historicalLocalizationKeys,...golden.retiredSurfaces.lumberStayVitality.historicalLocalizationKeys] as string[])if(!pair(loc[k]))add(issues,'REQUIRED_HISTORICAL_LABEL_DELETED',k);
+  const raw=/\\b(?:ending|unlock|action|event|presentation|relationship|job|legacy)\\.[a-z0-9_.-]+\\b/i;
   const humanLegacy=loc['ending.tavern-court.description'];
   if(!pair(humanLegacy)||raw.test(humanLegacy.ru)||raw.test(humanLegacy.en))add(issues,'RAW_HISTORICAL_ID_IN_PLAYER_COPY','ending.tavern-court.description');
 

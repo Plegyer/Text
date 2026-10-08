@@ -99,7 +99,7 @@ test('v55 golden manifest is exact, internally consistent, and machine-auditable
     assert.equal(requiredPresentation[slot].value.static.src,'assets/stage-town.svg',slot+' invitation final source');
   }
 
-  const d42Slots=new Set(manifest.d42NightPreservation.presentationSlots);
+  const d42Slots=new Set<string>(manifest.d42NightPreservation.presentationSlots as string[]);
   assert.equal(d42Slots.size,12);
   for(const slot of d42Slots)assert.ok(requiredPresentation[slot],slot+' D42 slot must survive in final manifest');
 });
