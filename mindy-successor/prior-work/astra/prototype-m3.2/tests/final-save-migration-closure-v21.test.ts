@@ -211,7 +211,8 @@ test(title(13),()=>{
   assert.equal(Object.hasOwn(f3.run.progression,'palace'),false);
   const restored=parseSave(JSON.stringify(f3),catalog);
   assert.equal(restored.run.progression.worldFacts.includes('palace.access-granted'),true);
-  assert.equal(restored.run.progression.palace.counters.duties,0);
+  assert.equal(restored.run.progression.palace.shifts,0);
+  assert.equal(restored.run.progression.palace.stage,'entered-service');
   assert.deepEqual(restored.run.progression.palace.committedDutyIds,[]);
   assert.deepEqual(roundTrip(restored),restored);
   accepted(suite('palace-rich6-runtime-v15.test.ts',
