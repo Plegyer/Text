@@ -1,0 +1,33 @@
+name: Leader1 Stage4 exact-source full CI v117
+on:
+  push:
+    branches: [qa-stage4-full-v117]
+permissions:
+  contents: read
+jobs:
+  stage4:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 70
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d07c45993290b8aec7893a3eb6d7953f0b6e57c2
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "d07c45993290b8aec7893a3eb6d7953f0b6e57c2"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Install
+        run: npm ci
+      - name: Typecheck validate build
+        run: npm run typecheck && npm run validate && npm run build
+      - name: Stage4 golden focused gate
+        run: node --experimental-strip-types --test tests/economy-start-balance-v14.test.ts tests/hard-work-bonus-mapping-v13.test.ts tests/ordinary-hard-work-meta-production.test.ts tests/ordinary-hard-work-lifecycle-parity.test.ts tests/lumber-hard-work-invariant.test.ts tests/hard-work-stat-cap-d24.test.ts tests/hard-work-meta-migration-v5.test.ts tests/migration.test.ts tests/ending-meta.test.ts tests/qa-exactly-once-reload.test.ts tests/qa-one-save-state-drift-sentinel-v2.test.ts tests/lumber-stay-retirement-v17.test.ts tests/presentation-ending-parity-v9.test.ts tests/advanced-endings-tranche-a-v11.test.ts tests/d40-advanced-endings-tranche-b-v11.test.ts tests/strong-meta-registry-v7.test.ts tests/strong-meta-engine-integration-v7.test.ts tests/hard-work-palace-meta-smoke.test.ts tests/palace-d23-consumer-integration-v8.test.ts tests/secret-debt-full-route-v12.test.ts tests/secret-debt-activity-energy-compat-v20.test.ts tests/activity.test.ts tests/school-night-study-adapter.test.ts tests/night-flow.test.ts tests/night-content-gap-v10.test.ts tests/shared-night-ui-localization-production-v1.test.ts tests/localization.test.ts tests/presentation-source-integrity-v9.test.ts tests/presentation-locale-accessibility-v9.test.ts
+      - name: Full check
+        run: npm run check
