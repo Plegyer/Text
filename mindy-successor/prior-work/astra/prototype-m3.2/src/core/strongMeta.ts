@@ -620,6 +620,10 @@ export function consumeFormalIntroductionUse(
   return next;
 }
 
+export function resolvedStrongMetaReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):ResolvedStrongReward|undefined{
+  return resolvedReward(snapshot,id);
+}
+
 function resolvedReward(snapshot:ResolvedStrongMetaSnapshot|null|undefined,id:ApprovedStrongRewardId):ResolvedStrongReward|undefined{
   return snapshot?.resolvedRewards.find(reward=>reward.id===id);
 }
