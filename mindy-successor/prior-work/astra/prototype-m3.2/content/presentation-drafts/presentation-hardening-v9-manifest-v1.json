@@ -1390,21 +1390,6 @@
         "enCaption": true
       },
       {
-        "presentationId": "ending/lumber-stay",
-        "domains": [
-          "endings"
-        ],
-        "state": "active-exact-current-main",
-        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-        "sourceKind": "image",
-        "altKey": "presentation.static.ending.lumber-stay.alt",
-        "captionKey": "presentation.static.ending.lumber-stay.caption",
-        "ruAlt": true,
-        "enAlt": true,
-        "ruCaption": true,
-        "enCaption": true
-      },
-      {
         "presentationId": "location/town/event/poverty-street-production-v2-helpful-summer-shade/market-closing",
         "domains": [
           "ordinary-poverty"
@@ -1779,17 +1764,6 @@
         "sourceAsset": "assets/presentation/career-tavern-result.svg",
         "altKey": "presentation.static.tavern-ending-information-broker.alt",
         "captionKey": "presentation.static.tavern-ending-information-broker.caption",
-        "ruAlt": true,
-        "enAlt": true,
-        "ruCaption": true,
-        "enCaption": true,
-        "fallbackId": "location/town/default"
-      },
-      {
-        "presentationId": "ending/lumber-stay",
-        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-        "altKey": "presentation.static.ending.lumber-stay.alt",
-        "captionKey": "presentation.static.ending.lumber-stay.caption",
         "ruAlt": true,
         "enAlt": true,
         "ruCaption": true,
@@ -2671,16 +2645,6 @@
         "sourceAsset": "assets/presentation/ending-guild-life.svg",
         "semanticIds": [
           "ending/guild-life"
-        ],
-        "mediaIds": [],
-        "roles": [
-          "exact-static"
-        ]
-      },
-      {
-        "sourceAsset": "assets/presentation/ending-lumber-stay.svg",
-        "semanticIds": [
-          "ending/lumber-stay"
         ],
         "mediaIds": [],
         "roles": [
