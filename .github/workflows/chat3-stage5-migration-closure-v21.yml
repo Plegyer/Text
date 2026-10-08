@@ -1,0 +1,35 @@
+name: Chat3 Stage5 23-case migration closure (targeted)
+
+on:
+  pull_request:
+    paths:
+      - 'mindy-successor/prior-work/astra/prototype-m3.2/tests/final-save-migration-closure-v21.test.ts'
+      - 'mindy-successor/prior-work/astra/prototype-m3.2/tests/final-historical-**'
+      - 'mindy-successor/prior-work/astra/prototype-m3.2/tests/fixtures/final-**'
+      - '.github/workflows/chat3-stage5-migration-closure-v21.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: chat3-stage5-migration-closure-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  targeted-migration-closure:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+      - name: Setup Node 22.18.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+          cache-dependency-path: mindy-successor/prior-work/astra/prototype-m3.2/package-lock.json
+      - name: Install immutable dependencies
+        run: npm ci
+      - name: Execute 23 runtime cases + independent original v55/v57 preflight
+        run: node --experimental-strip-types --test tests/final-save-migration-closure-v21.test.ts tests/final-historical-fixtures-v55.test.ts tests/final-save-migration-golden-v57.test.ts
