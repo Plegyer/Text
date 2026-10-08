@@ -1,0 +1,35 @@
+name: Leader1 Stage5 frozen player golden preflight v124
+on:
+  push:
+    branches: [qa-stage5-player-golden-preflight-v124]
+permissions:
+  contents: read
+jobs:
+  golden:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: a58acd176d10393619a5f7d5d4c8af19a4277766
+          fetch-depth: 1
+      - name: Exact source SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "a58acd176d10393619a5f7d5d4c8af19a4277766"){throw "wrong source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - name: Install
+        run: npm ci
+      - name: Frozen original player golden package QA
+        run: node --experimental-strip-types --test tests/final-player-facing-golden-package-qa-v57.test.ts tests/final-player-facing-golden-manifest-v55.test.ts
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate
+        run: npm run validate
+      - name: Build
+        run: npm run build
