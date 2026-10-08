@@ -91,11 +91,16 @@ test('v64 accepted closure contracts agree',()=>{
   for(const k of [...tavern,...lumber]){
     const v=golden.localization.required[k]?.value??golden.localization.retainedCompatibility[k]?.value;
     assert.ok(pair(v),'REQUIRED_HISTORICAL_LABEL_DELETED '+k);
-    if(k==='ending.tavern-court.description'){
-      // Frozen historical text quotes a canonical ID as migration provenance;
-      // final player-visible copy MUST NOT contain an internal identifier.
-      assert.ok(v.ru.includes('ending.tavern.information-broker'));
-      assert.ok(v.en.includes('ending.tavern.information-broker'));
+    const documented:Record<string,string>={
+      'ending.tavern-court.description':'ending.tavern.information-broker',
+      'ending.tavern-guild.description':'ending.tavern.sanctuary',
+      'ending.tavern-stay.description':'ending.tavern.innkeeper'
+    };
+    if(documented[k]){
+      // Frozen v54 explanatory copy quotes only these 3 canonical migration IDs.
+      // Final player-facing text must be human-readable, validated below.
+      assert.ok(v.ru.includes(documented[k]),'original source RU provenance '+k);
+      assert.ok(v.en.includes(documented[k]),'original source EN provenance '+k);
     }else assert.equal(raw.test(v.ru)||raw.test(v.en),false,'RAW_INTERNAL_ID_FALLBACK '+k);
   }
 });
@@ -115,8 +120,11 @@ test('v64 assembled target satisfies player-facing cross-contract fences',{skip:
   for(const k of golden.localization.forbidden as string[])if(k in loc)add(issues,'RETIRED_OR_DELETED_VISIBLE_KEY_RETURNED',k);
   for(const k of [...golden.retiredSurfaces.tavern.historicalLocalizationKeys,...golden.retiredSurfaces.lumberStayVitality.historicalLocalizationKeys] as string[])if(!pair(loc[k]))add(issues,'REQUIRED_HISTORICAL_LABEL_DELETED',k);
   const raw=/\\b(?:ending|unlock|action|event|presentation|relationship|job|legacy)\\.[a-z0-9_.-]+\\b/i;
-  const humanLegacy=loc['ending.tavern-court.description'];
-  if(!pair(humanLegacy)||raw.test(humanLegacy.ru)||raw.test(humanLegacy.en))add(issues,'RAW_HISTORICAL_ID_IN_PLAYER_COPY','ending.tavern-court.description');
+  for(const key of ['ending.tavern-court.description','ending.tavern-guild.description','ending.tavern-stay.description']){
+    const humanLegacy=loc[key];
+    const forbidden=/\b(?:ending|unlock|action|event|presentation|relationship|job|legacy)\.[a-z0-9_.-]+\b/i;
+    if(!pair(humanLegacy)||forbidden.test(humanLegacy.ru)||forbidden.test(humanLegacy.en))add(issues,'RAW_HISTORICAL_ID_IN_PLAYER_COPY',key);
+  }
 
   for(const id of [...golden.retiredSurfaces.tavern.forbiddenEndingDefinitionIds,...golden.retiredSurfaces.lumberStayVitality.forbiddenEndingDefinitionIds] as string[])if(endingIds.has(id))add(issues,'RETIRED_LIVE_SURFACE_REINTRODUCED',id);
   for(const reward of golden.retiredSurfaces.lumberStayVitality.forbiddenEndingRewardIds as string[])if(endings.some((x:any)=>x?.reward===reward))add(issues,'RETIRED_LIVE_SURFACE_REINTRODUCED',reward);

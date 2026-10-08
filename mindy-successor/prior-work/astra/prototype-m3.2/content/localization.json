@@ -2699,16 +2699,16 @@
       "en": "Retired Tavern ending (migrated)"
     },
     "ending.tavern-stay.description": {
-      "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.innkeeper.",
-      "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.innkeeper."
+      "ru": "Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути хозяйки таверны.",
+      "en": "This historical route is no longer a modern ending. Its completion counts toward the Innkeeper path."
     },
     "ending.tavern-guild.title": {
       "ru": "Устаревший финал таверны (мигрируется)",
       "en": "Retired Tavern ending (migrated)"
     },
     "ending.tavern-guild.description": {
-      "ru": "Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.sanctuary.",
-      "en": "This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.sanctuary."
+      "ru": "Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути убежища при таверне.",
+      "en": "This historical route is no longer a modern ending. Its completion counts toward the Tavern Sanctuary path."
     },
     "ending.tavern-court.title": {
       "ru": "Устаревший финал таверны (мигрируется)",

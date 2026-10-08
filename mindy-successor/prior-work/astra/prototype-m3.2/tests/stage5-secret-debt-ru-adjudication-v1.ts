@@ -58,6 +58,16 @@ export const STAGE5_TAVERN_LEGACY_DISPLAY={
   final:{ru:'Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути информационного посредника и не открывает доступ во Дворец.',en:'This historical route is no longer a modern ending. Its completion counts toward the Information Broker path and does not grant Palace access.'}
 } as const;
 export function stage5FinalExpectedHistoricalCompatibility<T extends {ru:string;en:string}>(key:string,original:T):T{
+  if(key==='ending.tavern-guild.description'){
+    const frozen={ru:'Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.sanctuary.',en:'This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.sanctuary.'};
+    assert.deepEqual(original,frozen,'v54 frozen Guild historical description');
+    return {...original,ru:'Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути убежища при таверне.',en:'This historical route is no longer a modern ending. Its completion counts toward the Tavern Sanctuary path.'};
+  }
+  if(key==='ending.tavern-stay.description'){
+    const frozen={ru:'Старый ID больше не является современным финалом; завершение мигрирует в ending.tavern.innkeeper.',en:'This legacy ID is no longer a modern ending; completed credit migrates to ending.tavern.innkeeper.'};
+    assert.deepEqual(original,frozen,'v54 frozen Stay historical description');
+    return {...original,ru:'Этот исторический путь больше не является современной концовкой. Его завершение учитывается для пути хозяйки таверны.',en:'This historical route is no longer a modern ending. Its completion counts toward the Innkeeper path.'};
+  }
   if(key!==STAGE5_TAVERN_LEGACY_DISPLAY_KEY)return original;
   assert.deepEqual(original,STAGE5_TAVERN_LEGACY_DISPLAY.frozen,'unchanged Golden v54 legacy reference');
   return {...original,...STAGE5_TAVERN_LEGACY_DISPLAY.final};
