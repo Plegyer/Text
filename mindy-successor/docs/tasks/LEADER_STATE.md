@@ -4,6 +4,18 @@ This is the single current operational notebook for Leader 1.
 
 Rule: read this file, then re-query live GitHub refs before acting. Exact source SHA + executable evidence outrank prose. Old handoffs/checkpoints remain archive only.
 
+## Live Stage 3 execution update — 2026-10-08 (after handoff)
+
+Read this block together with the handoff and **re-query GitHub live** before any further action. This update does not override executable evidence.
+
+- `main` remained at `cd3961b3aa797cd7a37c83cad87ca6153f819b7c` when the Stage3 full-suite repair started; Stage 3 is **NOT merged or closed**.
+- Post-handoff focused QA **SUCCESS**: run `37755454777`, wrapper `qa-stage3-focused-v108@28ab56f384c4cbb1ca2ff0072f04975d01ba4104`, exact checked source `1a8c739fb66253991009d04ecb0a2e50764f6d5f`.
+- First full CI run `37755758953` (v109) failed **1277/1287 PASS; 10 failures**. Typecheck, validation and build passed. The failures were stale Stage2-era assertions around D36 Forest option count/Field Time, generalized UI, Guard/Trade return presentation, Hunter UI entry list, Merchant/Trade return inventory, and D38 Specialist registry growth.
+- Leader 1 created a **test-only** full-suite compatibility patch on `lead/stage3-full-compat-v110@c9b2805d60762221cbd89d9ad438982ea8d28531` (eight test files changed; production code identical to focused-green source `1a8c739...`).
+- Exact-source full CI wrapper `qa-stage3-full-v111@39bf4292cb1d56355984d277a8e2b3f8652758a4` checks out and SHA-guards `c9b2805d60762221cbd89d9ad438982ea8d28531`. Run `37760102503` was **QUEUED** at this notebook update; do not infer a result from its existence.
+- **First unresolved step:** inspect the executable result of `37760102503`. Diagnose any remaining failures; if green, integrate exact tested source into latest `main` without dropping main-only handoff docs; then require official exact-main CI green before checking Stage 3 or decrementing burn-down.
+- Worker chats remain parked. No QA-only worker delegation.
+
 ## Human checklist
 
 ### Stage 1
