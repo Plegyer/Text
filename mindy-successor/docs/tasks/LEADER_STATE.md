@@ -82,13 +82,29 @@ Current worker status:
 
 ## Current item — Stage 3 Activity + Camp + D38
 
-Before assigning production work:
-1. re-query live Stage 3 authority branches/docs;
-2. recover exact frozen Activity/Camp/D38 boundaries;
-3. identify shared-owner collision risk against current `main`;
-4. only then assign the smallest production task that actually requires a worker.
+Production assembly is complete.
 
-No worker is active merely because this notebook names Stage 3.
+Exact production source:
+`0f7c4b6cbbba55cfc91a854e3d64baf933191a84`
+
+Docs-only worker handoff head:
+`e4fefda2c3cebc657eaee309c682c0316425e275`
+
+Worker handoff:
+`CHAT2_STAGE3_ACTIVITY_CAMP_D38_PRODUCTION_HANDOFF_v104.md`
+
+Current blocker:
+- Leader focused run `37753332403` failed at typecheck only.
+- `tests/item-capability-activity-closure.test.ts` synthetic Activity option fixture is missing required `tags:[]` and `carriedResults:[]`.
+- validate/build/focused tests did not run.
+
+Next action:
+- Leader test-only compatibility repair;
+- rerun exact-source Stage 3 focused gate;
+- then full CI -> merge -> exact-main CI.
+
+Authoritative recovery document:
+`LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md`
 
 ## Governance that must not drift
 

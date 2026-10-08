@@ -1,19 +1,23 @@
 # CURRENT LEADER 1 CHECKPOINT
 
-Authoritative operational state:
+Authoritative recovery point:
+
+`mindy-successor/docs/tasks/LEADER1_HANDOFF_2026-10-08_STAGE3_QA.md`
+
+Operational notebook:
 
 `mindy-successor/docs/tasks/LEADER_STATE.md`
 
-Read that file first, then re-query live GitHub before acting.
-
-Old handoffs/checkpoints are archive and may contain stale active-status prose.
+Read the handoff first, then re-query live GitHub refs.
 
 Current broad burn-down: **3**
 
-Stage 2 is CLOSED:
-- production main SHA: `e38273a09e44e39733eeb74f3e622cc2b6428884`
-- exact-main run: `37737669459` SUCCESS
-- tests: 1198/1198 PASS
+Stage 2: CLOSED.
 
-Current critical path:
-**Stage 3 — Activity + Camp + D38**
+Stage 3:
+- production source `0f7c4b6cbbba55cfc91a854e3d64baf933191a84`
+- production assembly complete
+- current blocker is Leader QA typecheck compatibility in one synthetic test fixture
+- focused run `37753332403` FAILURE at typecheck
+
+Do not reassign QA-only work to a worker.
