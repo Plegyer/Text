@@ -152,6 +152,6 @@ test('cross-domain handoff respects queue boundaries',()=>{
   assert.equal(manifest.semanticSlots.some((entry:any)=>/secret-debt|lender/i.test(entry.presentationId)),false);
   assert.deepEqual(
     manifest.documentedGaps.map((entry:any)=>entry.presentationId).sort(),
-    ['ending/guild-life','ending/lumber-stay','ending/scholar-life']
+    ['ending/guild-life','ending/scholar-life']
   );
 });
