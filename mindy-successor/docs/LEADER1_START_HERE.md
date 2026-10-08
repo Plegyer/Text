@@ -1,5 +1,16 @@
 # Leader 1 — Start Here
 
+## MANDATORY FIRST STEP — KNOWLEDGE LIBRARY (2026-10-08)
+
+> **Read [LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md](LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md) fully before using any of the historical sections below.** This is the single current cumulative knowledge library, not the 2026-10-01/02 checkpoints. Then inspect `docs/tasks/CURRENT_LEADER1_CHECKPOINT.md`, `LEADER_STATE.md`, live GitHub main/CI/PRs and current worker pointers.
+
+**Current corrected truth:** Stage1–5 integration CLOSED; engine/platform functionally implemented, including all ten ordinary careers, Palace, Secret Debt, School/Night, and **four** target D36 Activity regions. **Public full 1.0 NOT complete.** Next work = whole game product finishing, player journeys, story/lore, visual UX and Windows installer. Do not re-open core architecture or repeat implemented production from obsolete baselines. No worker may restart archived tasks just because old paragraphs below say "now".
+
+**Continuity requirement:** on every major merge/decision/context handoff, reconcile live evidence against the canonical knowledge library and update **that file in place**, plus checkpoint/worker pointers. Git CI facts and user-locked decisions outrank operational prose. Only manually activated chats perform new assignments.
+
+---
+
+
 ## TEAM TOPOLOGY RESET — 2026-10-02
 
 This block supersedes the older Chat 1..5 specialization model below.
