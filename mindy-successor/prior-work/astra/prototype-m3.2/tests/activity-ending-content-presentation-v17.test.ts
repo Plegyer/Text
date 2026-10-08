@@ -44,7 +44,7 @@ test('v17 preserves exact D38 reward ownership IDs and only edits presentation f
     const ending=catalog.definitions.endings.find(e=>e.id===id)!;
     const reward=rewards[id];
     assert.equal(ending.reward,reward,id);
-    assert.deepEqual(ending.metaRewards,[{kind:'unlock',rewardId:reward,unlock:reward}],id);
+    assert.deepEqual(ending.metaRewards,[{kind:'strongMeta',rewardId:reward,reward}],id);
     assert.ok(ending.conditions.length>0,id);
   }
 });
