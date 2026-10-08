@@ -1,0 +1,27 @@
+name: Leader1 Stage2 exact-main CI v102
+on:
+  push:
+    branches: [qa-stage2-exact-main-v102]
+permissions:
+  contents: read
+jobs:
+  exact-main:
+    runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: mindy-successor/prior-work/astra/prototype-m3.2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: e38273a09e44e39733eeb74f3e622cc2b6428884
+          fetch-depth: 1
+      - name: Exact main SHA guard
+        shell: powershell
+        run: |
+          if((git rev-parse HEAD).Trim() -ne "e38273a09e44e39733eeb74f3e622cc2b6428884"){throw "wrong main source"}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+      - run: npm ci
+      - run: npm run check
