@@ -50,7 +50,9 @@ test('C2-143 every published Undead Farm override is backed by a real frozen-run
     backed.add(`job/undead-farm/shift/${season}/default`);
   }
   // Stage5 Golden adds eight non-default seasonal identities from real frozen action scenes.
-  for(const scene of action.scenes??[]){
+  const nonDefaultScenes=(action.scenes??[]).filter(scene=>!scene.id.endsWith('.default'));
+  assert.equal(nonDefaultScenes.length,8,'eight real non-default seasonal action scenes');
+  for(const scene of nonDefaultScenes){
     const id=`job/undead-farm/shift/${scene.id.split('.').join('/')}/default`;
     assert.ok(knownSlots.has(id),id+' must be a real catalog action scene');
     backed.add(id);
