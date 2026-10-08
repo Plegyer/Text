@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "PRODUCTION_MAPPING_BOUND_SHARED_RUNTIME",
+  "status": "D47_LOCKED_PRODUCTION_MAPPING",
   "selectionPolicy": {
     "mode": "arbitrary-earned-subset",
     "allowNone": true,
@@ -25,7 +25,7 @@
       "career": "satyr-maid",
       "statBonuses": [
         {
-          "stat": "grooming",
+          "stat": "charm",
           "amount": 5
         }
       ]
@@ -43,7 +43,7 @@
       "career": "tavern",
       "statBonuses": [
         {
-          "stat": "sociability",
+          "stat": "wits",
           "amount": 5
         }
       ]
@@ -74,11 +74,11 @@
       "career": "merchant",
       "statBonuses": [
         {
-          "stat": "wits",
+          "stat": "reason",
           "amount": 5
         },
         {
-          "stat": "reason",
+          "stat": "sociability",
           "amount": 5
         }
       ]
@@ -121,7 +121,7 @@
           "amount": 5
         }
       ],
-      "lustBonus": 3
+      "lustBonus": 5
     }
   ]
 }
