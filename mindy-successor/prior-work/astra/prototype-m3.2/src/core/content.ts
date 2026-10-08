@@ -266,16 +266,71 @@ export function loadCatalog(definitions:unknown,packs:unknown[]):Catalog {
   for(const activity of d.activities){
     checkConditions(activity.entryConditions);
     unique(activity.options.map(option=>option.id),`activity.${activity.id}.options`);
-    for(const option of activity.options)checkConditions(option.conditions);
+    for(const option of activity.options){
+      checkConditions(option.conditions);
+      checkEffects(option.effects);
+      for(const tag of option.tags){
+        if(!['activity-survey-discovery','activity-network-introduction'].includes(tag)){
+          throw new Error(`Activity ${activity.id}: unknown D38 option tag ${tag}: ${option.id}`);
+        }
+      }
+      if(option.tags.includes('activity-survey-discovery')&&(option.fieldTimeCost??0)!==1){
+        throw new Error(`Activity ${activity.id}: Surveyor's Atlas tag requires authored Field Time cost 1: ${option.id}`);
+      }
+      const carriedIds=new Set<string>();
+      for(const carried of option.carriedResults){
+        if(carriedIds.has(carried.resultId))throw new Error(`Activity ${activity.id}: duplicate carried result ${carried.resultId}: ${option.id}`);
+        carriedIds.add(carried.resultId);
+        if(carried.tags.length!==1||carried.tags[0]!=='activity-secure-eligible'){
+          throw new Error(`Activity ${activity.id}: carried result must use only activity-secure-eligible: ${carried.resultId}`);
+        }
+        if(!option.effects.some(effect=>effect.kind==='addWorldFact'&&effect.fact===carried.resultId)){
+          throw new Error(`Activity ${activity.id}: carried result lacks matching authored world fact effect: ${carried.resultId}`);
+        }
+      }
+    }
     unique(activity.results.map(r=>r.id),`activity.${activity.id}.results`);
     const outcomes=new Set(activity.results.map(r=>r.outcome));
     if(outcomes.size!==3||!['success','escape','failure'].every(x=>outcomes.has(x as any)))throw new Error(`Activity ${activity.id} должна иметь success/escape/failure result`);
     for(const result of activity.results)checkEffects(result.effects);
     if(activity.adapter==='counter.v1'){
       if(activity.resumePolicy!=='allowed')throw new Error(`counter.v1 поддерживает только resumePolicy=allowed: ${activity.id}`);
-      if(activity.timePolicy!=='same_day')throw new Error(`counter.v1 поддерживает только timePolicy=same_day: ${activity.id}`);
+      if(activity.campPolicy){
+        if(activity.timePolicy!=='can_advance_days_internally')throw new Error(`counter.v1 campPolicy требует timePolicy=can_advance_days_internally: ${activity.id}`);
+        if(activity.adapterConfig.fieldTimeSegments===undefined)throw new Error(`counter.v1 campPolicy требует finite Field Time: ${activity.id}`);
+      }else if(activity.timePolicy!=='same_day'){
+        throw new Error(`counter.v1 без campPolicy поддерживает только timePolicy=same_day: ${activity.id}`);
+      }
       if(activity.failurePolicy!=='exit_to_day')throw new Error(`counter.v1 поддерживает только failurePolicy=exit_to_day: ${activity.id}`);
       if(activity.adapterConfig.failAtEndurance>=activity.adapterConfig.initialEndurance)throw new Error(`Activity ${activity.id}: failAtEndurance должен быть ниже initialEndurance`);
+      const segments=activity.adapterConfig.fieldTimeSegments;
+      if(segments!==undefined){
+        if((activity.adapterConfig.advanceFieldTimeCost??0)>segments)throw new Error(`Activity ${activity.id}: advance Field Time cost exceeds segment budget`);
+        for(const option of activity.options)if((option.fieldTimeCost??0)>segments)throw new Error(`Activity ${activity.id}: option Field Time cost exceeds segment budget: ${option.id}`);
+      }else if((activity.adapterConfig.advanceFieldTimeCost??0)>0||activity.options.some(option=>(option.fieldTimeCost??0)>0)){
+        throw new Error(`Activity ${activity.id}: Field Time costs require fieldTimeSegments`);
+      }
+      const miniGames=new Map<string,typeof activity.options>();
+      for(const option of activity.options){
+        const transition=option.miniGameTransition;
+        if(!transition)continue;
+        const rows=miniGames.get(transition.game)??[];
+        rows.push(option);
+        miniGames.set(transition.game,rows);
+      }
+      for(const [game,options] of miniGames){
+        if(!options.some(option=>option.miniGameTransition?.from==='start'))throw new Error(`Activity ${activity.id}: mini-game ${game} has no start transition`);
+        for(const option of options){
+          const transition=option.miniGameTransition!;
+          if(
+            transition.minSuspicion!==undefined
+            &&transition.maxSuspicion!==undefined
+            &&transition.minSuspicion>transition.maxSuspicion
+          )throw new Error(`Activity ${activity.id}: mini-game ${game} has inverted suspicion bounds: ${option.id}`);
+        }
+        const terminals=new Set(options.map(option=>option.miniGameTransition?.outcome).filter(Boolean));
+        for(const outcome of ['success','failure','abort'])if(!terminals.has(outcome as any))throw new Error(`Activity ${activity.id}: mini-game ${game} missing ${outcome} terminal`);
+      }
     }
   }
 
