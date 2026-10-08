@@ -1,5 +1,16 @@
 # RC0 — проверяемая матрица требований всей игры vs живой `main`
 
+## LATEST ACCEPTANCE UPDATE — EXACT MAIN CERTIFIED (2026-10-08)
+
+This update overrides rows below that formerly marked the long-life tests **PENDING**. [PR #305](https://github.com/Plegyer/Text/pull/305) **MERGED** unseeded 50-shift Lumber/NG+ + whole 160-day Lumber/School/Forest/expiry. [PR #307](https://github.com/Plegyer/Text/pull/307) **MERGED** additional completely unseeded **10 ordinary Hard Work careers × 50 real shifts = 500 genuine work actions in 10 separate lives**, ten real Meta rewards, then 10/10 activated packages, **Day-1 Palace invitation**, **15 actual-day duties**, **non-True Palace Service Life ending**, NG+. Only 3 new test files total across the two PRs; **no production runtime/code/content/frozen-Golden changes**.
+
+Exact PR-head Windows runs: #37819314383 **1356 PASS/0 FAIL/4 SKIP**, #37821532773 **1357 PASS/0 FAIL/4 SKIP**. Latest official merged-main [#37822147799](https://github.com/Plegyer/Text/actions/runs/37822147799) **SUCCESS, 1357 PASS / 0 FAIL / 4 opt-in SKIP**, code-tree merge SHA `daf8105005367811c53a248c186dab71d67d96d1`. These **now do prove** LIFE-02 Lumber, LIFE-09 example full calendar, LIFE-14 actual earned multi-life Meta, and LIFE-15 *non-True Palace entry and completion* (not just injected stand-ins).
+
+Still NOT proven: Palace **True Return Home** via natural 12×91 stats and the Prince route, *combined natural four-region D36 / D38 endings*, final global macro lore/art editorial, whole-player manual acceptance, and **clean Windows install/GUI/save**. The RC0 installer source remains frozen at pre-test `10ae406cd3ff107a6b1316959daab50f43372824`, whose product code is unchanged by test-only merges. The user will perform manual Windows test tomorrow.
+
+---
+
+
 **Статус: FIRST INVENTORY, не release GO. Дата: 2026-10-08. Repo `Plegyer/Text`.** Продуктовый snapshot: `main@10ae406cd3ff107a6b1316959daab50f43372824`. После него GitHub main может сдвинуться документацией, но критерии здесь относятся именно к той исполняемой версии.
 
 **Цель:** добиться **полной игры без сокращения замысла**, начиная с максимального использования уже реализованного движка/контента. Мастер требований: `docs/USER_VISION_AND_ACCEPTANCE.md`, LIFE-01..18; locked D1–D48: `docs/USER_DECISIONS_LOCKED_v1.md`, актуальные решения пользователя выше всех оперативных описаний. Текущий canonical knowledge: `docs/LEADER1_KNOWLEDGE_LIBRARY_CURRENT.md`.
