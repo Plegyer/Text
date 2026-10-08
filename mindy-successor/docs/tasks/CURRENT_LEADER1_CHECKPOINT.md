@@ -13,7 +13,11 @@ Authoritative operational notebook: `mindy-successor/docs/tasks/LEADER_STATE.md`
 - Official main-push CI run `37776012058` **SUCCESS**, 1287/1287 PASS, 0 fail, typecheck/validate/build PASS.
 - Evidence: `LEADER1_STAGE3_FULL_CI_RESULT_v113.json`, `LEADER1_STAGE3_EXACT_MAIN_CI_RESULT_v114.json`.
 
-## Stage 4 first step
+## Stage 4 submission received (latest)
+
+Chat2 completed production handoff on branch `chat2/stage4-d46-d47-legacy-assembly-v1` at `5570e867d843186815ebc62c17e858e6a4e1165b`. Exact code/tests `f34b9585a7816d5b1235e1683160ce5423b767ba`; subsequent handoff commit docs-only. Draft PR https://github.com/Plegyer/Text/pull/299 . Detailed handoff on Chat2 branch: `CHAT2_STAGE4_D46_D47_LEGACY_PRODUCTION_HANDOFF_2026-10-08.md`. **Only static checks complete; no executable QA yet. Stage 4 open, burn-down 2.** Leader must independently run QA/CI. Chat2 is parked with no new task. Protocol: `WORKER_TO_LEADER_GITHUB_REPORTING_PROTOCOL.md`.
+
+## Stage 4 original assignment (historical)
 
 Production assembly only, assigned to Chat2 in `CHAT2_STAGE4_D46_D47_LEGACY_ASSEMBLY_TASK_2026-10-08.md` and `CURRENT_CHAT2_TASK_POINTER.md`. Worker remains parked until the user explicitly activates it. The baseline is current live main at assembly time, preserving Stage 3, Palace, Secret Debt/D51, Strong Meta, NightFlow and schema6. No Stage 4 focused/full CI or merge has happened yet. Leader alone owns later QA, full CI, merge and exact-main CI.
 

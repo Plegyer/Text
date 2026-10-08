@@ -4,6 +4,17 @@ This is the single current operational notebook for Leader 1.
 
 Rule: read this file, then re-query live GitHub refs before acting. Exact source SHA + executable evidence outrank prose. Old handoffs/checkpoints remain archive only.
 
+## Stage 4 live integration handoff — 2026-10-08 (supersedes earlier Stage 4 assignment status)
+
+- **Stage 4 assembly received, NOT QA-accepted, NOT merged, NOT closed. Broad burn-down stays 2.**
+- Chat2's completed assembly branch: `chat2/stage4-d46-d47-legacy-assembly-v1` at `5570e867d843186815ebc62c17e858e6a4e1165b`; base main `8c376be749579077663e46e719747774c55b64be`.
+- **Exact production/test source**: `f34b9585a7816d5b1235e1683160ce5423b767ba`; subsequent `5570e867...` commit added only `CHAT2_STAGE4_D46_D47_LEGACY_PRODUCTION_HANDOFF_2026-10-08.md`.
+- Draft PR **#299**: https://github.com/Plegyer/Text/pull/299 . Production handoff lives on the Chat2 branch, not main; read it directly via GitHub before QA.
+- Chat2 performed static semantic audit only; **no npm ci / typecheck / validate / build / focused QA / full CI** in the assembly handoff. Do not claim passing executable evidence yet.
+- **Leader next action**: inspect exact handoff and diff, independently run Node 22.18.0 installation/typecheck/validate/build + focused Stage4 tests against the exact source, then exact-source full CI `npm run check`. Merge only after green, then official exact-main CI. Close Stage4 and decrement 2 -> 1 only after official exact-main green.
+- **Chat2 current status: PARKED / HANDOFF COMPLETE**. Its previous chat ran out of context; a successor Chat2 can be opened but **has no new production assignment yet**. Do not repeat or change PR #299 unless Leader records a concrete production repair request in the task pointer.
+- Cross-chat reporting rules: `WORKER_TO_LEADER_GITHUB_REPORTING_PROTOCOL.md`. GitHub handoff files and PRs are the shared channel; the user gets only one compact status line plus PR link. Separate chat contexts do not send each other private/live messages. Leader actively reads the shared GitHub artifacts.
+
 ## Latest operational state — Stage 3 CLOSED; Stage 4 CURRENT (2026-10-08)
 
 - Stage 1, Stage 2 and **Stage 3 are CLOSED**. Broad burn-down **2** (Stage 4 + Stage 5 remain).
