@@ -26,6 +26,7 @@ let activeContext:SmokeMusicContext='creation';
 let activeMusic:SmokeMusicContext|null=null;
 let previewIndex=0;
 let dialog:HTMLDivElement|null=null;
+let restoreIntroContext:SmokeMusicContext|null=null;
 let volume=Number(localStorage.getItem('portal-life.smoke.music.volume')??'0.22');
 volume=Number.isFinite(volume)?Math.max(0,Math.min(1,volume)):0.22;
 sound.volume=volume;
@@ -59,7 +60,7 @@ function viewScene(){
  const next=dialog.querySelector<HTMLButtonElement>('[data-smoke-next]')!;
  next.textContent=previewIndex===smokeScenes.length-1?localized('К началу','Restart'):localized('Дальше →','Next →');
 }
-function close(){dialog?.remove();dialog=null;}
+function close(){dialog?.remove();dialog=null;if(restoreIntroContext){const back=restoreIntroContext;restoreIntroContext=null;smokeSetContext(back);}}
 export function smokeOpenPreview(){
  if(dialog){dialog.querySelector<HTMLButtonElement>('[data-smoke-close]')?.focus();return;}
  const element=document.createElement('div');
@@ -100,6 +101,6 @@ export function smokeMaybeShowIntro(){
  // First user-performed arrival only, and only if the first GIF exists locally.
  if(sessionStorage.getItem('portal-life.smoke.intro-shown')==='yes')return;
  const probe=new Image();
- probe.onload=()=>{sessionStorage.setItem('portal-life.smoke.intro-shown','yes');previewIndex=0;smokeOpenPreview();};
+ probe.onload=()=>{sessionStorage.setItem('portal-life.smoke.intro-shown','yes');restoreIntroContext=activeContext;smokeSetContext('intro');previewIndex=0;smokeOpenPreview();};
  probe.src=src('gif',smokeScenes[0].file);
 }
