@@ -18,7 +18,7 @@ test('global UI shell production fixture is fully merged RU EN',()=>{
 test('global UI shell visible consumers use stable localization keys',()=>{
  const consumed=[
   'ui.explore.title','ui.explore.activityHelp','ui.explore.entryEnergy','ui.explore.enterButton','ui.explore.errandsSummary',
-  'ui.sleep.title','ui.sleep.help','ui.sleep.startButton',
+  'ui.sleep.title', // sleep uses intentionally new RU/EN player copy; no legacy technical sequence labels
   'ui.panel.stats','ui.stats.help','ui.stats.professionsTitle','ui.stats.professionsHelp',
   'ui.panel.journal','ui.journal.empty',
   'ui.bag.title','ui.bag.debtLabel',

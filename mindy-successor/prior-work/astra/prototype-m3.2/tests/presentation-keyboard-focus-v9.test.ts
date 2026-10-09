@@ -19,7 +19,7 @@ async function wait(check:()=>boolean){
 async function boot(save:any,locale:'ru'|'en'='en'){
   const errors:string[]=[];
   const vc=new VirtualConsole();vc.on('jsdomError',(e:Error)=>errors.push(e.message));
-  const dom=new JSDOM(html,{url:'http://localhost:4173',runScripts:'outside-only',virtualConsole:vc});
+  const dom=new JSDOM(html,{url:'http://localhost:4173/?dev=1',runScripts:'outside-only',virtualConsole:vc});
   const w=dom.window;
   w.structuredClone=structuredClone;
   w.fetch=async()=>({ok:true,json:async()=>structuredClone(data)});

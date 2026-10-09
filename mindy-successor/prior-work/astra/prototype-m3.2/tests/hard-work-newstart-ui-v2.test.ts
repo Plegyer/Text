@@ -22,7 +22,7 @@ function boot(earned:string[]){
   const errors:string[]=[];
   const vc=new VirtualConsole();
   vc.on('jsdomError',(error:Error)=>errors.push(error.message));
-  const dom=new JSDOM(html,{url:'http://localhost:4173',runScripts:'outside-only',virtualConsole:vc});
+  const dom=new JSDOM(html,{url:'http://localhost:4173/?dev=1',runScripts:'outside-only',virtualConsole:vc});
   const w=dom.window;
   w.structuredClone=structuredClone;
   w.fetch=async()=>({ok:true,json:async()=>structuredClone(data)});

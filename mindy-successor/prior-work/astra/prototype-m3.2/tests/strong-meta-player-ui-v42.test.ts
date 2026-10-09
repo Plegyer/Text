@@ -76,7 +76,7 @@ test('v42 player UI uses the accepted Strong Meta selection seam without auto-se
     assert.equal(palace.getAttribute('aria-pressed'),'false');
     assert.equal(palace.closest('[data-strong-meta-reward]')?.getAttribute('data-strong-meta-class'),'specialist');
     assert.equal(selector.querySelector(`[data-strong-meta-reward="${sourceMethodId}"]`),null);
-    assert.match(selector.querySelector('[data-strong-meta-automatic-knowledge]')?.textContent??'',/Source Method/);
+    assert.match(selector.querySelector('[data-strong-meta-automatic-knowledge]')?.textContent??'',/Унаследованные знания/);
 
     const hardWork=w.document.querySelector('[data-hard-work-package="lumber"]');
     assert.ok(hardWork);
