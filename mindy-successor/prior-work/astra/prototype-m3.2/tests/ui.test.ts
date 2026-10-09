@@ -626,7 +626,7 @@ test('renderer: global UI shell localizes panels RU EN without changing save',as
 
   w.document.querySelector('[data-panel="sleep"]').click();
   assert.equal(w.document.querySelector('.panel h2')?.textContent,'Night');
-  assert.equal(w.document.querySelector('[data-end-day]')?.textContent,'Start the night sequence');
+  assert.equal(w.document.querySelector('[data-end-day]')?.textContent,'Finish the day');
   w.document.querySelector('#close').click();
 
   w.document.querySelector('[data-panel="stats"]').click();
