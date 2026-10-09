@@ -1,5 +1,18 @@
 # Лидер 1 — обязательная библиотека знаний проекта / CURRENT KNOWLEDGE
 
+## URGENT SAME-DAY USER ASSETS HANDOFF — 2026-10-09 (current correction)
+
+**What user explicitly clarified:** all **five original files** are *animated* GIFs, and it is **Leader1's** responsibility to insert 5 GIF + 7 MP3 and prepare the testable Windows game. **Never tell the user to patch game files or run local build scripts**; an earlier suggestion to do so was incorrect.
+
+**Verified received-file container inspection:** `01-animal.gif` GIF89a, **30 frames**; `03-waking.gif` GIF89a, **24 frames**; `02-running.gif` is **PNG 482×640 single frame**, `04-explaining.gif` **PNG 640×360 single frame**, `05-tool.gif` **PNG 498×281 single frame** despite their `.gif` names. The original user's files may be fully animated; **chat inline image transport converted 3/5**. Seven MP3 files arrived as separate raw files and do not need reupload. Request the user to upload **only these 3 original GIFs together in ONE ZIP as an attachment**, not inline previews. On receipt verify their actual magic bytes, frame counts, then integrate. Don't misrepresent original file animation.
+
+**Cross-chat assets:** Chat4 can share durable files with Leader1 via a common GitHub repo/PR or another accessible common file location, not by Leader1 automatically reading Chat4's private chat upload. Future instructions: prefer original files in a ZIP or asset blobs committed on GitHub, not pasted image previews.
+
+**Current GitHub work:** [Draft PR #308](https://github.com/Plegyer/Text/pull/308) has test-only player media preview (5 ordered P0/P1 slots) and 7 music contexts/controls, but **no verified embedded 12 binary assets or finished installer**. It is **NOT** a proof that the user's game already plays these resources. Previous `BUILD-WINDOWS.bat` DIY ZIP workaround is not the requested user deliverable. Production rights to third-party-looking GIF and MP3 must be checked before shipping publicly. Relevant correction on [PR #308](https://github.com/Plegyer/Text/pull/308#issuecomment-6078802021) and Issue #306. Preserve user’s desire to test game **today**, not tomorrow.
+
+---
+
+
 ## PRIORITY NOW — TODAY user-provided 5 GIF / 7 MP3 acceptance (2026-10-09)
 
 **USER CORRECTION:** The Windows player smoke earlier described as `завтра` is **TODAY**. User sent **five GIF files and seven MP3 compositions** and wants them integrated so real visuals/sound can be verified **before launch**. User-approved exact introductory order: (1) P0 white squirrel appears / escapes, (2) P0 heroine chases/falls in hatch, (3) P0 wakes/emerges, (4) P1 explains herself to local, (5) P1 employer hands tool. Exact source filenames `01-animal.gif`, `02-running.gif`, `03-waking.gif`, `04-explaining.gif`, `05-tool.gif`; **#2/#4/#5 each contain one frame and therefore cannot animate**; #1 30 frames, #3 24 frames. Some scenes depict recognisable external movie/art, so media must remain **TEST ONLY, no public distribution without rights clearance**.
