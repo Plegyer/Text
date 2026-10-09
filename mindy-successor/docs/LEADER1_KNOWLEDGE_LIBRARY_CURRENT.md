@@ -1,5 +1,20 @@
 # Лидер 1 — обязательная библиотека знаний проекта / CURRENT KNOWLEDGE
 
+## PRIORITY NOW — TODAY user-provided 5 GIF / 7 MP3 acceptance (2026-10-09)
+
+**USER CORRECTION:** The Windows player smoke earlier described as `завтра` is **TODAY**. User sent **five GIF files and seven MP3 compositions** and wants them integrated so real visuals/sound can be verified **before launch**. User-approved exact introductory order: (1) P0 white squirrel appears / escapes, (2) P0 heroine chases/falls in hatch, (3) P0 wakes/emerges, (4) P1 explains herself to local, (5) P1 employer hands tool. Exact source filenames `01-animal.gif`, `02-running.gif`, `03-waking.gif`, `04-explaining.gif`, `05-tool.gif`; **#2/#4/#5 each contain one frame and therefore cannot animate**; #1 30 frames, #3 24 frames. Some scenes depict recognisable external movie/art, so media must remain **TEST ONLY, no public distribution without rights clearance**.
+
+Seven uncut local MP3 audio files, contexts: `Rum Punch Parlay.mp3` (town), `Clockwork Cupcake.mp3` (creation/school), `Tiki Chase.mp3` (intro), `Banjo Barn Shuffle.mp3` (work), `Cape and Cadence.mp3` (Palace), `Neon Orbit Loop.mp3` (Activity), `Velvet Banana Split.mp3` (Night). 12 assets uploaded in this chat; not copied into Github automatically.
+
+**What assistant did:** assembled user-downloadable archive `media-smoke-kit-5gif-7mp3-2026-10-09.zip` ~19.3MB, with 12 actual original files, cryptographic manifest, standalone media self-test HTML, and Windows `BUILD-WINDOWS.bat/ps1` that clones a GitHub test branch and packages Electron from it with the copied assets. A sandbox ZIP link is in this conversation, NOT a GitHub download link; next Leader may need files from this chat. Detailed [2026-10-09 media integration ledger](tasks/LEADER1_USER_MEDIA_SMOKE_2026-10-09.md).
+
+**Source:** [Draft PR #308](https://github.com/Plegyer/Text/pull/308) on `lead/integrate-today-media-smoke-5gif-7mp3-v1`: media smoke module, preview, music contexts, CSS, build inclusion, contract tests. GitHub text-file connector **cannot directly ingest these binary conversation uploads into the repo**; code wiring may pass CI even when physical GIF/MP3 missing, so **do not claim Github CI-built Windows setup has the 12 media**. User must locally build with ZIP or otherwise explicitly upload assets to an authenticated binary-capable channel. Current [PR CI #37913762207](https://github.com/Plegyer/Text/actions/runs/37913762207) **PENDING** at time of writing; fetch to know outcome. No public media release or silent branch merge merely because code compiles.
+
+**Remaining before today's claim:** exact-head typecheck/full CI GREEN for PR #308; move all 12 actual binaries under `assets/smoke/` in the build workspace (the ZIP script does that), build a Windows NSIS locally, install/GUI playback/saved-game verification by the user. Standalone ZIP HTML only validates media decoding, not integrated game. No code changes in main except documentation until verified approval.
+
+---
+
+
 ## CURRENT RC0 EXTENDED CROSS-LIFE QA — PENDING EXACT-HEAD VERDICT (2026-10-08)
 
 **Already accepted:** merged [PR #305](https://github.com/Plegyer/Text/pull/305) test-only 50-shift + 160-day Lumber/School/Forest/expiry/NG+ natural paths. Exact source CI #37819314383 SUCCESS and official merged-main [CI #37819891908](https://github.com/Plegyer/Text/actions/runs/37819891908) SUCCESS, **1356 PASS / 0 FAIL / 4 optional SKIP**, merged executable/test commit `44f49fde938c46196d57a3e4eaeedc8197f7cb85`. [Issue #304](https://github.com/Plegyer/Text/issues/304) **CLOSED**. No production code change.
