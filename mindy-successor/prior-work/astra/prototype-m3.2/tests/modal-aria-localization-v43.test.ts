@@ -21,7 +21,7 @@ function boot(){
   const errors:string[]=[];
   const virtualConsole=new VirtualConsole();
   virtualConsole.on('jsdomError',(e:Error)=>errors.push(e.message));
-  const dom=new JSDOM(html,{url:'http://localhost:4173',runScripts:'outside-only',virtualConsole});
+  const dom=new JSDOM(html,{url:'http://localhost:4173/?dev=1',runScripts:'outside-only',virtualConsole});
   const w=dom.window;
   w.structuredClone=structuredClone;
   w.fetch=async()=>({ok:true,json:async()=>structuredClone(data)});
