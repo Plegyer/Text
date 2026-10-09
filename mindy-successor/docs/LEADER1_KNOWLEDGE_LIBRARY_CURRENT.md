@@ -1,5 +1,11 @@
 # Лидер 1 — обязательная библиотека знаний проекта / CURRENT KNOWLEDGE
 
+## ADDITIONAL ORIGINAL-GAME REFERENCE — 2026-10-09; user still testing
+Four new screenshot references added after first real Windows QA. Confirmed visible original behavior: an in-scene Sinner's Orb fate prompt offers Yes/No with warning about irrevocably locking a chosen ending; staged day/town encounter 'Meet Mr. Moe' followed by separate yes/no decision against authored art (unlock rules NOT evidenced); New Start+ shows a large mystery reward-board grid of '?'-locked slots and earned revealed bonus icons, a highlighted unlocked bonus with concrete descriptive effect ('That time Mindy dusted all the banisters. +5 to Cleanliness'), explicit 'Enable All Bonuses' and 'Start?' buttons. This is the reference for a visual collectible/activation inheritance experience, which current lengthy Hard Work/Strong Meta creation selectors fail to communicate.
+Do NOT copy original numbers/characters/arts blindly or spoil hidden Palace; map original interaction qualities to current locked actual Meta rules and existing working ending/NG+ system. User is about to continue testing OUR shipped variant; additional findings INCOMING, do not scope/fix prematurely. Source feedback on https://github.com/Plegyer/Text/issues/306#issuecomment-6079377815 .
+---
+
+
 ## Player's first actual Windows review — 2026-10-09: feedback INCOMPLETE
 The user successfully launched Windows portable app and sent real comparison screenshots with original Mindy/Brimstone. User says current experience is POOR and **more observations will follow**. Do not treat this as completed QA or start partial fixes before hearing all feedback.
 1. User asked integrated contextual five animated intro scenes and seven music cues, but received a separate technical gallery. This is a delivery failure (not product integration).
