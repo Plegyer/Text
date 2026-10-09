@@ -1,5 +1,17 @@
 # Лидер 1 — обязательная библиотека знаний проекта / CURRENT KNOWLEDGE
 
+## Player's first actual Windows review — 2026-10-09: feedback INCOMPLETE
+The user successfully launched Windows portable app and sent real comparison screenshots with original Mindy/Brimstone. User says current experience is POOR and **more observations will follow**. Do not treat this as completed QA or start partial fixes before hearing all feedback.
+1. User asked integrated contextual five animated intro scenes and seven music cues, but received a separate technical gallery. This is a delivery failure (not product integration).
+2. 'Инспектор событий' is dev/debug content exposed in player UI, should be developer only.
+3. Hidden Palace spoiled at character creation with explicit 0/10 unlock instructions; conceal until appropriate in-world reveal while retaining all game mechanics.
+4. 'Keystone' and 'Specialist' are untranslated/unexplained Strong Meta reward classes; localize and explain with timing.
+5. Ending reward attachments/unlocks are not represented as a meaningful collectible visual screen resembling the original; current New Start+ list is not equivalent.
+Original exhibits coherent staged school/work/town/night/results/rewards and accessible screen design; current app is text-heavy, repeated generic art. Green CI != player acceptance. Windows GUI launch proved; full audio and save/reload not yet proved.
+Record: https://github.com/Plegyer/Text/issues/306#issuecomment-6079331691 . Wait for user's remaining screenshots and consolidate feedback before scoping implementation.
+---
+
+
 ## АКТУАЛЬНО 2026-10-09 — пользователю выдана готовая Windows media smoke сборка
 
 **Задача из диалога:** встроить 5 пользовательских GIF + 7 MP3 в настоящее приложение для ручной проверки СЕГОДНЯ, без какой-либо самостоятельной вставки файлов, сборки или правки кода пользователем. **Это выполнено в виде портативного Windows ZIP, переданного пользователю в текущем Chat1:** `PortalLife-Windows-5GIF-7MP3-READY-2026-10-09.zip`, **197,163,052 bytes**, ZIP SHA256 `2973a3c6e37d77716fc6098299fe4bf7806617ec2af1371015fc580c8b49cff1`. **ВАЖНО:** этот ZIP создан как скачиваемое вложение беседы, **НЕ размещён в GitHub**, у будущего чата может не быть к нему доступа; не выдумывать GitHub артефакт. Пользователь может сохранить скачанную копию. Ссылка на текущий chat sandbox не является долговременным репозиторным URL.
