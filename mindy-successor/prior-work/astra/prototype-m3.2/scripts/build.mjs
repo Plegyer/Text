@@ -5,6 +5,6 @@ const files=(await readdir('content/packs')).filter(f=>f.endsWith('.json')).sort
 await writeFile('dist/content.json',JSON.stringify({presentation:JSON.parse(await readFile('content/presentation.json','utf8')),localization:JSON.parse(await readFile('content/localization.json','utf8')),definitions:JSON.parse(await readFile('content/definitions.json','utf8')),packs:await Promise.all(files.map(async f=>JSON.parse(await readFile('content/packs/'+f,'utf8'))))}));
 await build({entryPoints:['src/ui/app.ts'],outfile:'dist/app.js',bundle:true,format:'esm',target:'es2022',sourcemap:true});
 await build({entryPoints:['src/core/persistence.ts'],outfile:'dist/save-validator.cjs',bundle:true,platform:'node',format:'cjs',target:'node22'});
-await copyFile('src/ui/index.html','dist/index.html');await copyFile('src/ui/style.css','dist/style.css');
+await copyFile('src/ui/index.html','dist/index.html');await copyFile('src/ui/style.css','dist/style.css');await copyFile('src/ui/media-smoke.css','dist/media-smoke.css');
 await cp('assets','dist/assets',{recursive:true});
 console.log('Built renderer, content catalog and desktop save validator.');
