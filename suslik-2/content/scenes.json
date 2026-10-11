@@ -1,18 +1,31 @@
 {
-  "version": 1,
+  "version": 2,
   "initialScene": "splash",
   "scenes": {
     "splash": {
       "kind": "image",
       "image": "assets/splash-title.png",
-      "imageAlt": "Проект «Белый суслик»: белый суслик между современным городом и волшебным миром",
+      "imageAltKey": "splashAlt",
       "imageId": "MEDIA.SPLASH.001",
       "buttonDelayMs": 2200,
-      "actions": [{"id": "start", "label": "Старт", "target": "character-selection"}]
+      "actions": [{"id": "splash-start", "labelKey": "splashStart", "target": "character-selection"}]
     },
     "character-selection": {
+      "kind": "creation",
+      "image": "assets/character-selection.png",
+      "imageAltKey": "characterAlt",
+      "imageId": "MEDIA.CHARACTER_CREATION.001",
+      "titleKey": "creationTitle",
+      "actions": [{"id": "creation-start", "firstTarget": "game-start", "subsequentTarget": "bonus-selection"}]
+    },
+    "game-start": {
       "kind": "panel",
-      "title": "Выбор характеристик",
+      "titleKey": "gameStartTitle",
+      "actions": []
+    },
+    "bonus-selection": {
+      "kind": "panel",
+      "titleKey": "bonusTitle",
       "actions": []
     }
   }

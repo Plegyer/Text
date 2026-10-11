@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "initialValue": 1,
+  "allocationPoints": 10,
+  "stats": ["strength", "endurance", "dexterity", "reason", "magic", "creativity", "wits", "charm", "sociability", "manners", "grooming", "sexuality"],
+  "locales": {
+    "ru": {
+      "splashAlt": "Проект «Белый суслик»: белый суслик между современным городом и волшебным миром",
+      "splashStart": "Старт",
+      "characterAlt": "Героиня в фэнтезийном костюме указывает на характеристики справа",
+      "creationTitle": "Выбор характеристик",
+      "remaining": "Свободных очков",
+      "reset": "Сбросить очки",
+      "settingsTitle": "Настройки",
+      "language": "Язык",
+      "russian": "Русский",
+      "english": "English",
+      "sound": "Звук",
+      "music": "Музыка",
+      "effects": "Эффекты",
+      "soundEnabled": "Включить звук",
+      "firstStart": "Старт",
+      "nextStart": "Старт+",
+      "gameStartTitle": "Начало игры",
+      "bonusTitle": "Выбор стартового бонуса",
+      "mediaMissing": "Не найдено изображение",
+      "stats": {
+        "strength": "Сила", "endurance": "Выносливость", "dexterity": "Ловкость",
+        "reason": "Разум", "magic": "Магия", "creativity": "Творчество",
+        "wits": "Смекалка", "charm": "Обаяние", "sociability": "Общительность",
+        "manners": "Манеры", "grooming": "Ухоженность", "sexuality": "Сексуальность"
+      }
+    },
+    "en": {
+      "splashAlt": "White Squirrel: a white squirrel between the modern city and a fantasy world",
+      "splashStart": "Start",
+      "characterAlt": "A fantasy heroine points toward the character attributes on the right",
+      "creationTitle": "Character Attributes",
+      "remaining": "Available points",
+      "reset": "Reset Points",
+      "settingsTitle": "Settings",
+      "language": "Language",
+      "russian": "Русский",
+      "english": "English",
+      "sound": "Audio",
+      "music": "Music",
+      "effects": "Effects",
+      "soundEnabled": "Enable sound",
+      "firstStart": "Start",
+      "nextStart": "Start+",
+      "gameStartTitle": "Beginning of the Game",
+      "bonusTitle": "Choose a Starting Bonus",
+      "mediaMissing": "Missing image",
+      "stats": {
+        "strength": "Strength", "endurance": "Endurance", "dexterity": "Dexterity",
+        "reason": "Reason", "magic": "Magic", "creativity": "Creativity",
+        "wits": "Wits", "charm": "Charm", "sociability": "Sociability",
+        "manners": "Manners", "grooming": "Grooming", "sexuality": "Sexuality"
+      }
+    }
+  }
+}
