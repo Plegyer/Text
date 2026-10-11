@@ -12,7 +12,7 @@ function showTip(name){tip.textContent=name;tip.hidden=false;}
 function hideTip(){tip.textContent='';tip.hidden=true;}
 function closeDialog(){modal.hidden=true;if(focusBack?.isConnected)focusBack.focus();}
 function openLocation(loc){
- if(preview||!unlocked.has(loc.id)||!loc.image)return;
+ if(!unlocked.has(loc.id)||!loc.image)return;
  if(onOpen){onOpen(loc.id);return;}
  focusBack=document.activeElement;
  document.getElementById('location-dialog-title').textContent=loc.name;
