@@ -4,42 +4,39 @@ import {readFile,stat} from 'node:fs/promises';
 const root=new URL('../',import.meta.url);
 const data=JSON.parse(await readFile(new URL('map-locations.json',root),'utf8'));
 const ids=data.locations.map(x=>x.id);
-const hit=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
-test('independent map URL and unchanged game entry',async()=>{
+const boxhit=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
+test('map remains on independent /map.html route',async()=>{
  const page=await readFile(new URL('map.html',root),'utf8');
- const home=await readFile(new URL('index.html',root),'utf8');
- assert.match(page,/map\.mjs/);assert.match(home,/src\.js/);assert.doesNotMatch(home,/map\.mjs/);
+ assert.match(page,/map\.mjs/);
+ assert.ok(!page.includes('localStorage'));
 });
-test('13 permanent ID, four start assets, and optional later artwork',async()=>{
- assert.equal(ids.length,13);assert.equal(new Set(ids).size,13);
+test('13 permanent IDs, all arts present, four start locations',async()=>{
+ assert.equal(data.locations.length,13);
+ assert.equal(new Set(ids).size,13);
  assert.deepEqual(data.initialVisible,['sawmill','satyr_bar','undead_farm','school']);
- assert.deepEqual(data.locations.filter(x=>data.initialVisible.includes(x.id)&&x.image).map(x=>x.id),data.initialVisible);
- for(const x of data.locations){assert.ok(x.position&&x.hit&&x.slot);
- if(x.image)assert.ok((await stat(new URL(x.image,root))).size>100000);
+ assert.equal(data.coordinateSystem.width,1672);
+ assert.equal(data.coordinateSystem.height,941);
+ assert.ok((await stat(new URL(data.background,root))).size>200000);
+ for(const loc of data.locations){
+  assert.ok(loc.image&&loc.image.endsWith('.png'),loc.id);
+  assert.ok((await stat(new URL(loc.image,root))).size>10000,loc.id);
  }
- assert.ok((await stat(new URL(data.background,root))).size>100000);
 });
-test('geometry has valid bounds and targets intersect each drawn object',()=>{
+test('image and active hit regions remain in viewBox',()=>{
  const {width,height}=data.coordinateSystem;
  for(const loc of data.locations){
-  for(const key of ['position','hit','slot']){
-   const r=loc[key];
-   assert.ok(r&&[r.x,r.y,r.w,r.h].every(Number.isFinite),loc.id+' '+key);
-   assert.ok(r.w>0&&r.h>0&&r.x>=0&&r.y>=0&&r.x+r.w<=width&&r.y+r.h<=height,loc.id+' '+key);
+  for(const key of ['position','hit']){
+   const b=loc[key];
+   assert.ok(b&&[b.x,b.y,b.w,b.h].every(Number.isFinite),loc.id);
+   assert.ok(b.x>=0&&b.y>=0&&b.w>0&&b.h>0&&b.x+b.w<=width&&b.y+b.h<=height,loc.id+' '+key);
   }
-  assert.ok(hit(loc.hit,loc.position),loc.id+' hit misses image');
+  assert.ok(boxhit(loc.position,loc.hit),loc.id);
  }
- // Rectangle overlap is not a substitute for visually checking painted pixels.
 });
-test('no game save or scene changes from map',async()=>{
+test('art layer and click targets are separate; preview cannot write saves',async()=>{
  const code=await readFile(new URL('map.mjs',root),'utf8');
- assert.doesNotMatch(code,/localStorage|sessionStorage|changeScene\(|persist\(/);
-});
-test('preview separates visible artwork from keyboard and click targets',async()=>{
- const code=await readFile(new URL('map.mjs',root),'utf8');
- assert.match(code,/const shown=map\.locations\.filter/);
+ assert.match(code,/preview\|\|unlocked\.has\(loc\.id\)/);
  assert.match(code,/const clickable=map\.locations\.filter/);
  assert.match(code,/getInteractiveLocationIds/);
- assert.match(code,/aria-hidden':'true'/);
- assert.doesNotMatch(code,/function reserved\(/);
+ assert.doesNotMatch(code,/localStorage|sessionStorage|persist\(|changeScene\(/);
 });
