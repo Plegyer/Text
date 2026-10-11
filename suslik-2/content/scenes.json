@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "initialScene": "splash",
+  "scenes": {
+    "splash": {
+      "kind": "image",
+      "image": "assets/splash-title.png",
+      "imageAlt": "Проект «Белый суслик»: белый суслик между современным городом и волшебным миром",
+      "imageId": "MEDIA.SPLASH.001",
+      "buttonDelayMs": 2200,
+      "actions": [{"id": "start", "label": "Старт", "target": "character-selection"}]
+    },
+    "character-selection": {
+      "kind": "panel",
+      "title": "Выбор характеристик",
+      "actions": []
+    }
+  }
+}
