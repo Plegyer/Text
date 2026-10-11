@@ -19,30 +19,38 @@ function openLocation(loc){
  document.getElementById('location-dialog-id').textContent='ID: '+loc.id;
  modal.hidden=false;document.getElementById('close-dialog').focus();
 }
-function building(loc){
+function artImage(loc){
+ return rect(svg('image',{class:'map-art-image',href:loc.image,'data-location-id':loc.id,
+  preserveAspectRatio:'none','pointer-events':'none','aria-hidden':'true'}),loc.position);
+}
+function clickArea(loc,art){
  const g=svg('g',{class:'map-building',role:'button',tabindex:'0','data-location-id':loc.id,'aria-label':loc.name});
  g.append(rect(svg('rect',{class:'hit-shape',rx:10}),loc.hit));
- g.append(rect(svg('image',{class:'art-image',href:loc.image,preserveAspectRatio:'none','pointer-events':'none'}),loc.position));
- const t=svg('title');t.textContent=loc.name;g.append(t);
- g.addEventListener('pointerenter',()=>showTip(loc.name));g.addEventListener('pointerleave',hideTip);
- g.addEventListener('focus',()=>showTip(loc.name));g.addEventListener('blur',hideTip);
+ const title=svg('title');title.textContent=loc.name;g.append(title);
+ const activate=()=>{art.classList.add('is-active');showTip(loc.name);};
+ const deactivate=()=>{art.classList.remove('is-active');hideTip();};
+ g.addEventListener('pointerenter',activate);g.addEventListener('pointerleave',deactivate);
+ g.addEventListener('focus',activate);g.addEventListener('blur',deactivate);
  g.addEventListener('click',()=>openLocation(loc));
  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLocation(loc);}});
  return g;
 }
-function reserved(loc){
- const g=svg('g',{class:'map-reserved','aria-hidden':'true'});
- g.append(rect(svg('rect',{rx:14}),loc.slot));
- const t=svg('text',{x:loc.slot.x+loc.slot.w/2,y:loc.slot.y+loc.slot.h/2});
- t.textContent=loc.name;g.append(t);return g;
-}
 function render(){
- const ready=map.locations.filter(loc=>loc.image&&unlocked.has(loc.id));
- const missing=preview?map.locations.filter(loc=>!loc.image||!unlocked.has(loc.id)):[];
- layer.replaceChildren(...ready.map(building),...missing.map(reserved));
+ const shown=map.locations.filter(loc=>loc.image&&(preview||unlocked.has(loc.id)));
+ const arts=new Map(shown.map(loc=>[loc.id,artImage(loc)]));
+ const clickable=map.locations.filter(loc=>loc.image&&unlocked.has(loc.id));
+ // Keep all artwork below the hit layer in the same scalable SVG coordinate system.
+ layer.replaceChildren(...arts.values(),...clickable.map(loc=>clickArea(loc,arts.get(loc.id))));
  toggle.setAttribute('aria-pressed',String(preview));
- toggle.textContent=preview?'Скрыть 9 позиций':'Показать 13 позиций';
- info.textContent=preview?'Отладочный вид: девять участков без изображений отмечены пунктиром, не кликабельны и не открывают профессии.':'Доступны лесопилка, бар сатиров, ферма нежити и школа. Остальные локации скрыты.';
+ toggle.textContent=preview?'Стартовый вид':'Предпросмотр · 13 локаций';
+ const missing=map.locations.filter(loc=>!loc.image).length;
+ if(preview){
+  info.textContent=missing
+   ?'Предпросмотр: доступны изображения '+shown.length+' из '+map.locations.length+' зданий. Для '+missing+' локаций художественные PNG ещё не добавлены; заглушки не показываются. Сохранения не меняются.'
+   :'Предпросмотр: все '+shown.length+' художественных зданий. Закрытые локации только видны, но не открываются; сохранения не меняются.';
+ }else{
+  info.textContent='На старте доступны лесопилка, бар сатиров, ферма нежити и школа. Остальные локации скрыты.';
+ }
  hideTip();
 }
 toggle.addEventListener('click',()=>{preview=!preview;render();});
@@ -55,10 +63,14 @@ async function start(){
  if(!response.ok)throw Error('Map manifest unavailable');
  map=await response.json();unlocked=new Set(map.initialVisible);
  document.getElementById('world-map').setAttribute('viewBox','0 0 '+map.coordinateSystem.width+' '+map.coordinateSystem.height);
- document.getElementById('map-terrain').setAttribute('href',map.background);
+ const terrain=document.getElementById('map-terrain');
+ terrain.setAttribute('href',map.background);
+ terrain.setAttribute('width',map.coordinateSystem.width);
+ terrain.setAttribute('height',map.coordinateSystem.height);
  window.SUSLIK2_MAP_TEST=Object.freeze({
   getLocationIds:()=>map.locations.map(x=>x.id),
-  getVisibleLocationIds:()=>[...layer.querySelectorAll('.map-building')].map(x=>x.dataset.locationId),
+  getVisibleLocationIds:()=>[...layer.querySelectorAll('.map-art-image')].map(x=>x.dataset.locationId),
+  getInteractiveLocationIds:()=>[...layer.querySelectorAll('.map-building')].map(x=>x.dataset.locationId),
   getLayout:()=>JSON.parse(JSON.stringify(map.locations)),
   setPreview:v=>{preview=v===true;render();},
   setUnlockedLocationIds:ids=>{if(!Array.isArray(ids))throw TypeError('Expected array');const known=new Set(map.locations.filter(x=>x.image).map(x=>x.id));unlocked=new Set(ids.filter(id=>known.has(id)));render();},

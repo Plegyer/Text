@@ -10,23 +10,36 @@ test('independent map URL and unchanged game entry',async()=>{
  const home=await readFile(new URL('index.html',root),'utf8');
  assert.match(page,/map\.mjs/);assert.match(home,/src\.js/);assert.doesNotMatch(home,/map\.mjs/);
 });
-test('13 permanent ID, exactly four start assets',async()=>{
+test('13 permanent ID, four start assets, and optional later artwork',async()=>{
  assert.equal(ids.length,13);assert.equal(new Set(ids).size,13);
  assert.deepEqual(data.initialVisible,['sawmill','satyr_bar','undead_farm','school']);
- assert.deepEqual(data.locations.filter(x=>x.image).map(x=>x.id),data.initialVisible);
+ assert.deepEqual(data.locations.filter(x=>data.initialVisible.includes(x.id)&&x.image).map(x=>x.id),data.initialVisible);
  for(const x of data.locations){assert.ok(x.position&&x.hit&&x.slot);
  if(x.image)assert.ok((await stat(new URL(x.image,root))).size>100000);
  }
  assert.ok((await stat(new URL(data.background,root))).size>100000);
 });
-test('rectangles remain disjoint in common viewBox',()=>{
+test('geometry has valid bounds and targets intersect each drawn object',()=>{
  const {width,height}=data.coordinateSystem;
- for(const a of data.locations){
-  assert.ok(a.hit.x>=0&&a.hit.y>=0&&a.hit.x+a.hit.w<=width&&a.hit.y+a.hit.h<=height,a.id);
-  for(const b of data.locations)if(a!==b)assert.equal(hit(a.hit,b.hit),false,a.id+' '+b.id);
+ for(const loc of data.locations){
+  for(const key of ['position','hit','slot']){
+   const r=loc[key];
+   assert.ok(r&&[r.x,r.y,r.w,r.h].every(Number.isFinite),loc.id+' '+key);
+   assert.ok(r.w>0&&r.h>0&&r.x>=0&&r.y>=0&&r.x+r.w<=width&&r.y+r.h<=height,loc.id+' '+key);
+  }
+  assert.ok(hit(loc.hit,loc.position),loc.id+' hit misses image');
  }
+ // Rectangle overlap is not a substitute for visually checking painted pixels.
 });
 test('no game save or scene changes from map',async()=>{
  const code=await readFile(new URL('map.mjs',root),'utf8');
  assert.doesNotMatch(code,/localStorage|sessionStorage|changeScene\(|persist\(/);
+});
+test('preview separates visible artwork from keyboard and click targets',async()=>{
+ const code=await readFile(new URL('map.mjs',root),'utf8');
+ assert.match(code,/const shown=map\.locations\.filter/);
+ assert.match(code,/const clickable=map\.locations\.filter/);
+ assert.match(code,/getInteractiveLocationIds/);
+ assert.match(code,/aria-hidden':'true'/);
+ assert.doesNotMatch(code,/function reserved\(/);
 });

@@ -11,12 +11,10 @@ button:hover,.map-controls a:hover,button:focus-visible,.map-controls a:focus-vi
 button[aria-pressed="true"]{background:#685a31;color:#fff}
 .map-scene{position:relative;max-width:100%;border:1px solid #777055;border-radius:12px;overflow:hidden;box-shadow:0 24px 70px #050908b8;background:#1b2f29}
 #world-map{display:block;width:100%;height:auto;aspect-ratio:1672/941}
+.map-art-image{pointer-events:none;transition:filter .15s ease}
+.map-art-image.is-active{filter:drop-shadow(0 0 12px #f8db83) brightness(1.13)}
 .map-building{cursor:pointer;outline:none}.map-building .hit-shape{fill:transparent;stroke:transparent;pointer-events:all}
-.map-building .art-image{pointer-events:none;transition:filter .15s ease}
-.map-building:hover .art-image,.map-building:focus-visible .art-image{filter:drop-shadow(0 0 12px #f8db83) brightness(1.13)}
 .map-building:focus-visible .hit-shape{stroke:#ffdf82;stroke-width:3;stroke-dasharray:7 5}
-.map-reserved{pointer-events:none}.map-reserved rect{fill:#191c1885;stroke:#dfd7c2;stroke-width:2;stroke-dasharray:8 8}
-.map-reserved text{fill:white;font:600 19px system-ui,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#1b241d;stroke-width:5}
 .map-tooltip{position:absolute;left:50%;top:12px;transform:translateX(-50%);pointer-events:none;z-index:1;padding:8px 15px;background:#17231fe8;color:#ffebb6;border:1px solid #ccb47e;border-radius:6px;font:600 13px system-ui,sans-serif;text-align:center}
 [hidden]{display:none!important}.map-description{margin-top:14px;line-height:1.6}
 .asset-warning{background:#52302b;padding:10px;border:1px solid #e79776}
