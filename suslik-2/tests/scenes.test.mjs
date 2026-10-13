@@ -50,7 +50,7 @@ test('point distribution / refund / reset does not spend time or energy',()=>{
   assert.equal('energy' in s,false);
   assert.equal('day' in s,false);
 });
-test('first Start begins game; second Start+ goes to bonus menu',()=>{
+test('Start+ stays locked until an ending is earned',()=>{
   const s=initialState(creation,'character-selection');
   const scene=scenes.scenes['character-selection'];
   assert.equal(begin(s,scene),false);
@@ -61,6 +61,10 @@ test('first Start begins game; second Start+ goes to bonus menu',()=>{
   s.sceneId='character-selection';
   resetAllocations(s,creation);
   for(let n=0;n<10;n++)adjustStat(s,creation,'magic',1);
+  assert.equal(begin(s,scene),true);
+  assert.equal(s.sceneId,'game-start');
+  s.sceneId='character-selection';
+  s.meta.unlockedEndings=['hard-worker'];
   assert.equal(begin(s,scene),true);
   assert.equal(s.sceneId,'bonus-selection');
 });

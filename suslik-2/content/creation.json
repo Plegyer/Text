@@ -2,7 +2,20 @@
   "version": 1,
   "initialValue": 1,
   "allocationPoints": 10,
-  "stats": ["strength", "endurance", "dexterity", "reason", "magic", "creativity", "wits", "charm", "sociability", "manners", "grooming", "sexuality"],
+  "stats": [
+    "strength",
+    "endurance",
+    "dexterity",
+    "reason",
+    "magic",
+    "creativity",
+    "wits",
+    "charm",
+    "sociability",
+    "manners",
+    "grooming",
+    "sexuality"
+  ],
   "locales": {
     "ru": {
       "splashAlt": "Проект «Белый суслик»: белый суслик между современным городом и волшебным миром",
@@ -25,11 +38,29 @@
       "bonusTitle": "Выбор стартового бонуса",
       "mediaMissing": "Не найдено изображение",
       "stats": {
-        "strength": "Сила", "endurance": "Выносливость", "dexterity": "Ловкость",
-        "reason": "Разум", "magic": "Магия", "creativity": "Творчество",
-        "wits": "Смекалка", "charm": "Обаяние", "sociability": "Общительность",
-        "manners": "Манеры", "grooming": "Ухоженность", "sexuality": "Сексуальность"
-      }
+        "strength": "Сила",
+        "endurance": "Выносливость",
+        "dexterity": "Ловкость",
+        "reason": "Разум",
+        "magic": "Магия",
+        "creativity": "Творчество",
+        "wits": "Смекалка",
+        "charm": "Обаяние",
+        "sociability": "Общительность",
+        "manners": "Манеры",
+        "grooming": "Ухоженность",
+        "sexuality": "Сексуальность"
+      },
+      "goToMap": "На карту",
+      "endingMenuAlt": "Перекрёсток дорог с замками и горами",
+      "hardWorkerAlt": "Анимация концовки «Трудяга»",
+      "hardWorker": "Трудяга",
+      "refuseEnding": "Отказаться",
+      "hardWorkerText": "Амалия не знала, что ждёт её впереди, да и не хотела знать. Лес и всё, что было с ним связано, настолько захватили её, что другой судьбы она себе уже просто не желала.",
+      "endRun": "Конец",
+      "bonusInstruction": "Выберите сколько угодно бонусов, в том числе ни одного.",
+      "bonusContinue": "Начать игру",
+      "bonus_hard-worker": "Трудяга — +5 силы"
     },
     "en": {
       "splashAlt": "White Squirrel: a white squirrel between the modern city and a fantasy world",
@@ -52,11 +83,29 @@
       "bonusTitle": "Choose a Starting Bonus",
       "mediaMissing": "Missing image",
       "stats": {
-        "strength": "Strength", "endurance": "Endurance", "dexterity": "Dexterity",
-        "reason": "Reason", "magic": "Magic", "creativity": "Creativity",
-        "wits": "Wits", "charm": "Charm", "sociability": "Sociability",
-        "manners": "Manners", "grooming": "Grooming", "sexuality": "Sexuality"
-      }
+        "strength": "Strength",
+        "endurance": "Endurance",
+        "dexterity": "Dexterity",
+        "reason": "Reason",
+        "magic": "Magic",
+        "creativity": "Creativity",
+        "wits": "Wits",
+        "charm": "Charm",
+        "sociability": "Sociability",
+        "manners": "Manners",
+        "grooming": "Grooming",
+        "sexuality": "Sexuality"
+      },
+      "goToMap": "To the map",
+      "endingMenuAlt": "A crossroads between castles and mountains",
+      "hardWorkerAlt": "Hard Worker ending animation",
+      "hardWorker": "Hard Worker",
+      "refuseEnding": "Refuse",
+      "hardWorkerText": "Amalia did not know what lay ahead, and she did not want to know. The forest and everything connected to it had so completely captivated her that she no longer wished for any other fate.",
+      "endRun": "The End",
+      "bonusInstruction": "Choose any number of bonuses, including none.",
+      "bonusContinue": "Begin game",
+      "bonus_hard-worker": "Hard Worker — +5 Strength"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "initialScene": "splash",
   "scenes": {
     "splash": {
@@ -8,7 +8,13 @@
       "imageAltKey": "splashAlt",
       "imageId": "MEDIA.SPLASH.001",
       "buttonDelayMs": 2200,
-      "actions": [{"id": "splash-start", "labelKey": "splashStart", "target": "character-selection"}]
+      "actions": [
+        {
+          "id": "splash-start",
+          "labelKey": "splashStart",
+          "target": "character-selection"
+        }
+      ]
     },
     "character-selection": {
       "kind": "creation",
@@ -16,16 +22,51 @@
       "imageAltKey": "characterAlt",
       "imageId": "MEDIA.CHARACTER_CREATION.001",
       "titleKey": "creationTitle",
-      "actions": [{"id": "creation-start", "firstTarget": "game-start", "subsequentTarget": "bonus-selection"}]
+      "actions": [
+        {
+          "id": "creation-start",
+          "firstTarget": "game-start",
+          "subsequentTarget": "bonus-selection"
+        }
+      ]
     },
     "game-start": {
       "kind": "panel",
       "titleKey": "gameStartTitle",
-      "actions": []
+      "actions": [
+        {
+          "id": "continue-to-map",
+          "labelKey": "goToMap",
+          "target": "map"
+        }
+      ]
     },
     "bonus-selection": {
-      "kind": "panel",
+      "kind": "bonus-selection",
       "titleKey": "bonusTitle",
+      "actions": []
+    },
+    "map": {
+      "kind": "map",
+      "actions": []
+    },
+    "endings-menu": {
+      "kind": "endings-menu",
+      "image": "assets/endings/menu-background.png",
+      "imageAltKey": "endingMenuAlt",
+      "endings": [
+        {
+          "id": "hard-worker",
+          "labelKey": "hardWorker",
+          "target": "hard-worker-ending"
+        }
+      ]
+    },
+    "hard-worker-ending": {
+      "kind": "hard-worker-ending",
+      "image": "assets/endings/hard-worker.gif",
+      "imageAltKey": "hardWorkerAlt",
+      "textKey": "hardWorkerText",
       "actions": []
     }
   }
