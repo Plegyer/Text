@@ -1,0 +1,16 @@
+/* SUSLIK 2 combat layout: no debug information in game UI */
+.combat-scene{color:#f8e9cf;background:linear-gradient(135deg,#241c2d,#473447);border-radius:12px;padding:clamp(12px,2vw,24px);font-family:Georgia,serif;min-height:80vh;box-sizing:border-box}
+.combat-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,26px)}
+.combat-fighter{min-width:0;background:rgba(20,16,25,.62);border:1px solid #aa8b68;border-radius:12px;padding:12px}
+.combat-portrait{display:block;height:min(48vh,540px);width:100%;object-fit:contain;border-radius:8px}
+.combat-fighter h2{text-align:center;margin:8px 0 12px}
+.combat-bar-wrap{margin-bottom:10px}.combat-bar-label,.combat-stat{display:flex;justify-content:space-between;gap:10px;font-size:clamp(12px,1.1vw,17px)}
+.combat-bar-track{height:12px;background:#19151a;overflow:hidden;border-radius:8px;margin-top:5px}.combat-bar-fill{height:100%;transition:width .2s ease}.combat-hp{background:#b74c54}.combat-mana{background:#477fc4}
+.combat-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.combat-log{min-height:60px;background:rgba(0,0,0,.25);border:1px solid #88705a;border-radius:8px;margin:14px 0;padding:10px 14px}.combat-log h3,.combat-log p{margin:4px 0;font-size:clamp(13px,1.1vw,18px)}
+.combat-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:14px}
+.combat-button{cursor:pointer;border:1px solid #d7b68b;border-radius:7px;background:#423045;color:#ffebc9;font:600 clamp(14px,1.2vw,20px) Georgia,serif;padding:10px 20px;min-width:115px}
+.combat-button:hover:not(:disabled){background:#654465}.combat-button:disabled{opacity:.45;cursor:not-allowed}
+.combat-spell-menu{border:1px solid #b59a79;background:#272036;border-radius:10px;padding:12px;margin:10px 0}
+.combat-outcome,.combat-pending{text-align:center}.combat-reward{text-align:center}
+@media(max-width:670px){.combat-top{grid-template-columns:1fr}.combat-portrait{height:32vh}.combat-fighter{padding:8px}.combat-scene{min-height:auto}.combat-button{flex:1 1 40%}}

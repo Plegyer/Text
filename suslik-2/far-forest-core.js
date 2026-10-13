@@ -30,7 +30,7 @@
         [OUTCOMES.ORDINARY, OUTCOMES.GOBLIN].includes(a.outcome) &&
         a.id === `far-forest-${fresh.nextAttemptNumber - 1}`) {
       fresh.currentAttempt = {id: a.id, outcome: a.outcome,
-        settled: a.outcome === OUTCOMES.ORDINARY && a.settled === true,
+        settled: a.settled === true && (a.outcome === OUTCOMES.ORDINARY || (a.outcome === OUTCOMES.GOBLIN && a.choice === 'fight')),
         choice: a.outcome === OUTCOMES.GOBLIN &&
           ['permission', 'fight'].includes(a.choice) ? a.choice : null};
       fresh.sceneId = fresh.currentAttempt.outcome === OUTCOMES.ORDINARY ? SCENES.ORDINARY :
@@ -63,7 +63,7 @@
   function beginAttempt(state, rng = Math.random) {
     if (!isAvailable(state)) return null;
     const previous = state.currentAttempt;
-    if (previous && (!previous.settled || previous.outcome !== OUTCOMES.ORDINARY)) return null;
+    if (previous && !previous.settled) return null;
     if (!integer(state.nextAttemptNumber) || state.nextAttemptNumber < 1 ||
         !Number.isSafeInteger(state.nextAttemptNumber + 1)) throw new RangeError('attempt counter overflow');
     const outcome = rollOutcome(rng);
@@ -102,9 +102,17 @@
     state.sceneId = choice === 'permission' ? SCENES.PERMISSION_PENDING : SCENES.FIGHT_PENDING;
     return state.sceneId;
   }
+  /* Called only after combat victory, approved reward and atomic save. */
+  function finishGoblinVictory(state, battle) {
+    const a=state?.currentAttempt;
+    if(!a||a.outcome!==OUTCOMES.GOBLIN||a.choice!=='fight'||a.settled||
+      !battle||battle.id!==a.id||battle.status!=='victory'||battle.rewardApplied!==true) return false;
+    a.settled=true;
+    return true;
+  }
   host.SUSLIK2FarForest = Object.freeze({
     SCENES, OUTCOMES, REQUIRED, RECEIPT, initialState, restoreState,
     meetsForemanConditions, unlockAfterForeman, isAvailable, rollOutcome,
-    beginAttempt, getOrdinaryReceipt, settleOrdinaryShift, chooseGoblinPath
+    beginAttempt, getOrdinaryReceipt, settleOrdinaryShift, chooseGoblinPath, finishGoblinVictory
   });
 })(globalThis);
