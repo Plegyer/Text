@@ -86,3 +86,7 @@ async function start(){
  if(checks.some(ok=>!ok))document.getElementById('asset-warning').hidden=false;
 }
 start().catch(e=>{console.error(e);info.textContent='Ошибка загрузки карты: проверьте JSON и изображения.';});
+
+if (new URLSearchParams(location.search).get('game') === '1') {
+  import('./map-game-integration.mjs').then(m => m.connectGameMap()).catch(e => console.error(e));
+}

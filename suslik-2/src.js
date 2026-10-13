@@ -1,4 +1,6 @@
 import {STORAGE_KEY, initialState, restoreState, adjustStat, resetAllocations, canStart, begin, freshCharacter} from './creation-state.mjs';
+import {freshRun, hasNewGamePlus} from './ending-state.mjs';
+import {renderEndingScreen, renderBonusSelection} from './ending-ui.mjs';
 
 const root = document.getElementById('game');
 let config, creation, state, revealTimer;
@@ -57,6 +59,7 @@ function sceneImage(scene) {
     for (const action of scene.actions) {
       const button = element('button', 'game-button is-entering', tr(action.labelKey));
       button.type = 'button';
+      if (action.id === 'splash-start' && hasNewGamePlus(state)) button.textContent = tr('nextStart');
       button.dataset.actionId = action.id;
       button.addEventListener('click', () => changeScene(action.target));
       controls.append(button);
@@ -159,7 +162,7 @@ function sceneCreation(scene) {
   settings.append(settingsGrid);
   panel.append(settings);
 
-  const start = element('button', 'game-button creation-start', tr(state.meta.startedOnce ? 'nextStart' : 'firstStart'));
+  const start = element('button', 'game-button creation-start', tr(hasNewGamePlus(state) ? 'nextStart' : 'firstStart'));
   start.type = 'button';
   start.dataset.actionId = 'creation-start';
   start.disabled = !canStart(state);
@@ -189,6 +192,10 @@ function render() {
   if (scene.kind === 'image') sceneImage(scene);
   else if (scene.kind === 'creation') sceneCreation(scene);
   else if (scene.kind === 'panel') scenePanel(scene);
+  else if (scene.kind === 'bonus-selection') renderBonusSelection({root,state,tr,persist,render});
+  else if (scene.kind === 'endings-menu' || scene.kind === 'hard-worker-ending')
+    renderEndingScreen(scene.kind,{root,scene,state,creation,tr,persist,render,freshCharacter});
+  else if (scene.kind === 'map') window.location.assign('map.html?game=1');
   else throw new Error('Unknown scene kind');
 }
 async function run() {
@@ -213,6 +220,8 @@ async function run() {
   if (new URLSearchParams(location.search).has('restart')) {
     state.sceneId = config.initialScene;
     state.character = freshCharacter(creation);
+    state.run = freshRun();
+    state.selectedBonuses = [];
   }
   persist(); render();
 }

@@ -23,3 +23,5 @@ button[aria-pressed="true"]{background:#685a31;color:#fff}
 .location-dialog h2{font-size:28px;color:#ffe7b1}.location-dialog p{line-height:1.6}.location-dialog small{font-family:monospace;color:#bbcfc5}
 .dialog-close{position:absolute;top:13px;right:14px;padding:4px 12px;font-size:24px}
 @media(max-width:650px){.map-header{gap:14px}.map-controls{width:100%}.map-controls>*{flex:1;text-align:center;padding:9px 6px}.map-tooltip{font-size:11px;top:4px}.map-description{font-size:12px}}
+
+.ending-map-trigger{position:absolute;right:clamp(12px,3vw,36px);bottom:clamp(12px,3vh,36px);z-index:2;box-shadow:0 8px 30px #000b;background:#35273e;border-color:#ecc587;font-size:clamp(13px,1.5vw,20px)}

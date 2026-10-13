@@ -1,3 +1,4 @@
+@import url('./ending.css');
 :root { color-scheme: dark; font-family: Georgia,'Times New Roman',serif; }
 * { box-sizing: border-box; }
 html,body { margin: 0; width: 100%; height: 100%; }
