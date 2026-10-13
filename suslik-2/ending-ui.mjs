@@ -15,8 +15,7 @@ const image = (path, alternative) => {
   const img=el('img','ending-art'); img.src=path; img.alt=alternative;
   img.draggable=false;
   img.addEventListener('error',()=>{
-    if(path.includes('menu-background')) img.src='assets/map/map-background.webp';
-    else img.replaceWith(el('div','media-placeholder',alternative));
+    img.replaceWith(el('div','media-placeholder',alternative));
   },{once:true});
   return img;
 };
