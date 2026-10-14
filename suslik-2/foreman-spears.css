@@ -1,0 +1,6 @@
+.foreman-spears-scene{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2vh,26px);padding:20px;color:#f7e7cc;background:radial-gradient(ellipse at top,#473a2e,#15130f);text-align:left}
+.foreman-spears-image{display:block;width:min(100%,930px);height:auto;max-height:53vh;object-fit:contain;border-radius:8px;border:1px solid #a98757}
+.foreman-spears-dialogue{max-width:960px;margin:0;white-space:pre-line;line-height:1.5;font-size:clamp(15px,1.65vw,21px);overflow-wrap:anywhere}
+.foreman-spears-button{padding:10px 26px;border:1px solid #c8a76d;border-radius:8px;color:#fbe9c4;background:#423245;cursor:pointer;font:600 clamp(15px,1.3vw,20px) Georgia,serif}
+.foreman-spears-button:hover,.foreman-spears-button:focus-visible{background:#654663;outline:2px solid #edca92}
+@media(max-height:670px){.foreman-spears-scene{justify-content:flex-start;overflow-y:auto}.foreman-spears-image{max-height:35vh}}
