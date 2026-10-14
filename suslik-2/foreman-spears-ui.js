@@ -32,9 +32,12 @@
     const screen=element('section','foreman-spears-scene');
     screen.dataset.sceneId=core.SCENE_ID;
     const picture=element('img','foreman-spears-image');
-    // The original 1448×1086 PNG is available losslessly as inline classic-script chunks.
-    // If a native PNG is later committed, omit the chunk scripts and use content.image.
-    picture.src=opts.image||host.SUSLIK2ForemanImageURL||content.image;
+    // Prefer a normal PNG. Until a binary Git blob is accepted, the previously
+    // verified 20-part original image remains an offline file:// fallback.
+    picture.src=opts.image||content.image;
+    picture.addEventListener('error',()=>{
+      if(host.SUSLIK2ForemanImageURL) picture.src=host.SUSLIK2ForemanImageURL;
+    },{once:true});
     picture.alt=lang.imageAlt;
     picture.draggable=false;
     screen.append(picture,element('p','foreman-spears-dialogue',
@@ -45,7 +48,7 @@
   }
   function addNightTrainingButton(container,questState,onTraining,opts={}) {
     const core=host.SUSLIK2ForemanSpears;
-    if(!core?.isTrainingUnlocked(questState)) return null;
+    if(!core?.isTrainingUnlocked(questState) || typeof onTraining!=='function') return null;
     const content=opts.content||host.SUSLIK2ForemanSpearsContent;
     const btn=action(translate(content,opts.locale).training,'foreman-night-training',onTraining);
     container.append(btn);

@@ -5,7 +5,8 @@ import {runInNewContext} from 'node:vm';
 
 const root=new URL('../',import.meta.url);
 const paths=['foreman-spears-core.js','foreman-spears-content.js',
-  'foreman-spears-ui.js','foreman-spears-bridge.js','combat-core.js'];
+  'foreman-spears-ui.js','foreman-spears-bridge.js','combat-core.js',
+  'foreman-spears-host-hooks.js'];
 const sources=await Promise.all(paths.map(p=>readFile(new URL(p,root),'utf8')));
 const ctx={};ctx.globalThis=ctx;
 paths.forEach((p,i)=>runInNewContext(sources[i],ctx,{filename:p}));
@@ -46,7 +47,8 @@ function setup(amount=15){
   return {bridge:ctx.SUSLIK2ForemanSpearsBridge.create(adapter),
     snapshot:()=>clone(snapshot),commits:()=>commits,applyCalls:()=>applyCalls,
     setSave:v=>saveOk=v,setBroken:v=>broken=v,
-    setQuestActive:v=>snapshot.game.questActive=v};
+    setQuestActive:v=>snapshot.game.questActive=v,
+    bindings:adapter,setGame:change=>{snapshot.game={...snapshot.game,...change};}};
 }
 test('talk button requires active quest, 15 broken spears and unshown scene',()=>{
   for(const amount of [0,1,14]){
@@ -179,6 +181,83 @@ test('plain file:// compatible scripts, without fetch or invented time/energy co
   }
 });
 
+test('already-completed legacy game save migrates without spending any spears again',()=>{
+  const run=setup(7);
+  run.setGame({questCompleted:true,spearDropsDisabled:false,
+    nightTrainingUnlocked:false,handoverSceneShown:true});
+  const coreState=core.restoreState(undefined,{questCompleted:true});
+  assert.equal(coreState.phase,'complete');
+  assert.equal(core.isTrainingUnlocked(coreState),true);
+  assert.equal(run.bridge.availability().canTalk,false);
+  assert.equal(run.bridge.spearDropsDisabled(),true);
+  run.bindings.applyLegacyCompletion=(game,flags)=>({...game,...flags});
+  assert.equal(run.bridge.migrateLegacySave(),true);
+  assert.equal(run.snapshot().quest.phase,'complete');
+  assert.equal(run.snapshot().game.inventory.broken_goblin_spear,7);
+  assert.equal(run.snapshot().game.spearDropsDisabled,true);
+  assert.equal(run.snapshot().game.nightTrainingUnlocked,true);
+  assert.equal(run.bridge.migrateLegacySave(),false);
+  assert.equal(run.bridge.next(),false);
+});
+test('legacy migration save failure cannot mutate inventory/flags',()=>{
+  const run=setup(3);
+  run.setGame({questCompleted:true,spearDropsDisabled:false,nightTrainingUnlocked:false});
+  run.bindings.applyLegacyCompletion=(game,flags)=>({...game,...flags});
+  run.setSave(false);
+  assert.throws(()=>run.bridge.migrateLegacySave(),/Atomic handover save failed/);
+  assert.equal(run.snapshot().game.inventory.broken_goblin_spear,3);
+  assert.equal(run.snapshot().game.spearDropsDisabled,false);
+  run.setSave(true);
+  assert.equal(run.bridge.migrateLegacySave(),true);
+  assert.equal(run.snapshot().game.spearDropsDisabled,true);
+});
+test('legacy quest-completed game disables spear drops without separate quest snapshot',()=>{
+  const C=ctx.SUSLIK2Combat;
+  const done=C.settleVictory({id:'a',status:'victory',rewardApplied:false},
+    {questCompleted:true},0,(game,receipt)=>({...game,receipt}),()=>0);
+  assert.equal(done.receipt.itemAmount,0);
+});
+test('night training button has no false placeholder when approved handler missing',()=>{
+  class Box{constructor(){this.children=[];} append(n){this.children.push(n);}}
+  ctx.document={createElement:tag=>({tag,dataset:{},addEventListener(){}})};
+  const complete=core.restoreState({version:1,phase:'complete',questCompleted:true,
+    spearDropsDisabled:true,nightTrainingUnlocked:true});
+  const root=new Box();
+  assert.equal(ui.addNightTrainingButton(root,complete,undefined),null);
+  assert.equal(root.children.length,0);
+  assert.equal(ui.addNightTrainingButton(root,complete,null),null);
+});
+test('host hook refuses unprovided sawmill callbacks and delegates only to existing handlers',()=>{
+  const hooks=ctx.SUSLIK2ForemanSpearsHostHooks;
+  assert.throws(()=>hooks.create({}),/sawmill callback required/);
+  const run=setup(15);
+  let sceneShown=0,sawmillShown=0;
+  const api=hooks.create({...run.bindings,
+    showHandoverScene:()=>sceneShown++,showExistingSawmillWork:()=>sawmillShown++});
+  assert.equal(api.initializeExistingSave(),false);
+  class Box {
+    constructor(tag){this.tag=tag;this.children=[];this.dataset={};this.listeners={};}
+    append(...elems){this.children.push(...elems);}
+    replaceChildren(...elems){this.children=elems;}
+    addEventListener(event,fn){this.listeners[event]=fn;}
+    click(){this.listeners.click?.();}
+  }
+  ctx.document={createElement:tag=>new Box(tag)};
+  const sawmill=new Box('div'),screen=new Box('div');
+  const button=api.mountSawmillButton(sawmill,{locale:'ru'});
+  assert.equal(button.dataset.actionId,'foreman-spear-talk');
+  button.click();
+  assert.equal(sceneShown,1);
+  assert.equal(api.mountSawmillButton(sawmill),null);
+  assert.equal(api.resumePendingHandover(screen),true);
+  const next=screen.children[0].children.at(-1);
+  assert.equal(next.dataset.actionId,'foreman-spear-next');
+  next.click();
+  assert.equal(sawmillShown,1);
+  assert.equal(api.resumePendingHandover(screen),false);
+  assert.equal(run.snapshot().game.inventory.broken_goblin_spear,0);
+  assert.equal(api.mountHomeNightTraining(new Box('div'),undefined),null);
+});
 test('author PNG is byte-identical after loading all 20 offline source chunks',async()=>{
   const {createHash}=await import('node:crypto');
   const imageContext={SUSLIK2ForemanImageParts:[]};
@@ -197,3 +276,4 @@ test('author PNG is byte-identical after loading all 20 offline source chunks',a
   runInNewContext(await readFile(new URL('foreman-spears-inline-image.js',root),'utf8'),imageContext);
   assert.equal(imageContext.SUSLIK2ForemanImageURL,'data:image/png;base64,'+rawEncoded);
 });
+

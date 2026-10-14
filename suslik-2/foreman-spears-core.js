@@ -11,11 +11,22 @@
     return {version:1, phase:PHASE.IDLE, sceneShown:false,
       questCompleted:false, spearDropsDisabled:false, nightTrainingUnlocked:false};
   }
-  function restoreState(raw) {
+  function restoreState(raw, legacyFlags) {
     const s=initialState();
-    if(!raw || typeof raw!=='object' || raw.version!==1) return s;
+    if(!raw || typeof raw!=='object' || raw.version!==1) {
+      if(legacyFlags?.questCompleted === true) return {...s,
+        phase:PHASE.COMPLETE,sceneShown:true,questCompleted:true,
+        spearDropsDisabled:true,nightTrainingUnlocked:true};
+      return s;
+    }
     if(raw.phase===PHASE.COMPLETE && raw.questCompleted===true &&
        raw.spearDropsDisabled===true && raw.nightTrainingUnlocked===true) {
+      return {version:1,phase:PHASE.COMPLETE,sceneShown:true,
+        questCompleted:true,spearDropsDisabled:true,nightTrainingUnlocked:true};
+    }
+    if(legacyFlags?.questCompleted === true) {
+      // An old save can have a completed quest in the real game without
+      // the newer separate quest snapshot. Never consume the 15 spears again.
       return {version:1,phase:PHASE.COMPLETE,sceneShown:true,
         questCompleted:true,spearDropsDisabled:true,nightTrainingUnlocked:true};
     }

@@ -20,12 +20,43 @@
       const snapshot=bindings.readSnapshot();
       if(!snapshot || typeof snapshot!=='object' || !snapshot.game)
         throw new TypeError('Single game + quest snapshot required');
-      return {game:snapshot.game,quest:core.restoreState(snapshot.quest)};
+      return {game:snapshot.game,quest:core.restoreState(
+        snapshot.quest,bindings.readQuestFlags(snapshot.game)),rawQuest:snapshot.quest};
     }
     function save(game,quest) {
       if(bindings.commitSnapshot({game,quest})!==true)
         throw new Error('Atomic handover save failed');
     }
+    /* Safe, one-time upgrade from previously completed game-only quest saves.
+       No spear removal, no reward, no invented night effects. */
+    function migrateLegacySave() {
+      return exclusive(()=>{
+        const {game,quest,rawQuest}=read();
+        const flags=bindings.readQuestFlags(game);
+        if(flags?.questCompleted!==true) return false;
+        const validQuest=rawQuest && core.restoreState(rawQuest).questCompleted === true;
+        if(validQuest && flags.spearDropsDisabled===true &&
+           flags.nightTrainingUnlocked===true) return false;
+        if(typeof bindings.applyLegacyCompletion!=='function')
+          throw new TypeError('Existing save migration requires applyLegacyCompletion');
+        const before=bindings.readSpearCount(game,core.ITEM_ID);
+        const nextGame=bindings.applyLegacyCompletion(game,Object.freeze({
+          questCompleted:true,spearDropsDisabled:true,nightTrainingUnlocked:true,
+          handoverSceneShown:true
+        }));
+        if(!nextGame || typeof nextGame!=='object' || nextGame===game)
+          throw new TypeError('Legacy migration must return NEW game state');
+        if(bindings.readSpearCount(nextGame,core.ITEM_ID)!==before)
+          throw new Error('Legacy migration may not remove spears');
+        const verified=bindings.readQuestFlags(nextGame);
+        if(verified?.questCompleted!==true || verified?.spearDropsDisabled!==true ||
+           verified?.nightTrainingUnlocked!==true)
+          throw new Error('Legacy quest flags not fully restored');
+        save(nextGame,quest);
+        return true;
+      });
+    }
+    function questState() {return read().quest;}
     function availability() {
       const {game,quest}=read();
       const evidence=bindings.readEvidence(game);
@@ -58,7 +89,7 @@
     function spearDropsDisabled() {
       const {quest}=read();return core.areSpearDropsDisabled(quest);
     }
-    return Object.freeze({availability,talk,isSceneOpen,next,nightTrainingUnlocked,spearDropsDisabled});
+    return Object.freeze({availability,talk,isSceneOpen,next,nightTrainingUnlocked,spearDropsDisabled,migrateLegacySave,questState});
   }
   host.SUSLIK2ForemanSpearsBridge=Object.freeze({create});
 })(globalThis);
