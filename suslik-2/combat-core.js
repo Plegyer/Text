@@ -46,10 +46,15 @@ else{enemyAttack(s,0,rng);if(s.status==='active')heroStrike(s,rng);}
 if(s.status==='active')s.round++;
 return s;
 }
-function settleVictory(battle,gameState,spearsInInventory,applyApprovedShift,rng=Math.random){
+function settleVictory(battle,gameState,spearsInInventory,applyApprovedShift,rng=Math.random,options={}){
 if(!battle||battle.status!=='victory'||battle.rewardApplied||!gameState||typeof applyApprovedShift!=='function')return null;
 const bonusGold=1+Math.floor(roll(rng)*6);
-const spearAmount=nonnegative(spearsInInventory)<15?1:0;
+const dropsDisabled = options?.spearDropsDisabled === true ||
+  options?.questCompleted === true ||
+  gameState.spearDropsDisabled === true || gameState.questCompleted === true ||
+  gameState.foremanQuest?.spearDropsDisabled === true ||
+  gameState.foremanQuest?.questCompleted === true;
+const spearAmount=!dropsDisabled && nonnegative(spearsInInventory)<15?1:0;
 const receipt=Object.freeze({id:'combat-victory-'+battle.id,energyCost:1,standardSawmillWage:true,standardSeasonalStats:true,extraGold:10,bonusGold,paidShift:true,itemId:'broken_goblin_spear',itemAmount:spearAmount,itemLimit:15});
 const nextGameState=applyApprovedShift(gameState,receipt);
 if(!nextGameState||nextGameState===gameState)throw new TypeError('Shift adapter must return NEW game state');
