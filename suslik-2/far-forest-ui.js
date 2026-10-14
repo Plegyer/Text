@@ -44,6 +44,14 @@
     const sceneId = params.farState?.sceneId;
     const section = node('section', 'far-forest-scene');
     section.dataset.sceneId = sceneId;
+    if (sceneId === core.SCENES.FIGHT_PENDING && params.battle && host.SUSLIK2CombatUI) {
+      return host.SUSLIK2CombatUI.render(container, {
+        battle: params.battle, locale: params.locale, musicVolume: params.musicVolume,
+        soundEnabled: params.soundEnabled, setMusic: params.setMusic,
+        onAction: params.onCombatAction, onContinue: params.onCombatContinue,
+        onReturn: params.onCombatReturn
+      });
+    }
     if (sceneId === core.SCENES.ORDINARY) {
       const attempt = params.farState.currentAttempt;
       if (!attempt?.settled) throw new Error('Ordinary shift must be settled before rendering its actions');
