@@ -1,0 +1,152 @@
+name: Publish complete SUSLIK 2 portable source
+
+on:
+  push:
+    branches:
+      - 'suslik-2/import-recovery-staging-20261015'
+    paths:
+      - '.github/workflows/suslik2-import-release.yml'
+      - 'suslik-2/RELEASE_IMPORT_TRIGGER.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: suslik2-canonical-import
+  cancel-in-progress: false
+
+jobs:
+  publish-complete-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out staging branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Check for exact approved release package
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: suslik2-canonical-20261015
+        shell: bash
+        run: |
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Release not uploaded yet. Nothing was changed. Upload SUSLIK2-CANONICAL-Windows-2026-10-15.zip into a GitHub Release tagged $RELEASE_TAG, then re-run by pushing RELEASE_IMPORT_TRIGGER.md to this staging branch."
+          fi
+
+      - name: Download, authenticate and safely extract original package
+        if: steps.release.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: suslik2-canonical-20261015
+          ASSET_NAME: SUSLIK2-CANONICAL-Windows-2026-10-15.zip
+          EXPECTED_SHA256: f863a06e08118460d5fdca57653430bdd277929969cd436a95f4885621621c8c
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/suslik2-release" "$RUNNER_TEMP/suslik2-unpacked"
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "$ASSET_NAME" --dir "$RUNNER_TEMP/suslik2-release"
+          zip="$RUNNER_TEMP/suslik2-release/$ASSET_NAME"
+          test -f "$zip"
+          printf '%s  %s\n' "$EXPECTED_SHA256" "$zip" | sha256sum -c -
+          unzip -tqq "$zip"
+          python3 - "$zip" "$RUNNER_TEMP/suslik2-unpacked" <<'PYTHON'
+          from pathlib import Path
+          import sys, zipfile
+          file, root = sys.argv[1:]
+          with zipfile.ZipFile(file) as archive:
+              entries = archive.infolist()
+              if len(entries) != 103:
+                  raise SystemExit(f'Expected exactly 103 files, got {len(entries)}')
+              for item in entries:
+                  path = Path(item.filename)
+                  if (not item.filename.startswith('suslik-2/')
+                      or '..' in path.parts
+                      or path.is_absolute()
+                      or item.is_dir()
+                      or (item.external_attr >> 16) & 0o170000 == 0o120000):
+                      raise SystemExit(f'Unsafe ZIP entry: {item.filename}')
+              archive.extractall(root)
+          PYTHON
+          cd "$RUNNER_TEMP/suslik2-unpacked/suslik-2"
+          grep -v '^#' FILES_SHA256.txt | sha256sum -c --status
+          test -f assets/undead-farm/shift-summer.png
+          test -f assets/undead-farm/shift-autumn.png
+          test -f assets/undead-farm/shift-winter.png
+          test -f assets/undead-farm/shift-spring.png
+          test -f assets/music/The_Ghoul_s_Night_Shift.mp3
+          test -f gameplay-ui.js
+          test -f gameplay-system.js
+          test -f music-director.mjs
+
+      - name: Test the actual playable source (85 tests)
+        if: steps.release.outputs.found == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run tests and publish a canonical Git branch, never main
+        if: steps.release.outputs.found == 'true'
+        env:
+          TARGET_BRANCH: suslik-2/portable-canonical-20261015
+          EXPECTED_SHA256: f863a06e08118460d5fdca57653430bdd277929969cd436a95f4885621621c8c
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/suslik2-unpacked/suslik-2"
+          node --test tests/*.test.mjs > "$RUNNER_TEMP/suslik2-tests.txt"
+          grep -q '^# tests 85$' "$RUNNER_TEMP/suslik2-tests.txt"
+          grep -q '^# pass 85$' "$RUNNER_TEMP/suslik2-tests.txt"
+          grep -q '^# fail 0$' "$RUNNER_TEMP/suslik2-tests.txt"
+          cd "$GITHUB_WORKSPACE"
+          # Never touch the default branch. If target exists, fail rather than overwrite history.
+          if git ls-remote --exit-code --heads origin "$TARGET_BRANCH" >/dev/null 2>&1; then
+            echo "::error::Canonical branch already exists; refusing to overwrite."
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/suslik2-docs"
+          for doc in PROJECT_MEMORY.md PROJECT_AUTHORED_SCENES.md \
+            PROJECT_HANDOFF_STATUS.md QA_HANDOFF_20261015.md \
+            NEXT_CHAT_REPO_HANDOFF_20261015.md UNDEAD_FARM_SOURCE_REVIEW_20261015.md \
+            UNDEAD_FARM_WINDOW_INTEGRATION_20261015.md \
+            STREET_SLEEP_INTEGRATION.md COMBAT_INTEGRATION.md \
+            FAR_FOREST_INTEGRATION.md FOREMAN_NIGHT_TRAINING.md \
+            FOREMAN_SPEARS_INTEGRATION.md; do
+            if test -f "suslik-2/$doc"; then cp "suslik-2/$doc" "$RUNNER_TEMP/suslik2-docs/$doc"; fi
+          done
+          rm -rf suslik-2
+          cp -a "$RUNNER_TEMP/suslik2-unpacked/suslik-2" ./suslik-2
+          cp -n "$RUNNER_TEMP/suslik2-docs/"*.md suslik-2/ || true
+          cat > suslik-2/CANONICAL_GITHUB_SOURCE.md <<EOF
+          # SUSLIK 2 — проверенный единый GitHub-источник
+          
+          Эта ветка опубликована автоматической загрузкой **полного проверенного авторского ZIP**.
+          Ветка: \`$TARGET_BRANCH\`.
+          SHA-256 исходного ZIP: \`$EXPECTED_SHA256\`.
+          Исходный состав: **103 файла**, включая 4 сезонных PNG и оригинальный MP3 фермы.
+          Проверены содержимое ZIP по SHA-256 и **85/85 тестов** перед загрузкой.
+          \`main\` не изменялся. История старой игры сохранена.
+          
+          **Новые чаты:** начиная отсюда, читать \`START_HERE_ANY_CHAT.md\`,
+          \`PROJECT_MEMORY.md\` и далее актуальные \`gameplay-ui.js\`,
+          \`gameplay-system.js\`, \`work-rules.js\`, \`offline.js\`,
+          \`content/*.json\`. Запуск \`npm test\`. Для изменения JSON обновлять
+          \`content/offline-content.js\` через \`node tools/rebuild-offline-content.mjs\`.
+          Не работать по старому тестовому \`map.html\` / \`src.js\`.
+          EOF
+          # Preserve the existing author's onboarding file; mark it with the published source.
+          printf '\n## GitHub publication complete\nFull published source: \`%s\`, release ZIP SHA-256 \`%s\`.\n' \
+            "$TARGET_BRANCH" "$EXPECTED_SHA256" >> suslik-2/START_HERE_ANY_CHAT.md
+          git switch -c "$TARGET_BRANCH"
+          git add -A suslik-2
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m 'feat(suslik-2): publish verified full portable Windows source and zombie farm media'
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          echo "Complete source committed to https://github.com/$GITHUB_REPOSITORY/tree/$TARGET_BRANCH/suslik-2"
