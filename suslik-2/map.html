@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#171c18"><title>SUSLIK 2 — карта (тестовый экран)</title>
-<link rel="stylesheet" href="map.css"><script type="module" src="map.mjs"></script>
+<link rel="stylesheet" href="map.css"><link rel="stylesheet" href="undead-farm.css">
+<script defer src="undead-farm-core.js"></script><script defer src="undead-farm-ui.js"></script><script type="module" src="map.mjs"></script>
 </head>
 <body>
 <main class="map-page">
@@ -22,4 +23,5 @@
 <p class="eyebrow">ТЕСТ ОБЛАСТИ НАЖАТИЯ</p><h2 id="location-dialog-title"></h2>
 <p>Экран этой профессии ещё не создан. Открытие тестового окна не меняет энергию или сохранение.</p>
 <small id="location-dialog-id"></small></section></div>
+<div id="undead-farm-dialog" class="undead-farm-backdrop" role="dialog" aria-modal="true" aria-label="Работа на ферме зомби" hidden><div id="undead-farm-panel"></div></div>
 </body></html>
