@@ -22,6 +22,7 @@ function openFarm(){
    readState:()=>shared.readState(),
    commitOrdinaryPaidShift:r=>shared.commitOrdinaryPaidShift(r),
    setFarmView:v=>shared.setFarmView(v),
+   requestMusicCue: typeof shared.requestMusicCue === 'function' ? cue=>shared.requestMusicCue(cue) : undefined,
    goToMap:()=>{shared.goToMap();closeFarm();}
  } : {goToMap:closeFarm}; // The map-only route is read-only.
  farmWindow=globalThis.SUSLIK2UndeadFarmUI.mount(farmPanel,farmHost);
