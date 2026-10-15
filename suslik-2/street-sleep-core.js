@@ -8,11 +8,15 @@
   function integer(v) { return Number.isInteger(v) && v >= 0; }
   function prepare(options) {
     if (!options || typeof options !== 'object') throw Error('street sleep: options required');
-    const {nightId, energyMax, committedNightIds} = options;
+    const {nightId, energyMax, groomingCurrent, groomingMinimum, committedNightIds} = options;
     if (typeof nightId !== 'string' || !nightId.trim()) throw Error('street sleep: nightId required');
     if (!integer(energyMax) || energyMax < 1) throw Error('street sleep: invalid maximum energy');
+    if (!integer(groomingMinimum) || !integer(groomingCurrent) || groomingCurrent < groomingMinimum) {
+      throw Error('street sleep: invalid grooming or its effective minimum');
+    }
     if (!Array.isArray(committedNightIds)) throw Error('street sleep: night ledger required');
     if (committedNightIds.includes(nightId)) return {kind: 'already-committed', nightId};
+    const groomingOnWake = Math.max(groomingMinimum, groomingCurrent - 1);
     // Spend 0 gold and set next-day energy to max(0, normal current maximum - 1).
     // The current max is preserved for other sleep types and later nights.
     return Object.freeze({
@@ -21,6 +25,9 @@
       goldCost: 0,
       energyOnWake: Math.max(0, energyMax - 1),
       energyMaximumUnchanged: energyMax,
+      groomingOnWake,
+      groomingDelta: groomingOnWake - groomingCurrent,
+      groomingMinimum,
       returnScreen: 'map',
       wakeButton: 'Проснуться',
       musicMode: 'normal-sleep',
@@ -33,13 +40,17 @@
       throw Error('street sleep: requires real host atomic night-commit callback');
     }
     // The host must atomically: verify nightId unused, run its usual night/day
-    // rollover & HP/mana refill, set waking energyOnWake, persist the nightId,
+    // rollover & HP/mana refill, set waking energyOnWake and groomingOnWake,
+    // respect the live minimum, persist the nightId,
     // and return a saved scene. Retrying same night must return its prior scene.
     return callbacks.commitNormalNight({
       nightId: transition.nightId,
       sleepKind: KEY,
       goldCost: 0,
       energyOnWake: transition.energyOnWake,
+      groomingOnWake: transition.groomingOnWake,
+      groomingDelta: transition.groomingDelta,
+      groomingMinimum: transition.groomingMinimum,
       sceneId: 'street-sleep-result',
       musicMode: 'normal-sleep',
       secretBranchHook: 'slave',
