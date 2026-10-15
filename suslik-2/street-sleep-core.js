@@ -5,18 +5,19 @@
 (function(root) {
   'use strict';
   const KEY = 'streetSleep';
+  const GROOMING_MINIMUM = 1; // Canonical rule: stat minimum is always exactly 1.
   function integer(v) { return Number.isInteger(v) && v >= 0; }
   function prepare(options) {
     if (!options || typeof options !== 'object') throw Error('street sleep: options required');
-    const {nightId, energyMax, groomingCurrent, groomingMinimum, committedNightIds} = options;
+    const {nightId, energyMax, groomingCurrent, committedNightIds} = options;
     if (typeof nightId !== 'string' || !nightId.trim()) throw Error('street sleep: nightId required');
     if (!integer(energyMax) || energyMax < 1) throw Error('street sleep: invalid maximum energy');
-    if (!integer(groomingMinimum) || !integer(groomingCurrent) || groomingCurrent < groomingMinimum) {
-      throw Error('street sleep: invalid grooming or its effective minimum');
+    if (!integer(groomingCurrent) || groomingCurrent < GROOMING_MINIMUM) {
+      throw Error('street sleep: grooming must be an integer at least 1');
     }
     if (!Array.isArray(committedNightIds)) throw Error('street sleep: night ledger required');
     if (committedNightIds.includes(nightId)) return {kind: 'already-committed', nightId};
-    const groomingOnWake = Math.max(groomingMinimum, groomingCurrent - 1);
+    const groomingOnWake = Math.max(GROOMING_MINIMUM, groomingCurrent - 1);
     // Spend 0 gold and set next-day energy to max(0, normal current maximum - 1).
     // The current max is preserved for other sleep types and later nights.
     return Object.freeze({
@@ -27,7 +28,7 @@
       energyMaximumUnchanged: energyMax,
       groomingOnWake,
       groomingDelta: groomingOnWake - groomingCurrent,
-      groomingMinimum,
+      groomingMinimum: GROOMING_MINIMUM,
       returnScreen: 'map',
       wakeButton: 'Проснуться',
       musicMode: 'normal-sleep',
@@ -41,7 +42,7 @@
     }
     // The host must atomically: verify nightId unused, run its usual night/day
     // rollover & HP/mana refill, set waking energyOnWake and groomingOnWake,
-    // respect the live minimum, persist the nightId,
+    // respect the fixed minimum 1, persist the nightId,
     // and return a saved scene. Retrying same night must return its prior scene.
     return callbacks.commitNormalNight({
       nightId: transition.nightId,
