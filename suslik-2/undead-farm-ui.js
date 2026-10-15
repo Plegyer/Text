@@ -32,6 +32,9 @@ function mount(container,adapter){
  const alert=(value)=>{const paragraph=el('p','undead-farm-status',value);paragraph.setAttribute('role','status');return paragraph;};
  function close(){if(adapter&&typeof adapter.goToMap==='function')adapter.goToMap();else{container.replaceChildren();container.hidden=true;}}
  function render(){
+  // Request the farm cue only once on entering this window. The shared music
+  // director owns playback, looping, volume, and restoration of map music.
+  if(!wasOpened&&integrated&&typeof adapter.requestMusicCue==='function')adapter.requestMusicCue('undead-farm');
   const s=read()||previewState;
   if(!labels[s.season])throw Error('farm UI: valid current season required from host');
   const result=s.farmView==='result'?s.farmLastReceipt:null;
