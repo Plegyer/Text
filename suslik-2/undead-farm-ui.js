@@ -1,5 +1,5 @@
 /* SUSLIK 2 farm window. Requires the existing shared gameplay host for paid work.
- * No localStorage, calendar, Audio, alternative stat store, or simulated rewards.
+ * Does not manage persistence, calendar, soundtrack, alternate stats or reward creation.
  */
 (function(target){
 'use strict';
