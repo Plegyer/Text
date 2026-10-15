@@ -17,7 +17,13 @@ function openFarm(){
  focusBack=document.activeElement;
  // The uploaded artwork and shared gameplay host must be present to perform
  // a paid shift. On this standalone map, never invent Save or give fake gold.
- const farmHost=globalThis.SUSLIK2GameplayHost?.undeadFarm??null;
+ const shared=globalThis.SUSLIK2GameplayHost?.undeadFarm??null;
+ const farmHost=shared ? {
+   readState:()=>shared.readState(),
+   commitOrdinaryPaidShift:r=>shared.commitOrdinaryPaidShift(r),
+   setFarmView:v=>shared.setFarmView(v),
+   goToMap:()=>{shared.goToMap();closeFarm();}
+ } : {goToMap:closeFarm}; // The map-only route is read-only.
  farmWindow=globalThis.SUSLIK2UndeadFarmUI.mount(farmPanel,farmHost);
  farmDialog.hidden=false;farmWindow.open();
 }
