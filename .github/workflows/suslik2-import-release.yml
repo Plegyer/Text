@@ -26,18 +26,36 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Check for exact approved release package
-        id: release
+      - name: Prepare dedicated upload release draft
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: suslik2-canonical-20261015
         shell: bash
         run: |
-          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+          if ! gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
+              --target 'suslik-2/import-recovery-staging-20261015' \
+              --title 'SUSLIK 2 portable canonical 2026-10-15' \
+              --notes 'Verified original game archive, SHA-256 f863a06e08118460d5fdca57653430bdd277929969cd436a95f4885621621c8c. Attach SUSLIK2-CANONICAL-Windows-2026-10-15.zip and publish the release. The staging workflow imports all 103 sources and checks 85 tests in a separate branch; main is never changed.' \
+              --draft
+            echo "::notice::Draft release created. Attach the precise ZIP asset in the Releases page."
+          fi
+
+      - name: Check for exact approved release package
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: suslik2-canonical-20261015
+          ASSET_NAME: SUSLIK2-CANONICAL-Windows-2026-10-15.zip
+        shell: bash
+        run: |
+          found=$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
+            --json assets --jq '.assets[].name' | grep -Fx "$ASSET_NAME" || true)
+          if [[ "$found" == "$ASSET_NAME" ]]; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Release not uploaded yet. Nothing was changed. Upload SUSLIK2-CANONICAL-Windows-2026-10-15.zip into a GitHub Release tagged $RELEASE_TAG, then re-run by pushing RELEASE_IMPORT_TRIGGER.md to this staging branch."
+            echo "::notice::Approved ZIP not yet attached. Upload it in the draft release, then trigger this workflow again; no source has been changed."
           fi
 
       - name: Download, authenticate and safely extract original package
