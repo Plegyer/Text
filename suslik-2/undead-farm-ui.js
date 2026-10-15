@@ -24,13 +24,13 @@ function changes(deltas){
 }
 function mount(container,adapter){
  if(!container||typeof container.replaceChildren!=='function')throw TypeError('farm UI: container required');
- let pending=false,wasOpened=false;
+ let pending=false,wasOpened=false,errorMessage='';
  const core=target.SUSLIK2UndeadFarm;if(!core)throw Error('farm UI: farm core not loaded');
  const integrated=!!adapter&&['readState','commitOrdinaryPaidShift','setFarmView','goToMap'].every(k=>typeof adapter[k]==='function');
  const previewState={season:'summer',energy:0,maxEnergy:3,stats:{strength:1,endurance:1,reason:1,magic:1},lust:0,lustActivationCount:0,committedShiftIds:[],farmView:'work'};
  function read(){return integrated?adapter.readState():previewState;}
  const alert=(value)=>{const paragraph=el('p','undead-farm-status',value);paragraph.setAttribute('role','status');return paragraph;};
- function close(){if(integrated)adapter.goToMap();else{container.replaceChildren();container.hidden=true;}}
+ function close(){if(adapter&&typeof adapter.goToMap==='function')adapter.goToMap();else{container.replaceChildren();container.hidden=true;}}
  function render(){
   const s=read()||previewState;
   if(!labels[s.season])throw Error('farm UI: valid current season required from host');
@@ -61,22 +61,23 @@ function mount(container,adapter){
   }else{
    controls.append(btn('Работать',async()=>{
      if(!integrated||pending)return;
-     pending=true;render();
+     pending=true;errorMessage='';render();
      try{
        const current=adapter.readState();
        const packet={...current,shiftId:current.nextShiftId};
        const updated=await core.settle(packet,{committedShiftIds:current.committedShiftIds,commitOrdinaryPaidShift:adapter.commitOrdinaryPaidShift});
        if(updated?.kind==='already-committed'){
-         pane.append(alert('Эта смена уже записана в сохранении.'));
+         errorMessage='Эта смена уже записана в сохранении.';
        }else{
          await adapter.setFarmView('result');
        }
-     }catch(err){console.error(err);pane.append(alert('Не удалось завершить смену. Состояние игры не изменено.'));}
+     }catch(err){console.error(err);errorMessage='Не удалось завершить смену. Проверьте сохранение перед повторным нажатием.';}
      finally{pending=false;render();}
    },!integrated||pending||s.energy<1));
   }
   controls.append(btn('Вернуться домой',close));
   pane.append(controls);
+  if(errorMessage)pane.append(alert(errorMessage));
   if(!integrated)pane.append(alert('Экран подключён к тестовой карте. Начисления доступны только через основной игровой хост; пробных денег и энергии здесь нет.'));
   else if(s.energy<1&&!result)pane.append(alert('Нет энергии для работы. Вернитесь на карту.'));
   frame.append(pane);container.replaceChildren(frame);container.hidden=false;wasOpened=true;
