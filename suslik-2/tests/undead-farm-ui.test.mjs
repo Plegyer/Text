@@ -30,6 +30,15 @@ test('preview map has real UI and functional Return, but cannot grant fake work'
  button(root,'Вернуться домой').listeners.click();
  assert.equal(home,1);
 });
+test('farm requests soundtrack once per window from existing host, not on every rerender',async()=>{
+ const root=new Node('div');let music=[];
+ const state={season:'spring',energy:0,maxEnergy:3,stats:{strength:1,endurance:1,magic:1,reason:1},lust:0,lustActivationCount:0,committedShiftIds:[],farmView:'work'};
+ const adapter={readState:()=>state,commitOrdinaryPaidShift:()=>{},setFarmView:()=>{},goToMap:()=>{},requestMusicCue:cue=>music.push(cue)};
+ const farm=sandbox.SUSLIK2UndeadFarmUI.mount(root,adapter);
+ farm.open();farm.refresh();farm.refresh();
+ assert.deepEqual(music,['undead-farm']);
+});
+
 test('mounted farm host displays result and continues, without auto-paid entry',async()=>{
  const root=new Node('div');
  let calls=0,goHome=0;
