@@ -5,6 +5,24 @@ const tip=document.getElementById('map-tooltip');
 const modal=document.getElementById('location-dialog');
 const toggle=document.getElementById('preview-switch');
 const info=document.getElementById('map-description');
+const farmDialog=document.getElementById('undead-farm-dialog');
+const farmPanel=document.getElementById('undead-farm-panel');
+let farmWindow=null;
+function closeFarm(){
+ if(farmDialog.hidden)return;
+ farmDialog.hidden=true;farmPanel.replaceChildren();farmWindow=null;
+ if(focusBack?.isConnected)focusBack.focus();
+}
+function openFarm(){
+ focusBack=document.activeElement;
+ // The uploaded artwork and shared gameplay host must be present to perform
+ // a paid shift. On this standalone map, never invent Save or give fake gold.
+ const farmHost=globalThis.SUSLIK2GameplayHost?.undeadFarm??null;
+ farmWindow=globalThis.SUSLIK2UndeadFarmUI.mount(farmPanel,farmHost);
+ farmDialog.hidden=false;farmWindow.open();
+}
+farmDialog.addEventListener('click',e=>{if(e.target===farmDialog)closeFarm();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!farmDialog.hidden)closeFarm();});
 let map,preview=false,unlocked=new Set(),onOpen=null,focusBack=null;
 const svg=(tag,attrs={})=>{const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);return el;};
 function rect(el,r){for(const [k,v] of Object.entries({x:r.x,y:r.y,width:r.w,height:r.h}))el.setAttribute(k,v);return el;}
@@ -14,6 +32,7 @@ function closeDialog(){modal.hidden=true;if(focusBack?.isConnected)focusBack.foc
 function openLocation(loc){
  if(!loc.image||!unlocked.has(loc.id))return;
  if(onOpen){onOpen(loc.id);return;}
+ if(loc.id==='undead_farm'){openFarm();return;}
  focusBack=document.activeElement;
  document.getElementById('location-dialog-title').textContent=loc.name;
  document.getElementById('location-dialog-id').textContent='ID: '+loc.id;
