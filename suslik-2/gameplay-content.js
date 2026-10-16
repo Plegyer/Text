@@ -5,6 +5,7 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
   shift50:'assets/events/sawmill-50.png',
   foreman:'assets/events/sawmill-15.png',
   goblinEncounter:'assets/events/goblin-encounter.png',
+  undeadFarmOwner05:'assets/events/undead-farm-owner-05.png',
   hero:'assets/combat/hero-standard.png',
   goblin:'assets/combat/goblin.png',
   room:'assets/night/room.png',street:'assets/night/street.png',satyrWork:'assets/night/satyr-work.png',
@@ -28,6 +29,9 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
   ]}
  },
  text:{
+  undeadFarmOwner05:`— Уууу... аааргх... — проскрипел стоявший перед Амалией зомби. — Копать... носить... работать... ррааар...
+— Знаю-знаю, — понимающе кивнула Амалия. — Всё детство на ферме провела. Бери больше — кидай дальше.
+— Уааааа... Девошка умный... Кидай-носи... Уаааарх! — одобрительно прохрипел зомби.`,
   shift15:`К Амалии подошёл кряжистый гном, больше похожий на дварфа.
 — Эй, красавица, я тут это... давно за тобой наблюдаю. И это... Вижу твоё... ну, это, — сказал он, поглядывая на её попу, — трудолюбие твоё... Ну да. Трудолюбие.
 — Ага, — понимающе кивнула Амалия. — Я очень выносливая, если ты понимаешь, о чём я.
