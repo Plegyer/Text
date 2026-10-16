@@ -1,0 +1,31 @@
+name: SUSLIK 2 canonical farm owner tests
+
+on:
+  push:
+    branches:
+      - 'suslik-2/portable-canonical-20261015'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run full SUSLIK 2 suite including owner encounter
+        working-directory: suslik-2
+        run: npm test
+      - name: Check that new authored image is either exact or explicitly pending
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -f suslik-2/assets/events/undead-farm-owner-05.png; then
+            printf '%s  %s\n' '493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13' 'suslik-2/assets/events/undead-farm-owner-05.png' | sha256sum -c -
+          else
+            echo "::warning::NEW owner-05 PNG is not in GitHub yet. Original canonical art and music remain unchanged."
+          fi

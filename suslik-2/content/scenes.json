@@ -315,6 +315,11 @@
       "kind": "work",
       "workId": "undead_farm",
       "music": "farm"
+    },
+    "undead-farm-owner-05": {
+      "kind": "panel",
+      "actions": [],
+      "music": "farm"
     }
   }
 }
