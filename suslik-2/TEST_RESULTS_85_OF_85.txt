@@ -1,0 +1,6 @@
+SUSLIK 2 — reconstructed Windows portable plus zombie farm, 15 October 2026
+# tests 85
+# pass 85
+# fail 0
+# duration_ms 436.531003
+Browser (Chromium, inline injection): all 4 seasonal images and map→work→result→return transitions checked, no JS errors. Browser network navigation blocked by host; Windows file:// runtime not physically tested.

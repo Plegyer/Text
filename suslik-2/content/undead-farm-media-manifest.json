@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "purpose": "Live portable build assets; verified against source upload",
+  "seasons": {
+    "summer": {
+      "file": "assets/undead-farm/shift-summer.png",
+      "source": "изображение(20261015-114638).png",
+      "bytes": 3498983,
+      "sha256": "485437e077b7e598a5840feeeef9f56199ff4a694ec572921e12142a13cea52a"
+    },
+    "autumn": {
+      "file": "assets/undead-farm/shift-autumn.png",
+      "source": "изображение(20261015-114650).png",
+      "bytes": 3446340,
+      "sha256": "ed2dd63e3b89457099457752da5783e775a4c8d5a5065be4638d33e58e033d74"
+    },
+    "winter": {
+      "file": "assets/undead-farm/shift-winter.png",
+      "source": "изображение(20261015-114654).png",
+      "bytes": 3386483,
+      "sha256": "4eb331e722f20634847dd934b801cdab858db511de16ef4d660dc682d9d8d0fd"
+    },
+    "spring": {
+      "file": "assets/undead-farm/shift-spring.png",
+      "source": "изображение(20261015-114702).png",
+      "bytes": 3470876,
+      "sha256": "b746f4a10b4b33f28ef8eed42549e2fb616cd82efa32a231c6be826942c39e66"
+    }
+  },
+  "music": {
+    "file": "assets/music/The_Ghoul_s_Night_Shift.mp3",
+    "source": "The_Ghoul_s_Night_Shift.mp3",
+    "bytes": 1528329,
+    "sha256": "0359e9335bce8881b672d338667c806e36b2c1199e58f82821da7b159c2f9d8d"
+  },
+  "other": {
+    "streetNight": "assets/night/street.png"
+  }
+}

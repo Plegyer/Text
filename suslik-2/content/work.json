@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "initial": {
+    "energy": 3,
+    "energyMax": 3,
+    "lust": 5
+  },
+  "seasons": [
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+  ],
+  "daysPerSeason": 10,
+  "sawmill": {
+    "id": "lumber.shift",
+    "locationId": "sawmill",
+    "energyCost": 1,
+    "wage": {
+      "base": 35,
+      "weights": [
+        {
+          "stat": "strength",
+          "factor": 0.5
+        },
+        {
+          "stat": "endurance",
+          "factor": 0.25
+        }
+      ],
+      "cap": 120,
+      "rounding": "Math.round",
+      "calculation": "before-effects"
+    },
+    "seasonal": {
+      "spring": {
+        "image": "assets/work/sawmill/spring.png",
+        "imageId": "MEDIA.WORK.SAWMILL.SPRING.001",
+        "effects": [
+          {
+            "stat": "strength",
+            "delta": 1
+          },
+          {
+            "stat": "endurance",
+            "delta": 1
+          }
+        ]
+      },
+      "summer": {
+        "image": "assets/work/sawmill/summer.png",
+        "imageId": "MEDIA.WORK.SAWMILL.SUMMER.001",
+        "effects": [
+          {
+            "stat": "dexterity",
+            "delta": 1
+          },
+          {
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "stat": "grooming",
+            "delta": -1
+          }
+        ]
+      },
+      "autumn": {
+        "image": "assets/work/sawmill/autumn.png",
+        "imageId": "MEDIA.WORK.SAWMILL.AUTUMN.001",
+        "effects": [
+          {
+            "stat": "charm",
+            "delta": 1
+          }
+        ]
+      },
+      "winter": {
+        "image": "assets/work/sawmill/winter.png",
+        "imageId": "MEDIA.WORK.SAWMILL.WINTER.001",
+        "effects": [
+          {
+            "stat": "lust",
+            "delta": 2
+          },
+          {
+            "stat": "strength",
+            "delta": -1
+          }
+        ]
+      }
+    }
+  },
+  "locales": {
+    "ru": {
+      "location": "Лесопилка",
+      "season": "Сезон",
+      "seasons": {
+        "spring": "Весна",
+        "summer": "Лето",
+        "autumn": "Осень",
+        "winter": "Зима"
+      },
+      "energy": "Энергия",
+      "wage": "Заработано за смену",
+      "earned": "Заработано всего",
+      "statChange": "Изменения характеристик",
+      "continueShift": "Продолжить смену",
+      "returnToCity": "Вернуться в город",
+      "noEnergy": "Недостаточно энергии для новой смены.",
+      "unavailable": "Работа сейчас недоступна.",
+      "moneyUnit": "монет",
+      "imageAlt": {
+        "spring": "Амалия переносит поленья на весенней лесопилке",
+        "summer": "Амалия рубит дерево на летней лесопилке",
+        "autumn": "Амалия укладывает брёвна на осенней лесопилке",
+        "winter": "Амалия пилит бревно на зимней лесопилке"
+      }
+    },
+    "en": {
+      "location": "Sawmill",
+      "season": "Season",
+      "seasons": {
+        "spring": "Spring",
+        "summer": "Summer",
+        "autumn": "Autumn",
+        "winter": "Winter"
+      },
+      "energy": "Energy",
+      "wage": "Earned this shift",
+      "earned": "Total earned",
+      "statChange": "Attribute changes",
+      "continueShift": "Continue shift",
+      "returnToCity": "Return to town",
+      "noEnergy": "Not enough energy for another shift.",
+      "unavailable": "Work is currently unavailable.",
+      "moneyUnit": "coins",
+      "imageAlt": {
+        "spring": "Amalia carries firewood at a spring sawmill",
+        "summer": "Amalia chops a tree at a summer sawmill",
+        "autumn": "Amalia stacks logs at an autumn sawmill",
+        "winter": "Amalia saws a log at a winter sawmill"
+      }
+    }
+  },
+  "farm": {
+    "id": "undead-farm.shift",
+    "locationId": "undead_farm",
+    "energyCost": 1,
+    "wage": {
+      "base": 37,
+      "weights": [
+        {
+          "stat": "endurance",
+          "factor": 0.3
+        },
+        {
+          "stat": "magic",
+          "factor": 0.3
+        },
+        {
+          "stat": "reason",
+          "factor": 0.2
+        }
+      ],
+      "cap": 120,
+      "rounding": "Math.round",
+      "calculation": "before-effects"
+    },
+    "seasonal": {
+      "spring": {
+        "image": "assets/undead-farm/shift-spring.png",
+        "imageId": "MEDIA.WORK.UNDEAD_FARM.SPRING.001",
+        "effects": [
+          {
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "stat": "magic",
+            "delta": 1
+          },
+          {
+            "stat": "reason",
+            "delta": -1
+          }
+        ]
+      },
+      "summer": {
+        "image": "assets/undead-farm/shift-summer.png",
+        "imageId": "MEDIA.WORK.UNDEAD_FARM.SUMMER.001",
+        "effects": [
+          {
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "stat": "strength",
+            "delta": 1
+          }
+        ]
+      },
+      "autumn": {
+        "image": "assets/undead-farm/shift-autumn.png",
+        "imageId": "MEDIA.WORK.UNDEAD_FARM.AUTUMN.001",
+        "effects": [
+          {
+            "stat": "endurance",
+            "delta": 1
+          },
+          {
+            "stat": "reason",
+            "delta": 1
+          },
+          {
+            "stat": "strength",
+            "delta": -1
+          }
+        ]
+      },
+      "winter": {
+        "image": "assets/undead-farm/shift-winter.png",
+        "imageId": "MEDIA.WORK.UNDEAD_FARM.WINTER.001",
+        "effects": [
+          {
+            "stat": "magic",
+            "delta": 1
+          },
+          {
+            "stat": "reason",
+            "delta": 1
+          }
+        ]
+      }
+    },
+    "items": [],
+    "endings": []
+  }
+}

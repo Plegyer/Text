@@ -2,7 +2,20 @@
   "version": 1,
   "initialValue": 1,
   "allocationPoints": 10,
-  "stats": ["strength", "endurance", "dexterity", "reason", "magic", "creativity", "wits", "charm", "sociability", "manners", "grooming", "sexuality"],
+  "stats": [
+    "strength",
+    "endurance",
+    "dexterity",
+    "reason",
+    "magic",
+    "creativity",
+    "wits",
+    "charm",
+    "sociability",
+    "manners",
+    "grooming",
+    "sexuality"
+  ],
   "locales": {
     "ru": {
       "splashAlt": "Проект «Белый суслик»: белый суслик между современным городом и волшебным миром",
@@ -25,11 +38,29 @@
       "bonusTitle": "Выбор стартового бонуса",
       "mediaMissing": "Не найдено изображение",
       "stats": {
-        "strength": "Сила", "endurance": "Выносливость", "dexterity": "Ловкость",
-        "reason": "Разум", "magic": "Магия", "creativity": "Творчество",
-        "wits": "Смекалка", "charm": "Обаяние", "sociability": "Общительность",
-        "manners": "Манеры", "grooming": "Ухоженность", "sexuality": "Сексуальность"
-      }
+        "strength": "Сила",
+        "endurance": "Выносливость",
+        "dexterity": "Ловкость",
+        "reason": "Разум",
+        "magic": "Магия",
+        "creativity": "Творчество",
+        "wits": "Смекалка",
+        "charm": "Обаяние",
+        "sociability": "Общительность",
+        "manners": "Манеры",
+        "grooming": "Ухоженность",
+        "sexuality": "Сексуальность"
+      },
+      "musicUnavailable": "Музыка пока недоступна: оригинальный аудиофайл ещё не добавлен.",
+      "newGame": "Новая игра",
+      "confirmNewGameTitle": "Начать новую игру?",
+      "confirmNewGameBody": "Вы уверены? Если продолжить, все ваши сохранения и достижения SUSLIK 2 будут удалены. Новая игра начнётся с обязательного пролога.",
+      "cancelNewGame": "Отмена",
+      "confirmNewGame": "Удалить и начать",
+      "deleteFailed": "Не удалось очистить сохранения. Новая игра не запущена.",
+      "mapTitle": "Карта города",
+      "backToMap": "Вернуться на карту",
+      "mapAssetsMissing": "Не найдены изображения карты. Скопируйте папку assets/map из комплекта GitHub и перезапустите игру."
     },
     "en": {
       "splashAlt": "White Squirrel: a white squirrel between the modern city and a fantasy world",
@@ -52,11 +83,29 @@
       "bonusTitle": "Choose a Starting Bonus",
       "mediaMissing": "Missing image",
       "stats": {
-        "strength": "Strength", "endurance": "Endurance", "dexterity": "Dexterity",
-        "reason": "Reason", "magic": "Magic", "creativity": "Creativity",
-        "wits": "Wits", "charm": "Charm", "sociability": "Sociability",
-        "manners": "Manners", "grooming": "Grooming", "sexuality": "Sexuality"
-      }
+        "strength": "Strength",
+        "endurance": "Endurance",
+        "dexterity": "Dexterity",
+        "reason": "Reason",
+        "magic": "Magic",
+        "creativity": "Creativity",
+        "wits": "Wits",
+        "charm": "Charm",
+        "sociability": "Sociability",
+        "manners": "Manners",
+        "grooming": "Grooming",
+        "sexuality": "Sexuality"
+      },
+      "musicUnavailable": "Music is not yet available: the original audio file has not been added.",
+      "newGame": "New Game",
+      "confirmNewGameTitle": "Start a new game?",
+      "confirmNewGameBody": "Are you sure? Continuing will permanently delete all your SUSLIK 2 saves and achievements. The new game will begin with the mandatory prologue.",
+      "cancelNewGame": "Cancel",
+      "confirmNewGame": "Delete and start",
+      "deleteFailed": "Could not erase game saves. New game has not started.",
+      "mapTitle": "City Map",
+      "backToMap": "Back to map",
+      "mapAssetsMissing": "Map images are missing. Copy assets/map from the GitHub map package and restart the game."
     }
   }
 }

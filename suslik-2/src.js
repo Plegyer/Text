@@ -1,13 +1,14 @@
-import {STORAGE_KEY, initialState, restoreState, adjustStat, resetAllocations, canStart, begin, freshCharacter} from './creation-state.mjs';
+import {STORAGE_KEY, restoreLaunchState, launchPreferencesSnapshot, adjustStat, resetAllocations, canStartPlus, begin, beginPlus, eraseSuslikData, freshCharacter} from './creation-state.mjs';
+import {MusicDirector} from './music-director.mjs';
 
 const root = document.getElementById('game');
-let config, creation, state, revealTimer;
+let config, creation, story, state, music, revealTimer;
 const validScene = id => Object.hasOwn(config.scenes, id);
 const copy = () => creation.locales[state.settings.locale];
-const tr = key => copy()[key] ?? key;
+const tr = key => story?.locales?.[state.settings.locale]?.[key] ?? copy()[key] ?? key;
 
 function persist() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(launchPreferencesSnapshot(state))); }
   catch (_) { /* The game remains interactive if storage is blocked. */ }
 }
 function clearScene() {
@@ -137,7 +138,7 @@ function sceneCreation(scene) {
   checkbox.type = 'checkbox';
   checkbox.checked = state.settings.soundEnabled;
   checkbox.setAttribute('aria-label', tr('soundEnabled'));
-  checkbox.addEventListener('change', () => { state.settings.soundEnabled = checkbox.checked; persist(); render(); });
+  checkbox.addEventListener('change', () => { state.settings.soundEnabled = checkbox.checked; persist(); music.setSettings(state.settings); render(); });
   const mute = controlLabel(tr('soundEnabled'), checkbox);
   settingsGrid.append(mute);
   for (const [key, labelKey] of [['musicVolume', 'music'], ['effectsVolume', 'effects']]) {
@@ -151,25 +152,89 @@ function sceneCreation(scene) {
       state.settings[key] = Number(slider.value);
       output.textContent = slider.value + '%';
       persist();
+      if (key === 'musicVolume') music.setSettings(state.settings);
     });
     const sliderGroup = element('div', 'volume-controls');
     sliderGroup.append(slider, output);
     settingsGrid.append(controlLabel(tr(labelKey), sliderGroup));
   }
   settings.append(settingsGrid);
+  if (music.missing) settings.append(element('p', 'music-unavailable', tr('musicUnavailable')));
   panel.append(settings);
 
-  const start = element('button', 'game-button creation-start', tr(state.meta.startedOnce ? 'nextStart' : 'firstStart'));
-  start.type = 'button';
-  start.dataset.actionId = 'creation-start';
-  start.disabled = !canStart(state);
-  start.addEventListener('click', () => {
-    if (begin(state, scene)) { persist(); render(); }
+  const startActions = element('div', 'creation-start-actions');
+  const newGame = element('button', 'game-button creation-start', tr('newGame'));
+  newGame.type = 'button';
+  newGame.dataset.actionId = 'creation-new-game';
+  newGame.addEventListener('click', () => showNewGameConfirmation(scene));
+  const startPlus = element('button', 'game-button creation-start', tr('nextStart'));
+  startPlus.type = 'button';
+  startPlus.dataset.actionId = 'creation-start-plus';
+  startPlus.disabled = !canStartPlus(state);
+  startPlus.addEventListener('click', () => {
+    if (beginPlus(state, scene)) { persist(); render(); }
   });
-  panel.append(start);
+  startActions.append(newGame, startPlus);
+  panel.append(startActions);
   layout.append(art, panel);
   root.append(layout);
 }
+
+
+function showNewGameConfirmation(scene) {
+  // The destructive action is never triggered merely by opening the prompt.
+  const dialog = element('dialog', 'new-game-dialog');
+  dialog.setAttribute('aria-labelledby', 'new-game-dialog-title');
+  const title = element('h2', '', tr('confirmNewGameTitle'));
+  title.id = 'new-game-dialog-title';
+  const message = element('p', '', tr('confirmNewGameBody'));
+  const actions = element('div', 'new-game-dialog-actions');
+  const cancel = element('button', 'new-game-cancel', tr('cancelNewGame'));
+  cancel.type = 'button';
+  cancel.addEventListener('click', () => dialog.close());
+  const confirm = element('button', 'game-button new-game-confirm', tr('confirmNewGame'));
+  confirm.type = 'button';
+  confirm.dataset.actionId = 'confirm-new-game';
+  confirm.addEventListener('click', () => {
+    // Only our own keys are removed; Portal Life and unrelated site data are untouched.
+    if (!eraseSuslikData(localStorage, sessionStorage)) {
+      message.textContent = tr('deleteFailed');
+      return;
+    }
+    state.meta.completedRuns = 0;
+    if (begin(state, scene)) {
+      dialog.close();
+      persist();
+      render();
+    }
+  });
+  actions.append(cancel, confirm);
+  dialog.append(title, message, actions);
+  dialog.addEventListener('close', () => dialog.remove(), {once: true});
+  document.body.append(dialog);
+  dialog.showModal();
+  cancel.focus();
+}
+
+function sceneStory(scene) {
+  const screen = element('section', 'story-scene');
+  const imagePane = element('div', 'story-art');
+  imagePane.append(media(scene.image, scene.imageId, scene.imageAltKey, 'story-image'));
+  const panel = element('article', 'story-panel');
+  panel.append(element('p', 'story-text', tr(scene.textKey)));
+  const buttons = element('div', 'story-actions');
+  for (const action of scene.actions || []) {
+    const button = element('button', 'game-button story-next', tr(action.labelKey));
+    button.type = 'button';
+    button.dataset.actionId = action.id;
+    button.addEventListener('click', () => changeScene(action.target));
+    buttons.append(button);
+  }
+  panel.append(buttons);
+  screen.append(imagePane, panel);
+  root.append(screen);
+}
+
 function scenePanel(scene) {
   const screen = element('section', 'scene--panel');
   const box = element('div', 'selection-panel');
@@ -186,19 +251,27 @@ function scenePanel(scene) {
 function render() {
   clearScene();
   const scene = config.scenes[state.sceneId];
+  // Unspecified future pre-world screens keep the current cue until an authored change.
+  if (Object.hasOwn(scene, 'music')) music.select(scene.music);
   if (scene.kind === 'image') sceneImage(scene);
   else if (scene.kind === 'creation') sceneCreation(scene);
+  else if (scene.kind === 'story') sceneStory(scene);
   else if (scene.kind === 'panel') scenePanel(scene);
   else throw new Error('Unknown scene kind');
+  root.dataset.ready = 'yes';
 }
 async function run() {
-  const [scenesResponse, creationResponse] = await Promise.all([
+  const [scenesResponse, creationResponse, storyResponse, musicResponse] = await Promise.all([
     fetch('content/scenes.json', {cache: 'no-store'}),
-    fetch('content/creation.json', {cache: 'no-store'})
+    fetch('content/creation.json', {cache: 'no-store'}),
+    fetch('content/story.json', {cache: 'no-store'}),
+    fetch('content/music.json', {cache: 'no-store'})
   ]);
-  if (!scenesResponse.ok || !creationResponse.ok) throw new Error('Game content unavailable');
+  if (!scenesResponse.ok || !creationResponse.ok || !storyResponse.ok || !musicResponse.ok) throw new Error('Game content unavailable');
   config = await scenesResponse.json();
   creation = await creationResponse.json();
+  story = await storyResponse.json();
+  music = new MusicDirector(await musicResponse.json());
   const valid = new Set(Object.keys(config.scenes));
   for (const [id, scene] of Object.entries(config.scenes)) {
     for (const action of scene.actions || []) {
@@ -209,11 +282,28 @@ async function run() {
   }
   let raw = null;
   try { raw = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (_) { /* Clean start. */ }
-  state = restoreState(raw, creation, valid, config.initialScene);
-  if (new URLSearchParams(location.search).has('restart')) {
+  state = restoreLaunchState(raw, creation, valid, config.initialScene);
+  music.setSettings(state.settings);
+  // Do not restart the music on scene redraws. Resume after a user gesture if autoplay was blocked.
+  for (const eventType of ['pointerdown', 'keydown']) {
+    document.addEventListener(eventType, () => music.onUserGesture(), {capture: true});
+  }
+  const params = new URLSearchParams(location.search);
+  if (params.has('replayIntro')) {
+    // Replay the introductory sequence without altering the character or New Start+ history.
+    state.sceneId = 'game-start';
+  } else if (params.has('restart')) {
     state.sceneId = config.initialScene;
     state.character = freshCharacter(creation);
   }
+  // URL-only replay/reset commands are consumed once; normal launches always
+  // begin at the splash, with only preferences and Start+ eligibility retained.
+  if (params.has('replayIntro') || params.has('restart')) {
+    params.delete('replayIntro');
+    params.delete('restart');
+    const query = params.toString();
+    history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
+  }
   persist(); render();
 }
-run().catch(err => { console.error(err); root.textContent = 'Не удалось загрузить игру.'; });
+run().catch(err => { console.error(err); root.textContent = 'Не удалось загрузить игру. Перезапустите SUSLIK 2 или обновите страницу.'; });

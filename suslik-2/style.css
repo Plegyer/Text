@@ -54,3 +54,141 @@ button:focus-visible,select:focus-visible,input:focus-visible { outline: 3px sol
 @media (max-width:700px) { body { overflow:auto; } #game { height:auto; min-height:100dvh; } .creation-scene { min-height:100dvh; height:auto; grid-template-columns:1fr; overflow:visible; } .creation-art { height:min(42vh,380px); } .creation-portrait { object-position:center 32%; } .creation-panel { min-height:690px; height:auto; overflow:visible; padding:20px 14px; } .creation-stats { min-height:365px; } .settings-grid { gap:14px; } }
 @media (max-width:415px) { .creation-title { font-size:23px; } .creation-stats { gap:7px; } .stat-row { grid-template-columns:minmax(0,1fr) 22px 21px 22px; gap:1px; padding:4px; } .stat-name { font-size:10px; } .stat-value { font-size:15px; } .stat-adjust { font-size:16px; } .settings-grid { grid-template-columns:1fr; } }
 @media (prefers-reduced-motion:reduce) { .game-button { transition:none; } }
+
+.music-unavailable { margin: 8px 0 0; color: #e0c39a; font-size: 12px; line-height: 1.35; }
+
+/* Pre-world story panels: author-provided media and editable story content. */
+.story-scene {
+  width: 100%; height: 100%; min-height: 0;
+  display: grid; grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  background: #191521;
+}
+.story-art { min-width: 0; min-height: 0; position: relative; overflow: hidden; background: #1b1a25; }
+.story-image { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center center; }
+.story-panel {
+  position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column;
+  justify-content: center; align-items: stretch;
+  padding: clamp(26px, 5.2vw, 95px);
+  border-left: 2px solid #ad895f;
+  background: radial-gradient(ellipse at 80% 10%, #4b394d 0%, #292033 49%, #1e1925 100%);
+  box-shadow: inset 18px 0 50px #00000044;
+}
+.story-text {
+  width: 100%; max-width: 660px;
+  margin: auto 0;
+  font-size: clamp(19px, 2.1vw, 31px);
+  line-height: 1.65;
+  font-weight: 400;
+  color: #f8ecdb;
+  text-wrap: pretty;
+}
+.story-actions {
+  width: 100%; display: flex; justify-content: center;
+  margin-top: 28px;
+  margin-bottom: clamp(4px, 2.5vh, 25px);
+}
+.story-next { min-width: 180px; }
+@media (max-width: 720px) {
+  .story-scene { display: flex; flex-direction: column; min-height: 100dvh; height: auto; }
+  .story-art { flex: none; height: min(53vh, 650px); }
+  .story-image { object-position: center 44%; }
+  .story-panel { flex: 1; min-height: 40vh; border-left: none; border-top: 2px solid #ad895f; padding: 25px 25px 19px; }
+  .story-text { margin: 0 0 auto; font-size: clamp(18px, 4.5vw, 25px); line-height: 1.55; }
+  .story-actions { margin-top: 24px; margin-bottom: 2px; }
+}
+
+/* Startup should never be a silent empty screen when modules cannot load. */
+.boot-screen { min-height: 100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; padding:26px; background:#100f18; color:#f5e9d7; font:20px/1.45 system-ui,sans-serif; }
+.boot-screen h1 { font-size:28px; font-weight:600; margin:0; }
+.boot-screen p { max-width:600px; margin:0; }
+.boot-screen button { color:#f4e0c3; background:#433049; border:1px solid #c4a77e; border-radius:6px; padding:10px 24px; }
+/* The entire authored dialogue is readable on shorter displays, with Next remaining visible. */
+.story-panel { justify-content:flex-start; padding:clamp(18px,2.3vw,45px); }
+.story-text { flex:1 1 auto; min-height:0; max-width:none; margin:0; padding-right:10px; overflow-y:auto; scrollbar-width:thin; white-space:pre-line; font-size:clamp(17px,1.45vw,23px); line-height:1.48; }
+.story-actions { flex:0 0 auto; margin-top:16px; margin-bottom:0; }
+.story-image[src$=".gif"] { object-fit:contain; background:#15111a; }
+@media (max-width:720px) { .story-panel { min-height:50vh; max-height:none; } .story-text { max-height:48vh; overflow-y:auto; font-size:clamp(17px,4.3vw,22px); } }
+
+/* Creation actions: normal new game on the left, gated Start+ on the right. */
+.creation-start-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; align-self:center; gap:12px; width:100%; }
+.creation-start-actions .creation-start { width:min(44%,225px); flex:1 1 160px; margin:0; }
+.new-game-dialog { width:min(550px,calc(100vw - 32px)); max-height:min(90vh,620px); overflow:auto; border:1px solid #cfac7c; border-radius:12px; background:radial-gradient(ellipse at 80% 0%,#49334a,#211b2b 75%); color:#f8ead5; padding:30px; box-shadow:0 25px 75px #000b; }
+.new-game-dialog::backdrop { background:rgba(7,5,13,.8); }
+.new-game-dialog h2 { font-size:clamp(23px,2.6vw,33px); font-weight:normal; margin:0 0 16px; }
+.new-game-dialog p { font:clamp(15px,1.3vw,18px)/1.55 system-ui,sans-serif; margin:0 0 25px; }
+.new-game-dialog-actions { display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
+.new-game-cancel { background:#292234; border:1px solid #bf9e77; border-radius:8px; color:#f6e5c7; padding:10px 23px; }
+.new-game-confirm { font-size:15px; padding:10px 22px; letter-spacing:0; }
+@media (max-height:680px) and (min-width:701px) { .creation-start-actions .creation-start { min-height:34px; padding:4px 18px; } }
+@media (max-width:415px) { .creation-start-actions { gap:8px; } .creation-start-actions .creation-start { min-width:0; font-size:14px; padding:10px 6px; } }
+
+
+/* In-game map (not the standalone debug preview). Coordinates are SVG viewBox 1672×941. */
+.game-map-screen {width:100%;height:100%;overflow:auto;background:radial-gradient(ellipse at top,#26392f,#111b17 80%);display:flex;flex-direction:column;align-items:center;padding:clamp(12px,2.3vh,22px);gap:12px;}
+.game-map-header {width:min(100%,1700px);text-align:center;}
+.game-map-title {font:normal clamp(25px,3vw,45px) Georgia,serif;color:#ffe3a5;margin:0;}
+.game-map-canvas {width:min(100%,calc((100dvh - 120px)*1672/941));max-width:1700px;border:1px solid #817450;border-radius:10px;overflow:hidden;box-shadow:0 20px 65px #070f0a88;}
+.game-map-svg {display:block;width:100%;height:auto;aspect-ratio:1672/941;background:#1b2920;}
+.game-map-hotspot {cursor:pointer;outline:none;}
+.game-map-hit {fill:transparent;stroke:transparent;pointer-events:all;}
+.game-map-hotspot:hover .game-map-hit,.game-map-hotspot:focus-visible .game-map-hit {stroke:#ffdf85;stroke-width:4;fill:#ffe39e1a;}
+.game-map-missing {max-width:900px;text-align:center;color:#ffe3ac;border:1px solid #caa56b;background:#442b29;padding:14px;font:15px/1.4 system-ui,sans-serif;}
+.game-map-missing[hidden] {display:none;}
+.map-location-dialog {position:fixed;inset:0;background:#000a;z-index:20;display:grid;place-items:center;padding:20px;}
+.map-location-panel {width:min(500px,95vw);text-align:center;background:linear-gradient(#304033,#19241f);border:1px solid #bba273;border-radius:10px;padding:34px;box-shadow:0 20px 60px #0009;}
+.map-location-panel h2 {font:normal 32px Georgia,serif;color:#f8ddb0;margin:0 0 25px;}
+@media(max-width:700px){.game-map-screen{min-height:100dvh;height:auto;padding:8px;justify-content:flex-start;gap:8px}.game-map-canvas{width:100%;}.game-map-header h1{font-size:24px}}
+
+/* Sawmill paid shift: the authored seasonal image and legible earnings share one screen. */
+.work-panel {gap:clamp(8px,1.7vh,18px);overflow-y:auto;}
+.work-title {font:normal clamp(30px,3vw,46px) Georgia,serif;color:#f6dfb2;margin:0;}
+.work-season {font-size:clamp(16px,1.4vw,22px);color:#e4bf8e;margin:0;}
+.work-tally {display:grid;gap:9px;font:clamp(15px,1.3vw,20px)/1.4 system-ui,sans-serif;border:1px solid #8d6d69;border-radius:8px;padding:clamp(12px,1.8vw,23px);background:#261d2c88;}
+.work-tally p {margin:0;}
+.work-subheading {font:normal clamp(21px,2vw,28px) Georgia,serif;color:#f6dfb2;margin:0;}
+.work-stats {display:grid;gap:8px;}
+.work-stat-row {display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 13px;background:#3b2b3a;border:1px solid #73516c;border-radius:6px;font:clamp(14px,1.15vw,18px)/1.35 system-ui,sans-serif;}
+.work-stat-row strong {color:#f4d7ac;font-variant-numeric:tabular-nums;}
+.work-notice {font:15px/1.4 system-ui,sans-serif;color:#f5c8a3;margin:0;}
+.work-actions {flex-wrap:wrap;gap:12px;margin-top:auto;}
+.work-actions .story-next {min-width:min(100%,210px);padding:11px 17px;font-size:clamp(16px,1.4vw,21px);}
+@media(max-width:720px){.work-panel{overflow:visible;min-height:0}.work-actions{margin-top:18px}.work-scene .story-art{height:min(46vh,540px)}}
+/* SUSLIK 2 story additions — portable standalone scene styles. */
+.gameplay-scene .gameplay-panel .story-text {white-space:pre-line;line-height:1.47;overflow:auto;max-height:76vh;}
+.gameplay-actions {display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;}
+.gameplay-button {flex:1 1 170px;}
+.game-map-footer{display:flex;justify-content:flex-end;gap:12px;padding:12px 18px;flex-wrap:wrap;}
+.sleep-dialog .story-actions{display:flex;flex-direction:column;gap:10px;}
+.combat-screen{min-height:85vh;padding:15px;background:linear-gradient(120deg,#251d29,#3d3045);color:#fff1d8;}
+.combat-fighters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.combat-fighter{min-width:0;border:1px solid #947858;border-radius:12px;background:rgba(0,0,0,.25);padding:12px;}
+.combat-fighter .story-image{max-height:58vh;object-fit:contain;width:100%;}
+.combat-fighter h2{text-align:center;font-size:clamp(20px,2vw,29px);}
+.combat-fighter p{font-size:clamp(13px,1.3vw,19px);}
+.combat-meter{margin:6px 0 14px;}.combat-meter-label{display:flex;justify-content:space-between;gap:10px;}
+.combat-meter-track{background:#211d28;border-radius:10px;overflow:hidden;height:13px;margin-top:4px;}
+.combat-meter-fill{height:100%;background:#c85f66;transition:width .15s ease;}
+.combat-meter-fill.mana{background:#6699dd;}
+.combat-history{border:1px solid #a08762;background:rgba(0,0,0,.3);padding:10px 14px;border-radius:10px;margin:12px 0;min-height:48px;}
+.combat-history p{margin:2px 0}.combat-actions{justify-content:center;}
+.combat-outcome{text-align:center}.spell-panel{margin-top:12px;padding:16px;background:#272235;border-radius:10px;}
+.bonus-toggle{padding:20px;text-align:center}.bonus-toggle input{margin-right:12px;}
+@media(max-width:650px){.combat-fighters{grid-template-columns:1fr;gap:8px}.combat-fighter .story-image{max-height:33vh}.gameplay-scene .gameplay-panel .story-text{max-height:50vh}}
+
+/* Scene video (locally supplied): behaves like a scene image, including loop and sound. */
+.story-art .scene-video { width:100%; height:100%; object-fit:contain; background:#15111a; display:block; }
+
+/* 2026-10-15 user acceptance: compact scroll log; buttons must remain visible. */
+.combat-screen{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden;gap:6px;padding:8px 12px;}
+.combat-fighters{flex:1 1 auto;min-height:0;gap:12px;}
+.combat-fighter{min-height:0;display:flex;flex-direction:column;overflow:hidden;padding:7px;}
+.combat-fighter .story-image{flex:1 1 auto;min-height:0;max-height:calc(100dvh - 290px);object-fit:contain;}
+.combat-fighter h2{margin:4px 0;}.combat-meter{margin:3px 0 5px;}
+.combat-history{flex:0 0 67px;height:67px;min-height:0;overflow-y:auto;margin:3px 0;padding:5px 11px;font-size:14px;scrollbar-width:thin;}
+.combat-history p{margin:0;}.combat-actions{flex:0 0 auto;min-height:42px;margin:0;gap:3px;}
+.combat-actions .gameplay-button{flex:1 1 0;min-width:0;padding:7px 5px;font-size:clamp(13px,1.5vw,18px);}
+.game-map-header .map-hud{margin:6px 0;font:clamp(12px,1.2vw,17px)/1.35 system-ui;color:#f8d9a6;}
+.game-map-screen .game-map-footer{gap:7px;justify-content:center;padding:4px;}
+.game-menu-actions{display:flex;flex-direction:column;gap:8px;}
+.work-status{font-size:18px;line-height:1.6;color:#efd6b4;}
+@media(max-width:650px){.combat-screen{height:auto;min-height:100dvh;overflow:visible}.combat-fighters{grid-template-columns:1fr}.combat-fighter .story-image{max-height:28vh}.combat-history{flex:0 0 75px;height:75px;}.combat-actions{flex-wrap:wrap}.combat-actions .gameplay-button{flex:1 1 125px;}}

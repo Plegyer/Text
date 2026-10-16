@@ -8,7 +8,14 @@
       "imageAltKey": "splashAlt",
       "imageId": "MEDIA.SPLASH.001",
       "buttonDelayMs": 2200,
-      "actions": [{"id": "splash-start", "labelKey": "splashStart", "target": "character-selection"}]
+      "actions": [
+        {
+          "id": "splash-start",
+          "labelKey": "splashStart",
+          "target": "character-selection"
+        }
+      ],
+      "music": "menu"
     },
     "character-selection": {
       "kind": "creation",
@@ -16,17 +23,298 @@
       "imageAltKey": "characterAlt",
       "imageId": "MEDIA.CHARACTER_CREATION.001",
       "titleKey": "creationTitle",
-      "actions": [{"id": "creation-start", "firstTarget": "game-start", "subsequentTarget": "bonus-selection"}]
+      "actions": [
+        {
+          "id": "creation-start",
+          "firstTarget": "game-start",
+          "subsequentTarget": "bonus-selection"
+        }
+      ],
+      "music": "preworld"
     },
     "game-start": {
-      "kind": "panel",
-      "titleKey": "gameStartTitle",
-      "actions": []
+      "kind": "story",
+      "image": "assets/preworld-city-01.png",
+      "imageAltKey": "intro01Alt",
+      "imageId": "MEDIA.PREWORLD.CITY.001",
+      "textKey": "intro01Text",
+      "actions": [
+        {
+          "id": "intro01-next",
+          "labelKey": "next",
+          "target": "intro-02"
+        }
+      ],
+      "music": "preworld"
     },
     "bonus-selection": {
       "kind": "panel",
       "titleKey": "bonusTitle",
-      "actions": []
+      "actions": [],
+      "music": "preworld"
+    },
+    "intro-02": {
+      "kind": "story",
+      "image": "assets/preworld-suslik-02.png",
+      "imageAltKey": "intro02Alt",
+      "imageId": "MEDIA.PREWORLD.SUSLIK.002",
+      "textKey": "intro02Text",
+      "actions": [
+        {
+          "id": "intro02-next",
+          "labelKey": "next",
+          "target": "intro-03"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-03": {
+      "kind": "story",
+      "image": "assets/preworld-suslik-03.png",
+      "imageAltKey": "intro03Alt",
+      "imageId": "MEDIA.PREWORLD.SUSLIK.003",
+      "textKey": "intro03Text",
+      "actions": [
+        {
+          "id": "intro03-next",
+          "labelKey": "next",
+          "target": "intro-fall"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-04": {
+      "kind": "story",
+      "image": "assets/preworld-arrival-05.png",
+      "imageAltKey": "intro04Alt",
+      "imageId": "MEDIA.PREWORLD.ARRIVAL.004",
+      "textKey": "intro04Text",
+      "actions": [
+        {
+          "id": "intro04-next",
+          "labelKey": "next",
+          "target": "intro-05"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-05": {
+      "kind": "story",
+      "image": "assets/preworld-choice-06.png",
+      "imageAltKey": "intro05Alt",
+      "imageId": "MEDIA.PREWORLD.SATYR.005",
+      "textKey": "intro05Text",
+      "actions": [
+        {
+          "id": "intro05-allow",
+          "labelKey": "allowTouch",
+          "target": "intro-allow-01"
+        },
+        {
+          "id": "intro05-forbid",
+          "labelKey": "forbidTouch",
+          "target": "intro-forbid-01"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-allow-01": {
+      "kind": "story",
+      "image": "assets/intro-allow-01.gif",
+      "imageAltKey": "allow01Alt",
+      "imageId": "MEDIA.PREWORLD.ALLOW.006",
+      "textKey": "allow01Text",
+      "actions": [
+        {
+          "id": "allow01-next",
+          "labelKey": "next",
+          "target": "intro-shared-02"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-forbid-01": {
+      "kind": "story",
+      "image": "assets/intro-forbid-01.png",
+      "imageAltKey": "forbid01Alt",
+      "imageId": "MEDIA.PREWORLD.FORBID.007",
+      "textKey": "forbid01Text",
+      "actions": [
+        {
+          "id": "forbid01-next",
+          "labelKey": "next",
+          "target": "intro-shared-02"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-shared-02": {
+      "kind": "story",
+      "image": "assets/intro-shared-02.png",
+      "imageAltKey": "shared02Alt",
+      "imageId": "MEDIA.PREWORLD.SHARED.008",
+      "textKey": "shared02Text",
+      "actions": [
+        {
+          "id": "shared02-next",
+          "labelKey": "next",
+          "target": "intro-06"
+        }
+      ],
+      "music": "preworld"
+    },
+    "intro-06": {
+      "kind": "story",
+      "image": "assets/intro-room-03.png",
+      "imageAltKey": "intro06Alt",
+      "imageId": "MEDIA.PREWORLD.ROOM.009",
+      "textKey": "intro06Text",
+      "actions": [
+        {
+          "id": "intro06-next",
+          "labelKey": "next",
+          "target": "game-main"
+        }
+      ],
+      "music": "preworld"
+    },
+    "game-main": {
+      "kind": "map",
+      "titleKey": "mapTitle",
+      "actions": [],
+      "music": "menu"
+    },
+    "intro-fall": {
+      "kind": "story",
+      "image": "assets/preworld-fall-04.png",
+      "imageAltKey": "introFallAlt",
+      "imageId": "MEDIA.PREWORLD.FALL.004",
+      "textKey": "introFallText",
+      "actions": [
+        {
+          "id": "intro-fall-next",
+          "labelKey": "next",
+          "target": "intro-04"
+        }
+      ],
+      "music": "preworld"
+    },
+    "sawmill-work": {
+      "kind": "work",
+      "workId": "sawmill",
+      "music": "menu",
+      "actions": [
+        {
+          "id": "sawmill-continue",
+          "labelKey": "continueShift",
+          "target": "sawmill-work"
+        },
+        {
+          "id": "sawmill-return",
+          "labelKey": "returnToCity",
+          "target": "game-main"
+        }
+      ]
+    },
+    "work-event": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "far-ordinary": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "far-goblin": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "night-room": {
+      "kind": "panel",
+      "actions": [],
+      "music": "night"
+    },
+    "night-street": {
+      "kind": "panel",
+      "actions": [],
+      "music": "night"
+    },
+    "night-satyr": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "combat": {
+      "kind": "panel",
+      "actions": [],
+      "music": "combat"
+    },
+    "combat-defeat": {
+      "kind": "panel",
+      "actions": [],
+      "music": "combat"
+    },
+    "far-permission-pending": {
+      "kind": "panel",
+      "actions": [],
+      "music": "preworld"
+    },
+    "ending-menu": {
+      "kind": "panel",
+      "actions": [],
+      "music": "preworld"
+    },
+    "ending-hard-worker": {
+      "kind": "panel",
+      "actions": [],
+      "music": "preworld"
+    },
+    "far-permission-result": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "foreman-handover": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "night-training": {
+      "kind": "panel",
+      "actions": [],
+      "music": "night"
+    },
+    "ogre-intro": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "ogre-victory": {
+      "kind": "panel",
+      "actions": [],
+      "music": "combat"
+    },
+    "ogre-after": {
+      "kind": "panel",
+      "actions": [],
+      "music": "menu"
+    },
+    "ogre-captive": {
+      "kind": "panel",
+      "actions": [],
+      "music": "preworld"
+    },
+    "ending-foreman-lady": {
+      "kind": "panel",
+      "actions": [],
+      "music": "preworld"
+    },
+    "undead-farm-work": {
+      "kind": "work",
+      "workId": "undead_farm",
+      "music": "farm"
     }
   }
 }

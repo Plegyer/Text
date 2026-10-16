@@ -1,6 +1,24 @@
-/* SUSLIK 2: isolated, versioned creation state. Uses old project stat contract only. */
-export const SAVE_VERSION = 2;
-export const STORAGE_KEY = 'suslik2.save.v1'; // keep previous screen-only saves readable
+/* SUSLIK 2: isolated character state. Never confuse starting or finishing the intro with completing the game. */
+export const SAVE_VERSION = 3;
+export const STORAGE_KEY = 'suslik2.save.v1'; // reuse the existing namespace for migrated settings
+export const GAME_KEY_PREFIX = 'suslik2.';
+
+/** Persist preferences plus only properly earned full-game completions; no scene autosaves. */
+export function launchPreferencesSnapshot(state) {
+  return {
+    version: SAVE_VERSION,
+    settings: {...state.settings},
+    meta: {completedRuns: state.meta.completedRuns}
+  };
+}
+
+/** A launch always begins from the title screen. Legacy startedOnce never unlocks Start+. */
+export function restoreLaunchState(raw, creation, validScenes, initialScene = 'splash') {
+  const state = restoreState(raw, creation, validScenes, initialScene);
+  state.sceneId = initialScene;
+  state.character = freshCharacter(creation);
+  return state;
+}
 
 export function freshCharacter(creation) {
   return {
@@ -14,18 +32,14 @@ export function initialState(creation, initialScene = 'splash') {
     version: SAVE_VERSION,
     sceneId: initialScene,
     character: freshCharacter(creation),
-    meta: { startedOnce: false },
+    meta: { completedRuns: 0 },
     settings: { locale: 'ru', soundEnabled: true, musicVolume: 100, effectsVolume: 100 }
   };
 }
 export function restoreState(raw, creation, validScenes, initialScene = 'splash') {
   const fresh = initialState(creation, initialScene);
   if (!raw || typeof raw !== 'object') return fresh;
-  if (raw.version === 1 && validScenes.has(raw.sceneId)) {
-    fresh.sceneId = raw.sceneId;
-    return fresh;
-  }
-  if (raw.version !== SAVE_VERSION) return fresh;
+  if (![1, 2, SAVE_VERSION].includes(raw.version)) return fresh;
   if (validScenes.has(raw.sceneId)) fresh.sceneId = raw.sceneId;
   if (raw.settings && typeof raw.settings === 'object') {
     fresh.settings.locale = raw.settings.locale === 'en' ? 'en' : 'ru';
@@ -36,7 +50,11 @@ export function restoreState(raw, creation, validScenes, initialScene = 'splash'
       }
     }
   }
-  fresh.meta.startedOnce = raw.meta?.startedOnce === true;
+  // No prior version contained a trustworthy full-game completion flag.
+  if (raw.version === SAVE_VERSION && Number.isSafeInteger(raw.meta?.completedRuns) && raw.meta.completedRuns > 0) {
+    fresh.meta.completedRuns = raw.meta.completedRuns;
+  }
+  // Legacy characters are not resumed on launch; respect integrity if restoreState is used directly.
   const c = raw.character;
   if (c && typeof c === 'object' && c.stats && c.allocated) {
     const values = creation.stats.map(key => [Number(c.stats[key]), Number(c.allocated[key])]);
@@ -68,10 +86,43 @@ export function resetAllocations(state, creation) {
   state.character = freshCharacter(creation);
   return true;
 }
-export function canStart(state) { return state.sceneId === 'character-selection' && state.character.remaining === 0; }
-export function begin(state, scene) {
+
+/** Points are optional. Starting the prologue does not grant New Game+. */
+export function canStart(state) { return state.sceneId === 'character-selection'; }
+export function canStartPlus(state) {
+  return canStart(state) && state.meta.completedRuns > 0;
+}
+export function begin(state, creationScene) {
   if (!canStart(state)) return false;
-  state.sceneId = state.meta.startedOnce ? scene.actions[0].subsequentTarget : scene.actions[0].firstTarget;
-  state.meta.startedOnce = true;
+  state.sceneId = creationScene.actions[0].firstTarget;
+  return true;
+}
+export function beginPlus(state, creationScene) {
+  if (!canStartPlus(state)) return false;
+  state.sceneId = creationScene.actions[0].subsequentTarget;
+  return true;
+}
+
+/** Invoke only from a future author-approved actual game ending (none currently exist). */
+export function recordCompletedRun(state) {
+  if (!Number.isSafeInteger(state.meta.completedRuns) || state.meta.completedRuns < 0) return false;
+  if (state.meta.completedRuns === Number.MAX_SAFE_INTEGER) return false;
+  state.meta.completedRuns += 1;
+  return true;
+}
+
+/** Clear SUSLIK 2 saved games/achievements, not Portal Life or other applications. */
+export function eraseSuslikData(...storages) {
+  for (const storage of storages) {
+    if (!storage) continue;
+    const keys = [];
+    try {
+      for (let i = 0; i < storage.length; i++) {
+        const key = storage.key(i);
+        if (key && key.toLowerCase().startsWith(GAME_KEY_PREFIX)) keys.push(key);
+      }
+      for (const key of keys) storage.removeItem(key);
+    } catch (_) { return false; }
+  }
   return true;
 }

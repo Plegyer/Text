@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "tracks": {
+    "preworld": {
+      "id": "MUSIC.PREWORLD.001",
+      "file": "assets/music/Clockwork Cupcake.mp3",
+      "loop": true,
+      "source": "Provided by author for the complete SUSLIK 2 prologue (2026-10-12)"
+    },
+    "menu": {
+      "id": "MUSIC.MENU.001",
+      "file": "assets/music/Velvet Banana Split.mp3",
+      "loop": true
+    },
+    "night": {
+      "id": "MUSIC.NIGHT.001",
+      "file": "assets/music/Slow_Midnight_Breath.mp3",
+      "loop": true
+    },
+    "combat": {
+      "id": "MUSIC.COMBAT.001",
+      "file": "assets/combat/Shields_Against_the_Sky.mp3",
+      "loop": true
+    },
+    "farm": {
+      "id": "MUSIC.FARM.001",
+      "file": "assets/music/The_Ghoul_s_Night_Shift.mp3",
+      "loop": true,
+      "source": "Author-provided The Ghoul s Night Shift (2026-10-15)"
+    }
+  }
+}

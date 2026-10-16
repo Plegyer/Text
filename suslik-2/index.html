@@ -6,9 +6,35 @@
   <meta name="theme-color" content="#181723">
   <title>SUSLIK 2 — Белый суслик</title>
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="src.js"></script>
+  <script>
+    window.setTimeout(function () {
+      const root = document.getElementById('game');
+      if (!root || root.dataset.ready === 'yes') return;
+      root.replaceChildren();
+      const section = document.createElement('section');
+      section.className = 'boot-screen';
+      const heading = document.createElement('h1');
+      heading.textContent = 'Не удалось загрузить SUSLIK 2';
+      const message = document.createElement('p');
+      message.textContent = 'Проверьте, что папки content и assets находятся рядом с index.html. Затем перезагрузите страницу.';
+      const retry = document.createElement('button');
+      retry.type = 'button';
+      retry.textContent = 'Перезагрузить';
+      retry.addEventListener('click', () => location.reload());
+      section.append(heading, message, retry);
+      root.append(section);
+    }, 8000);
+  </script>
+  <script defer src="content/offline-content.js"></script>
+  <script defer src="gameplay-system.js"></script>
+  <script defer src="content/user-media.local.js"></script>
+  <script defer src="content/user-media-lust.local.js"></script>
+  <script defer src="gameplay-content.js"></script>
+  <script defer src="work-rules.js"></script>
+  <script defer src="gameplay-ui.js"></script>
+  <script defer src="offline.js"></script>
 </head>
 <body>
-  <main id="game" aria-live="polite"></main>
+  <main id="game" aria-live="polite"><section class="boot-screen" role="status">Загрузка SUSLIK 2…</section></main>
 </body>
 </html>
