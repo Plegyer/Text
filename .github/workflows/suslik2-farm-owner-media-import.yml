@@ -66,13 +66,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p suslik-2/assets/events
+          mkdir -p "$RUNNER_TEMP/owner-05"
           gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
             --pattern 'undead-farm-owner-05.png' \
-            --dir 'suslik-2/assets/events'
-          test "$(stat -c %s suslik-2/assets/events/undead-farm-owner-05.png)" -eq 3475661
+            --dir "$RUNNER_TEMP/owner-05"
+          test "$(stat -c %s "$RUNNER_TEMP/owner-05/undead-farm-owner-05.png")" -eq 3475661
           printf '%s  %s\n' '493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13' \
-            'suslik-2/assets/events/undead-farm-owner-05.png' | sha256sum -c -
+            "$RUNNER_TEMP/owner-05/undead-farm-owner-05.png" | sha256sum -c -
 
       - name: Setup Node.js
         if: steps.media.outputs.found == 'true'
@@ -80,41 +80,49 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Run complete tests, then safely publish one canonical branch
+      - name: Test existing feature scene
         if: steps.media.outputs.found == 'true'
-        env:
-          TARGET_BRANCH: suslik-2/portable-canonical-20261015
-          FEATURE_BRANCH: suslik-2/farm-owner-meeting-20261016
         shell: bash
         run: |
           set -euo pipefail
           cd suslik-2
-          npm test > "$RUNNER_TEMP/suslik2-tests.log" 2>&1
-          cat "$RUNNER_TEMP/suslik2-tests.log" | tail -18
-          grep -q '^# fail 0$' "$RUNNER_TEMP/suslik2-tests.log"
+          npm test > "$RUNNER_TEMP/feature-tests.log" 2>&1
+          tail -18 "$RUNNER_TEMP/feature-tests.log"
+          grep -q '^# fail 0$' "$RUNNER_TEMP/feature-tests.log"
+
+      - name: Safely add only original PNG to latest canonical branch
+        if: steps.media.outputs.found == 'true'
+        env:
+          TARGET_BRANCH: suslik-2/portable-canonical-20261015
+          EXPECTED_SHA256: 493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "$TARGET_BRANCH"
+          git switch --detach "origin/$TARGET_BRANCH"
+          # Canonical already contains the reviewed fifth-shift scene.
+          # Do not revert any newer commits from that branch.
+          grep -Fq 'sceneUndeadFarmOwner05' suslik-2/gameplay-ui.js
+          grep -Fq 'undead-farm-owner-05.png' suslik-2/gameplay-content.js
+          grep -Fq 'undead-farm-owner-05' suslik-2/content/scenes.json
+          mkdir -p suslik-2/assets/events
+          cp "$RUNNER_TEMP/owner-05/undead-farm-owner-05.png" \
+            suslik-2/assets/events/undead-farm-owner-05.png
+          printf '%s  %s\n' "$EXPECTED_SHA256" \
+            'suslik-2/assets/events/undead-farm-owner-05.png' | sha256sum -c -
+          cd suslik-2
+          npm test > "$RUNNER_TEMP/canonical-tests.log" 2>&1
+          tail -18 "$RUNNER_TEMP/canonical-tests.log"
+          grep -q '^# fail 0$' "$RUNNER_TEMP/canonical-tests.log"
           cd ..
-          git fetch origin "$TARGET_BRANCH" "$FEATURE_BRANCH"
-          # Refuse to overwrite concurrent development on canonical branch.
-          git merge-base --is-ancestor "origin/$TARGET_BRANCH" HEAD || {
-            echo '::error::Canonical source moved. Need conflict-free integration; no force push.'
-            exit 1
-          }
-          cat >> suslik-2/START_HERE_ANY_CHAT.md <<'EOF'
-
-          ## Пятая оплаченная смена фермы — владелец (16.10.2026)
-
-          Одноразовая обязательная встреча `undead-farm-owner-05` с **точным авторским текстом** и PNG `assets/events/undead-farm-owner-05.png`. После пятой оплаченной смены показывает только «Далее» и возвращает в окно оплаченной работы. `run.farmOwnerMet` сохраняется; дополнительных расходов или наград нет. Музыка `farm`; авторский PNG проверен SHA-256 `493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13`. Реальный код в `gameplay-ui.js`, `gameplay-content.js`, `gameplay-system.js`, `offline.js`, `content/scenes.json`. Общее тестирование успешно. Работать в этой канонической ветке, `main` не трогать.
-          EOF
-          cat >> suslik-2/PROJECT_MEMORY.md <<'EOF'
-
-          ## Авторское событие фермы (16.10.2026) — пятая оплаченная смена
-
-          После пятой оплаченной смены на ферме зомби ровно один раз показывать встречу с хозяином фермы. Текст автора не менять, рисунок `assets/events/undead-farm-owner-05.png`, музыка фермы, одна кнопка «Далее», затем возвращение к результату смены. Без дополнительной зарплаты/энергии и повторного срабатывания, флаг `run.farmOwnerMet`. Проверенный исходник — `FARM_OWNER_ENCOUNTER_HANDOFF_20261016.md`.
-          EOF
-          git add -A suslik-2
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit -m 'feat(suslik-2): ship verified fifth-shift farm owner illustration and scene'
-          # Both pushes must be fast-forward, never force or touch main.
-          git push origin "HEAD:refs/heads/$FEATURE_BRANCH"
-          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
-          echo "Published verified scene and media to $TARGET_BRANCH"
+          git add -- suslik-2/assets/events/undead-farm-owner-05.png
+          if git diff --cached --quiet; then
+            echo 'Exact image is already published on canonical.'
+          else
+            git -c user.name='github-actions[bot]' \
+                -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+                commit -m 'assets(suslik-2): publish verified original zombie-farm owner PNG'
+            # Non-force push: rejects concurrent canonical changes.
+            git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          fi
+          echo "Canonical original owner PNG published at commit $(git rev-parse HEAD)"
