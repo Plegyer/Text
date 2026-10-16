@@ -1,0 +1,120 @@
+name: SUSLIK 2 — publish fifth-shift owner media
+
+on:
+  push:
+    branches:
+      - 'suslik-2/farm-owner-meeting-20261016'
+    paths:
+      - '.github/workflows/suslik2-farm-owner-media-import.yml'
+      - 'suslik-2/FARM_OWNER_MEDIA_IMPORT_TRIGGER.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: suslik2-farm-owner-media-import
+  cancel-in-progress: false
+
+jobs:
+  publish-farm-owner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout complete feature code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Create draft for the original PNG if missing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: suslik2-farm-owner-05-20261016
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
+              --target 'suslik-2/farm-owner-meeting-20261016' \
+              --title 'SUSLIK 2 — Zombie Farm Owner Meeting — 2026-10-16' \
+              --notes 'Original author-approved fifth-shift encounter PNG. Upload undecoded file named undead-farm-owner-05.png, SHA256 493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13, then publish the release. The workflow checks the image and game tests before fast-forward publication to the portable-canonical branch.' \
+              --draft
+          fi
+
+      - name: Check required asset by exact name
+        id: media
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: suslik2-farm-owner-05-20261016
+        shell: bash
+        run: |
+          set -euo pipefail
+          present=$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
+            --json assets --jq '.assets[].name' | grep -Fx 'undead-farm-owner-05.png' || true)
+          if [[ "$present" == 'undead-farm-owner-05.png' ]]; then
+            echo 'found=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'found=false' >> "$GITHUB_OUTPUT"
+            echo '::notice::Author PNG is still pending; do not publish broken game scene.'
+          fi
+
+      - name: Download and authenticate exact original media
+        if: steps.media.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: suslik2-farm-owner-05-20261016
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p suslik-2/assets/events
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern 'undead-farm-owner-05.png' \
+            --dir 'suslik-2/assets/events'
+          test "$(stat -c %s suslik-2/assets/events/undead-farm-owner-05.png)" -eq 3475661
+          printf '%s  %s\n' '493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13' \
+            'suslik-2/assets/events/undead-farm-owner-05.png' | sha256sum -c -
+
+      - name: Setup Node.js
+        if: steps.media.outputs.found == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run complete tests, then safely publish one canonical branch
+        if: steps.media.outputs.found == 'true'
+        env:
+          TARGET_BRANCH: suslik-2/portable-canonical-20261015
+          FEATURE_BRANCH: suslik-2/farm-owner-meeting-20261016
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd suslik-2
+          npm test > "$RUNNER_TEMP/suslik2-tests.log" 2>&1
+          cat "$RUNNER_TEMP/suslik2-tests.log" | tail -18
+          grep -q '^# fail 0$' "$RUNNER_TEMP/suslik2-tests.log"
+          cd ..
+          git fetch origin "$TARGET_BRANCH" "$FEATURE_BRANCH"
+          # Refuse to overwrite concurrent development on canonical branch.
+          git merge-base --is-ancestor "origin/$TARGET_BRANCH" HEAD || {
+            echo '::error::Canonical source moved. Need conflict-free integration; no force push.'
+            exit 1
+          }
+          cat >> suslik-2/START_HERE_ANY_CHAT.md <<'EOF'
+
+          ## Пятая оплаченная смена фермы — владелец (16.10.2026)
+
+          Одноразовая обязательная встреча `undead-farm-owner-05` с **точным авторским текстом** и PNG `assets/events/undead-farm-owner-05.png`. После пятой оплаченной смены показывает только «Далее» и возвращает в окно оплаченной работы. `run.farmOwnerMet` сохраняется; дополнительных расходов или наград нет. Музыка `farm`; авторский PNG проверен SHA-256 `493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13`. Реальный код в `gameplay-ui.js`, `gameplay-content.js`, `gameplay-system.js`, `offline.js`, `content/scenes.json`. Общее тестирование успешно. Работать в этой канонической ветке, `main` не трогать.
+          EOF
+          cat >> suslik-2/PROJECT_MEMORY.md <<'EOF'
+
+          ## Авторское событие фермы (16.10.2026) — пятая оплаченная смена
+
+          После пятой оплаченной смены на ферме зомби ровно один раз показывать встречу с хозяином фермы. Текст автора не менять, рисунок `assets/events/undead-farm-owner-05.png`, музыка фермы, одна кнопка «Далее», затем возвращение к результату смены. Без дополнительной зарплаты/энергии и повторного срабатывания, флаг `run.farmOwnerMet`. Проверенный исходник — `FARM_OWNER_ENCOUNTER_HANDOFF_20261016.md`.
+          EOF
+          git add -A suslik-2
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m 'feat(suslik-2): ship verified fifth-shift farm owner illustration and scene'
+          # Both pushes must be fast-forward, never force or touch main.
+          git push origin "HEAD:refs/heads/$FEATURE_BRANCH"
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          echo "Published verified scene and media to $TARGET_BRANCH"
