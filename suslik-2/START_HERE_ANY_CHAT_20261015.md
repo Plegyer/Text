@@ -1,3 +1,7 @@
+## АКТУАЛЬНО С 16.10.2026: ПРОЕКТ ПОЛНОСТЬЮ В GITHUB
+
+**ВАЖНО:** документ далее описывает архив и прежние технические ограничения ДО реальной публикации. Они устранены. **Каноническая ветка SUSLIK 2**: https://github.com/Plegyer/Text/tree/suslik-2/portable-canonical-20261015/suslik-2. Прочитать там `START_HERE_ANY_CHAT.md`, `CANONICAL_GITHUB_SOURCE.md`, `PROJECT_MEMORY.md`, затем изменять настоящий код в той ветке. 103 файла оригинального ZIP + 13 документов, PNG/MP3 проверены по Git SHA, **85/85 тестов GitHub Actions** https://github.com/Plegyer/Text/actions/runs/38854506703. **Новый чат больше не должен просить ZIP**: полный источник доступен в публичном GitHub. Запись возможна при подключённом GitHub с правами push. `main` и законченная лесопилка не изменяются.
+
 ## ПОСЛЕДНЕЕ РЕШЕНИЕ ДЛЯ ПОЛНОЙ GITHUB-ПУБЛИКАЦИИ (15.10.2026)
 
 Подготовлена отдельная служебная ветка `suslik-2/import-recovery-staging-20261015` с **действительно запущенным GitHub Actions** `.github/workflows/suslik2-import-release.yml` и документом `suslik-2/RELEASE_IMPORT_TRIGGER.md`.
