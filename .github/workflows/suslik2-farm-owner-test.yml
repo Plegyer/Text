@@ -1,0 +1,33 @@
+name: SUSLIK 2 farm owner encounter validation
+
+on:
+  push:
+    branches:
+      - 'suslik-2/farm-owner-meeting-20261016'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-farm-owner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run all game tests and fifth-shift scene tests
+        working-directory: suslik-2
+        run: npm test
+      - name: Validate exact authored media once delivered
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f suslik-2/gameplay-ui.js
+          test -f suslik-2/content/scenes.json
+          if test -f suslik-2/assets/events/undead-farm-owner-05.png; then
+            printf '%s  %s\n' '493dd3ce9fd1c1fe73fb513e2cf97156e113874b2db4aa92c1d70c99be9a1f13' 'suslik-2/assets/events/undead-farm-owner-05.png' | sha256sum -c -
+          else
+            echo "::warning::Original owner PNG not yet published; event code tested but image release pending."
+          fi
