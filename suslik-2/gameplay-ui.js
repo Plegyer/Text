@@ -266,12 +266,29 @@ function gpBattleScreen(){
 }
 
 
+/* Obligatory owner encounter after the fifth PAID farm shift. No new payment. */
+function sceneUndeadFarmOwner05(){
+ gpScene(gc().images.undeadFarmOwner05,gc().text.undeadFarmOwner05,[{
+  id:'undead-farm-owner-next',label:gl('next'),fn:()=>{
+   if(state.sceneId!=='undead-farm-owner-05')return;
+   // Keep the fifth shift's persisted result for the existing work window.
+   changeScene('undead-farm-work');
+  }
+ }]);
+}
+
 /* Farm seasonal work: the same game state, persist(), and music director that
  * the sawmill uses. A visit shows the work button; it never pays automatically. */
 function startUndeadFarmShift(){
  if(state.sceneId!=='undead-farm-work'||state.run.energy<1)return false;
  const result=applyUndeadFarmShift(state,work);
  if(!result.ok)return false;
+ // Set the one-time flag in the same persisted transition as the fifth
+ // paid shift. Visiting the location never counts as work.
+ if(state.run.farmShifts>=5&&!state.run.farmOwnerMet){
+  state.run.farmOwnerMet=true;
+  state.sceneId='undead-farm-owner-05';
+ }
  persist();render();return true;
 }
 function sceneUndeadFarmWork(scene){
