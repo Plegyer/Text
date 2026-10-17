@@ -348,9 +348,8 @@ function sceneUndeadFarmWork(scene){
  const artDef=def.seasonal[seasonId];
  const screen=element('section','story-scene work-scene farm-work-scene');
  const art=element('div','story-art');
- const image=element('img','story-image');
  const lustFile=result?.lustEvent&&window.SUSLIK2_GAMEPLAY_CONTENT?.lustMedia?.find(x=>x.id===result.lustMediaId)?.file;
- image.src=lustFile||artDef.image;
+ const image=media(lustFile||artDef.image,artDef.imageId,'location','story-image');
  image.alt=isEn?'Amalia working at the undead farm, '+seasonId:'Амалия работает на ферме зомби: '+labels.seasons[seasonId];
  image.draggable=false;
  image.addEventListener('error',()=>image.replaceWith(element('div','media-placeholder',tr('mediaMissing')+': '+artDef.imageId)),{once:true});
