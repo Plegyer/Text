@@ -4,6 +4,8 @@ const OWNER_REPO='Plegyer/Text';
 const BRANCH='suslik-2/portable-canonical-20261015';
 const MANIFEST_PATH='suslik-2/content/media-manager.published.js';
 const MAX_BYTES=95*1024*1024;
+const SINGLE_BLOB_BYTES=8*1024*1024;
+const MEDIA_PART_BYTES=2*1024*1024;
 const ALLOWED_EXTENSIONS=new Set(['png','jpg','jpeg','webp','gif','mp4']);
 const EXAMPLE_URL='https://github.com/'+OWNER_REPO+'/tree/'+BRANCH+'/suslik-2/';
 
@@ -13,10 +15,16 @@ function parseManifest(source){
  const data=JSON.parse(match[1]);
  if(!data||typeof data!=='object'||Array.isArray(data))throw Error('Каталог медиа повреждён.');
  for(const [key,values] of Object.entries(data)){
-  if(!/^[a-zA-Z][a-zA-Z0-9]{0,70}$/.test(key)||!Array.isArray(values)||values.some(p=>typeof p!=='string'))
+  if(!/^[a-zA-Z][a-zA-Z0-9]{0,70}$/.test(key)||!Array.isArray(values)||values.some(p=>!isMediaValue(p)))
    throw Error('Каталог медиа содержит неизвестные значения.');
  }
  return data;
+}
+function isMediaValue(item){
+ if(typeof item==='string')return true;
+ return !!item && typeof item==='object' && !Array.isArray(item) &&
+  item.type==='chunked-mp4' && Array.isArray(item.parts) && item.parts.length>0 && item.parts.length<=100 &&
+  item.parts.every(p=>typeof p==='string' && /^assets\/user-media\/manager\/[a-z0-9-]+\/[a-f0-9-]{36}\/slot-[0-9]{2}-part-[0-9]{3}\.js$/.test(p));
 }
 function fileExtension(filename){
  const match=String(filename).toLowerCase().match(/\.([a-z0-9]+)$/);
@@ -44,17 +52,29 @@ function planPublication(published,event,files,publicationId=crypto.randomUUID()
  validateEvent(event);
  if(!published||typeof published!=='object'||Array.isArray(published))throw Error('Каталог медиа повреждён.');
  if(!/^[a-f0-9-]{36}$/.test(publicationId))throw Error('Некорректный идентификатор публикации.');
- // Each publication gets immutable paths: replacing a scene must not delete or overwrite old files.
  const prefix='assets/user-media/manager/'+event.id+'/'+publicationId+'/';
- const nextPaths=files.map((f,i)=>prefix+'slot-'+String(i+1).padStart(2,'0')+'.'+fileExtension(f.name));
  const old=published[event.key]??[];
- if(!Array.isArray(old)||old.some(p=>typeof p!=='string'))throw Error('Каталог сцены повреждён.');
+ if(!Array.isArray(old)||old.some(p=>!isMediaValue(p)))throw Error('Каталог сцены повреждён.');
  validateFiles(files,event,{existingCount:old.length,mode});
- const mediaEntries=files.map((file,i)=>({file,path:'suslik-2/'+nextPaths[i]}));
- const resultingPaths=mode==='append'?[...old,...nextPaths]:nextPaths;
- const next={...published,[event.key]:resultingPaths};
+ const mediaEntries=[];
+ const addedPaths=files.map((file,i)=>{
+  const base=prefix+'slot-'+String(i+1).padStart(2,'0');
+  const ext=fileExtension(file.name);
+  if(ext==='mp4' && file.size>SINGLE_BLOB_BYTES){
+   const count=Math.ceil(file.size/MEDIA_PART_BYTES);
+   const parts=Array.from({length:count},(_,index)=>base+'-part-'+String(index+1).padStart(3,'0')+'.js');
+   for(let partIndex=0;partIndex<count;partIndex++)
+    mediaEntries.push({file,partIndex,partCount:count,partPath:parts[partIndex],path:'suslik-2/'+parts[partIndex]});
+   return {type:'chunked-mp4',parts};
+  }
+  const path=base+'.'+ext;
+  mediaEntries.push({file,path:'suslik-2/'+path});
+  return path;
+ });
+ const nextPaths=mode==='append'?[...old,...addedPaths]:addedPaths;
+ const next={...published,[event.key]:nextPaths};
  const manifest='window.SUSLIK2_PUBLISHED_MEDIA = '+JSON.stringify(next)+';\n';
- return {mediaEntries,deletions:[],manifest,nextPaths:resultingPaths,addedPaths:nextPaths};
+ return {mediaEntries,deletions:[],manifest,nextPaths,addedPaths};
 }
 async function encodeFile(file){
  const bytes=new Uint8Array(await file.arrayBuffer());
@@ -80,6 +100,17 @@ function decodeContent(content){
  return new TextDecoder().decode(bytes);
 }
 
+
+/* Large videos use JS data fragments so local file:// game builds can reconstruct MP4 safely. */
+async function encodeVideoPart(file,partIndex,partPath){
+ if(!Number.isInteger(partIndex)||partIndex<0)throw Error('Неизвестный номер части видео.');
+ const bytes=new Uint8Array(await file.slice(
+  partIndex*MEDIA_PART_BYTES,Math.min(file.size,(partIndex+1)*MEDIA_PART_BYTES)).arrayBuffer());
+ if(bytes.length===0||bytes.length>MEDIA_PART_BYTES)throw Error('Повреждённая часть загружаемого видео.');
+ const encoded=await encodeFile({arrayBuffer:async()=>bytes.buffer});
+ return 'window.SUSLIK2_MEDIA_PARTS = window.SUSLIK2_MEDIA_PARTS || Object.create(null);\n'+
+  'window.SUSLIK2_MEDIA_PARTS['+JSON.stringify(partPath)+'] = '+JSON.stringify(encoded)+';\n';
+}
 
 
 const $=id=>document.getElementById(id);
@@ -223,9 +254,22 @@ async function upload(){
   const entries=[];
   for(let i=0;i<mediaEntries.length;i++){
    const item=mediaEntries[i];
-   status('Загружаю файл '+(i+1)+' из '+mediaEntries.length+': '+item.file.name);
-   const b64=await encodeFile(item.file);
-   const blob=await api('POST','git/blobs',token,{content:b64,encoding:'base64'});
+   status('Отправляю часть '+(i+1)+' из '+mediaEntries.length+': '+item.file.name+
+    (item.partCount?' ('+(item.partIndex+1)+'/'+item.partCount+')':''));
+   const b64=item.partPath
+    ? toBase64Text(await encodeVideoPart(item.file,item.partIndex,item.partPath))
+    : await encodeFile(item.file);
+   let blob;
+   for(let attempt=1;attempt<=3;attempt++){
+    try{
+     blob=await api('POST','git/blobs',token,{content:b64,encoding:'base64'});
+     break;
+    }catch(error){
+     if(attempt===3||/не разрешил|право Contents|404|не принял файл|неизвестно/i.test(String(error?.message)))throw error;
+     status('Сбой при отправке части '+(i+1)+'. Повторяю: попытка '+(attempt+1)+' из 3…');
+     await new Promise(resolve=>setTimeout(resolve,800*attempt));
+    }
+   }
    if(!/^[a-f0-9]{40}$/.test(blob.sha))throw Error('GitHub не подтвердил приём файла.');
    entries.push({path:item.path,mode:'100644',type:'blob',sha:blob.sha});
   }
@@ -244,7 +288,7 @@ async function upload(){
   publishedBox.textContent='В GitHub теперь: '+nextPaths.length+' файлов из '+slot.maxFiles+'.';
   commitLink.href='https://github.com/'+OWNER_REPO+'/commit/'+nextCommit.sha;
   commitLink.hidden=false;
-  status('✅ Добавлено новых файлов: '+mediaEntries.length+'. Всего для события: '+nextPaths.length+'. Ранее опубликованные материалы не удалены.','ok');
+  status('✅ Добавлено новых файлов: '+selectedFiles.length+'. Всего для события: '+nextPaths.length+'. Ранее опубликованные материалы не удалены.','ok');
   selectedFiles=[];fileInput.value='';renderFiles();
  }catch(error){
   status('Не опубликовано: '+String(error?.message||error)+'. Загруженные промежуточные данные не меняют игру.','error');
