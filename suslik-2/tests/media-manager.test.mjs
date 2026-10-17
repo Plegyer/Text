@@ -70,3 +70,9 @@ test('future farm media can be staged without changing night rules or writing in
  assert.match(manager,/Install-Slot/);
  assert.match(manager,/Move-Item/);
 });
+
+test('published catalog can be reused by the manager after reinstall',()=>{
+ assert.match(manager,/media-manager\.published\.js/);
+ assert.match(manager,/function Existing-Selection/);
+ assert.match(manager,/\$paths\.Count -eq 0/);
+});
