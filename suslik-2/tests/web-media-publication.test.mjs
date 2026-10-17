@@ -64,7 +64,7 @@ test('all seven slots stay selectable when anonymous GitHub access fails',async(
  assert.equal(f.$('event').children.length,8);
  assert.equal(f.$('event').disabled,false);
  await prepare(f);
- assert.match(f.$('published').textContent,/перед публикацией/);
+ assert.match(f.$('published').textContent,/перед отправкой/);
  assert.equal(f.$('publish').disabled,false);
 });
 test('publish confirms fresh state and commits only new media and one manifest to canonical branch',async()=>{
