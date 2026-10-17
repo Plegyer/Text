@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.github.com; img-src 'none'; base-uri 'none'; form-action 'none'">
 <title>SUSLIK 2 — загрузка медиа в игру</title>
 <link rel="stylesheet" href="./style.css">
-<script defer src="./app-bundle.js?v=20261017-csp"></script>
+<script defer src="./app-bundle.js?v=20261017-append-drop"></script>
 </head>
 <body>
 <main class="shell">
@@ -22,18 +22,25 @@
  </section>
  <section class="panel" aria-labelledby="files-title">
   <div class="number">02 <span id="files-title">Файлы</span></div>
-  <label class="pick" for="file-input">+ Выбрать изображения или видео
+  <label class="pick" id="drop-zone" for="file-input">+ Выбрать или перетащить сюда изображения и видео
    <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.gif,.mp4,image/png,image/jpeg,image/webp,image/gif,video/mp4" multiple disabled>
   </label>
   <p class="hint">Форматы: PNG, JPG, WebP, GIF, MP4. MP3 не принимается. Не более 95 МБ на файл. Изображения и видео здесь не показываются.</p>
   <ol id="file-list" class="files" aria-live="polite"><li class="placeholder">Файлы ещё не выбраны.</li></ol>
   <p id="count" class="counter">0 файлов</p>
+  <label for="publication-mode">Что сделать с файлами события</label>
+  <select id="publication-mode">
+   <option value="append">Добавить к уже опубликованным</option>
+   <option value="replace">Заменить весь набор события</option>
+  </select>
+  <p id="mode-hint" class="hint">При добавлении старые файлы сохраняются, новые занимают свободные места.</p>
  </section>
  <section class="panel" aria-labelledby="access-title">
   <div class="number">03 <span id="access-title">Публикация</span></div>
   <label for="token">Разрешение GitHub</label>
   <input id="token" class="token" type="password" autocomplete="off" spellcheck="false" placeholder="Вставь токен GitHub с правом записи">
-  <p class="hint">Для публикации нужен доступ к Plegyer/Text. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Получить токен GitHub ↗</a> (репозиторий Plegyer/Text, Contents → Read and write). Токен используется только в этом окне и нигде не сохраняется.</p>
+  <p class="hint">Для публикации нужен доступ к Plegyer/Text. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Получить токен GitHub ↗</a> (Contents → Read and write). Токен не стирается после публикации; хранится только в открытой странице до её обновления или закрытия.</p>
+  <button id="clear-token" class="token-clear" type="button">Очистить токен</button>
   <button id="publish" class="primary" type="button" disabled>Опубликовать в GitHub</button>
   <div id="status" class="status" role="status" aria-live="polite">Выбери сцену и файлы.</div>
   <a id="commit-link" class="commit-link" target="_blank" rel="noopener noreferrer" hidden>Посмотреть опубликованные изменения ↗</a>
