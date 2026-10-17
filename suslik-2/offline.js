@@ -214,6 +214,9 @@ function persist() {
 }
 function clearScene() {
   if (root.querySelector('video.scene-video') && music) music.tryPlay();
+  for(const video of root.querySelectorAll('video.scene-video')){
+    if(video._suslikObjectUrl){URL.revokeObjectURL(video._suslikObjectUrl);video._suslikObjectUrl=null;}
+  }
   if (revealTimer !== undefined) clearTimeout(revealTimer);
   revealTimer = undefined;
   root.replaceChildren();
@@ -225,11 +228,46 @@ function element(tag, className, text) {
   if (text !== undefined) node.textContent = text;
   return node;
 }
+async function loadChunkedVideo(descriptor,video){
+  // Script fragments work from a local file:// game as well as from a web server.
+  // They contain only base64 bytes; the original video is reconstructed without transcoding.
+  if(!Array.isArray(descriptor.parts)||!descriptor.parts.length||descriptor.parts.length>100)
+    throw Error('Invalid chunked video list');
+  const chunks=[];
+  for(const partPath of descriptor.parts){
+    if(typeof partPath!=='string'||!/^assets\/user-media\/manager\/[a-z0-9-]+\/[a-f0-9-]{36}\/slot-[0-9]{2}-part-[0-9]{3}\.js$/.test(partPath))
+      throw Error('Invalid video fragment path');
+    const encoded=await new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.async=true;script.src=partPath;
+      script.onload=()=>{
+        const entries=window.SUSLIK2_MEDIA_PARTS;
+        const value=entries?.[partPath];
+        if(entries)delete entries[partPath];
+        script.remove();
+        if(typeof value!=='string'||!value.length)reject(Error('Missing video fragment'));
+        else resolve(value);
+      };
+      script.onerror=()=>{script.remove();reject(Error('Failed to load video fragment'));};
+      document.head.appendChild(script);
+    });
+    const binary=atob(encoded);
+    chunks.push(Uint8Array.from(binary,c=>c.charCodeAt(0)));
+    if(!video.isConnected)return;
+  }
+  if(!video.isConnected)return;
+  const address=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
+  if(!video.isConnected){URL.revokeObjectURL(address);return;}
+  video._suslikObjectUrl=address;
+  video.src=address;
+}
 function media(path, id, altKey, className) {
   if(!path)return element('div','media-placeholder',tr('mediaMissing')+': '+id);
-  if(/\.(mp4|webm)(?:[?#].*)?$/i.test(path)) {
+  const isChunked=path&&typeof path==='object'&&path.type==='chunked-mp4';
+  if(isChunked||(typeof path==='string'&&/\.(mp4|webm)(?:[?#].*)?$/i.test(path))) {
     const video=element('video',className+' scene-video');
-    video.src=path;video.autoplay=true;video.loop=true;video.playsInline=true;
+    if(!isChunked)video.src=path;
+    video.autoplay=true;video.loop=true;video.playsInline=true;
     video.controls=true;video.preload='auto';
     video.muted=state.settings.soundEnabled===false;
     video.volume=Math.max(0,Math.min(1,(state.settings.effectsVolume??100)/100));
@@ -238,6 +276,9 @@ function media(path, id, altKey, className) {
     video.addEventListener('error',()=>video.replaceWith(element('div','media-placeholder',tr('mediaMissing')+': '+id)),{once:true});
     // Play starts as part of a user action; browser controls remain if autoplay is blocked.
     video.addEventListener('loadeddata',()=>{try{void video.play()?.catch(()=>{});}catch(_){}} ,{once:true});
+    if(isChunked)void loadChunkedVideo(path,video).catch(()=>{
+      if(video.isConnected)video.replaceWith(element('div','media-placeholder',tr('mediaMissing')+': '+id));
+    });
     return video;
   }
   const image = element('img', className);
@@ -510,8 +551,8 @@ function sceneSawmillWork(scene) {
   const screen=element('section','story-scene work-scene');
   const art=element('div','story-art');
   const artDef=def.seasonal[result.season];
-  const image=element('img','story-image');
-  image.src=(result.lustEvent&&window.SUSLIK2_GAMEPLAY_CONTENT.lustMedia?.find(x=>x.id===result.lustMediaId)?.file)||artDef.image;
+  const visualSource=(result.lustEvent&&window.SUSLIK2_GAMEPLAY_CONTENT.lustMedia?.find(x=>x.id===result.lustMediaId)?.file)||artDef.image;
+  const image=media(visualSource,artDef.imageId,'location','story-image');
   image.alt=labels.imageAlt[result.season];
   image.draggable=false;
   image.addEventListener('error',()=>image.replaceWith(element('div','media-placeholder',tr('mediaMissing')+': '+artDef.imageId)),{once:true});
