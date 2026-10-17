@@ -9,7 +9,13 @@ const catalogue=JSON.parse(await readFile(new URL('../content/media-manager-slot
 const head='a'.repeat(40),commit='b'.repeat(40),blob='c'.repeat(40),tree='d'.repeat(40);
 const branch='suslik-2/portable-canonical-20261015';
 class Element{
- constructor(){this.value='';this.children=[];this.listeners={};this.disabled=false;this.textContent='';}
+ constructor(){
+  this.value='';this.children=[];this.listeners={};this.disabled=false;this.textContent='';
+  this.classNames=new Set();
+  this.classList={add:x=>this.classNames.add(x),remove:x=>this.classNames.delete(x)};
+  this.files=[];
+ }
+ contains(target){return this===target;}
  append(...items){this.children.push(...items);}
  replaceChildren(...items){this.children=items;}
  setAttribute(){}
@@ -22,7 +28,7 @@ async function fixture({offline=false,race=false,deny=false,accept=true}={}){
  const saved={goblinDefeat:['assets/existing.gif'],nightTraining:['assets/training.png']};
  let headReads=0;
  const context=vm.createContext({
-  document:{getElementById:$,createElement:()=>new Element()},
+  document:{getElementById:$,createElement:()=>new Element(),addEventListener:()=>{}},
   crypto:webcrypto,TextEncoder,TextDecoder,Uint8Array,btoa,atob,
   confirm:message=>{confirmations.push(message);return accept;},
   fetch:async(url,options={})=>{
@@ -63,7 +69,7 @@ test('all seven slots stay selectable when anonymous GitHub access fails',async(
 });
 test('publish confirms fresh state and commits only new media and one manifest to canonical branch',async()=>{
  const f=await fixture();await prepare(f);await f.$('publish').listeners.click();
- assert.equal(f.confirmations.length,1);assert.match(f.confirmations[0],/1 файлов/);
+ assert.equal(f.confirmations.length,0);
  const writes=f.requests.filter(r=>r.method!=='GET');
  assert.deepEqual(writes.map(r=>r.method),['POST','POST','POST','POST','PATCH']);
  assert.equal(writes[0].body.encoding,'base64');assert.equal(writes[0].body.content,'AQID');
@@ -76,10 +82,12 @@ test('publish confirms fresh state and commits only new media and one manifest t
  assert.equal(writes[2].body.base_tree,tree);assert.deepEqual(writes[3].body.parents,[head]);
  assert.equal(writes[4].url,'https://api.github.com/repos/Plegyer/Text/git/refs/heads/'+branch);
  assert.deepEqual(writes[4].body,{sha:commit,force:false});
- assert.equal(f.$('token').value,'');assert.match(f.$('status').textContent,/Опубликовано/);
+ assert.equal(f.$('token').value,'TEST_ONLY_NOT_A_CREDENTIAL');assert.match(f.$('status').textContent,/Добавлено/);
 });
 test('cancelling replacement uploads nothing',async()=>{
- const f=await fixture({accept:false});await prepare(f);await f.$('publish').listeners.click();
+ const f=await fixture({accept:false});await prepare(f);
+ f.$('publication-mode').value='replace';f.$('publication-mode').listeners.change();
+ await f.$('publish').listeners.click();
  assert.equal(f.requests.filter(r=>r.method!=='GET').length,0);
  assert.match(f.$('status').textContent,/отменена/);
 });
@@ -94,4 +102,34 @@ test('permission rejection preserves selected files and never uploads',async()=>
  assert.match(f.$('status').textContent,/не разрешил/);
  assert.equal(f.$('file-list').children.length,1);
  assert.equal(f.$('publish').disabled,false);
+});
+
+test('add mode retains old media paths and the token across consecutive uploads',async()=>{
+ const f=await fixture();await prepare(f);await f.$('publish').listeners.click();
+ const writes=f.requests.filter(r=>r.method!=='GET');
+ const manifest=Buffer.from(writes[1].body.content,'base64').toString('utf8');
+ assert.match(manifest,/assets\\/existing.gif/);
+ assert.match(manifest,/assets\\/training.png/);
+ assert.equal(f.$('published').textContent.includes('2 файлов'),true);
+ assert.equal(f.$('token').value,'TEST_ONLY_NOT_A_CREDENTIAL');
+ f.$('event').value='ogre-captive';f.$('event').listeners.change();
+ assert.equal(f.$('token').value,'TEST_ONLY_NOT_A_CREDENTIAL');
+ f.$('clear-token').listeners.click();
+ assert.equal(f.$('token').value,'');
+});
+test('dragging new images into the drop area reuses file validations and capacity',async()=>{
+ const f=await fixture();
+ f.$('event').value='goblin-permission';f.$('event').listeners.change();
+ const drop=f.$('drop-zone');
+ let prevented=false;
+ drop.listeners.dragover({preventDefault:()=>{prevented=true;},dataTransfer:{dropEffect:'none'}});
+ assert.equal(prevented,true);
+ assert.equal(drop.classNames.has('drag-over'),true);
+ const one={name:'clip.mp4',size:3,arrayBuffer:async()=>new Uint8Array([1,2,3]).buffer};
+ drop.listeners.drop({preventDefault:()=>{},dataTransfer:{files:[one]}});
+ assert.equal(f.$('file-list').children.length,1);
+ assert.equal(drop.classNames.has('drag-over'),false);
+ drop.listeners.drop({preventDefault:()=>{},dataTransfer:{files:[{name:'music.mp3',size:3}]}});
+ assert.equal(f.$('file-list').children.length,1);
+ assert.match(f.$('status').textContent,/Неподдерживаемый/);
 });
