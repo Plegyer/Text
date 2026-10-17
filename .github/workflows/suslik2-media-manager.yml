@@ -1,0 +1,58 @@
+name: SUSLIK 2 Windows media manager
+
+on:
+  push:
+    branches:
+      - 'suslik-2/portable-canonical-20261015'
+    paths:
+      - 'suslik-2/tools/media-manager.ps1'
+      - 'suslik-2/content/media-manager-slots.json'
+      - 'suslik-2/tests/media-manager.test.mjs'
+      - '.github/workflows/suslik2-media-manager.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import local PNG and MP4, preserve other events, reject MP3
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $dir=Join-Path $env:RUNNER_TEMP 'suslik-media-test'
+          $null=New-Item -Path (Join-Path $dir 'content') -ItemType Directory -Force
+          Copy-Item 'suslik-2/content/media-manager-slots.json' (Join-Path $dir 'content')
+          [IO.File]::WriteAllText((Join-Path $dir 'content/media-manager-state.json'),'{}')
+          $samples=Join-Path $env:RUNNER_TEMP 'test-inputs'
+          $null=New-Item -Path $samples -ItemType Directory -Force
+          $png=Join-Path $samples 'picture.png'
+          $mp4=Join-Path $samples 'clip.mp4'
+          $mp3=Join-Path $samples 'track.mp3'
+          [IO.File]::WriteAllBytes($png,[byte[]](1,2,3,4))
+          [IO.File]::WriteAllBytes($mp4,[byte[]](5,6,7,8))
+          [IO.File]::WriteAllBytes($mp3,[byte[]](9,10,11,12))
+          $script='suslik-2/tools/media-manager.ps1'
+          & $script -GameDirectory $dir -EventKey goblin-permission -Files @($png,$mp4)
+          $state=Get-Content (Join-Path $dir 'content/media-manager-state.json') -Raw | ConvertFrom-Json
+          if($state.farGoblinPermission.Count -ne 2){throw 'Goblin files not installed'}
+          if(-not (Test-Path (Join-Path $dir $state.farGoblinPermission[0]))){throw 'Image missing'}
+          if(-not (Test-Path (Join-Path $dir $state.farGoblinPermission[1]))){throw 'Video missing'}
+          & $script -GameDirectory $dir -EventKey undead-farm-night-learning -Files @($png)
+          $state=Get-Content (Join-Path $dir 'content/media-manager-state.json') -Raw | ConvertFrom-Json
+          if($state.farGoblinPermission.Count -ne 2){throw 'Other event was overwritten'}
+          if($state.undeadFarmNightLearning.Count -ne 1){throw 'Future event was not staged'}
+          & $script -GameDirectory $dir -EventKey goblin-permission -Files @($mp4)
+          $state=Get-Content (Join-Path $dir 'content/media-manager-state.json') -Raw | ConvertFrom-Json
+          if($state.farGoblinPermission.Count -ne 1){throw 'Replace did not remove prior files'}
+          if(-not $state.farGoblinPermission[0].EndsWith('slot-01.mp4')){throw 'Wrong video order'}
+          $failed=$false
+          try { & $script -GameDirectory $dir -EventKey goblin-permission -Files @($mp3) } catch { $failed=$true }
+          if(-not $failed){throw 'MP3 was accepted'}
+          $state=Get-Content (Join-Path $dir 'content/media-manager-state.json') -Raw | ConvertFrom-Json
+          if($state.farGoblinPermission[0] -ne 'assets/user-media/manager/goblin-permission/slot-01.mp4'){throw 'MP3 broke existing slot'}
+          if(-not (Get-Content (Join-Path $dir 'content/media-manager.local.js') -Raw).Contains('window.SUSLIK2_MANAGED_MEDIA')){throw 'Game manifest missing'}
+          Write-Host 'Windows media manager import smoke test passed.'
