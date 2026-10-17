@@ -4,6 +4,7 @@
  [string[]]$Files = @()
 )
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'media-manager-publish.ps1')
 $root = [System.IO.Path]::GetFullPath($GameDirectory)
 $catalogPath = Join-Path $root 'content\media-manager-slots.json'
 $statePath = Join-Path $root 'content\media-manager-state.json'
@@ -108,7 +109,7 @@ $form.StartPosition = 'CenterScreen'
 $form.Font = New-Object System.Drawing.Font('Segoe UI',10)
 $header = New-Object System.Windows.Forms.Label
 $header.SetBounds(20,15,655,42)
-$header.Text = 'Выберите событие, добавьте файлы по порядку и нажмите «Сохранить». Программа не показывает изображения.'
+$header.Text = 'Выберите событие, добавьте файлы по порядку и нажмите «Опубликовать в GitHub». Медиа не просматриваются.'
 $form.Controls.Add($header)
 $eventLabel = New-Object System.Windows.Forms.Label
 $eventLabel.SetBounds(20,73,150,25);$eventLabel.Text = 'Событие:'
@@ -178,21 +179,49 @@ $down = Add-ManagerButton 'Ниже ↓' 536 333 135 {
  }
 }
 $script:save=New-Object System.Windows.Forms.Button
-$script:save.Text='Сохранить'
-$script:save.SetBounds(365,472,145,38)
+$script:save.Text='Опубликовать в GitHub'
+$script:save.SetBounds(275,472,235,38)
 $script:save.Anchor='Bottom,Right'
 $script:save.Add_Click({
+ $chosen=@($script:selected.ToArray())
+ if($chosen.Count -eq 0){
+  $answer=[System.Windows.Forms.MessageBox]::Show('Удалить все ранее опубликованные файлы этого события из списка игры?', 'Подтверждение', 'YesNo', 'Warning')
+  if($answer -ne [System.Windows.Forms.DialogResult]::Yes){return}
+ }
+ $auth=Prompt-GameGitHubToken
+ if($null -eq $auth){return}
+ $script:save.Enabled=$false
+ $form.UseWaitCursor=$true
  try {
-  $n=Install-Slot (Current-Slot) @($script:selected.ToArray())
-  [System.Windows.Forms.MessageBox]::Show("Подключено $n файлов. Закройте и снова откройте игру, чтобы увидеть изменения.",'SUSLIK 2')|Out-Null
-  $script:selected.Clear()
-  foreach($file in (Existing-Selection (Current-Slot))) {$script:selected.Add([string]$file)}
-  Refresh-List
+  $result=Publish-GameMediaSlot -Slot (Current-Slot) -Chosen $chosen -Token $auth.Token -Catalog $catalog
+  $note=''
+  if($auth.Remember){
+   try{Save-GameGitHubToken -Token $auth.Token}catch{$note+="`nТокен не удалось запомнить; он будет запрошен снова."}
+  }
+  try {
+   $null=Install-Slot (Current-Slot) $chosen
+   $script:selected.Clear()
+   foreach($file in (Existing-Selection (Current-Slot))) {$script:selected.Add([string]$file)}
+   Refresh-List
+  } catch { $note+="`nФайлы опубликованы, но их локальная копия не обновлена." }
+  [System.Windows.Forms.MessageBox]::Show("Опубликовано в GitHub: $($result.Count) файлов.`nСобытие: $((Current-Slot).title)`n`nФайлы доступны в канонической ветке SUSLIK 2. Для установленной игры нужно обновление.`n`n$($result.Url)$note", 'SUSLIK 2 — опубликовано') | Out-Null
  } catch {
-  [System.Windows.Forms.MessageBox]::Show($_.Exception.Message,'Ошибка импорта')|Out-Null
+  [System.Windows.Forms.MessageBox]::Show("НЕ опубликовано в GitHub.`n" + $_.Exception.Message,'Ошибка публикации') | Out-Null
+ } finally {
+  $form.UseWaitCursor=$false
+  $script:save.Enabled=$true
  }
 })
 $form.Controls.Add($script:save)
+$credentials=New-Object System.Windows.Forms.Button
+$credentials.Text='Сменить доступ GitHub'
+$credentials.SetBounds(20,472,217,38)
+$credentials.Anchor='Bottom,Left'
+$credentials.Add_Click({
+ if(Test-Path -LiteralPath $GameTokenFile) {Remove-Item -LiteralPath $GameTokenFile -Force}
+ [System.Windows.Forms.MessageBox]::Show('При следующей публикации будет запрошен новый токен. Если используется GitHub CLI, настройте доступ там.', 'GitHub') | Out-Null
+})
+$form.Controls.Add($credentials)
 $close=New-Object System.Windows.Forms.Button
 $close.Text='Закрыть';$close.SetBounds(526,472,145,38)
 $close.Anchor='Bottom,Right';$close.Add_Click({$form.Close()})

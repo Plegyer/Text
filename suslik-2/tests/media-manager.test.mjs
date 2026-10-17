@@ -21,12 +21,14 @@ test('Windows media manager has event catalog, stable labels and no audio format
  assert.match(manager,/FileNames/);
  assert.match(manager,/Выше/);
  assert.match(manager,/Ниже/);
- assert.match(manager,/Сохранить/);
+ assert.match(manager,/Опубликовать в GitHub/);
  assert.match(manager,/\.webp/);
  assert.match(manager,/\.mp4/);
  assert.doesNotMatch(manager,/\.mp3|\.wav|\.ogg/);
  assert.deepEqual(JSON.parse(stateSource),{});
  assert.match(managedSource,/window\.SUSLIK2_MANAGED_MEDIA = \{\};/);
+ assert.match(index,/content\/media-manager\.published\.js/);
+ assert.match(content,/SUSLIK2_PUBLISHED_MEDIA/);
 });
 test('managed media loads before authored scene definitions without replacing old legacy imports',()=>{
  const lines=index.split('\n');

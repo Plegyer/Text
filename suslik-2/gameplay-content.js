@@ -15,13 +15,13 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
  },
  // Generic optional local media slots. No supplied adult videos are bundled.
  permissionMedia:[
-  {id:'MEDIA.FAR.GOBLIN.PERMISSION.001',file:window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[0]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[0]||null},
-  {id:'MEDIA.FAR.GOBLIN.PERMISSION.002',file:window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[1]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[1]||null},
-  {id:'MEDIA.FAR.GOBLIN.PERMISSION.003',file:window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[2]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[2]||null},
-  {id:'MEDIA.FAR.GOBLIN.PERMISSION.004',file:window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[3]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[3]||null},
-  {id:'MEDIA.FAR.GOBLIN.PERMISSION.005',file:window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[4]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[4]||null}
+  {id:'MEDIA.FAR.GOBLIN.PERMISSION.001',file:window.SUSLIK2_PUBLISHED_MEDIA?.farGoblinPermission?.[0]||window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[0]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[0]||null},
+  {id:'MEDIA.FAR.GOBLIN.PERMISSION.002',file:window.SUSLIK2_PUBLISHED_MEDIA?.farGoblinPermission?.[1]||window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[1]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[1]||null},
+  {id:'MEDIA.FAR.GOBLIN.PERMISSION.003',file:window.SUSLIK2_PUBLISHED_MEDIA?.farGoblinPermission?.[2]||window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[2]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[2]||null},
+  {id:'MEDIA.FAR.GOBLIN.PERMISSION.004',file:window.SUSLIK2_PUBLISHED_MEDIA?.farGoblinPermission?.[3]||window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[3]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[3]||null},
+  {id:'MEDIA.FAR.GOBLIN.PERMISSION.005',file:window.SUSLIK2_PUBLISHED_MEDIA?.farGoblinPermission?.[4]||window.SUSLIK2_MANAGED_MEDIA?.farGoblinPermission?.[4]||window.SUSLIK2_USER_MEDIA?.farGoblinPermission?.[4]||null}
  ],
- lustMedia:Array.from({length:20},(_,i)=>({id:'MEDIA.WORK.LUST.'+String(i+1).padStart(3,'0'),file:window.SUSLIK2_MANAGED_MEDIA?.sawmillLust?.[i]||window.SUSLIK2_USER_LUST_MEDIA?.sawmill?.[i]||null})),
+ lustMedia:Array.from({length:20},(_,i)=>({id:'MEDIA.WORK.LUST.'+String(i+1).padStart(3,'0'),file:window.SUSLIK2_PUBLISHED_MEDIA?.sawmillLust?.[i]||window.SUSLIK2_MANAGED_MEDIA?.sawmillLust?.[i]||window.SUSLIK2_USER_LUST_MEDIA?.sawmill?.[i]||null})),
  defeats:{
   goblin:{id:'goblin',goldLoss:30,returnScene:'game-main',media:[
    {id:'MEDIA.DEFEAT.GOBLIN.001',file:null},
