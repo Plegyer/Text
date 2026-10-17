@@ -20,6 +20,11 @@ try{
    state.run.farmBrainsMet=true;
    state.run.zombieBrainSearchUnlocked=true;
    state.run.zombieBrainFound=false;
+   state.run.farmShifts=15;
+   state.run.farmOwnerMet=true;
+   state.run.elapsedDays=5;
+   state.run.gold=620;
+   state.run.energy=1;
    state.sceneId='game-main';
    render();
  });
@@ -40,4 +45,15 @@ try{
  console.log('Captured real SUSLIK 2 map',out,'brain button:',JSON.stringify(pickup));
  const sceneText=await page.locator('.game-map-title').textContent();
  if(!sceneText)throw Error('Map was not rendered');
+ // Browser end-to-end check: the actual SVG click must remove the find,
+ // persist the unique pickup, and show it in the standard inventory dialog.
+ await page.locator('[data-action-id="map-zombie-brain"]').click();
+ if(await page.locator('[data-action-id="map-zombie-brain"]').count()!==0)
+   throw Error('Collected brain is still on the map.');
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('suslik2.save.v1')).activeRun?.run);
+ if(saved?.zombieBrainFound!==true)throw Error('Zombie brain was not persisted.');
+ await page.locator('[data-action-id="map-inventory"]').click();
+ const inventory=await page.locator('dialog.info-dialog').textContent();
+ if(!inventory?.includes('Мозг зомби: 1'))throw Error('Zombie brain missing from inventory: '+inventory);
+ console.log('Browser pickup and inventory check passed.');
 }finally{await browser.close();}
