@@ -26,29 +26,34 @@ export function validateEvent(event){
     !Number.isInteger(event.maxFiles)||event.maxFiles<1||event.maxFiles>30)throw Error('В списке событий обнаружена ошибка.');
  return event;
 }
-export function validateFiles(files,event){
+export function validateFiles(files,event,{existingCount=0,mode='append'}={}){
  validateEvent(event);
  if(!Array.isArray(files)||files.length===0)throw Error('Сначала выбери хотя бы один файл.');
- if(files.length>event.maxFiles)throw Error('Слишком много файлов. Для этой сцены максимум: '+event.maxFiles+'.');
+ if(!['append','replace'].includes(mode))throw Error('Неизвестный режим публикации.');
+ if(!Number.isInteger(existingCount)||existingCount<0||existingCount>event.maxFiles)throw Error('Текущий набор содержит слишком много файлов.');
+ const remaining=mode==='append'?event.maxFiles-existingCount:event.maxFiles;
+ if(files.length>remaining)throw Error('Недостаточно мест: можно добавить ещё '+remaining+' файлов. Для полной замены выбери «Заменить весь набор».');
  for(const f of files){
   if(!f||!ALLOWED_EXTENSIONS.has(fileExtension(f.name)))throw Error('Неподдерживаемый формат: '+String(f?.name??''));
   if(!Number.isFinite(f.size)||f.size<=0||f.size>MAX_BYTES)
    throw Error('Размер каждого файла должен быть больше 0 и не более 95 МБ.');
  }
 }
-export function planPublication(published,event,files,publicationId=crypto.randomUUID()){
- validateFiles(files,event);
+export function planPublication(published,event,files,publicationId=crypto.randomUUID(),mode='append'){
+ validateEvent(event);
  if(!published||typeof published!=='object'||Array.isArray(published))throw Error('Каталог медиа повреждён.');
  if(!/^[a-f0-9-]{36}$/.test(publicationId))throw Error('Некорректный идентификатор публикации.');
  // Each publication gets immutable paths: replacing a scene must not delete or overwrite old files.
  const prefix='assets/user-media/manager/'+event.id+'/'+publicationId+'/';
  const nextPaths=files.map((f,i)=>prefix+'slot-'+String(i+1).padStart(2,'0')+'.'+fileExtension(f.name));
  const old=published[event.key]??[];
- if(!Array.isArray(old))throw Error('Каталог сцены повреждён.');
+ if(!Array.isArray(old)||old.some(p=>typeof p!=='string'))throw Error('Каталог сцены повреждён.');
+ validateFiles(files,event,{existingCount:old.length,mode});
  const mediaEntries=files.map((file,i)=>({file,path:'suslik-2/'+nextPaths[i]}));
- const next={...published,[event.key]:nextPaths};
+ const resultingPaths=mode==='append'?[...old,...nextPaths]:nextPaths;
+ const next={...published,[event.key]:resultingPaths};
  const manifest='window.SUSLIK2_PUBLISHED_MEDIA = '+JSON.stringify(next)+';\n';
- return {mediaEntries,deletions:[],manifest,nextPaths};
+ return {mediaEntries,deletions:[],manifest,nextPaths:resultingPaths,addedPaths:nextPaths};
 }
 export async function encodeFile(file){
  const bytes=new Uint8Array(await file.arrayBuffer());
