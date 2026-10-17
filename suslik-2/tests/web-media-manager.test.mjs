@@ -35,7 +35,7 @@ test('web uploader validates files without opening or rendering their visual con
  assert.throws(()=>validateFiles([f('bad.mp3')],slot),/формат/);
  assert.throws(()=>validateFiles([],slot),/хотя бы один/);
  assert.throws(()=>validateFiles([f('empty.png',0)],slot),/больше 0/);
- assert.throws(()=>validateFiles(Array(5).fill(f('ok.png')),slot),/максимум/);
+ assert.throws(()=>validateFiles(Array(5).fill(f('ok.png')),slot),/Недостаточно мест/);
  assert.throws(()=>validateFiles([f('huge.mp4',MAX_BYTES+1)],slot),/95 МБ/);
  assert.doesNotThrow(()=>validateFiles([f('one.gif'),f('two.mp4')],slot));
 });
