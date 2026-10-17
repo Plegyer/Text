@@ -1,4 +1,4 @@
-param(
+﻿param(
  [string]$GameDirectory = (Split-Path -Parent $PSScriptRoot),
  [string]$EventKey = '',
  [string[]]$Files = @()
