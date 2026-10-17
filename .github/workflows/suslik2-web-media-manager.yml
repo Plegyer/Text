@@ -1,0 +1,48 @@
+name: SUSLIK 2 Browser Media Manager
+
+on:
+  push:
+    branches:
+      - 'suslik-2/portable-canonical-20261015'
+    paths:
+      - 'suslik-2/media-manager-web/**'
+      - 'suslik-2/content/media-manager-slots.json'
+      - 'suslik-2/tests/web-media-manager.test.mjs'
+      - '.github/workflows/suslik2-web-media-manager.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: suslik-2-media-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}media-manager/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test browser publishing rules
+        run: node --test suslik-2/tests/web-media-manager.test.mjs
+      - name: Assemble standalone website
+        run: |
+          mkdir -p _media_site/media-manager
+          cp suslik-2/media-manager-web/index.html _media_site/media-manager/index.html
+          cp suslik-2/media-manager-web/style.css _media_site/media-manager/style.css
+          cp suslik-2/media-manager-web/app.js _media_site/media-manager/app.js
+          cp suslik-2/media-manager-web/core.mjs _media_site/media-manager/core.mjs
+          cp suslik-2/content/media-manager-slots.json _media_site/media-manager/slots.json
+          touch _media_site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _media_site
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
