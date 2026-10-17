@@ -6,6 +6,7 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
   foreman:'assets/events/sawmill-15.png',
   goblinEncounter:'assets/events/goblin-encounter.png',
   undeadFarmOwner05:'assets/events/undead-farm-owner-05.png',
+  undeadFarmBrains15:'assets/events/undead-farm-brains-15.webp',
   hero:'assets/combat/hero-standard.png',
   goblin:'assets/combat/goblin.png',
   room:'assets/night/room.png',street:'assets/night/street.png',satyrWork:'assets/night/satyr-work.png',
@@ -29,6 +30,12 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
   ]}
  },
  text:{
+  undeadFarmBrains15:`— Рааамгх... Уаааррр... Муаааа... муазгииии... мммозгииии... — речь явно давалась зомби с огромным трудом.
+Он надрывно завывал, пытаясь что-то объяснить, но Амалия никак не могла его понять. Наконец зомби рухнул перед ней на колени, вцепился в подол юбки и завопил с удвоенной силой:
+— УУУАААААА!.. РАААР!.. МММОЗГИИИИИ!.. МОЗГИИИИИИ!
+— Ладно-ладно, поняла я! — Амалия с трудом отцепила его от своей юбки. — Поищу я тебе мозги, страшила злоебучий!
+Обрадованный её догадливостью, зомби, наоборот, вцепился в юбку ещё крепче и завопил на всю ферму:
+— УУУААААМНАЯ!!! ММММООООЗГИИИИИИ!!! МММООЗГИ!!!`,
   undeadFarmOwner05:`— Уууу... аааргх... — проскрипел стоявший перед Амалией зомби. — Копать... носить... работать... ррааар...
 — Знаю-знаю, — понимающе кивнула Амалия. — Всё детство на ферме провела. Бери больше — кидай дальше.
 — Уааааа... Девошка умный... Кидай-носи... Уаааарх! — одобрительно прохрипел зомби.`,

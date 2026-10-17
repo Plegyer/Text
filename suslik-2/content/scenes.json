@@ -320,6 +320,11 @@
       "kind": "panel",
       "actions": [],
       "music": "farm"
+    },
+    "undead-farm-brains-15": {
+      "kind": "panel",
+      "actions": [],
+      "music": "farm"
     }
   }
 }

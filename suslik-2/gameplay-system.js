@@ -5,7 +5,7 @@
 const H=global.SUSLIK2Gameplay={};
 const clamp=(n,lo,hi)=>Math.max(lo,Math.min(hi,n));
 const roll=(random=Math.random)=>{const n=random();if(!Number.isFinite(n)||n<0||n>=1)throw Error('Invalid random draw');return n;};
-H.startRun = (work)=>({elapsedDays:0,lust:work.initial.lust,energy:work.initial.energy,energyMax:work.initial.energyMax,moneyEarned:0,gold:0,completedShifts:0,lastShift:null,farmShifts:0,farmLastShift:null,farmOwnerMet:false,events:{shift15:false,shift50:false,foreman:false},pendingEvent:null,returnScene:'sawmill-work',farForestUnlocked:false,farAttempt:null,battle:null,pendingDefeat:null,currentHP:null,currentMana:null,brokenSpears:0,endingOfferOnMap:false,lustEventCount:0,lastSatyrLoss:null,introAllowApplied:false,foremanHandoverSeen:false,foremanQuestFinished:false,nightTrainingCount:0,ogreIntroSeen:false,ogreQuestStarted:false,ogreDefeated:false,ogreHead:false,ogreAfterSceneSeen:false,ogreEndingReady:false,pendingNightTraining:false,knownSpells:[]});
+H.startRun = (work)=>({elapsedDays:0,lust:work.initial.lust,energy:work.initial.energy,energyMax:work.initial.energyMax,moneyEarned:0,gold:0,completedShifts:0,lastShift:null,farmShifts:0,farmLastShift:null,farmOwnerMet:false,farmBrainsMet:false,events:{shift15:false,shift50:false,foreman:false},pendingEvent:null,returnScene:'sawmill-work',farForestUnlocked:false,farAttempt:null,battle:null,pendingDefeat:null,currentHP:null,currentMana:null,brokenSpears:0,endingOfferOnMap:false,lustEventCount:0,lastSatyrLoss:null,introAllowApplied:false,foremanHandoverSeen:false,foremanQuestFinished:false,nightTrainingCount:0,ogreIntroSeen:false,ogreQuestStarted:false,ogreDefeated:false,ogreHead:false,ogreAfterSceneSeen:false,ogreEndingReady:false,pendingNightTraining:false,knownSpells:[]});
 H.restoreRun=(raw,work)=>{
  const base=H.startRun(work);
  if(!raw||typeof raw!=='object')return base;
@@ -17,6 +17,7 @@ H.restoreRun=(raw,work)=>{
  base.returnScene=typeof raw.returnScene==='string'?raw.returnScene:base.returnScene;
  base.farForestUnlocked=raw.farForestUnlocked===true;base.endingOfferOnMap=raw.endingOfferOnMap===true;
  base.farmOwnerMet=raw.farmOwnerMet===true;
+ base.farmBrainsMet=raw.farmBrainsMet===true;
  base.lastSatyrLoss=typeof raw.lastSatyrLoss==='string'?raw.lastSatyrLoss:null;
  base.introAllowApplied=raw.introAllowApplied===true;
  for(const flag of ['foremanHandoverSeen','foremanQuestFinished','ogreIntroSeen','ogreQuestStarted','ogreDefeated','ogreHead','ogreAfterSceneSeen','ogreEndingReady','pendingNightTraining'])base[flag]=raw[flag]===true;

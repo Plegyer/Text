@@ -277,6 +277,21 @@ function sceneUndeadFarmOwner05(){
  }]);
 }
 
+/* Obligatory brain-request scene on the farm: no extra rewards or shift. */
+function sceneUndeadFarmBrains15(){
+ gpScene(gc().images.undeadFarmBrains15,gc().text.undeadFarmBrains15,[{
+  id:'undead-farm-brains-15-next',label:gl('next'),fn:()=>{
+   if(state.sceneId!=='undead-farm-brains-15')return;
+   state.run.farmLastShift=null;
+   changeScene('undead-farm-work');
+  }
+ }]);
+}
+function gpFarmBrainsReady(){
+ return !state.run.farmBrainsMet&&state.run.farmShifts>=15&&
+  state.character.stats.endurance>=15&&state.character.stats.reason>=15;
+}
+
 /* Farm seasonal work: the same game state, persist(), and music director that
  * the sawmill uses. A visit shows the work button; it never pays automatically. */
 function startUndeadFarmShift(){
@@ -288,10 +303,19 @@ function startUndeadFarmShift(){
  if(state.run.farmShifts>=5&&!state.run.farmOwnerMet){
   state.run.farmOwnerMet=true;
   state.sceneId='undead-farm-owner-05';
+ }else if(gpFarmBrainsReady()){
+  state.run.farmBrainsMet=true;
+  state.sceneId='undead-farm-brains-15';
  }
  persist();render();return true;
 }
 function sceneUndeadFarmWork(scene){
+ // If the stats matured elsewhere, returning to the farm still triggers once.
+ if(gpFarmBrainsReady()){
+  state.run.farmBrainsMet=true;
+  state.sceneId='undead-farm-brains-15';
+  persist();render();return;
+ }
  const def=work.farm;
  const labels=work.locales[state.settings.locale];
  const isEn=state.settings.locale==='en';

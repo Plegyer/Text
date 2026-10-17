@@ -658,6 +658,7 @@ function render() {
   if (Object.hasOwn(scene, 'music')) music.select(scene.music);
   else if (['game-main','sawmill-work','far-ordinary','far-goblin','far-permission-result','work-event','foreman-handover','ogre-intro','ogre-after'].includes(state.sceneId)) music.select('menu');
   if (state.sceneId==='undead-farm-owner-05') sceneUndeadFarmOwner05();
+  else if (state.sceneId==='undead-farm-brains-15') sceneUndeadFarmBrains15();
   else if (state.sceneId==='work-event') gpEventScreen();
   else if(state.sceneId==='foreman-handover')gpHandoverScene();
   else if(state.sceneId==='night-training')gpNightTraining();
