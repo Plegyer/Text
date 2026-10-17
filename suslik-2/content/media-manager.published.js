@@ -1,1 +1,1 @@
-window.SUSLIK2_PUBLISHED_MEDIA = {};
+window.SUSLIK2_PUBLISHED_MEDIA = {"goblinDefeat":["assets/user-media/manager/goblin-defeat/bee4fd39-47b0-4ecf-a6ff-e92d449985aa/slot-01.png","assets/user-media/manager/goblin-defeat/bee4fd39-47b0-4ecf-a6ff-e92d449985aa/slot-02.gif","assets/user-media/manager/goblin-defeat/bee4fd39-47b0-4ecf-a6ff-e92d449985aa/slot-03.gif","assets/user-media/manager/goblin-defeat/bee4fd39-47b0-4ecf-a6ff-e92d449985aa/slot-04.jpg"]};
