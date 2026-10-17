@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://api.github.com; img-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.github.com; img-src 'none'; base-uri 'none'; form-action 'none'">
 <title>SUSLIK 2 — загрузка медиа в игру</title>
 <link rel="stylesheet" href="./style.css">
-<script defer src="./app-bundle.js"></script>
+<script defer src="./app-bundle.js?v=20261017-csp"></script>
 </head>
 <body>
 <main class="shell">
@@ -16,14 +16,14 @@
  <section class="panel" aria-labelledby="scene-title">
   <div class="number">01 <span id="scene-title">Событие</span></div>
   <label for="event">Куда добавить медиа</label>
-  <select id="event"><option value="">Загружаем список сцен…</option></select>
+  <select id="event" disabled><option value="">Загружаем список сцен…</option></select>
   <p id="event-hint" class="hint"></p>
   <div id="published" class="published" role="status">Ожидаем выбора события.</div>
  </section>
  <section class="panel" aria-labelledby="files-title">
   <div class="number">02 <span id="files-title">Файлы</span></div>
   <label class="pick" for="file-input">+ Выбрать изображения или видео
-   <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.gif,.mp4,image/png,image/jpeg,image/webp,image/gif,video/mp4" multiple>
+   <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.gif,.mp4,image/png,image/jpeg,image/webp,image/gif,video/mp4" multiple disabled>
   </label>
   <p class="hint">Форматы: PNG, JPG, WebP, GIF, MP4. MP3 не принимается. Не более 95 МБ на файл. Изображения и видео здесь не показываются.</p>
   <ol id="file-list" class="files" aria-live="polite"><li class="placeholder">Файлы ещё не выбраны.</li></ol>
@@ -42,3 +42,4 @@
 </main>
 </body>
 </html>
+

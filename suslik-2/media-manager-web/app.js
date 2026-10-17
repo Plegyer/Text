@@ -22,7 +22,7 @@ function sync(){
  countBox.textContent=selectedFiles.length+' из '+(slot?slot.maxFiles:0)+' файлов';
  publishBtn.disabled=busy||!slot||!selectedFiles.length||!tokenBox.value.trim();
  fileInput.disabled=busy||!slot;
- eventBox.disabled=busy;
+ eventBox.disabled=busy||!events.length;
  tokenBox.disabled=busy;
 }
 function renderFiles(){
@@ -65,9 +65,9 @@ function showEvent(){
  hintBox.textContent=slot.connected?'Сцена уже есть в игре. Новые изображения появятся после публикации и обновления игры.':
   'Место зарезервировано. Файлы можно опубликовать, но сам игровой экран ещё предстоит написать.';
  const arr=remoteManifest?.[slot.key];
- const info=Array.isArray(arr)?arr.length:null;
- publishedBox.textContent=info===null?'Загружаем состояние GitHub…':
-  'В GitHub сейчас: '+info+' файлов. Новая публикация ЗАМЕНИТ все медиа только этой сцены.';
+ const info=remoteManifest===null?null:(Array.isArray(arr)?arr.length:0);
+ publishedBox.textContent=info===null?'Текущий список GitHub будет проверен перед публикацией.':
+  'В GitHub сейчас: '+info+' файлов. Новая публикация заменит список этой сцены; прежние файлы сохранятся в репозитории.';
  status('Добавь файлы для выбранной сцены.');
 }
 async function api(method,path,token,data){
@@ -105,19 +105,21 @@ async function upload(){
  catch(err){status(err.message,'error');return;}
  const token=tokenBox.value.trim();
  if(!token){status('Добавь разрешение GitHub для публикации.','error');return;}
- const oldCount=Array.isArray(remoteManifest?.[slot.key])?remoteManifest[slot.key].length:0;
- if(oldCount>0&&!confirm('Для этого события уже опубликовано '+oldCount+
-   ' файлов. Новая загрузка полностью заменит их. Остальные события останутся без изменений. Продолжить?'))return;
  busy=true;sync();renderFiles();
  commitLink.hidden=true;
  try{
   status('Проверяю GitHub и текущие файлы…');
   const head=await getHead(token);
   const manifest=await currentManifest(token);
-  const {mediaEntries,deletions,manifest:nextManifest}=planPublication(manifest,slot,selectedFiles);
+  const oldCount=Array.isArray(manifest[slot.key])?manifest[slot.key].length:0;
+  if(oldCount>0&&!confirm('Для этого события уже опубликовано '+oldCount+
+    ' файлов. Заменить список сцены выбранными файлами? Прежние файлы останутся в репозитории, остальные сцены не изменятся.')){
+   status('Публикация отменена. Файлы не отправлялись.');return;
+  }
+  const {mediaEntries,manifest:nextManifest}=planPublication(manifest,slot,selectedFiles);
   const secondHead=await getHead(token);
   if(secondHead!==head)throw Error('Проект изменился во время подготовки. Нажми «Опубликовать» ещё раз.');
-  const entries=deletions.map(path=>({path,mode:'100644',type:'blob',sha:null}));
+  const entries=[];
   for(let i=0;i<mediaEntries.length;i++){
    const item=mediaEntries[i];
    status('Загружаю файл '+(i+1)+' из '+mediaEntries.length+': '+item.file.name);
@@ -142,7 +144,7 @@ async function upload(){
   commitLink.href='https://github.com/'+OWNER_REPO+'/commit/'+nextCommit.sha;
   commitLink.hidden=false;
   status('✅ Опубликовано: '+mediaEntries.length+' файлов. Они уже в проекте SUSLIK 2! Для игры на компьютере потребуется обновление.','ok');
-  selectedFiles=[];fileInput.value='';renderFiles();
+  selectedFiles=[];fileInput.value='';tokenBox.value='';renderFiles();
  }catch(error){
   status('Не опубликовано: '+String(error?.message||error)+'. Загруженные промежуточные данные не меняют игру.','error');
  }finally{busy=false;sync();renderFiles();}
@@ -164,6 +166,7 @@ async function start(){
   const response=await fetch('./slots.json',{cache:'no-store'});
   if(!response.ok)throw Error('Не удалось загрузить список событий ('+response.status+').');
   const data=await response.json();
+  if(!Array.isArray(data.events)||!data.events.length)throw Error('Каталог событий пуст.');
   events=data.events.map(validateEvent);
   eventBox.replaceChildren();
   const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Выбери событие…';eventBox.append(placeholder);
@@ -171,12 +174,27 @@ async function start(){
    const option=document.createElement('option');option.value=slot.id;option.textContent=slot.title;
    eventBox.append(option);
   }
-  try{remoteManifest=await currentManifest();}catch(e){remoteManifest=null;}
   publishedBox.textContent='Выбери событие.';
   status('Выбери сцену и файлы.');
   sync();
+  // Catalogue and file selection work independently of GitHub availability/rate limits.
+  try{
+   remoteManifest=await currentManifest();
+   const slot=event();
+   if(slot){
+    const count=remoteManifest[slot.key]?.length||0;
+    publishedBox.textContent='В GitHub сейчас: '+count+' файлов. Прежние файлы сохранятся в репозитории.';
+   }
+  }catch(e){
+   remoteManifest=null;
+   if(event())publishedBox.textContent='Текущий список GitHub будет проверен перед публикацией.';
+  }
  }catch(e){
-  status('Страница не готова: '+e.message,'error');eventBox.replaceChildren();
+  status('Не удалось загрузить каталог событий. Обнови страницу. '+e.message,'error');
+  events=[];eventBox.replaceChildren();
+  const option=document.createElement('option');option.value='';option.textContent='Каталог недоступен';eventBox.append(option);
+  sync();
  }
 }
 start();
+
