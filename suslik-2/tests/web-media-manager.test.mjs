@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {
  ALLOWED_EXTENSIONS,MAX_BYTES,fileExtension,parseManifest,validateEvent,validateFiles,planPublication,
- encodeFile,toBase64Text,decodeContent,OWNER_REPO,BRANCH,MANIFEST_PATH
+ encodeFile,encodeVideoPart,MEDIA_PART_BYTES,SINGLE_BLOB_BYTES,isMediaValue,toBase64Text,decodeContent,OWNER_REPO,BRANCH,MANIFEST_PATH
 } from '../media-manager-web/core.js';
 const root=file=>new URL('../'+file,import.meta.url);
 const slotData=JSON.parse(await readFile(root('content/media-manager-slots.json'),'utf8')).events;
@@ -122,4 +122,44 @@ test('append publishes two new videos after three existing videos, preserving al
  const replacement=planPublication(saved,event,[f('only.mp4')],id,'replace');
  assert.equal(replacement.nextPaths.length,1);
  assert.deepEqual(saved.farGoblinPermission,existing);
+});
+
+test('large MP4 is represented as safe small fragments and counts as exactly one scene slot',async()=>{
+ const slot=slotData.find(x=>x.key==='farGoblinPermission');
+ const old=[
+  'assets/user-media/manager/goblin-permission/old/slot-01.mp4',
+  'assets/user-media/manager/goblin-permission/old/slot-02.mp4',
+  'assets/user-media/manager/goblin-permission/old/slot-03.mp4'
+ ];
+ const original=new Uint8Array(SINGLE_BLOB_BYTES+19);
+ for(let i=0;i<original.length;i++)original[i]=i%251;
+ const file={
+  name:'sample.mp4',size:original.byteLength,
+  slice:(start,end)=>({arrayBuffer:async()=>original.slice(start,end).buffer}),
+  arrayBuffer:async()=>original.buffer
+ };
+ const published={farGoblinPermission:old,goblinDefeat:['assets/untouched.png']};
+ const id='11111111-1111-4111-8111-111111111111';
+ const planned=planPublication(published,slot,[file],id,'append');
+ assert.equal(planned.nextPaths.length,4);
+ assert.deepEqual(planned.nextPaths.slice(0,3),old);
+ assert.equal(planned.mediaEntries.length,Math.ceil(file.size/MEDIA_PART_BYTES));
+ assert.equal(planned.addedPaths.length,1);
+ const desc=planned.addedPaths[0];
+ assert.equal(desc.type,'chunked-mp4');
+ assert.equal(desc.parts.length,planned.mediaEntries.length);
+ assert.ok(isMediaValue(desc));
+ assert.deepEqual(parseManifest(planned.manifest).farGoblinPermission,planned.nextPaths);
+ const reconstructed=[];
+ for(const entry of planned.mediaEntries){
+  const source=await encodeVideoPart(entry.file,entry.partIndex,entry.partPath);
+  assert.ok(!source.includes(file.name));
+  const window={};
+  const {runInNewContext}=await import('node:vm');
+  runInNewContext(source,{window,Object});
+  const bytes=Buffer.from(window.SUSLIK2_MEDIA_PARTS[entry.partPath],'base64');
+  assert.ok(bytes.length<=MEDIA_PART_BYTES);
+  reconstructed.push(bytes);
+ }
+ assert.deepEqual(Buffer.concat(reconstructed),Buffer.from(original));
 });
