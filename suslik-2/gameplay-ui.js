@@ -135,6 +135,15 @@ function gpOpenSleep(){
  opts.append(gpButton(gl('nightRent'),'sleep-rent',()=>{dialog.close();dialog.remove();if(state.run.gold>=100){state.run.gold-=100;changeScene('night-room');}else changeScene('night-street');}));
   opts.append(gpButton('Спать на улице бесплатно','sleep-free-street',()=>{dialog.close();dialog.remove();changeScene('night-street');}));
   opts.append(gpButton(gl('nightSatyr'),'sleep-satyr',()=>{dialog.close();dialog.remove();const lost=gp().satyrWork(state);changeScene(lost?'night-satyr':'night-street');}));
+ if(gp().canStudyWithZombie(state))opts.append(gpButton('Обучение','sleep-zombie-study',()=>{
+   dialog.close();dialog.remove();
+   const pending=element('dialog','new-game-dialog info-dialog');
+   pending.append(element('h2','','Обучение'));
+   pending.append(element('p','','Сцена обучения будет добавлена позднее.'));
+   pending.append(gpButton('Закрыть','zombie-study-close',()=>pending.close()));
+   pending.addEventListener('close',()=>pending.remove(),{once:true});
+   document.body.append(pending);pending.showModal();
+ }));
  opts.append(gpButton(gl('nightCancel'),'sleep-cancel',()=>{dialog.close();dialog.remove();}));
  dialog.append(opts);dialog.addEventListener('close',()=>dialog.remove(),{once:true});document.body.append(dialog);dialog.showModal();
 }
@@ -288,6 +297,18 @@ function sceneUndeadFarmBrains15(){
   }
  }]);
 }
+/* First paid shift after collecting the brain: wide authored story with no extra rewards. */
+function sceneUndeadFarmBrainReturn(){
+ const panel=gpScene(gc().images.undeadFarmBrainReturn,gc().text.undeadFarmBrainReturn,[{
+  id:'undead-farm-brain-return-next',label:gl('next'),fn:()=>{
+   if(state.sceneId!=='undead-farm-brain-return')return;
+   if(!gp().finishFarmBrainHandover(state))return;
+   state.run.farmLastShift=null;
+   changeScene('undead-farm-work');
+  }
+ }]);
+ panel.parentElement.classList.add('farm-brain-return-scene');
+}
 function gpFarmBrainsReady(){
  return !state.run.farmBrainsMet&&state.run.farmShifts>=15&&
   state.character.stats.endurance>=15&&state.character.stats.reason>=15;
@@ -307,6 +328,8 @@ function startUndeadFarmShift(){
  }else if(gpFarmBrainsReady()){
   state.run.farmBrainsMet=true;
   state.sceneId='undead-farm-brains-15';
+ }else if(gp().beginFarmBrainHandover(state)){
+  state.sceneId='undead-farm-brain-return';
  }
  persist();render();return true;
 }

@@ -200,3 +200,30 @@ button:focus-visible,select:focus-visible,input:focus-visible { outline: 3px sol
 .game-map-brain-folds{fill:none;stroke:#5b4346;stroke-width:1.55;stroke-linecap:round;opacity:.8;}
 .game-map-brain:hover .game-map-brain-outline,.game-map-brain:focus-visible .game-map-brain-outline{fill:#aa777a;}
 .game-map-brain:focus-visible .game-map-brain-hit{stroke:#ffe3a5;stroke-width:2;}
+
+/* Wide authored picture and long scrollable dialogue for the zombie brain handover. */
+.story-scene.farm-brain-return-scene {
+ height:100%; min-height:0; display:flex; flex-direction:column; align-items:center;
+ overflow-y:auto; overflow-x:hidden; background:#1c1824;
+ padding:clamp(10px,2vw,24px) clamp(10px,3vw,35px) 24px;
+}
+.farm-brain-return-scene .story-art {
+ width:min(100%,1100px); aspect-ratio:1672/941; flex:0 0 auto; min-height:0; overflow:visible;
+}
+.farm-brain-return-scene .story-image {width:100%;height:100%;object-fit:contain;}
+.farm-brain-return-scene .story-panel {
+ flex:0 0 auto; min-height:0; width:min(100%,1100px); max-width:1100px;
+ border-left:0; border-top:2px solid #ad895f;
+ padding:clamp(16px,2.2vw,34px); overflow:visible;
+}
+.farm-brain-return-scene .story-text {
+ flex:none; width:100%; max-width:none; margin:0; overflow:visible;
+ white-space:pre-line; padding:0; font-size:clamp(17px,1.45vw,22px); line-height:1.55;
+}
+.farm-brain-return-scene .story-actions {flex:0 0 auto; margin:22px 0 0;}
+@media(max-width:720px){
+ .story-scene.farm-brain-return-scene {height:auto; min-height:100dvh; padding:10px;}
+ .farm-brain-return-scene .story-art {height:auto; min-height:0; width:100%;}
+ .farm-brain-return-scene .story-panel {min-height:0; max-height:none;}
+ .farm-brain-return-scene .story-text {max-height:none; overflow:visible;}
+}

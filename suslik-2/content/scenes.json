@@ -325,6 +325,11 @@
       "kind": "panel",
       "actions": [],
       "music": "farm"
+    },
+    "undead-farm-brain-return": {
+      "kind": "panel",
+      "actions": [],
+      "music": "farm"
     }
   }
 }
