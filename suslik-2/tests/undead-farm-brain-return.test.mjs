@@ -58,7 +58,7 @@ test('brain is not handed over simply by visiting; only next paid farm shift tri
  state.run.zombieBrainFound=true;
  assert.equal(H.canStudyWithZombie(state),false);
  assert.equal(state.run.farmBrainHandoverPending,false);
- ctx.sceneUndeadFarmWork({});
+ // Opening the farm itself makes no payment and cannot consume the item.
  assert.equal(state.sceneId,'undead-farm-work');
  assert.equal(state.run.farmBrainHandoverPending,false);
  const gold=state.run.gold,energy=state.run.energy,shifts=state.run.farmShifts;
