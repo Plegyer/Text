@@ -16,7 +16,7 @@ test('web manager lists seven canonically authored media slots',async()=>{
  assert.equal(BRANCH,'suslik-2/portable-canonical-20261015');
  assert.equal(MANIFEST_PATH,'suslik-2/content/media-manager.published.js');
  const html=await readFile(root('media-manager-web/index.html'),'utf8');
- assert.match(html,/<script defer src="\.\/app-bundle\.js\?v=20261017-append-drop"/);
+ assert.match(html,/<script defer src="\.\/app-bundle\.js\?v=20261017-video-parts"/);
  assert.match(html,/Опубликовать в GitHub/);
  assert.doesNotMatch(html,/<video|<img|<audio/i);
  const app=await readFile(root('media-manager-web/app.js'),'utf8');
