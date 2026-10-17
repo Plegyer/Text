@@ -1,4 +1,4 @@
-import {OWNER_REPO,BRANCH,MANIFEST_PATH,MAX_BYTES,fileExtension,validateEvent,validateFiles,planPublication,parseManifest,encodeFile,toBase64Text,decodeContent} from './core.js';
+import {OWNER_REPO,BRANCH,MANIFEST_PATH,MAX_BYTES,fileExtension,validateEvent,validateFiles,planPublication,parseManifest,encodeFile,encodeVideoPart,toBase64Text,decodeContent} from './core.js';
 
 const $=id=>document.getElementById(id);
 const eventBox=$('event'),fileInput=$('file-input'),tokenBox=$('token'),fileList=$('file-list'),
@@ -141,9 +141,22 @@ async function upload(){
   const entries=[];
   for(let i=0;i<mediaEntries.length;i++){
    const item=mediaEntries[i];
-   status('Загружаю файл '+(i+1)+' из '+mediaEntries.length+': '+item.file.name);
-   const b64=await encodeFile(item.file);
-   const blob=await api('POST','git/blobs',token,{content:b64,encoding:'base64'});
+   status('Отправляю часть '+(i+1)+' из '+mediaEntries.length+': '+item.file.name+
+    (item.partCount?' ('+(item.partIndex+1)+'/'+item.partCount+')':''));
+   const b64=item.partPath
+    ? toBase64Text(await encodeVideoPart(item.file,item.partIndex,item.partPath))
+    : await encodeFile(item.file);
+   let blob;
+   for(let attempt=1;attempt<=3;attempt++){
+    try{
+     blob=await api('POST','git/blobs',token,{content:b64,encoding:'base64'});
+     break;
+    }catch(error){
+     if(attempt===3||/не разрешил|право Contents|404|не принял файл|неизвестно/i.test(String(error?.message)))throw error;
+     status('Сбой при отправке части '+(i+1)+'. Повторяю: попытка '+(attempt+1)+' из 3…');
+     await new Promise(resolve=>setTimeout(resolve,800*attempt));
+    }
+   }
    if(!/^[a-f0-9]{40}$/.test(blob.sha))throw Error('GitHub не подтвердил приём файла.');
    entries.push({path:item.path,mode:'100644',type:'blob',sha:blob.sha});
   }
@@ -162,7 +175,7 @@ async function upload(){
   publishedBox.textContent='В GitHub теперь: '+nextPaths.length+' файлов из '+slot.maxFiles+'.';
   commitLink.href='https://github.com/'+OWNER_REPO+'/commit/'+nextCommit.sha;
   commitLink.hidden=false;
-  status('✅ Добавлено новых файлов: '+mediaEntries.length+'. Всего для события: '+nextPaths.length+'. Ранее опубликованные материалы не удалены.','ok');
+  status('✅ Добавлено новых файлов: '+selectedFiles.length+'. Всего для события: '+nextPaths.length+'. Ранее опубликованные материалы не удалены.','ok');
   selectedFiles=[];fileInput.value='';renderFiles();
  }catch(error){
   status('Не опубликовано: '+String(error?.message||error)+'. Загруженные промежуточные данные не меняют игру.','error');
