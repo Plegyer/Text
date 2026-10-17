@@ -312,5 +312,23 @@
       }
     }
   ],
-  "sourceCommit": "f5ec253da65153dea1b74866815631bb33febf43"
+  "sourceCommit": "f5ec253da65153dea1b74866815631bb33febf43",
+  "discoverables": {
+    "zombieBrain": {
+      "id": "zombie-brain",
+      "label": "Мозг зомби",
+      "position": {
+        "x": 555,
+        "y": 815,
+        "w": 28,
+        "h": 22
+      },
+      "hit": {
+        "x": 546,
+        "y": 807,
+        "w": 47,
+        "h": 39
+      }
+    }
+  }
 }

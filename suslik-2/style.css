@@ -192,3 +192,11 @@ button:focus-visible,select:focus-visible,input:focus-visible { outline: 3px sol
 .game-menu-actions{display:flex;flex-direction:column;gap:8px;}
 .work-status{font-size:18px;line-height:1.6;color:#efd6b4;}
 @media(max-width:650px){.combat-screen{height:auto;min-height:100dvh;overflow:visible}.combat-fighters{grid-template-columns:1fr}.combat-fighter .story-image{max-height:28vh}.combat-history{flex:0 0 75px;height:75px;}.combat-actions{flex-wrap:wrap}.combat-actions .gameplay-button{flex:1 1 125px;}}
+
+/* Small scavenger find: narrow artwork, larger invisible keyboard/mouse hit area. */
+.game-map-brain{cursor:pointer;outline:none;}
+.game-map-brain-hit{fill:transparent;stroke:transparent;pointer-events:all;}
+.game-map-brain-outline{fill:#946a6c;stroke:#483b3c;stroke-width:1.65;opacity:.9;}
+.game-map-brain-folds{fill:none;stroke:#5b4346;stroke-width:1.55;stroke-linecap:round;opacity:.8;}
+.game-map-brain:hover .game-map-brain-outline,.game-map-brain:focus-visible .game-map-brain-outline{fill:#aa777a;}
+.game-map-brain:focus-visible .game-map-brain-hit{stroke:#ffe3a5;stroke-width:2;}

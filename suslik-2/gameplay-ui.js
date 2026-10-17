@@ -282,6 +282,7 @@ function sceneUndeadFarmBrains15(){
  gpScene(gc().images.undeadFarmBrains15,gc().text.undeadFarmBrains15,[{
   id:'undead-farm-brains-15-next',label:gl('next'),fn:()=>{
    if(state.sceneId!=='undead-farm-brains-15')return;
+   gp().unlockZombieBrainSearch(state);
    state.run.farmLastShift=null;
    changeScene('undead-farm-work');
   }

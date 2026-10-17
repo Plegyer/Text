@@ -634,6 +634,25 @@ function sceneMap(scene) {
     group.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openLocation(loc);}});
     svg.append(group);
   }
+  // A quiet, one-time scavenger find, unlocked only by finishing the farm dialogue.
+  const brainFind=data.discoverables?.zombieBrain;
+  if(brainFind&&gp().canCollectZombieBrain(state)){
+    const group=make('g',{'data-pickup-id':'zombie-brain','data-action-id':'map-zombie-brain',role:'button',tabindex:0,
+      'aria-label':'Подобрать мозг зомби',class:'game-map-brain'});
+    group.append(make('rect',{...rectAttrs(brainFind.hit),rx:7,class:'game-map-brain-hit'}));
+    const p=brainFind.position;
+    const art=make('g',{transform:`translate(${p.x} ${p.y}) scale(${p.w/36} ${p.h/28})`,'pointer-events':'none'});
+    art.append(make('path',{d:'M18 5 C15 1 11 2 9 5 C4 4 2 9 3 13 C0 16 3 23 8 23 C9 28 16 27 18 23 C20 27 27 28 29 23 C35 23 36 17 33 13 C35 8 31 4 27 5 C24 2 20 2 18 5 Z',class:'game-map-brain-outline'}));
+    art.append(make('path',{d:'M18 5 C15 9 20 11 17 14 C14 16 19 20 18 23 M9 6 C13 10 8 10 10 14 C6 16 9 20 12 20 M27 6 C23 9 29 12 25 15 C29 18 24 20 25 23 M5 15 C9 13 11 16 11 18 M31 14 C27 13 26 15 25 17',class:'game-map-brain-folds'}));
+    group.append(art);
+    const title=make('title');title.textContent='Подобрать мозг зомби';group.append(title);
+    const collect=()=>{if(gp().collectZombieBrain(state)){persist();render();}};
+    group.addEventListener('click',collect);
+    group.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){event.preventDefault();collect();}
+    });
+    svg.append(group);
+  }
   const notice=element('div','game-map-missing',tr('mapAssetsMissing'));
   notice.hidden=true;
   let failed=false;
@@ -643,7 +662,7 @@ function sceneMap(scene) {
   screen.append(heading,canvas,notice);
   const footer=element('div','game-map-footer');
   footer.append(gpButton(gl('sleep'),'map-sleep',gpOpenSleep));
-  footer.append(gpButton('Инвентарь','map-inventory',()=>gpInformationDialog('Инвентарь',[['Сломанное копьё гоблина',state.run.brokenSpears||0],['Голова огра',state.run.ogreHead?1:0]])));
+  footer.append(gpButton('Инвентарь','map-inventory',()=>gpInformationDialog('Инвентарь',[['Сломанное копьё гоблина',state.run.brokenSpears||0],['Голова огра',state.run.ogreHead?1:0],...(state.run.zombieBrainFound?[['Мозг зомби',1]]:[])])));
   footer.append(gpButton('Характеристики','map-stats',()=>gpInformationDialog('Характеристики',[...creation.stats.map(k=>[copy().stats[k],state.character.stats[k]]),['Похоть',state.run.lust],['HP',state.run.currentHP??gp().maxHP(state)],['Мана',state.run.currentMana??gp().maxMana(state)]])));
   footer.append(gpButton('Меню','map-menu',gpGameMenu));
   footer.append(gpButton('Полный экран','map-fullscreen',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();}));
