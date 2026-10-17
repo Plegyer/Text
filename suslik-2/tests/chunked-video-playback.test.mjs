@@ -10,7 +10,7 @@ test('offline game reconstructs chunked MP4 using local script fragments without
  const end=source.indexOf('function media(',start);
  assert.ok(start!==-1&&end>start,'missing chunked playback support');
  const loaderSource=source.slice(start,end);
- const raw=new Uint8Array(MEDIA_PART_BYTES*2+73);
+ const raw=new Uint8Array(MEDIA_PART_BYTES*4+73);
  for(let i=0;i<raw.length;i++)raw[i]=(i*37)%256;
  const input={name:'sample.mp4',size:raw.length,slice:(start,end)=>({
   arrayBuffer:async()=>raw.slice(start,end).buffer
@@ -19,7 +19,7 @@ test('offline game reconstructs chunked MP4 using local script fragments without
  const pub=planPublication({},event,[input],'11111111-1111-4111-8111-111111111111','append');
  const description=pub.addedPaths[0];
  assert.equal(description.type,'chunked-mp4');
- assert.equal(description.parts.length,3);
+ assert.equal(description.parts.length,5);
  const scripts=new Map();
  for(const entry of pub.mediaEntries)scripts.set(entry.partPath,
   await encodeVideoPart(entry.file,entry.partIndex,entry.partPath));
