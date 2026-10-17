@@ -1,0 +1,1 @@
+window.SUSLIK2_MANAGED_MEDIA = {};

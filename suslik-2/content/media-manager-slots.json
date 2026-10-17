@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "goblin-permission",
+      "key": "farGoblinPermission",
+      "title": "Дальний лес — разрешение гоблина",
+      "maxFiles": 5,
+      "connected": true
+    },
+    {
+      "id": "sawmill-lust",
+      "key": "sawmillLust",
+      "title": "Лесопилка — событие Похоти",
+      "maxFiles": 20,
+      "connected": true
+    },
+    {
+      "id": "undead-farm-night-learning",
+      "key": "undeadFarmNightLearning",
+      "title": "Ферма зомби — ночное обучение (ожидает сцену)",
+      "maxFiles": 20,
+      "connected": false
+    }
+  ]
+}
