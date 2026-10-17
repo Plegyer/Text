@@ -1,0 +1,46 @@
+name: SUSLIK 2 brain map screenshot
+
+on:
+  push:
+    branches:
+      - 'suslik-2/portable-canonical-20261015'
+    paths:
+      - 'suslik-2/tools/capture-brain-map.mjs'
+      - '.github/workflows/suslik2-map-screenshot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+      - name: Install screenshot driver
+        working-directory: suslik-2
+        run: npm install --no-save --package-lock=false playwright-core
+      - name: Capture actual map with the hidden zombie brain visible
+        working-directory: suslik-2
+        run: node tools/capture-brain-map.mjs
+      - name: Publish screenshot in the canonical branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add suslik-2/previews/zombie-brain-map.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Save real-game screenshot of zombie brain on map"
+            git push origin HEAD:suslik-2/portable-canonical-20261015
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: suslik2-zombie-brain-map
+          path: suslik-2/previews/zombie-brain-map.png
