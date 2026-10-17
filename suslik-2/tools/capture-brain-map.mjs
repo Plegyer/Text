@@ -29,6 +29,14 @@ try{
    render();
  });
  await page.locator('[data-pickup-id="zombie-brain"]').waitFor({state:'visible'});
+ // Fullscreen belongs to the game menu alongside audio settings, never on the map.
+ if(await page.locator('[data-action-id="map-fullscreen"]').count())throw Error('Duplicate fullscreen button on map.');
+ await page.locator('[data-action-id="map-menu"]').click();
+ if(await page.locator('dialog.game-menu [data-action-id="menu-settings"]').count()!==1)
+   throw Error('Audio settings missing in game menu.');
+ if(await page.locator('dialog.game-menu [data-action-id="menu-fullscreen"]').count()!==1)
+   throw Error('Fullscreen button missing in game menu.');
+ await page.locator('dialog.game-menu [data-action-id="menu-close"]').click();
  const loaded=await page.evaluate(async()=>{
   const source=window.SUSLIK2_CONTENT.map;
   const paths=[source.background,...source.locations.filter(loc=>source.initialVisible.includes(loc.id)).map(loc=>loc.image)];

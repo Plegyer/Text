@@ -665,7 +665,6 @@ function sceneMap(scene) {
   footer.append(gpButton('Инвентарь','map-inventory',()=>gpInformationDialog('Инвентарь',[['Сломанное копьё гоблина',state.run.brokenSpears||0],['Голова огра',state.run.ogreHead?1:0],...(state.run.zombieBrainFound?[['Мозг зомби',1]]:[])])));
   footer.append(gpButton('Характеристики','map-stats',()=>gpInformationDialog('Характеристики',[...creation.stats.map(k=>[copy().stats[k],state.character.stats[k]]),['Похоть',state.run.lust],['HP',state.run.currentHP??gp().maxHP(state)],['Мана',state.run.currentMana??gp().maxMana(state)]])));
   footer.append(gpButton('Меню','map-menu',gpGameMenu));
-  footer.append(gpButton('Полный экран','map-fullscreen',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();}));
   if(gp().endingAvailable(state))footer.append(gpButton(gl('ending'),'map-ending',()=>changeScene('ending-menu')));
   screen.append(footer);root.append(screen);
 }

@@ -88,3 +88,12 @@ test('offline map embeds the exact 13 location definitions; no standalone demo i
   assert.match(await read('index.html'),/src="offline\.js"/);
   assert.doesNotMatch(await read('offline.js'),/fetch\(/);
 });
+
+
+test('fullscreen control belongs to game menu, not the map footer',async()=>{
+  const source=await read('offline.js');
+  assert.match(source,/gpButton\('Меню','map-menu',gpGameMenu\)/);
+  assert.match(source,/gpButton\('Полный экран','menu-fullscreen'/);
+  assert.doesNotMatch(source,/map-fullscreen/);
+  assert.equal((source.match(/gpButton\('Полный экран'/g)||[]).length,1);
+});
