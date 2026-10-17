@@ -16,7 +16,7 @@ test('web manager lists seven canonically authored media slots',async()=>{
  assert.equal(BRANCH,'suslik-2/portable-canonical-20261015');
  assert.equal(MANIFEST_PATH,'suslik-2/content/media-manager.published.js');
  const html=await readFile(root('media-manager-web/index.html'),'utf8');
- assert.match(html,/type="module" src="\.\/app\.js"/);
+ assert.match(html,/<script defer src="\.\/app-bundle\.js"/);
  assert.match(html,/Опубликовать в GitHub/);
  assert.doesNotMatch(html,/<video|<img|<audio/i);
  const app=await readFile(root('media-manager-web/app.js'),'utf8');
@@ -74,4 +74,15 @@ test('UTF8 manifest and binary bytes preserve the exact uploaded file',async()=>
  assert.equal(decodeContent(toBase64Text(manifest)),manifest);
  assert.deepEqual(parseManifest(manifest).goblinDefeat,['проба.webp']);
  assert.throws(()=>parseManifest('alert(1)'),/незнакомый/);
+});
+
+test('static browser page ships its own catalogue and standalone publisher',async()=>{
+ const bundle=await readFile(root('media-manager-web/app-bundle.js'),'utf8');
+ const local=JSON.parse(await readFile(root('media-manager-web/slots.json'),'utf8'));
+ assert.deepEqual(local.events,slotData);
+ assert.match(bundle,/async function start/);
+ assert.ok(bundle.includes("fetch('./slots.json'"));
+ assert.ok(!bundle.includes("from './core.js'"));
+ assert.match(bundle,/function planPublication/);
+ assert.match(bundle,/git\/refs\/heads/);
 });

@@ -160,8 +160,10 @@ fileInput.addEventListener('change',()=>{
 publishBtn.addEventListener('click',upload);
 async function start(){
  try{
-  const remote=await api('GET','contents/suslik-2/content/media-manager-slots.json?ref='+encodeURIComponent(BRANCH),'');
-  const data=JSON.parse(decodeContent(remote.content));
+  // Read the catalog locally so anonymous GitHub API failures do not hide every scene.
+  const response=await fetch('./slots.json',{cache:'no-store'});
+  if(!response.ok)throw Error('Не удалось загрузить список событий ('+response.status+').');
+  const data=await response.json();
   events=data.events.map(validateEvent);
   eventBox.replaceChildren();
   const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Выбери событие…';eventBox.append(placeholder);
