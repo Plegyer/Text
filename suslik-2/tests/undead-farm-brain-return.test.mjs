@@ -110,7 +110,7 @@ test('save/restore preserve pending handover and completed night study unlock',(
  assert.equal(H.canCollectZombieBrain(finished),false);
  assert.equal(H.restoreRun({},work).farmBrainReturned,false);
 });
-test('night study is gated behind completed dialogue; dwarf training unaffected',()=>{
+test('night study is gated behind completed dialogue; dwarf training unaffected',async()=>{
  assert.match(ui,/canStudyWithZombie\(state\)/);
  assert.match(ui,/gpButton\('Обучение','sleep-zombie-study'/);
  assert.match(ui,/gl\('training'\)/);
