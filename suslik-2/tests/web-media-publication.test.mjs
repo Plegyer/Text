@@ -133,3 +133,30 @@ test('dragging new images into the drop area reuses file validations and capacit
  assert.equal(f.$('file-list').children.length,1);
  assert.match(f.$('status').textContent,/Неподдерживаемый/);
 });
+
+test('browser uploads a >8MiB video as separate small requests, then commits one media slot',async()=>{
+ const f=await fixture();
+ f.$('event').value='goblin-defeat';f.$('event').listeners.change();
+ const bytes=new Uint8Array(8*1024*1024+123);
+ bytes[0]=12;bytes[bytes.length-1]=99;
+ const large={name:'big.mp4',size:bytes.length,slice:(start,end)=>({
+  arrayBuffer:async()=>bytes.slice(start,end).buffer
+ })};
+ f.$('file-input').files=[large];f.$('file-input').listeners.change();
+ f.$('token').value='TEST_ONLY_NOT_A_CREDENTIAL';f.$('token').listeners.input();
+ await f.$('publish').listeners.click();
+ const requests=f.requests.filter(r=>r.method==='POST'&&r.url.endsWith('/git/blobs'));
+ assert.equal(requests.length,6);
+ for(let i=0;i<requests.length-1;i++){
+  const data=Buffer.from(requests[i].body.content,'base64').toString('utf8');
+  assert.ok(data.includes('window.SUSLIK2_MEDIA_PARTS'));
+  assert.ok(data.length<4*1024*1024);
+ }
+ const json=Buffer.from(requests.at(-1).body.content,'base64').toString('utf8');
+ assert.match(json,/"type":"chunked-mp4"/);
+ const updated=JSON.parse(json.match(/^window.SUSLIK2_PUBLISHED_MEDIA = (.*);\n$/)?.[1]||'null');
+ assert.equal(updated.goblinDefeat.length,2);
+ assert.equal(updated.goblinDefeat[1].parts.length,5);
+ assert.equal(f.$('status').textContent.includes('Добавлено'),true);
+ assert.equal(f.$('token').value,'TEST_ONLY_NOT_A_CREDENTIAL');
+});
