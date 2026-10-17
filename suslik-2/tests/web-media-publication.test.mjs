@@ -108,8 +108,8 @@ test('add mode retains old media paths and the token across consecutive uploads'
  const f=await fixture();await prepare(f);await f.$('publish').listeners.click();
  const writes=f.requests.filter(r=>r.method!=='GET');
  const manifest=Buffer.from(writes[1].body.content,'base64').toString('utf8');
- assert.match(manifest,/assets\\/existing.gif/);
- assert.match(manifest,/assets\\/training.png/);
+ assert.ok(manifest.includes('assets/existing.gif'));
+ assert.ok(manifest.includes('assets/training.png'));
  assert.equal(f.$('published').textContent.includes('2 файлов'),true);
  assert.equal(f.$('token').value,'TEST_ONLY_NOT_A_CREDENTIAL');
  f.$('event').value='ogre-captive';f.$('event').listeners.change();
