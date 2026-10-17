@@ -1,4 +1,4 @@
-import {OWNER_REPO,BRANCH,MANIFEST_PATH,MAX_BYTES,fileExtension,validateEvent,validateFiles,planPublication,parseManifest,encodeFile,toBase64Text,decodeContent} from './core.mjs';
+import {OWNER_REPO,BRANCH,MANIFEST_PATH,MAX_BYTES,fileExtension,validateEvent,validateFiles,planPublication,parseManifest,encodeFile,toBase64Text,decodeContent} from './core.js';
 
 const $=id=>document.getElementById(id);
 const eventBox=$('event'),fileInput=$('file-input'),tokenBox=$('token'),fileList=$('file-list'),
@@ -160,9 +160,8 @@ fileInput.addEventListener('change',()=>{
 publishBtn.addEventListener('click',upload);
 async function start(){
  try{
-  const response=await fetch('./slots.json',{cache:'no-store'});
-  if(!response.ok)throw Error('Не удалось загрузить список событий.');
-  const data=await response.json();
+  const remote=await api('GET','contents/suslik-2/content/media-manager-slots.json?ref='+encodeURIComponent(BRANCH),'');
+  const data=JSON.parse(decodeContent(remote.content));
   events=data.events.map(validateEvent);
   eventBox.replaceChildren();
   const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Выбери событие…';eventBox.append(placeholder);

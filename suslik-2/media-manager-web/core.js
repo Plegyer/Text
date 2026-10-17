@@ -40,7 +40,6 @@ export function planPublication(published,event,files){
  validateFiles(files,event);
  if(!published||typeof published!=='object'||Array.isArray(published))throw Error('Каталог медиа повреждён.');
  const prefix='assets/user-media/manager/'+event.id+'/';
- const path=f=>prefix+'slot-'+String(files.indexOf(f)+1).padStart(2,'0')+'.'+fileExtension(f.name);
  const nextPaths=files.map((f,i)=>prefix+'slot-'+String(i+1).padStart(2,'0')+'.'+fileExtension(f.name));
  const old=published[event.key]??[];
  if(!Array.isArray(old))throw Error('Каталог сцены повреждён.');

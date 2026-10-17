@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {
  ALLOWED_EXTENSIONS,MAX_BYTES,fileExtension,parseManifest,validateEvent,validateFiles,planPublication,
  encodeFile,toBase64Text,decodeContent,OWNER_REPO,BRANCH,MANIFEST_PATH
-} from '../media-manager-web/core.mjs';
+} from '../media-manager-web/core.js';
 const root=file=>new URL('../'+file,import.meta.url);
 const slotData=JSON.parse(await readFile(root('content/media-manager-slots.json'),'utf8')).events;
 const f=(name,size=4)=>({name,size});
