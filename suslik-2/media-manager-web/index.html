@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://api.github.com; img-src 'none'; base-uri 'none'; form-action 'none'">
+<title>SUSLIK 2 — загрузка медиа в игру</title>
+<link rel="stylesheet" href="./style.css">
+<script defer src="./app.js"></script>
+</head>
+<body>
+<main class="shell">
+ <header><div class="eyebrow">SUSLIK 2 · Авторские материалы</div><h1>Медиа для игровых сцен</h1>
+ <p>Выбери существующее событие, добавь изображения или видео и опубликуй их прямо в игре на GitHub. Скачивать или устанавливать SUSLIK 2 не нужно.</p></header>
+ <section class="panel" aria-labelledby="scene-title">
+  <div class="number">01 <span id="scene-title">Событие</span></div>
+  <label for="event">Куда добавить медиа</label>
+  <select id="event"><option value="">Загружаем список сцен…</option></select>
+  <p id="event-hint" class="hint"></p>
+  <div id="published" class="published" role="status">Ожидаем выбора события.</div>
+ </section>
+ <section class="panel" aria-labelledby="files-title">
+  <div class="number">02 <span id="files-title">Файлы</span></div>
+  <label class="pick" for="file-input">+ Выбрать изображения или видео
+   <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.gif,.mp4,image/png,image/jpeg,image/webp,image/gif,video/mp4" multiple>
+  </label>
+  <p class="hint">Форматы: PNG, JPG, WebP, GIF, MP4. MP3 не принимается. Не более 95 МБ на файл. Изображения и видео здесь не показываются.</p>
+  <ol id="file-list" class="files" aria-live="polite"><li class="placeholder">Файлы ещё не выбраны.</li></ol>
+  <p id="count" class="counter">0 файлов</p>
+ </section>
+ <section class="panel" aria-labelledby="access-title">
+  <div class="number">03 <span id="access-title">Публикация</span></div>
+  <label for="token">Разрешение GitHub</label>
+  <input id="token" class="token" type="password" autocomplete="off" spellcheck="false" placeholder="Вставь токен GitHub с правом записи">
+  <p class="hint">Для публикации нужен доступ к Plegyer/Text. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Получить токен GitHub ↗</a> (репозиторий Plegyer/Text, Contents → Read and write). Токен используется только в этом окне и нигде не сохраняется.</p>
+  <button id="publish" class="primary" type="button" disabled>Опубликовать в GitHub</button>
+  <div id="status" class="status" role="status" aria-live="polite">Выбери сцену и файлы.</div>
+  <a id="commit-link" class="commit-link" target="_blank" rel="noopener noreferrer" hidden>Посмотреть опубликованные изменения ↗</a>
+ </section>
+ <footer>Публикуются только выбранные файлы одного события. Остальная игра и другие сцены не меняются. Новые файлы входят в следующую сборку SUSLIK 2. Будущие неготовые сцены отмечены отдельно.</footer>
+</main>
+</body>
+</html>
