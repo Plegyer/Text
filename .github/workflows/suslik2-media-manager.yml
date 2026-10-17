@@ -56,3 +56,6 @@ jobs:
           if($state.farGoblinPermission[0] -ne 'assets/user-media/manager/goblin-permission/slot-01.mp4'){throw 'MP3 broke existing slot'}
           if(-not (Get-Content (Join-Path $dir 'content/media-manager.local.js') -Raw).Contains('window.SUSLIK2_MANAGED_MEDIA')){throw 'Game manifest missing'}
           Write-Host 'Windows media manager import smoke test passed.'
+      - name: Test GitHub publisher with mocked GitHub API (no real uploads)
+        shell: powershell
+        run: '& suslik-2/tests/media-publisher-smoke.ps1'
