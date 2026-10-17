@@ -16,6 +16,34 @@
       "connected": true
     },
     {
+      "id": "goblin-defeat",
+      "key": "goblinDefeat",
+      "title": "Гоблин — поражение (4 варианта)",
+      "maxFiles": 4,
+      "connected": true
+    },
+    {
+      "id": "ogre-captive",
+      "key": "ogreCaptive",
+      "title": "Огр — плен (концовка)",
+      "maxFiles": 1,
+      "connected": true
+    },
+    {
+      "id": "foreman-lady-ending",
+      "key": "endingForemanLady",
+      "title": "Концовка «Бригадирша»",
+      "maxFiles": 1,
+      "connected": true
+    },
+    {
+      "id": "dwarf-night-training",
+      "key": "nightTraining",
+      "title": "Ночная тренировка с гномами",
+      "maxFiles": 1,
+      "connected": true
+    },
+    {
       "id": "undead-farm-night-learning",
       "key": "undeadFarmNightLearning",
       "title": "Ферма зомби — ночное обучение (ожидает сцену)",

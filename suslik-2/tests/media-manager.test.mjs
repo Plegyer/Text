@@ -10,7 +10,7 @@ const [catalogSource,manager,index,content,installer,stateSource,managedSource,l
 ].map(src));
 const entries=JSON.parse(catalogSource).events;
 test('Windows media manager has event catalog, stable labels and no audio formats',()=>{
- assert.equal(entries.length,3);
+ assert.equal(entries.length,7);
  assert.equal(entries.find(x=>x.id==='goblin-permission').maxFiles,5);
  assert.equal(entries.find(x=>x.id==='sawmill-lust').maxFiles,20);
  assert.equal(entries.find(x=>x.id==='undead-farm-night-learning').connected,false);
@@ -75,4 +75,48 @@ test('published catalog can be reused by the manager after reinstall',()=>{
  assert.match(manager,/media-manager\.published\.js/);
  assert.match(manager,/function Existing-Selection/);
  assert.match(manager,/\$paths\.Count -eq 0/);
+});
+
+test('already-authored empty scenes and goblin defeat are directly connected to media manager slots',()=>{
+ const expected=[
+  ['goblin-defeat','goblinDefeat',4],
+  ['ogre-captive','ogreCaptive',1],
+  ['foreman-lady-ending','endingForemanLady',1],
+  ['dwarf-night-training','nightTraining',1]
+ ];
+ for(const [id,key,maxFiles] of expected){
+  const entry=entries.find(x=>x.id===id);
+  assert.ok(entry,'missing '+id);
+  assert.equal(entry.key,key);
+  assert.equal(entry.maxFiles,maxFiles);
+  assert.equal(entry.connected,true);
+ }
+ const empty={window:{SUSLIK2_PUBLISHED_MEDIA:{},SUSLIK2_MANAGED_MEDIA:{}}};
+ runInNewContext(content,empty);
+ for(const key of ['ogreCaptive','endingForemanLady','nightTraining'])
+  assert.equal(empty.window.SUSLIK2_GAMEPLAY_CONTENT.images[key],null);
+ assert.equal(empty.window.SUSLIK2_GAMEPLAY_CONTENT.defeats.goblin.media.length,4);
+ for(const slot of empty.window.SUSLIK2_GAMEPLAY_CONTENT.defeats.goblin.media)assert.equal(slot.file,null);
+ const published={window:{
+  SUSLIK2_PUBLISHED_MEDIA:{
+   goblinDefeat:['assets/user-media/manager/goblin-defeat/slot-01.mp4','assets/user-media/manager/goblin-defeat/slot-02.png'],
+   ogreCaptive:['assets/user-media/manager/ogre-captive/slot-01.webp'],
+   endingForemanLady:['assets/user-media/manager/foreman-lady-ending/slot-01.gif'],
+   nightTraining:['assets/user-media/manager/dwarf-night-training/slot-01.jpg']
+  },
+  SUSLIK2_MANAGED_MEDIA:{goblinDefeat:['assets/local-old.png'],ogreCaptive:['assets/local-old.png']}
+ }};
+ runInNewContext(content,published);
+ const c=published.window.SUSLIK2_GAMEPLAY_CONTENT;
+ assert.equal(c.defeats.goblin.media[0].file,published.window.SUSLIK2_PUBLISHED_MEDIA.goblinDefeat[0]);
+ assert.equal(c.defeats.goblin.media[1].file,published.window.SUSLIK2_PUBLISHED_MEDIA.goblinDefeat[1]);
+ assert.equal(c.defeats.goblin.media[2].file,null);
+ for(const key of ['ogreCaptive','endingForemanLady','nightTraining'])
+  assert.equal(c.images[key],published.window.SUSLIK2_PUBLISHED_MEDIA[key][0]);
+ const local={window:{SUSLIK2_PUBLISHED_MEDIA:{},SUSLIK2_MANAGED_MEDIA:{
+  goblinDefeat:['assets/test-local.mp4'],nightTraining:['assets/test-local.webp']
+ }}};
+ runInNewContext(content,local);
+ assert.equal(local.window.SUSLIK2_GAMEPLAY_CONTENT.defeats.goblin.media[0].file,'assets/test-local.mp4');
+ assert.equal(local.window.SUSLIK2_GAMEPLAY_CONTENT.images.nightTraining,'assets/test-local.webp');
 });

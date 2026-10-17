@@ -11,7 +11,7 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
   hero:'assets/combat/hero-standard.png',
   goblin:'assets/combat/goblin.png',
   room:'assets/night/room.png',street:'assets/night/street.png',satyrWork:'assets/night/satyr-work.png',
-  endingMenu:'assets/map/map-background.webp',endingHardWorker:'assets/endings/hard-worker.gif',foremanHandover:'assets/events/foreman-handover.png',ogreIntro:'assets/events/ogre-intro.png',ogre:'assets/combat/ogre.png',ogreAfter:'assets/events/ogre-after.png',ogreCaptive:null,endingForemanLady:null,nightTraining:null
+  endingMenu:'assets/map/map-background.webp',endingHardWorker:'assets/endings/hard-worker.gif',foremanHandover:'assets/events/foreman-handover.png',ogreIntro:'assets/events/ogre-intro.png',ogre:'assets/combat/ogre.png',ogreAfter:'assets/events/ogre-after.png',ogreCaptive:window.SUSLIK2_PUBLISHED_MEDIA?.ogreCaptive?.[0]||window.SUSLIK2_MANAGED_MEDIA?.ogreCaptive?.[0]||null,endingForemanLady:window.SUSLIK2_PUBLISHED_MEDIA?.endingForemanLady?.[0]||window.SUSLIK2_MANAGED_MEDIA?.endingForemanLady?.[0]||null,nightTraining:window.SUSLIK2_PUBLISHED_MEDIA?.nightTraining?.[0]||window.SUSLIK2_MANAGED_MEDIA?.nightTraining?.[0]||null
  },
  // Generic optional local media slots. No supplied adult videos are bundled.
  permissionMedia:[
@@ -24,10 +24,10 @@ window.SUSLIK2_GAMEPLAY_CONTENT={
  lustMedia:Array.from({length:20},(_,i)=>({id:'MEDIA.WORK.LUST.'+String(i+1).padStart(3,'0'),file:window.SUSLIK2_PUBLISHED_MEDIA?.sawmillLust?.[i]||window.SUSLIK2_MANAGED_MEDIA?.sawmillLust?.[i]||window.SUSLIK2_USER_LUST_MEDIA?.sawmill?.[i]||null})),
  defeats:{
   goblin:{id:'goblin',goldLoss:30,returnScene:'game-main',media:[
-   {id:'MEDIA.DEFEAT.GOBLIN.001',file:null},
-   {id:'MEDIA.DEFEAT.GOBLIN.002',file:null},
-   {id:'MEDIA.DEFEAT.GOBLIN.003',file:null},
-   {id:'MEDIA.DEFEAT.GOBLIN.004',file:null}
+   {id:'MEDIA.DEFEAT.GOBLIN.001',file:window.SUSLIK2_PUBLISHED_MEDIA?.goblinDefeat?.[0]||window.SUSLIK2_MANAGED_MEDIA?.goblinDefeat?.[0]||null},
+   {id:'MEDIA.DEFEAT.GOBLIN.002',file:window.SUSLIK2_PUBLISHED_MEDIA?.goblinDefeat?.[1]||window.SUSLIK2_MANAGED_MEDIA?.goblinDefeat?.[1]||null},
+   {id:'MEDIA.DEFEAT.GOBLIN.003',file:window.SUSLIK2_PUBLISHED_MEDIA?.goblinDefeat?.[2]||window.SUSLIK2_MANAGED_MEDIA?.goblinDefeat?.[2]||null},
+   {id:'MEDIA.DEFEAT.GOBLIN.004',file:window.SUSLIK2_PUBLISHED_MEDIA?.goblinDefeat?.[3]||window.SUSLIK2_MANAGED_MEDIA?.goblinDefeat?.[3]||null}
   ]}
  },
  text:{
