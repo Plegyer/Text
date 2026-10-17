@@ -27,29 +27,34 @@ function validateEvent(event){
     !Number.isInteger(event.maxFiles)||event.maxFiles<1||event.maxFiles>30)throw Error('В списке событий обнаружена ошибка.');
  return event;
 }
-function validateFiles(files,event){
+function validateFiles(files,event,{existingCount=0,mode='append'}={}){
  validateEvent(event);
  if(!Array.isArray(files)||files.length===0)throw Error('Сначала выбери хотя бы один файл.');
- if(files.length>event.maxFiles)throw Error('Слишком много файлов. Для этой сцены максимум: '+event.maxFiles+'.');
+ if(!['append','replace'].includes(mode))throw Error('Неизвестный режим публикации.');
+ if(!Number.isInteger(existingCount)||existingCount<0||existingCount>event.maxFiles)throw Error('Текущий набор содержит слишком много файлов.');
+ const remaining=mode==='append'?event.maxFiles-existingCount:event.maxFiles;
+ if(files.length>remaining)throw Error('Недостаточно мест: можно добавить ещё '+remaining+' файлов. Для полной замены выбери «Заменить весь набор».');
  for(const f of files){
   if(!f||!ALLOWED_EXTENSIONS.has(fileExtension(f.name)))throw Error('Неподдерживаемый формат: '+String(f?.name??''));
   if(!Number.isFinite(f.size)||f.size<=0||f.size>MAX_BYTES)
    throw Error('Размер каждого файла должен быть больше 0 и не более 95 МБ.');
  }
 }
-function planPublication(published,event,files,publicationId=crypto.randomUUID()){
- validateFiles(files,event);
+function planPublication(published,event,files,publicationId=crypto.randomUUID(),mode='append'){
+ validateEvent(event);
  if(!published||typeof published!=='object'||Array.isArray(published))throw Error('Каталог медиа повреждён.');
  if(!/^[a-f0-9-]{36}$/.test(publicationId))throw Error('Некорректный идентификатор публикации.');
  // Each publication gets immutable paths: replacing a scene must not delete or overwrite old files.
  const prefix='assets/user-media/manager/'+event.id+'/'+publicationId+'/';
  const nextPaths=files.map((f,i)=>prefix+'slot-'+String(i+1).padStart(2,'0')+'.'+fileExtension(f.name));
  const old=published[event.key]??[];
- if(!Array.isArray(old))throw Error('Каталог сцены повреждён.');
+ if(!Array.isArray(old)||old.some(p=>typeof p!=='string'))throw Error('Каталог сцены повреждён.');
+ validateFiles(files,event,{existingCount:old.length,mode});
  const mediaEntries=files.map((file,i)=>({file,path:'suslik-2/'+nextPaths[i]}));
- const next={...published,[event.key]:nextPaths};
+ const resultingPaths=mode==='append'?[...old,...nextPaths]:nextPaths;
+ const next={...published,[event.key]:resultingPaths};
  const manifest='window.SUSLIK2_PUBLISHED_MEDIA = '+JSON.stringify(next)+';\n';
- return {mediaEntries,deletions:[],manifest,nextPaths};
+ return {mediaEntries,deletions:[],manifest,nextPaths:resultingPaths,addedPaths:nextPaths};
 }
 async function encodeFile(file){
  const bytes=new Uint8Array(await file.arrayBuffer());
@@ -80,7 +85,8 @@ function decodeContent(content){
 const $=id=>document.getElementById(id);
 const eventBox=$('event'),fileInput=$('file-input'),tokenBox=$('token'),fileList=$('file-list'),
  statusBox=$('status'),countBox=$('count'),publishedBox=$('published'),hintBox=$('event-hint'),
- publishBtn=$('publish'),commitLink=$('commit-link');
+ publishBtn=$('publish'),commitLink=$('commit-link'),modeBox=$('publication-mode'),
+ modeHint=$('mode-hint'),dropZone=$('drop-zone'),clearToken=$('clear-token');
 let events=[];
 let selectedFiles=[];
 let remoteManifest=null;
@@ -94,13 +100,30 @@ function status(message,kind=''){
 function event(){
  return events.find(x=>x.id===eventBox.value)||null;
 }
+function countPublished(slot=event()){
+ const paths=slot&&remoteManifest?.[slot.key];
+ return Array.isArray(paths)?paths.length:0;
+}
+function updateModeHint(){
+ const slot=event();
+ const count=countPublished(slot);
+ if(!slot){modeHint.textContent='Выбери событие.';return;}
+ const remaining=slot.maxFiles-count;
+ modeHint.textContent=modeBox.value==='append'
+  ?('Уже опубликовано: '+count+' из '+slot.maxFiles+'. Свободно: '+remaining+'. Старые файлы сохраняются.')
+  :('Новый набор заменит список из '+count+' файлов. Старые файлы останутся в истории GitHub.');
+}
 function sync(){
  const slot=event();
- countBox.textContent=selectedFiles.length+' из '+(slot?slot.maxFiles:0)+' файлов';
- publishBtn.disabled=busy||!slot||!selectedFiles.length||!tokenBox.value.trim();
+ const remaining=slot?(modeBox.value==='append'?slot.maxFiles-countPublished(slot):slot.maxFiles):0;
+ countBox.textContent=selectedFiles.length+' новых файлов; свободно '+Math.max(0,remaining)+'.';
+ publishBtn.disabled=busy||!slot||!selectedFiles.length||!tokenBox.value.trim()||selectedFiles.length>remaining;
  fileInput.disabled=busy||!slot;
  eventBox.disabled=busy||!events.length;
+ modeBox.disabled=busy||!slot;
  tokenBox.disabled=busy;
+ clearToken.disabled=busy;
+ updateModeHint();
 }
 function renderFiles(){
  fileList.replaceChildren();
@@ -136,15 +159,15 @@ function renderFiles(){
 }
 function showEvent(){
  const slot=event();
- selectedFiles=[];fileInput.value='';renderFiles();
+ selectedFiles=[];fileInput.value='';modeBox.value='append';renderFiles();
  commitLink.hidden=true;
  if(!slot){hintBox.textContent='';publishedBox.textContent='Выбери событие.';status('Выбери сцену и файлы.');return;}
  hintBox.textContent=slot.connected?'Сцена уже есть в игре. Новые изображения появятся после публикации и обновления игры.':
   'Место зарезервировано. Файлы можно опубликовать, но сам игровой экран ещё предстоит написать.';
  const arr=remoteManifest?.[slot.key];
  const info=remoteManifest===null?null:(Array.isArray(arr)?arr.length:0);
- publishedBox.textContent=info===null?'Текущий список GitHub будет проверен перед публикацией.':
-  'В GitHub сейчас: '+info+' файлов. Новая публикация заменит список этой сцены; прежние файлы сохранятся в репозитории.';
+ publishedBox.textContent=info===null?'Точное количество опубликованных файлов проверим перед отправкой.':
+  'В GitHub сейчас: '+info+' файлов из '+slot.maxFiles+'. Можно добавить файлы, не удаляя старые.';
  status('Добавь файлы для выбранной сцены.');
 }
 async function api(method,path,token,data){
@@ -178,7 +201,7 @@ async function getHead(token){
 async function upload(){
  const slot=event();
  if(!slot||busy)return;
- try{validateFiles(selectedFiles,slot);}
+ try{validateFiles(selectedFiles,slot,{existingCount:countPublished(slot),mode:modeBox.value});}
  catch(err){status(err.message,'error');return;}
  const token=tokenBox.value.trim();
  if(!token){status('Добавь разрешение GitHub для публикации.','error');return;}
@@ -189,11 +212,12 @@ async function upload(){
   const head=await getHead(token);
   const manifest=await currentManifest(token);
   const oldCount=Array.isArray(manifest[slot.key])?manifest[slot.key].length:0;
-  if(oldCount>0&&!confirm('Для этого события уже опубликовано '+oldCount+
-    ' файлов. Заменить список сцены выбранными файлами? Прежние файлы останутся в репозитории, остальные сцены не изменятся.')){
+  if(modeBox.value==='replace'&&oldCount>0&&!confirm('Заменить список из '+oldCount+
+    ' опубликованных файлов '+selectedFiles.length+' новыми? Остальные сцены не изменятся.')){
    status('Публикация отменена. Файлы не отправлялись.');return;
   }
-  const {mediaEntries,manifest:nextManifest}=planPublication(manifest,slot,selectedFiles);
+  // Always use the fresh GitHub manifest, not the potentially stale counter on the page.
+  const {mediaEntries,manifest:nextManifest,nextPaths}=planPublication(manifest,slot,selectedFiles,crypto.randomUUID(),modeBox.value);
   const secondHead=await getHead(token);
   if(secondHead!==head)throw Error('Проект изменился во время подготовки. Нажми «Опубликовать» ещё раз.');
   const entries=[];
@@ -216,26 +240,45 @@ async function upload(){
   if((await getHead(token))!==head)throw Error('Другой разработчик обновил игру. Попробуй публикацию повторно.');
   await api('PATCH','git/refs/heads/'+BRANCH,token,{sha:nextCommit.sha,force:false});
   remoteManifest=manifest;
-  remoteManifest[slot.key]=mediaEntries.map(x=>x.path.replace(/^suslik-2\//,''));
-  publishedBox.textContent='В GitHub сейчас: '+mediaEntries.length+' файлов. Опубликованы в канонической ветке.';
+  remoteManifest[slot.key]=nextPaths;
+  publishedBox.textContent='В GitHub теперь: '+nextPaths.length+' файлов из '+slot.maxFiles+'.';
   commitLink.href='https://github.com/'+OWNER_REPO+'/commit/'+nextCommit.sha;
   commitLink.hidden=false;
-  status('✅ Опубликовано: '+mediaEntries.length+' файлов. Они уже в проекте SUSLIK 2! Для игры на компьютере потребуется обновление.','ok');
-  selectedFiles=[];fileInput.value='';tokenBox.value='';renderFiles();
+  status('✅ Добавлено новых файлов: '+mediaEntries.length+'. Всего для события: '+nextPaths.length+'. Ранее опубликованные материалы не удалены.','ok');
+  selectedFiles=[];fileInput.value='';renderFiles();
  }catch(error){
   status('Не опубликовано: '+String(error?.message||error)+'. Загруженные промежуточные данные не меняют игру.','error');
  }finally{busy=false;sync();renderFiles();}
 }
 eventBox.addEventListener('change',showEvent);
 tokenBox.addEventListener('input',sync);
-fileInput.addEventListener('change',()=>{
+clearToken.addEventListener('click',()=>{tokenBox.value='';sync();status('Токен очищен.');});
+modeBox.addEventListener('change',()=>{sync();status(modeBox.value==='append'?'Добавляем к уже опубликованным.':'Заменяем список файлов события.');});
+function addFiles(chosen){
  const slot=event();
- if(!slot)return;
- const chosen=Array.from(fileInput.files||[]);
- try{validateFiles(selectedFiles.concat(chosen),slot);selectedFiles.push(...chosen);renderFiles();status('Файлы выбраны. Можно публиковать.');}
- catch(e){status(e.message,'error');}
+ if(!slot||busy||!chosen.length)return;
+ try{
+  validateFiles(selectedFiles.concat(chosen),slot,{existingCount:countPublished(slot),mode:modeBox.value});
+  selectedFiles.push(...chosen);renderFiles();status('Файлы выбраны. Можно публиковать.');
+ }catch(e){status(e.message,'error');}
+}
+fileInput.addEventListener('change',()=>{
+ addFiles(Array.from(fileInput.files||[]));
  fileInput.value='';
 });
+dropZone.addEventListener('dragover',e=>{
+ if(busy||!event())return;
+ e.preventDefault();e.dataTransfer.dropEffect='copy';dropZone.classList.add('drag-over');
+});
+dropZone.addEventListener('dragleave',e=>{
+ if(!dropZone.contains(e.relatedTarget))dropZone.classList.remove('drag-over');
+});
+dropZone.addEventListener('drop',e=>{
+ e.preventDefault();dropZone.classList.remove('drag-over');
+ addFiles(Array.from(e.dataTransfer?.files||[]));
+});
+document.addEventListener('dragover',e=>{if(e.dataTransfer?.types?.includes('Files'))e.preventDefault();});
+document.addEventListener('drop',e=>{if(e.dataTransfer?.types?.includes('Files'))e.preventDefault();});
 publishBtn.addEventListener('click',upload);
 async function start(){
  try{
@@ -245,6 +288,7 @@ async function start(){
   const data=await response.json();
   if(!Array.isArray(data.events)||!data.events.length)throw Error('Каталог событий пуст.');
   events=data.events.map(validateEvent);
+  modeBox.value='append';
   eventBox.replaceChildren();
   const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Выбери событие…';eventBox.append(placeholder);
   for(const slot of events){
@@ -260,7 +304,8 @@ async function start(){
    const slot=event();
    if(slot){
     const count=remoteManifest[slot.key]?.length||0;
-    publishedBox.textContent='В GitHub сейчас: '+count+' файлов. Прежние файлы сохранятся в репозитории.';
+    publishedBox.textContent='В GitHub сейчас: '+count+' файлов из '+slot.maxFiles+'. Можно добавить новые.';
+    sync();
    }
   }catch(e){
    remoteManifest=null;
