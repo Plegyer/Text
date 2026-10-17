@@ -1,0 +1,46 @@
+name: SUSLIK 2 farm brain-return browser acceptance
+
+on:
+  push:
+    branches:
+      - 'suslik-2/portable-canonical-20261015'
+    paths:
+      - 'suslik-2/tools/capture-brain-return.mjs'
+      - '.github/workflows/suslik2-brain-return-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+      - name: Install screenshot driver
+        working-directory: suslik-2
+        run: npm install --no-save --package-lock=false playwright-core
+      - name: Verify paid shift and render real wide handover scene
+        working-directory: suslik-2
+        run: node tools/capture-brain-return.mjs
+      - name: Publish verified wide scene screenshot to canonical branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add suslik-2/previews/undead-farm-brain-return.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Save actual browser screenshot of wide farm brain-return scene"
+            git push origin HEAD:suslik-2/portable-canonical-20261015
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: suslik2-farm-brain-return
+          path: suslik-2/previews/undead-farm-brain-return.png
