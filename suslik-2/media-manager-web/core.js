@@ -91,7 +91,14 @@ export async function encodeFile(file){
  return out;
 }
 export function toBase64Text(text){
- return btoa(String.fromCharCode(...new TextEncoder().encode(text)));
+ const bytes=new TextEncoder().encode(text);
+ // Base64 has to be streamed in multiples of 3 bytes; huge spread arguments
+ // otherwise overflow the browser's call stack for MP4 fragment scripts.
+ const size=24576;
+ let out='';
+ for(let i=0;i<bytes.length;i+=size)
+  out+=btoa(String.fromCharCode(...bytes.subarray(i,i+size)));
+ return out;
 }
 export function decodeContent(content){
  const binary=atob(String(content).replace(/\s/g,''));
