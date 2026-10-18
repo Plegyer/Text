@@ -5,11 +5,11 @@
 const H=global.SUSLIK2Gameplay={};
 const clamp=(n,lo,hi)=>Math.max(lo,Math.min(hi,n));
 const roll=(random=Math.random)=>{const n=random();if(!Number.isFinite(n)||n<0||n>=1)throw Error('Invalid random draw');return n;};
-H.startRun = (work)=>({elapsedDays:0,lust:work.initial.lust,energy:work.initial.energy,energyMax:work.initial.energyMax,moneyEarned:0,gold:0,completedShifts:0,lastShift:null,farmShifts:0,farmLastShift:null,farmOwnerMet:false,farmBrainsMet:false,zombieBrainSearchUnlocked:false,zombieBrainFound:false,farmBrainHandoverPending:false,farmBrainReturned:false,events:{shift15:false,shift50:false,foreman:false},pendingEvent:null,returnScene:'sawmill-work',farForestUnlocked:false,farAttempt:null,battle:null,pendingDefeat:null,currentHP:null,currentMana:null,brokenSpears:0,endingOfferOnMap:false,lustEventCount:0,lastSatyrLoss:null,introAllowApplied:false,foremanHandoverSeen:false,foremanQuestFinished:false,nightTrainingCount:0,ogreIntroSeen:false,ogreQuestStarted:false,ogreDefeated:false,ogreHead:false,ogreAfterSceneSeen:false,ogreEndingReady:false,pendingNightTraining:false,knownSpells:[]});
+H.startRun = (work)=>({elapsedDays:0,lust:work.initial.lust,energy:work.initial.energy,energyMax:work.initial.energyMax,moneyEarned:0,gold:0,completedShifts:0,lastShift:null,farmShifts:0,farmLastShift:null,farmOwnerMet:false,farmBrainsMet:false,zombieBrainSearchUnlocked:false,zombieBrainFound:false,farmBrainHandoverPending:false,farmBrainReturned:false,zombieStudyNights:0,pendingZombieStudy:false,farmTheftTalkPending:false,farmTheftTalkSeen:false,farmTheftInquiryUnlocked:false,events:{shift15:false,shift50:false,foreman:false},pendingEvent:null,returnScene:'sawmill-work',farForestUnlocked:false,farAttempt:null,battle:null,pendingDefeat:null,currentHP:null,currentMana:null,brokenSpears:0,endingOfferOnMap:false,lustEventCount:0,lastSatyrLoss:null,introAllowApplied:false,foremanHandoverSeen:false,foremanQuestFinished:false,nightTrainingCount:0,ogreIntroSeen:false,ogreQuestStarted:false,ogreDefeated:false,ogreHead:false,ogreAfterSceneSeen:false,ogreEndingReady:false,pendingNightTraining:false,knownSpells:[]});
 H.restoreRun=(raw,work)=>{
  const base=H.startRun(work);
  if(!raw||typeof raw!=='object')return base;
- for(const key of ['elapsedDays','energy','energyMax','moneyEarned','gold','completedShifts','brokenSpears','currentHP','currentMana','nightTrainingCount','lustEventCount','lust','farmShifts'])if(Number.isFinite(raw[key])&&raw[key]>=0)base[key]=raw[key];
+ for(const key of ['elapsedDays','energy','energyMax','moneyEarned','gold','completedShifts','brokenSpears','currentHP','currentMana','nightTrainingCount','zombieStudyNights','lustEventCount','lust','farmShifts'])if(Number.isFinite(raw[key])&&raw[key]>=0)base[key]=raw[key];
  base.energyMax=clamp(base.energyMax,1,5);base.energy=clamp(base.energy,0,base.energyMax);
  base.brokenSpears=clamp(Math.floor(base.brokenSpears),0,15);
  base.events={shift15:raw.events?.shift15===true,shift50:raw.events?.shift50===true,foreman:raw.events?.foreman===true};
@@ -22,6 +22,10 @@ H.restoreRun=(raw,work)=>{
  base.zombieBrainFound=raw.zombieBrainFound===true;
  base.farmBrainHandoverPending=raw.farmBrainHandoverPending===true;
  base.farmBrainReturned=raw.farmBrainReturned===true;
+ base.pendingZombieStudy=raw.pendingZombieStudy===true;
+ base.farmTheftTalkPending=raw.farmTheftTalkPending===true;
+ base.farmTheftTalkSeen=raw.farmTheftTalkSeen===true;
+ base.farmTheftInquiryUnlocked=raw.farmTheftInquiryUnlocked===true;
  base.lastSatyrLoss=typeof raw.lastSatyrLoss==='string'?raw.lastSatyrLoss:null;
  base.introAllowApplied=raw.introAllowApplied===true;
  for(const flag of ['foremanHandoverSeen','foremanQuestFinished','ogreIntroSeen','ogreQuestStarted','ogreDefeated','ogreHead','ogreAfterSceneSeen','ogreEndingReady','pendingNightTraining'])base[flag]=raw[flag]===true;
@@ -55,7 +59,30 @@ H.finishFarmBrainHandover=state=>{
  r.farmBrainReturned=true;
  return true;
 };
-H.canStudyWithZombie=state=>!!state?.run?.farmBrainReturned;
+H.canStudyWithZombie=state=>!!state?.run?.farmBrainReturned&&!state.run.pendingZombieStudy;
+H.beginZombieStudy=state=>{if(!H.canStudyWithZombie(state))return false;state.run.pendingZombieStudy=true;return true;};
+H.finishZombieStudy=state=>{
+ if(!state?.run?.pendingZombieStudy)return false;
+ state.run.pendingZombieStudy=false;
+ state.run.zombieStudyNights=(state.run.zombieStudyNights||0)+1;
+ H.wake(state);
+ return true;
+};
+H.farmTheftTalkReady=state=>!!state?.run?.farmBrainReturned&&!state.run.farmTheftTalkPending&&
+ !state.run.farmTheftTalkSeen&&state.run.zombieStudyNights>=15&&
+ state.character?.stats?.reason>=35&&state.character.stats.endurance>=35;
+H.beginFarmTheftTalk=state=>{
+ if(!H.farmTheftTalkReady(state))return false;
+ state.run.farmTheftTalkPending=true;
+ return true;
+};
+H.finishFarmTheftTalk=state=>{
+ if(!state?.run?.farmTheftTalkPending||state.run.farmTheftTalkSeen)return false;
+ state.run.farmTheftTalkPending=false;
+ state.run.farmTheftTalkSeen=true;
+ state.run.farmTheftInquiryUnlocked=true;
+ return true;
+};
 H.maxHP=state=>Math.max(10,Math.round(state.character.stats.endurance*10));
 H.maxMana=state=>Math.max(0,Math.floor(state.character.stats.magicMana??state.character.stats.mana??1));
 H.balance=(state)=>{
