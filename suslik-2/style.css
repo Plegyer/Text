@@ -227,3 +227,30 @@ button:focus-visible,select:focus-visible,input:focus-visible { outline: 3px sol
  .farm-brain-return-scene .story-panel {min-height:0; max-height:none;}
  .farm-brain-return-scene .story-text {max-height:none; overflow:visible;}
 }
+
+
+/* Wide author-supplied farm theft talk: show full art first, scroll the long text below. */
+.story-scene.farm-theft-talk-scene{
+ height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;
+ overflow-y:auto;overflow-x:hidden;background:#1c1824;
+ padding:clamp(10px,2vw,24px) clamp(10px,3vw,35px) 24px;
+}
+.farm-theft-talk-scene .story-art{
+ width:min(100%,1100px);aspect-ratio:1672/941;flex:0 0 auto;min-height:0;overflow:visible;
+}
+.farm-theft-talk-scene .story-image{width:100%;height:100%;object-fit:contain;}
+.farm-theft-talk-scene .story-panel{
+ flex:0 0 auto;min-height:0;width:min(100%,1100px);max-width:1100px;
+ border-left:0;border-top:2px solid #ad895f;padding:clamp(16px,2.2vw,34px);overflow:visible;
+}
+.farm-theft-talk-scene .story-text{
+ flex:none;width:100%;max-width:none;margin:0;overflow:visible;
+ white-space:pre-line;padding:0;font-size:clamp(17px,1.45vw,22px);line-height:1.55;
+}
+.farm-theft-talk-scene .story-actions{flex:0 0 auto;margin:22px 0 0;}
+@media(max-width:720px){
+ .story-scene.farm-theft-talk-scene{height:auto;min-height:100dvh;padding:10px;}
+ .farm-theft-talk-scene .story-art{height:auto;min-height:0;width:100%;}
+ .farm-theft-talk-scene .story-panel{min-height:0;max-height:none;}
+ .farm-theft-talk-scene .story-text{max-height:none;overflow:visible;}
+}
