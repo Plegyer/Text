@@ -10,7 +10,7 @@ const [catalogSource,manager,index,content,installer,stateSource,managedSource,l
 ].map(src));
 const entries=JSON.parse(catalogSource).events;
 test('Windows media manager has event catalog, stable labels and no audio formats',()=>{
- assert.equal(entries.length,7);
+ assert.equal(entries.length,8);
  assert.equal(entries.find(x=>x.id==='goblin-permission').maxFiles,5);
  assert.equal(entries.find(x=>x.id==='sawmill-lust').maxFiles,20);
  assert.equal(entries.find(x=>x.id==='undead-farm-night-learning').connected,false);

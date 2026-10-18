@@ -8,8 +8,8 @@ import {
 const root=file=>new URL('../'+file,import.meta.url);
 const slotData=JSON.parse(await readFile(root('content/media-manager-slots.json'),'utf8')).events;
 const f=(name,size=4)=>({name,size});
-test('web manager lists seven canonically authored media slots',async()=>{
- assert.equal(slotData.length,7);
+test('web manager lists eight canonically authored media slots',async()=>{
+ assert.equal(slotData.length,8);
  for(const entry of slotData)validateEvent(entry);
  assert.deepEqual(slotData.filter(x=>!x.connected).map(x=>x.key),['undeadFarmNightLearning']);
  assert.equal(OWNER_REPO,'Plegyer/Text');
