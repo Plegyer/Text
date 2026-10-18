@@ -59,9 +59,9 @@ async function prepare(f){
  f.$('file-input').listeners.change();
  f.$('token').value='TEST_ONLY_NOT_A_CREDENTIAL';f.$('token').listeners.input();
 }
-test('all seven slots stay selectable when anonymous GitHub access fails',async()=>{
+test('all eight slots stay selectable when anonymous GitHub access fails',async()=>{
  const f=await fixture({offline:true});
- assert.equal(f.$('event').children.length,8);
+ assert.equal(f.$('event').children.length,9);
  assert.equal(f.$('event').disabled,false);
  await prepare(f);
  assert.match(f.$('published').textContent,/перед отправкой/);
