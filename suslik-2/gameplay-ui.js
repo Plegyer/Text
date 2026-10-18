@@ -118,6 +118,16 @@ function gpGoblinPermissionScreen(){
  actions.append(gpButton(gl('returnMapPeace'),'goblin-permission-return',()=>changeScene('game-main')));
  panel.append(actions);screen.append(art,panel);root.append(screen);
 }
+/* One completed lesson counts exactly one night, without invented stat rewards. */
+function gpZombieNightStudy(){
+ gpScene(gc().images.room,'',[{
+  id:'zombie-study-next',label:gl('next'),fn:()=>{
+   if(state.sceneId!=='night-zombie-study'||!gp().finishZombieStudy(state))return;
+   state.sceneId=gp().beginFarmTheftTalk(state)?'undead-farm-theft-talk':'game-main';
+   persist();render();
+  }
+ }],'Обучение с зомби');
+}
 function gpNightScreen(type){
  if(type==='satyr'){
   gpScene(gc().images.satyrWork,gc().text.satyrWork+'\n\n−1 '+(copy().stats[state.run.lastSatyrLoss]||state.run.lastSatyrLoss||'характеристика'),[{id:'satyr-next',label:gl('next'),fn:()=>changeScene('night-room')}]);return;
@@ -136,13 +146,9 @@ function gpOpenSleep(){
   opts.append(gpButton('Спать на улице бесплатно','sleep-free-street',()=>{dialog.close();dialog.remove();changeScene('night-street');}));
   opts.append(gpButton(gl('nightSatyr'),'sleep-satyr',()=>{dialog.close();dialog.remove();const lost=gp().satyrWork(state);changeScene(lost?'night-satyr':'night-street');}));
  if(gp().canStudyWithZombie(state))opts.append(gpButton('Обучение','sleep-zombie-study',()=>{
+   if(!gp().beginZombieStudy(state))return;
    dialog.close();dialog.remove();
-   const pending=element('dialog','new-game-dialog info-dialog');
-   pending.append(element('h2','','Обучение'));
-   pending.append(element('p','','Сцена обучения будет добавлена позднее.'));
-   pending.append(gpButton('Закрыть','zombie-study-close',()=>pending.close()));
-   pending.addEventListener('close',()=>pending.remove(),{once:true});
-   document.body.append(pending);pending.showModal();
+   changeScene('night-zombie-study');
  }));
  opts.append(gpButton(gl('nightCancel'),'sleep-cancel',()=>{dialog.close();dialog.remove();}));
  dialog.append(opts);dialog.addEventListener('close',()=>dialog.remove(),{once:true});document.body.append(dialog);dialog.showModal();
@@ -309,6 +315,17 @@ function sceneUndeadFarmBrainReturn(){
  }]);
  panel.parentElement.classList.add('farm-brain-return-scene');
 }
+/* Author-written conversation about theft; outcomes of worker inquiry come later. */
+function sceneUndeadFarmTheftTalk(){
+ const panel=gpScene(gc().images.undeadFarmTheftTalk,gc().text.undeadFarmTheftTalk,[{
+  id:'undead-farm-theft-talk-next',label:gl('next'),fn:()=>{
+   if(state.sceneId!=='undead-farm-theft-talk'||!gp().finishFarmTheftTalk(state))return;
+   state.run.farmLastShift=null;
+   changeScene('undead-farm-work');
+  }
+ }]);
+ panel.parentElement.classList.add('farm-theft-talk-scene');
+}
 function gpFarmBrainsReady(){
  return !state.run.farmBrainsMet&&state.run.farmShifts>=15&&
   state.character.stats.endurance>=15&&state.character.stats.reason>=15;
@@ -330,10 +347,16 @@ function startUndeadFarmShift(){
   state.sceneId='undead-farm-brains-15';
  }else if(gp().beginFarmBrainHandover(state)){
   state.sceneId='undead-farm-brain-return';
+ }else if(gp().beginFarmTheftTalk(state)){
+  state.sceneId='undead-farm-theft-talk';
  }
  persist();render();return true;
 }
 function sceneUndeadFarmWork(scene){
+ if(gp().beginFarmTheftTalk(state)){
+  state.sceneId='undead-farm-theft-talk';
+  persist();render();return;
+ }
  // If the stats matured elsewhere, returning to the farm still triggers once.
  if(gpFarmBrainsReady()){
   state.run.farmBrainsMet=true;
@@ -383,6 +406,10 @@ function sceneUndeadFarmWork(scene){
    },state.run.energy<def.energyCost));
  }
  if(state.run.energy<def.energyCost)panel.append(element('p','work-notice',labels.noEnergy));
+ if(state.run.farmTheftInquiryUnlocked){
+  buttons.append(gpButton('Допросить зомби-рабочих','farm-question-zombie-workers',()=>{},true));
+  buttons.append(gpButton('Уговорить рассказать','farm-persuade-zombie-workers',()=>{},true));
+ }
  buttons.append(gpButton(isEn?'Return home':'Вернуться домой','undead-farm-return',()=>{state.run.farmLastShift=null;changeScene('game-main');}));
  panel.append(buttons);screen.append(art,panel);root.append(screen);
 }
