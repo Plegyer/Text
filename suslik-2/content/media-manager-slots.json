@@ -49,6 +49,13 @@
       "title": "Ферма зомби — ночное обучение (ожидает сцену)",
       "maxFiles": 20,
       "connected": false
+    },
+    {
+      "id": "undead-farm-theft-talk",
+      "key": "farmTheftTalk",
+      "title": "Ферма зомби — разговор о пропажах (рисунок автора)",
+      "maxFiles": 1,
+      "connected": true
     }
   ]
 }
