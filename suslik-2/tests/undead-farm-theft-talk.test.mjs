@@ -9,6 +9,7 @@ const [engine,ui,content,compiled,css]=await Promise.all([
 ].map(read));
 const sourceScenes=JSON.parse(await read('content/scenes.json'));
 const sourceWork=JSON.parse(await read('content/work.json'));
+const catalogText=await read('content/media-manager-slots.json');
 
 const authored=`— Сударыня Амалия! Должен признаться, наши совместные занятия доставляют мне истинное наслаждение! Вы проявляете поистине завидную восприимчивость к знаниям, постигая тончайшие премудрости с быстротой, достойной всяческого восхищения!
 После многочисленных занятий Амалия действительно стала понимать своего учителя гораздо лучше.
@@ -59,8 +60,6 @@ test('exactly authored text, wide artwork slot, correct scene music and layout',
 function requireSlotCatalog(){
  return catalogText;
 }
-const catalogText=await read('content/media-manager-slots.json');
-
 test('dwarf nights never count, requirements are independent and exact',()=>{
  const {H,state}=fixture();
  state.run.nightTrainingCount=30;
