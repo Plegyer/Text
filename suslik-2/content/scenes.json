@@ -330,6 +330,16 @@
       "kind": "panel",
       "actions": [],
       "music": "farm"
+    },
+    "undead-farm-theft-talk": {
+      "kind": "panel",
+      "actions": [],
+      "music": "farm"
+    },
+    "night-zombie-study": {
+      "kind": "panel",
+      "actions": [],
+      "music": "night"
     }
   }
 }
