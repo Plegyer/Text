@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.field-craft",
+  "task": "C5-206",
+  "targetCareerId": "assassin",
+  "role": "route_fallback_planning",
+  "courseId": "school.course.field_craft",
+  "trackId": "school.track.field_craft",
+  "teacherContentId": "school.teacher.rowan-pike",
+  "teacherMediaId": "school.teacher.field-craft.classroom",
+  "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+  "futureConsumerStatus": "PENDING_RUNTIME_ID",
+  "threshold": null,
+  "publicFactId": null,
+  "copy": {
+    "title": {
+      "ru": "Маршрут с условием отмены",
+      "en": "A route with an abort condition"
+    },
+    "body": {
+      "ru": "Роуэн просит отметить основной путь, запасной выход и два признака, после которых план нужно прекратить. Упражнение не требует столкновения: оно учит наблюдать, сравнивать условия с планом и вовремя отказаться от неверного маршрута.",
+      "en": "Rowan asks you to mark a primary route, a fallback exit, and two signs that should end the plan. The exercise requires no confrontation; it teaches observation, comparison between conditions and plan, and timely abandonment of a bad route."
+    },
+    "result": {
+      "ru": "Маршрут записан вместе с запасным выходом и явным условием отмены; никакой цели, контракта или способа нападения не создаётся.",
+      "en": "The route is recorded with a fallback exit and an explicit abort condition; no target, contract, or attack method is created."
+    },
+    "journal": {
+      "ru": "Школа: маршрут и запасной выход проверены, условие отмены отмечено заранее.",
+      "en": "School: checked the route and fallback exit, with the abort condition marked in advance."
+    },
+    "accessibility": {
+      "ru": "Текстовый результат урока полевого планирования; боевой или целевой контент отсутствует.",
+      "en": "Text result for a field-planning lesson; no combat or target content is introduced."
+    }
+  },
+  "constraints": {
+    "createsContract": false,
+    "createsTarget": false,
+    "createsCombatCurriculum": false,
+    "createsActivityRoute": false,
+    "createsDirectCareerTransition": false,
+    "publishesGlobalCertificate": false,
+    "publishesGlobalProject": false
+  }
+}

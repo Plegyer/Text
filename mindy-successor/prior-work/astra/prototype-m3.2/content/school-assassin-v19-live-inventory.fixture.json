@@ -1,0 +1,107 @@
+{
+  "formatVersion": 1,
+  "id": "school.assassin.v19.live-inventory",
+  "task": "C5-205",
+  "status": "CAPABILITY_ONLY_SAFE_PREP",
+  "targetCareerId": "assassin",
+  "targetActionId": "assassin.shift",
+  "activationBase": {
+    "head": "d3b7fe038b35cdc53d786189ef7ba44853a7610d"
+  },
+  "authority": {
+    "preparationFixture": "content/school-assassin-preparation-v1.fixture.json",
+    "preparationBlob": "138a3867d2480b8fa274feb12d8d9fdd9a4c6840",
+    "reactiveFixture": "content/school-assassin-reactive-depth-v1.fixture.json",
+    "reactiveBlob": "b6e08c5ae5f47023dd0bd00b5e46108f43a69fe7",
+    "careerDraft": "docs/CAREER_ASSASSIN_DRAFT_v0.md",
+    "mappingAuthority": "CAPABILITY_MATCH_ONLY",
+    "selectedThreshold": null,
+    "selectedPublicFactId": null,
+    "canonicalSchoolSection": false
+  },
+  "runtimeObservation": {
+    "actionExists": true,
+    "actionEnergyCost": 1,
+    "ordinaryWorkNonCombat": true,
+    "schoolConsumerContract": null,
+    "schoolConsumerEvents": [],
+    "schoolPublicFacts": [],
+    "schoolThresholds": []
+  },
+  "mappings": [
+    {
+      "role": "route_fallback_planning",
+      "courseId": "school.course.field_craft",
+      "trackId": "school.track.field_craft",
+      "teacherContentId": "school.teacher.rowan-pike",
+      "teacherMediaId": "school.teacher.field-craft.classroom",
+      "nightChoiceIds": [
+        "school.night_study.field_craft.dexterity",
+        "school.night_study.field_craft.wits",
+        "school.night_study.field_craft.creativity"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "neutral_questioning_information",
+      "courseId": "school.course.rhetoric_and_social",
+      "trackId": "school.track.rhetoric_and_social",
+      "teacherContentId": "school.teacher.cassian-reed",
+      "teacherMediaId": "school.teacher.rhetoric-and-social.classroom",
+      "nightChoiceIds": [
+        "school.night_study.rhetoric_and_social.charm",
+        "school.night_study.rhetoric_and_social.sociability",
+        "school.night_study.rhetoric_and_social.wits"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "context_fit_access",
+      "courseId": "school.course.etiquette_and_presentation",
+      "trackId": "school.track.etiquette_and_presentation",
+      "teacherContentId": "school.teacher.eliane-marrow",
+      "teacherMediaId": "school.teacher.etiquette-and-presentation.classroom",
+      "nightChoiceIds": [
+        "school.night_study.etiquette_and_presentation.manners",
+        "school.night_study.etiquette_and_presentation.grooming",
+        "school.night_study.etiquette_and_presentation.charm"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "evidence_timeline_records",
+      "courseId": "school.course.literacy_and_numbers",
+      "trackId": "school.track.literacy_and_numbers",
+      "teacherContentId": "school.teacher.mara-fen",
+      "teacherMediaId": "school.teacher.literacy-and-numbers.classroom",
+      "nightChoiceIds": [
+        "school.night_study.literacy_and_numbers.reason",
+        "school.night_study.literacy_and_numbers.wits"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    },
+    {
+      "role": "controlled_movement",
+      "courseId": "school.course.physical_training",
+      "trackId": "school.track.physical_training",
+      "teacherContentId": "school.teacher.tovan-kest",
+      "teacherMediaId": "school.teacher.physical-training.classroom",
+      "nightChoiceIds": [
+        "school.night_study.physical_training.strength",
+        "school.night_study.physical_training.endurance",
+        "school.night_study.physical_training.dexterity"
+      ],
+      "futureConsumer": "PENDING_RUNTIME_ID",
+      "threshold": null,
+      "publicFactId": null
+    }
+  ]
+}
